@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -7,32 +8,99 @@
   <meta name="description" content="SoCal Bite delivers Southern California fishing reports, top boats, top species, regional bite updates, and boat intelligence." />
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body class="home-page">
 
   <main class="full-bg-home">
+
+```
 <nav class="floating-nav">
   <a href="daily-report.html">Daily Report</a>
   <a href="top-boats.html">Top Boats</a>
   <a href="top-species.html">Top Species</a>
   <a href="regional-reports.html">Regional Reports</a>
   <a href="about.html">About</a>
-<a href="https://www.instagram.com/the_socal_bite/" target="_blank">
-  <img src="assets/instagram-icon.png" class="social-logo" alt="Instagram">
-</a>
 
-<a href="https://www.tiktok.com/@the_socal_bite" target="_blank">
-  <img src="assets/tiktok-icon.png" class="social-logo" alt="TikTok">
-</a>
+  <a href="https://www.instagram.com/the_socal_bite/" target="_blank">
+    <img src="assets/instagram-icon.png" class="social-logo" alt="Instagram">
+  </a>
 
+  <a href="https://www.tiktok.com/@the_socal_bite" target="_blank">
+    <img src="assets/tiktok-icon.png" class="social-logo" alt="TikTok">
+  </a>
 </nav>
 
-    <section class="home-buttons">
-      <a class="home-btn primary" href="daily-report.html">View Daily Report</a>
-      <a class="home-btn" href="top-boats.html">Top Boats</a>
-      <a class="home-btn" href="top-species.html">Top Species</a>
-      <a class="home-btn" href="regional-reports.html">Regional Reports</a>
-    </section>
+<section class="home-buttons">
+  <a class="home-btn primary" href="daily-report.html">View Daily Report</a>
+  <a class="home-btn" href="top-boats.html">Top Boats</a>
+  <a class="home-btn" href="top-species.html">Top Species</a>
+  <a class="home-btn" href="regional-reports.html">Regional Reports</a>
+</section>
+```
+
   </main>
+
+  <section class="live-dashboard">
+
+```
+<div class="dash-card">
+  <h2>Today's Top Boats</h2>
+  <div id="topBoats">
+    Loading...
+  </div>
+</div>
+
+<div class="dash-card">
+  <h2>Today's Top Species</h2>
+  <div id="topSpecies">
+    Loading...
+  </div>
+</div>
+
+<div class="dash-card">
+  <h2>Last Updated</h2>
+  <div id="lastUpdated" class="updated-big">
+    Loading...
+  </div>
+</div>
+```
+
+  </section>
+
+  <script src="report-data.js"></script>
+
+  <script>
+    getSoCalBiteData().then(data => {
+
+      const latest = data.reportsByDate[data.latestDate];
+
+      document.getElementById("topBoats").innerHTML =
+        latest.topBoats
+          .slice(0, 5)
+          .map((b, i) => `
+            <div class="dash-row">
+              <span>#${i + 1} ${b.boat}</span>
+              <span>${b.totalFish}</span>
+            </div>
+          `)
+          .join("");
+
+      document.getElementById("topSpecies").innerHTML =
+        latest.topSpecies
+          .slice(0, 5)
+          .map((s, i) => `
+            <div class="dash-row">
+              <span>#${i + 1} ${s.fish}</span>
+              <span>${s.count}</span>
+            </div>
+          `)
+          .join("");
+
+      document.getElementById("lastUpdated").textContent =
+        data.updatedAt;
+
+    });
+  </script>
 
 </body>
 </html>
