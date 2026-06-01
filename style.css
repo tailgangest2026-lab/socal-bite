@@ -447,14 +447,3 @@ footer {
   height: 28px;
   object-fit: contain;
 }
-.homepage-dashboard {
-  padding: 40px 5vw;
-  background: transparent;
-}
-
-.homepage-data-frame {
-  width: 100%;
-  min-height: 900px;
-  border: 0;
-  background: transparent;
-}
