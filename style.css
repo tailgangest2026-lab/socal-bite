@@ -447,3 +447,68 @@ footer {
   height: 28px;
   object-fit: contain;
 }
+.report-page {
+  padding: 130px 5vw 50px;
+  background: url("assets/socal-bite-background.png") top center / cover fixed no-repeat;
+  min-height: 100vh;
+}
+
+.date-controls {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.date-controls button,
+.date-controls select {
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: 1px solid #19c2d1;
+  background: rgba(6,25,42,.85);
+  color: white;
+  font-weight: 800;
+}
+
+.region-section,
+.landing-card {
+  background: rgba(6,25,42,.82);
+  border: 1px solid rgba(25,194,209,.45);
+  border-radius: 18px;
+  padding: 22px;
+  margin-bottom: 22px;
+}
+
+.summary-row {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  color: #e7b85a;
+  font-weight: 900;
+}
+
+.boat-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 18px;
+  padding: 14px 0;
+  border-top: 1px solid rgba(255,255,255,.14);
+}
+
+.boat-row p {
+  margin: 4px 0 0;
+  color: #dcecf2;
+}
+
+.updated {
+  text-align: center;
+  color: #e7b85a;
+  font-weight: 900;
+}
+
+@media (max-width: 800px) {
+  .boat-row {
+    grid-template-columns: 1fr;
+  }
+}
