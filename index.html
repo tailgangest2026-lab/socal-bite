@@ -55,161 +55,302 @@
 
   <script src="report-data.js"></script>
 
-  <script>
-    getSoCalBiteData()
-      .then(data => {
-        const latest = data.reportsByDate[data.latestDate];
+<script>
+  getSoCalBiteData()
+    .then(data => {
+      const latest = data.reportsByDate[data.latestDate];
 
-        const topBoatsBox = document.getElementById("topBoats");
-        const topSpeciesBox = document.getElementById("topSpecies");
-        const lastUpdatedBox = document.getElementById("lastUpdated");
+      const topBoatsBox = document.getElementById("topBoats");
+      const topSpeciesBox = document.getElementById("topSpecies");
+      const lastUpdatedBox = document.getElementById("lastUpdated");
 
-        const regions = getRegions(latest);
+      const regions = getRegions(latest);
 
-        topBoatsBox.innerHTML = regions
-          .map(region => {
-            const boats = getRegionTopBoats(region)
-              .slice(0, 5)
-              .map((boat, index) => `
-                <div class="dash-row">
-                  <span>${index + 1}. ${boat.name}</span>
-                  <span>${boat.count}</span>
-                </div>
-              `)
-              .join("");
+      topBoatsBox.innerHTML = regions
+        .map(region => {
+          const boats = buildTopBoatsFromRegion(region).slice(0, 5);
 
-            return `
-              <div class="region-dash-block">
-                <h3>${region.name}</h3>
-                ${boats || `<div class="dash-muted">No boat data</div>`}
-              </div>
-            `;
-          })
-          .join("");
+          return `
+            <div class="region-dash-block">
+              <h3>${region.name}</h3>
+              ${
+                boats.length
+                  ? boats.map((boat, index) => `
+                      <div class="dash-row">
+                        <span>${index + 1}. ${boat.name}</span>
+                        <span>${boat.count}</span>
+                      </div>
+                    `).join("")
+                  : `<div class="dash-muted">No boat data</div>`
+              }
+            </div>
+          `;
+        })
+        .join("");
 
-        topSpeciesBox.innerHTML = regions
-          .map(region => {
-            const species = getRegionTopSpecies(region)
-              .slice(0, 5)
-              .map((fish, index) => `
-                <div class="dash-row">
-                  <span>${index + 1}. ${fish.name}</span>
-                  <span>${fish.count}</span>
-                </div>
-              `)
-              .join("");
+      topSpeciesBox.innerHTML = regions
+        .map(region => {
+          const species = buildTopSpeciesFromRegion(region).slice(0, 5);
 
-            return `
-              <div class="region-dash-block">
-                <h3>${region.name}</h3>
-                ${species || `<div class="dash-muted">No species data</div>`}
-              </div>
-            `;
-          })
-          .join("");
+          return `
+            <div class="region-dash-block">
+              <h3>${region.name}</h3>
+              ${
+                species.length
+                  ? species.map((fish, index) => `
+                      <div class="dash-row">
+                        <span>${index + 1}. ${fish.name}</span>
+                        <span>${fish.count}</span>
+                      </div>
+                    `).join("")
+                  : `<div class="dash-muted">No species data</div>`
+              }
+            </div>
+          `;
+        })
+        .join("");
 
-        lastUpdatedBox.textContent = data.updatedAt || latest.updatedAt || "Not available";
-      })
-      .catch(error => {
-        console.error("Dashboard load error:", error);
+      lastUpdatedBox.textContent =
+        data.updatedAt || latest.updatedAt || "Not available";
+    })
+    .catch(error => {
+      console.error("Dashboard load error:", error);
 
-        document.getElementById("topBoats").innerHTML =
-          `<div class="dash-muted">Unable to load boat data</div>`;
+      document.getElementById("topBoats").innerHTML =
+        `<div class="dash-muted">Unable to load boat data</div>`;
 
-        document.getElementById("topSpecies").innerHTML =
-          `<div class="dash-muted">Unable to load species data</div>`;
+      document.getElementById("topSpecies").innerHTML =
+        `<div class="dash-muted">Unable to load species data</div>`;
 
-        document.getElementById("lastUpdated").textContent =
-          "Unable to load";
+      document.getElementById("lastUpdated").textContent =
+        "Unable to load";
+    });
+
+
+  function getRegions(latest) {
+    if (!latest) return [];
+
+    if (Array.isArray(latest.regions)) {
+      return latest.regions.map(region => normalizeRegion(region));
+    }
+
+    if (latest.regions && typeof latest.regions === "object") {
+      return Object.entries(latest.regions).map(([regionName, region]) => {
+        return normalizeRegion({
+          name: regionName,
+          region: regionName,
+          ...region
+        });
       });
+    }
 
-    function getRegions(latest) {
-      if (!latest) return [];
+    if (Array.isArray(latest.regionReports)) {
+      return latest.regionReports.map(region => normalizeRegion(region));
+    }
 
-      if (Array.isArray(latest.regions)) {
-        return latest.regions.map(region => normalizeRegion(region));
-      }
+    return [];
+  }
 
-      if (latest.regions && typeof latest.regions === "object") {
-        return Object.entries(latest.regions).map(([regionName, region]) => {
-          return normalizeRegion({
-            name: regionName,
-            region: regionName,
-            ...region
-          });
+
+  function normalizeRegion(region) {
+    return {
+      name:
+        region.region ||
+        region.regionName ||
+        region.name ||
+        region.title ||
+        "Region",
+
+      raw: region,
+
+      boats:
+        region.topBoats ||
+        region.boats ||
+        region.boatTotals ||
+        region.boatRankings ||
+        region.top_boats ||
+        [],
+
+      species:
+        region.topSpecies ||
+        region.species ||
+        region.fishTotals ||
+        region.speciesTotals ||
+        region.top_species ||
+        [],
+
+      trips:
+        region.trips ||
+        region.reports ||
+        region.landings ||
+        region.boatReports ||
+        []
+    };
+  }
+
+
+  function buildTopBoatsFromRegion(region) {
+    const boatMap = {};
+
+    region.boats.forEach(item => {
+      const name =
+        item.boat ||
+        item.boatName ||
+        item.name ||
+        item.title ||
+        item.vessel;
+
+      const count =
+        Number(item.totalFish) ||
+        Number(item.count) ||
+        Number(item.total) ||
+        Number(item.fishCount) ||
+        Number(item.quantity) ||
+        0;
+
+      if (!name || count <= 0) return;
+
+      boatMap[name] = (boatMap[name] || 0) + count;
+    });
+
+    region.trips.forEach(item => {
+      const name =
+        item.boat ||
+        item.boatName ||
+        item.name ||
+        item.title ||
+        item.vessel;
+
+      const count =
+        Number(item.totalFish) ||
+        Number(item.total) ||
+        Number(item.count) ||
+        Number(item.fishCount) ||
+        Number(item.quantity) ||
+        getFishTotalFromObject(item);
+
+      if (!name || count <= 0) return;
+
+      boatMap[name] = (boatMap[name] || 0) + count;
+    });
+
+    return Object.entries(boatMap)
+      .map(([name, count]) => ({ name, count }))
+      .sort((a, b) => b.count - a.count);
+  }
+
+
+  function buildTopSpeciesFromRegion(region) {
+    const speciesMap = {};
+
+    region.species.forEach(item => {
+      const name =
+        item.fish ||
+        item.species ||
+        item.name ||
+        item.title ||
+        item.fishName;
+
+      const count =
+        Number(item.count) ||
+        Number(item.totalFish) ||
+        Number(item.total) ||
+        Number(item.quantity) ||
+        0;
+
+      if (!name || count <= 0) return;
+
+      speciesMap[name] = (speciesMap[name] || 0) + count;
+    });
+
+    region.trips.forEach(item => {
+      if (Array.isArray(item.fish)) {
+        item.fish.forEach(fishItem => {
+          const name =
+            fishItem.fish ||
+            fishItem.species ||
+            fishItem.name ||
+            fishItem.title;
+
+          const count =
+            Number(fishItem.count) ||
+            Number(fishItem.total) ||
+            Number(fishItem.quantity) ||
+            0;
+
+          if (!name || count <= 0) return;
+
+          speciesMap[name] = (speciesMap[name] || 0) + count;
         });
       }
 
-      if (Array.isArray(latest.regionReports)) {
-        return latest.regionReports.map(region => normalizeRegion(region));
-      }
+      Object.keys(item).forEach(key => {
+        const ignoredKeys = [
+          "region",
+          "landing",
+          "boat",
+          "boatName",
+          "tripType",
+          "anglers",
+          "date",
+          "totalFish",
+          "total",
+          "count",
+          "url"
+        ];
 
-      return [];
-    }
+        if (ignoredKeys.includes(key)) return;
 
-    function normalizeRegion(region) {
-      return {
-        name:
-          region.region ||
-          region.regionName ||
-          region.name ||
-          region.title ||
-          "Region",
+        const value = Number(item[key]);
 
-        topBoats:
-          region.topBoats ||
-          region.boats ||
-          region.top_boats ||
-          [],
+        if (!Number.isFinite(value) || value <= 0) return;
 
-        topSpecies:
-          region.topSpecies ||
-          region.species ||
-          region.top_species ||
-          []
-      };
-    }
+        const looksLikeFishColumn =
+          key.toLowerCase().includes("tuna") ||
+          key.toLowerCase().includes("bass") ||
+          key.toLowerCase().includes("rockfish") ||
+          key.toLowerCase().includes("yellowtail") ||
+          key.toLowerCase().includes("whitefish") ||
+          key.toLowerCase().includes("bonito") ||
+          key.toLowerCase().includes("halibut") ||
+          key.toLowerCase().includes("lingcod") ||
+          key.toLowerCase().includes("sculpin") ||
+          key.toLowerCase().includes("sheephead") ||
+          key.toLowerCase().includes("barracuda");
 
-    function getRegionTopBoats(region) {
-      return (region.topBoats || []).map(boat => {
-        return {
-          name:
-            boat.boat ||
-            boat.boatName ||
-            boat.name ||
-            boat.title ||
-            "Boat",
+        if (!looksLikeFishColumn) return;
 
-          count:
-            boat.totalFish ||
-            boat.count ||
-            boat.total ||
-            boat.fishCount ||
-            0
-        };
+        speciesMap[key] = (speciesMap[key] || 0) + value;
       });
-    }
+    });
 
-    function getRegionTopSpecies(region) {
-      return (region.topSpecies || []).map(fish => {
-        return {
-          name:
-            fish.fish ||
-            fish.species ||
-            fish.name ||
-            fish.title ||
-            "Fish",
+    return Object.entries(speciesMap)
+      .map(([name, count]) => ({ name, count }))
+      .sort((a, b) => b.count - a.count);
+  }
 
-          count:
-            fish.count ||
-            fish.totalFish ||
-            fish.total ||
-            fish.fishCount ||
-            0
-        };
-      });
-    }
-  </script>
+
+  function getFishTotalFromObject(item) {
+    const ignoredKeys = [
+      "region",
+      "landing",
+      "boat",
+      "boatName",
+      "tripType",
+      "anglers",
+      "date",
+      "url"
+    ];
+
+    return Object.entries(item)
+      .filter(([key, value]) => {
+        if (ignoredKeys.includes(key)) return false;
+        const number = Number(value);
+        return Number.isFinite(number) && number > 0;
+      })
+      .reduce((sum, [, value]) => sum + Number(value), 0);
+  }
+</script>
 
 </body>
 </html>
