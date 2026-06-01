@@ -402,3 +402,12 @@ footer {
 .social-logo:hover {
   transform: scale(1.15);
 }
+.social-logo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+}
