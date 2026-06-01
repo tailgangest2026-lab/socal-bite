@@ -262,7 +262,7 @@ footer {
 
 .full-bg-home {
   min-height: 100vh;
-  background: url("assets/socal-bite-background.png") center / cover no-repeat;
+  background: url("assets/socal-bite-background.png") top center / cover no-repeat;
   position: relative;
 }
 
@@ -331,4 +331,38 @@ footer {
     font-size: 13px;
     padding: 11px 14px;
   }
+}
+.site-header {
+  display: none;
+}
+
+.page-hero {
+  padding-top: 120px;
+}
+
+.page-floating-nav {
+  position: fixed;
+  top: 24px;
+  right: 42px;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  z-index: 999;
+}
+
+.page-floating-nav a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 0.7px;
+  background: rgba(3, 18, 32, 0.82);
+  border: 1px solid rgba(25, 194, 209, 0.7);
+  border-radius: 999px;
+  padding: 12px 18px;
+}
+
+.page-floating-nav a:hover {
+  background: #19c2d1;
+  color: #052033;
 }
