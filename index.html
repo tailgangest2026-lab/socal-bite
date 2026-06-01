@@ -72,15 +72,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
         region.landings.forEach(function (landing) {
           landing.boats.forEach(function (boat) {
-            boats.push({
-              name: boat.boat,
-              count: boat.totalFish
-            });
+boats.push({
+  name: boat.boat,
+  count: boat.totalFish,
+  anglers: boat.anglers,
+  fpa: boat.anglers > 0 ? boat.totalFish / boat.anglers : 0
+});
           });
         });
 
         boats.sort(function (a, b) {
-          return b.count - a.count;
+          return b.fpa - a.fpa;
         });
 
         return `
@@ -90,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
               return `
                 <div class="dash-row">
                   <span>${index + 1}. ${boat.name}</span>
-                  <span>${boat.count.toLocaleString()}</span>
+                  <span>${boat.count.toLocaleString()} fish / ${boat.fpa.toFixed(1)} FPA</span>
                 </div>
               `;
             }).join("")}
