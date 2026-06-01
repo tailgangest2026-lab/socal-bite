@@ -6,36 +6,46 @@
   <title>Top Boats | SoCal Bite</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="home-page">
-<nav class="floating-nav">
-  <a href="index.html">Home</a>
-  <a href="daily-report.html">Daily Report</a>
-  <a href="top-boats.html">Top Boats</a>
-  <a href="top-species.html">Top Species</a>
-  <a href="regional-reports.html">Regional Reports</a>
-  <a href="about.html">About</a>
 
-  <a href="https://www.instagram.com/the_socal_bite/" target="_blank">
-    <img src="assets/instagram-icon.png" class="social-logo" alt="Instagram">
-  </a>
+<body class="inner-page">
 
-  <a href="https://www.tiktok.com/@the_socal_bite" target="_blank">
-    <img src="assets/tiktok-icon.png" class="social-logo" alt="TikTok">
-  </a>
-</nav>
-  <header class="site-header">
-    ...
-  </header>
+  <section class="page-top">
+    <h1>Top Boats</h1>
 
-  <section class="page-hero">
-  <section class="page-hero"><h1>Top Boats</h1><p>Daily ranking of the boats putting up the strongest fish counts.</p></section>
-  <main class="report-frame-wrap">
-    <iframe class="report-frame" src="https://script.google.com/macros/s/AKfycbyv3lige3cPBzrw_-ncL0OL5yG-fQKb6A_f0WZLA6jjilrTCdX0mNeSCYIxLUgZSVqe/exec?page=top-boats" loading="lazy"></iframe>
+    <nav class="page-nav">
+      <a href="index.html">Home</a>
+      <a href="daily-report.html">Daily Report</a>
+      <a href="top-boats.html">Top Boats</a>
+      <a href="top-species.html">Top Species</a>
+      <a href="regional-reports.html">Regional Reports</a>
+      <a href="about.html">About</a>
+
+      <a href="https://www.instagram.com/the_socal_bite/" target="_blank">
+        <img src="assets/instagram-icon.png" class="social-logo" alt="Instagram">
+      </a>
+
+      <a href="https://www.tiktok.com/@the_socal_bite" target="_blank">
+        <img src="assets/tiktok-icon.png" class="social-logo" alt="TikTok">
+      </a>
+    </nav>
+  </section>
+
+  <main class="report-page">
+    <div class="date-controls">
+      <button id="prevDay">‹ Previous Day</button>
+      <select id="dateSelect"></select>
+      <button id="nextDay">Next Day ›</button>
+    </div>
+
+    <div id="topBoatsPage"></div>
   </main>
-  
-<footer>
-  <p>© 2026 The SoCal Bite • Fishing Reports & Bite Updates</p>
-</footer>
+
+  <footer>
+    <p>© 2026 The SoCal Bite • Fishing Reports & Bite Updates</p>
+  </footer>
+
+  <script src="report-data.js"></script>
+  <script src="top-boats.js"></script>
 
 </body>
 </html>
