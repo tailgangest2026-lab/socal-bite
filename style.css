@@ -26,15 +26,13 @@ body {
   min-height: 100vh;
   background: url("assets/socal-bite-background.png") top center / cover no-repeat;
   position: relative;
-  padding: 24px 5vw 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  padding-bottom: 220px;
 }
 
 .floating-nav {
-  position: relative;
-  margin-left: auto;
+  position: absolute;
+  top: 80px;
+  right: 42px;
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
@@ -62,12 +60,16 @@ body {
 }
 
 .home-buttons {
+  position: absolute;
+  left: 50%;
+  bottom: 260px;
+  transform: translateX(-50%);
   display: flex;
   justify-content: center;
   gap: 16px;
   flex-wrap: wrap;
-  margin-top: auto;
-  margin-bottom: 30px;
+  width: min(1000px, 92%);
+  z-index: 20;
 }
 
 .home-btn {
@@ -89,23 +91,22 @@ body {
 
 /* LIVE HOME DASHBOARD */
 .live-dashboard {
-  width: min(1200px, 100%);
-  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 18px;
+  width: min(1200px, 92%);
+  margin: -190px auto 40px auto;
   position: relative;
-  z-index: 5;
+  z-index: 50;
 }
 
 .dash-card {
-  background: rgba(3,18,32,.62);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(25,194,209,.55);
+  background: rgba(6,25,42,.72);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(25,194,209,.45);
   border-radius: 18px;
   padding: 22px;
-  margin-bottom: 0;
-  box-shadow: 0 14px 34px rgba(0,0,0,.38);
+  box-shadow: 0 15px 40px rgba(0,0,0,.45);
 }
 
 .dash-card h2 {
@@ -255,13 +256,15 @@ footer {
 /* MOBILE */
 @media (max-width: 900px) {
   .full-bg-home {
-    padding: 18px;
-    justify-content: flex-start;
+    min-height: 100vh;
+    padding-bottom: 180px;
   }
 
   .floating-nav {
+    left: 18px;
+    right: 18px;
+    top: 18px;
     justify-content: center;
-    margin: 0 auto;
   }
 
   .floating-nav a,
@@ -271,12 +274,13 @@ footer {
   }
 
   .home-buttons {
-    margin-top: 260px;
-    margin-bottom: 24px;
+    bottom: 210px;
+    width: 92%;
   }
 
   .live-dashboard {
     grid-template-columns: 1fr;
+    margin-top: -150px;
   }
 
   .page-top h1 {
