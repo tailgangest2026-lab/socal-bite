@@ -376,23 +376,18 @@ footer {
     background: #19c2d1;
     color: #052033;
 }
-.social-btn {
-  width: 48px;
-  height: 48px;
+.social-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-
-  background: rgba(3,18,32,.82);
-  border: 1px solid #19c2d1;
-  border-radius: 50%;
-
   color: white;
-  transition: .2s;
+  text-decoration: none;
+  padding: 0;
+  background: transparent !important;
+  border: none !important;
 }
 
-.social-btn:hover {
-  background: #19c2d1;
-  color: #052033;
-  transform: translateY(-2px);
+.social-icon:hover {
+  color: #19c2d1;
+  transform: scale(1.1);
 }
