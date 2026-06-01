@@ -266,9 +266,14 @@ footer {
   position: relative;
 }
 .floating-nav {
-  position: absolute;
-  top: 65px;
-  right: 42px;
+    position: absolute;
+    top: 80px;
+    right: 42px;
+
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    z-index: 999;
 }
 .floating-nav a,
 .home-btn {
@@ -359,4 +364,15 @@ footer {
 .page-floating-nav a:hover {
   background: #19c2d1;
   color: #052033;
+}
+.floating-nav a:last-child,
+.floating-nav a:nth-last-child(2) {
+    background: rgba(25,194,209,.15);
+    border: 1px solid #19c2d1;
+}
+
+.floating-nav a:last-child:hover,
+.floating-nav a:nth-last-child(2):hover {
+    background: #19c2d1;
+    color: #052033;
 }
