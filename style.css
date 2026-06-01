@@ -90,14 +90,44 @@ body {
 }
 
 /* LIVE HOME DASHBOARD */
+
 .live-dashboard {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
   width: min(1200px, 92%);
   margin: -190px auto 40px auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "boats species"
+    ". updated";
+
+  gap: 18px;
+
   position: relative;
   z-index: 50;
+}
+
+.live-dashboard .dash-card:nth-child(1) {
+  grid-area: boats;
+}
+
+.live-dashboard .dash-card:nth-child(2) {
+  grid-area: species;
+}
+
+.live-dashboard .dash-card:nth-child(3) {
+  grid-area: updated;
+
+  max-width: 280px;
+  justify-self: end;
+
+  padding: 16px 20px;
+
+  background: rgba(6,25,42,.72);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(25,194,209,.45);
+  border-radius: 18px;
+  box-shadow: 0 15px 40px rgba(0,0,0,.45);
 }
 
 .dash-card {
@@ -115,6 +145,11 @@ body {
   text-transform: uppercase;
 }
 
+.live-dashboard .dash-card:nth-child(3) h2 {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
 .dash-row {
   display: flex;
   justify-content: space-between;
@@ -129,8 +164,25 @@ body {
 
 .updated-big {
   color: var(--gold);
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 900;
+}
+
+@media (max-width: 900px) {
+  .live-dashboard {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "boats"
+      "species"
+      "updated";
+
+    margin-top: -150px;
+  }
+
+  .live-dashboard .dash-card:nth-child(3) {
+    max-width: 100%;
+    justify-self: stretch;
+  }
 }
 
 /* INNER PAGES */
