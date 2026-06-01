@@ -6,49 +6,46 @@
   <title>Daily Fishing Report | SoCal Bite</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="home-page">
-  <main class="full-bg-home">
-<nav class="floating-nav">
-  <a href="index.html">Home</a>
-  <a href="daily-report.html">Daily Report</a>
-  <a href="top-boats.html">Top Boats</a>
-  <a href="top-species.html">Top Species</a>
-  <a href="regional-reports.html">Regional Reports</a>
-  <a href="about.html">About</a>
-<a href="https://www.instagram.com/the_socal_bite/" target="_blank">
-  <img src="assets/instagram-icon.png" class="social-logo" alt="Instagram">
-</a>
 
-<a href="https://www.tiktok.com/@the_socal_bite" target="_blank">
-  <img src="assets/tiktok-icon.png" class="social-logo" alt="TikTok">
-</a>
-  </nav>
+<body class="inner-page">
 
-  <header class="site-header">
-    ...
-  </header>
+  <section class="page-top">
+    <h1>Daily Fishing Report</h1>
 
-  <section class="page-hero">
+    <nav class="page-nav">
+      <a href="index.html">Home</a>
+      <a href="daily-report.html">Daily Report</a>
+      <a href="top-boats.html">Top Boats</a>
+      <a href="top-species.html">Top Species</a>
+      <a href="regional-reports.html">Regional Reports</a>
+      <a href="about.html">About</a>
 
-  <section class="page-hero"><h1>Daily Fishing Report</h1><p>Latest Southern California bite report from the SoCal Bite live report feed.</p></section>
-  <main class="report-frame-wrap">
-    <section class="report-page">
-  <div class="date-controls">
-    <button id="prevDay">‹ Previous Day</button>
-    <select id="dateSelect"></select>
-    <button id="nextDay">Next Day ›</button>
-  </div>
+      <a href="https://www.instagram.com/the_socal_bite/" target="_blank">
+        <img src="assets/instagram-icon.png" class="social-logo" alt="Instagram">
+      </a>
 
-  <div id="dailyReport"></div>
-</section>
+      <a href="https://www.tiktok.com/@the_socal_bite" target="_blank">
+        <img src="assets/tiktok-icon.png" class="social-logo" alt="TikTok">
+      </a>
+    </nav>
+  </section>
 
-<script src="report-data.js"></script>
-<script src="daily-report.js"></script>
+  <main class="report-page">
+    <div class="date-controls">
+      <button id="prevDay">‹ Previous Day</button>
+      <select id="dateSelect"></select>
+      <button id="nextDay">Next Day ›</button>
+    </div>
+
+    <div id="dailyReport"></div>
   </main>
-  
-<footer>
-  <p>© 2026 The SoCal Bite • Fishing Reports & Bite Updates</p>
-</footer>
+
+  <footer>
+    <p>© 2026 The SoCal Bite • Fishing Reports & Bite Updates</p>
+  </footer>
+
+  <script src="report-data.js"></script>
+  <script src="daily-report.js"></script>
 
 </body>
 </html>
