@@ -52,109 +52,105 @@
     </section>
 
   </main>
+<script src="report-data.js"></script>
 
-  <script src="report-data.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  getSoCalBiteData()
+    .then(function (data) {
+      const latestDate = data.latestDate;
+      const latest = data.reportsByDate[latestDate];
 
-  <script>
-    getSoCalBiteData()
-      .then(data => {
-        const latest = data.reportsByDate[data.latestDate];
-        const regions = latest.regions || [];
+      const regions = latest.regions || [];
 
-        const topBoatsBox = document.getElementById("topBoats");
-        const topSpeciesBox = document.getElementById("topSpecies");
-        const lastUpdatedBox = document.getElementById("lastUpdated");
+      const topBoatsBox = document.getElementById("topBoats");
+      const topSpeciesBox = document.getElementById("topSpecies");
+      const lastUpdatedBox = document.getElementById("lastUpdated");
 
-        topBoatsBox.innerHTML = regions
-          .map(region => {
-            const boats = [];
+      topBoatsBox.innerHTML = regions.map(function (region) {
+        let boats = [];
 
-            (region.landings || []).forEach(landing => {
-              (landing.boats || []).forEach(boat => {
-                boats.push({
-                  name: boat.boat || "Unknown Boat",
-                  count: Number(boat.totalFish) || 0
-                });
-              });
+        region.landings.forEach(function (landing) {
+          landing.boats.forEach(function (boat) {
+            boats.push({
+              name: boat.boat,
+              count: boat.totalFish
             });
+          });
+        });
 
-            boats.sort((a, b) => b.count - a.count);
+        boats.sort(function (a, b) {
+          return b.count - a.count;
+        });
 
-            return `
-              <div class="region-dash-block">
-                <h3>${region.region}</h3>
+        return `
+          <div class="region-dash-block">
+            <h3>${region.region}</h3>
+            ${boats.slice(0, 5).map(function (boat, index) {
+              return `
+                <div class="dash-row">
+                  <span>${index + 1}. ${boat.name}</span>
+                  <span>${boat.count.toLocaleString()}</span>
+                </div>
+              `;
+            }).join("")}
+          </div>
+        `;
+      }).join("");
 
-                ${
-                  boats.length
-                    ? boats.slice(0, 5).map((boat, index) => `
-                        <div class="dash-row">
-                          <span>${index + 1}. ${boat.name}</span>
-                          <span>${boat.count.toLocaleString()}</span>
-                        </div>
-                      `).join("")
-                    : `<div class="dash-muted">No boat data</div>`
-                }
-              </div>
-            `;
-          })
-          .join("");
+      topSpeciesBox.innerHTML = regions.map(function (region) {
+        let speciesTotals = {};
 
-        topSpeciesBox.innerHTML = regions
-          .map(region => {
-            const speciesTotals = {};
+        region.landings.forEach(function (landing) {
+          landing.boats.forEach(function (boat) {
+            boat.fish.forEach(function (fish) {
+              if (!speciesTotals[fish.fish]) {
+                speciesTotals[fish.fish] = 0;
+              }
 
-            (region.landings || []).forEach(landing => {
-              (landing.boats || []).forEach(boat => {
-                (boat.fish || []).forEach(fish => {
-                  const fishName = fish.fish || "Unknown Fish";
-                  const fishCount = Number(fish.count) || 0;
-
-                  speciesTotals[fishName] =
-                    (speciesTotals[fishName] || 0) + fishCount;
-                });
-              });
+              speciesTotals[fish.fish] += fish.count;
             });
+          });
+        });
 
-            const species = Object.entries(speciesTotals)
-              .map(([fish, count]) => ({ fish, count }))
-              .sort((a, b) => b.count - a.count)
-              .slice(0, 5);
-
-            return `
-              <div class="region-dash-block">
-                <h3>${region.region}</h3>
-
-                ${
-                  species.length
-                    ? species.map((fish, index) => `
-                        <div class="dash-row">
-                          <span>${index + 1}. ${fish.fish}</span>
-                          <span>${fish.count.toLocaleString()}</span>
-                        </div>
-                      `).join("")
-                    : `<div class="dash-muted">No species data</div>`
-                }
-              </div>
-            `;
+        const species = Object.keys(speciesTotals)
+          .map(function (fishName) {
+            return {
+              name: fishName,
+              count: speciesTotals[fishName]
+            };
           })
-          .join("");
+          .sort(function (a, b) {
+            return b.count - a.count;
+          });
 
-        lastUpdatedBox.textContent =
-          data.updatedAt || latest.updatedAt || "Not available";
-      })
-      .catch(error => {
-        console.error("Dashboard load error:", error);
+        return `
+          <div class="region-dash-block">
+            <h3>${region.region}</h3>
+            ${species.slice(0, 5).map(function (fish, index) {
+              return `
+                <div class="dash-row">
+                  <span>${index + 1}. ${fish.name}</span>
+                  <span>${fish.count.toLocaleString()}</span>
+                </div>
+              `;
+            }).join("")}
+          </div>
+        `;
+      }).join("");
 
-        document.getElementById("topBoats").innerHTML =
-          `<div class="dash-muted">Unable to load boat data</div>`;
+      lastUpdatedBox.textContent = data.updatedAt || "Not available";
+    })
+    .catch(function (error) {
+      console.error("Dashboard load error:", error);
 
-        document.getElementById("topSpecies").innerHTML =
-          `<div class="dash-muted">Unable to load species data</div>`;
-
-        document.getElementById("lastUpdated").textContent =
-          "Unable to load";
-      });
-  </script>
+      document.getElementById("topBoats").innerHTML = "Unable to load boat data";
+      document.getElementById("topSpecies").innerHTML = "Unable to load species data";
+      document.getElementById("lastUpdated").textContent = "Unable to load";
+    });
+});
+</script>
+  
 
 </body>
 </html>
