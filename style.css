@@ -391,3 +391,12 @@ footer {
   color: #19c2d1;
   transform: scale(1.1);
 }
+.social-logo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+.social-logo:hover {
+  transform: scale(1.1);
+}
