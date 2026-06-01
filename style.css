@@ -265,17 +265,11 @@ footer {
   background: url("assets/socal-bite-background.png") top center / cover no-repeat;
   position: relative;
 }
-
 .floating-nav {
   position: absolute;
-  top: 28px;
+  top: 65px;
   right: 42px;
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-  z-index: 10;
 }
-
 .floating-nav a,
 .home-btn {
   color: white;
