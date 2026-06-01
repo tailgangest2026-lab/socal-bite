@@ -387,16 +387,18 @@ footer {
   border: none !important;
 }
 
-.social-icon:hover {
-  color: #19c2d1;
+
+
+.social-logo:hover {
   transform: scale(1.1);
 }
 .social-logo {
   width: 28px;
   height: 28px;
   object-fit: contain;
+  transition: .2s ease;
 }
 
 .social-logo:hover {
-  transform: scale(1.1);
+  transform: scale(1.15);
 }
