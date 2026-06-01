@@ -411,3 +411,39 @@ footer {
   border-radius: 0;
   box-shadow: none;
 }
+.site-header {
+  display: none !important;
+}
+
+.page-hero {
+  background: url("assets/socal-bite-background.png") top center / cover no-repeat !important;
+  padding-top: 150px;
+  min-height: 320px;
+}
+
+.page-hero h1,
+.page-hero p {
+  text-shadow: 0 3px 10px rgba(0,0,0,.7);
+}
+
+.report-frame-wrap,
+.content-section,
+.region-grid {
+  background: #071923;
+}
+
+.floating-nav {
+  position: absolute;
+  top: 80px;
+  right: 42px;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  z-index: 999;
+}
+
+.social-logo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
