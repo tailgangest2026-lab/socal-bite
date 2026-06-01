@@ -1,12 +1,21 @@
 let allData;
 let currentDateIndex = 0;
 
-getSoCalBiteData().then(data => {
-  allData = data;
-  currentDateIndex = data.dates.indexOf(data.latestDate);
-  buildDateDropdown();
-  renderDailyReport(data.latestDate);
-});
+getSoCalBiteData()
+  .then(data => {
+    console.log("DATA LOADED:", data);
+
+    allData = data;
+    currentDateIndex = data.dates.indexOf(data.latestDate);
+
+    buildDateDropdown();
+    renderDailyReport(data.latestDate);
+  })
+  .catch(err => {
+    console.error("DATA ERROR:", err);
+    document.getElementById("dailyReport").innerHTML =
+      "<h2>Could not load fishing report data.</h2>";
+  });
 
 function buildDateDropdown() {
   const select = document.getElementById("dateSelect");
