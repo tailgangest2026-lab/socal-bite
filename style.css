@@ -40,18 +40,37 @@ body {
   z-index: 999;
 }
 
-/* BOTTOM BUTTONS */
-.home-buttons {
-  position: absolute;
-  left: 50%;
-  bottom: 250px;
-  transform: translateX(-50%);
-  width: min(1000px, 92%);
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  flex-wrap: wrap;
-  z-index: 40;
+.floating-nav a,
+.page-nav a,
+.home-btn {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: .7px;
+  background: rgba(3,18,32,.82);
+  border: 1px solid rgba(25,194,209,.7);
+  border-radius: 999px;
+  padding: 12px 18px;
+}
+
+.floating-nav a:hover,
+.page-nav a:hover,
+.home-btn:hover {
+  background: var(--teal);
+  color: #052033;
+}
+
+.social-logo {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+
+.home-btn.primary {
+  background: var(--teal);
+  color: #052033;
 }
 
 /* LIVE DASHBOARD */
@@ -64,16 +83,26 @@ body {
 
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "boats species"
+    ". updated";
   gap: 18px;
 
   z-index: 50;
 }
 
+.live-dashboard .dash-card:nth-child(1) {
+  grid-area: boats;
+}
+
+.live-dashboard .dash-card:nth-child(2) {
+  grid-area: species;
+}
+
 .live-dashboard .dash-card:nth-child(3) {
-  position: absolute;
-  right: 0;
-  bottom: -5px;
+  grid-area: updated;
   width: 260px;
+  justify-self: end;
   padding: 14px 18px;
 }
 
