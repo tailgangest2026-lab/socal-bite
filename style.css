@@ -15,7 +15,6 @@ body {
   color: white;
   background: var(--navy);
 }
-
 /* HOME PAGE */
 .home-page {
   min-height: 100vh;
@@ -26,8 +25,10 @@ body {
   min-height: 100vh;
   background: url("assets/socal-bite-background.png") top center / cover no-repeat;
   position: relative;
+  overflow: hidden;
 }
 
+/* TOP NAV */
 .floating-nav {
   position: absolute;
   top: 80px;
@@ -39,83 +40,40 @@ body {
   z-index: 999;
 }
 
-.floating-nav a,
-.page-nav a {
-  color: white;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: 900;
-  letter-spacing: .7px;
-  background: rgba(3,18,32,.82);
-  border: 1px solid rgba(25,194,209,.7);
-  border-radius: 999px;
-  padding: 12px 18px;
-}
-
-.floating-nav a:hover,
-.page-nav a:hover {
-  background: var(--teal);
-  color: #052033;
-}
-
+/* BOTTOM BUTTONS */
 .home-buttons {
   position: absolute;
   left: 50%;
-  bottom: 90px;
+  bottom: 250px;
   transform: translateX(-50%);
+  width: min(1000px, 92%);
   display: flex;
   justify-content: center;
   gap: 16px;
   flex-wrap: wrap;
-  width: min(1000px, 92%);
-  z-index: 20;
+  z-index: 40;
 }
 
-.home-btn {
-  color: white;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: 900;
-  letter-spacing: .7px;
-  background: rgba(3,18,32,.82);
-  border: 1px solid rgba(25,194,209,.7);
-  border-radius: 999px;
-  padding: 14px 22px;
-}
-
-.home-btn.primary {
-  background: var(--teal);
-  color: #052033;
-}
-
-/* LIVE HOME DASHBOARD */
+/* LIVE DASHBOARD */
 .live-dashboard {
+  position: absolute;
+  left: 50%;
+  bottom: 35px;
+  transform: translateX(-50%);
   width: min(1200px, 92%);
-  margin: -130px auto 40px auto;
 
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-areas:
-    "boats species"
-    ". updated";
   gap: 18px;
 
-  position: relative;
   z-index: 50;
 }
 
-.live-dashboard .dash-card:nth-child(1) {
-  grid-area: boats;
-}
-
-.live-dashboard .dash-card:nth-child(2) {
-  grid-area: species;
-}
-
 .live-dashboard .dash-card:nth-child(3) {
-  grid-area: updated;
-  max-width: 280px;
-  justify-self: end;
+  position: absolute;
+  right: 0;
+  bottom: -5px;
+  width: 260px;
   padding: 14px 18px;
 }
 
