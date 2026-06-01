@@ -226,3 +226,31 @@ footer {
 
   .report-frame { min-height: 1000px; }
 }
+.site-header {
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-nav {
+  display: flex !important;
+  gap: 22px;
+  z-index: 999;
+}
+
+.main-nav a {
+  background: rgba(3, 18, 32, 0.75);
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(25, 194, 209, 0.5);
+}
+
+.button-row {
+  display: flex !important;
+  z-index: 999;
+  position: relative;
+}
+
+.btn {
+  background: rgba(3, 18, 32, 0.85);
+}
