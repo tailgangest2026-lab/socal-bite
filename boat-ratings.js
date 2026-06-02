@@ -82,50 +82,112 @@ function buildFilters(date) {
 }
 
 function renderBoatRatings(date) {
-  const report = allData.reportsByDate[date];
-  const container = document.getElementById("boatRatingsPage");
 
-  if (!report || !report.boatRatings || !report.boatRatings.length) {
-    container.innerHTML = "<h2>No boat rating data found for this date.</h2>";
-    return;
-  }
+const report = allData.reportsByDate[date];
+const container = document.getElementById("boatRatingsPage");
 
-  const selectedRegion = document.getElementById("regionSelect").value;
-  const selectedTripType = document.getElementById("tripTypeSelect").value;
+if (!report || !report.boatRatings || !report.boatRatings.length) {
+container.innerHTML =
+"<h2>No boat rating data found for this date.</h2>";
+return;
+}
 
-  let ratings = report.boatRatings;
+const selectedRegion =
+document.getElementById("regionSelect").value;
 
-  if (selectedRegion && selectedRegion !== "All Regions") {
-    ratings = ratings.filter(r => r.region === selectedRegion);
-  }
+let ratings = report.boatRatings;
 
-  if (selectedTripType && selectedTripType !== "All Trip Types") {
-    ratings = ratings.filter(r => r.tripType === selectedTripType);
-  }
+if (
+selectedRegion &&
+selectedRegion !== "All Regions"
+) {
+ratings = ratings.filter(
+r => r.region === selectedRegion
+);
+}
 
-  if (!ratings.length) {
-    container.innerHTML = "<h2>No boats found for those filters.</h2>";
-    return;
-  }
+const grouped = {};
 
-  container.innerHTML = `
-    <div class="region-section">
-      <h2>Boat Ratings - ${report.displayDate}</h2>
-      <p class="updated">Ranked by Average FPA (Fish Per Angler)</p>
+ratings.forEach(boat => {
 
-      ${ratings.map((boat, i) => `
-        <div class="boat-row">
-          <div>
-            <strong>#${i + 1} ${boat.boat}</strong>
-            <p>${boat.landing} • ${boat.region} • ${boat.tripType || ""}</p>
-          </div>
+```
+const tripType =
+  boat.tripType || "Other";
 
-          <div>
-            <strong>${boat.averageFPA} FPA</strong>
-            <p>${boat.totalFish} Fish • ${boat.totalAnglers} Anglers • ${boat.tripCount} Trips</p>
-          </div>
-        </div>
-      `).join("")}
-    </div>
+if (!grouped[tripType]) {
+  grouped[tripType] = [];
+}
+
+grouped[tripType].push(boat);
+```
+
+});
+
+container.innerHTML = `
+
+```
+<div class="region-section">
+  <h2>Boat Ratings - ${report.displayDate}</h2>
+
+  <p class="updated">
+    Ranked by Average Fish Per Angler (FPA)
+  </p>
+</div>
+
+<div class="ratings-grid">
+
+  ${Object.entries(grouped)
+    .sort()
+    .map(([tripType, boats]) => `
+
+      <div class="rating-card">
+
+        <h3>${tripType}</h3>
+
+        ${boats
+          .sort(
+            (a,b) =>
+              b.averageFPA - a.averageFPA
+          )
+          .map((boat,index) => `
+
+            <div class="boat-row">
+
+              <div>
+                <strong>
+                  #${index + 1}
+                  ${boat.boat}
+                </strong>
+
+                <p>
+                  ${boat.landing}
+                </p>
+              </div>
+
+              <div>
+                <strong>
+                  ${boat.averageFPA} FPA
+                </strong>
+
+                <p>
+                  ${boat.totalFish} Fish •
+                  ${boat.totalAnglers} Anglers
+                </p>
+              </div>
+
+            </div>
+
+          `).join("")}
+
+      </div>
+
+  `).join("")}
+
+</div>
+```
+
+`;
+}
+
   `;
 }
