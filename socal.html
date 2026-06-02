@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -6,8 +7,14 @@
   <title>SoCal Regional Report | SoCal Bite</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="home-page">
-<nav class="floating-nav">
+
+<body class="inner-page">
+
+  <section class="page-top">
+    <h1>SoCal Regional Report</h1>
+
+```
+<nav class="page-nav">
   <a href="index.html">Home</a>
   <a href="daily-report.html">Daily Report</a>
   <a href="top-boats.html">Top Boats</a>
@@ -23,19 +30,34 @@
     <img src="assets/tiktok-icon.png" class="social-logo" alt="TikTok">
   </a>
 </nav>
-  <header class="site-header">
-    ...
-  </header>
+```
 
-  <section class="page-hero">
-  <section class="page-hero"><h1>SoCal Regional Report</h1><p>Regional report for the Southern California bite.</p></section>
-  <main class="report-frame-wrap">
-    <iframe class="report-frame" src="https://script.google.com/macros/s/AKfycbyv3lige3cPBzrw_-ncL0OL5yG-fQKb6A_f0WZLA6jjilrTCdX0mNeSCYIxLUgZSVqe/exec?page=socal" loading="lazy"></iframe>
+  </section>
+
+  <main class="report-page">
+    <div class="date-controls">
+      <button id="prevDay">‹ Previous Day</button>
+      <select id="dateSelect"></select>
+      <button id="nextDay">Next Day ›</button>
+    </div>
+
+```
+<div id="regionReport"></div>
+```
+
   </main>
-  
-<footer>
-  <p>© 2026 The SoCal Bite • Fishing Reports & Bite Updates</p>
-</footer>
+
+  <footer>
+    <p>© 2026 The SoCal Bite • Fishing Reports & Bite Updates</p>
+  </footer>
+
+  <script src="report-data.js"></script>
+
+  <script>
+    window.SOCAL_BITE_REGION = "Socal";
+  </script>
+
+  <script src="region-report.js"></script>
 
 </body>
 </html>
