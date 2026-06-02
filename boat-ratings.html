@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boat Ratings | SoCal Bite</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="inner-page">
+
+  <section class="page-top">
+    <h1>Boat Ratings</h1>
+
+    <nav class="page-nav">
+      <a href="index.html">Home</a>
+      <a href="daily-report.html">Daily Report</a>
+      <a href="top-boats.html">Top Boats</a>
+      <a href="top-species.html">Top Species</a>
+      <a href="regional-reports.html">Regional Reports</a>
+      <a href="boat-ratings.html">Boat Ratings</a>
+      <a href="about.html">About</a>
+    </nav>
+  </section>
+
+  <main class="report-page">
+    <div class="date-controls">
+      <button id="prevDay">‹ Previous Day</button>
+      <select id="dateSelect"></select>
+      <button id="nextDay">Next Day ›</button>
+      <select id="regionSelect"></select>
+      <select id="tripTypeSelect"></select>
+    </div>
+
+    <div id="boatRatingsPage"></div>
+  </main>
+
+  <footer>
+    <p>© 2026 The SoCal Bite • Fishing Reports & Bite Updates</p>
+  </footer>
+
+  <script src="report-data.js"></script>
+  <script src="boat-ratings.js"></script>
+
+</body>
+</html>
