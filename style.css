@@ -357,3 +357,14 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+.clean-region-grid {
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+.clean-region-grid .region-card {
+  background: rgba(6,25,42,.84);
+  border: 1px solid rgba(25,194,209,.45);
+  border-radius: 18px;
+  padding: 28px;
+}
