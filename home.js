@@ -1,5 +1,5 @@
 const HOME_URL =
-  "https://script.google.com/macros/s/AKfycbzXrNiF16iR_-dRPPAGNTLRrJjDFH_7Iol_jwLY-JbVneWLWjYz87eYGgc2SlQOJ8P4/exec?page=home&callback=handleHomeData";
+  "https://script.google.com/macros/s/AKfycbzXrNiF16iR_-dRPPAGNTLRrJjDFH_7Iol_jwLY-JbVneWLWjYz87eYGgc2SlQOJ8P4/exec";
 
 function loadHomeSummary() {
   const container = document.getElementById("homeRegionCards");
