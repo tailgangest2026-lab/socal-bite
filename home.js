@@ -1,26 +1,21 @@
-<section class="home-summary">
-  <h2>Today’s Bite by Region</h2>
-  <p class="section-subtitle">Live summary from SoCal Bite processed data.</p>
-
-  <div id="homeRegionCards" class="region-card-grid">
-    <div class="loading-card">Loading bite data...</div>
-  </div>
-</section>
-
-<script>
 async function loadHomeSummary() {
-  const container = document.getElementById('homeRegionCards');
+  const container = document.getElementById("homeRegionCards");
+
+  if (!container) {
+    console.error("Missing #homeRegionCards in index.html");
+    return;
+  }
 
   try {
-    const response = await fetch('home.json?v=' + Date.now());
+    const response = await fetch("home.json?v=" + Date.now());
 
     if (!response.ok) {
-      throw new Error('Could not load home.json');
+      throw new Error("Could not load home.json");
     }
 
     const data = await response.json();
 
-    if (!data.length) {
+    if (!Array.isArray(data) || !data.length) {
       container.innerHTML = '<div class="loading-card">No homepage data found.</div>';
       return;
     }
@@ -28,7 +23,7 @@ async function loadHomeSummary() {
     container.innerHTML = data.map(region => `
       <article class="region-summary-card">
         <div class="region-card-header">
-          <h3>${region.region || 'Unknown Region'}</h3>
+          <h3>${region.region || "Unknown Region"}</h3>
           <span class="region-pill">Today</span>
         </div>
 
@@ -48,25 +43,25 @@ async function loadHomeSummary() {
         </div>
 
         <div class="summary-list">
-          <p><b>Top Boat:</b> ${region.top_boat_today || 'N/A'}</p>
-          <p><b>Top Landing:</b> ${region.top_landing_today || 'N/A'}</p>
-          <p><b>Top Species:</b> ${region.top_species_today || 'N/A'}</p>
-          <p><b>Best 30-Day Boat:</b> ${region.best_boat_last_30_days || 'N/A'}</p>
-          <p><b>Best 90-Day Boat:</b> ${region.best_boat_last_90_days || 'N/A'}</p>
+          <p><b>Top Boat:</b> ${region.top_boat_today || "N/A"}</p>
+          <p><b>Top Landing:</b> ${region.top_landing_today || "N/A"}</p>
+          <p><b>Top Species:</b> ${region.top_species_today || "N/A"}</p>
+          <p><b>Best 30-Day Boat:</b> ${region.best_boat_last_30_days || "N/A"}</p>
+          <p><b>Best 90-Day Boat:</b> ${region.best_boat_last_90_days || "N/A"}</p>
+          <p><b>Top Species 30 Days:</b> ${region.most_caught_species_last_30_days || "N/A"}</p>
+          <p><b>Top Species 90 Days:</b> ${region.most_caught_species_last_90_days || "N/A"}</p>
         </div>
       </article>
-    `).join('');
+    `).join("");
 
   } catch (error) {
-    console.error('Homepage load error:', error);
+    console.error("Homepage load error:", error);
     container.innerHTML = '<div class="loading-card">Unable to load homepage data.</div>';
   }
 }
 
 function numberFormat(value) {
-  const num = Number(value || 0);
-  return num.toLocaleString();
+  return Number(value || 0).toLocaleString();
 }
 
-loadHomeSummary();
-</script>
+document.addEventListener("DOMContentLoaded", loadHomeSummary);
