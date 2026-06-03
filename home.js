@@ -7,7 +7,7 @@ async function loadHomeSummary() {
   }
 
   try {
-    const response = await fetch("home.json?v=" + Date.now());
+    const response = await fetch("data/home.json?v=" + Date.now());
 
     if (!response.ok) {
       throw new Error("Could not load home.json");
