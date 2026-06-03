@@ -1,0 +1,48 @@
+name: Update SoCal Bite JSON
+
+on:
+  schedule:
+    - cron: "30 13 * * *" # 5:30 AM Pacific during standard time / 6:30 AM daylight
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-json:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Download JSON files
+        run: |
+          BASE_URL="https://script.google.com/macros/s/AKfycbzFGkQUXf5DXP8nFl0zMMRR2NVPbtfA8wwKalECNjBn-EEH1n0ImWfVEG3yCCRntUOw/exec"
+
+          curl -L "$BASE_URL?page=home" -o home.json
+          curl -L "$BASE_URL?page=daily-report-index" -o daily-report-index.json
+
+          TODAY=$(date -u +"%Y-%m-%d")
+          YESTERDAY=$(date -u -d "1 day ago" +"%Y-%m-%d")
+          TWO_DAYS=$(date -u -d "2 days ago" +"%Y-%m-%d")
+          THREE_DAYS=$(date -u -d "3 days ago" +"%Y-%m-%d")
+
+          for DATE in $TODAY $YESTERDAY $TWO_DAYS $THREE_DAYS
+          do
+            curl -L "$BASE_URL?page=daily-report-date&date=$DATE" -o "daily-report-$DATE.json"
+          done
+
+      - name: Commit updated JSON
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+          git add *.json
+
+          if git diff --cached --quiet; then
+            echo "No JSON changes to commit"
+          else
+            git commit -m "Update SoCal Bite JSON"
+            git push
+          fi
