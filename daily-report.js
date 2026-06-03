@@ -1,36 +1,38 @@
-fetch("daily-report-index.json")
-fetch(`daily-report-${date}.json`)
-
 let dailyIndex = [];
 let currentDateIndex = 0;
 
 document.addEventListener("DOMContentLoaded", loadDailyReportIndex);
 
-function loadDailyReportIndex() {
-  const container = document.getElementById("dailyReport");
-  container.innerHTML = "<h2>Loading available report dates...</h2>";
-
-  loadJsonp(
-    DAILY_BASE_URL + "?page=daily-report-index",
-    "handleDailyReportIndex"
-  );
-}
-
-window.handleDailyReportIndex = function(data) {
+async function loadDailyReportIndex() {
   const container = document.getElementById("dailyReport");
 
-  if (!Array.isArray(data) || !data.length) {
-    container.innerHTML = "<h2>No daily report dates found.</h2>";
-    return;
+  try {
+    container.innerHTML = "<h2>Loading available report dates...</h2>";
+
+    const response = await fetch("daily-report-index.json?v=" + Date.now());
+
+    if (!response.ok) {
+      throw new Error("Could not load daily-report-index.json");
+    }
+
+    const data = await response.json();
+
+    if (!Array.isArray(data) || !data.length) {
+      container.innerHTML = "<h2>No daily report dates found.</h2>";
+      return;
+    }
+
+    dailyIndex = data;
+    currentDateIndex = 0;
+
+    buildDateDropdown();
+    loadDailyReportDate(dailyIndex[currentDateIndex].date);
+
+  } catch (error) {
+    console.error("Daily index load error:", error);
+    container.innerHTML = "<h2>Could not load daily report index.</h2>";
   }
-
-  dailyIndex = data;
-
-  buildDateDropdown();
-
-  currentDateIndex = 0;
-  loadDailyReportDate(dailyIndex[0].date);
-};
+}
 
 function buildDateDropdown() {
   const select = document.getElementById("dateSelect");
@@ -50,7 +52,12 @@ function buildDateDropdown() {
 
   select.onchange = e => {
     currentDateIndex = dailyIndex.findIndex(x => x.date === e.target.value);
-    loadDailyReportDate(e.target.value);
+
+    if (currentDateIndex < 0) {
+      currentDateIndex = 0;
+    }
+
+    loadDailyReportDate(dailyIndex[currentDateIndex].date);
     updateNavButtons();
   };
 
@@ -83,19 +90,26 @@ function updateNavButtons() {
   nextBtn.disabled = currentDateIndex <= 0;
 }
 
-function loadDailyReportDate(date) {
+async function loadDailyReportDate(date) {
   const container = document.getElementById("dailyReport");
 
-  container.innerHTML = `<h2>Loading report for ${formatDisplayDate(date)}...</h2>`;
+  try {
+    container.innerHTML = `<h2>Loading report for ${formatDisplayDate(date)}...</h2>`;
 
-  window.handleDailyReportDate = function(data) {
-    renderDailyReport(date, data);
-  };
+    const response = await fetch(`daily-report-${date}.json?v=${Date.now()}`);
 
-  loadJsonp(
-    DAILY_BASE_URL + "?page=daily-report-date&date=" + encodeURIComponent(date),
-    "handleDailyReportDate"
-  );
+    if (!response.ok) {
+      throw new Error(`Could not load daily-report-${date}.json`);
+    }
+
+    const rows = await response.json();
+
+    renderDailyReport(date, rows);
+
+  } catch (error) {
+    console.error("Daily report date load error:", error);
+    container.innerHTML = `<h2>Could not load report for ${formatDisplayDate(date)}.</h2>`;
+  }
 }
 
 function renderDailyReport(date, rows) {
@@ -126,7 +140,6 @@ function renderDailyReport(date, rows) {
 
         ${Object.keys(grouped[region]).sort().map(landing => {
           const boats = grouped[region][landing];
-
           const landingTotals = getTotals(boats);
 
           return `
@@ -171,8 +184,13 @@ function groupDailyRows(rows) {
     const region = row.region || "Unknown Region";
     const landing = row.landing || "Unknown Landing";
 
-    if (!grouped[region]) grouped[region] = {};
-    if (!grouped[region][landing]) grouped[region][landing] = [];
+    if (!grouped[region]) {
+      grouped[region] = {};
+    }
+
+    if (!grouped[region][landing]) {
+      grouped[region][landing] = [];
+    }
 
     grouped[region][landing].push(row);
   });
@@ -196,30 +214,12 @@ function getTotals(rows) {
   );
 }
 
-function loadJsonp(url, callbackName) {
-  const oldScript = document.getElementById(callbackName + "Script");
-
-  if (oldScript) {
-    oldScript.remove();
-  }
-
-  const script = document.createElement("script");
-  script.id = callbackName + "Script";
-  script.src = url + "&callback=" + callbackName + "&v=" + Date.now();
-
-  script.onerror = function(e) {
-    console.error("JSONP load failed:", e);
-    document.getElementById("dailyReport").innerHTML =
-      "<h2>Could not load fishing report data.</h2>";
-  };
-
-  document.body.appendChild(script);
-}
-
 function formatDisplayDate(dateString) {
   const parts = String(dateString).split("-");
 
-  if (parts.length !== 3) return dateString;
+  if (parts.length !== 3) {
+    return dateString;
+  }
 
   const date = new Date(
     Number(parts[0]),
