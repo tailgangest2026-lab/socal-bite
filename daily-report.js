@@ -1,5 +1,5 @@
 const DAILY_BASE_URL =
-  "https://script.google.com/macros/s/AKfycbzXrNiF16iR_-dRPPAGNTLRrJjDFH_7Iol_jwLY-JbVneWLWjYz87eYGgc2SlQOJ8P4/exec";
+  "https://script.googleusercontent.com/macros/echo?user_content_key=AUkAhnTfpTLkH6K_50KZS2UqOxtWOyOT168q76rsJo2ABqPCF1FzKM2i8i-Os-TKuxNisRfv5tBgIcCEJtieAvUjGl5K0hvLaAa82FETAkq5jwJao3gtQxSefFhjdUxZWn-3xnCxaL5vywdC1N2aDx_bSxsxgR-XHXlzylRXYa0GSOWd7ln9aLHusxml3YbdqnUHTo7AZupjW_RXG2ohh3y9Lec5svVqiKFw-3IDuNmAX8c_R149gdcW2W50lPj8JEhloutP73GZr8St4NotP_zPr_NmCJfsvpai-SDj3Sc5_AL_pOL23-Zzs8dPz-8s3w&lib=MPCnQ2DjEMlEbUxk9HZxL1zD8tEPV74OM";
 
 let dailyIndex = [];
 let currentDateIndex = 0;
