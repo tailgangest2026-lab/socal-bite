@@ -7,6 +7,7 @@ function loadHomeSummary() {
   if (!container) return;
 
   window.handleHomeData = function(data) {
+    console.log("Home data received:", data);
     if (!Array.isArray(data) || !data.length) {
       container.innerHTML = '<div class="loading-card">No homepage data found.</div>';
       return;
@@ -38,10 +39,10 @@ function loadHomeSummary() {
 
   const script = document.createElement("script");
   script.src = HOME_URL + "&callback=handleHomeData&v=" + Date.now();
-  script.onerror = function() {
-    container.innerHTML = '<div class="loading-card">Unable to load homepage data.</div>';
-  };
-
+  script.onerror = function(e) {
+  console.error("JSONP script failed to load:", e);
+  container.innerHTML = '<div class="loading-card">Unable to load homepage data.</div>';
+};
   document.body.appendChild(script);
 }
 
