@@ -3,40 +3,34 @@ let currentDateIndex = 0;
 
 document.addEventListener("DOMContentLoaded", loadDailyReportIndex);
 
-async function loadDailyReportDate(date) {
+async function loadDailyReportIndex() {
   const container = document.getElementById("dailyReport");
 
   try {
-    container.innerHTML =
-      `<h2>Loading report for ${formatDisplayDate(date)}...</h2>`;
+    container.innerHTML = "<h2>Loading available report dates...</h2>";
 
-    const reportInfo =
-      dailyIndex.find(x => x.date === date);
-
-    if (!reportInfo) {
-      throw new Error("Report not found in index: " + date);
-    }
-
-    const filePath =
-      reportInfo.file || `reports/daily-report-${date}.json`;
-
-    const response =
-      await fetch(filePath + "?v=" + Date.now());
+    const response = await fetch("daily-report-index.json?v=" + Date.now());
 
     if (!response.ok) {
-      throw new Error("Could not load " + filePath);
+      throw new Error("Could not load daily-report-index.json");
     }
 
-    const rows =
-      await response.json();
+    const data = await response.json();
 
-    renderDailyReport(date, rows);
+    if (!Array.isArray(data) || !data.length) {
+      container.innerHTML = "<h2>No daily report dates found.</h2>";
+      return;
+    }
+
+    dailyIndex = data;
+    currentDateIndex = 0;
+
+    buildDateDropdown();
+    loadDailyReportDate(dailyIndex[currentDateIndex].date);
 
   } catch (error) {
-    console.error("Daily report date load error:", error);
-
-    container.innerHTML =
-      `<h2>Could not load report for ${formatDisplayDate(date)}.</h2>`;
+    console.error("Daily index load error:", error);
+    container.innerHTML = "<h2>Could not load daily report index.</h2>";
   }
 }
 
@@ -100,21 +94,36 @@ async function loadDailyReportDate(date) {
   const container = document.getElementById("dailyReport");
 
   try {
-    container.innerHTML = `<h2>Loading report for ${formatDisplayDate(date)}...</h2>`;
+    container.innerHTML =
+      `<h2>Loading report for ${formatDisplayDate(date)}...</h2>`;
 
-    const response = await fetch(`daily-report-${date}.json?v=${Date.now()}`);
+    const reportInfo =
+      dailyIndex.find(x => x.date === date);
 
-    if (!response.ok) {
-      throw new Error(`Could not load daily-report-${date}.json`);
+    if (!reportInfo) {
+      throw new Error("Report not found in index: " + date);
     }
 
-    const rows = await response.json();
+    const filePath =
+      reportInfo.file || `reports/daily-report-${date}.json`;
+
+    const response =
+      await fetch(filePath + "?v=" + Date.now());
+
+    if (!response.ok) {
+      throw new Error("Could not load " + filePath);
+    }
+
+    const rows =
+      await response.json();
 
     renderDailyReport(date, rows);
 
   } catch (error) {
     console.error("Daily report date load error:", error);
-    container.innerHTML = `<h2>Could not load report for ${formatDisplayDate(date)}.</h2>`;
+
+    container.innerHTML =
+      `<h2>Could not load report for ${formatDisplayDate(date)}.</h2>`;
   }
 }
 
@@ -122,7 +131,8 @@ function renderDailyReport(date, rows) {
   const container = document.getElementById("dailyReport");
 
   if (!Array.isArray(rows) || !rows.length) {
-    container.innerHTML = `<h2>No report data found for ${formatDisplayDate(date)}.</h2>`;
+    container.innerHTML =
+      `<h2>No report data found for ${formatDisplayDate(date)}.</h2>`;
     return;
   }
 
