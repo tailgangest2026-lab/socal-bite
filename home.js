@@ -7,26 +7,21 @@ function loadHomeSummary() {
   if (!container) return;
 
   window.handleHomeData = function(data) {
+    const updatedElement =
+      document.getElementById("lastUpdated");
 
-  const updatedElement =
-    document.getElementById("lastUpdated");
+    console.log("Home data received:", data);
 
-  console.log("Home data received:", data);
+    if (updatedElement) {
+      updatedElement.textContent =
+        new Date().toLocaleString();
+    }
 
-  if (updatedElement) {
-    updatedElement.textContent =
-      new Date().toLocaleString();
-  }
-
-  if (!Array.isArray(data) || !data.length) {
-    container.innerHTML =
-      '<div class="loading-card">No homepage data found.</div>';
-    return;
-  }
-
-  // rest of your code here...
-
-};
+    if (!Array.isArray(data) || !data.length) {
+      container.innerHTML =
+        '<div class="loading-card">No homepage data found.</div>';
+      return;
+    }
 
     container.innerHTML = data.map(region => `
       <article class="region-summary-card">
@@ -54,10 +49,13 @@ function loadHomeSummary() {
 
   const script = document.createElement("script");
   script.src = HOME_URL + "&callback=handleHomeData&v=" + Date.now();
+
   script.onerror = function(e) {
-  console.error("JSONP script failed to load:", e);
-  container.innerHTML = '<div class="loading-card">Unable to load homepage data.</div>';
-};
+    console.error("JSONP script failed to load:", e);
+    container.innerHTML =
+      '<div class="loading-card">Unable to load homepage data.</div>';
+  };
+
   document.body.appendChild(script);
 }
 
