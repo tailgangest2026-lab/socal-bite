@@ -17,7 +17,6 @@
 
       <div class="dropdown">
         <button class="dropbtn">Reports ▼</button>
-
         <div class="dropdown-content">
           <a href="daily-report.html">Daily Report</a>
           <a href="top-boats.html">Top Boats</a>
@@ -42,20 +41,21 @@
 
   <main class="report-page">
     <div class="date-controls">
-      <button id="prevDay">‹ Previous Day</button>
+      <button id="prevDay" type="button">‹ Previous Day</button>
       <select id="dateSelect"></select>
-      <button id="nextDay">Next Day ›</button>
+      <button id="nextDay" type="button">Next Day ›</button>
     </div>
 
-    <div id="topBoatsPage"></div>
+    <div id="topBoatsPage">
+      <h2>Loading top boats...</h2>
+    </div>
   </main>
 
   <footer>
     <p>© 2026 The SoCal Bite • Fishing Reports & Bite Updates</p>
   </footer>
 
-  <script src="report-data.js"></script>
-  <script src="top-boats.js"></script>
+  <script src="top-boats.js?v=2"></script>
 
 </body>
 </html>
