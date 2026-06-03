@@ -168,12 +168,14 @@ function renderTopBoats(date, rows) {
             <strong>#${index + 1} ${boat.boat}</strong>
             <p>${boat.landing} • ${boat.region} • ${boat.tripType}</p>
           </div>
-
-          <div>
-            <strong>${numberFormat(boat.totalFish)} Fish</strong>
-            <p>${numberFormat(boat.anglers)} Anglers</p>
-            <p>${boat.fishCounts || "No fish counts listed"}</p>
-          </div>
+<div>
+  <strong>${boat.fpa.toFixed(2)} FPA</strong>
+  <p>
+    ${numberFormat(boat.totalFish)} Fish •
+    ${numberFormat(boat.anglers)} Anglers
+  </p>
+  <p>${boat.fishCounts || "No fish counts listed"}</p>
+</div>
         </div>
       `).join("")}
     </section>
