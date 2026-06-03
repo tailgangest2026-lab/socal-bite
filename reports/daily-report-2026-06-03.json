@@ -6,7 +6,7 @@
     "boat": "Native Sun",
     "trip_type": "3/4 Day",
     "anglers": 17,
-    "fish_counts": "1 Barracuda, 1 Yellowtail, 15 Calico Bass, 15 Bonito",
+    "fish_counts": "1 Barracuda, 15 Bonito, 15 Calico Bass, 1 Yellowtail",
     "total_fish": 32
   },
   {
@@ -16,7 +16,7 @@
     "boat": "Pursuit",
     "trip_type": "Full Day",
     "anglers": 34,
-    "fish_counts": "1 Barracuda, 2 Sculpin, 15 Sheephead, 6 Yellowtail, 28 Blue Perch, 58 Calico Bass, 11 Whitefish, 49 Bonito",
+    "fish_counts": "1 Barracuda, 49 Bonito, 58 Calico Bass, 2 Sculpin, 15 Sheephead, 11 Whitefish, 6 Yellowtail",
     "total_fish": 142
   },
   {
@@ -26,7 +26,7 @@
     "boat": "Victory",
     "trip_type": "3/4 Day",
     "anglers": 27,
-    "fish_counts": "4 Sand Bass, 126 Salmon Grouper, 1 Barracuda, 135 Sculpin, 12 Calico Bass, 10 Whitefish, 100 Rockfish, 25 Sanddab, 10 Vermillion Rockfish",
+    "fish_counts": "1 Barracuda, 12 Calico Bass, 100 Rockfish, 4 Sand Bass, 135 Sculpin, 10 Whitefish",
     "total_fish": 262
   },
   {
@@ -56,7 +56,7 @@
     "boat": "Clemente",
     "trip_type": "1/2 Day AM",
     "anglers": 45,
-    "fish_counts": "2 Rockfish, 25 Calico Bass Released",
+    "fish_counts": "25 Calico Bass Released, 2 Rockfish",
     "total_fish": 27
   },
   {
@@ -66,7 +66,7 @@
     "boat": "Clemente",
     "trip_type": "1/2 Day Twilight",
     "anglers": 12,
-    "fish_counts": "1 Sand Bass, 14 Sand Bass Released",
+    "fish_counts": "1 Sand Bass",
     "total_fish": 1
   },
   {
@@ -86,7 +86,7 @@
     "boat": "Reel Fun",
     "trip_type": "1/2 Day AM",
     "anglers": 28,
-    "fish_counts": "2 Sand Bass, 2 Sculpin, 2 Sheephead, 2 Whitefish, 75 Sand Bass Released",
+    "fish_counts": "2 Sand Bass, 2 Sculpin, 2 Sheephead, 2 Whitefish",
     "total_fish": 8
   },
   {
@@ -96,7 +96,7 @@
     "boat": "Sum Fun",
     "trip_type": "3/4 Day",
     "anglers": 43,
-    "fish_counts": "6 Sculpin, 5 Whitefish, 260 Rockfish",
+    "fish_counts": "260 Rockfish, 6 Sculpin, 5 Whitefish",
     "total_fish": 271
   },
   {
@@ -106,7 +106,7 @@
     "boat": "Freelance",
     "trip_type": "3/4 Day",
     "anglers": 61,
-    "fish_counts": "23 Bocaccio, 305 Sculpin, 1 Sheephead, 3 Whitefish, 40 Rockfish, 30 Sanddab, 2 Vermilion Rockfish",
+    "fish_counts": "40 Rockfish, 305 Sculpin, 1 Sheephead, 3 Whitefish",
     "total_fish": 349
   },
   {
@@ -116,7 +116,7 @@
     "boat": "Western Pride",
     "trip_type": "1/2 Day PM",
     "anglers": 28,
-    "fish_counts": "10 Calico Bass, 2 Whitefish, 65 Rockfish, 56 Vermilion Rockfish",
+    "fish_counts": "10 Calico Bass, 65 Rockfish, 2 Whitefish",
     "total_fish": 77
   },
   {
@@ -126,7 +126,7 @@
     "boat": "Dolphin",
     "trip_type": "1/2 Day AM",
     "anglers": 19,
-    "fish_counts": "2 Sand Bass, 2 Sculpin, 6 Sheephead, 2 Calico Bass, 56 Rockfish",
+    "fish_counts": "2 Calico Bass, 56 Rockfish, 2 Sand Bass, 2 Sculpin, 6 Sheephead",
     "total_fish": 68
   },
   {
@@ -136,7 +136,7 @@
     "boat": "Dolphin",
     "trip_type": "1/2 Day PM",
     "anglers": 35,
-    "fish_counts": "3 Sand Bass, 1 Cabezon, 1 Barracuda, 4 Sculpin, 7 Sheephead, 25 Calico Bass, 21 Rockfish, 100 Calico Bass Released",
+    "fish_counts": "1 Barracuda, 25 Calico Bass, 100 Calico Bass Released, 21 Rockfish, 3 Sand Bass, 4 Sculpin, 7 Sheephead",
     "total_fish": 161
   },
   {
@@ -146,7 +146,7 @@
     "boat": "Premier",
     "trip_type": "1/2 Day PM",
     "anglers": 14,
-    "fish_counts": "5 Sand Bass, 15 Barracuda, 1 Halibut, 4 Sheephead, 6 Calico Bass, 32 Rockfish, 150 Barracuda Released",
+    "fish_counts": "15 Barracuda, 150 Barracuda Released, 6 Calico Bass, 1 Halibut, 32 Rockfish, 5 Sand Bass, 4 Sheephead",
     "total_fish": 213
   },
   {
@@ -156,7 +156,7 @@
     "boat": "Southern Cal",
     "trip_type": "1/2 Day AM",
     "anglers": 25,
-    "fish_counts": "1 Sheephead, 11 Calico Bass, 5 Rockfish, 170 Calico Bass Released",
+    "fish_counts": "11 Calico Bass, 170 Calico Bass Released, 5 Rockfish, 1 Sheephead",
     "total_fish": 187
   },
   {
@@ -166,7 +166,7 @@
     "boat": "Daily Double",
     "trip_type": "1/2 Day AM",
     "anglers": 25,
-    "fish_counts": "2 Sheephead, 2 Calico Bass, 51 Rockfish",
+    "fish_counts": "2 Calico Bass, 51 Rockfish, 2 Sheephead",
     "total_fish": 55
   },
   {
@@ -176,7 +176,7 @@
     "boat": "New Seaforth",
     "trip_type": "1/2 Day Twilight",
     "anglers": 12,
-    "fish_counts": "23 Calico Bass, 1 Bonito, 9 Rockfish, 100 Calico Bass Released",
+    "fish_counts": "1 Bonito, 23 Calico Bass, 100 Calico Bass Released, 9 Rockfish",
     "total_fish": 133
   },
   {
@@ -186,7 +186,7 @@
     "boat": "San Diego",
     "trip_type": "Full Day Coronado Islands",
     "anglers": 35,
-    "fish_counts": "1 Barracuda, 4 Yellowtail, 5 Calico Bass, 68 Whitefish, 87 Rockfish, 36 Vermilion Rockfish",
+    "fish_counts": "1 Barracuda, 5 Calico Bass, 87 Rockfish, 68 Whitefish, 4 Yellowtail",
     "total_fish": 165
   },
   {
@@ -196,7 +196,7 @@
     "boat": "Sea Watch",
     "trip_type": "1/2 Day AM",
     "anglers": 17,
-    "fish_counts": "2 Sculpin, 1 Sheephead, 15 Calico Bass, 3 Whitefish, 11 Rockfish, 50 Calico Bass Released",
+    "fish_counts": "15 Calico Bass, 50 Calico Bass Released, 11 Rockfish, 2 Sculpin, 1 Sheephead, 3 Whitefish",
     "total_fish": 82
   },
   {
@@ -206,7 +206,7 @@
     "boat": "Sea Watch",
     "trip_type": "1/2 Day PM",
     "anglers": 27,
-    "fish_counts": "2 Sand Bass, 17 Calico Bass, 6 Rockfish, 1 White Seabass, 60 Calico Bass Released",
+    "fish_counts": "17 Calico Bass, 60 Calico Bass Released, 6 Rockfish, 2 Sand Bass",
     "total_fish": 85
   },
   {
@@ -216,7 +216,7 @@
     "boat": "Coral Sea",
     "trip_type": "3/4 Day",
     "anglers": 25,
-    "fish_counts": "2 Sheephead, 10 Lingcod, 161 Whitefish, 250 Rockfish",
+    "fish_counts": "10 Lingcod, 250 Rockfish, 2 Sheephead, 161 Whitefish",
     "total_fish": 423
   },
   {
@@ -226,7 +226,7 @@
     "boat": "Flying Fish",
     "trip_type": "1/2 Day AM",
     "anglers": 19,
-    "fish_counts": "Out Front 2 Bocaccio, 1 Copper Rockfish, 9 Lingcod, 1 Rock Sole, 176 Rockcod, 6 Red Rockcod",
+    "fish_counts": "9 Lingcod",
     "total_fish": 9
   },
   {
@@ -236,7 +236,7 @@
     "boat": "Aloha Spirit",
     "trip_type": "Full Day",
     "anglers": 28,
-    "fish_counts": "4 Sand Bass, 42 Barracuda, 10 Calico Bass, 18 White Seabass",
+    "fish_counts": "42 Barracuda, 10 Calico Bass, 4 Sand Bass",
     "total_fish": 56
   },
   {
@@ -246,7 +246,7 @@
     "boat": "Gentleman",
     "trip_type": "3/4 Day",
     "anglers": 28,
-    "fish_counts": "2 Lingcod, 125 Whitefish, 260 Rockfish",
+    "fish_counts": "2 Lingcod, 260 Rockfish, 125 Whitefish",
     "total_fish": 387
   },
   {
@@ -256,7 +256,7 @@
     "boat": "Graylight",
     "trip_type": "Full Day",
     "anglers": 6,
-    "fish_counts": "1 Halibut, 6 White Seabass",
+    "fish_counts": "1 Halibut",
     "total_fish": 1
   },
   {
@@ -266,7 +266,7 @@
     "boat": "Island Tak",
     "trip_type": "Full Day",
     "anglers": 11,
-    "fish_counts": "15 Sheephead, 2 Calico Bass, 35 Whitefish, 15 Rockfish",
+    "fish_counts": "2 Calico Bass, 15 Rockfish, 15 Sheephead, 35 Whitefish",
     "total_fish": 67
   },
   {
@@ -276,7 +276,7 @@
     "boat": "Mirage",
     "trip_type": "Overnight",
     "anglers": 20,
-    "fish_counts": "1 Sheephead, 5 Lingcod, 47 Whitefish, 200 Rockfish, 4 White Seabass",
+    "fish_counts": "5 Lingcod, 200 Rockfish, 1 Sheephead, 47 Whitefish",
     "total_fish": 253
   },
   {
@@ -286,7 +286,7 @@
     "boat": "Speed Twin",
     "trip_type": "1/2 Day AM",
     "anglers": 18,
-    "fish_counts": "51 Barracuda, 1 Halibut, 2 Sculpin, 2 Sheephead, 3 Yellowtail, 12 Calico Bass, 1 Lingcod, 66 Whitefish, 1 Bonito, 57 Rockfish",
+    "fish_counts": "51 Barracuda, 1 Bonito, 12 Calico Bass, 1 Halibut, 1 Lingcod, 57 Rockfish, 2 Sculpin, 2 Sheephead, 66 Whitefish, 3 Yellowtail",
     "total_fish": 196
   }
 ]
