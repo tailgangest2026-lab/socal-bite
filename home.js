@@ -1,23 +1,12 @@
-async function loadHomeSummary() {
+const HOME_URL =
+  "https://script.google.com/macros/s/AKfycbzXrNiF16iR_-dRPPAGNTLRrJjDFH_7Iol_jwLY-JbVneWLWjYz87eYGgc2SlQOJ8P4/exec?page=home";
+
+function loadHomeSummary() {
   const container = document.getElementById("homeRegionCards");
 
-  if (!container) {
-    console.error("Missing #homeRegionCards in index.html");
-    return;
-  }
+  if (!container) return;
 
-  try {
-    const HOME_URL =
-  "https://script.google.com/macros/s/AKfycbzXrNiF16iR_-dRPPAGNTLRrJjDFH_7Iol_jwLY-JbVneWLWjYz87eYGgc2SlQOJ8P4/exec";
-
-const response = await fetch(HOME_URL + "&v=" + Date.now());
-
-    if (!response.ok) {
-      throw new Error("Could not load home.json");
-    }
-
-    const data = await response.json();
-
+  window.handleHomeData = function(data) {
     if (!Array.isArray(data) || !data.length) {
       container.innerHTML = '<div class="loading-card">No homepage data found.</div>';
       return;
@@ -31,18 +20,9 @@ const response = await fetch(HOME_URL + "&v=" + Date.now());
         </div>
 
         <div class="summary-stats">
-          <div>
-            <strong>${numberFormat(region.total_trips_today)}</strong>
-            <span>Trips</span>
-          </div>
-          <div>
-            <strong>${numberFormat(region.total_anglers_today)}</strong>
-            <span>Anglers</span>
-          </div>
-          <div>
-            <strong>${numberFormat(region.total_fish_today)}</strong>
-            <span>Fish</span>
-          </div>
+          <div><strong>${numberFormat(region.total_trips_today)}</strong><span>Trips</span></div>
+          <div><strong>${numberFormat(region.total_anglers_today)}</strong><span>Anglers</span></div>
+          <div><strong>${numberFormat(region.total_fish_today)}</strong><span>Fish</span></div>
         </div>
 
         <div class="summary-list">
@@ -51,16 +31,18 @@ const response = await fetch(HOME_URL + "&v=" + Date.now());
           <p><b>Top Species:</b> ${region.top_species_today || "N/A"}</p>
           <p><b>Best 30-Day Boat:</b> ${region.best_boat_last_30_days || "N/A"}</p>
           <p><b>Best 90-Day Boat:</b> ${region.best_boat_last_90_days || "N/A"}</p>
-          <p><b>Top Species 30 Days:</b> ${region.most_caught_species_last_30_days || "N/A"}</p>
-          <p><b>Top Species 90 Days:</b> ${region.most_caught_species_last_90_days || "N/A"}</p>
         </div>
       </article>
     `).join("");
+  };
 
-  } catch (error) {
-    console.error("Homepage load error:", error);
+  const script = document.createElement("script");
+  script.src = HOME_URL + "&callback=handleHomeData&v=" + Date.now();
+  script.onerror = function() {
     container.innerHTML = '<div class="loading-card">Unable to load homepage data.</div>';
-  }
+  };
+
+  document.body.appendChild(script);
 }
 
 function numberFormat(value) {
