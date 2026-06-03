@@ -119,7 +119,6 @@ async function loadTopBoatsDate(date) {
       `<h2>Could not load top boats for ${formatDisplayDate(date)}.</h2>`;
   }
 }
-
 function renderTopBoats(date, rows) {
   const container = document.getElementById("topBoatsPage");
 
@@ -130,57 +129,71 @@ function renderTopBoats(date, rows) {
   }
 
   const boats = rows
-    .filter(row => row.boat)
-.map(row => {
-  const anglers = Number(row.anglers || 0);
-  const totalFish = Number(row.total_fish || 0);
+    .filter(row => row.boat && Number(row.anglers || 0) >= 5)
+    .map(row => {
+      const anglers = Number(row.anglers || 0);
+      const totalFish = Number(row.total_fish || 0);
 
-  return {
-    boat: row.boat || "Unknown Boat",
-    landing: row.landing || "Unknown Landing",
-    region: row.region || "Unknown Region",
-    tripType: row.trip_type || "",
-    anglers,
-    totalFish,
-    fpa: anglers > 0 ? totalFish / anglers : 0,
-    fishCounts: row.fish_counts || ""
-  };
-})
-.sort((a, b) =>
-  b.fpa - a.fpa ||
-  b.totalFish - a.totalFish
-)
-    .slice(0, 25);
+      return {
+        boat: row.boat || "Unknown Boat",
+        landing: row.landing || "Unknown Landing",
+        region: row.region || "Unknown Region",
+        tripType: row.trip_type || "",
+        anglers,
+        totalFish,
+        fpa: anglers > 0 ? totalFish / anglers : 0,
+        fishCounts: row.fish_counts || ""
+      };
+    });
 
-  if (!boats.length) {
-    container.innerHTML =
-      `<h2>No top boat data found for ${formatDisplayDate(date)}.</h2>`;
-    return;
-  }
+  const grouped = {};
+
+  boats.forEach(boat => {
+    if (!grouped[boat.region]) {
+      grouped[boat.region] = [];
+    }
+
+    grouped[boat.region].push(boat);
+  });
 
   container.innerHTML = `
     <section class="region-section">
       <h2>Top Boats - ${formatDisplayDate(date)}</h2>
-
-      ${boats.map((boat, index) => `
-        <div class="boat-row">
-          <div>
-            <strong>#${index + 1} ${boat.boat}</strong>
-            <p>${boat.landing} • ${boat.region} • ${boat.tripType}</p>
-          </div>
-<div>
-  <strong>${boat.fpa.toFixed(2)} FPA</strong>
-  <p>
-    ${numberFormat(boat.totalFish)} Fish •
-    ${numberFormat(boat.anglers)} Anglers
-  </p>
-  <p>${boat.fishCounts || "No fish counts listed"}</p>
-</div>
-        </div>
-      `).join("")}
+      <p class="updated">Ranked by FPA</p>
     </section>
+
+    ${Object.keys(grouped).sort().map(region => {
+      const regionBoats = grouped[region]
+        .sort((a, b) =>
+          b.fpa - a.fpa ||
+          b.totalFish - a.totalFish
+        )
+        .slice(0, 10);
+
+      return `
+        <section class="region-section">
+          <h2>${region}</h2>
+
+          ${regionBoats.map((boat, index) => `
+            <div class="boat-row">
+              <div>
+                <strong>#${index + 1} ${boat.boat}</strong>
+                <p>${boat.landing} • ${boat.tripType}</p>
+              </div>
+
+              <div>
+                <strong>${boat.fpa.toFixed(2)} FPA</strong>
+                <p>${numberFormat(boat.totalFish)} Fish • ${numberFormat(boat.anglers)} Anglers</p>
+                <p>${boat.fishCounts || "No fish counts listed"}</p>
+              </div>
+            </div>
+          `).join("")}
+        </section>
+      `;
+    }).join("")}
   `;
 }
+
 
 function formatDisplayDate(dateString) {
   const parts = String(dateString).split("-");
