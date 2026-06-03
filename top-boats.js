@@ -146,11 +146,10 @@ function renderTopBoats(date, rows) {
     fishCounts: row.fish_counts || ""
   };
 })
-    .sort((a, b) =>
-      b.totalFish - a.totalFish ||
-      b.anglers - a.anglers ||
-      String(a.boat).localeCompare(String(b.boat))
-    )
+.sort((a, b) =>
+  b.fpa - a.fpa ||
+  b.totalFish - a.totalFish
+)
     .slice(0, 25);
 
   if (!boats.length) {
