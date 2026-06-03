@@ -16,25 +16,24 @@ jobs:
 
       - name: Download index
         run: |
-          BASE_URL="https://script.google.com/macros/s/YOUR_WEB_APP_ID/exec"
+          BASE_URL="https://script.google.com/macros/s/AKfycbzFGkQUXf5DXP8nFl0zMMRR2NVPbtfA8wwKalECNjBn-EEH1n0ImWfVEG3yCCRntUOw/exec"
 
           curl -L "$BASE_URL?page=daily-report-index" -o daily-report-index.json
 
       - name: Download every daily report
         run: |
-          BASE_URL="https://script.google.com/macros/s/YOUR_WEB_APP_ID/exec"
+          BASE_URL="https://script.google.com/macros/s/AKfycbzFGkQUXf5DXP8nFl0zMMRR2NVPbtfA8wwKalECNjBn-EEH1n0ImWfVEG3yCCRntUOw/exec"
+
+          mkdir -p reports
 
           dates=$(jq -r '.[].date' daily-report-index.json)
 
-mkdir -p reports
-
-for DATE in $dates
-do
-  echo "Downloading $DATE"
-  curl -L "$BASE_URL?page=daily-report-date&date=$DATE" \
-    -o "reports/daily-report-$DATE.json"
-  sleep 0.2
-done
+          for DATE in $dates
+          do
+            echo "Downloading $DATE"
+            curl -L "$BASE_URL?page=daily-report-date&date=$DATE" -o "reports/daily-report-$DATE.json"
+            sleep 0.2
+          done
 
       - name: Commit all historical reports
         run: |
