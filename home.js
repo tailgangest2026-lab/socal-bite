@@ -1,25 +1,20 @@
 const HOME_URL =
-  "https://script.google.com/macros/s/AKfycbzXrNiF16iR_-dRPPAGNTLRrJjDFH_7Iol_jwLY-JbVneWLWjYz87eYGgc2SlQOJ8P4/exec?page=home";
+  "https://script.google.com/macros/s/AKfycbzXrNiF16iR_-dRPPAGNTLRrJjDFH_7Iol_jwLY-JbVneWLWjYz87eYGgc2SlQOJ8P4/exec?page=home&callback=handleHomeData";
 
 function loadHomeSummary() {
   const container = document.getElementById("homeRegionCards");
-
   if (!container) return;
 
   window.handleHomeData = function(data) {
-    const updatedElement =
-      document.getElementById("lastUpdated");
-
     console.log("Home data received:", data);
 
+    const updatedElement = document.getElementById("lastUpdated");
     if (updatedElement) {
-      updatedElement.textContent =
-        new Date().toLocaleString();
+      updatedElement.textContent = new Date().toLocaleString();
     }
 
     if (!Array.isArray(data) || !data.length) {
-      container.innerHTML =
-        '<div class="loading-card">No homepage data found.</div>';
+      container.innerHTML = '<div class="loading-card">No homepage data found.</div>';
       return;
     }
 
@@ -48,12 +43,11 @@ function loadHomeSummary() {
   };
 
   const script = document.createElement("script");
-  script.src = HOME_URL + "&callback=handleHomeData&v=" + Date.now();
+  script.src = HOME_URL + "&v=" + Date.now();
 
   script.onerror = function(e) {
-    console.error("JSONP script failed to load:", e);
-    container.innerHTML =
-      '<div class="loading-card">Unable to load homepage data.</div>';
+    console.error("JSONP script failed to load:", e, script.src);
+    container.innerHTML = '<div class="loading-card">Unable to load homepage data.</div>';
   };
 
   document.body.appendChild(script);
