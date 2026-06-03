@@ -7,7 +7,10 @@ async function loadHomeSummary() {
   }
 
   try {
-    const response = await fetch("home.json?v=" + Date.now());
+    const HOME_URL =
+  "https://script.google.com/macros/s/AKfycbzXrNiF16iR_-dRPPAGNTLRrJjDFH_7Iol_jwLY-JbVneWLWjYz87eYGgc2SlQOJ8P4/exec";
+
+const response = await fetch(HOME_URL + "&v=" + Date.now());
 
     if (!response.ok) {
       throw new Error("Could not load home.json");
