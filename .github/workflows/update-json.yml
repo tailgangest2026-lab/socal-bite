@@ -2,7 +2,7 @@ name: Update SoCal Bite JSON
 
 on:
   schedule:
-    - cron: "30 13 * * *" # 5:30 AM Pacific during standard time / 6:30 AM daylight
+    - cron: "0 */2 * * *"
   workflow_dispatch:
 
 permissions:
