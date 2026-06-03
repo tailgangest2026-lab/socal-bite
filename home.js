@@ -7,11 +7,26 @@ function loadHomeSummary() {
   if (!container) return;
 
   window.handleHomeData = function(data) {
-    console.log("Home data received:", data);
-    if (!Array.isArray(data) || !data.length) {
-      container.innerHTML = '<div class="loading-card">No homepage data found.</div>';
-      return;
-    }
+
+  const updatedElement =
+    document.getElementById("lastUpdated");
+
+  console.log("Home data received:", data);
+
+  if (updatedElement) {
+    updatedElement.textContent =
+      new Date().toLocaleString();
+  }
+
+  if (!Array.isArray(data) || !data.length) {
+    container.innerHTML =
+      '<div class="loading-card">No homepage data found.</div>';
+    return;
+  }
+
+  // rest of your code here...
+
+};
 
     container.innerHTML = data.map(region => `
       <article class="region-summary-card">
