@@ -1,18 +1,28 @@
-fetch("home.json")
-function loadHomeSummary() {
+async function loadHomeSummary() {
   const container = document.getElementById("homeRegionCards");
+
   if (!container) return;
 
-  window.handleHomeData = function(data) {
+  try {
+    const response = await fetch("home.json?v=" + Date.now());
+
+    if (!response.ok) {
+      throw new Error("Could not load home.json");
+    }
+
+    const data = await response.json();
+
     console.log("Home data received:", data);
 
     const updatedElement = document.getElementById("lastUpdated");
+
     if (updatedElement) {
       updatedElement.textContent = new Date().toLocaleString();
     }
 
     if (!Array.isArray(data) || !data.length) {
-      container.innerHTML = '<div class="loading-card">No homepage data found.</div>';
+      container.innerHTML =
+        '<div class="loading-card">No homepage data found.</div>';
       return;
     }
 
@@ -24,9 +34,20 @@ function loadHomeSummary() {
         </div>
 
         <div class="summary-stats">
-          <div><strong>${numberFormat(region.total_trips_today)}</strong><span>Trips</span></div>
-          <div><strong>${numberFormat(region.total_anglers_today)}</strong><span>Anglers</span></div>
-          <div><strong>${numberFormat(region.total_fish_today)}</strong><span>Fish</span></div>
+          <div>
+            <strong>${numberFormat(region.total_trips_today)}</strong>
+            <span>Trips</span>
+          </div>
+
+          <div>
+            <strong>${numberFormat(region.total_anglers_today)}</strong>
+            <span>Anglers</span>
+          </div>
+
+          <div>
+            <strong>${numberFormat(region.total_fish_today)}</strong>
+            <span>Fish</span>
+          </div>
         </div>
 
         <div class="summary-list">
@@ -38,17 +59,13 @@ function loadHomeSummary() {
         </div>
       </article>
     `).join("");
-  };
 
-  const script = document.createElement("script");
-  script.src = HOME_URL;
+  } catch (error) {
+    console.error("Home load error:", error);
 
-  script.onerror = function(e) {
-    console.error("JSONP script failed to load:", e, script.src);
-    container.innerHTML = '<div class="loading-card">Unable to load homepage data.</div>';
-  };
-
-  document.body.appendChild(script);
+    container.innerHTML =
+      '<div class="loading-card">Unable to load homepage data.</div>';
+  }
 }
 
 function numberFormat(value) {
