@@ -24,12 +24,11 @@ body {
   background: var(--navy);
 }
 
-.full-bg-home {
+.full-bg-home,
+.inner-page {
   min-height: 100vh;
-  background: url("assets/socal-bite-background.png") top center / cover no-repeat;
-  position: relative;
-  overflow-x: hidden;
-  padding-bottom: 60px;
+  background: url("assets/socal-bite-background.png") top center / 100% auto no-repeat fixed;
+  background-color: var(--navy);
 }
 
 /* NAV */
