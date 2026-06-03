@@ -43,7 +43,7 @@ function loadHomeSummary() {
   };
 
   const script = document.createElement("script");
-  script.src = HOME_URL + "&v=" + Date.now();
+  script.src = HOME_URL;
 
   script.onerror = function(e) {
     console.error("JSONP script failed to load:", e, script.src);
