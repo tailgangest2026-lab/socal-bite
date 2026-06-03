@@ -3,7 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Regional Reports | SoCal Bite</title>
+
+  <meta
+    name="description"
+    content="Southern California fishing reports by region, landing, boat, anglers, trip type, and fish counts."
+  />
+
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -41,22 +48,22 @@
   </section>
 
   <main class="report-page">
-    <section class="region-grid clean-region-grid">
-      <a class="region-card" href="socal.html">
-        <h2>SoCal</h2>
-        <p>View the live Southern California regional fishing report.</p>
-      </a>
+    <div class="date-controls">
+      <button id="prevDay" type="button">‹ Previous Day</button>
+      <select id="dateSelect"></select>
+      <button id="nextDay" type="button">Next Day ›</button>
+    </div>
 
-      <a class="region-card" href="san-diego.html">
-        <h2>San Diego</h2>
-        <p>View the live San Diego fishing report.</p>
-      </a>
-    </section>
+    <div id="regionReport">
+      <h2>Loading regional reports...</h2>
+    </div>
   </main>
 
   <footer>
     <p>© 2026 The SoCal Bite • Fishing Reports & Bite Updates</p>
   </footer>
+
+  <script src="regional-reports.js?v=2"></script>
 
 </body>
 </html>
