@@ -45,6 +45,34 @@ body {
   z-index: 999;
 }
 
+.page-top {
+  background: rgba(3,18,32,.94);
+  padding: 34px 5vw 26px;
+  border-bottom: 3px solid var(--teal);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.page-top h1 {
+  margin: 0;
+  font-size: 44px;
+  text-transform: uppercase;
+  text-shadow: 0 3px 10px rgba(0,0,0,.6);
+}
+
+.page-nav {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  margin-left: auto;
+}
+
 .floating-nav a,
 .page-nav a,
 .home-btn,
@@ -74,12 +102,24 @@ body {
 
 .dropdown {
   position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Invisible bridge so hover does not break */
+.dropdown::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 12px;
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
-  top: calc(100% + 8px);
+  top: 100%;
   right: 0;
   min-width: 230px;
   background: rgba(3,18,32,.98);
@@ -100,6 +140,7 @@ body {
   text-transform: none;
   letter-spacing: 0;
   font-weight: 800;
+  white-space: nowrap;
 }
 
 .dropdown-content a:hover {
@@ -107,7 +148,8 @@ body {
   color: var(--teal);
 }
 
-.dropdown:hover .dropdown-content {
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content {
   display: block;
 }
 
@@ -152,7 +194,7 @@ body {
 }
 
 .home-hero p {
-  margin: 0px auto 0;
+  margin: 0 auto;
   max-width: 760px;
   color: var(--soft);
   font-size: clamp(18px, 2vw, 26px);
@@ -175,6 +217,14 @@ body {
   text-transform: uppercase;
   text-align: center;
   text-shadow: 0 4px 14px rgba(0,0,0,.55);
+}
+
+.section-subtitle {
+  text-align: center;
+  color: var(--gold);
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 25px;
 }
 
 .region-card-grid {
@@ -266,30 +316,37 @@ body {
   color: white;
 }
 
+/* LAST UPDATED */
+.home-status {
+  width: min(1180px, 92%);
+  margin: 20px auto 40px;
+}
+
+.status-card {
+  background: rgba(6,25,42,.84);
+  border: 1px solid rgba(25,194,209,.45);
+  border-radius: 18px;
+  padding: 24px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0,0,0,.45);
+}
+
+.status-card h3 {
+  margin: 0 0 10px;
+  color: var(--teal);
+  text-transform: uppercase;
+}
+
+.updated-big {
+  color: var(--gold);
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
 /* INNER PAGES */
 .inner-page {
   min-height: 100vh;
   background: url("assets/socal-bite-background.png") top center / cover fixed no-repeat;
-}
-
-.page-top {
-  background: rgba(3,18,32,.94);
-  padding: 34px 5vw 26px;
-  border-bottom: 3px solid var(--teal);
-}
-
-.page-top h1 {
-  margin: 0 0 22px;
-  font-size: 44px;
-  text-transform: uppercase;
-  text-shadow: 0 3px 10px rgba(0,0,0,.6);
-}
-
-.page-nav {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-  align-items: right;
 }
 
 /* DAILY REPORT / CARDS */
@@ -317,6 +374,11 @@ body {
   font-weight: 800;
 }
 
+.date-controls button:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+}
+
 .region-section,
 .landing-card,
 .rating-card,
@@ -335,6 +397,11 @@ body {
 .region-card h2 {
   color: var(--teal);
   text-transform: uppercase;
+}
+
+.daily-landing-summary {
+  color: var(--gold);
+  font-weight: 900;
 }
 
 .summary-row {
@@ -425,6 +492,20 @@ footer {
     margin-bottom: 20px;
   }
 
+  .page-top {
+    display: block;
+  }
+
+  .page-top h1 {
+    font-size: 34px;
+    margin-bottom: 20px;
+  }
+
+  .page-nav {
+    justify-content: center;
+    margin-left: 0;
+  }
+
   .floating-nav a,
   .page-nav a,
   .home-btn,
@@ -461,43 +542,7 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .page-top h1 {
-    font-size: 34px;
-  }
-
   .boat-row {
     grid-template-columns: 1fr;
   }
-}
-.section-subtitle {
-  text-align: center;
-  color: var(--gold); /* change to var(--teal) if you prefer */
-  font-size: 1rem;
-  font-weight: 700;
-  margin: 0 0 25px;
-}
-.home-status {
-  width: min(1180px, 92%);
-  margin: 20px auto 40px;
-}
-
-.status-card {
-  background: rgba(6,25,42,.84);
-  border: 1px solid rgba(25,194,209,.45);
-  border-radius: 18px;
-  padding: 24px;
-  text-align: center;
-  box-shadow: 0 15px 40px rgba(0,0,0,.45);
-}
-
-.status-card h3 {
-  margin: 0 0 10px;
-  color: var(--teal);
-  text-transform: uppercase;
-}
-
-.updated-big {
-  color: var(--gold);
-  font-size: 1.5rem;
-  font-weight: 900;
 }
