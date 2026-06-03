@@ -289,7 +289,7 @@ body {
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: right;
 }
 
 /* DAILY REPORT / CARDS */
