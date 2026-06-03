@@ -1,5 +1,4 @@
-const HOME_URL =
-  "https://script.google.com/macros/s/AKfycbzFGkQUXf5DXP8nFl0zMMRR2NVPbtfA8wwKalECNjBn-EEH1n0ImWfVEG3yCCRntUOw/exec";
+fetch("home.json")
 function loadHomeSummary() {
   const container = document.getElementById("homeRegionCards");
   if (!container) return;
