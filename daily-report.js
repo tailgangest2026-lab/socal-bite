@@ -1,5 +1,5 @@
-const DAILY_BASE_URL =
-  "https://script.google.com/macros/s/AKfycbzFGkQUXf5DXP8nFl0zMMRR2NVPbtfA8wwKalECNjBn-EEH1n0ImWfVEG3yCCRntUOw/exec";
+fetch("daily-report-index.json")
+fetch(`daily-report-${date}.json`)
 
 let dailyIndex = [];
 let currentDateIndex = 0;
