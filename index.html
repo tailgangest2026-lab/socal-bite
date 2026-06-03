@@ -18,24 +18,26 @@
 
   <main class="full-bg-home">
 
-<nav class="floating-nav">
-  <a href="index.html">Home</a>
+    <nav class="floating-nav">
+      <a href="index.html">Home</a>
 
-  <div class="dropdown">
-    <button class="dropbtn">Reports ▼</button>
+      <div class="dropdown">
+        <button class="dropbtn">Reports ▼</button>
 
-    <div class="dropdown-content">
-      <a href="daily-report.html">Daily Report</a>
-      <a href="top-boats.html">Top Boats</a>
-      <a href="top-species.html">Top Species</a>
-      <a href="regional-reports.html">Regional Reports</a>
-      <a href="boat-ratings.html">Boat Ratings</a>
-    </div>
-  </div>
-  <a href="landings.html">Landings</a>
-  <a href="about.html">About</a>
-</nav>
+        <div class="dropdown-content">
+          <a href="daily-report.html">Daily Report</a>
+          <a href="top-boats.html">Top Boats</a>
+          <a href="top-species.html">Top Species</a>
+          <a href="regional-reports.html">Regional Reports</a>
+          <a href="boat-ratings.html">Boat Ratings</a>
+          <a href="landings.html">Landings</a>
+        </div>
+      </div>
 
+      <a href="about.html">About</a>
+    </nav>
+
+    <div class="social-links">
       <a href="https://www.instagram.com/the_socal_bite/" target="_blank">
         <img src="assets/instagram-icon.png" class="social-logo" alt="Instagram">
       </a>
@@ -43,127 +45,23 @@
       <a href="https://www.tiktok.com/@the_socal_bite" target="_blank">
         <img src="assets/tiktok-icon.png" class="social-logo" alt="TikTok">
       </a>
-    </nav>
+    </div>
 
-    <section class="live-dashboard">
-      <div class="dash-card">
-        <h2>Today's Top Boats By Region</h2>
-        <div id="topBoats">Loading...</div>
-      </div>
+    <section class="home-hero">
+      <h1>SoCal Bite</h1>
+      <p>Southern California fishing reports, boat ratings, landing data, and bite trends.</p>
+    </section>
 
-      <div class="dash-card">
-        <h2>Today's Top Species By Region</h2>
-        <div id="topSpecies">Loading...</div>
-      </div>
-
-      <div class="dash-card">
-        <h2>Last Updated</h2>
-        <div id="lastUpdated" class="updated-big">Loading...</div>
+    <section class="home-summary">
+      <h2>Today’s Bite by Region</h2>
+      <div id="homeRegionCards" class="region-card-grid">
+        <div class="loading-card">Loading regional summary...</div>
       </div>
     </section>
 
   </main>
-<script src="report-data.js"></script>
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  getSoCalBiteData()
-    .then(function (data) {
-      const latestDate = data.latestDate;
-      const latest = data.reportsByDate[latestDate];
-
-      const regions = latest.regions || [];
-
-      const topBoatsBox = document.getElementById("topBoats");
-      const topSpeciesBox = document.getElementById("topSpecies");
-      const lastUpdatedBox = document.getElementById("lastUpdated");
-
-      topBoatsBox.innerHTML = regions.map(function (region) {
-        let boats = [];
-
-        region.landings.forEach(function (landing) {
-          landing.boats.forEach(function (boat) {
-boats.push({
-  name: boat.boat,
-  count: boat.totalFish,
-  anglers: boat.anglers,
-  fpa: boat.anglers > 0 ? boat.totalFish / boat.anglers : 0
-});
-          });
-        });
-
-        boats.sort(function (a, b) {
-          return b.fpa - a.fpa;
-        });
-
-        return `
-          <div class="region-dash-block">
-            <h3>${region.region}</h3>
-            ${boats.slice(0, 5).map(function (boat, index) {
-              return `
-                <div class="dash-row">
-                  <span>${index + 1}. ${boat.name}</span>
-                  <span>${boat.count.toLocaleString()} fish / ${boat.fpa.toFixed(1)} FPA</span>
-                </div>
-              `;
-            }).join("")}
-          </div>
-        `;
-      }).join("");
-
-      topSpeciesBox.innerHTML = regions.map(function (region) {
-        let speciesTotals = {};
-
-        region.landings.forEach(function (landing) {
-          landing.boats.forEach(function (boat) {
-            boat.fish.forEach(function (fish) {
-              if (!speciesTotals[fish.fish]) {
-                speciesTotals[fish.fish] = 0;
-              }
-
-              speciesTotals[fish.fish] += fish.count;
-            });
-          });
-        });
-
-        const species = Object.keys(speciesTotals)
-          .map(function (fishName) {
-            return {
-              name: fishName,
-              count: speciesTotals[fishName]
-            };
-          })
-          .sort(function (a, b) {
-            return b.count - a.count;
-          });
-
-        return `
-          <div class="region-dash-block">
-            <h3>${region.region}</h3>
-            ${species.slice(0, 5).map(function (fish, index) {
-              return `
-                <div class="dash-row">
-                  <span>${index + 1}. ${fish.name}</span>
-                  <span>${fish.count.toLocaleString()}</span>
-                </div>
-              `;
-            }).join("")}
-          </div>
-        `;
-      }).join("");
-
-      lastUpdatedBox.textContent = data.updatedAt || "Not available";
-    })
-    .catch(function (error) {
-      console.error("Dashboard load error:", error);
-
-      document.getElementById("topBoats").innerHTML = "Unable to load boat data";
-      document.getElementById("topSpecies").innerHTML = "Unable to load species data";
-      document.getElementById("lastUpdated").textContent = "Unable to load";
-    });
-});
-</script>
-  
+  <script src="report-data.js"></script>
 
 </body>
 </html>
