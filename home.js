@@ -30,7 +30,6 @@ async function loadHomeSummary() {
       <article class="region-summary-card">
         <div class="region-card-header">
           <h3>${region.region || "Unknown Region"}</h3>
-          <span class="region-pill">Today</span>
         </div>
 
         <div class="summary-stats">
