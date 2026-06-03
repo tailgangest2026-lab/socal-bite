@@ -131,15 +131,21 @@ function renderTopBoats(date, rows) {
 
   const boats = rows
     .filter(row => row.boat)
-    .map(row => ({
-      boat: row.boat || "Unknown Boat",
-      landing: row.landing || "Unknown Landing",
-      region: row.region || "Unknown Region",
-      tripType: row.trip_type || "",
-      anglers: Number(row.anglers || 0),
-      totalFish: Number(row.total_fish || 0),
-      fishCounts: row.fish_counts || ""
-    }))
+.map(row => {
+  const anglers = Number(row.anglers || 0);
+  const totalFish = Number(row.total_fish || 0);
+
+  return {
+    boat: row.boat || "Unknown Boat",
+    landing: row.landing || "Unknown Landing",
+    region: row.region || "Unknown Region",
+    tripType: row.trip_type || "",
+    anglers,
+    totalFish,
+    fpa: anglers > 0 ? totalFish / anglers : 0,
+    fishCounts: row.fish_counts || ""
+  };
+})
     .sort((a, b) =>
       b.totalFish - a.totalFish ||
       b.anglers - a.anglers ||
