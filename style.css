@@ -62,7 +62,7 @@ body {
 .home-hero h1 {
   margin: 0 0 8px;
   color: white;
-  font-size: clamp(48px, 6.2vw, 72px);
+  font-size: clamp(52px, 6.2vw, 80px);
   font-weight: 900;
   line-height: .95;
   text-transform: uppercase;
@@ -81,16 +81,16 @@ body {
 
 /* NAV */
 .floating-nav {
-  position: relative;
-  z-index: 30;
-  width: fit-content;
-  margin: 18px auto 28px;
+  position: absolute;
+  top: 210px;      /* adjust up/down */
+  right: 50px;     /* distance from right edge */
 
   display: flex;
-  justify-content: right;
+  justify-content: flex-end;
   align-items: center;
-  flex-wrap: nowrap;
-  gap: 14px;
+  gap: 10px;
+
+  z-index: 30;
 }
 
 .page-nav {
@@ -225,7 +225,7 @@ body {
 /* HOME SUMMARY */
 .home-summary {
   width: min(1300px, 92%);
-  margin: 0 auto;
+  margin: 40px auto;
   position: relative;
   z-index: 25;
 }
