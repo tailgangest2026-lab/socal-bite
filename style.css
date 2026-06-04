@@ -18,7 +18,10 @@ body {
   background: var(--navy);
 }
 
-/* HOME PAGE */
+/* =========================
+   HOME PAGE
+========================= */
+
 .home-page {
   min-height: 100vh;
 }
@@ -32,8 +35,8 @@ body {
   overflow-x: hidden;
 }
 
-/* SOCIAL ICONS */
-.social-links {
+/* HOME SOCIAL ICONS */
+.home-page .social-links {
   position: absolute;
   top: 36px;
   right: 46px;
@@ -42,7 +45,7 @@ body {
   z-index: 9999;
 }
 
-.social-links a {
+.home-page .social-links a {
   width: 58px;
   height: 58px;
   border-radius: 999px;
@@ -55,15 +58,39 @@ body {
   transition: .2s ease;
 }
 
-.social-links a:hover {
+.home-page .social-links a:hover {
   transform: translateY(-2px) scale(1.05);
   box-shadow: 0 0 25px rgba(25, 194, 209, .65);
 }
 
+/* INNER PAGE SOCIAL ICONS */
+.inner-page .social-links {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  display: flex;
+  gap: 16px;
+  z-index: 9999;
+}
+
+.inner-page .social-links a {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  width: auto;
+  height: auto;
+  padding: 0;
+}
+
 .social-logo {
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
   object-fit: contain;
+  transition: .2s ease;
+}
+
+.social-logo:hover {
+  transform: scale(1.15);
 }
 
 /* HERO */
@@ -356,7 +383,6 @@ body {
 .summary-item .fa-anchor,
 .summary-item .fa-fish {
   color: var(--teal);
-  filter: drop-shadow(0 0 6px rgba(25, 194, 209, .5));
 }
 
 .summary-item .fa-crown {
@@ -398,11 +424,15 @@ body {
   font-weight: 900;
 }
 
-/* INNER PAGES */
+/* =========================
+   INNER PAGES
+========================= */
+
 .inner-page {
   min-height: 100vh;
   background: url("assets/socal-bite-background.png") top center / cover fixed no-repeat;
   background-color: var(--navy);
+  color: var(--white);
 }
 
 .page-top {
@@ -414,6 +444,7 @@ body {
   align-items: center;
   gap: 24px;
   flex-wrap: wrap;
+  position: relative;
 }
 
 .page-top h1 {
@@ -422,10 +453,19 @@ body {
   text-transform: uppercase;
   letter-spacing: 1px;
   text-shadow: 0 3px 10px rgba(0, 0, 0, .6);
+  color: var(--teal);
 }
 
-/* CONTENT CARDS */
-.report-page {
+.inner-page main,
+.inner-page .report-page,
+.inner-page .page-content {
+  width: min(1200px, 92%);
+  margin: 0 auto;
+}
+
+/* CONTENT */
+.report-page,
+.page-content {
   padding: 35px 5vw 60px;
   background: transparent;
   min-height: 70vh;
@@ -454,11 +494,15 @@ body {
   cursor: not-allowed;
 }
 
+/* UNIVERSAL CARDS */
 .region-section,
 .landing-card,
 .rating-card,
 .region-card,
-.news-card {
+.news-card,
+.chart-card,
+.page-card,
+.content-card {
   background: rgba(6, 25, 42, .88);
   border: 1px solid rgba(25, 194, 209, .45);
   border-radius: 18px;
@@ -469,12 +513,43 @@ body {
 }
 
 .region-section h2,
+.landing-card h2,
 .landing-card h3,
+.rating-card h2,
 .rating-card h3,
 .region-card h2,
-.news-card h2 {
+.region-card h3,
+.news-card h2,
+.news-card h3,
+.chart-card h2,
+.chart-card h3,
+.page-card h2,
+.page-card h3,
+.content-card h2,
+.content-card h3 {
   color: var(--teal);
   text-transform: uppercase;
+}
+
+.region-section p,
+.landing-card p,
+.rating-card p,
+.region-card p,
+.news-card p,
+.chart-card p,
+.page-card p,
+.content-card p,
+.inner-page p,
+.inner-page li {
+  color: var(--soft);
+}
+
+.inner-page a {
+  color: var(--white);
+}
+
+.inner-page a:hover {
+  color: var(--teal);
 }
 
 .daily-landing-summary,
@@ -520,13 +595,14 @@ body {
 
 .region-card:hover,
 .rating-card:hover,
-.news-card:hover {
+.news-card:hover,
+.landing-card:hover {
   transform: translateY(-4px);
   border-color: var(--teal);
   box-shadow: 0 20px 45px rgba(0, 0, 0, .45);
 }
 
-/* NEWS PAGE FIX */
+/* NEWS PAGE READABILITY FIX */
 .news-list {
   display: grid;
   gap: 22px;
@@ -555,6 +631,9 @@ body {
 }
 
 .news-meta {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
   color: var(--gold);
   font-size: 14px;
   font-weight: 900;
@@ -562,7 +641,34 @@ body {
   margin-bottom: 10px;
 }
 
-/* MOBILE */
+/* CHARTS */
+.chart-card canvas {
+  width: 100% !important;
+  max-height: 420px;
+}
+
+/* FOOTER */
+footer {
+  padding: 22px;
+  text-align: center;
+  color: var(--soft);
+  background: var(--dark);
+}
+
+/* HIDE OLD STUFF */
+.site-header,
+.page-hero,
+.report-frame-wrap,
+.report-frame,
+.home-buttons,
+.live-dashboard {
+  display: none !important;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
 @media (max-width: 1200px) {
   .region-card-grid {
     grid-template-columns: 1fr;
@@ -570,7 +676,7 @@ body {
     margin: 0 auto;
   }
 
-  .social-links a {
+  .home-page .social-links a {
     width: 52px;
     height: 52px;
   }
@@ -582,13 +688,14 @@ body {
     background-attachment: scroll;
   }
 
-  .social-links {
+  .home-page .social-links,
+  .inner-page .social-links {
     top: 18px;
     right: 18px;
     gap: 10px;
   }
 
-  .social-links a {
+  .home-page .social-links a {
     width: 42px;
     height: 42px;
   }
@@ -639,7 +746,7 @@ body {
 
   .page-top {
     display: block;
-    padding: 26px 18px;
+    padding: 60px 18px 26px;
     text-align: center;
   }
 
@@ -661,81 +768,4 @@ body {
   .boat-row {
     grid-template-columns: 1fr;
   }
-}
-/* INNER PAGE CONTENT FIX */
-.inner-page {
-  color: var(--white);
-}
-
-.inner-page main,
-.inner-page .report-page,
-.inner-page .page-content {
-  width: min(1200px, 92%);
-  margin: 0 auto;
-}
-
-.inner-page p,
-.inner-page li,
-.inner-page span,
-.inner-page div {
-  color: var(--soft);
-}
-
-.inner-page h1,
-.inner-page h2,
-.inner-page h3 {
-  color: var(--teal);
-}
-
-.inner-page a {
-  color: var(--white);
-}
-
-.inner-page a:hover {
-  color: var(--teal);
-}
-
-/* generic cards used on other pages */
-.region-card,
-.rating-card,
-.landing-card,
-.news-card,
-.chart-card,
-.page-card,
-.content-card {
-  background: rgba(6, 25, 42, .88);
-  border: 1px solid rgba(25, 194, 209, .45);
-  border-radius: 18px;
-  padding: 22px;
-  margin-bottom: 22px;
-  box-shadow: 0 15px 35px rgba(0,0,0,.35);
-  color: var(--white);
-}
-
-.region-card p,
-.rating-card p,
-.landing-card p,
-.news-card p,
-.chart-card p,
-.page-card p,
-.content-card p {
-  color: var(--soft);
-}
-
-.region-card h2,
-.region-card h3,
-.rating-card h2,
-.rating-card h3,
-.landing-card h2,
-.landing-card h3,
-.news-card h2,
-.news-card h3,
-.chart-card h2,
-.chart-card h3,
-.page-card h2,
-.page-card h3,
-.content-card h2,
-.content-card h3 {
-  color: var(--teal);
-  text-transform: uppercase;
 }
