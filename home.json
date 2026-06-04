@@ -1,1 +1,80 @@
-<!DOCTYPE html><html><head><link rel="shortcut icon" href="//ssl.gstatic.com/docs/script/images/favicon.ico"><title>Error</title><style type="text/css" nonce="2RNipdsNASQLU5PtjCtI2w">body {background-color: #fff; margin: 0; padding: 0;}.errorMessage {font-family: Arial,sans-serif; font-size: 12pt; font-weight: bold; line-height: 150%; padding-top: 25px;}</style></head><body style="margin:20px"><div><img alt="Google Apps Script" src="//ssl.gstatic.com/docs/script/images/logo.png"></div><div style="text-align:center;font-family:monospace;margin:50px auto 0;max-width:600px">SyntaxError: Identifier &#39;JSON_FOLDER_ID&#39; has already been declared (line 1, file &quot;News Export&quot;)</div></body></html>
+[
+  {
+    "region": "Los Angeles",
+    "total_trips_today": 5,
+    "total_anglers_today": 132,
+    "total_fish_today": 735,
+    "top_boat_today": "New Del Mar",
+    "top_landing_today": "Marina Del Rey Sportfishing",
+    "top_species_today": "Rockfish",
+    "best_boat_last_30_days": "Victory",
+    "best_boat_last_90_days": "Eldorado",
+    "most_caught_species_last_30_days": "Rockfish",
+    "most_caught_species_last_90_days": "Rockfish"
+  },
+  {
+    "region": "Orange County",
+    "total_trips_today": 5,
+    "total_anglers_today": 129,
+    "total_fish_today": 754,
+    "top_boat_today": "Thunderbird",
+    "top_landing_today": "Newport Landing",
+    "top_species_today": "Rockfish",
+    "best_boat_last_30_days": "Blackfish",
+    "best_boat_last_90_days": "Fury",
+    "most_caught_species_last_30_days": "Rockfish",
+    "most_caught_species_last_90_days": "Rockfish"
+  },
+  {
+    "region": "San Diego",
+    "total_trips_today": 11,
+    "total_anglers_today": 238,
+    "total_fish_today": 1374,
+    "top_boat_today": "Premier",
+    "top_landing_today": "Seaforth Sportfishing",
+    "top_species_today": "Calico Bass Released",
+    "best_boat_last_30_days": "Chubasco II",
+    "best_boat_last_90_days": "Horizon",
+    "most_caught_species_last_30_days": "Rockfish",
+    "most_caught_species_last_90_days": "Rockfish"
+  },
+  {
+    "region": "Santa Barbara",
+    "total_trips_today": 1,
+    "total_anglers_today": 22,
+    "total_fish_today": 191,
+    "top_boat_today": "Stardust",
+    "top_landing_today": "Santa Barbara Landing",
+    "top_species_today": "Rockfish",
+    "best_boat_last_30_days": "Coral Sea",
+    "best_boat_last_90_days": "Coral Sea",
+    "most_caught_species_last_30_days": "Rockfish",
+    "most_caught_species_last_90_days": "Rockfish"
+  },
+  {
+    "region": "SoCal",
+    "total_trips_today": 2,
+    "total_anglers_today": 54,
+    "total_fish_today": 604,
+    "top_boat_today": "Enterprise",
+    "top_landing_today": "Pierpoint Landing",
+    "top_species_today": "Rockfish",
+    "best_boat_last_30_days": "Enterprise",
+    "best_boat_last_90_days": "Enterprise",
+    "most_caught_species_last_30_days": "Rockfish",
+    "most_caught_species_last_90_days": "Rockfish"
+  },
+  {
+    "region": "Ventura",
+    "total_trips_today": 5,
+    "total_anglers_today": 67,
+    "total_fish_today": 319,
+    "top_boat_today": "Mirage",
+    "top_landing_today": "Channel Islands Sportfishing",
+    "top_species_today": "Rockfish",
+    "best_boat_last_30_days": "Indicator",
+    "best_boat_last_90_days": "Ranger 85",
+    "most_caught_species_last_30_days": "Rockfish",
+    "most_caught_species_last_90_days": "Rockfish"
+  }
+]
