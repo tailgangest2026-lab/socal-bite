@@ -22,7 +22,7 @@ async function loadFishingNews() {
   const container = document.getElementById('newsList');
 
   try {
-    const res = await fetch('./news.json?v=' + Date.now());
+    const res = await fetch('./news.json)
     const news = await res.json();
 
     container.innerHTML = news.map(item => {
