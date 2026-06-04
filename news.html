@@ -17,51 +17,60 @@
     </section>
   </main>
 
- <script>
-async function loadFishingNews() {
-  const container = document.getElementById('newsList');
+  <script>
+    async function loadFishingNews() {
+      const container = document.getElementById('newsList');
 
-  try {
-    const res = await fetch('./news.json)
-    const news = await res.json();
+      try {
+        const response = await fetch('/news.json?v=' + Date.now());
 
-    container.innerHTML = news.map(item => {
-      const headline = item.headline || item.title || 'No headline';
-      const source = item.source || 'Fishing News';
-      const link = item.link || item.url || '#';
-      const rawDate = item.date || item.pubDate || item.published || '';
+        if (!response.ok) {
+          throw new Error('Could not load news.json. Status: ' + response.status);
+        }
 
-      const date = rawDate
-        ? new Date(rawDate).toLocaleDateString('en-US', {
-            month: 'short',
-            day: 'numeric',
-            year: 'numeric'
-          })
-        : '';
+        const news = await response.json();
 
-      return `
-        <article class="news-card">
-          <h2>
-            <a href="${link}" target="_blank" rel="noopener">
-              ${headline}
-            </a>
-          </h2>
+        if (!Array.isArray(news) || news.length === 0) {
+          container.innerHTML = '<p>No fishing news available right now.</p>';
+          return;
+        }
 
-          <div class="news-meta">
-            <span>${source}</span>
-            ${date ? `<span>${date}</span>` : ''}
-          </div>
-        </article>
-      `;
-    }).join('');
+        container.innerHTML = news.map(item => {
+          const headline = item.headline || 'No headline';
+          const source = item.source || 'Fishing News';
+          const link = item.link || '#';
 
-  } catch (err) {
-    console.error(err);
-    container.innerHTML = '<p>Fishing news could not be loaded.</p>';
-  }
-}
+          const date = item.date
+            ? new Date(item.date).toLocaleDateString('en-US', {
+                month: 'short',
+                day: 'numeric',
+                year: 'numeric'
+              })
+            : '';
 
-loadFishingNews();
-</script>
+          return `
+            <article class="news-card">
+              <h2>
+                <a href="${link}" target="_blank" rel="noopener noreferrer">
+                  ${headline}
+                </a>
+              </h2>
+
+              <div class="news-meta">
+                <span>${source}</span>
+                ${date ? `<span>${date}</span>` : ''}
+              </div>
+            </article>
+          `;
+        }).join('');
+
+      } catch (error) {
+        console.error('Fishing news error:', error);
+        container.innerHTML = '<p>Fishing news could not be loaded.</p>';
+      }
+    }
+
+    loadFishingNews();
+  </script>
 </body>
 </html>
