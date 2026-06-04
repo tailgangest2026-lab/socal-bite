@@ -32,10 +32,23 @@ jobs:
           TWO_DAYS=$(TZ="America/Los_Angeles" date -d "2 days ago" +"%Y-%m-%d")
           THREE_DAYS=$(TZ="America/Los_Angeles" date -d "3 days ago" +"%Y-%m-%d")
 
-          for DATE in $TODAY $YESTERDAY $TWO_DAYS $THREE_DAYS
-          do
-            curl -L "$BASE_URL?page=daily-report-date&date=$DATE" -o "reports/daily-report-$DATE.json"
-          done
+for DATE in $TODAY $YESTERDAY $TWO_DAYS $THREE_DAYS
+do
+  TEMP_FILE="tmp-daily-report-$DATE.json"
+  OUT_FILE="reports/daily-report-$DATE.json"
+
+  echo "Downloading $DATE"
+
+  curl -L "$BASE_URL?page=daily-report-date&date=$DATE" -o "$TEMP_FILE"
+
+  if jq empty "$TEMP_FILE" >/dev/null 2>&1; then
+    mv "$TEMP_FILE" "$OUT_FILE"
+    echo "Saved $OUT_FILE"
+  else
+    echo "Skipping $DATE because Apps Script did not return valid JSON"
+    rm -f "$TEMP_FILE"
+  fi
+done
 
       - name: Commit updated JSON
         run: |
