@@ -7,14 +7,64 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body>
-  <main class="news-page">
-    <h1>Fishing News</h1>
-    <p class="page-subtitle">Latest fishing headlines from trusted RSS sources.</p>
+<body class="home-page">
 
-    <section id="newsList" class="news-list">
-      <p>Loading fishing news...</p>
+  <main class="full-bg-home">
+
+    <section class="page-top">
+      <h1>Fishing News</h1>
+
+      <nav class="page-nav">
+        <a href="index.html">Home</a>
+
+        <div class="dropdown">
+          <button class="dropbtn">Reports ▼</button>
+
+          <div class="dropdown-content">
+            <a href="daily-report.html">Daily Report</a>
+            <a href="boat-ratings.html">Boat Ratings</a>
+            <a href="bite-trends.html">Bite Trends</a>
+            <a href="top-boats.html">Top Boats</a>
+            <a href="top-species.html">Top Species</a>
+            <a href="news.html">Fishing News</a>
+          </div>
+        </div>
+
+        <a href="landings.html">Landings</a>
+        <a href="about.html">About</a>
+
+        <a href="https://www.instagram.com/the_socal_bite/" target="_blank" aria-label="Instagram">
+          <img src="assets/instagram-icon.png" class="social-logo" alt="Instagram">
+        </a>
+
+        <a href="https://www.tiktok.com/@the_socal_bite" target="_blank" aria-label="TikTok">
+          <img src="assets/tiktok-icon.png" class="social-logo" alt="TikTok">
+        </a>
+      </nav>
     </section>
+
+    <main class="report-page">
+
+      <div class="region-section">
+        <h2>Latest Fishing Headlines</h2>
+        <p>
+          Fresh fishing news from trusted RSS sources. Headlines update automatically
+          and link directly to the original article.
+        </p>
+      </div>
+
+      <div class="region-section">
+        <div id="newsList" class="news-list">
+          <p>Loading fishing news...</p>
+        </div>
+      </div>
+
+    </main>
+
+    <footer>
+      <p>© 2026 The SoCal Bite • Fishing Reports & Bite Updates</p>
+    </footer>
+
   </main>
 
   <script>
@@ -22,7 +72,7 @@
       const container = document.getElementById('newsList');
 
       try {
-        const response = await fetch('/news.json?v=' + Date.now());
+        const response = await fetch('/news.json)
 
         if (!response.ok) {
           throw new Error('Could not load news.json. Status: ' + response.status);
@@ -72,5 +122,6 @@
 
     loadFishingNews();
   </script>
+
 </body>
 </html>
