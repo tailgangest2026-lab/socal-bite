@@ -24,43 +24,54 @@ body {
   background: var(--navy);
 }
 
-.full-bg-home,
-.inner-page {
+.full-bg-home {
   min-height: 100vh;
-  background: url("assets/socal-bite-background.png") top center / 100% auto no-repeat fixed;
+  background: url("assets/socal-bite-background.png") top center / cover no-repeat fixed;
   background-color: var(--navy);
+  padding: 34px 0 60px;
+  position: relative;
+}
+
+/* HOME HERO */
+.home-hero {
+  width: min(900px, 92%);
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 20;
+}
+
+.home-hero h1 {
+  margin: 0 0 6px;
+  color: white;
+  font-size: clamp(64px, 8vw, 122px);
+  line-height: .95;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 6px 20px rgba(0,0,0,.65);
+}
+
+.home-hero p {
+  margin: 0 auto;
+  max-width: 850px;
+  color: var(--soft);
+  font-size: clamp(18px, 2vw, 28px);
+  line-height: 1.25;
+  text-shadow: 0 4px 14px rgba(0,0,0,.65);
 }
 
 /* NAV */
 .floating-nav {
+  position: relative;
+  z-index: 30;
+  width: min(1000px, 92%);
+  margin: 34px auto 18px;
+
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   gap: 14px;
-
-  margin-top: 25px;
-  margin-bottom: 40px;
-
-  position: static;
-}
-
-.page-top {
-  background: rgba(3,18,32,.94);
-  padding: 34px 5vw 26px;
-  border-bottom: 3px solid var(--teal);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 24px;
-  flex-wrap: wrap;
-}
-
-.page-top h1 {
-  margin: 0;
-  font-size: 44px;
-  text-transform: uppercase;
-  text-shadow: 0 3px 10px rgba(0,0,0,.6);
 }
 
 .page-nav {
@@ -118,8 +129,9 @@ body {
 .dropdown-content {
   display: none;
   position: absolute;
-  top: 100%;
-  right: 0;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
   min-width: 230px;
   background: rgba(3,18,32,.98);
   border: 1px solid rgba(25,194,209,.7);
@@ -155,16 +167,27 @@ body {
 /* SOCIAL ICONS */
 .social-links {
   position: absolute;
-  top: 145px;
-  right: 48px;
+  top: 245px;
+  right: 16vw;
   display: flex;
   gap: 12px;
   z-index: 900;
 }
 
+.social-links a {
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  background: rgba(3,18,32,.82);
+  border: 1px solid rgba(25,194,209,.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .social-logo {
-  width: 26px;
-  height: 26px;
+  width: 24px;
+  height: 24px;
   object-fit: contain;
   transition: .2s ease;
 }
@@ -173,47 +196,30 @@ body {
   transform: scale(1.15);
 }
 
-/* HERO */
-.home-hero {
-  width: min(900px, 92%);
-  margin: 0 auto;
-  padding-top: 40px;
-  text-align: center;
-}
-
-.home-hero h1 {
-  margin: 0 0 8px;
-  font-size: clamp(60px, 8vw, 110px);
-}
-
-.home-hero p {
-  margin: 0;
-  font-size: clamp(18px, 2vw, 28px);
-}
-
 /* HOME SUMMARY */
 .home-summary {
   width: min(1180px, 92%);
-  margin: 50px auto 0;
+  margin: 12px auto 0;
   position: relative;
   z-index: 25;
 }
 
 .home-summary h2 {
-  margin: 0 0 20px;
+  margin: 0 0 10px;
   color: var(--teal);
-  font-size: clamp(26px, 3vw, 40px);
+  font-size: clamp(28px, 3vw, 44px);
   text-transform: uppercase;
   text-align: center;
   text-shadow: 0 4px 14px rgba(0,0,0,.55);
 }
 
 .section-subtitle {
+  display: block;
   text-align: center;
   color: var(--gold);
   font-size: 1rem;
-  font-weight: 700;
-  margin: 0 0 25px;
+  font-weight: 800;
+  margin: 0 0 28px;
 }
 
 .region-card-grid {
@@ -336,6 +342,27 @@ body {
 .inner-page {
   min-height: 100vh;
   background: url("assets/socal-bite-background.png") top center / cover fixed no-repeat;
+  background-color: var(--navy);
+}
+
+.page-top {
+  background: rgba(3,18,32,.88);
+  padding: 34px 5vw 26px;
+  border-bottom: 3px solid var(--teal);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.page-top h1 {
+  margin: 0;
+  font-size: clamp(34px, 4vw, 52px);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 3px 10px rgba(0,0,0,.6);
 }
 
 /* DAILY REPORT / CARDS */
@@ -551,28 +578,14 @@ footer {
   display: none !important;
 }
 
-/* TABLET FIX */
+/* TABLET */
 @media (max-width: 1200px) {
-  .floating-nav {
-    top: 25px;
-    right: 30px;
-    max-width: 58vw;
-    flex-wrap: wrap;
-  }
-
-  .home-hero {
-    width: min(720px, 70vw);
-    margin-left: 24vw;
-    padding-top: 95px;
-  }
-
-  .home-hero h1 {
-    font-size: clamp(50px, 7vw, 82px);
-  }
-
   .social-links {
-    top: 150px;
-    right: 35px;
+    position: relative;
+    top: auto;
+    right: auto;
+    justify-content: center;
+    margin: 12px auto 0;
   }
 }
 
@@ -581,32 +594,27 @@ footer {
   .full-bg-home {
     min-height: auto;
     overflow: visible;
-    padding: 18px 18px 40px;
+    padding: 24px 18px 40px;
     background-size: cover;
+    background-attachment: scroll;
+  }
+
+  .home-hero {
+    width: 100%;
+  }
+
+  .home-hero h1 {
+    font-size: clamp(44px, 14vw, 72px);
+    white-space: normal;
+  }
+
+  .home-hero p {
+    font-size: 18px;
   }
 
   .floating-nav {
-    position: relative;
-    top: auto;
-    right: auto;
-    max-width: 100%;
-    justify-content: center;
-    margin-bottom: 20px;
-    flex-wrap: wrap;
-  }
-
-  .page-top {
-    display: block;
-  }
-
-  .page-top h1 {
-    font-size: 34px;
-    margin-bottom: 20px;
-  }
-
-  .page-nav {
-    justify-content: center;
-    margin-left: 0;
+    width: 100%;
+    margin: 24px auto 20px;
   }
 
   .floating-nav a,
@@ -618,8 +626,8 @@ footer {
   }
 
   .dropdown-content {
-    right: auto;
     left: 50%;
+    right: auto;
     transform: translateX(-50%);
   }
 
@@ -628,22 +636,27 @@ footer {
     top: auto;
     right: auto;
     justify-content: center;
-    margin-bottom: 24px;
+    margin: 18px auto 24px;
   }
 
-  .home-hero {
-    width: 100%;
-    margin: 0 auto;
-    padding-top: 40px;
+  .social-links a {
+    width: 46px;
+    height: 46px;
   }
 
-  .home-hero h1 {
-    font-size: clamp(42px, 14vw, 72px);
-    white-space: normal;
+  .page-top {
+    display: block;
+    padding: 26px 18px;
+    text-align: center;
   }
 
-  .home-hero p {
-    font-size: 18px;
+  .page-top h1 {
+    margin-bottom: 20px;
+  }
+
+  .page-nav {
+    justify-content: center;
+    margin-left: 0;
   }
 
   .region-card-grid,
