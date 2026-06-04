@@ -34,11 +34,11 @@ body {
 /* NAV */
 .floating-nav {
   position: absolute;
-  top: 80px;
+  top: 92px;
   right: 42px;
   display: flex;
   gap: 14px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: flex-end;
   align-items: center;
   z-index: 999;
@@ -48,7 +48,6 @@ body {
   background: rgba(3,18,32,.94);
   padding: 34px 5vw 26px;
   border-bottom: 3px solid var(--teal);
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -89,6 +88,7 @@ body {
   font-size: 14px;
   font-family: inherit;
   line-height: 1;
+  white-space: nowrap;
 }
 
 .floating-nav a:hover,
@@ -105,7 +105,6 @@ body {
   align-items: center;
 }
 
-/* Invisible bridge so hover does not break */
 .dropdown::after {
   content: "";
   position: absolute;
@@ -175,9 +174,10 @@ body {
 
 /* HERO */
 .home-hero {
-  width: min(1000px, 92%);
-  margin: 0 auto;
-  padding-top: 36px;
+  width: min(760px, 52vw);
+  margin-left: 28vw;
+  margin-right: auto;
+  padding-top: 38px;
   text-align: center;
   position: relative;
   z-index: 20;
@@ -186,18 +186,19 @@ body {
 .home-hero h1 {
   margin: 0;
   color: white;
-  font-size: clamp(52px, 8vw, 110px);
+  font-size: clamp(58px, 6vw, 96px);
   text-transform: uppercase;
   letter-spacing: 2px;
   text-shadow: 0 6px 20px rgba(0,0,0,.65);
+  white-space: nowrap;
 }
 
 .home-hero p {
-  margin: 0 auto;
+  margin: 12px auto 0;
   max-width: 760px;
   color: var(--soft);
   font-size: clamp(18px, 2vw, 26px);
-  line-height: 1.4;
+  line-height: 1.35;
   text-shadow: 0 4px 14px rgba(0,0,0,.65);
 }
 
@@ -457,94 +458,7 @@ body {
   margin-bottom: 0;
 }
 
-/* FOOTER */
-footer {
-  padding: 22px;
-  text-align: center;
-  color: var(--soft);
-  background: var(--dark);
-}
-
-/* HIDE OLD STUFF */
-.site-header,
-.page-hero,
-.report-frame-wrap,
-.report-frame,
-.home-buttons,
-.live-dashboard {
-  display: none !important;
-}
-
-/* MOBILE */
-@media (max-width: 900px) {
-  .full-bg-home {
-    min-height: auto;
-    overflow: visible;
-    padding: 18px 18px 40px;
-  }
-
-  .floating-nav {
-    position: relative;
-    top: auto;
-    right: auto;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
-
-  .page-top {
-    display: block;
-  }
-
-  .page-top h1 {
-    font-size: 34px;
-    margin-bottom: 20px;
-  }
-
-  .page-nav {
-    justify-content: center;
-    margin-left: 0;
-  }
-
-  .floating-nav a,
-  .page-nav a,
-  .home-btn,
-  .dropbtn {
-    font-size: 12px;
-    padding: 10px 12px;
-  }
-
-  .dropdown-content {
-    right: auto;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .social-links {
-    position: relative;
-    top: auto;
-    right: auto;
-    justify-content: center;
-    margin-bottom: 24px;
-  }
-
-  .home-hero {
-    padding-top: 60px;
-  }
-
-  .region-card-grid,
-  .region-grid,
-  .ratings-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .summary-stats {
-    grid-template-columns: 1fr;
-  }
-
-  .boat-row {
-    grid-template-columns: 1fr;
-  }
-}
+/* CHARTS */
 .chart-card {
   background: rgba(6,25,42,.84);
   border: 1px solid rgba(25,194,209,.45);
@@ -579,6 +493,7 @@ footer {
   width: 100% !important;
   max-height: 420px;
 }
+
 /* FISHING NEWS PAGE */
 .news-list {
   display: grid;
@@ -629,8 +544,133 @@ footer {
   color: var(--soft);
 }
 
-/* MOBILE NEWS */
+/* FOOTER */
+footer {
+  padding: 22px;
+  text-align: center;
+  color: var(--soft);
+  background: var(--dark);
+}
+
+/* HIDE OLD STUFF */
+.site-header,
+.page-hero,
+.report-frame-wrap,
+.report-frame,
+.home-buttons,
+.live-dashboard {
+  display: none !important;
+}
+
+/* TABLET FIX */
+@media (max-width: 1200px) {
+  .floating-nav {
+    top: 25px;
+    right: 30px;
+    max-width: 58vw;
+    flex-wrap: wrap;
+  }
+
+  .home-hero {
+    width: min(720px, 70vw);
+    margin-left: 24vw;
+    padding-top: 95px;
+  }
+
+  .home-hero h1 {
+    font-size: clamp(50px, 7vw, 82px);
+  }
+
+  .social-links {
+    top: 150px;
+    right: 35px;
+  }
+}
+
+/* MOBILE */
 @media (max-width: 900px) {
+  .full-bg-home {
+    min-height: auto;
+    overflow: visible;
+    padding: 18px 18px 40px;
+    background-size: cover;
+  }
+
+  .floating-nav {
+    position: relative;
+    top: auto;
+    right: auto;
+    max-width: 100%;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  .page-top {
+    display: block;
+  }
+
+  .page-top h1 {
+    font-size: 34px;
+    margin-bottom: 20px;
+  }
+
+  .page-nav {
+    justify-content: center;
+    margin-left: 0;
+  }
+
+  .floating-nav a,
+  .page-nav a,
+  .home-btn,
+  .dropbtn {
+    font-size: 12px;
+    padding: 10px 12px;
+  }
+
+  .dropdown-content {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .social-links {
+    position: relative;
+    top: auto;
+    right: auto;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+
+  .home-hero {
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 40px;
+  }
+
+  .home-hero h1 {
+    font-size: clamp(42px, 14vw, 72px);
+    white-space: normal;
+  }
+
+  .home-hero p {
+    font-size: 18px;
+  }
+
+  .region-card-grid,
+  .region-grid,
+  .ratings-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .boat-row {
+    grid-template-columns: 1fr;
+  }
+
   .news-card h2 {
     font-size: 18px;
   }
