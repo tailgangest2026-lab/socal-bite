@@ -1,5 +1,7 @@
 let dailyIndex = [];
 let trendRows = [];
+let allTrendRows = [];
+let speciesYoYChart = null;
 
 document.addEventListener("DOMContentLoaded", loadBiteTrends);
 
@@ -22,16 +24,55 @@ async function loadBiteTrends() {
       return;
     }
 
+    await loadAllTrendRows();
     await loadTrendWindow();
 
     setupControls();
     populateRegionFilter();
+    populateSpeciesTrendSelect();
+
+    renderSpeciesYoYChart();
     renderBiteTrends();
 
   } catch (error) {
     console.error("Bite trends load error:", error);
     container.innerHTML = "<h2>Could not load bite trends.</h2>";
   }
+}
+
+async function loadAllTrendRows() {
+  const allRows = [];
+
+  for (const item of dailyIndex) {
+    try {
+      const filePath =
+        item.file || `reports/daily-report-${item.date}.json`;
+
+      const response =
+        await fetch(filePath + "?v=" + Date.now());
+
+      if (!response.ok) {
+        console.warn("Missing historical trend file:", filePath);
+        continue;
+      }
+
+      const rows = await response.json();
+
+      if (Array.isArray(rows)) {
+        rows.forEach(row => {
+          allRows.push({
+            ...row,
+            report_date: item.date
+          });
+        });
+      }
+
+    } catch (error) {
+      console.warn("Could not load historical trend date:", item.date, error);
+    }
+  }
+
+  allTrendRows = allRows;
 }
 
 async function loadTrendWindow() {
@@ -75,6 +116,7 @@ async function loadTrendWindow() {
 function setupControls() {
   const windowSelect = document.getElementById("trendWindow");
   const regionSelect = document.getElementById("regionFilter");
+  const speciesSelect = document.getElementById("speciesTrendSelect");
 
   windowSelect.onchange = async () => {
     document.getElementById("biteTrendsPage").innerHTML =
@@ -86,8 +128,15 @@ function setupControls() {
   };
 
   regionSelect.onchange = () => {
+    renderSpeciesYoYChart();
     renderBiteTrends();
   };
+
+  if (speciesSelect) {
+    speciesSelect.onchange = () => {
+      renderSpeciesYoYChart();
+    };
+  }
 }
 
 function populateRegionFilter() {
@@ -110,6 +159,188 @@ function populateRegionFilter() {
   if (regions.includes(currentValue)) {
     select.value = currentValue;
   }
+}
+
+function populateSpeciesTrendSelect() {
+  const select = document.getElementById("speciesTrendSelect");
+
+  if (!select) return;
+
+  const speciesTotals = {};
+
+  allTrendRows.forEach(row => {
+    parseFishCounts(row.fish_counts || "").forEach(item => {
+      speciesTotals[item.species] =
+        (speciesTotals[item.species] || 0) + item.count;
+    });
+  });
+
+  const species = Object.keys(speciesTotals)
+    .sort((a, b) => speciesTotals[b] - speciesTotals[a]);
+
+  select.innerHTML = "";
+
+  species.forEach(name => {
+    const option = document.createElement("option");
+    option.value = name;
+    option.textContent = name;
+    select.appendChild(option);
+  });
+
+  if (species.includes("Bluefin Tuna")) {
+    select.value = "Bluefin Tuna";
+  } else if (species.length) {
+    select.value = species[0];
+  }
+}
+
+function renderSpeciesYoYChart() {
+  const canvas = document.getElementById("speciesYoYChart");
+  const speciesSelect = document.getElementById("speciesTrendSelect");
+
+  if (!canvas || !speciesSelect || !allTrendRows.length) return;
+
+  const selectedSpecies = speciesSelect.value;
+  const selectedRegion = document.getElementById("regionFilter").value;
+
+  const rows = selectedRegion === "all"
+    ? allTrendRows
+    : allTrendRows.filter(row => row.region === selectedRegion);
+
+  const weekly = buildWeeklySpeciesTrend(rows, selectedSpecies);
+  const chartData = buildYoYChartData(weekly);
+
+  const ctx = canvas.getContext("2d");
+
+  if (speciesYoYChart) {
+    speciesYoYChart.destroy();
+  }
+
+  const chartColors = {
+    year2025: "#e7b85a",
+    year2026: "#19c2d1"
+  };
+
+  const chartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: {
+        labels: {
+          color: "#ffffff",
+          font: {
+            weight: "bold"
+          }
+        }
+      },
+      tooltip: {
+        backgroundColor: "rgba(3,18,32,.95)",
+        titleColor: "#19c2d1",
+        bodyColor: "#ffffff",
+        borderColor: "rgba(25,194,209,.7)",
+        borderWidth: 1
+      }
+    },
+    scales: {
+      x: {
+        ticks: {
+          color: "#dcecf2",
+          font: {
+            weight: "bold"
+          }
+        },
+        grid: {
+          color: "rgba(255,255,255,.08)"
+        }
+      },
+      y: {
+        beginAtZero: true,
+        ticks: {
+          color: "#dcecf2",
+          font: {
+            weight: "bold"
+          }
+        },
+        grid: {
+          color: "rgba(255,255,255,.08)"
+        }
+      }
+    }
+  };
+
+  speciesYoYChart = new Chart(ctx, {
+    type: "line",
+    data: {
+      labels: chartData.weeks,
+      datasets: [
+        {
+          label: "2025",
+          data: chartData.year2025,
+          borderColor: chartColors.year2025,
+          backgroundColor: chartColors.year2025,
+          tension: 0.35,
+          pointRadius: 3,
+          pointHoverRadius: 6
+        },
+        {
+          label: "2026",
+          data: chartData.year2026,
+          borderColor: chartColors.year2026,
+          backgroundColor: chartColors.year2026,
+          tension: 0.35,
+          pointRadius: 3,
+          pointHoverRadius: 6
+        }
+      ]
+    },
+    options: chartOptions
+  });
+}
+
+function buildWeeklySpeciesTrend(rows, selectedSpecies) {
+  const weekly = {};
+
+  rows.forEach(row => {
+    const date = parseDate(row.report_date || row.trip_date);
+    if (!date) return;
+
+    const year = date.getFullYear();
+    const week = getWeekNumber(date);
+
+    parseFishCounts(row.fish_counts || "").forEach(item => {
+      if (item.species !== selectedSpecies) return;
+
+      if (!weekly[week]) {
+        weekly[week] = {
+          week,
+          year2025: 0,
+          year2026: 0
+        };
+      }
+
+      if (year === 2025) {
+        weekly[week].year2025 += item.count;
+      }
+
+      if (year === 2026) {
+        weekly[week].year2026 += item.count;
+      }
+    });
+  });
+
+  return weekly;
+}
+
+function buildYoYChartData(weekly) {
+  const weeks = Object.keys(weekly)
+    .map(Number)
+    .sort((a, b) => a - b);
+
+  return {
+    weeks: weeks.map(week => `W${week}`),
+    year2025: weeks.map(week => weekly[week].year2025 || 0),
+    year2026: weeks.map(week => weekly[week].year2026 || 0)
+  };
 }
 
 function renderBiteTrends() {
@@ -327,6 +558,25 @@ function parseFishCounts(fishCounts) {
       };
     })
     .filter(Boolean);
+}
+
+function parseDate(dateString) {
+  const parts = String(dateString || "").split("-");
+
+  if (parts.length !== 3) return null;
+
+  return new Date(
+    Number(parts[0]),
+    Number(parts[1]) - 1,
+    Number(parts[2])
+  );
+}
+
+function getWeekNumber(date) {
+  const firstDay = new Date(date.getFullYear(), 0, 1);
+  const pastDays = Math.floor((date - firstDay) / 86400000);
+
+  return Math.ceil((pastDays + firstDay.getDay() + 1) / 7);
 }
 
 function getSelectedWindowDays() {
