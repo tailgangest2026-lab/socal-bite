@@ -33,15 +33,16 @@ body {
 
 /* NAV */
 .floating-nav {
-  position: absolute;
-  top: 200px;
-  right: 35px;
   display: flex;
-  gap: 12px;
-  flex-wrap: nowrap;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
-  z-index: 999;
+  flex-wrap: wrap;
+  gap: 14px;
+
+  margin-top: 25px;
+  margin-bottom: 40px;
+
+  position: static;
 }
 
 .page-top {
@@ -174,32 +175,20 @@ body {
 
 /* HERO */
 .home-hero {
-  width: 760px;
-  margin-left: 30vw;
-  margin-right: auto;
-  padding-top: 36px;
+  width: min(900px, 92%);
+  margin: 0 auto;
+  padding-top: 40px;
   text-align: center;
-  position: relative;
-  z-index: 20;
 }
 
 .home-hero h1 {
-  margin: 0 0 2px 0;
-  color: white;
-  font-size: clamp(48px, 5.3vw, 88px);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-shadow: 0 6px 20px rgba(0,0,0,.65);
-  white-space: nowrap;
+  margin: 0 0 8px;
+  font-size: clamp(60px, 8vw, 110px);
 }
 
 .home-hero p {
-  margin: 0 auto;
-  max-width: 760px;
-  color: var(--soft);
-  font-size: clamp(18px, 1.7vw, 26px);
-  line-height: 1.35;
-  text-shadow: 0 4px 14px rgba(0,0,0,.65);
+  margin: 0;
+  font-size: clamp(18px, 2vw, 28px);
 }
 
 /* HOME SUMMARY */
