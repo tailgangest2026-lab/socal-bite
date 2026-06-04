@@ -22,7 +22,7 @@ jobs:
 
           mkdir -p reports
           
-          curl -L "$BASE_URL?page=home" -o news.json
+          curl -L "$BASE_URL?page=news" -o news.json
           curl -L "$BASE_URL?page=home" -o home.json
           curl -L "$BASE_URL?page=boat-ratings" -o boat-ratings.json
           curl -L "$BASE_URL?page=daily-report-index" -o daily-report-index.json
