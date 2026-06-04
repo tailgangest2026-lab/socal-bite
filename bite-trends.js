@@ -11,18 +11,14 @@ async function loadBiteTrends() {
   try {
     container.innerHTML = "<h2>Loading bite trends...</h2>";
 
-    const indexResponse = await fetch("daily-report-index.json?v=" + Date.now());
+    const dailyIndexData = await fetchJsonSafe("daily-report-index.json?v=" + Date.now());
 
-    if (!indexResponse.ok) {
-      throw new Error("Could not load daily-report-index.json");
-    }
-
-    dailyIndex = await indexResponse.json();
-
-    if (!Array.isArray(dailyIndex) || !dailyIndex.length) {
+    if (!Array.isArray(dailyIndexData) || !dailyIndexData.length) {
       container.innerHTML = "<h2>No trend data found.</h2>";
       return;
     }
+
+    dailyIndex = dailyIndexData;
 
     await loadAllTrendRows();
     await loadTrendWindow();
@@ -40,36 +36,52 @@ async function loadBiteTrends() {
   }
 }
 
+async function fetchJsonSafe(url) {
+  const response = await fetch(url);
+
+  if (!response.ok) {
+    throw new Error("Could not load " + url);
+  }
+
+  const text = await response.text();
+  const trimmed = text.trim();
+
+  if (trimmed.startsWith("<!DOCTYPE") || trimmed.startsWith("<html") || trimmed.startsWith("<")) {
+    throw new Error("Non-JSON response from " + url);
+  }
+
+  return JSON.parse(trimmed);
+}
+
+async function loadReportRows(item, label) {
+  const filePath =
+    item.file || `reports/daily-report-${item.date}.json`;
+
+  try {
+    const rows = await fetchJsonSafe(filePath + "?v=" + Date.now());
+
+    if (!Array.isArray(rows)) {
+      console.warn("Skipping non-array report:", filePath);
+      return [];
+    }
+
+    return rows.map(row => ({
+      ...row,
+      report_date: item.date
+    }));
+
+  } catch (error) {
+    console.warn(`Skipping ${label}:`, item.date, filePath, error.message);
+    return [];
+  }
+}
+
 async function loadAllTrendRows() {
   const allRows = [];
 
   for (const item of dailyIndex) {
-    try {
-      const filePath =
-        item.file || `reports/daily-report-${item.date}.json`;
-
-      const response =
-        await fetch(filePath + "?v=" + Date.now());
-
-      if (!response.ok) {
-        console.warn("Missing historical trend file:", filePath);
-        continue;
-      }
-
-      const rows = await response.json();
-
-      if (Array.isArray(rows)) {
-        rows.forEach(row => {
-          allRows.push({
-            ...row,
-            report_date: item.date
-          });
-        });
-      }
-
-    } catch (error) {
-      console.warn("Could not load historical trend date:", item.date, error);
-    }
+    const rows = await loadReportRows(item, "historical trend date");
+    allRows.push(...rows);
   }
 
   allTrendRows = allRows;
@@ -82,32 +94,8 @@ async function loadTrendWindow() {
   const allRows = [];
 
   for (const item of selectedDates) {
-    try {
-      const filePath =
-        item.file || `reports/daily-report-${item.date}.json`;
-
-      const response =
-        await fetch(filePath + "?v=" + Date.now());
-
-      if (!response.ok) {
-        console.warn("Missing trend file:", filePath);
-        continue;
-      }
-
-      const rows = await response.json();
-
-      if (Array.isArray(rows)) {
-        rows.forEach(row => {
-          allRows.push({
-            ...row,
-            report_date: item.date
-          });
-        });
-      }
-
-    } catch (error) {
-      console.warn("Could not load trend date:", item.date, error);
-    }
+    const rows = await loadReportRows(item, "trend date");
+    allRows.push(...rows);
   }
 
   trendRows = allRows;
@@ -118,19 +106,23 @@ function setupControls() {
   const regionSelect = document.getElementById("regionFilter");
   const speciesSelect = document.getElementById("speciesTrendSelect");
 
-  windowSelect.onchange = async () => {
-    document.getElementById("biteTrendsPage").innerHTML =
-      "<h2>Refreshing bite trends...</h2>";
+  if (windowSelect) {
+    windowSelect.onchange = async () => {
+      document.getElementById("biteTrendsPage").innerHTML =
+        "<h2>Refreshing bite trends...</h2>";
 
-    await loadTrendWindow();
-    populateRegionFilter();
-    renderBiteTrends();
-  };
+      await loadTrendWindow();
+      populateRegionFilter();
+      renderBiteTrends();
+    };
+  }
 
-  regionSelect.onchange = () => {
-    renderSpeciesYoYChart();
-    renderBiteTrends();
-  };
+  if (regionSelect) {
+    regionSelect.onchange = () => {
+      renderSpeciesYoYChart();
+      renderBiteTrends();
+    };
+  }
 
   if (speciesSelect) {
     speciesSelect.onchange = () => {
@@ -141,6 +133,9 @@ function setupControls() {
 
 function populateRegionFilter() {
   const select = document.getElementById("regionFilter");
+
+  if (!select) return;
+
   const currentValue = select.value;
 
   const regions = [...new Set(
@@ -197,11 +192,12 @@ function populateSpeciesTrendSelect() {
 function renderSpeciesYoYChart() {
   const canvas = document.getElementById("speciesYoYChart");
   const speciesSelect = document.getElementById("speciesTrendSelect");
+  const regionSelect = document.getElementById("regionFilter");
 
   if (!canvas || !speciesSelect || !allTrendRows.length) return;
 
   const selectedSpecies = speciesSelect.value;
-  const selectedRegion = document.getElementById("regionFilter").value;
+  const selectedRegion = regionSelect ? regionSelect.value : "all";
 
   const rows = selectedRegion === "all"
     ? allTrendRows
@@ -351,7 +347,8 @@ function renderBiteTrends() {
     return;
   }
 
-  const selectedRegion = document.getElementById("regionFilter").value;
+  const regionSelect = document.getElementById("regionFilter");
+  const selectedRegion = regionSelect ? regionSelect.value : "all";
   const windowDays = getSelectedWindowDays();
 
   const rows = selectedRegion === "all"
@@ -580,7 +577,8 @@ function getWeekNumber(date) {
 }
 
 function getSelectedWindowDays() {
-  return Number(document.getElementById("trendWindow").value || 30);
+  const select = document.getElementById("trendWindow");
+  return Number((select && select.value) || 30);
 }
 
 function getTotalTrips(rows) {
