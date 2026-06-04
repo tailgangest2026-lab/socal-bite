@@ -21,7 +21,8 @@ jobs:
           BASE_URL="https://script.google.com/macros/s/AKfycbzFGkQUXf5DXP8nFl0zMMRR2NVPbtfA8wwKalECNjBn-EEH1n0ImWfVEG3yCCRntUOw/exec"
 
           mkdir -p reports
-
+          
+          curl -L "$BASE_URL?page=home" -o news.json
           curl -L "$BASE_URL?page=home" -o home.json
           curl -L "$BASE_URL?page=boat-ratings" -o boat-ratings.json
           curl -L "$BASE_URL?page=daily-report-index" -o daily-report-index.json
@@ -41,6 +42,7 @@ jobs:
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
 
+          git add news.json
           git add home.json
           git add boat-ratings.json
           git add daily-report-index.json
