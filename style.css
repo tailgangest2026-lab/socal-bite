@@ -64,8 +64,8 @@ body {
 .floating-nav {
   position: relative;
   z-index: 30;
-  width: min(1000px, 92%);
-  margin: 34px auto 18px;
+  width: fit-content;
+  margin: 28px auto 18px;
 
   display: flex;
   justify-content: center;
