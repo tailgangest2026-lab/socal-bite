@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fishing News | SoCal Bite</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <main class="news-page">
+    <h1>Fishing News</h1>
+    <p class="page-subtitle">Latest fishing headlines from trusted RSS sources.</p>
+
+    <section id="newsList" class="news-list">
+      <p>Loading fishing news...</p>
+    </section>
+  </main>
+
+  <script>
+    async function loadFishingNews() {
+      const container = document.getElementById('newsList');
+
+      try {
+        const res = await fetch('news.json?v=' + Date.now());
+
+        if (!res.ok) {
+          throw new Error('Could not load news.json');
+        }
+
+        const news = await res.json();
+
+        if (!Array.isArray(news) || news.length === 0) {
+          container.innerHTML = '<p>No fishing news available right now.</p>';
+          return;
+        }
+
+        container.innerHTML = news.map(item => {
+          const date = item.date
+            ? new Date(item.date).toLocaleDateString('en-US', {
+                month: 'short',
+                day: 'numeric',
+                year: 'numeric'
+              })
+            : '';
+
+          return `
+            <article class="news-card">
+              <h2>
+                <a href="${item.link}" target="_blank" rel="noopener">
+                  ${item.headline}
+                </a>
+              </h2>
+              <div class="news-meta">
+                <span>${item.source || 'Fishing News'}</span>
+                ${date ? `<span>${date}</span>` : ''}
+              </div>
+            </article>
+          `;
+        }).join('');
+
+      } catch (err) {
+        console.error(err);
+        container.innerHTML = '<p>Fishing news could not be loaded.</p>';
+      }
+    }
+
+    loadFishingNews();
+  </script>
+</body>
+</html>
