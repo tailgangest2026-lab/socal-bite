@@ -82,8 +82,8 @@ body {
 /* NAV */
 .floating-nav {
   position: absolute;
-  top: 200px;      /* adjust up/down */
-  right: 10px;     /* distance from right edge */
+  top: 190px;      /* adjust up/down */
+  right: 0;     /* distance from right edge */
 
   display: flex;
   justify-content: flex-end;
