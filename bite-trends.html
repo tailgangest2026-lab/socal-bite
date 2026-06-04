@@ -60,7 +60,16 @@
         <option value="all">All Regions</option>
       </select>
     </div>
+<section class="chart-card">
+  <div class="chart-card-header">
+    <div>
+      <h2>Species Trend Year Over Year</h2>
+      <p>Weekly fish count comparison by species.</p>
+    </div>
+  </div>
 
+  <canvas id="speciesYoYChart"></canvas>
+</section>
     <div id="biteTrendsPage">
       <h2>Loading bite trends...</h2>
     </div>
@@ -70,7 +79,7 @@
   <footer>
     <p>© 2026 The SoCal Bite • Fishing Reports & Bite Updates</p>
   </footer>
-
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="bite-trends.js?v=1"></script>
 
 </body>
