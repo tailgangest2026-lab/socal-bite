@@ -162,6 +162,16 @@
   {
     "trip_date": "2026-06-01",
     "region": "San Diego",
+    "landing": "Patriot Sportfishing",
+    "boat": "Sunny Day",
+    "trip_type": "1/2 Day AM",
+    "anglers": 3,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-06-01",
+    "region": "San Diego",
     "landing": "Seaforth Sportfishing",
     "boat": "New Seaforth",
     "trip_type": "1/2 Day AM",
@@ -231,26 +241,6 @@
   },
   {
     "trip_date": "2026-06-01",
-    "region": "SoCal",
-    "landing": "Patriot Sportfishing",
-    "boat": "Sunny Day",
-    "trip_type": "1/2 Day AM",
-    "anglers": 3,
-    "fish_counts": "",
-    "total_fish": 0
-  },
-  {
-    "trip_date": "2026-06-01",
-    "region": "SoCal",
-    "landing": "Pierpoint Landing",
-    "boat": "Toronado",
-    "trip_type": "Overnight",
-    "anglers": 23,
-    "fish_counts": "25 Calico Bass, 12 Whitefish, 7 Yellowtail",
-    "total_fish": 44
-  },
-  {
-    "trip_date": "2026-06-01",
     "region": "Ventura",
     "landing": "Channel Islands Sportfishing",
     "boat": "Aloha Spirit",
@@ -298,6 +288,16 @@
     "anglers": 15,
     "fish_counts": "1 Lingcod, 150 Rockfish, 32 Whitefish",
     "total_fish": 183
+  },
+  {
+    "trip_date": "2026-06-01",
+    "region": "Ventura",
+    "landing": "Pierpoint Landing",
+    "boat": "Toronado",
+    "trip_type": "Overnight",
+    "anglers": 23,
+    "fish_counts": "25 Calico Bass, 12 Whitefish, 7 Yellowtail",
+    "total_fish": 44
   },
   {
     "trip_date": "2026-06-01",

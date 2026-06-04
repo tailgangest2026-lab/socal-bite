@@ -594,6 +594,39 @@
     "fpa": 2.61
   },
   {
+    "rank": 11,
+    "region": "San Diego",
+    "trip_type": "1/2 Day AM",
+    "boat": "Sunny Day",
+    "landing": "Patriot Sportfishing",
+    "trips": 14,
+    "anglers": 37,
+    "fish": 22,
+    "fpa": 0.59
+  },
+  {
+    "rank": 12,
+    "region": "San Diego",
+    "trip_type": "1/2 Day AM",
+    "boat": "Patriot (Avila Beach)",
+    "landing": "Patriot Sportfishing",
+    "trips": 13,
+    "anglers": 332,
+    "fish": 38,
+    "fpa": 0.11
+  },
+  {
+    "rank": 13,
+    "region": "San Diego",
+    "trip_type": "1/2 Day AM",
+    "boat": "Flying Fish",
+    "landing": "Patriot Sportfishing",
+    "trips": 35,
+    "anglers": 582,
+    "fish": 63,
+    "fpa": 0.11
+  },
+  {
     "rank": 1,
     "region": "San Diego",
     "trip_type": "1/2 Day PM",
@@ -792,6 +825,28 @@
     "fpa": 5.36
   },
   {
+    "rank": 4,
+    "region": "San Diego",
+    "trip_type": "3/4 Day",
+    "boat": "Sunny Day",
+    "landing": "Patriot Sportfishing",
+    "trips": 10,
+    "anglers": 32,
+    "fish": 14,
+    "fpa": 0.44
+  },
+  {
+    "rank": 5,
+    "region": "San Diego",
+    "trip_type": "3/4 Day",
+    "boat": "Patriot (Avila Beach)",
+    "landing": "Patriot Sportfishing",
+    "trips": 10,
+    "anglers": 208,
+    "fish": 60,
+    "fpa": 0.29
+  },
+  {
     "rank": 1,
     "region": "San Diego",
     "trip_type": "Full Day",
@@ -823,6 +878,17 @@
     "anglers": 28,
     "fish": 18,
     "fpa": 0.64
+  },
+  {
+    "rank": 4,
+    "region": "San Diego",
+    "trip_type": "Full Day",
+    "boat": "Patriot (Avila Beach)",
+    "landing": "Patriot Sportfishing",
+    "trips": 5,
+    "anglers": 114,
+    "fish": 1,
+    "fpa": 0.01
   },
   {
     "rank": 1,
@@ -914,6 +980,94 @@
   },
   {
     "rank": 1,
+    "region": "San Luis Obispo",
+    "trip_type": "1/2 Day AM",
+    "boat": "Starfire",
+    "landing": "Morro Bay Landing",
+    "trips": 8,
+    "anglers": 140,
+    "fish": 1069,
+    "fpa": 7.64
+  },
+  {
+    "rank": 2,
+    "region": "San Luis Obispo",
+    "trip_type": "1/2 Day AM",
+    "boat": "Avenger",
+    "landing": "Morro Bay Landing",
+    "trips": 17,
+    "anglers": 404,
+    "fish": 2884,
+    "fpa": 7.14
+  },
+  {
+    "rank": 3,
+    "region": "San Luis Obispo",
+    "trip_type": "1/2 Day AM",
+    "boat": "Endeavor (MB)",
+    "landing": "Morro Bay Landing",
+    "trips": 5,
+    "anglers": 99,
+    "fish": 683,
+    "fpa": 6.9
+  },
+  {
+    "rank": 1,
+    "region": "San Luis Obispo",
+    "trip_type": "3/4 Day",
+    "boat": "Avenger",
+    "landing": "Morro Bay Landing",
+    "trips": 10,
+    "anglers": 177,
+    "fish": 1481,
+    "fpa": 8.37
+  },
+  {
+    "rank": 2,
+    "region": "San Luis Obispo",
+    "trip_type": "3/4 Day",
+    "boat": "Endeavor (MB)",
+    "landing": "Morro Bay Landing",
+    "trips": 5,
+    "anglers": 85,
+    "fish": 626,
+    "fpa": 7.36
+  },
+  {
+    "rank": 3,
+    "region": "San Luis Obispo",
+    "trip_type": "3/4 Day",
+    "boat": "Starfire",
+    "landing": "Morro Bay Landing",
+    "trips": 16,
+    "anglers": 344,
+    "fish": 2297,
+    "fpa": 6.68
+  },
+  {
+    "rank": 4,
+    "region": "San Luis Obispo",
+    "trip_type": "3/4 Day",
+    "boat": "Fiesta",
+    "landing": "Virg's Landing",
+    "trips": 6,
+    "anglers": 114,
+    "fish": 181,
+    "fpa": 1.59
+  },
+  {
+    "rank": 1,
+    "region": "San Luis Obispo",
+    "trip_type": "Full Day",
+    "boat": "Endeavor (MB)",
+    "landing": "Morro Bay Landing",
+    "trips": 14,
+    "anglers": 341,
+    "fish": 2888,
+    "fpa": 8.47
+  },
+  {
+    "rank": 1,
     "region": "Santa Barbara",
     "trip_type": "1/2 Day AM",
     "boat": "Stardust",
@@ -944,182 +1098,6 @@
     "anglers": 983,
     "fish": 12795,
     "fpa": 13.02
-  },
-  {
-    "rank": 1,
-    "region": "SoCal",
-    "trip_type": "1/2 Day AM",
-    "boat": "Starfire",
-    "landing": "Morro Bay Landing",
-    "trips": 8,
-    "anglers": 140,
-    "fish": 1069,
-    "fpa": 7.64
-  },
-  {
-    "rank": 2,
-    "region": "SoCal",
-    "trip_type": "1/2 Day AM",
-    "boat": "Avenger",
-    "landing": "Morro Bay Landing",
-    "trips": 17,
-    "anglers": 404,
-    "fish": 2884,
-    "fpa": 7.14
-  },
-  {
-    "rank": 3,
-    "region": "SoCal",
-    "trip_type": "1/2 Day AM",
-    "boat": "Endeavor (MB)",
-    "landing": "Morro Bay Landing",
-    "trips": 5,
-    "anglers": 99,
-    "fish": 683,
-    "fpa": 6.9
-  },
-  {
-    "rank": 4,
-    "region": "SoCal",
-    "trip_type": "1/2 Day AM",
-    "boat": "Sunny Day",
-    "landing": "Patriot Sportfishing",
-    "trips": 14,
-    "anglers": 37,
-    "fish": 22,
-    "fpa": 0.59
-  },
-  {
-    "rank": 5,
-    "region": "SoCal",
-    "trip_type": "1/2 Day AM",
-    "boat": "Patriot (Avila Beach)",
-    "landing": "Patriot Sportfishing",
-    "trips": 13,
-    "anglers": 332,
-    "fish": 38,
-    "fpa": 0.11
-  },
-  {
-    "rank": 6,
-    "region": "SoCal",
-    "trip_type": "1/2 Day AM",
-    "boat": "Flying Fish",
-    "landing": "Patriot Sportfishing",
-    "trips": 35,
-    "anglers": 582,
-    "fish": 63,
-    "fpa": 0.11
-  },
-  {
-    "rank": 1,
-    "region": "SoCal",
-    "trip_type": "3/4 Day",
-    "boat": "Enterprise",
-    "landing": "Pierpoint Landing",
-    "trips": 13,
-    "anglers": 348,
-    "fish": 4467,
-    "fpa": 12.84
-  },
-  {
-    "rank": 2,
-    "region": "SoCal",
-    "trip_type": "3/4 Day",
-    "boat": "Avenger",
-    "landing": "Morro Bay Landing",
-    "trips": 10,
-    "anglers": 177,
-    "fish": 1481,
-    "fpa": 8.37
-  },
-  {
-    "rank": 3,
-    "region": "SoCal",
-    "trip_type": "3/4 Day",
-    "boat": "Endeavor (MB)",
-    "landing": "Morro Bay Landing",
-    "trips": 5,
-    "anglers": 85,
-    "fish": 626,
-    "fpa": 7.36
-  },
-  {
-    "rank": 4,
-    "region": "SoCal",
-    "trip_type": "3/4 Day",
-    "boat": "Starfire",
-    "landing": "Morro Bay Landing",
-    "trips": 16,
-    "anglers": 344,
-    "fish": 2297,
-    "fpa": 6.68
-  },
-  {
-    "rank": 5,
-    "region": "SoCal",
-    "trip_type": "3/4 Day",
-    "boat": "Fiesta",
-    "landing": "Virg's Landing",
-    "trips": 6,
-    "anglers": 114,
-    "fish": 181,
-    "fpa": 1.59
-  },
-  {
-    "rank": 6,
-    "region": "SoCal",
-    "trip_type": "3/4 Day",
-    "boat": "Sunny Day",
-    "landing": "Patriot Sportfishing",
-    "trips": 10,
-    "anglers": 32,
-    "fish": 14,
-    "fpa": 0.44
-  },
-  {
-    "rank": 7,
-    "region": "SoCal",
-    "trip_type": "3/4 Day",
-    "boat": "Patriot (Avila Beach)",
-    "landing": "Patriot Sportfishing",
-    "trips": 10,
-    "anglers": 208,
-    "fish": 60,
-    "fpa": 0.29
-  },
-  {
-    "rank": 1,
-    "region": "SoCal",
-    "trip_type": "Full Day",
-    "boat": "Endeavor (MB)",
-    "landing": "Morro Bay Landing",
-    "trips": 14,
-    "anglers": 341,
-    "fish": 2888,
-    "fpa": 8.47
-  },
-  {
-    "rank": 2,
-    "region": "SoCal",
-    "trip_type": "Full Day",
-    "boat": "Patriot (Avila Beach)",
-    "landing": "Patriot Sportfishing",
-    "trips": 5,
-    "anglers": 114,
-    "fish": 1,
-    "fpa": 0.01
-  },
-  {
-    "rank": 1,
-    "region": "SoCal",
-    "trip_type": "Overnight",
-    "boat": "Toronado",
-    "landing": "Pierpoint Landing",
-    "trips": 8,
-    "anglers": 188,
-    "fish": 2326,
-    "fpa": 12.37
   },
   {
     "rank": 1,
@@ -1169,6 +1147,17 @@
     "rank": 1,
     "region": "Ventura",
     "trip_type": "3/4 Day",
+    "boat": "Enterprise",
+    "landing": "Pierpoint Landing",
+    "trips": 13,
+    "anglers": 348,
+    "fish": 4467,
+    "fpa": 12.84
+  },
+  {
+    "rank": 2,
+    "region": "Ventura",
+    "trip_type": "3/4 Day",
     "boat": "Island Fox",
     "landing": "Channel Islands Sportfishing",
     "trips": 16,
@@ -1177,7 +1166,7 @@
     "fpa": 11.36
   },
   {
-    "rank": 2,
+    "rank": 3,
     "region": "Ventura",
     "trip_type": "3/4 Day",
     "boat": "Coroloma",
@@ -1188,7 +1177,7 @@
     "fpa": 10.93
   },
   {
-    "rank": 3,
+    "rank": 4,
     "region": "Ventura",
     "trip_type": "3/4 Day",
     "boat": "Orion",
@@ -1199,7 +1188,7 @@
     "fpa": 10.24
   },
   {
-    "rank": 4,
+    "rank": 5,
     "region": "Ventura",
     "trip_type": "3/4 Day",
     "boat": "Gentleman",
@@ -1329,5 +1318,16 @@
     "anglers": 232,
     "fish": 3522,
     "fpa": 15.18
+  },
+  {
+    "rank": 6,
+    "region": "Ventura",
+    "trip_type": "Overnight",
+    "boat": "Toronado",
+    "landing": "Pierpoint Landing",
+    "trips": 8,
+    "anglers": 188,
+    "fish": 2326,
+    "fpa": 12.37
   }
 ]
