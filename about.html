@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About | SoCal Bite</title>
+  <title>Fishing News | SoCal Bite</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -11,103 +11,117 @@
 
   <main class="full-bg-home">
 
-  <section class="page-top">
-    <h1>About SoCal Bite</h1>
+    <section class="page-top">
+      <h1>Fishing News</h1>
 
-    <nav class="page-nav">
-      <a href="index.html">Home</a>
+      <nav class="page-nav">
+        <a href="index.html">Home</a>
 
-      <div class="dropdown">
-        <button class="dropbtn">Reports ▼</button>
+        <div class="dropdown">
+          <button class="dropbtn">Reports ▼</button>
 
-        <div class="dropdown-content">
-          <a href="daily-report.html">Daily Report</a>
-          <a href="boat-ratings.html">Boat Ratings</a>
-          <a href="bite-trends.html">Bite Trends</a>
-          <a href="top-boats.html">Top Boats</a>
-          <a href="top-species.html">Top Species</a>
-         
+          <div class="dropdown-content">
+            <a href="daily-report.html">Daily Report</a>
+            <a href="boat-ratings.html">Boat Ratings</a>
+            <a href="bite-trends.html">Bite Trends</a>
+            <a href="top-boats.html">Top Boats</a>
+            <a href="top-species.html">Top Species</a>
+            <a href="news.html">Fishing News</a>
+          </div>
+        </div>
+
+        <a href="landings.html">Landings</a>
+        <a href="about.html">About</a>
+
+        <a href="https://www.instagram.com/the_socal_bite/" target="_blank" aria-label="Instagram">
+          <img src="assets/instagram-icon.png" class="social-logo" alt="Instagram">
+        </a>
+
+        <a href="https://www.tiktok.com/@the_socal_bite" target="_blank" aria-label="TikTok">
+          <img src="assets/tiktok-icon.png" class="social-logo" alt="TikTok">
+        </a>
+      </nav>
+    </section>
+
+    <main class="report-page">
+
+      <div class="region-section">
+        <h2>Latest Fishing Headlines</h2>
+        <p>
+          Fresh fishing news from trusted RSS sources. Headlines update automatically
+          and link directly to the original article.
+        </p>
+      </div>
+
+      <div class="region-section">
+        <div id="newsList" class="news-list">
+          <p>Loading fishing news...</p>
         </div>
       </div>
-      <a href="landings.html">Landings</a>
-      <a href="about.html">About</a>
 
-      <a href="https://www.instagram.com/the_socal_bite/" target="_blank" aria-label="Instagram">
-        <img src="assets/instagram-icon.png" class="social-logo" alt="Instagram">
-      </a>
+    </main>
 
-      <a href="https://www.tiktok.com/@the_socal_bite" target="_blank" aria-label="TikTok">
-        <img src="assets/tiktok-icon.png" class="social-logo" alt="TikTok">
-      </a>
-    </nav>
-  </section>
-
-  <main class="report-page">
-
-    <div class="region-section">
-
-      <h2>Southern California Fishing Made Simple</h2>
-
-      <p>
-        SoCal Bite was built to make Southern California fishing information
-        easier to access. Instead of searching through multiple landing websites,
-        dock reports, and fish count pages, anglers can quickly see what is
-        biting, which boats are producing, and how each region is performing.
-      </p>
-
-      <p>
-        The site automatically collects and organizes fishing data from across
-        Southern California, giving visitors fast access to daily fishing
-        reports, top boats, top species, and regional fishing activity.
-      </p>
-
-    </div>
-
-    <div class="region-section">
-
-      <h2>What You'll Find</h2>
-
-      <div class="summary-row">
-        <span>Daily Fishing Reports</span>
-        <span>Top Boats</span>
-        <span>Top Species</span>
-        <span>Regional Reports</span>
-      </div>
-
-      <p>
-        Every page is updated automatically using the SoCal Bite reporting
-        system, allowing anglers to quickly identify trends and productive
-        fisheries throughout the region.
-      </p>
-
-    </div>
-
-    <div class="region-section">
-
-      <h2>Follow SoCal Bite</h2>
-
-      <p>
-        Follow us on Instagram and TikTok for daily updates, fishing highlights,
-        top catches, and Southern California fishing content.
-      </p>
-
-      <div class="page-nav" style="margin-top:20px;">
-        <a href="https://www.instagram.com/the_socal_bite/" target="_blank">
-          Instagram
-        </a>
-
-        <a href="https://www.tiktok.com/@the_socal_bite" target="_blank">
-          TikTok
-        </a>
-      </div>
-
-    </div>
+    <footer>
+      <p>© 2026 The SoCal Bite • Fishing Reports & Bite Updates</p>
+    </footer>
 
   </main>
 
-  <footer>
-    <p>© 2026 The SoCal Bite • Fishing Reports & Bite Updates</p>
-  </footer>
+  <script>
+    async function loadFishingNews() {
+      const container = document.getElementById('newsList');
+
+      try {
+        const response = await fetch('/news.json?v=' + Date.now());
+
+        if (!response.ok) {
+          throw new Error('Could not load news.json. Status: ' + response.status);
+        }
+
+        const news = await response.json();
+
+        if (!Array.isArray(news) || news.length === 0) {
+          container.innerHTML = '<p>No fishing news available right now.</p>';
+          return;
+        }
+
+        container.innerHTML = news.map(item => {
+          const headline = item.headline || 'No headline';
+          const source = item.source || 'Fishing News';
+          const link = item.link || '#';
+
+          const date = item.date
+            ? new Date(item.date).toLocaleDateString('en-US', {
+                month: 'short',
+                day: 'numeric',
+                year: 'numeric'
+              })
+            : '';
+
+          return `
+            <article class="news-card">
+              <h2>
+                <a href="${link}" target="_blank" rel="noopener noreferrer">
+                  ${headline}
+                </a>
+              </h2>
+
+              <div class="news-meta">
+                <span>${source}</span>
+                ${date ? `<span>${date}</span>` : ''}
+              </div>
+            </article>
+          `;
+        }).join('');
+
+      } catch (error) {
+        console.error('Fishing news error:', error);
+        container.innerHTML = '<p>Fishing news could not be loaded.</p>';
+      }
+    }
+
+    loadFishingNews();
+  </script>
 
 </body>
 </html>
