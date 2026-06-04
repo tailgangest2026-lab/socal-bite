@@ -3,30 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>The SoCal Bite</title>
-
-  <meta
-    name="description"
-    content="SoCal Bite delivers Southern California fishing reports, top boats, top species, regional bite updates, and boat intelligence."
-  />
-
+  <meta name="description" content="SoCal Bite delivers Southern California fishing reports, top boats, top species, regional bite updates, and boat intelligence." />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body class="home-page">
-
   <main class="full-bg-home">
-
     <div class="social-links">
-      <a href="https://www.instagram.com/the_socal_bite/" target="_blank" aria-label="Instagram">
-        <img src="assets/instagram-icon.png" class="social-logo" alt="Instagram">
-      </a>
-
-      <a href="https://www.tiktok.com/@the_socal_bite" target="_blank" aria-label="TikTok">
-        <img src="assets/tiktok-icon.png" class="social-logo" alt="TikTok">
-      </a>
+      <a href="https://www.instagram.com/the_socal_bite/" target="_blank" aria-label="Instagram"><img src="assets/instagram-icon.png" class="social-logo" alt="Instagram"></a>
+      <a href="https://www.tiktok.com/@the_socal_bite" target="_blank" aria-label="TikTok"><img src="assets/tiktok-icon.png" class="social-logo" alt="TikTok"></a>
     </div>
 
     <section class="home-hero">
@@ -35,11 +21,9 @@
     </section>
 
     <nav class="floating-nav">
-      <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
-
+      <a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
       <div class="dropdown">
-        <button class="dropbtn"><i class="fa-solid fa-chart-line"></i> Reports ▼</button>
-
+        <button class="dropbtn"><i class="fa-solid fa-chart-line"></i><span>Reports</span><i class="fa-solid fa-caret-down caret"></i></button>
         <div class="dropdown-content">
           <a href="daily-report.html">Daily Report</a>
           <a href="boat-ratings.html">Boat Ratings</a>
@@ -48,16 +32,14 @@
           <a href="top-species.html">Top Species</a>
         </div>
       </div>
-
-      <a href="news.html"><i class="fa-solid fa-newspaper"></i> Fishing News</a>
-      <a href="landings.html"><i class="fa-solid fa-fish"></i> Landings</a>
-      <a href="about.html"><i class="fa-solid fa-user"></i> About</a>
+      <a href="news.html"><i class="fa-solid fa-newspaper"></i><span>Fishing News</span></a>
+      <a href="landings.html"><i class="fa-solid fa-fish"></i><span>Landings</span></a>
+      <a href="about.html"><i class="fa-solid fa-user"></i><span>About</span></a>
     </nav>
 
     <section class="home-summary">
       <h2>Yesterday’s Bite by Region</h2>
       <p class="section-subtitle">Summary from SoCal Bite processed data.</p>
-
       <div id="homeRegionCards" class="region-card-grid">
         <div class="loading-card">Loading bite data...</div>
       </div>
@@ -65,16 +47,14 @@
 
     <section class="home-status">
       <div class="status-card">
-        <i class="fa-regular fa-clock"></i>
+        <i class="fa-regular fa-clock status-icon"></i>
         <div>
           <h3>Last Updated</h3>
           <div id="lastUpdated" class="updated-big">Loading...</div>
         </div>
       </div>
     </section>
-
   </main>
-
   <script src="home.js"></script>
 </body>
 </html>
