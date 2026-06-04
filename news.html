@@ -17,55 +17,51 @@
     </section>
   </main>
 
-  <script>
-    async function loadFishingNews() {
-      const container = document.getElementById('newsList');
+ <script>
+async function loadFishingNews() {
+  const container = document.getElementById('newsList');
 
-      try {
-        const res = await fetch('news.json?v=' + Date.now());
+  try {
+    const res = await fetch('./news.json?v=' + Date.now());
+    const news = await res.json();
 
-        if (!res.ok) {
-          throw new Error('Could not load news.json');
-        }
+    container.innerHTML = news.map(item => {
+      const headline = item.headline || item.title || 'No headline';
+      const source = item.source || 'Fishing News';
+      const link = item.link || item.url || '#';
+      const rawDate = item.date || item.pubDate || item.published || '';
 
-        const news = await res.json();
+      const date = rawDate
+        ? new Date(rawDate).toLocaleDateString('en-US', {
+            month: 'short',
+            day: 'numeric',
+            year: 'numeric'
+          })
+        : '';
 
-        if (!Array.isArray(news) || news.length === 0) {
-          container.innerHTML = '<p>No fishing news available right now.</p>';
-          return;
-        }
+      return `
+        <article class="news-card">
+          <h2>
+            <a href="${link}" target="_blank" rel="noopener">
+              ${headline}
+            </a>
+          </h2>
 
-        container.innerHTML = news.map(item => {
-          const date = item.date
-            ? new Date(item.date).toLocaleDateString('en-US', {
-                month: 'short',
-                day: 'numeric',
-                year: 'numeric'
-              })
-            : '';
+          <div class="news-meta">
+            <span>${source}</span>
+            ${date ? `<span>${date}</span>` : ''}
+          </div>
+        </article>
+      `;
+    }).join('');
 
-          return `
-            <article class="news-card">
-              <h2>
-                <a href="${item.link}" target="_blank" rel="noopener">
-                  ${item.headline}
-                </a>
-              </h2>
-              <div class="news-meta">
-                <span>${item.source || 'Fishing News'}</span>
-                ${date ? `<span>${date}</span>` : ''}
-              </div>
-            </article>
-          `;
-        }).join('');
+  } catch (err) {
+    console.error(err);
+    container.innerHTML = '<p>Fishing news could not be loaded.</p>';
+  }
+}
 
-      } catch (err) {
-        console.error(err);
-        container.innerHTML = '<p>Fishing news could not be loaded.</p>';
-      }
-    }
-
-    loadFishingNews();
-  </script>
+loadFishingNews();
+</script>
 </body>
 </html>
