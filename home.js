@@ -3,6 +3,16 @@ async function loadHomeSummary() {
 
   if (!container) return;
 
+  const regionIcons = {
+    "San Diego": "assets/icons/san-diego.png",
+    "Orange County": "assets/icons/orange-county.png",
+    "Los Angeles": "assets/icons/los-angeles.png",
+    "Ventura": "assets/icons/ventura.png",
+    "Santa Barbara": "assets/icons/santa-barbara.png",
+    "San Luis Obispo": "assets/icons/san-luis-obispo.png",
+    "SoCal": "assets/icons/socal.png"
+  };
+
   try {
     const response = await fetch("home.json?v=" + Date.now());
 
@@ -26,38 +36,75 @@ async function loadHomeSummary() {
       return;
     }
 
-    container.innerHTML = data.map(region => `
-      <article class="region-summary-card">
-        <div class="region-card-header">
-          <h3>${region.region || "Unknown Region"}</h3>
-        </div>
+    container.innerHTML = data.map(region => {
+      const iconSrc = regionIcons[region.region] || "assets/icons/fish.png";
 
-        <div class="summary-stats">
-          <div>
-            <strong>${numberFormat(region.total_trips_today)}</strong>
-            <span>Trips</span>
+      return `
+        <article class="region-summary-card">
+
+          <div class="region-card-header">
+            <h3>${region.region || "Unknown Region"}</h3>
+
+            <img
+              src="${iconSrc}"
+              class="region-icon"
+              alt="${region.region || "Region"} icon"
+              onerror="this.src='assets/icons/fish.png';"
+            >
           </div>
 
-          <div>
-            <strong>${numberFormat(region.total_anglers_today)}</strong>
-            <span>Anglers</span>
+          <div class="summary-stats">
+            <div>
+              <strong>${numberFormat(region.total_trips_today)}</strong>
+              <span>Trips</span>
+            </div>
+
+            <div>
+              <strong>${numberFormat(region.total_anglers_today)}</strong>
+              <span>Anglers</span>
+            </div>
+
+            <div>
+              <strong>${numberFormat(region.total_fish_today)}</strong>
+              <span>Fish</span>
+            </div>
           </div>
 
-          <div>
-            <strong>${numberFormat(region.total_fish_today)}</strong>
-            <span>Fish</span>
-          </div>
-        </div>
+          <div class="summary-list">
+            <p class="summary-item">
+              <i class="fa-solid fa-trophy"></i>
+              <b>Top Boat:</b>
+              <span>${region.top_boat_today || "N/A"}</span>
+            </p>
 
-        <div class="summary-list">
-          <p><b>Top Boat:</b> ${region.top_boat_today || "N/A"}</p>
-          <p><b>Top Landing:</b> ${region.top_landing_today || "N/A"}</p>
-          <p><b>Top Species:</b> ${region.top_species_today || "N/A"}</p>
-          <p><b>Best 30-Day Boat:</b> ${region.best_boat_last_30_days || "N/A"}</p>
-          <p><b>Best 90-Day Boat:</b> ${region.best_boat_last_90_days || "N/A"}</p>
-        </div>
-      </article>
-    `).join("");
+            <p class="summary-item">
+              <i class="fa-solid fa-anchor"></i>
+              <b>Top Landing:</b>
+              <span>${region.top_landing_today || "N/A"}</span>
+            </p>
+
+            <p class="summary-item">
+              <i class="fa-solid fa-fish"></i>
+              <b>Top Species:</b>
+              <span>${region.top_species_today || "N/A"}</span>
+            </p>
+
+            <p class="summary-item">
+              <i class="fa-solid fa-medal"></i>
+              <b>Best 30-Day Boat:</b>
+              <span>${region.best_boat_last_30_days || "N/A"}</span>
+            </p>
+
+            <p class="summary-item">
+              <i class="fa-solid fa-crown"></i>
+              <b>Best 90-Day Boat:</b>
+              <span>${region.best_boat_last_90_days || "N/A"}</span>
+            </p>
+          </div>
+
+        </article>
+      `;
+    }).join("");
 
   } catch (error) {
     console.error("Home load error:", error);
