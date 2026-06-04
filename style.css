@@ -75,7 +75,7 @@ body {
   margin: 0 auto;
   max-width: 850px;
   color: white;
-  font-size: clamp(18px, 1.7vw, 26px);
+  font-size: clamp(12px, 1.7vw, 18px);
   line-height: 1.3;
 }
 
