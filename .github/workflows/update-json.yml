@@ -21,11 +21,14 @@ jobs:
           BASE_URL="https://script.google.com/macros/s/AKfycbzFGkQUXf5DXP8nFl0zMMRR2NVPbtfA8wwKalECNjBn-EEH1n0ImWfVEG3yCCRntUOw/exec"
 
           mkdir -p reports
+          mkdir -p tmp-json
 
           download_json () {
             URL="$1"
             OUT="$2"
-            TEMP="tmp-$OUT"
+            TEMP="tmp-json/$(basename "$OUT")"
+
+            echo "Downloading $OUT"
 
             curl -L "$URL" -o "$TEMP"
 
@@ -52,6 +55,8 @@ jobs:
           do
             download_json "$BASE_URL?page=daily-report-date&date=$DATE" "reports/daily-report-$DATE.json"
           done
+
+          rm -rf tmp-json
 
       - name: Commit updated JSON
         run: |
