@@ -4,7 +4,7 @@ async function loadHomeSummary() {
   if (!container) return;
 
   const regionIcons = {
-    "San Diego": "assets/icons/san-diego.png",
+    "San Diego": "assets/icons/san-diego.svg",
     "Orange County": "assets/icons/orange-county.png",
     "Los Angeles": "assets/icons/los-angeles.png",
     "Ventura": "assets/icons/ventura.png",
