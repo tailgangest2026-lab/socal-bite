@@ -650,9 +650,13 @@ body {
 }
 
 /* CHARTS */
+.chart-card {
+  height: 420px;
+}
+
 .chart-card canvas {
-  width: 100% !important;
-  max-height: 420px;
+  width: 100%;
+  height: 320px;
 }
 
 /* FOOTER */
