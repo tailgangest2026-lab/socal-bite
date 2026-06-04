@@ -545,3 +545,37 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+.chart-card {
+  background: rgba(6,25,42,.84);
+  border: 1px solid rgba(25,194,209,.45);
+  border-radius: 18px;
+  padding: 22px;
+  margin-bottom: 22px;
+  box-shadow: 0 15px 35px rgba(0,0,0,.3);
+  backdrop-filter: blur(12px);
+}
+
+.chart-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.chart-card h2 {
+  color: var(--teal);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.chart-card p {
+  color: var(--soft);
+  margin: 6px 0 0;
+  font-weight: 700;
+}
+
+.chart-card canvas {
+  width: 100% !important;
+  max-height: 420px;
+}
