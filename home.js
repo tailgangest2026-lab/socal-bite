@@ -5,12 +5,11 @@ async function loadHomeSummary() {
 
   const regionIcons = {
     "San Diego": "assets/icons/san-diego.svg",
-    "Orange County": "assets/icons/orange-county.png",
-    "Los Angeles": "assets/icons/los-angeles.png",
-    "Ventura": "assets/icons/ventura.png",
-    "Santa Barbara": "assets/icons/santa-barbara.png",
-    "San Luis Obispo": "assets/icons/san-luis-obispo.png",
-    "SoCal": "assets/icons/socal.png"
+    "Orange County": "assets/icons/orange-county-orange.svg",
+    "Los Angeles": "assets/icons/los-angeles-palm.svg",
+    "Ventura": "assets/icons/ventura-sailboat.svg",
+    "Santa Barbara": "assets/icons/santa-barbara-mission.svg",
+    "San Luis Obispo": "assets/icons/san-luis-obispo-morro.svg",
   };
 
   try {
