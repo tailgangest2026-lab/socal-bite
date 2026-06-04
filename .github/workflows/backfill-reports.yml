@@ -1,0 +1,54 @@
+name: Backfill All Daily Reports
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  backfill-json:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Download index
+        run: |
+          BASE_URL="https://script.google.com/macros/s/AKfycbzFGkQUXf5DXP8nFl0zMMRR2NVPbtfA8wwKalECNjBn-EEH1n0ImWfVEG3yCCRntUOw/exec"
+
+          curl -L "$BASE_URL?page=daily-report-index" -o daily-report-index.json
+
+      - name: Download every daily report
+        run: |
+          BASE_URL="https://script.google.com/macros/s/AKfycbzFGkQUXf5DXP8nFl0zMMRR2NVPbtfA8wwKalECNjBn-EEH1n0ImWfVEG3yCCRntUOw/exec"
+
+          mkdir -p reports
+
+          dates=$(jq -r '.[].date' daily-report-index.json)
+
+          for DATE in $dates
+          do
+            echo "Downloading $DATE"
+
+            curl -L "$BASE_URL?page=daily-report-date&date=$DATE" \
+              -o "reports/daily-report-$DATE.json"
+
+            sleep 0.2
+          done
+
+      - name: Commit all reports
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+          git add daily-report-index.json
+          git add reports/*.json
+
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "Backfill all daily reports"
+            git push
+          fi
