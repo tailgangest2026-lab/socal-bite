@@ -36,7 +36,7 @@ async function loadHomeSummary() {
     }
 
     container.innerHTML = data.map(region => {
-      const iconSrc = regionIcons[region.region] || "assets/icons/fish.png";
+      const iconSrc = regionIcons[region.region] || "assets/icons/fish-default.png";
 
       return `
         <article class="region-summary-card">
@@ -48,7 +48,7 @@ async function loadHomeSummary() {
               src="${iconSrc}"
               class="region-icon"
               alt="${region.region || "Region"} icon"
-              onerror="this.src='assets/icons/fish.png';"
+              onerror="this.src='assets/icons/fish-default.svg';"
             >
           </div>
 
