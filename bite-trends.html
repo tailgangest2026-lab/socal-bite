@@ -1,1 +1,77 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Bite Trends | SoCal Bite</title>
+
+  <meta
+    name="description"
+    content="Southern California fishing bite trends by region, species, trips, anglers, fish totals, and fish per angler."
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="inner-page">
+
+  <section class="page-top">
+    <h1>Bite Trends</h1>
+
+    <nav class="page-nav">
+      <a href="index.html">Home</a>
+
+      <div class="dropdown">
+        <button class="dropbtn">Reports ▼</button>
+
+        <div class="dropdown-content">
+          <a href="daily-report.html">Daily Report</a>
+          <a href="boat-ratings.html">Boat Ratings</a>
+          <a href="bite-trends.html">Bite Trends</a>
+          <a href="top-boats.html">Top Boats</a>
+          <a href="top-species.html">Top Species</a>
+          <a href="landings.html">Landings</a>
+        </div>
+      </div>
+
+      <a href="about.html">About</a>
+
+      <a href="https://www.instagram.com/the_socal_bite/" target="_blank" aria-label="Instagram">
+        <img src="assets/instagram-icon.png" class="social-logo" alt="Instagram">
+      </a>
+
+      <a href="https://www.tiktok.com/@the_socal_bite" target="_blank" aria-label="TikTok">
+        <img src="assets/tiktok-icon.png" class="social-logo" alt="TikTok">
+      </a>
+    </nav>
+  </section>
+
+  <main class="report-page">
+
+    <div class="date-controls">
+      <select id="trendWindow">
+        <option value="7">Last 7 Days</option>
+        <option value="14">Last 14 Days</option>
+        <option value="30" selected>Last 30 Days</option>
+      </select>
+
+      <select id="regionFilter">
+        <option value="all">All Regions</option>
+      </select>
+    </div>
+
+    <div id="biteTrendsPage">
+      <h2>Loading bite trends...</h2>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>© 2026 The SoCal Bite • Fishing Reports & Bite Updates</p>
+  </footer>
+
+  <script src="bite-trends.js?v=1"></script>
+
+</body>
+</html>
