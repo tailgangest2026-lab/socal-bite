@@ -184,7 +184,7 @@ body {
 }
 
 .home-hero h1 {
-  margin: 0;
+  margin: 0 0 8px 0;
   color: white;
   font-size: clamp(48px, 5.3vw, 88px);
   text-transform: uppercase;
@@ -194,7 +194,7 @@ body {
 }
 
 .home-hero p {
-  margin: 18px auto 0;
+  margin: 0 auto;
   max-width: 760px;
   color: var(--soft);
   font-size: clamp(18px, 1.7vw, 26px);
