@@ -202,10 +202,16 @@ function renderSpeciesYoYChart() {
   const rows = selectedRegion === "all"
     ? allTrendRows
     : allTrendRows.filter(row => row.region === selectedRegion);
+const trendResult =
+  buildWeeklySpeciesTrend(
+    rows,
+    selectedSpecies
+  );
 
-  const weekly = buildWeeklySpeciesTrend(rows, selectedSpecies);
-  const chartData = buildYoYChartData(weekly);
-
+const chartData =
+  buildYoYChartData(
+    trendResult
+  );
   const ctx = canvas.getContext("2d");
 
   if (speciesYoYChart) {
@@ -270,8 +276,8 @@ function renderSpeciesYoYChart() {
       labels: chartData.weeks,
       datasets: [
         {
-          label: "2025",
-          data: chartData.year2025,
+          label: String(chartData.previousYear),
+          data: chartData.previousData,
           borderColor: chartColors.year2025,
           backgroundColor: chartColors.year2025,
           tension: 0.35,
@@ -279,8 +285,8 @@ function renderSpeciesYoYChart() {
           pointHoverRadius: 6
         },
         {
-          label: "2026",
-          data: chartData.year2026,
+          label: String(chartData.currentYear),
+          data: chartData.currentData,
           borderColor: chartColors.year2026,
           backgroundColor: chartColors.year2026,
           tension: 0.35,
@@ -294,51 +300,98 @@ function renderSpeciesYoYChart() {
 }
 
 function buildWeeklySpeciesTrend(rows, selectedSpecies) {
+
+  const currentYear = new Date().getFullYear();
+  const previousYear = currentYear - 1;
+
   const weekly = {};
 
   rows.forEach(row => {
-    const date = parseDate(row.report_date || row.trip_date);
+
+    const date = parseDate(
+      row.report_date || row.trip_date
+    );
+
     if (!date) return;
 
     const year = date.getFullYear();
+
+    if (
+      year !== currentYear &&
+      year !== previousYear
+    ) {
+      return;
+    }
+
     const week = getWeekNumber(date);
 
-    parseFishCounts(row.fish_counts || "").forEach(item => {
-      if (item.species !== selectedSpecies) return;
+    parseFishCounts(
+      row.fish_counts || ""
+    ).forEach(item => {
+
+      if (
+        item.species !== selectedSpecies
+      ) {
+        return;
+      }
 
       if (!weekly[week]) {
         weekly[week] = {
           week,
-          year2025: 0,
-          year2026: 0
+          current: 0,
+          previous: 0
         };
       }
 
-      if (year === 2025) {
-        weekly[week].year2025 += item.count;
+      if (year === currentYear) {
+        weekly[week].current += item.count;
       }
 
-      if (year === 2026) {
-        weekly[week].year2026 += item.count;
+      if (year === previousYear) {
+        weekly[week].previous += item.count;
       }
+
     });
+
   });
 
-  return weekly;
-}
-
-function buildYoYChartData(weekly) {
-  const weeks = Object.keys(weekly)
-    .map(Number)
-    .sort((a, b) => a - b);
-
   return {
-    weeks: weeks.map(week => `W${week}`),
-    year2025: weeks.map(week => weekly[week].year2025 || 0),
-    year2026: weeks.map(week => weekly[week].year2026 || 0)
+    weekly,
+    currentYear,
+    previousYear
   };
 }
+function buildYoYChartData(result) {
 
+  const {
+    weekly,
+    currentYear,
+    previousYear
+  } = result;
+
+  const weeks = [];
+
+  for (let week = 1; week <= 53; week++) {
+    weeks.push(week);
+  }
+
+  return {
+    currentYear,
+    previousYear,
+
+    weeks: weeks.map(
+      week => `W${week}`
+    ),
+
+    currentData: weeks.map(
+      week => weekly[week]?.current || 0
+    ),
+
+    previousData: weeks.map(
+      week => weekly[week]?.previous || 0
+    )
+  };
+}
 function renderBiteTrends() {
   const container = document.getElementById("biteTrendsPage");
 
