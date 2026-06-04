@@ -67,60 +67,62 @@
   </main>
 
   <script>
-    async function loadFishingNews() {
-      const container = document.getElementById('newsList');
+async function loadFishingNews() {
+  var container = document.getElementById("newsList");
 
-      try {
-        const response = await fetch('/news.json)
+  try {
+    var response = await fetch("/news.json?v=" + Date.now());
 
-        if (!response.ok) {
-          throw new Error('Could not load news.json. Status: ' + response.status);
-        }
-
-        const news = await response.json();
-
-        if (!Array.isArray(news) || news.length === 0) {
-          container.innerHTML = '<p>No fishing news available right now.</p>';
-          return;
-        }
-
-        container.innerHTML = news.map(item => {
-          const headline = item.headline || 'No headline';
-          const source = item.source || 'Fishing News';
-          const link = item.link || '#';
-
-          const date = item.date
-            ? new Date(item.date).toLocaleDateString('en-US', {
-                month: 'short',
-                day: 'numeric',
-                year: 'numeric'
-              })
-            : '';
-
-          return `
-            <article class="news-card">
-              <h2>
-                <a href="${link}" target="_blank" rel="noopener noreferrer">
-                  ${headline}
-                </a>
-              </h2>
-
-              <div class="news-meta">
-                <span>${source}</span>
-                ${date ? `<span>${date}</span>` : ''}
-              </div>
-            </article>
-          `;
-        }).join('');
-
-      } catch (error) {
-        console.error('Fishing news error:', error);
-        container.innerHTML = '<p>Fishing news could not be loaded.</p>';
-      }
+    if (!response.ok) {
+      throw new Error("Could not load news.json. Status: " + response.status);
     }
 
-    loadFishingNews();
-  </script>
+    var news = await response.json();
+
+    if (!Array.isArray(news) || news.length === 0) {
+      container.innerHTML = "<p>No fishing news available right now.</p>";
+      return;
+    }
+
+    var html = "";
+
+    news.forEach(function(item) {
+      var headline = item.headline || "No headline";
+      var source = item.source || "Fishing News";
+      var link = item.link || "#";
+      var date = "";
+
+      if (item.date) {
+        date = new Date(item.date).toLocaleDateString("en-US", {
+          month: "short",
+          day: "numeric",
+          year: "numeric"
+        });
+      }
+
+      html += '<article class="news-card">';
+      html += '<h2><a href="' + link + '" target="_blank" rel="noopener noreferrer">' + headline + '</a></h2>';
+      html += '<div class="news-meta">';
+      html += '<span>' + source + '</span>';
+
+      if (date) {
+        html += '<span>' + date + '</span>';
+      }
+
+      html += '</div>';
+      html += '</article>';
+    });
+
+    container.innerHTML = html;
+
+  } catch (error) {
+    console.error("Fishing news error:", error);
+    container.innerHTML = "<p>Fishing news could not be loaded.</p>";
+  }
+}
+
+loadFishingNews();
+</script>
 
 </body>
 </html>
