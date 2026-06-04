@@ -34,7 +34,7 @@ body {
 /* NAV */
 .floating-nav {
   position: absolute;
-  top: 88px;
+  top: 100px;
   right: 35px;
   display: flex;
   gap: 12px;
