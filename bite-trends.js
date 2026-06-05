@@ -169,30 +169,43 @@ function renderSpeciesYoYChart() {
     ? trendRows
     : trendRows.filter(row => row.region === selectedRegion);
 
-  const currentYear = Math.max(...rows.map(row => row.year));
-  const previousYear = currentYear - 1;
+const currentYear = Math.max(...rows.map(row => row.year));
+const previousYear = currentYear - 1;
 
-  const weeks = Array.from({ length: 53 }, (_, i) => i + 1);
+const currentYearWeeks = rows
+  .filter(row => row.year === currentYear)
+  .map(row => row.week);
+
+const maxCurrentWeek = Math.max(...currentYearWeeks);
+
+const weeks = Array.from(
+  { length: maxCurrentWeek },
+  (_, i) => i + 1
+);
 
   const currentData = weeks.map(week => {
-    return rows
-      .filter(row =>
-        row.year === currentYear &&
-        row.week === week &&
-        row.species === selectedSpecies
-      )
-      .reduce((sum, row) => sum + row.fish, 0);
-  });
+  const total = rows
+    .filter(row =>
+      row.year === currentYear &&
+      row.week === week &&
+      row.species === selectedSpecies
+    )
+    .reduce((sum, row) => sum + row.fish, 0);
+
+  return total > 0 ? total : null;
+});
 
   const previousData = weeks.map(week => {
-    return rows
-      .filter(row =>
-        row.year === previousYear &&
-        row.week === week &&
-        row.species === selectedSpecies
-      )
-      .reduce((sum, row) => sum + row.fish, 0);
-  });
+  const total = rows
+    .filter(row =>
+      row.year === previousYear &&
+      row.week === week &&
+      row.species === selectedSpecies
+    )
+    .reduce((sum, row) => sum + row.fish, 0);
+
+  return total > 0 ? total : null;
+});
 
   const ctx = canvas.getContext("2d");
 
