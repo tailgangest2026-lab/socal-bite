@@ -651,12 +651,50 @@ body {
 
 /* CHARTS */
 .chart-card {
-  height: 420px;
+  margin: 28px auto;
+  padding: 28px 24px 34px;
+  max-width: 1125px;
+  min-height: 520px;
+  background: rgba(3, 18, 32, 0.88);
+  border: 1px solid rgba(25, 194, 209, 0.55);
+  border-radius: 18px;
+  overflow: hidden;
 }
 
-.chart-card canvas {
-  width: 100%;
-  height: 320px;
+.chart-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 18px;
+}
+
+.chart-card-header h2 {
+  margin: 0 0 12px;
+}
+
+.chart-card-header p {
+  margin: 0;
+}
+
+#speciesTrendSelect {
+  min-width: 170px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(25, 194, 209, 0.7);
+  background: #061d2e;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+#speciesYoYChart {
+  display: block;
+  width: 100% !important;
+  height: 360px !important;
+}
+
+#biteTrendsPage {
+  margin-top: 28px;
 }
 
 /* FOOTER */
