@@ -93,7 +93,8 @@
       try {
         const [landingRes, priceRes] = await Promise.all([
           fetch("landing-detail.json?v=" + Date.now()),
-          fetch("trip-prices.json?v=" + Date.now())
+          fetch("trip-prices.json?v=" + Date.now()),
+          fetch("landing-trip-types.json?v=" + Date.now()),
         ]);
 
         if (!landingRes.ok) {
@@ -102,7 +103,8 @@
 
         const landings = await landingRes.json();
         const prices = priceRes.ok ? await priceRes.json() : [];
-
+        const tripTypes = await tripTypeRes.json();
+        
         renderLandings(landings, prices);
       } catch (err) {
         console.error("Landing load error:", err);
