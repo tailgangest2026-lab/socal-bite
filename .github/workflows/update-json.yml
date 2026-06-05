@@ -52,6 +52,7 @@ jobs:
           }
 
           download_json "landing-detail" "landing-detail.json"
+          download_json "trip-prices" "trip-prices.json"
           download_json "landings" "landings.json"
           download_json "news" "news.json"
           download_json "bite-trends" "bite-trends.json"
