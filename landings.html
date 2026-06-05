@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Book a Fishing Trip | SoCal Bite</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -14,7 +16,10 @@
     <h1>Book a Fishing Trip</h1>
 
     <nav class="page-nav">
-      <a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
+      <a href="index.html">
+        <i class="fa-solid fa-house"></i>
+        <span>Home</span>
+      </a>
 
       <div class="dropdown">
         <button class="dropbtn">
@@ -32,23 +37,37 @@
         </div>
       </div>
 
-      <a href="news.html"><i class="fa-solid fa-newspaper"></i><span>Fishing News</span></a>
-      <a href="landings.html"><i class="fa-solid fa-fish"></i><span>Landings</span></a>
-      <a href="about.html"><i class="fa-solid fa-user"></i><span>About</span></a>
+      <a href="news.html">
+        <i class="fa-solid fa-newspaper"></i>
+        <span>Fishing News</span>
+      </a>
+
+      <a href="landings.html">
+        <i class="fa-solid fa-fish"></i>
+        <span>Landings</span>
+      </a>
+
+      <a href="about.html">
+        <i class="fa-solid fa-user"></i>
+        <span>About</span>
+      </a>
     </nav>
   </section>
 
   <main class="report-page">
+
     <section class="region-section">
       <h2>Southern California Sportfishing Landings</h2>
+
       <p class="page-subtitle">
-        Compare landings by trips, boats, fish counts, FPA, contact info, directions, and available trip prices.
+        Compare landings by boats, anglers, fish counts, FPA, contact info, directions, and trip prices.
       </p>
 
-      <div id="landingContainer" class="ratings-grid">
+      <div id="landingContainer" class="landing-region-wrap">
         <div class="loading-card">Loading landings...</div>
       </div>
     </section>
+
   </main>
 
   <footer class="site-footer">
@@ -77,7 +96,9 @@
           fetch("trip-prices.json?v=" + Date.now())
         ]);
 
-        if (!landingRes.ok) throw new Error("Could not load landing-detail.json");
+        if (!landingRes.ok) {
+          throw new Error("Could not load landing-detail.json");
+        }
 
         const landings = await landingRes.json();
         const prices = priceRes.ok ? await priceRes.json() : [];
@@ -85,7 +106,7 @@
         renderLandings(landings, prices);
       } catch (err) {
         console.error("Landing load error:", err);
-        container.innerHTML = `<div class="loading-card">Landing data not available.</div>`;
+        container.innerHTML = '<div class="loading-card">Landing data not available.</div>';
       }
     }
 
@@ -93,100 +114,174 @@
       const container = document.getElementById("landingContainer");
 
       if (!Array.isArray(landings) || !landings.length) {
-        container.innerHTML = `<div class="loading-card">No landing data found.</div>`;
+        container.innerHTML = '<div class="loading-card">No landing data found.</div>';
         return;
       }
 
-      const sorted = [...landings].sort((a, b) =>
-        String(a.region || "").localeCompare(String(b.region || "")) ||
-        String(a.landing || "").localeCompare(String(b.landing || ""))
-      );
+      const regionOrder = [
+        "San Diego",
+        "Orange County",
+        "Los Angeles",
+        "Ventura",
+        "Santa Barbara",
+        "Central Coast"
+      ];
 
-      container.innerHTML = sorted.map(landing => {
-        const landingPrices = prices
-          .filter(p => normalize(p.landing) === normalize(landing.landing))
-          .sort((a, b) => Number(a.price || 0) - Number(b.price || 0));
+      const grouped = {};
 
-        const priceHtml = landingPrices.length
-          ? landingPrices.slice(0, 4).map(p => `
-              <div class="price-row">
-                <span>${escapeHtml(p.trip_type || "Trip")}</span>
-                <strong>${formatPrice(p.price)}</strong>
-              </div>
-            `).join("")
-          : `<p class="muted">No prices available yet.</p>`;
+      landings.forEach(landing => {
+        const region = landing.region || "Other";
 
-        const telLink = landing.phone ? landing.phone.replace(/[^\d]/g, "") : "";
+        if (!grouped[region]) {
+          grouped[region] = [];
+        }
+
+        grouped[region].push(landing);
+      });
+
+      const regions = Object.keys(grouped).sort((a, b) => {
+        const ai = regionOrder.indexOf(a);
+        const bi = regionOrder.indexOf(b);
+
+        if (ai === -1 && bi === -1) return a.localeCompare(b);
+        if (ai === -1) return 1;
+        if (bi === -1) return -1;
+
+        return ai - bi;
+      });
+
+      container.innerHTML = regions.map(region => {
+        const cards = grouped[region]
+          .sort((a, b) => String(a.landing || "").localeCompare(String(b.landing || "")))
+          .map(landing => buildLandingCard(landing, prices))
+          .join("");
 
         return `
-          <article class="region-card landing-card">
-            <div class="landing-card-top">
-              <h2>${escapeHtml(landing.landing || "Unknown Landing")}</h2>
-              <p>${escapeHtml(landing.region || "")}</p>
+          <section class="landing-region-section">
+            <h2>${escapeHtml(region)} Landings</h2>
+
+            <div class="ratings-grid">
+              ${cards}
             </div>
-
-            <div class="landing-stats">
-              <div>
-                <strong>${number(landing.trips)}</strong>
-                <span>Trips</span>
-              </div>
-              <div>
-                <strong>${number(landing.boats)}</strong>
-                <span>Boats</span>
-              </div>
-              <div>
-                <strong>${number(landing.fish)}</strong>
-                <span>Fish</span>
-              </div>
-              <div>
-                <strong>${Number(landing.fpa || 0).toFixed(2)}</strong>
-                <span>FPA</span>
-              </div>
-            </div>
-
-            <div class="landing-info">
-              ${landing.phone ? `
-                <p>
-                  <i class="fa-solid fa-phone"></i>
-                  <a href="tel:${telLink}">${escapeHtml(landing.phone)}</a>
-                </p>
-              ` : ""}
-
-              ${landing.address ? `
-                <p>
-                  <i class="fa-solid fa-location-dot"></i>
-                  ${escapeHtml(landing.address)}
-                </p>
-              ` : ""}
-            </div>
-
-            <div class="price-box">
-              <h3>Trip Prices</h3>
-              ${priceHtml}
-            </div>
-
-            <div class="landing-buttons">
-              ${landing.website ? `
-                <a href="${escapeAttr(landing.website)}" target="_blank" rel="noopener">
-                  Website
-                </a>
-              ` : ""}
-
-              ${landing.google_maps_link ? `
-                <a href="${escapeAttr(landing.google_maps_link)}" target="_blank" rel="noopener">
-                  Directions
-                </a>
-              ` : ""}
-
-              ${landing.booking_url ? `
-                <a href="${escapeAttr(landing.booking_url)}" target="_blank" rel="noopener">
-                  Book Trip
-                </a>
-              ` : ""}
-            </div>
-          </article>
+          </section>
         `;
       }).join("");
+    }
+
+    function buildLandingCard(landing, prices) {
+      const landingPrices = Array.isArray(prices)
+        ? prices
+            .filter(p => normalize(p.landing) === normalize(landing.landing))
+            .sort((a, b) => Number(a.price || 0) - Number(b.price || 0))
+        : [];
+
+      const priceHtml = landingPrices.length
+        ? landingPrices.slice(0, 4).map(p => `
+            <div class="price-row">
+              <span>${escapeHtml(p.trip_type || "Trip")}</span>
+              <strong>${formatPrice(p.price)}</strong>
+            </div>
+          `).join("")
+        : '<p class="muted">No prices available yet.</p>';
+
+      const telLink = landing.phone ? String(landing.phone).replace(/[^\d]/g, "") : "";
+
+      return `
+        <article class="region-card landing-card">
+
+          <div class="landing-card-top">
+            <h2>${escapeHtml(landing.landing || "Unknown Landing")}</h2>
+            <p>${escapeHtml(landing.region || "")}</p>
+          </div>
+
+          <div class="landing-stats">
+            <div>
+              <strong>${number(landing.boats)}</strong>
+              <span>Boats</span>
+            </div>
+
+            <div>
+              <strong>${number(landing.anglers)}</strong>
+              <span>Anglers</span>
+            </div>
+
+            <div>
+              <strong>${number(landing.fish)}</strong>
+              <span>Fish</span>
+            </div>
+
+            <div>
+              <strong>${Number(landing.fpa || 0).toFixed(2)}</strong>
+              <span>FPA</span>
+            </div>
+          </div>
+
+          <div class="landing-info">
+            ${
+              landing.phone
+                ? `
+                  <p>
+                    <i class="fa-solid fa-phone"></i>
+                    <a href="tel:${telLink}">${escapeHtml(landing.phone)}</a>
+                  </p>
+                `
+                : ""
+            }
+
+            ${
+              landing.address
+                ? `
+                  <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    ${escapeHtml(landing.address)}
+                  </p>
+                `
+                : ""
+            }
+          </div>
+
+          <div class="price-box">
+            <h3>Trip Prices</h3>
+            ${priceHtml}
+          </div>
+
+          <div class="landing-buttons">
+            ${
+              landing.website
+                ? `
+                  <a href="${escapeAttr(landing.website)}" target="_blank" rel="noopener">
+                    <i class="fa-solid fa-globe"></i>
+                    <span>Website</span>
+                  </a>
+                `
+                : ""
+            }
+
+            ${
+              landing.google_maps_link
+                ? `
+                  <a href="${escapeAttr(landing.google_maps_link)}" target="_blank" rel="noopener">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Directions</span>
+                  </a>
+                `
+                : ""
+            }
+
+            ${
+              landing.booking_url
+                ? `
+                  <a href="${escapeAttr(landing.booking_url)}" target="_blank" rel="noopener">
+                    <i class="fa-solid fa-ticket"></i>
+                    <span>Book Trip</span>
+                  </a>
+                `
+                : ""
+            }
+          </div>
+
+        </article>
+      `;
     }
 
     function normalize(value) {
