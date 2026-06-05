@@ -1,8 +1,6 @@
 name: Update SoCal Bite JSON
 
 on:
-  schedule:
-    - cron: "0 */2 * * *"
   workflow_dispatch:
 
 permissions:
@@ -32,7 +30,6 @@ jobs:
             TEMP="tmp-json/$(basename "$OUT")"
 
             echo "Downloading $OUT"
-
             curl -L "$URL" -o "$TEMP"
 
             if jq empty "$TEMP" >/dev/null 2>&1; then
@@ -40,6 +37,7 @@ jobs:
               echo "Saved $OUT"
             else
               echo "Invalid JSON returned for $OUT"
+              cat "$TEMP"
               rm -f "$TEMP"
             fi
           }
@@ -62,23 +60,36 @@ jobs:
 
           rm -rf tmp-json
 
+      - name: Debug git info
+        run: |
+          echo "Current branch:"
+          git branch --show-current
+
+          echo "Remote:"
+          git remote -v
+
+          echo "Status:"
+          git status
+
+          echo "Files:"
+          ls -la
+
       - name: Commit updated JSON
         run: |
-          git config user.name "github-actions"
-          git config user.email "github-actions@github.com"
+          set -x
 
-          git add bite-trends.json
-          git add news.json
-          git add home.json
-          git add boat-ratings.json
-          git add daily-report-index.json
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add bite-trends.json news.json home.json boat-ratings.json daily-report-index.json
           git add reports/*.json || true
 
           git status
 
           if git diff --cached --quiet; then
             echo "No JSON changes to commit"
-          else
-            git commit -m "Update SoCal Bite JSON"
-            git push
+            exit 0
           fi
+
+          git commit -m "Update SoCal Bite JSON"
+          git push
