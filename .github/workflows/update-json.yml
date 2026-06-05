@@ -46,10 +46,8 @@ jobs:
               rm -f "$TEMP"
             fi
           }
-
           download_json "$BASE_URL?page=landing-detail "landing-detail.json"
           download_json "$BASE_URL?page=landings "landings.json"
-          download_json "$BASE_URL?page=news" "news.json"
           download_json "$BASE_URL?page=bite-trends" "bite-trends.json"
           download_json "$BASE_URL?page=news" "news.json"
           download_json "$BASE_URL?page=home" "home.json"
