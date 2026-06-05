@@ -9,14 +9,20 @@
 </head>
 
 <body class="inner-page">
-    
+
   <section class="page-top">
     <h1>Book a Fishing Trip</h1>
 
-  <nav class="page-nav">
+    <nav class="page-nav">
       <a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
+
       <div class="dropdown">
-        <button class="dropbtn"><i class="fa-solid fa-chart-line"></i><span>Reports</span><i class="fa-solid fa-caret-down caret"></i></button>
+        <button class="dropbtn">
+          <i class="fa-solid fa-chart-line"></i>
+          <span>Reports</span>
+          <i class="fa-solid fa-caret-down caret"></i>
+        </button>
+
         <div class="dropdown-content">
           <a href="daily-report.html">Daily Report</a>
           <a href="boat-ratings.html">Boat Ratings</a>
@@ -25,6 +31,7 @@
           <a href="top-species.html">Top Species</a>
         </div>
       </div>
+
       <a href="news.html"><i class="fa-solid fa-newspaper"></i><span>Fishing News</span></a>
       <a href="landings.html"><i class="fa-solid fa-fish"></i><span>Landings</span></a>
       <a href="about.html"><i class="fa-solid fa-user"></i><span>About</span></a>
@@ -32,154 +39,182 @@
   </section>
 
   <main class="report-page">
+    <section class="region-section">
+      <h2>Southern California Sportfishing Landings</h2>
+      <p class="page-subtitle">
+        Compare landings by trips, boats, fish counts, FPA, contact info, directions, and available trip prices.
+      </p>
 
-    <div class="region-section">
-      <h2>San Diego Landings</h2>
-
-      <div class="ratings-grid">
-        <a class="region-card" href="https://www.hmlanding.com/" target="_blank">
-          <h2>H&M Landing</h2>
-          <p>San Diego, CA</p>
-          <strong>Book Trip →</strong>
-        </a>
-
-        <a class="region-card" href="https://www.fishermanslanding.com/" target="_blank">
-          <h2>Fisherman's Landing</h2>
-          <p>San Diego, CA</p>
-          <strong>Book Trip →</strong>
-        </a>
-
-        <a class="region-card" href="https://seaforthlanding.com/" target="_blank">
-          <h2>Seaforth Sportfishing</h2>
-          <p>Mission Bay, CA</p>
-          <strong>Book Trip →</strong>
-        </a>
-
-        <a class="region-card" href="https://www.pointlomasportfishing.com/" target="_blank">
-          <h2>Point Loma Sportfishing</h2>
-          <p>San Diego, CA</p>
-          <strong>Book Trip →</strong>
-        </a>
+      <div id="landingContainer" class="ratings-grid">
+        <div class="loading-card">Loading landings...</div>
       </div>
-    </div>
-
-    <div class="region-section">
-      <h2>Orange County Landings</h2>
-
-      <div class="ratings-grid">
-        <a class="region-card" href="https://www.danawharf.com/" target="_blank">
-          <h2>Dana Wharf Sportfishing</h2>
-          <p>Dana Point, CA</p>
-          <strong>Book Trip →</strong>
-        </a>
-
-        <a class="region-card" href="https://newportlanding.com/" target="_blank">
-          <h2>Newport Landing</h2>
-          <p>Newport Beach, CA</p>
-          <strong>Book Trip →</strong>
-        </a>
-
-        <a class="region-card" href="https://www.daveyslocker.com/" target="_blank">
-          <h2>Davey's Locker</h2>
-          <p>Newport Beach, CA</p>
-          <strong>Book Trip →</strong>
-        </a>
-      </div>
-    </div>
-
-    <div class="region-section">
-      <h2>Los Angeles / Long Beach Landings</h2>
-
-      <div class="ratings-grid">
-        <a class="region-card" href="https://www.22ndstreet.com/" target="_blank">
-          <h2>22nd Street Landing</h2>
-          <p>San Pedro, CA</p>
-          <strong>Book Trip →</strong>
-        </a>
-
-        <a class="region-card" href="https://pierpoint.net/" target="_blank">
-          <h2>Pierpoint Landing</h2>
-          <p>Long Beach, CA</p>
-          <strong>Book Trip →</strong>
-        </a>
-
-        <a class="region-card" href="https://www.longbeachsportfishing.com/" target="_blank">
-          <h2>Long Beach Sportfishing</h2>
-          <p>Long Beach, CA</p>
-          <strong>Book Trip →</strong>
-        </a>
-
-        <a class="region-card" href="https://www.marinadelreysportfishing.com/" target="_blank">
-          <h2>Marina Del Rey Sportfishing</h2>
-          <p>Marina Del Rey, CA</p>
-          <strong>Book Trip →</strong>
-        </a>
-      </div>
-    </div>
-
-    <div class="region-section">
-      <h2>Ventura / Central Coast Landings</h2>
-
-      <div class="ratings-grid">
-        <a class="region-card" href="https://www.venturasportfishing.com/" target="_blank">
-          <h2>Ventura Sportfishing</h2>
-          <p>Ventura, CA</p>
-          <strong>Book Trip →</strong>
-        </a>
-
-        <a class="region-card" href="https://www.channelislandssportfishing.com/" target="_blank">
-          <h2>Channel Islands Sportfishing</h2>
-          <p>Oxnard, CA</p>
-          <strong>Book Trip →</strong>
-        </a>
-
-        <a class="region-card" href="https://www.hookssportfishing.com/" target="_blank">
-          <h2>Hooks Landing</h2>
-          <p>Oxnard, CA</p>
-          <strong>Book Trip →</strong>
-        </a>
-
-        <a class="region-card" href="https://www.patriotsportfishing.com/" target="_blank">
-          <h2>Patriot Sportfishing</h2>
-          <p>Avila Beach, CA</p>
-          <strong>Book Trip →</strong>
-        </a>
-      </div>
-    </div>
-
-    <div class="region-section">
-      <h2>Catalina Island</h2>
-
-      <div class="ratings-grid">
-        <a class="region-card" href="https://www.visitcatalinaisland.com/listing/avalon-sportfishing-fleet/90/" target="_blank">
-          <h2>Avalon Sportfishing Fleet</h2>
-          <p>Avalon, Catalina Island</p>
-          <strong>Book Trip →</strong>
-        </a>
-
-        <a class="region-card" href="https://www.visitcatalinaisland.com/listing/two-harbors-sportfishing/404/" target="_blank">
-          <h2>Two Harbors Sportfishing</h2>
-          <p>Two Harbors, Catalina Island</p>
-          <strong>Book Trip →</strong>
-        </a>
-      </div>
-    </div>
-
+    </section>
   </main>
 
-<footer class="site-footer">
-  <p>© 2026 The SoCal Bite • Fishing Reports & Bite Updates</p>
+  <footer class="site-footer">
+    <p>© 2026 The SoCal Bite • Fishing Reports & Bite Updates</p>
 
-  <div class="social-links">
-    <a href="https://www.instagram.com/the_socal_bite/" target="_blank" aria-label="Instagram">
-      <img src="assets/instagram-icon.png" class="social-logo" alt="Instagram">
-    </a>
+    <div class="social-links">
+      <a href="https://www.instagram.com/the_socal_bite/" target="_blank" aria-label="Instagram">
+        <img src="assets/instagram-icon.png" class="social-logo" alt="Instagram">
+      </a>
 
-    <a href="https://www.tiktok.com/@the_socal_bite" target="_blank" aria-label="TikTok">
-      <img src="assets/tiktok-icon.png" class="social-logo" alt="TikTok">
-    </a>
-  </div>
-</footer>
+      <a href="https://www.tiktok.com/@the_socal_bite" target="_blank" aria-label="TikTok">
+        <img src="assets/tiktok-icon.png" class="social-logo" alt="TikTok">
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", loadLandings);
+
+    async function loadLandings() {
+      const container = document.getElementById("landingContainer");
+
+      try {
+        const [landingRes, priceRes] = await Promise.all([
+          fetch("landing-detail.json?v=" + Date.now()),
+          fetch("trip-prices.json?v=" + Date.now())
+        ]);
+
+        if (!landingRes.ok) throw new Error("Could not load landing-detail.json");
+
+        const landings = await landingRes.json();
+        const prices = priceRes.ok ? await priceRes.json() : [];
+
+        renderLandings(landings, prices);
+      } catch (err) {
+        console.error("Landing load error:", err);
+        container.innerHTML = `<div class="loading-card">Landing data not available.</div>`;
+      }
+    }
+
+    function renderLandings(landings, prices) {
+      const container = document.getElementById("landingContainer");
+
+      if (!Array.isArray(landings) || !landings.length) {
+        container.innerHTML = `<div class="loading-card">No landing data found.</div>`;
+        return;
+      }
+
+      const sorted = [...landings].sort((a, b) =>
+        String(a.region || "").localeCompare(String(b.region || "")) ||
+        String(a.landing || "").localeCompare(String(b.landing || ""))
+      );
+
+      container.innerHTML = sorted.map(landing => {
+        const landingPrices = prices
+          .filter(p => normalize(p.landing) === normalize(landing.landing))
+          .sort((a, b) => Number(a.price || 0) - Number(b.price || 0));
+
+        const priceHtml = landingPrices.length
+          ? landingPrices.slice(0, 4).map(p => `
+              <div class="price-row">
+                <span>${escapeHtml(p.trip_type || "Trip")}</span>
+                <strong>${formatPrice(p.price)}</strong>
+              </div>
+            `).join("")
+          : `<p class="muted">No prices available yet.</p>`;
+
+        const telLink = landing.phone ? landing.phone.replace(/[^\d]/g, "") : "";
+
+        return `
+          <article class="region-card landing-card">
+            <div class="landing-card-top">
+              <h2>${escapeHtml(landing.landing || "Unknown Landing")}</h2>
+              <p>${escapeHtml(landing.region || "")}</p>
+            </div>
+
+            <div class="landing-stats">
+              <div>
+                <strong>${number(landing.trips)}</strong>
+                <span>Trips</span>
+              </div>
+              <div>
+                <strong>${number(landing.boats)}</strong>
+                <span>Boats</span>
+              </div>
+              <div>
+                <strong>${number(landing.fish)}</strong>
+                <span>Fish</span>
+              </div>
+              <div>
+                <strong>${Number(landing.fpa || 0).toFixed(2)}</strong>
+                <span>FPA</span>
+              </div>
+            </div>
+
+            <div class="landing-info">
+              ${landing.phone ? `
+                <p>
+                  <i class="fa-solid fa-phone"></i>
+                  <a href="tel:${telLink}">${escapeHtml(landing.phone)}</a>
+                </p>
+              ` : ""}
+
+              ${landing.address ? `
+                <p>
+                  <i class="fa-solid fa-location-dot"></i>
+                  ${escapeHtml(landing.address)}
+                </p>
+              ` : ""}
+            </div>
+
+            <div class="price-box">
+              <h3>Trip Prices</h3>
+              ${priceHtml}
+            </div>
+
+            <div class="landing-buttons">
+              ${landing.website ? `
+                <a href="${escapeAttr(landing.website)}" target="_blank" rel="noopener">
+                  Website
+                </a>
+              ` : ""}
+
+              ${landing.google_maps_link ? `
+                <a href="${escapeAttr(landing.google_maps_link)}" target="_blank" rel="noopener">
+                  Directions
+                </a>
+              ` : ""}
+
+              ${landing.booking_url ? `
+                <a href="${escapeAttr(landing.booking_url)}" target="_blank" rel="noopener">
+                  Book Trip
+                </a>
+              ` : ""}
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    function normalize(value) {
+      return String(value || "").trim().toLowerCase();
+    }
+
+    function number(value) {
+      return Number(value || 0).toLocaleString();
+    }
+
+    function formatPrice(value) {
+      const num = Number(value || 0);
+      return num ? "$" + num.toFixed(0) : "N/A";
+    }
+
+    function escapeHtml(value) {
+      return String(value || "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function escapeAttr(value) {
+      return escapeHtml(value);
+    }
+  </script>
 
 </body>
 </html>
