@@ -819,3 +819,144 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+.page-subtitle {
+  max-width: 850px;
+  margin: 0 auto 28px;
+  color: rgba(255,255,255,0.8);
+  text-align: center;
+  font-size: 1rem;
+}
+
+.landing-region-wrap {
+  display: block;
+  width: 100%;
+}
+
+.landing-region-section {
+  margin-bottom: 42px;
+}
+
+.landing-region-section > h2 {
+  margin: 0 0 18px;
+  text-align: left;
+  font-size: 1.7rem;
+}
+
+.landing-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.landing-card-top h2 {
+  margin-bottom: 4px;
+}
+
+.landing-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.landing-stats div {
+  background: rgba(255,255,255,0.08);
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+}
+
+.landing-stats strong {
+  display: block;
+  font-size: 1.1rem;
+}
+
+.landing-stats span {
+  font-size: 0.75rem;
+  opacity: 0.75;
+}
+
+.landing-info p {
+  margin: 8px 0;
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+
+.landing-info i {
+  margin-right: 8px;
+}
+
+.landing-info a {
+  color: inherit;
+}
+
+.price-box {
+  background: rgba(0,0,0,0.18);
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.price-box h3 {
+  margin: 0 0 10px;
+  font-size: 1rem;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.price-row:last-child {
+  border-bottom: none;
+}
+
+.landing-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: auto;
+}
+
+.landing-buttons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  min-height: 44px;
+  padding: 10px 8px;
+
+  border-radius: 12px;
+  background: rgba(255,255,255,0.12);
+  color: white;
+
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.78rem;
+
+  white-space: nowrap;
+}
+
+.landing-buttons a:hover {
+  background: rgba(255,255,255,0.22);
+}
+
+.muted {
+  opacity: 0.7;
+}
+
+@media (max-width: 700px) {
+  .landing-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .landing-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .landing-region-section > h2 {
+    text-align: center;
+  }
+}
