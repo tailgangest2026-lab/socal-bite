@@ -1,6 +1,8 @@
 name: Update SoCal Bite JSON
 
 on:
+  schedule:
+    - cron: "0 */2 * * *"
   workflow_dispatch:
 
 permissions:
@@ -30,6 +32,7 @@ jobs:
             TEMP="tmp-json/$(basename "$OUT")"
 
             echo "Downloading $OUT"
+
             curl -L "$URL" -o "$TEMP"
 
             if jq empty "$TEMP" >/dev/null 2>&1; then
@@ -37,7 +40,9 @@ jobs:
               echo "Saved $OUT"
             else
               echo "Invalid JSON returned for $OUT"
-              cat "$TEMP"
+              echo "First 500 characters returned:"
+              head -c 500 "$TEMP" || true
+              echo ""
               rm -f "$TEMP"
             fi
           }
@@ -60,19 +65,13 @@ jobs:
 
           rm -rf tmp-json
 
-      - name: Debug git info
+      - name: Show downloaded files
         run: |
-          echo "Current branch:"
-          git branch --show-current
+          echo "Root JSON files:"
+          ls -la *.json || true
 
-          echo "Remote:"
-          git remote -v
-
-          echo "Status:"
-          git status
-
-          echo "Files:"
-          ls -la
+          echo "Reports folder:"
+          ls -la reports || true
 
       - name: Commit updated JSON
         run: |
@@ -81,8 +80,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add bite-trends.json news.json home.json boat-ratings.json daily-report-index.json
-          git add reports/*.json || true
+          git add -A
 
           git status
 
