@@ -1,6 +1,4 @@
-let dailyIndex = [];
 let trendRows = [];
-let allTrendRows = [];
 let speciesYoYChart = null;
 
 document.addEventListener("DOMContentLoaded", loadBiteTrends);
@@ -11,22 +9,18 @@ async function loadBiteTrends() {
   try {
     container.innerHTML = "<h2>Loading bite trends...</h2>";
 
-    const dailyIndexData = await fetchJsonSafe("daily-report-index.json?v=" + Date.now());
+    const data = await fetchJsonSafe("bite-trends.json?v=" + Date.now());
 
-    if (!Array.isArray(dailyIndexData) || !dailyIndexData.length) {
-      container.innerHTML = "<h2>No trend data found.</h2>";
+    if (!Array.isArray(data) || !data.length) {
+      container.innerHTML = "<h2>No bite trend data found.</h2>";
       return;
     }
 
-    dailyIndex = dailyIndexData;
-
-    await loadAllTrendRows();
-    await loadTrendWindow();
+    trendRows = normalizeTrendRows(data);
 
     setupControls();
     populateRegionFilter();
     populateSpeciesTrendSelect();
-
     renderSpeciesYoYChart();
     renderBiteTrends();
 
@@ -46,59 +40,33 @@ async function fetchJsonSafe(url) {
   const text = await response.text();
   const trimmed = text.trim();
 
-  if (trimmed.startsWith("<!DOCTYPE") || trimmed.startsWith("<html") || trimmed.startsWith("<")) {
+  if (
+    trimmed.startsWith("<!DOCTYPE") ||
+    trimmed.startsWith("<html") ||
+    trimmed.startsWith("<")
+  ) {
     throw new Error("Non-JSON response from " + url);
   }
 
   return JSON.parse(trimmed);
 }
 
-async function loadReportRows(item, label) {
-  const filePath =
-    item.file || `reports/daily-report-${item.date}.json`;
-
-  try {
-    const rows = await fetchJsonSafe(filePath + "?v=" + Date.now());
-
-    if (!Array.isArray(rows)) {
-      console.warn("Skipping non-array report:", filePath);
-      return [];
-    }
-
-    return rows.map(row => ({
-      ...row,
-      report_date: item.date
-    }));
-
-  } catch (error) {
-    console.warn(`Skipping ${label}:`, item.date, filePath, error.message);
-    return [];
-  }
-}
-
-async function loadAllTrendRows() {
-  const allRows = [];
-
-  for (const item of dailyIndex) {
-    const rows = await loadReportRows(item, "historical trend date");
-    allRows.push(...rows);
-  }
-
-  allTrendRows = allRows;
-}
-
-async function loadTrendWindow() {
-  const windowDays = getSelectedWindowDays();
-  const selectedDates = dailyIndex.slice(0, windowDays);
-
-  const allRows = [];
-
-  for (const item of selectedDates) {
-    const rows = await loadReportRows(item, "trend date");
-    allRows.push(...rows);
-  }
-
-  trendRows = allRows;
+function normalizeTrendRows(data) {
+  return data.map(row => ({
+    year: Number(row.Year || row.year || 0),
+    week: Number(row.Week || row.week || 0),
+    region: row.Region || row.region || "Unknown",
+    species: row.Species || row.species || "Unknown",
+    trips: Number(row.Trips || row.trips || 0),
+    anglers: Number(row.Anglers || row.anglers || 0),
+    fish: Number(row.Fish || row.fish || 0),
+    fpa: Number(row.FPA || row.fpa || 0)
+  })).filter(row =>
+    row.year &&
+    row.week &&
+    row.region &&
+    row.species
+  );
 }
 
 function setupControls() {
@@ -107,18 +75,15 @@ function setupControls() {
   const speciesSelect = document.getElementById("speciesTrendSelect");
 
   if (windowSelect) {
-    windowSelect.onchange = async () => {
-      document.getElementById("biteTrendsPage").innerHTML =
-        "<h2>Refreshing bite trends...</h2>";
-
-      await loadTrendWindow();
-      populateRegionFilter();
+    windowSelect.onchange = () => {
+      renderSpeciesYoYChart();
       renderBiteTrends();
     };
   }
 
   if (regionSelect) {
     regionSelect.onchange = () => {
+      populateSpeciesTrendSelect();
       renderSpeciesYoYChart();
       renderBiteTrends();
     };
@@ -133,13 +98,12 @@ function setupControls() {
 
 function populateRegionFilter() {
   const select = document.getElementById("regionFilter");
-
   if (!select) return;
 
   const currentValue = select.value;
 
   const regions = [...new Set(
-    trendRows.map(row => row.region || "Unknown Region")
+    trendRows.map(row => row.region || "Unknown")
   )].sort();
 
   select.innerHTML = '<option value="all">All Regions</option>';
@@ -158,16 +122,19 @@ function populateRegionFilter() {
 
 function populateSpeciesTrendSelect() {
   const select = document.getElementById("speciesTrendSelect");
-
   if (!select) return;
+
+  const selectedRegion = getSelectedRegion();
+
+  const rows = selectedRegion === "all"
+    ? trendRows
+    : trendRows.filter(row => row.region === selectedRegion);
 
   const speciesTotals = {};
 
-  allTrendRows.forEach(row => {
-    parseFishCounts(row.fish_counts || "").forEach(item => {
-      speciesTotals[item.species] =
-        (speciesTotals[item.species] || 0) + item.count;
-    });
+  rows.forEach(row => {
+    speciesTotals[row.species] =
+      (speciesTotals[row.species] || 0) + row.fish;
   });
 
   const species = Object.keys(speciesTotals)
@@ -192,206 +159,121 @@ function populateSpeciesTrendSelect() {
 function renderSpeciesYoYChart() {
   const canvas = document.getElementById("speciesYoYChart");
   const speciesSelect = document.getElementById("speciesTrendSelect");
-  const regionSelect = document.getElementById("regionFilter");
 
-  if (!canvas || !speciesSelect || !allTrendRows.length) return;
+  if (!canvas || !speciesSelect || !trendRows.length) return;
 
   const selectedSpecies = speciesSelect.value;
-  const selectedRegion = regionSelect ? regionSelect.value : "all";
+  const selectedRegion = getSelectedRegion();
 
   const rows = selectedRegion === "all"
-    ? allTrendRows
-    : allTrendRows.filter(row => row.region === selectedRegion);
-const trendResult =
-  buildWeeklySpeciesTrend(
-    rows,
-    selectedSpecies
-  );
+    ? trendRows
+    : trendRows.filter(row => row.region === selectedRegion);
 
-const chartData =
-  buildYoYChartData(
-    trendResult
-  );
+  const currentYear = Math.max(...rows.map(row => row.year));
+  const previousYear = currentYear - 1;
+
+  const weeks = Array.from({ length: 53 }, (_, i) => i + 1);
+
+  const currentData = weeks.map(week => {
+    return rows
+      .filter(row =>
+        row.year === currentYear &&
+        row.week === week &&
+        row.species === selectedSpecies
+      )
+      .reduce((sum, row) => sum + row.fish, 0);
+  });
+
+  const previousData = weeks.map(week => {
+    return rows
+      .filter(row =>
+        row.year === previousYear &&
+        row.week === week &&
+        row.species === selectedSpecies
+      )
+      .reduce((sum, row) => sum + row.fish, 0);
+  });
+
   const ctx = canvas.getContext("2d");
 
   if (speciesYoYChart) {
     speciesYoYChart.destroy();
   }
 
-  const chartColors = {
-    year2025: "#e7b85a",
-    year2026: "#19c2d1"
-  };
-
-  const chartOptions = {
-    responsive: true,
-    maintainAspectRatio: false,
-    plugins: {
-      legend: {
-        labels: {
-          color: "#ffffff",
-          font: {
-            weight: "bold"
-          }
-        }
-      },
-      tooltip: {
-        backgroundColor: "rgba(3,18,32,.95)",
-        titleColor: "#19c2d1",
-        bodyColor: "#ffffff",
-        borderColor: "rgba(25,194,209,.7)",
-        borderWidth: 1
-      }
-    },
-    scales: {
-      x: {
-        ticks: {
-          color: "#dcecf2",
-          font: {
-            weight: "bold"
-          }
-        },
-        grid: {
-          color: "rgba(255,255,255,.08)"
-        }
-      },
-      y: {
-        beginAtZero: true,
-        ticks: {
-          color: "#dcecf2",
-          font: {
-            weight: "bold"
-          }
-        },
-        grid: {
-          color: "rgba(255,255,255,.08)"
-        }
-      }
-    }
-  };
-
   speciesYoYChart = new Chart(ctx, {
     type: "line",
     data: {
-      labels: chartData.weeks,
+      labels: weeks.map(week => "W" + week),
       datasets: [
         {
-          label: String(chartData.previousYear),
-          data: chartData.previousData,
-          borderColor: chartColors.year2025,
-          backgroundColor: chartColors.year2025,
+          label: String(previousYear),
+          data: previousData,
+          borderColor: "#e7b85a",
+          backgroundColor: "#e7b85a",
           tension: 0.35,
           pointRadius: 3,
           pointHoverRadius: 6
         },
         {
-          label: String(chartData.currentYear),
-          data: chartData.currentData,
-          borderColor: chartColors.year2026,
-          backgroundColor: chartColors.year2026,
+          label: String(currentYear),
+          data: currentData,
+          borderColor: "#19c2d1",
+          backgroundColor: "#19c2d1",
           tension: 0.35,
           pointRadius: 3,
           pointHoverRadius: 6
         }
       ]
     },
-    options: chartOptions
-  });
-}
-
-function buildWeeklySpeciesTrend(rows, selectedSpecies) {
-
-  const currentYear = new Date().getFullYear();
-  const previousYear = currentYear - 1;
-
-  const weekly = {};
-
-  rows.forEach(row => {
-
-    const date = parseDate(
-      row.report_date || row.trip_date
-    );
-
-    if (!date) return;
-
-    const year = date.getFullYear();
-
-    if (
-      year !== currentYear &&
-      year !== previousYear
-    ) {
-      return;
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          labels: {
+            color: "#ffffff",
+            font: {
+              weight: "bold"
+            }
+          }
+        },
+        tooltip: {
+          backgroundColor: "rgba(3,18,32,.95)",
+          titleColor: "#19c2d1",
+          bodyColor: "#ffffff",
+          borderColor: "rgba(25,194,209,.7)",
+          borderWidth: 1
+        }
+      },
+      scales: {
+        x: {
+          ticks: {
+            color: "#dcecf2",
+            font: {
+              weight: "bold"
+            }
+          },
+          grid: {
+            color: "rgba(255,255,255,.08)"
+          }
+        },
+        y: {
+          beginAtZero: true,
+          ticks: {
+            color: "#dcecf2",
+            font: {
+              weight: "bold"
+            }
+          },
+          grid: {
+            color: "rgba(255,255,255,.08)"
+          }
+        }
+      }
     }
-
-    const week = getWeekNumber(date);
-
-    parseFishCounts(
-      row.fish_counts || ""
-    ).forEach(item => {
-
-      if (
-        item.species !== selectedSpecies
-      ) {
-        return;
-      }
-
-      if (!weekly[week]) {
-        weekly[week] = {
-          week,
-          current: 0,
-          previous: 0
-        };
-      }
-
-      if (year === currentYear) {
-        weekly[week].current += item.count;
-      }
-
-      if (year === previousYear) {
-        weekly[week].previous += item.count;
-      }
-
-    });
-
   });
-
-  return {
-    weekly,
-    currentYear,
-    previousYear
-  };
 }
-function buildYoYChartData(result) {
 
-  const {
-    weekly,
-    currentYear,
-    previousYear
-  } = result;
-
-  const weeks = [];
-
-  for (let week = 1; week <= 53; week++) {
-    weeks.push(week);
-  }
-
-  return {
-    currentYear,
-    previousYear,
-
-    weeks: weeks.map(
-      week => `W${week}`
-    ),
-
-    currentData: weeks.map(
-      week => weekly[week]?.current || 0
-    ),
-
-    previousData: weeks.map(
-      week => weekly[week]?.previous || 0
-    )
-  };
-}
 function renderBiteTrends() {
   const container = document.getElementById("biteTrendsPage");
 
@@ -400,30 +282,48 @@ function renderBiteTrends() {
     return;
   }
 
-  const regionSelect = document.getElementById("regionFilter");
-  const selectedRegion = regionSelect ? regionSelect.value : "all";
-  const windowDays = getSelectedWindowDays();
+  const selectedRegion = getSelectedRegion();
+  const windowWeeks = getSelectedWindowWeeks();
 
-  const rows = selectedRegion === "all"
+  let rows = selectedRegion === "all"
     ? trendRows
     : trendRows.filter(row => row.region === selectedRegion);
 
+  const latestYear = Math.max(...rows.map(row => row.year));
+  const latestWeek = Math.max(
+    ...rows
+      .filter(row => row.year === latestYear)
+      .map(row => row.week)
+  );
+
+  const minWeek = Math.max(1, latestWeek - windowWeeks + 1);
+
+  rows = rows.filter(row =>
+    row.year === latestYear &&
+    row.week >= minWeek &&
+    row.week <= latestWeek
+  );
+
+  const totalTrips = rows.reduce((sum, row) => sum + row.trips, 0);
+  const totalAnglers = rows.reduce((sum, row) => sum + row.anglers, 0);
+  const totalFish = rows.reduce((sum, row) => sum + row.fish, 0);
+  const totalFpa = totalAnglers ? totalFish / totalAnglers : 0;
+
   const speciesTrends = buildSpeciesTrends(rows);
   const regionTrends = buildRegionTrends(rows);
-  const topBoats = buildTrendTopBoats(rows);
 
   container.innerHTML = `
     <section class="region-section">
-      <h2>Bite Trends - Last ${windowDays} Days</h2>
+      <h2>Bite Trends - Last ${getSelectedWindowDays()} Days</h2>
       <p class="updated">
         ${selectedRegion === "all" ? "All Regions" : selectedRegion}
       </p>
 
       <div class="summary-row">
-        <span>${numberFormat(getTotalTrips(rows))} Trips</span>
-        <span>${numberFormat(getTotalAnglers(rows))} Anglers</span>
-        <span>${numberFormat(getTotalFish(rows))} Fish</span>
-        <span>${getFpa(getTotalFish(rows), getTotalAnglers(rows)).toFixed(2)} FPA</span>
+        <span>${numberFormat(totalTrips)} Trips</span>
+        <span>${numberFormat(totalAnglers)} Anglers</span>
+        <span>${numberFormat(totalFish)} Fish</span>
+        <span>${totalFpa.toFixed(2)} FPA</span>
       </div>
     </section>
 
@@ -464,24 +364,6 @@ function renderBiteTrends() {
         `).join("")}
       </section>
     ` : ""}
-
-    <section class="region-section">
-      <h2>Top Boats Trend</h2>
-
-      ${topBoats.slice(0, 15).map((boat, index) => `
-        <div class="boat-row">
-          <div>
-            <strong>#${index + 1} ${boat.boat}</strong>
-            <p>${boat.landing} • ${boat.region}</p>
-          </div>
-
-          <div>
-            <strong>${boat.fpa.toFixed(2)} FPA</strong>
-            <p>${numberFormat(boat.fish)} Fish • ${numberFormat(boat.anglers)} Anglers • ${numberFormat(boat.trips)} Trips</p>
-          </div>
-        </div>
-      `).join("")}
-    </section>
   `;
 }
 
@@ -489,34 +371,27 @@ function buildSpeciesTrends(rows) {
   const grouped = {};
 
   rows.forEach(row => {
-    const region = row.region || "Unknown Region";
-    const anglers = Number(row.anglers || 0);
+    if (!grouped[row.species]) {
+      grouped[row.species] = {
+        species: row.species,
+        fish: 0,
+        anglers: 0,
+        trips: 0,
+        regionsSet: new Set()
+      };
+    }
 
-    parseFishCounts(row.fish_counts || "").forEach(item => {
-      if (!item.species || item.count <= 0) return;
-
-      if (!grouped[item.species]) {
-        grouped[item.species] = {
-          species: item.species,
-          fish: 0,
-          anglers: 0,
-          trips: 0,
-          regionsSet: new Set()
-        };
-      }
-
-      grouped[item.species].fish += item.count;
-      grouped[item.species].anglers += anglers;
-      grouped[item.species].trips += 1;
-      grouped[item.species].regionsSet.add(region);
-    });
+    grouped[row.species].fish += row.fish;
+    grouped[row.species].anglers += row.anglers;
+    grouped[row.species].trips += row.trips;
+    grouped[row.species].regionsSet.add(row.region);
   });
 
   return Object.values(grouped)
     .map(item => ({
       ...item,
       regions: Array.from(item.regionsSet).sort(),
-      fpa: getFpa(item.fish, item.anglers)
+      fpa: item.anglers ? item.fish / item.anglers : 0
     }))
     .sort((a, b) =>
       b.fish - a.fish ||
@@ -528,26 +403,24 @@ function buildRegionTrends(rows) {
   const grouped = {};
 
   rows.forEach(row => {
-    const region = row.region || "Unknown Region";
-
-    if (!grouped[region]) {
-      grouped[region] = {
-        region,
+    if (!grouped[row.region]) {
+      grouped[row.region] = {
+        region: row.region,
         trips: 0,
         anglers: 0,
         fish: 0
       };
     }
 
-    grouped[region].trips += 1;
-    grouped[region].anglers += Number(row.anglers || 0);
-    grouped[region].fish += Number(row.total_fish || 0);
+    grouped[row.region].trips += row.trips;
+    grouped[row.region].anglers += row.anglers;
+    grouped[row.region].fish += row.fish;
   });
 
   return Object.values(grouped)
     .map(item => ({
       ...item,
-      fpa: getFpa(item.fish, item.anglers)
+      fpa: item.anglers ? item.fish / item.anglers : 0
     }))
     .sort((a, b) =>
       b.fpa - a.fpa ||
@@ -555,78 +428,9 @@ function buildRegionTrends(rows) {
     );
 }
 
-function buildTrendTopBoats(rows) {
-  const grouped = {};
-
-  rows.forEach(row => {
-    const boat = row.boat || "Unknown Boat";
-    const landing = row.landing || "Unknown Landing";
-    const region = row.region || "Unknown Region";
-    const key = `${region}|${landing}|${boat}`;
-
-    if (!grouped[key]) {
-      grouped[key] = {
-        boat,
-        landing,
-        region,
-        trips: 0,
-        anglers: 0,
-        fish: 0
-      };
-    }
-
-    grouped[key].trips += 1;
-    grouped[key].anglers += Number(row.anglers || 0);
-    grouped[key].fish += Number(row.total_fish || 0);
-  });
-
-  return Object.values(grouped)
-    .filter(item => item.anglers >= 5)
-    .map(item => ({
-      ...item,
-      fpa: getFpa(item.fish, item.anglers)
-    }))
-    .sort((a, b) =>
-      b.fpa - a.fpa ||
-      b.fish - a.fish
-    );
-}
-
-function parseFishCounts(fishCounts) {
-  return String(fishCounts || "")
-    .split(",")
-    .map(part => part.trim())
-    .filter(Boolean)
-    .map(part => {
-      const match = part.match(/^(\d+)\s+(.+)$/);
-
-      if (!match) return null;
-
-      return {
-        count: Number(match[1] || 0),
-        species: match[2].trim()
-      };
-    })
-    .filter(Boolean);
-}
-
-function parseDate(dateString) {
-  const parts = String(dateString || "").split("-");
-
-  if (parts.length !== 3) return null;
-
-  return new Date(
-    Number(parts[0]),
-    Number(parts[1]) - 1,
-    Number(parts[2])
-  );
-}
-
-function getWeekNumber(date) {
-  const firstDay = new Date(date.getFullYear(), 0, 1);
-  const pastDays = Math.floor((date - firstDay) / 86400000);
-
-  return Math.ceil((pastDays + firstDay.getDay() + 1) / 7);
+function getSelectedRegion() {
+  const select = document.getElementById("regionFilter");
+  return select ? select.value : "all";
 }
 
 function getSelectedWindowDays() {
@@ -634,20 +438,9 @@ function getSelectedWindowDays() {
   return Number((select && select.value) || 30);
 }
 
-function getTotalTrips(rows) {
-  return rows.length;
-}
-
-function getTotalAnglers(rows) {
-  return rows.reduce((sum, row) => sum + Number(row.anglers || 0), 0);
-}
-
-function getTotalFish(rows) {
-  return rows.reduce((sum, row) => sum + Number(row.total_fish || 0), 0);
-}
-
-function getFpa(fish, anglers) {
-  return anglers > 0 ? fish / anglers : 0;
+function getSelectedWindowWeeks() {
+  const days = getSelectedWindowDays();
+  return Math.max(1, Math.ceil(days / 7));
 }
 
 function numberFormat(value) {
