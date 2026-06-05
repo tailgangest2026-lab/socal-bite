@@ -1,102 +1,91 @@
 name: Update SoCal Bite JSON
 
 on:
-schedule:
-- cron: "0 */2 * * *"
-workflow_dispatch:
+  schedule:
+    - cron: "0 */2 * * *"
+  workflow_dispatch:
 
 permissions:
-contents: write
+  contents: write
 
 jobs:
-update-json:
-runs-on: ubuntu-latest
+  update-json:
+    runs-on: ubuntu-latest
 
-```
-steps:
-  - name: Checkout repo
-    uses: actions/checkout@v4
-    with:
-      fetch-depth: 0
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-  - name: Install jq
-    run: |
-      sudo apt-get update
-      sudo apt-get install -y jq
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
 
-  - name: Download JSON files
-    run: |
-      BASE_URL="https://script.google.com/macros/s/AKfycbzFGkQUXf5DXP8nFl0zMMRR2NVPbtfA8wwKalECNjBn-EEH1n0ImWfVEG3yCCRntUOw/exec"
+      - name: Download JSON files
+        run: |
+          BASE_URL="https://script.google.com/macros/s/AKfycbzFGkQUXf5DXP8nFl0zMMRR2NVPbtfA8wwKalECNjBn-EEH1n0ImWfVEG3yCCRntUOw/exec"
 
-      mkdir -p reports
-      mkdir -p tmp-json
+          mkdir -p reports
+          mkdir -p tmp-json
 
-      download_json () {
-        URL="$1"
-        OUT="$2"
-        TEMP="tmp-json/$(basename "$OUT")"
+          download_json () {
+            URL="$1"
+            OUT="$2"
+            TEMP="tmp-json/$(basename "$OUT")"
 
-        echo "Downloading $OUT"
+            echo "Downloading $OUT"
 
-        if curl -L --fail --silent --show-error "$URL" -o "$TEMP"; then
+            if curl -L --fail --silent --show-error "$URL" -o "$TEMP"; then
+              if jq empty "$TEMP" >/dev/null 2>&1; then
+                mv "$TEMP" "$OUT"
+                echo "Saved $OUT"
+              else
+                echo "Invalid JSON returned for $OUT"
+                rm -f "$TEMP"
+              fi
+            else
+              echo "Download failed for $OUT"
+              rm -f "$TEMP"
+            fi
+          }
 
-          if jq empty "$TEMP" >/dev/null 2>&1; then
-            mv "$TEMP" "$OUT"
-            echo "Saved $OUT"
-          else
-            echo "Invalid JSON returned for $OUT"
-            rm -f "$TEMP"
+          download_json "$BASE_URL?page=bite-trends" "bite-trends.json"
+          download_json "$BASE_URL?page=news" "news.json"
+          download_json "$BASE_URL?page=home" "home.json"
+          download_json "$BASE_URL?page=boat-ratings" "boat-ratings.json"
+          download_json "$BASE_URL?page=daily-report-index" "daily-report-index.json"
+
+          TODAY=$(TZ="America/Los_Angeles" date +"%Y-%m-%d")
+          YESTERDAY=$(TZ="America/Los_Angeles" date -d "1 day ago" +"%Y-%m-%d")
+          TWO_DAYS=$(TZ="America/Los_Angeles" date -d "2 days ago" +"%Y-%m-%d")
+          THREE_DAYS=$(TZ="America/Los_Angeles" date -d "3 days ago" +"%Y-%m-%d")
+
+          for DATE in $TODAY $YESTERDAY $TWO_DAYS $THREE_DAYS
+          do
+            download_json "$BASE_URL?page=daily-report-date&date=$DATE" "reports/daily-report-$DATE.json"
+          done
+
+          rm -rf tmp-json
+
+      - name: Commit and Push Changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add bite-trends.json
+          git add news.json
+          git add home.json
+          git add boat-ratings.json
+          git add daily-report-index.json
+          git add reports/*.json || true
+
+          git status
+
+          if git diff --cached --quiet; then
+            echo "No JSON changes to commit"
+            exit 0
           fi
 
-        else
-          echo "Download failed for $OUT"
-          rm -f "$TEMP"
-        fi
-      }
-
-      download_json "$BASE_URL?page=bite-trends" "bite-trends.json"
-      download_json "$BASE_URL?page=news" "news.json"
-      download_json "$BASE_URL?page=home" "home.json"
-      download_json "$BASE_URL?page=boat-ratings" "boat-ratings.json"
-      download_json "$BASE_URL?page=daily-report-index" "daily-report-index.json"
-
-      TODAY=$(TZ="America/Los_Angeles" date +"%Y-%m-%d")
-      YESTERDAY=$(TZ="America/Los_Angeles" date -d "1 day ago" +"%Y-%m-%d")
-      TWO_DAYS=$(TZ="America/Los_Angeles" date -d "2 days ago" +"%Y-%m-%d")
-      THREE_DAYS=$(TZ="America/Los_Angeles" date -d "3 days ago" +"%Y-%m-%d")
-
-      for DATE in $TODAY $YESTERDAY $TWO_DAYS $THREE_DAYS
-      do
-        download_json \
-          "$BASE_URL?page=daily-report-date&date=$DATE" \
-          "reports/daily-report-$DATE.json"
-      done
-
-      rm -rf tmp-json
-
-  - name: Commit and Push Changes
-    run: |
-      git config user.name "github-actions[bot]"
-      git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-      git add bite-trends.json
-      git add news.json
-      git add home.json
-      git add boat-ratings.json
-      git add daily-report-index.json
-      git add reports/*.json || true
-
-      echo "Git Status:"
-      git status
-
-      if git diff --cached --quiet; then
-        echo "No JSON changes to commit"
-        exit 0
-      fi
-
-      git commit -m "Update SoCal Bite JSON"
-
-      git pull --rebase origin main
-
-      git push origin main
-```
+          git commit -m "Update SoCal Bite JSON"
+          git pull --rebase origin main
+          git push origin main
