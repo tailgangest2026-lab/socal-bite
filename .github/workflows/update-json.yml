@@ -15,8 +15,6 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Install jq
         run: sudo apt-get update && sudo apt-get install -y jq
@@ -35,16 +33,13 @@ jobs:
 
             echo "Downloading $OUT"
 
-            if curl -L --fail --silent --show-error "$URL" -o "$TEMP"; then
-              if jq empty "$TEMP" >/dev/null 2>&1; then
-                mv "$TEMP" "$OUT"
-                echo "Saved $OUT"
-              else
-                echo "Invalid JSON returned for $OUT"
-                rm -f "$TEMP"
-              fi
+            curl -L "$URL" -o "$TEMP"
+
+            if jq empty "$TEMP" >/dev/null 2>&1; then
+              mv "$TEMP" "$OUT"
+              echo "Saved $OUT"
             else
-              echo "Download failed for $OUT"
+              echo "Invalid JSON returned for $OUT"
               rm -f "$TEMP"
             fi
           }
@@ -67,10 +62,10 @@ jobs:
 
           rm -rf tmp-json
 
-      - name: Commit and Push Changes
+      - name: Commit updated JSON
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
 
           git add bite-trends.json
           git add news.json
@@ -83,9 +78,7 @@ jobs:
 
           if git diff --cached --quiet; then
             echo "No JSON changes to commit"
-            exit 0
+          else
+            git commit -m "Update SoCal Bite JSON"
+            git push
           fi
-
-          git commit -m "Update SoCal Bite JSON"
-          git pull --rebase origin main
-          git push origin main
