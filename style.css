@@ -1017,3 +1017,154 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
+.forecast-weather-grid,
+.forecast-region-wrap {
+  display: grid;
+  gap: 32px;
+}
+
+.forecast-region-section {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 22px;
+  padding: 22px;
+  margin-bottom: 28px;
+}
+
+.forecast-region-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  color: #fff;
+}
+
+.forecast-landing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.forecast-landing-card {
+  background: rgba(5, 16, 28, 0.96);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 20px;
+  padding: 20px;
+  color: #fff;
+}
+
+.forecast-landing-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.forecast-landing-top h4 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.forecast-landing-top p {
+  margin: 5px 0 0;
+  opacity: 0.7;
+}
+
+.forecast-badge {
+  display: inline-block;
+  padding: 7px 13px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 0.8rem;
+  color: #07111d;
+  white-space: nowrap;
+}
+
+.forecast-badge.excellent { background: #29d17d; }
+.forecast-badge.good { background: #ffd34d; }
+.forecast-badge.fair { background: #ff9f43; }
+.forecast-badge.slow { background: #ff5c5c; }
+
+.forecast-score {
+  font-size: 48px;
+  font-weight: 900;
+  margin: 8px 0 16px;
+  line-height: 1;
+}
+
+.forecast-score span {
+  font-size: 17px;
+  opacity: 0.65;
+}
+
+.forecast-details {
+  display: grid;
+  gap: 7px;
+  margin-bottom: 16px;
+}
+
+.forecast-details p {
+  margin: 0;
+  color: rgba(255,255,255,0.84);
+}
+
+.forecast-factors {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.forecast-factors div {
+  background: rgba(255,255,255,0.08);
+  border-radius: 13px;
+  padding: 10px 6px;
+  text-align: center;
+}
+
+.forecast-factors span {
+  display: block;
+  font-size: 0.75rem;
+  opacity: 0.7;
+  margin-bottom: 4px;
+}
+
+.forecast-factors strong {
+  display: block;
+  font-size: 1.25rem;
+}
+
+.forecast-species {
+  margin-top: 16px;
+}
+
+.forecast-species h5 {
+  margin: 0 0 9px;
+  font-size: 0.95rem;
+}
+
+.forecast-species span {
+  display: inline-block;
+  margin: 4px 5px 4px 0;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.09);
+  color: rgba(255,255,255,0.9);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 600px) {
+  .forecast-region-section {
+    padding: 16px;
+  }
+
+  .forecast-landing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .forecast-factors {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
