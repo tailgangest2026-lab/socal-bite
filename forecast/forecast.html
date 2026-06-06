@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="description" content="Tomorrow's Southern California sportfishing bite forecast by region, based on recent catch trends, fish-per-angler performance, seasonality, tides, moon phase, weather, and water conditions." />
+  <title>Tomorrow's Bite Forecast | SoCal Bite</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="canonical" href="https://thesocalbite.com/forecast.html" />
+
+  <meta property="og:title" content="Tomorrow's Bite Forecast | SoCal Bite" />
+  <meta property="og:description" content="Southern California sportfishing bite forecast by region using recent catch trends and fishing conditions." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://thesocalbite.com/forecast.html" />
+  <meta property="og:image" content="https://thesocalbite.com/assets/socal-bite-logo.webp" />
+</head>
+
+<body class="inner-page">
+
+  <section class="page-top">
+    <h1>Tomorrow's Bite Forecast</h1>
+
+    <nav class="page-nav">
+      <a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
+
+      <div class="dropdown">
+        <button class="dropbtn">
+          <i class="fa-solid fa-chart-line"></i>
+          <span>Boat Reports</span>
+          <i class="fa-solid fa-caret-down caret"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="daily-report.html">Daily Report</a>
+          <a href="boat-ratings.html">Boat Ratings</a>
+          <a href="top-boats.html">Top Boats</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn">
+          <i class="fa-solid fa-fish"></i>
+          <span>Species Reports</span>
+          <i class="fa-solid fa-caret-down caret"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="bite-trends.html">Bite Trends</a>
+          <a href="species.html">Species</a>
+          <a href="top-species.html">Top Species</a>
+        </div>
+      </div>
+
+      <a href="forecast.html"><i class="fa-solid fa-cloud-sun"></i><span>Forecast</span></a>
+      <a href="news.html"><i class="fa-solid fa-newspaper"></i><span>Fishing News</span></a>
+      <a href="landings.html"><i class="fa-solid fa-anchor"></i><span>Landings</span></a>
+      <a href="about.html"><i class="fa-solid fa-user"></i><span>About</span></a>
+    </nav>
+  </section>
+
+  <main class="report-page">
+
+    <section class="region-section">
+      <h2>Southern California Bite Forecast</h2>
+
+      <p class="page-subtitle">
+        A regional fishing forecast built from recent SoCal Bite catch data, fish-per-angler performance,
+        bite trends, seasonality, moon phase, tides, wind, and water conditions.
+      </p>
+
+      <div class="forecast-intro-card">
+        <div>
+          <span class="forecast-kicker">Tomorrow's Outlook</span>
+          <h3>Where the bite looks best next</h3>
+          <p>
+            Forecast scores are ranked from 0 to 100 and grouped as Excellent, Good, Fair, or Slow.
+            This page updates as new catch data becomes available.
+          </p>
+        </div>
+
+        <div class="forecast-legend">
+          <span><b class="legend-dot excellent-dot"></b> Excellent</span>
+          <span><b class="legend-dot good-dot"></b> Good</span>
+          <span><b class="legend-dot fair-dot"></b> Fair</span>
+          <span><b class="legend-dot slow-dot"></b> Slow</span>
+        </div>
+      </div>
+
+      <div id="forecastUpdated" class="last-updated"></div>
+
+      <div id="forecastCards" class="forecast-weather-grid">
+        <div class="loading-card">Loading forecast...</div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 The SoCal Bite • Fishing Reports & Bite Updates</p>
+
+    <div class="social-links">
+      <a href="https://www.instagram.com/the_socal_bite/" target="_blank" aria-label="Instagram">
+        <img src="assets/icons/instagram-icon.png" class="social-logo" alt="Instagram" loading="lazy">
+      </a>
+
+      <a href="https://www.facebook.com/profile.php?id=61590740421081" target="_blank" aria-label="Facebook">
+        <img src="assets/icons/facebook-icon.png" class="social-logo" alt="Facebook" loading="lazy">
+      </a>
+    </div>
+  </footer>
+
+  <script src="site-config.js" defer></script>
+  <script src="forecast.js?v=8" defer></script>
+</body>
+</hthml>
