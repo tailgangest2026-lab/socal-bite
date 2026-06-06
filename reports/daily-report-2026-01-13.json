@@ -1,1 +1,162 @@
-<!DOCTYPE html><html><head><link rel="shortcut icon" href="//ssl.gstatic.com/docs/script/images/favicon.ico"><title>Error</title><style type="text/css" nonce="nBohANzu84zuwPQHiWkdTA">body {background-color: #fff; margin: 0; padding: 0;}.errorMessage {font-family: Arial,sans-serif; font-size: 12pt; font-weight: bold; line-height: 150%; padding-top: 25px;}</style></head><body style="margin:20px"><div><img alt="Google Apps Script" src="//ssl.gstatic.com/docs/script/images/logo.png"></div><div style="text-align:center;font-family:monospace;margin:50px auto 0;max-width:600px">Error: File not found: daily-report-2026-01-13.json (line 83, file &quot;WebApp&quot;)</div></body></html>
+[
+  {
+    "trip_date": "2026-01-13",
+    "region": "Los Angeles",
+    "landing": "22nd Street Landing",
+    "boat": "Native Sun",
+    "trip_type": "1/2 Day AM",
+    "anglers": 20,
+    "fish_counts": "1 Halibut, 18 Sculpin, 200 Whitefish",
+    "total_fish": 219
+  },
+  {
+    "trip_date": "2026-01-13",
+    "region": "Los Angeles",
+    "landing": "Long Beach Sportfishing",
+    "boat": "El Patron",
+    "trip_type": "Full Day",
+    "anglers": 19,
+    "fish_counts": "65 Whitefish",
+    "total_fish": 65
+  },
+  {
+    "trip_date": "2026-01-13",
+    "region": "Los Angeles",
+    "landing": "Long Beach Sportfishing",
+    "boat": "Victory",
+    "trip_type": "3/4 Day",
+    "anglers": 45,
+    "fish_counts": "5 Sand Bass, 225 Sculpin, 450 Whitefish",
+    "total_fish": 680
+  },
+  {
+    "trip_date": "2026-01-13",
+    "region": "Los Angeles",
+    "landing": "Marina Del Rey Sportfishing",
+    "boat": "New Del Mar",
+    "trip_type": "1/2 Day AM",
+    "anglers": 73,
+    "fish_counts": "40 Calico Bass, 44 Sand Bass, 323 Sculpin, 10 Whitefish",
+    "total_fish": 417
+  },
+  {
+    "trip_date": "2026-01-13",
+    "region": "Los Angeles",
+    "landing": "Marina Del Rey Sportfishing",
+    "boat": "Spitfire",
+    "trip_type": "3/4 Day",
+    "anglers": 30,
+    "fish_counts": "16 Calico Bass, 42 Sand Bass, 150 Sculpin",
+    "total_fish": 208
+  },
+  {
+    "trip_date": "2026-01-13",
+    "region": "Los Angeles",
+    "landing": "Redondo Beach Sportfishing",
+    "boat": "Redondo Special",
+    "trip_type": "1/2 Day AM",
+    "anglers": 28,
+    "fish_counts": "20 Calico Bass, 50 Calico Bass Released, 32 Sand Bass, 1 Sculpin, 50 Whitefish",
+    "total_fish": 153
+  },
+  {
+    "trip_date": "2026-01-13",
+    "region": "Orange County",
+    "landing": "Dana Wharf Sportfishing",
+    "boat": "Clemente",
+    "trip_type": "3/4 Day",
+    "anglers": 16,
+    "fish_counts": "56 Sculpin, 45 Whitefish",
+    "total_fish": 101
+  },
+  {
+    "trip_date": "2026-01-13",
+    "region": "Orange County",
+    "landing": "Dana Wharf Sportfishing",
+    "boat": "Reel Fun",
+    "trip_type": "1/2 Day AM",
+    "anglers": 24,
+    "fish_counts": "4 Sand Bass, 3 Sculpin, 2 Whitefish",
+    "total_fish": 9
+  },
+  {
+    "trip_date": "2026-01-13",
+    "region": "Orange County",
+    "landing": "Dana Wharf Sportfishing",
+    "boat": "Reel Fun",
+    "trip_type": "1/2 Day PM",
+    "anglers": 23,
+    "fish_counts": "40 Calico Bass Released, 3 Sculpin",
+    "total_fish": 43
+  },
+  {
+    "trip_date": "2026-01-13",
+    "region": "Orange County",
+    "landing": "Newport Landing",
+    "boat": "Aggressor",
+    "trip_type": "3/4 Day",
+    "anglers": 28,
+    "fish_counts": "1 Calico Bass, 140 Sculpin, 225 Whitefish",
+    "total_fish": 366
+  },
+  {
+    "trip_date": "2026-01-13",
+    "region": "Orange County",
+    "landing": "Newport Landing",
+    "boat": "Patriot (Newport)",
+    "trip_type": "1/2 Day AM",
+    "anglers": 17,
+    "fish_counts": "85 Sculpin, 51 Whitefish",
+    "total_fish": 136
+  },
+  {
+    "trip_date": "2026-01-13",
+    "region": "Orange County",
+    "landing": "Newport Landing",
+    "boat": "Patriot (Newport)",
+    "trip_type": "1/2 Day PM",
+    "anglers": 42,
+    "fish_counts": "82 Sculpin, 47 Whitefish",
+    "total_fish": 129
+  },
+  {
+    "trip_date": "2026-01-13",
+    "region": "San Diego",
+    "landing": "H&M Landing",
+    "boat": "Tradition",
+    "trip_type": "1/2 Day Twilight",
+    "anglers": 10,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-01-13",
+    "region": "San Diego",
+    "landing": "Oceanside Sea Center",
+    "boat": "Southern Cal",
+    "trip_type": "1/2 Day AM",
+    "anglers": 20,
+    "fish_counts": "60 Sculpin",
+    "total_fish": 60
+  },
+  {
+    "trip_date": "2026-01-13",
+    "region": "San Diego",
+    "landing": "Point Loma Sportfishing",
+    "boat": "Daily Double",
+    "trip_type": "1/2 Day AM",
+    "anglers": 26,
+    "fish_counts": "130 Bonito",
+    "total_fish": 130
+  },
+  {
+    "trip_date": "2026-01-13",
+    "region": "San Diego",
+    "landing": "Seaforth Sportfishing",
+    "boat": "New Seaforth",
+    "trip_type": "1/2 Day AM",
+    "anglers": 49,
+    "fish_counts": "245 Bonito, 1 Sculpin, 5 Whitefish",
+    "total_fish": 251
+  }
+]

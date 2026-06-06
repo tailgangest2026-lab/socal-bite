@@ -1,1 +1,272 @@
-<!DOCTYPE html><html><head><link rel="shortcut icon" href="//ssl.gstatic.com/docs/script/images/favicon.ico"><title>Error</title><style type="text/css" nonce="yQNbrPuQZzkklRwdfW8lBw">body {background-color: #fff; margin: 0; padding: 0;}.errorMessage {font-family: Arial,sans-serif; font-size: 12pt; font-weight: bold; line-height: 150%; padding-top: 25px;}</style></head><body style="margin:20px"><div><img alt="Google Apps Script" src="//ssl.gstatic.com/docs/script/images/logo.png"></div><div style="text-align:center;font-family:monospace;margin:50px auto 0;max-width:600px">Error: File not found: daily-report-2025-11-26.json (line 83, file &quot;WebApp&quot;)</div></body></html>
+[
+  {
+    "trip_date": "2025-11-26",
+    "region": "Los Angeles",
+    "landing": "LA Waterfront Cruises and Sportfishing",
+    "boat": "Gail Force",
+    "trip_type": "1/2 Day Twilight",
+    "anglers": 10,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2025-11-26",
+    "region": "Los Angeles",
+    "landing": "LA Waterfront Cruises and Sportfishing",
+    "boat": "Sport King",
+    "trip_type": "1/2 Day Twilight",
+    "anglers": 9,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2025-11-26",
+    "region": "Los Angeles",
+    "landing": "Long Beach Sportfishing",
+    "boat": "Eldorado",
+    "trip_type": "Overnight",
+    "anglers": 23,
+    "fish_counts": "2 Lingcod, 230 Rockfish, 4 Sculpin, 46 Sheephead, 180 Whitefish",
+    "total_fish": 462
+  },
+  {
+    "trip_date": "2025-11-26",
+    "region": "Los Angeles",
+    "landing": "Marina Del Rey Sportfishing",
+    "boat": "Betty-O",
+    "trip_type": "3/4 Day",
+    "anglers": 20,
+    "fish_counts": "200 Rockfish",
+    "total_fish": 200
+  },
+  {
+    "trip_date": "2025-11-26",
+    "region": "Los Angeles",
+    "landing": "Marina Del Rey Sportfishing",
+    "boat": "New Del Mar",
+    "trip_type": "1/2 Day AM",
+    "anglers": 78,
+    "fish_counts": "3 Calico Bass, 2 Halibut, 49 Sand Bass, 315 Sculpin, 2 Sheephead, 175 Whitefish",
+    "total_fish": 546
+  },
+  {
+    "trip_date": "2025-11-26",
+    "region": "Los Angeles",
+    "landing": "Marina Del Rey Sportfishing",
+    "boat": "Spitfire",
+    "trip_type": "3/4 Day",
+    "anglers": 19,
+    "fish_counts": "10 Calico Bass, 16 Sand Bass, 95 Sculpin, 19 Sheephead, 120 Whitefish",
+    "total_fish": 260
+  },
+  {
+    "trip_date": "2025-11-26",
+    "region": "Los Angeles",
+    "landing": "Redondo Beach Sportfishing",
+    "boat": "Redondo Special",
+    "trip_type": "1/2 Day AM",
+    "anglers": 20,
+    "fish_counts": "16 Bonito, 53 Calico Bass, 65 Calico Bass Released, 2 Sand Bass, 3 Sculpin, 22 Sheephead, 2 Whitefish",
+    "total_fish": 163
+  },
+  {
+    "trip_date": "2025-11-26",
+    "region": "Orange County",
+    "landing": "Dana Wharf Sportfishing",
+    "boat": "Clemente",
+    "trip_type": "1/2 Day AM",
+    "anglers": 45,
+    "fish_counts": "1 Bonito, 10 Calico Bass, 81 Calico Bass Released, 1 Halibut, 11 Sand Bass, 5 Sheephead, 2 Whitefish",
+    "total_fish": 111
+  },
+  {
+    "trip_date": "2025-11-26",
+    "region": "Orange County",
+    "landing": "Dana Wharf Sportfishing",
+    "boat": "Reel Fun",
+    "trip_type": "1/2 Day AM",
+    "anglers": 29,
+    "fish_counts": "10 Sand Bass, 60 Whitefish",
+    "total_fish": 70
+  },
+  {
+    "trip_date": "2025-11-26",
+    "region": "Orange County",
+    "landing": "Dana Wharf Sportfishing",
+    "boat": "Sum Fun",
+    "trip_type": "3/4 Day",
+    "anglers": 20,
+    "fish_counts": "95 Rockfish",
+    "total_fish": 95
+  },
+  {
+    "trip_date": "2025-11-26",
+    "region": "Orange County",
+    "landing": "Davey's Locker",
+    "boat": "Freelance",
+    "trip_type": "3/4 Day",
+    "anglers": 35,
+    "fish_counts": "50 Rockfish, 175 Sculpin, 3 Sheephead, 290 Whitefish",
+    "total_fish": 518
+  },
+  {
+    "trip_date": "2025-11-26",
+    "region": "Orange County",
+    "landing": "Davey's Locker",
+    "boat": "Western Pride",
+    "trip_type": "1/2 Day PM",
+    "anglers": 50,
+    "fish_counts": "1 Sand Bass, 215 Sculpin, 23 Sheephead, 8 Whitefish",
+    "total_fish": 247
+  },
+  {
+    "trip_date": "2025-11-26",
+    "region": "San Diego",
+    "landing": "Fisherman's Landing",
+    "boat": "Dolphin",
+    "trip_type": "1/2 Day AM",
+    "anglers": 22,
+    "fish_counts": "203 Rockfish",
+    "total_fish": 203
+  },
+  {
+    "trip_date": "2025-11-26",
+    "region": "San Diego",
+    "landing": "Fisherman's Landing",
+    "boat": "Dolphin",
+    "trip_type": "1/2 Day PM",
+    "anglers": 37,
+    "fish_counts": "8 Sand Bass, 122 Sculpin, 12 Sheephead",
+    "total_fish": 142
+  },
+  {
+    "trip_date": "2025-11-26",
+    "region": "San Diego",
+    "landing": "H&M Landing",
+    "boat": "Nautilus",
+    "trip_type": "Full Day",
+    "anglers": 6,
+    "fish_counts": "7 Bonito, 6 Yellowtail",
+    "total_fish": 13
+  },
+  {
+    "trip_date": "2025-11-26",
+    "region": "San Diego",
+    "landing": "H&M Landing",
+    "boat": "Premier",
+    "trip_type": "1/2 Day AM",
+    "anglers": 25,
+    "fish_counts": "125 Rockfish",
+    "total_fish": 125
+  },
+  {
+    "trip_date": "2025-11-26",
+    "region": "San Diego",
+    "landing": "Oceanside Sea Center",
+    "boat": "Southern Cal",
+    "trip_type": "1/2 Day AM",
+    "anglers": 37,
+    "fish_counts": "370 Rockfish",
+    "total_fish": 370
+  },
+  {
+    "trip_date": "2025-11-26",
+    "region": "San Diego",
+    "landing": "Patriot Sportfishing",
+    "boat": "Flying Fish",
+    "trip_type": "3/4 Day",
+    "anglers": 16,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2025-11-26",
+    "region": "San Diego",
+    "landing": "Patriot Sportfishing",
+    "boat": "Patriot (Avila Beach)",
+    "trip_type": "1/2 Day AM",
+    "anglers": 18,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2025-11-26",
+    "region": "San Diego",
+    "landing": "Seaforth Sportfishing",
+    "boat": "New Seaforth",
+    "trip_type": "1/2 Day AM",
+    "anglers": 30,
+    "fish_counts": "150 Rockfish",
+    "total_fish": 150
+  },
+  {
+    "trip_date": "2025-11-26",
+    "region": "San Diego",
+    "landing": "Seaforth Sportfishing",
+    "boat": "New Seaforth",
+    "trip_type": "1/2 Day PM",
+    "anglers": 44,
+    "fish_counts": "57 Bonito, 9 Calico Bass, 40 Calico Bass Released, 2 Sand Bass, 3 Sheephead, 2 Whitefish, 1 Yellowtail",
+    "total_fish": 114
+  },
+  {
+    "trip_date": "2025-11-26",
+    "region": "San Luis Obispo",
+    "landing": "Morro Bay Landing",
+    "boat": "Avenger",
+    "trip_type": "3/4 Day",
+    "anglers": 11,
+    "fish_counts": "22 Lingcod, 2 Red Rockfish, 99 Rockfish",
+    "total_fish": 123
+  },
+  {
+    "trip_date": "2025-11-26",
+    "region": "Santa Barbara",
+    "landing": "Santa Barbara Landing",
+    "boat": "Coral Sea",
+    "trip_type": "3/4 Day",
+    "anglers": 25,
+    "fish_counts": "5 Lingcod, 250 Rockfish",
+    "total_fish": 255
+  },
+  {
+    "trip_date": "2025-11-26",
+    "region": "Santa Barbara",
+    "landing": "Santa Barbara Landing",
+    "boat": "Stardust",
+    "trip_type": "1/2 Day AM",
+    "anglers": 27,
+    "fish_counts": "1 Lingcod, 241 Rockfish",
+    "total_fish": 242
+  },
+  {
+    "trip_date": "2025-11-26",
+    "region": "Ventura",
+    "landing": "Channel Islands Sportfishing",
+    "boat": "Aloha Spirit Old",
+    "trip_type": "Full Day",
+    "anglers": 15,
+    "fish_counts": "8 Lingcod, 92 Rockfish, 28 Sheephead, 90 Whitefish",
+    "total_fish": 218
+  },
+  {
+    "trip_date": "2025-11-26",
+    "region": "Ventura",
+    "landing": "Channel Islands Sportfishing",
+    "boat": "Speed Twin",
+    "trip_type": "1/2 Day AM",
+    "anglers": 14,
+    "fish_counts": "6 Lingcod, 140 Rockfish",
+    "total_fish": 146
+  },
+  {
+    "trip_date": "2025-11-26",
+    "region": "Ventura",
+    "landing": "Pierpoint Landing",
+    "boat": "Enterprise",
+    "trip_type": "3/4 Day",
+    "anglers": 16,
+    "fish_counts": "160 Rockfish",
+    "total_fish": 160
+  }
+]

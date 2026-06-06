@@ -1,1 +1,132 @@
-<!DOCTYPE html><html><head><link rel="shortcut icon" href="//ssl.gstatic.com/docs/script/images/favicon.ico"><title>Error</title><style type="text/css" nonce="31CcEE2_ychYd3wBBQJ68g">body {background-color: #fff; margin: 0; padding: 0;}.errorMessage {font-family: Arial,sans-serif; font-size: 12pt; font-weight: bold; line-height: 150%; padding-top: 25px;}</style></head><body style="margin:20px"><div><img alt="Google Apps Script" src="//ssl.gstatic.com/docs/script/images/logo.png"></div><div style="text-align:center;font-family:monospace;margin:50px auto 0;max-width:600px">Error: File not found: daily-report-2025-03-15.json (line 83, file &quot;WebApp&quot;)</div></body></html>
+[
+  {
+    "trip_date": "2025-03-15",
+    "region": "Los Angeles",
+    "landing": "22nd Street Landing",
+    "boat": "Native Sun",
+    "trip_type": "3/4 Day",
+    "anglers": 25,
+    "fish_counts": "2 Calico Bass, 1 Halibut, 2 Sand Bass, 16 Sculpin, 5 Whitefish",
+    "total_fish": 26
+  },
+  {
+    "trip_date": "2025-03-15",
+    "region": "Los Angeles",
+    "landing": "Marina Del Rey Sportfishing",
+    "boat": "Betty-O",
+    "trip_type": "3/4 Day",
+    "anglers": 8,
+    "fish_counts": "3 Sand Bass, 40 Sculpin",
+    "total_fish": 43
+  },
+  {
+    "trip_date": "2025-03-15",
+    "region": "Los Angeles",
+    "landing": "Marina Del Rey Sportfishing",
+    "boat": "New Del Mar",
+    "trip_type": "1/2 Day AM",
+    "anglers": 84,
+    "fish_counts": "2 Calico Bass, 2 Sand Bass, 355 Sculpin",
+    "total_fish": 359
+  },
+  {
+    "trip_date": "2025-03-15",
+    "region": "Los Angeles",
+    "landing": "Marina Del Rey Sportfishing",
+    "boat": "Spitfire",
+    "trip_type": "3/4 Day",
+    "anglers": 20,
+    "fish_counts": "7 Sand Bass, 100 Sculpin",
+    "total_fish": 107
+  },
+  {
+    "trip_date": "2025-03-15",
+    "region": "Orange County",
+    "landing": "Davey's Locker",
+    "boat": "Western Pride",
+    "trip_type": "1/2 Day AM",
+    "anglers": 30,
+    "fish_counts": "145 Sculpin, 2 Whitefish",
+    "total_fish": 147
+  },
+  {
+    "trip_date": "2025-03-15",
+    "region": "Orange County",
+    "landing": "Davey's Locker",
+    "boat": "Western Pride",
+    "trip_type": "1/2 Day PM",
+    "anglers": 30,
+    "fish_counts": "150 Sculpin, 24 Whitefish",
+    "total_fish": 174
+  },
+  {
+    "trip_date": "2025-03-15",
+    "region": "San Diego",
+    "landing": "Fisherman's Landing",
+    "boat": "Dolphin",
+    "trip_type": "1/2 Day AM",
+    "anglers": 37,
+    "fish_counts": "58 Sand Bass, 9 Sculpin",
+    "total_fish": 67
+  },
+  {
+    "trip_date": "2025-03-15",
+    "region": "San Diego",
+    "landing": "Fisherman's Landing",
+    "boat": "Dolphin",
+    "trip_type": "1/2 Day Twilight",
+    "anglers": 23,
+    "fish_counts": "22 Sand Bass, 9 Sculpin, 2 Sheephead",
+    "total_fish": 33
+  },
+  {
+    "trip_date": "2025-03-15",
+    "region": "San Diego",
+    "landing": "H&M Landing",
+    "boat": "Alicia",
+    "trip_type": "1/2 Day Twilight",
+    "anglers": 10,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2025-03-15",
+    "region": "San Diego",
+    "landing": "H&M Landing",
+    "boat": "Premier",
+    "trip_type": "1/2 Day AM",
+    "anglers": 31,
+    "fish_counts": "57 Sand Bass, 54 Sculpin, 2 Whitefish",
+    "total_fish": 113
+  },
+  {
+    "trip_date": "2025-03-15",
+    "region": "San Diego",
+    "landing": "Helgrens Sportfishing",
+    "boat": "Electra",
+    "trip_type": "1/2 Day AM",
+    "anglers": 18,
+    "fish_counts": "2 Calico Bass Released, 1 Sheephead, 45 Whitefish",
+    "total_fish": 48
+  },
+  {
+    "trip_date": "2025-03-15",
+    "region": "San Diego",
+    "landing": "Oceanside Sea Center",
+    "boat": "Southern Cal",
+    "trip_type": "1/2 Day AM",
+    "anglers": 31,
+    "fish_counts": "125 Sculpin",
+    "total_fish": 125
+  },
+  {
+    "trip_date": "2025-03-15",
+    "region": "Santa Barbara",
+    "landing": "Santa Barbara Landing",
+    "boat": "Coral Sea",
+    "trip_type": "3/4 Day",
+    "anglers": 24,
+    "fish_counts": "7 Sand Bass, 2 Sculpin, 19 Sheephead, 240 Whitefish",
+    "total_fish": 268
+  }
+]

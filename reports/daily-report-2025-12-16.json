@@ -1,1 +1,72 @@
-<!DOCTYPE html><html><head><link rel="shortcut icon" href="//ssl.gstatic.com/docs/script/images/favicon.ico"><title>Error</title><style type="text/css" nonce="Y0k7gyK5eTSgHTED7kkWYQ">body {background-color: #fff; margin: 0; padding: 0;}.errorMessage {font-family: Arial,sans-serif; font-size: 12pt; font-weight: bold; line-height: 150%; padding-top: 25px;}</style></head><body style="margin:20px"><div><img alt="Google Apps Script" src="//ssl.gstatic.com/docs/script/images/logo.png"></div><div style="text-align:center;font-family:monospace;margin:50px auto 0;max-width:600px">Error: File not found: daily-report-2025-12-16.json (line 83, file &quot;WebApp&quot;)</div></body></html>
+[
+  {
+    "trip_date": "2025-12-16",
+    "region": "San Diego",
+    "landing": "Fisherman's Landing",
+    "boat": "Dolphin",
+    "trip_type": "1/2 Day AM",
+    "anglers": 27,
+    "fish_counts": "135 Bonito, 221 Rockfish",
+    "total_fish": 356
+  },
+  {
+    "trip_date": "2025-12-16",
+    "region": "San Diego",
+    "landing": "Fisherman's Landing",
+    "boat": "Dolphin",
+    "trip_type": "1/2 Day PM",
+    "anglers": 30,
+    "fish_counts": "150 Bonito, 13 Calico Bass, 30 Calico Bass Released, 6 Sculpin, 31 Sheephead, 7 Whitefish",
+    "total_fish": 237
+  },
+  {
+    "trip_date": "2025-12-16",
+    "region": "San Diego",
+    "landing": "Patriot Sportfishing",
+    "boat": "Flying Fish",
+    "trip_type": "1/2 Day AM",
+    "anglers": 22,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2025-12-16",
+    "region": "San Diego",
+    "landing": "Seaforth Sportfishing",
+    "boat": "New Seaforth",
+    "trip_type": "1/2 Day AM",
+    "anglers": 20,
+    "fish_counts": "100 Bonito, 40 Rockfish",
+    "total_fish": 140
+  },
+  {
+    "trip_date": "2025-12-16",
+    "region": "San Diego",
+    "landing": "Seaforth Sportfishing",
+    "boat": "Sea Watch",
+    "trip_type": "3/4 Day",
+    "anglers": 13,
+    "fish_counts": "65 Bonito, 11 Calico Bass, 10 Sand Bass, 7 Sculpin, 11 Sheephead, 24 Whitefish, 1 Yellowtail",
+    "total_fish": 129
+  },
+  {
+    "trip_date": "2025-12-16",
+    "region": "Ventura",
+    "landing": "Channel Islands Sportfishing",
+    "boat": "Aloha Spirit Old",
+    "trip_type": "Full Day",
+    "anglers": 19,
+    "fish_counts": "30 Rockfish, 18 Sheephead, 190 Whitefish",
+    "total_fish": 238
+  },
+  {
+    "trip_date": "2025-12-16",
+    "region": "Ventura",
+    "landing": "Channel Islands Sportfishing",
+    "boat": "Cobra",
+    "trip_type": "3/4 Day",
+    "anglers": 4,
+    "fish_counts": "1 Bonito, 1 Lingcod, 19 Rockfish, 2 Sculpin, 1 Sheephead, 13 Whitefish",
+    "total_fish": 37
+  }
+]

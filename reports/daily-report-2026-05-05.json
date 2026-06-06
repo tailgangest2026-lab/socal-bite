@@ -1,1 +1,152 @@
-<!DOCTYPE html><html><head><link rel="shortcut icon" href="//ssl.gstatic.com/docs/script/images/favicon.ico"><title>Error</title><style type="text/css" nonce="nyD_YRa9rz3wPj20tpFzkQ">body {background-color: #fff; margin: 0; padding: 0;}.errorMessage {font-family: Arial,sans-serif; font-size: 12pt; font-weight: bold; line-height: 150%; padding-top: 25px;}</style></head><body style="margin:20px"><div><img alt="Google Apps Script" src="//ssl.gstatic.com/docs/script/images/logo.png"></div><div style="text-align:center;font-family:monospace;margin:50px auto 0;max-width:600px">Error: File not found: daily-report-2026-05-05.json (line 83, file &quot;WebApp&quot;)</div></body></html>
+[
+  {
+    "trip_date": "2026-05-05",
+    "region": "Los Angeles",
+    "landing": "Long Beach Sportfishing",
+    "boat": "Victory",
+    "trip_type": "3/4 Day",
+    "anglers": 10,
+    "fish_counts": "100 Rockfish, 50 Sculpin, 15 Sheephead, 39 Whitefish",
+    "total_fish": 204
+  },
+  {
+    "trip_date": "2026-05-05",
+    "region": "Orange County",
+    "landing": "Dana Wharf Sportfishing",
+    "boat": "Clemente",
+    "trip_type": "1/2 Day AM",
+    "anglers": 27,
+    "fish_counts": "9 Calico Bass, 70 Calico Bass Released, 6 Sand Bass, 4 Sheephead",
+    "total_fish": 89
+  },
+  {
+    "trip_date": "2026-05-05",
+    "region": "Orange County",
+    "landing": "Dana Wharf Sportfishing",
+    "boat": "Clemente",
+    "trip_type": "1/2 Day Twilight",
+    "anglers": 32,
+    "fish_counts": "7 Calico Bass, 45 Calico Bass Released, 3 Sand Bass, 3 Sculpin, 6 Sheephead",
+    "total_fish": 64
+  },
+  {
+    "trip_date": "2026-05-05",
+    "region": "Orange County",
+    "landing": "Dana Wharf Sportfishing",
+    "boat": "Sum Fun",
+    "trip_type": "3/4 Day",
+    "anglers": 38,
+    "fish_counts": "15 Calico Bass, 110 Calico Bass Released, 150 Rockfish, 25 Sculpin, 3 Sheephead, 10 Whitefish",
+    "total_fish": 313
+  },
+  {
+    "trip_date": "2026-05-05",
+    "region": "San Diego",
+    "landing": "Fisherman's Landing",
+    "boat": "Dolphin",
+    "trip_type": "1/2 Day PM",
+    "anglers": 24,
+    "fish_counts": "68 Rockfish, 4 Sand Bass, 12 Sculpin, 2 Sheephead",
+    "total_fish": 86
+  },
+  {
+    "trip_date": "2026-05-05",
+    "region": "San Diego",
+    "landing": "Fisherman's Landing",
+    "boat": "Pacific Queen",
+    "trip_type": "2 Day",
+    "anglers": 15,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-05-05",
+    "region": "San Diego",
+    "landing": "H&M Landing",
+    "boat": "Nautilus",
+    "trip_type": "3/4 Day",
+    "anglers": 5,
+    "fish_counts": "2 Lingcod, 10 Rockfish, 2 Yellowtail",
+    "total_fish": 14
+  },
+  {
+    "trip_date": "2026-05-05",
+    "region": "San Diego",
+    "landing": "H&M Landing",
+    "boat": "Old Glory",
+    "trip_type": "1.5 Day",
+    "anglers": 24,
+    "fish_counts": "48 Bluefin Tuna, 36 Bonito",
+    "total_fish": 84
+  },
+  {
+    "trip_date": "2026-05-05",
+    "region": "San Diego",
+    "landing": "H&M Landing",
+    "boat": "Premier",
+    "trip_type": "1/2 Day AM",
+    "anglers": 18,
+    "fish_counts": "117 Rockfish",
+    "total_fish": 117
+  },
+  {
+    "trip_date": "2026-05-05",
+    "region": "San Diego",
+    "landing": "Point Loma Sportfishing",
+    "boat": "Mission Belle",
+    "trip_type": "Full Day Coronado Islands",
+    "anglers": 13,
+    "fish_counts": "65 Red Rockfish, 50 Rockfish",
+    "total_fish": 115
+  },
+  {
+    "trip_date": "2026-05-05",
+    "region": "San Diego",
+    "landing": "Seaforth Sportfishing",
+    "boat": "New Seaforth",
+    "trip_type": "1/2 Day AM",
+    "anglers": 16,
+    "fish_counts": "1 Lingcod, 40 Rockfish, 2 Sculpin, 1 Sheephead, 7 Whitefish",
+    "total_fish": 51
+  },
+  {
+    "trip_date": "2026-05-05",
+    "region": "San Diego",
+    "landing": "Seaforth Sportfishing",
+    "boat": "New Seaforth",
+    "trip_type": "1/2 Day PM",
+    "anglers": 21,
+    "fish_counts": "5 Calico Bass, 8 Rockfish, 1 Sculpin, 40 Whitefish",
+    "total_fish": 54
+  },
+  {
+    "trip_date": "2026-05-05",
+    "region": "San Diego",
+    "landing": "Seaforth Sportfishing",
+    "boat": "Pacific Voyager",
+    "trip_type": "1.5 Day",
+    "anglers": 17,
+    "fish_counts": "34 Bluefin Tuna",
+    "total_fish": 34
+  },
+  {
+    "trip_date": "2026-05-05",
+    "region": "San Diego",
+    "landing": "Seaforth Sportfishing",
+    "boat": "San Diego",
+    "trip_type": "Full Day Coronado Islands",
+    "anglers": 17,
+    "fish_counts": "8 Calico Bass, 3 Lingcod, 74 Rockfish, 2 Sheephead, 54 Whitefish",
+    "total_fish": 141
+  },
+  {
+    "trip_date": "2026-05-05",
+    "region": "San Luis Obispo",
+    "landing": "Virg's Landing",
+    "boat": "Fiesta",
+    "trip_type": "3/4 Day",
+    "anglers": 15,
+    "fish_counts": "5 Lingcod, 18 Rockfish",
+    "total_fish": 23
+  }
+]

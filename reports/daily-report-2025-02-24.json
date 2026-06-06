@@ -1,1 +1,132 @@
-<!DOCTYPE html><html><head><link rel="shortcut icon" href="//ssl.gstatic.com/docs/script/images/favicon.ico"><title>Error</title><style type="text/css" nonce="zCAU0Tc_NMZKMezQ_RalGQ">body {background-color: #fff; margin: 0; padding: 0;}.errorMessage {font-family: Arial,sans-serif; font-size: 12pt; font-weight: bold; line-height: 150%; padding-top: 25px;}</style></head><body style="margin:20px"><div><img alt="Google Apps Script" src="//ssl.gstatic.com/docs/script/images/logo.png"></div><div style="text-align:center;font-family:monospace;margin:50px auto 0;max-width:600px">Error: File not found: daily-report-2025-02-24.json (line 83, file &quot;WebApp&quot;)</div></body></html>
+[
+  {
+    "trip_date": "2025-02-24",
+    "region": "Los Angeles",
+    "landing": "22nd Street Landing",
+    "boat": "Ghost",
+    "trip_type": "Full Day",
+    "anglers": 6,
+    "fish_counts": "5 Halibut",
+    "total_fish": 5
+  },
+  {
+    "trip_date": "2025-02-24",
+    "region": "Los Angeles",
+    "landing": "22nd Street Landing",
+    "boat": "Monte Carlo",
+    "trip_type": "1/2 Day AM",
+    "anglers": 12,
+    "fish_counts": "60 Sculpin, 25 Whitefish",
+    "total_fish": 85
+  },
+  {
+    "trip_date": "2025-02-24",
+    "region": "Los Angeles",
+    "landing": "22nd Street Landing",
+    "boat": "Native Sun",
+    "trip_type": "3/4 Day",
+    "anglers": 38,
+    "fish_counts": "1 Halibut, 21 Sculpin, 11 Whitefish",
+    "total_fish": 33
+  },
+  {
+    "trip_date": "2025-02-24",
+    "region": "Los Angeles",
+    "landing": "22nd Street Landing",
+    "boat": "Pride",
+    "trip_type": "2 Day",
+    "anglers": 14,
+    "fish_counts": "12 Halibut, 1 Sand Bass, 115 Whitefish",
+    "total_fish": 128
+  },
+  {
+    "trip_date": "2025-02-24",
+    "region": "Los Angeles",
+    "landing": "LA Waterfront Cruises and Sportfishing",
+    "boat": "Gail Force",
+    "trip_type": "1/2 Day Twilight",
+    "anglers": 10,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2025-02-24",
+    "region": "Los Angeles",
+    "landing": "LA Waterfront Cruises and Sportfishing",
+    "boat": "Sport King",
+    "trip_type": "1/2 Day Twilight",
+    "anglers": 10,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2025-02-24",
+    "region": "Los Angeles",
+    "landing": "Marina Del Rey Sportfishing",
+    "boat": "Betty-O",
+    "trip_type": "3/4 Day",
+    "anglers": 15,
+    "fish_counts": "1 Sand Bass, 75 Sculpin",
+    "total_fish": 76
+  },
+  {
+    "trip_date": "2025-02-24",
+    "region": "Los Angeles",
+    "landing": "Marina Del Rey Sportfishing",
+    "boat": "New Del Mar",
+    "trip_type": "1/2 Day AM",
+    "anglers": 94,
+    "fish_counts": "2 Calico Bass, 7 Sand Bass, 470 Sculpin",
+    "total_fish": 479
+  },
+  {
+    "trip_date": "2025-02-24",
+    "region": "Los Angeles",
+    "landing": "Marina Del Rey Sportfishing",
+    "boat": "Spitfire",
+    "trip_type": "3/4 Day",
+    "anglers": 34,
+    "fish_counts": "9 Calico Bass, 38 Sand Bass, 170 Sculpin",
+    "total_fish": 217
+  },
+  {
+    "trip_date": "2025-02-24",
+    "region": "Orange County",
+    "landing": "Davey's Locker",
+    "boat": "Western Pride",
+    "trip_type": "1/2 Day AM",
+    "anglers": 43,
+    "fish_counts": "215 Sculpin",
+    "total_fish": 215
+  },
+  {
+    "trip_date": "2025-02-24",
+    "region": "Orange County",
+    "landing": "Newport Landing",
+    "boat": "Patriot (Newport)",
+    "trip_type": "Full Day",
+    "anglers": 23,
+    "fish_counts": "115 Sculpin, 40 Whitefish",
+    "total_fish": 155
+  },
+  {
+    "trip_date": "2025-02-24",
+    "region": "San Diego",
+    "landing": "Oceanside Sea Center",
+    "boat": "Southern Cal",
+    "trip_type": "1/2 Day AM",
+    "anglers": 15,
+    "fish_counts": "60 Sculpin",
+    "total_fish": 60
+  },
+  {
+    "trip_date": "2025-02-24",
+    "region": "San Diego",
+    "landing": "Seaforth Sportfishing",
+    "boat": "New Seaforth",
+    "trip_type": "1/2 Day AM",
+    "anglers": 16,
+    "fish_counts": "3 Sculpin, 5 Whitefish",
+    "total_fish": 8
+  }
+]

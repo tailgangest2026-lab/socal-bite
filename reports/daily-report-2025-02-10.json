@@ -1,1 +1,132 @@
-<!DOCTYPE html><html><head><link rel="shortcut icon" href="//ssl.gstatic.com/docs/script/images/favicon.ico"><title>Error</title><style type="text/css" nonce="2Uj0bGgIw7QYAJuJOxSFog">body {background-color: #fff; margin: 0; padding: 0;}.errorMessage {font-family: Arial,sans-serif; font-size: 12pt; font-weight: bold; line-height: 150%; padding-top: 25px;}</style></head><body style="margin:20px"><div><img alt="Google Apps Script" src="//ssl.gstatic.com/docs/script/images/logo.png"></div><div style="text-align:center;font-family:monospace;margin:50px auto 0;max-width:600px">Error: File not found: daily-report-2025-02-10.json (line 83, file &quot;WebApp&quot;)</div></body></html>
+[
+  {
+    "trip_date": "2025-02-10",
+    "region": "Los Angeles",
+    "landing": "22nd Street Landing",
+    "boat": "Monte Carlo",
+    "trip_type": "1/2 Day AM",
+    "anglers": 24,
+    "fish_counts": "120 Sculpin",
+    "total_fish": 120
+  },
+  {
+    "trip_date": "2025-02-10",
+    "region": "Los Angeles",
+    "landing": "22nd Street Landing",
+    "boat": "Native Sun",
+    "trip_type": "3/4 Day",
+    "anglers": 38,
+    "fish_counts": "3 Halibut, 3 Sand Bass, 12 Sculpin",
+    "total_fish": 18
+  },
+  {
+    "trip_date": "2025-02-10",
+    "region": "Los Angeles",
+    "landing": "LA Waterfront Cruises and Sportfishing",
+    "boat": "Sport King",
+    "trip_type": "1/2 Day AM",
+    "anglers": 10,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2025-02-10",
+    "region": "Los Angeles",
+    "landing": "Long Beach Sportfishing",
+    "boat": "Ahra-Ahn",
+    "trip_type": "Full Day",
+    "anglers": 31,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2025-02-10",
+    "region": "Los Angeles",
+    "landing": "Marina Del Rey Sportfishing",
+    "boat": "New Del Mar",
+    "trip_type": "3/4 Day",
+    "anglers": 48,
+    "fish_counts": "2 Calico Bass, 8 Sand Bass, 240 Sculpin",
+    "total_fish": 250
+  },
+  {
+    "trip_date": "2025-02-10",
+    "region": "Los Angeles",
+    "landing": "Marina Del Rey Sportfishing",
+    "boat": "Spitfire",
+    "trip_type": "3/4 Day",
+    "anglers": 22,
+    "fish_counts": "2 Halibut, 65 Sculpin, 110 Whitefish",
+    "total_fish": 177
+  },
+  {
+    "trip_date": "2025-02-10",
+    "region": "Orange County",
+    "landing": "Dana Wharf Sportfishing",
+    "boat": "Reel Fun",
+    "trip_type": "1/2 Day AM",
+    "anglers": 11,
+    "fish_counts": "8 Calico Bass, 40 Calico Bass Released, 5 Sculpin, 6 Whitefish",
+    "total_fish": 59
+  },
+  {
+    "trip_date": "2025-02-10",
+    "region": "Orange County",
+    "landing": "Dana Wharf Sportfishing",
+    "boat": "Sum Fun",
+    "trip_type": "3/4 Day",
+    "anglers": 26,
+    "fish_counts": "1 Sand Bass, 130 Sculpin",
+    "total_fish": 131
+  },
+  {
+    "trip_date": "2025-02-10",
+    "region": "Orange County",
+    "landing": "Davey's Locker",
+    "boat": "Western Pride",
+    "trip_type": "1/2 Day AM",
+    "anglers": 44,
+    "fish_counts": "210 Sculpin, 1 Whitefish",
+    "total_fish": 211
+  },
+  {
+    "trip_date": "2025-02-10",
+    "region": "Orange County",
+    "landing": "Davey's Locker",
+    "boat": "Western Pride",
+    "trip_type": "1/2 Day Twilight",
+    "anglers": 37,
+    "fish_counts": "1 Sand Bass, 170 Sculpin",
+    "total_fish": 171
+  },
+  {
+    "trip_date": "2025-02-10",
+    "region": "Orange County",
+    "landing": "Davey's Locker",
+    "boat": "Western Pride",
+    "trip_type": "1/2 Day Twilight",
+    "anglers": 40,
+    "fish_counts": "5 Sand Bass, 130 Sculpin",
+    "total_fish": 135
+  },
+  {
+    "trip_date": "2025-02-10",
+    "region": "San Diego",
+    "landing": "Seaforth Sportfishing",
+    "boat": "New Seaforth",
+    "trip_type": "1/2 Day AM",
+    "anglers": 19,
+    "fish_counts": "3 Sculpin, 43 Whitefish",
+    "total_fish": 46
+  },
+  {
+    "trip_date": "2025-02-10",
+    "region": "Ventura",
+    "landing": "Channel Islands Sportfishing",
+    "boat": "Gentleman",
+    "trip_type": "3/4 Day",
+    "anglers": 23,
+    "fish_counts": "183 Whitefish",
+    "total_fish": 183
+  }
+]

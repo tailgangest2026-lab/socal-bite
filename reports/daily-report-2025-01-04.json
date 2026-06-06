@@ -1,1 +1,252 @@
-<!DOCTYPE html><html><head><link rel="shortcut icon" href="//ssl.gstatic.com/docs/script/images/favicon.ico"><title>Error</title><style type="text/css" nonce="D9-dLPAbrb1q4nzPRaLJPw">body {background-color: #fff; margin: 0; padding: 0;}.errorMessage {font-family: Arial,sans-serif; font-size: 12pt; font-weight: bold; line-height: 150%; padding-top: 25px;}</style></head><body style="margin:20px"><div><img alt="Google Apps Script" src="//ssl.gstatic.com/docs/script/images/logo.png"></div><div style="text-align:center;font-family:monospace;margin:50px auto 0;max-width:600px">Error: File not found: daily-report-2025-01-04.json (line 83, file &quot;WebApp&quot;)</div></body></html>
+[
+  {
+    "trip_date": "2025-01-04",
+    "region": "Los Angeles",
+    "landing": "22nd Street Landing",
+    "boat": "Ghost",
+    "trip_type": "Full Day",
+    "anglers": 4,
+    "fish_counts": "7 Halibut",
+    "total_fish": 7
+  },
+  {
+    "trip_date": "2025-01-04",
+    "region": "Los Angeles",
+    "landing": "22nd Street Landing",
+    "boat": "Monte Carlo",
+    "trip_type": "1/2 Day AM",
+    "anglers": 25,
+    "fish_counts": "1 Sand Bass, 85 Whitefish",
+    "total_fish": 86
+  },
+  {
+    "trip_date": "2025-01-04",
+    "region": "Los Angeles",
+    "landing": "LA Waterfront Cruises and Sportfishing",
+    "boat": "Triton",
+    "trip_type": "1/2 Day Twilight",
+    "anglers": 10,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2025-01-04",
+    "region": "Los Angeles",
+    "landing": "Long Beach Sportfishing",
+    "boat": "Ahra-Ahn",
+    "trip_type": "Full Day",
+    "anglers": 30,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2025-01-04",
+    "region": "Los Angeles",
+    "landing": "Long Beach Sportfishing",
+    "boat": "El Patron",
+    "trip_type": "Full Day",
+    "anglers": 20,
+    "fish_counts": "153 Whitefish",
+    "total_fish": 153
+  },
+  {
+    "trip_date": "2025-01-04",
+    "region": "Los Angeles",
+    "landing": "Marina Del Rey Sportfishing",
+    "boat": "New Del Mar",
+    "trip_type": "1/2 Day AM",
+    "anglers": 102,
+    "fish_counts": "1 Sand Bass, 408 Sculpin",
+    "total_fish": 409
+  },
+  {
+    "trip_date": "2025-01-04",
+    "region": "Los Angeles",
+    "landing": "Marina Del Rey Sportfishing",
+    "boat": "Spitfire",
+    "trip_type": "3/4 Day",
+    "anglers": 11,
+    "fish_counts": "5 Calico Bass, 25 Sand Bass, 55 Sculpin",
+    "total_fish": 85
+  },
+  {
+    "trip_date": "2025-01-04",
+    "region": "Los Angeles",
+    "landing": "Redondo Beach Sportfishing",
+    "boat": "Redondo Special",
+    "trip_type": "1/2 Day AM",
+    "anglers": 18,
+    "fish_counts": "5 Sand Bass, 2 Sculpin, 106 Whitefish",
+    "total_fish": 113
+  },
+  {
+    "trip_date": "2025-01-04",
+    "region": "Orange County",
+    "landing": "Dana Wharf Sportfishing",
+    "boat": "Clemente",
+    "trip_type": "1/2 Day AM",
+    "anglers": 14,
+    "fish_counts": "1 Calico Bass, 70 Calico Bass Released, 1 Halibut, 4 Whitefish",
+    "total_fish": 76
+  },
+  {
+    "trip_date": "2025-01-04",
+    "region": "Orange County",
+    "landing": "Dana Wharf Sportfishing",
+    "boat": "Clemente",
+    "trip_type": "1/2 Day PM",
+    "anglers": 18,
+    "fish_counts": "20 Calico Bass Released, 1 Sand Bass, 1 Sculpin, 2 Whitefish",
+    "total_fish": 24
+  },
+  {
+    "trip_date": "2025-01-04",
+    "region": "Orange County",
+    "landing": "Dana Wharf Sportfishing",
+    "boat": "Sum Fun",
+    "trip_type": "3/4 Day",
+    "anglers": 20,
+    "fish_counts": "74 Sculpin, 6 Whitefish",
+    "total_fish": 80
+  },
+  {
+    "trip_date": "2025-01-04",
+    "region": "Orange County",
+    "landing": "Davey's Locker",
+    "boat": "Freelance",
+    "trip_type": "3/4 Day",
+    "anglers": 49,
+    "fish_counts": "245 Sculpin, 40 Whitefish",
+    "total_fish": 285
+  },
+  {
+    "trip_date": "2025-01-04",
+    "region": "Orange County",
+    "landing": "Davey's Locker",
+    "boat": "Western Pride",
+    "trip_type": "1/2 Day AM",
+    "anglers": 28,
+    "fish_counts": "140 Sculpin, 45 Whitefish",
+    "total_fish": 185
+  },
+  {
+    "trip_date": "2025-01-04",
+    "region": "Orange County",
+    "landing": "Davey's Locker",
+    "boat": "Western Pride",
+    "trip_type": "1/2 Day PM",
+    "anglers": 39,
+    "fish_counts": "170 Sculpin",
+    "total_fish": 170
+  },
+  {
+    "trip_date": "2025-01-04",
+    "region": "Orange County",
+    "landing": "Newport Landing",
+    "boat": "Patriot (Newport)",
+    "trip_type": "1/2 Day Twilight",
+    "anglers": 29,
+    "fish_counts": "2 Sand Bass, 98 Sculpin",
+    "total_fish": 100
+  },
+  {
+    "trip_date": "2025-01-04",
+    "region": "San Diego",
+    "landing": "Fisherman's Landing",
+    "boat": "Dolphin",
+    "trip_type": "1/2 Day AM",
+    "anglers": 35,
+    "fish_counts": "9 Sand Bass, 12 Sculpin",
+    "total_fish": 21
+  },
+  {
+    "trip_date": "2025-01-04",
+    "region": "San Diego",
+    "landing": "Fisherman's Landing",
+    "boat": "Dolphin",
+    "trip_type": "1/2 Day PM",
+    "anglers": 24,
+    "fish_counts": "32 Sand Bass, 18 Sculpin",
+    "total_fish": 50
+  },
+  {
+    "trip_date": "2025-01-04",
+    "region": "San Diego",
+    "landing": "H&M Landing",
+    "boat": "Alicia",
+    "trip_type": "1/2 Day Twilight",
+    "anglers": 10,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2025-01-04",
+    "region": "San Diego",
+    "landing": "H&M Landing",
+    "boat": "Relentless",
+    "trip_type": "3/4 Day",
+    "anglers": 18,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2025-01-04",
+    "region": "San Diego",
+    "landing": "Oceanside Sea Center",
+    "boat": "Southern Cal",
+    "trip_type": "1/2 Day AM",
+    "anglers": 27,
+    "fish_counts": "115 Sculpin, 10 Whitefish",
+    "total_fish": 125
+  },
+  {
+    "trip_date": "2025-01-04",
+    "region": "San Diego",
+    "landing": "Point Loma Sportfishing",
+    "boat": "Daily Double",
+    "trip_type": "1/2 Day AM",
+    "anglers": 29,
+    "fish_counts": "1 Calico Bass, 5 Sculpin, 10 Whitefish",
+    "total_fish": 16
+  },
+  {
+    "trip_date": "2025-01-04",
+    "region": "San Diego",
+    "landing": "Seaforth Sportfishing",
+    "boat": "New Seaforth",
+    "trip_type": "1/2 Day AM",
+    "anglers": 19,
+    "fish_counts": "1 Sand Bass, 117 Whitefish",
+    "total_fish": 118
+  },
+  {
+    "trip_date": "2025-01-04",
+    "region": "San Diego",
+    "landing": "Seaforth Sportfishing",
+    "boat": "New Seaforth",
+    "trip_type": "1/2 Day PM",
+    "anglers": 18,
+    "fish_counts": "3 Calico Bass, 5 Calico Bass Released, 1 Sand Bass, 3 Sculpin, 24 Whitefish",
+    "total_fish": 36
+  },
+  {
+    "trip_date": "2025-01-04",
+    "region": "Ventura",
+    "landing": "Channel Islands Sportfishing",
+    "boat": "Gentleman",
+    "trip_type": "3/4 Day",
+    "anglers": 35,
+    "fish_counts": "350 Whitefish",
+    "total_fish": 350
+  },
+  {
+    "trip_date": "2025-01-04",
+    "region": "Ventura",
+    "landing": "Channel Islands Sportfishing",
+    "boat": "Speed Twin",
+    "trip_type": "1/2 Day AM",
+    "anglers": 45,
+    "fish_counts": "",
+    "total_fish": 0
+  }
+]
