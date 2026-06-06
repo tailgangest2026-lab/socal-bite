@@ -87,23 +87,20 @@ function renderSpeciesReports(rows) {
           biteStatus: "Slow"
         };
 
-        return `
-          <div class="boat-row">
-            <div>
-              <strong>${species}</strong>
-              <p>${item.biteStatus} bite • Top Region: ${item.topRegion}</p>
-              <p>Top Boat: ${item.topBoat}</p>
-            </div>
+return `
+  <a class="boat-row" href="species-detail.html?species=${encodeURIComponent(species)}">
+    <div>
+      <strong>${species}</strong>
+      <p>${item.biteStatus} bite • Top Region: ${item.topRegion}</p>
+      <p>Top Boat: ${item.topBoat}</p>
+    </div>
 
-            <div>
-              <strong>${numberFormat(item.fish)} Fish</strong>
-              <p>Last 30 Days</p>
-            </div>
-          </div>
-        `;
-      }).join("")}
-    </section>
-  `;
+    <div>
+      <strong>${numberFormat(item.fish)} Fish</strong>
+      <p>Last 30 Days</p>
+    </div>
+  </a>
+`;
 }
 
 function buildSpeciesSummary(rows) {
