@@ -9,7 +9,7 @@ async function loadTopSpeciesIndex() {
   try {
     container.innerHTML = "<h2>Loading available report dates...</h2>";
 
-    const response = await fetch("daily-report-index.json?v=" + Date.now());
+    const response = await fetch(socalBiteDataUrl("daily-report-index.json"));
 
     if (!response.ok) {
       throw new Error("Could not load daily-report-index.json");
@@ -108,7 +108,7 @@ async function loadTopSpeciesDate(date) {
       reportInfo.file || `reports/daily-report-${date}.json`;
 
     const response =
-      await fetch(filePath + "?v=" + Date.now());
+      await fetch(socalBiteDataUrl(filePath));
 
     if (!response.ok) {
       throw new Error("Could not load " + filePath);

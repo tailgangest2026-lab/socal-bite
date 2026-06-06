@@ -4,7 +4,7 @@ async function loadBoatRatings() {
   const container = document.getElementById("boatRatingsPage");
 
   try {
-    const response = await fetch("boat-ratings.json?v=" + Date.now());
+    const response = await fetch(socalBiteDataUrl("boat-ratings.json"));
 
     if (!response.ok) {
       throw new Error("Could not load boat-ratings.json");

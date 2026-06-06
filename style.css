@@ -968,3 +968,52 @@ footer {
 .boat-row:hover {
   text-decoration: none;
 }
+
+
+/* Foundation cleanup: better small-screen spacing and tap targets */
+@media (max-width: 760px) {
+  .floating-nav,
+  .page-nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: min(100%, 420px);
+  }
+
+  .floating-nav a,
+  .page-nav a,
+  .dropbtn {
+    width: 100%;
+    min-height: 44px;
+    justify-content: center;
+    white-space: normal;
+    line-height: 1.15;
+  }
+
+  .dropdown {
+    width: 100%;
+  }
+
+  .dropdown-content {
+    left: 0;
+    right: 0;
+    transform: none;
+    min-width: 100%;
+  }
+
+  .report-page {
+    width: min(100% - 24px, 1200px);
+  }
+
+  .region-section,
+  .chart-card {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 420px) {
+  .floating-nav,
+  .page-nav {
+    grid-template-columns: 1fr;
+  }
+}

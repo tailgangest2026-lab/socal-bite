@@ -12,6 +12,12 @@
   />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css" />
+  <link rel="canonical" href="https://thesocalbite.com/bite-trends.html" />
+  <meta property="og:title" content="Bite Trends | SoCal Bite" />
+  <meta property="og:description" content="Track Southern California fishing bite trends by region, species, trips, anglers, total fish, and fish per angler." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://thesocalbite.com/bite-trends.html" />
+  <meta property="og:image" content="https://thesocalbite.com/assets/socal-bite-logo.webp" />
 </head>
 
 <body class="inner-page">
@@ -65,7 +71,6 @@
     </div>
   </div>
  <select id="speciesTrendSelect"></select>
-  </div>
   <canvas id="speciesYoYChart"></canvas>
 </section>
     <div id="biteTrendsPage">
@@ -78,16 +83,17 @@
 
   <div class="social-links">
     <a href="https://www.instagram.com/the_socal_bite/" target="_blank" aria-label="Instagram">
-      <img src="assets/instagram-icon.png" class="social-logo" alt="Instagram">
+      <img src="assets/instagram-icon.png" class="social-logo" alt="Instagram" loading="lazy">
     </a>
 
     <a href="https://www.tiktok.com/@the_socal_bite" target="_blank" aria-label="TikTok">
-      <img src="assets/tiktok-icon.png" class="social-logo" alt="TikTok">
+      <img src="assets/tiktok-icon.png" class="social-logo" alt="TikTok" loading="lazy">
     </a>
   </div>
 </footer>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="bite-trends.js?v=1"></script>
+  <script src="site-config.js" defer></script>
+  <script src="bite-trends.js?v=1" defer></script>
 
 </body>
 </html>

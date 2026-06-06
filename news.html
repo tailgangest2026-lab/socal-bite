@@ -3,9 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Read the latest Southern California fishing news and sportfishing headlines from trusted sources." />
   <title>Fishing News | SoCal Bite</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css" />
+  <link rel="canonical" href="https://thesocalbite.com/news.html" />
+  <meta property="og:title" content="Fishing News | SoCal Bite" />
+  <meta property="og:description" content="Read the latest Southern California fishing news and sportfishing headlines from trusted sources." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://thesocalbite.com/news.html" />
+  <meta property="og:image" content="https://thesocalbite.com/assets/socal-bite-logo.webp" />
 </head>
 
 <body class="inner-page">
@@ -60,74 +67,16 @@
 
   <div class="social-links">
     <a href="https://www.instagram.com/the_socal_bite/" target="_blank" aria-label="Instagram">
-      <img src="assets/instagram-icon.png" class="social-logo" alt="Instagram">
+      <img src="assets/instagram-icon.png" class="social-logo" alt="Instagram" loading="lazy">
     </a>
 
     <a href="https://www.tiktok.com/@the_socal_bite" target="_blank" aria-label="TikTok">
-      <img src="assets/tiktok-icon.png" class="social-logo" alt="TikTok">
+      <img src="assets/tiktok-icon.png" class="social-logo" alt="TikTok" loading="lazy">
     </a>
   </div>
 </footer>
 
-  </main>
-
-  <script>
-async function loadFishingNews() {
-  var container = document.getElementById("newsList");
-
-  try {
-    var response = await fetch("/news.json?v=" + Date.now());
-
-    if (!response.ok) {
-      throw new Error("Could not load news.json. Status: " + response.status);
-    }
-
-    var news = await response.json();
-
-    if (!Array.isArray(news) || news.length === 0) {
-      container.innerHTML = "<p>No fishing news available right now.</p>";
-      return;
-    }
-
-    var html = "";
-
-    news.forEach(function(item) {
-      var headline = item.headline || "No headline";
-      var source = item.source || "Fishing News";
-      var link = item.link || "#";
-      var date = "";
-
-      if (item.date) {
-        date = new Date(item.date).toLocaleDateString("en-US", {
-          month: "short",
-          day: "numeric",
-          year: "numeric"
-        });
-      }
-
-      html += '<article class="news-card">';
-      html += '<h2><a href="' + link + '" target="_blank" rel="noopener noreferrer">' + headline + '</a></h2>';
-      html += '<div class="news-meta">';
-      html += '<span>' + source + '</span>';
-
-      if (date) {
-        html += '<span>' + date + '</span>';
-      }
-
-      html += '</div>';
-      html += '</article>';
-    });
-
-    container.innerHTML = html;
-
-  } catch (error) {
-    console.error("Fishing news error:", error);
-    container.innerHTML = "<p>Fishing news could not be loaded.</p>";
-  }
-}
-
-loadFishingNews();
-</script>
-
+  <script src="site-config.js" defer></script>
+  <script src="news.js?v=1" defer></script>
 </body>
 </html>
