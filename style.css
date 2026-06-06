@@ -960,3 +960,11 @@ footer {
     text-align: center;
   }
 }
+.boat-row {
+  text-decoration: none;
+  color: inherit;
+}
+
+.boat-row:hover {
+  text-decoration: none;
+}
