@@ -87,7 +87,7 @@ function renderSpeciesReports(rows) {
           biteStatus: "Slow"
         };
 
-return `
+  return `
   <a class="boat-row" href="species-detail.html?species=${encodeURIComponent(species)}">
     <div>
       <strong>${species}</strong>
@@ -101,6 +101,9 @@ return `
     </div>
   </a>
 `;
+      }).join("")}
+    </section>
+  `;
 }
 
 function buildSpeciesSummary(rows) {
