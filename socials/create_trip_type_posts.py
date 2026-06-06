@@ -99,9 +99,31 @@ for trip_type, rows in groups.items():
         draw.text((165, y + 20), boat[:28], font=font(38), fill=(255, 255, 255))
         draw.text((165, y + 68), f"{landing} • {region}"[:48], font=font(23), fill=(200, 226, 238))
 
-        draw.rounded_rectangle((835, y + 25, 1005, y + 85), radius=18, fill=(255, 202, 64))
-        draw.text((862, y + 32), f"{fpa:.2f}", font=font(30), fill=(5, 20, 30))
-        draw.text((940, y + 39), "FPA", font=font(20), fill=(5, 20, 30))
+        # FPA badge - wider so numbers do not overlap FPA
+        badge_x1 = 790
+        badge_y1 = y + 25
+        badge_x2 = 1015
+        badge_y2 = y + 85
+
+        draw.rounded_rectangle(
+            (badge_x1, badge_y1, badge_x2, badge_y2),
+            radius=18,
+            fill=(255, 202, 64)
+        )
+
+        draw.text(
+            (badge_x1 + 22, y + 31),
+            f"{fpa:.2f}",
+            font=font(30),
+            fill=(5, 20, 30)
+        )
+
+        draw.text(
+            (badge_x1 + 140, y + 39),
+            "FPA",
+            font=font(19),
+            fill=(5, 20, 30)
+        )
 
         y += 125
 
