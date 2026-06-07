@@ -203,11 +203,31 @@
     "trip_date": "2026-06-05",
     "region": "Orange County",
     "landing": "Davey's Locker",
+    "boat": "Freelance",
+    "trip_type": "1/2 Day Twilight",
+    "anglers": 43,
+    "fish_counts": "172 Sculpin",
+    "total_fish": 172
+  },
+  {
+    "trip_date": "2026-06-05",
+    "region": "Orange County",
+    "landing": "Davey's Locker",
     "boat": "Western Pride",
     "trip_type": "1/2 Day PM",
     "anglers": 36,
     "fish_counts": "44 Calico Bass, 2 Rockfish, 3 Sheephead, 5 Whitefish",
     "total_fish": 54
+  },
+  {
+    "trip_date": "2026-06-05",
+    "region": "Orange County",
+    "landing": "Davey's Locker",
+    "boat": "Western Pride",
+    "trip_type": "1/2 Day Twilight",
+    "anglers": 45,
+    "fish_counts": "10 Rockfish, 46 Sand Bass, 30 Sculpin",
+    "total_fish": 86
   },
   {
     "trip_date": "2026-06-05",
@@ -468,5 +488,15 @@
     "anglers": 35,
     "fish_counts": "108 Rockfish, 5 Sculpin, 164 Whitefish",
     "total_fish": 277
+  },
+  {
+    "trip_date": "2026-06-05",
+    "region": "Ventura",
+    "landing": "Ventura Harbor Sportfishing",
+    "boat": "Endeavor (Ventura)",
+    "trip_type": "2 Day",
+    "anglers": 15,
+    "fish_counts": "40 Rockfish, 35 Sheephead, 100 Whitefish",
+    "total_fish": 175
   }
 ]
