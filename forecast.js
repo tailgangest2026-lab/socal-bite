@@ -1,33 +1,9 @@
-
 const REGIONS = [
   "San Diego",
   "Orange County",
   "Los Angeles",
   "Ventura",
   "Santa Barbara"
-];
-
-const SPECIES_COLUMNS = [
-  "yellowtail",
-  "bluefin_tuna",
-  "yellowfin_tuna",
-  "rockfish",
-  "whitefish",
-  "sheephead",
-  "calico_bass",
-  "sand_bass",
-  "spotted_bay_bass",
-  "bonito",
-  "barracuda",
-  "halibut",
-  "white_seabass",
-  "lingcod",
-  "sculpin",
-  "dorado",
-  "tuna",
-  "bass",
-  "reds",
-  "salmon_grouper"
 ];
 
 async function loadForecast() {
@@ -182,11 +158,16 @@ function calculateLandingForecast(item) {
   const fpaScore = getFpaScore(fpa);
   const tripScore = getTripScore(last7Trips, previous7Trips);
 
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  const moon = getMoonPhaseScore(tomorrow);
+
   const finalScore = Math.round(
-    trendScore * 0.35 +
+    trendScore * 0.30 +
     volumeScore * 0.25 +
     fpaScore * 0.25 +
-    tripScore * 0.15
+    tripScore * 0.10 +
+    moon.score * 0.10
   );
 
   return {
@@ -203,6 +184,7 @@ function calculateLandingForecast(item) {
     volumeScore,
     fpaScore,
     tripScore,
+    moon,
     finalScore,
     label: getForecastLabel(finalScore),
     topSpecies: getTopSpecies(item.last7Rows),
@@ -230,6 +212,7 @@ function renderLandingCard(item) {
         <p><strong>Previous 7 Days:</strong> ${formatNumber(item.previous7Fish)} fish</p>
         <p><strong>Trips:</strong> ${formatNumber(item.last7Trips)}</p>
         <p><strong>FPA:</strong> ${item.fpa.toFixed(2)}</p>
+        <p><strong>Moon:</strong> ${item.moon.phase}</p>
       </div>
 
       <div class="forecast-factors">
@@ -237,6 +220,7 @@ function renderLandingCard(item) {
         <div><span>Volume</span><strong>${item.volumeScore}</strong></div>
         <div><span>FPA</span><strong>${item.fpaScore}</strong></div>
         <div><span>Trips</span><strong>${item.tripScore}</strong></div>
+        <div><span>Moon</span><strong>${item.moon.score}</strong></div>
       </div>
 
       <div class="forecast-species">
@@ -265,19 +249,16 @@ function getTopSpecies(rows) {
 
   rows.forEach(row => {
     const fishCounts = getValue(row, ["fish_counts", "Fish Counts"]);
-
     if (!fishCounts) return;
 
     fishCounts.split(",").forEach(item => {
       const match = item.trim().match(/^(\d+)\s+(.+)$/);
-
       if (!match) return;
 
       const count = Number(match[1]);
       const species = match[2].trim();
 
       if (!species || !count) return;
-
       totals[species] = (totals[species] || 0) + count;
     });
   });
@@ -288,23 +269,33 @@ function getTopSpecies(rows) {
     .slice(0, 3);
 }
 
+function getMoonPhaseScore(date = new Date()) {
+  const knownNewMoon = new Date("2000-01-06T18:14:00Z");
+  const lunarCycle = 29.53058867;
+
+  const daysSinceNewMoon = (date - knownNewMoon) / (1000 * 60 * 60 * 24);
+  const moonAge = ((daysSinceNewMoon % lunarCycle) + lunarCycle) % lunarCycle;
+
+  if (moonAge < 1.84566) return { phase: "New Moon", score: 90, age: moonAge };
+  if (moonAge < 5.53699) return { phase: "Waxing Crescent", score: 65, age: moonAge };
+  if (moonAge < 9.22831) return { phase: "First Quarter", score: 75, age: moonAge };
+  if (moonAge < 12.91963) return { phase: "Waxing Gibbous", score: 60, age: moonAge };
+  if (moonAge < 16.61096) return { phase: "Full Moon", score: 85, age: moonAge };
+  if (moonAge < 20.30228) return { phase: "Waning Gibbous", score: 60, age: moonAge };
+  if (moonAge < 23.99361) return { phase: "Last Quarter", score: 75, age: moonAge };
+  if (moonAge < 27.68493) return { phase: "Waning Crescent", score: 65, age: moonAge };
+
+  return { phase: "New Moon", score: 90, age: moonAge };
+}
+
 function getTopBoats(rows) {
   const totals = {};
 
   rows.forEach(row => {
     const boat = getValue(row, ["boat", "Boat", "boat_name", "Boat Name"]);
-
-    const fish = Number(getValue(row, [
-      "total_fish",
-      "fish_count",
-      "count",
-      "fish",
-      "Fish",
-      "Count"
-    ]) || 0);
+    const fish = Number(getValue(row, ["total_fish", "fish_count", "count", "fish", "Fish", "Count"]) || 0);
 
     if (!boat || !fish) return;
-
     totals[boat] = (totals[boat] || 0) + fish;
   });
 
@@ -324,9 +315,7 @@ function getValue(row, keys) {
 }
 
 function getRowDate(row) {
-  return new Date(
-    getValue(row, ["trip_date", "date", "report_date", "created_at", "Trip Date", "Date"])
-  );
+  return new Date(getValue(row, ["trip_date", "date", "report_date", "created_at", "Trip Date", "Date"]));
 }
 
 function daysAgo(date, today) {
@@ -336,26 +325,13 @@ function daysAgo(date, today) {
 
 function sumFish(rows) {
   return rows.reduce((total, row) => {
-    return total + Number(getValue(row, [
-      "total_fish",
-      "fish_count",
-      "count",
-      "fish",
-      "total_count",
-      "Fish",
-      "Count"
-    ]) || 0);
+    return total + Number(getValue(row, ["total_fish", "fish_count", "count", "fish", "total_count", "Fish", "Count"]) || 0);
   }, 0);
 }
 
 function sumAnglers(rows) {
   return rows.reduce((total, row) => {
-    return total + Number(getValue(row, [
-      "anglers",
-      "total_anglers",
-      "angler_count",
-      "Anglers"
-    ]) || 0);
+    return total + Number(getValue(row, ["anglers", "total_anglers", "angler_count", "Anglers"]) || 0);
   }, 0);
 }
 
@@ -425,12 +401,6 @@ function getForecastLabel(score) {
   if (score >= 65) return "Good";
   if (score >= 40) return "Fair";
   return "Slow";
-}
-
-function toTitleCase(text) {
-  return String(text || "")
-    .toLowerCase()
-    .replace(/\b\w/g, char => char.toUpperCase());
 }
 
 function formatNumber(value) {
