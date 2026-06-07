@@ -21,7 +21,7 @@ async function loadForecast() {
   if (!container) return;
 
   try {
-    container.innerHTML = `<div class="loading-card">Loading landing forecasts...</div>`;
+    container.innerHTML = `<div class="loading-card">Loading regional forecasts...</div>`;
 
     const rows = await loadRecentReports(14);
     const conditionByRegion = await loadRegionalConditions();
@@ -35,28 +35,13 @@ async function loadForecast() {
       return;
     }
 
-    const grouped = buildLandingForecastsByRegion(rows, conditionByRegion);
+    const forecasts = buildRegionForecasts(rows, conditionByRegion);
 
-    container.innerHTML = REGIONS.map(region => {
-      const landings = grouped[region] || [];
-
-      return `
-        <section class="forecast-region-section">
-          <div class="forecast-region-header">
-            <h3>${region}</h3>
-            <span>${landings.length} landings</span>
-          </div>
-
-          ${
-            landings.length
-              ? `<div class="forecast-landing-grid">
-                  ${landings.map(renderLandingCard).join("")}
-                </div>`
-              : `<div class="loading-card">No recent data for ${region}.</div>`
-          }
-        </section>
-      `;
-    }).join("");
+    container.innerHTML = `
+      <div class="forecast-landing-grid">
+        ${forecasts.map(renderRegionCard).join("")}
+      </div>
+    `;
 
     if (updated) {
       updated.textContent = "Updated: " + new Date().toLocaleString();
@@ -96,7 +81,6 @@ async function loadRecentReports(daysBack) {
 
         if (Array.isArray(data)) {
           rows.push(...data);
-          console.log("Loaded:", file, data.length);
           break;
         }
       } catch (err) {
@@ -197,10 +181,10 @@ async function loadMarineForecast(coords) {
       .map(index => Number(temps[index]))
       .filter(value => Number.isFinite(value));
 
-    const tide = calculateTideMovement(tomorrowSeaLevels);
-    const waterTemp = calculateWaterTemp(tomorrowTemps);
-
-    return { tide, waterTemp };
+    return {
+      tide: calculateTideMovement(tomorrowSeaLevels),
+      waterTemp: calculateWaterTemp(tomorrowTemps)
+    };
 
   } catch (error) {
     console.warn("Marine forecast failed:", error);
@@ -209,6 +193,212 @@ async function loadMarineForecast(coords) {
       waterTemp: getDefaultWaterTemp()
     };
   }
+}
+
+function buildRegionForecasts(rows, conditionByRegion) {
+  const today = new Date();
+
+  return REGIONS.map(region => {
+    const regionRows = rows.filter(row => {
+      return clean(getValue(row, ["region", "Region"])) === clean(region);
+    });
+
+    const last7Rows = regionRows.filter(row => {
+      const age = daysAgo(getRowDate(row), today);
+      return age >= 1 && age <= 7;
+    });
+
+    const previous7Rows = regionRows.filter(row => {
+      const age = daysAgo(getRowDate(row), today);
+      return age >= 8 && age <= 14;
+    });
+
+    return calculateRegionForecast(region, last7Rows, previous7Rows, conditionByRegion[region] || getDefaultConditions());
+  }).sort((a, b) => b.finalScore - a.finalScore);
+}
+
+function calculateRegionForecast(region, last7Rows, previous7Rows, conditions) {
+  const last7Fish = sumFish(last7Rows);
+  const previous7Fish = sumFish(previous7Rows);
+
+  const last7Anglers = sumAnglers(last7Rows);
+  const last7Trips = countTrips(last7Rows);
+  const previous7Trips = countTrips(previous7Rows);
+
+  const fpa = last7Anglers > 0 ? last7Fish / last7Anglers : 0;
+
+  const trendScore = getTrendScore(last7Fish, previous7Fish);
+  const volumeScore = getVolumeScore(last7Fish);
+  const fpaScore = getFpaScore(fpa);
+  const tripScore = getTripScore(last7Trips, previous7Trips);
+
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+
+  const moon = getMoonPhaseScore(tomorrow);
+  const wind = conditions.wind;
+  const tide = conditions.tide;
+  const waterTemp = conditions.waterTemp;
+
+  const finalScore = Math.round(
+    trendScore * 0.25 +
+    volumeScore * 0.20 +
+    fpaScore * 0.22 +
+    tripScore * 0.08 +
+    moon.score * 0.07 +
+    wind.score * 0.08 +
+    tide.score * 0.05 +
+    waterTemp.score * 0.05
+  );
+
+  return {
+    region,
+    last7Fish,
+    previous7Fish,
+    last7Anglers,
+    last7Trips,
+    previous7Trips,
+    fpa,
+    trendScore,
+    volumeScore,
+    fpaScore,
+    tripScore,
+    moon,
+    wind,
+    tide,
+    waterTemp,
+    finalScore,
+    label: getForecastLabel(finalScore),
+    topSpecies: getTopSpecies(last7Rows),
+    topBoats: getTopBoats(last7Rows),
+    topLandings: getTopLandings(last7Rows)
+  };
+}
+
+function renderRegionCard(item) {
+  return `
+    <article class="forecast-landing-card ${item.label.toLowerCase()}">
+      <div class="forecast-landing-top">
+        <div>
+          <h4>${item.region}</h4>
+          <p>Regional Bite Forecast</p>
+        </div>
+        <span class="forecast-badge ${item.label.toLowerCase()}">${item.label}</span>
+      </div>
+
+      <div class="forecast-score">
+        ${item.finalScore}<span>/100</span>
+      </div>
+
+      <div class="forecast-details">
+        <p><strong>Last 7 Days:</strong> ${formatNumber(item.last7Fish)} fish</p>
+        <p><strong>Previous 7 Days:</strong> ${formatNumber(item.previous7Fish)} fish</p>
+        <p><strong>Trips:</strong> ${formatNumber(item.last7Trips)}</p>
+        <p><strong>FPA:</strong> ${item.fpa.toFixed(2)}</p>
+        <p><strong>Moon:</strong> ${item.moon.phase}</p>
+        <p><strong>Wind:</strong> ${item.wind.label} (${item.wind.windMph.toFixed(0)} mph, gusts ${item.wind.gustMph.toFixed(0)} mph)</p>
+        <p><strong>Tide Movement:</strong> ${item.tide.label} (${item.tide.movement.toFixed(2)} ft)</p>
+        <p><strong>Water Temp:</strong> ${item.waterTemp.label} (${item.waterTemp.tempF ? item.waterTemp.tempF.toFixed(1) + "°F" : "Unknown"})</p>
+      </div>
+
+      <div class="forecast-factors">
+        <div><span>Trend</span><strong>${item.trendScore}</strong></div>
+        <div><span>Volume</span><strong>${item.volumeScore}</strong></div>
+        <div><span>FPA</span><strong>${item.fpaScore}</strong></div>
+        <div><span>Trips</span><strong>${item.tripScore}</strong></div>
+        <div><span>Moon</span><strong>${item.moon.score}</strong></div>
+        <div><span>Wind</span><strong>${item.wind.score}</strong></div>
+        <div><span>Tide</span><strong>${item.tide.score}</strong></div>
+        <div><span>Temp</span><strong>${item.waterTemp.score}</strong></div>
+      </div>
+
+      <div class="forecast-species">
+        <h5>Top Bite</h5>
+        ${
+          item.topSpecies.length
+            ? item.topSpecies.map(s => `<span>${s.species}: ${formatNumber(s.count)}</span>`).join("")
+            : `<span>No species data</span>`
+        }
+      </div>
+
+      <div class="forecast-species">
+        <h5>Top Landings</h5>
+        ${
+          item.topLandings.length
+            ? item.topLandings.map(l => `<span>${l.landing}: ${formatNumber(l.fish)}</span>`).join("")
+            : `<span>No landing data</span>`
+        }
+      </div>
+
+      <div class="forecast-species">
+        <h5>Top Boats</h5>
+        ${
+          item.topBoats.length
+            ? item.topBoats.map(b => `<span>${b.boat}: ${formatNumber(b.fish)}</span>`).join("")
+            : `<span>No boat data</span>`
+        }
+      </div>
+    </article>
+  `;
+}
+
+function getTopSpecies(rows) {
+  const totals = {};
+
+  rows.forEach(row => {
+    const fishCounts = getValue(row, ["fish_counts", "Fish Counts"]);
+    if (!fishCounts) return;
+
+    fishCounts.split(",").forEach(item => {
+      const match = item.trim().match(/^(\d+)\s+(.+)$/);
+      if (!match) return;
+
+      const count = Number(match[1]);
+      const species = match[2].trim();
+
+      if (!species || !count) return;
+      totals[species] = (totals[species] || 0) + count;
+    });
+  });
+
+  return Object.entries(totals)
+    .map(([species, count]) => ({ species, count }))
+    .sort((a, b) => b.count - a.count)
+    .slice(0, 3);
+}
+
+function getTopBoats(rows) {
+  const totals = {};
+
+  rows.forEach(row => {
+    const boat = getValue(row, ["boat", "Boat", "boat_name", "Boat Name"]);
+    const fish = Number(getValue(row, ["total_fish", "fish_count", "count", "fish", "Fish", "Count"]) || 0);
+
+    if (!boat || !fish) return;
+    totals[boat] = (totals[boat] || 0) + fish;
+  });
+
+  return Object.entries(totals)
+    .map(([boat, fish]) => ({ boat, fish }))
+    .sort((a, b) => b.fish - a.fish)
+    .slice(0, 3);
+}
+
+function getTopLandings(rows) {
+  const totals = {};
+
+  rows.forEach(row => {
+    const landing = getValue(row, ["landing", "Landing", "landing_name", "Landing Name"]);
+    const fish = Number(getValue(row, ["total_fish", "fish_count", "count", "fish", "Fish", "Count"]) || 0);
+
+    if (!landing || !fish) return;
+    totals[landing] = (totals[landing] || 0) + fish;
+  });
+
+  return Object.entries(totals)
+    .map(([landing, fish]) => ({ landing, fish }))
+    .sort((a, b) => b.fish - a.fish)
+    .slice(0, 3);
 }
 
 function getTomorrowIndexes(times) {
@@ -260,213 +450,15 @@ function getDefaultConditions() {
 }
 
 function getDefaultWind() {
-  return {
-    windMph: 0,
-    gustMph: 0,
-    score: 50,
-    label: "Unknown"
-  };
+  return { windMph: 0, gustMph: 0, score: 50, label: "Unknown" };
 }
 
 function getDefaultTide() {
-  return {
-    movement: 0,
-    score: 50,
-    label: "Unknown"
-  };
+  return { movement: 0, score: 50, label: "Unknown" };
 }
 
 function getDefaultWaterTemp() {
-  return {
-    tempF: 0,
-    score: 50,
-    label: "Unknown"
-  };
-}
-
-function buildLandingForecastsByRegion(rows, conditionByRegion) {
-  const today = new Date();
-  const grouped = {};
-
-  rows.forEach(row => {
-    const region = getValue(row, ["region", "Region"]) || "Unknown Region";
-    const landing = getValue(row, ["landing", "Landing", "landing_name", "Landing Name"]);
-
-    if (!landing) return;
-
-    if (!grouped[region]) grouped[region] = {};
-    if (!grouped[region][landing]) {
-      grouped[region][landing] = {
-        region,
-        landing,
-        last7Rows: [],
-        previous7Rows: []
-      };
-    }
-
-    const rowDate = getRowDate(row);
-    const age = daysAgo(rowDate, today);
-
-    if (age >= 1 && age <= 7) grouped[region][landing].last7Rows.push(row);
-    if (age >= 8 && age <= 14) grouped[region][landing].previous7Rows.push(row);
-  });
-
-  const output = {};
-
-  Object.keys(grouped).forEach(region => {
-    const conditions = conditionByRegion[region] || getDefaultConditions();
-
-    output[region] = Object.values(grouped[region])
-      .map(item => calculateLandingForecast(item, conditions))
-      .filter(item => item.last7Fish > 0 || item.previous7Fish > 0)
-      .sort((a, b) => b.finalScore - a.finalScore);
-  });
-
-  return output;
-}
-
-function calculateLandingForecast(item, conditions) {
-  const last7Fish = sumFish(item.last7Rows);
-  const previous7Fish = sumFish(item.previous7Rows);
-
-  const last7Anglers = sumAnglers(item.last7Rows);
-  const previous7Anglers = sumAnglers(item.previous7Rows);
-
-  const last7Trips = countTrips(item.last7Rows);
-  const previous7Trips = countTrips(item.previous7Rows);
-
-  const fpa = last7Anglers > 0 ? last7Fish / last7Anglers : 0;
-
-  const trendScore = getTrendScore(last7Fish, previous7Fish);
-  const volumeScore = getVolumeScore(last7Fish);
-  const fpaScore = getFpaScore(fpa);
-  const tripScore = getTripScore(last7Trips, previous7Trips);
-
-  const tomorrow = new Date();
-  tomorrow.setDate(tomorrow.getDate() + 1);
-  const moon = getMoonPhaseScore(tomorrow);
-
-  const wind = conditions.wind;
-  const tide = conditions.tide;
-  const waterTemp = conditions.waterTemp;
-
-  const finalScore = Math.round(
-    trendScore * 0.25 +
-    volumeScore * 0.20 +
-    fpaScore * 0.22 +
-    tripScore * 0.08 +
-    moon.score * 0.07 +
-    wind.score * 0.08 +
-    tide.score * 0.05 +
-    waterTemp.score * 0.05
-  );
-
-  return {
-    region: item.region,
-    landing: item.landing,
-    last7Fish,
-    previous7Fish,
-    last7Anglers,
-    previous7Anglers,
-    last7Trips,
-    previous7Trips,
-    fpa,
-    trendScore,
-    volumeScore,
-    fpaScore,
-    tripScore,
-    moon,
-    wind,
-    tide,
-    waterTemp,
-    finalScore,
-    label: getForecastLabel(finalScore),
-    topSpecies: getTopSpecies(item.last7Rows),
-    topBoats: getTopBoats(item.last7Rows)
-  };
-}
-
-function renderLandingCard(item) {
-  return `
-    <article class="forecast-landing-card ${item.label.toLowerCase()}">
-      <div class="forecast-landing-top">
-        <div>
-          <h4>${item.landing}</h4>
-          <p>${item.region}</p>
-        </div>
-        <span class="forecast-badge ${item.label.toLowerCase()}">${item.label}</span>
-      </div>
-
-      <div class="forecast-score">
-        ${item.finalScore}<span>/100</span>
-      </div>
-
-      <div class="forecast-details">
-        <p><strong>Last 7 Days:</strong> ${formatNumber(item.last7Fish)} fish</p>
-        <p><strong>Previous 7 Days:</strong> ${formatNumber(item.previous7Fish)} fish</p>
-        <p><strong>Trips:</strong> ${formatNumber(item.last7Trips)}</p>
-        <p><strong>FPA:</strong> ${item.fpa.toFixed(2)}</p>
-        <p><strong>Moon:</strong> ${item.moon.phase}</p>
-        <p><strong>Wind:</strong> ${item.wind.label} (${item.wind.windMph.toFixed(0)} mph, gusts ${item.wind.gustMph.toFixed(0)} mph)</p>
-        <p><strong>Tide Movement:</strong> ${item.tide.label} (${item.tide.movement.toFixed(2)} ft)</p>
-        <p><strong>Water Temp:</strong> ${item.waterTemp.label} (${item.waterTemp.tempF ? item.waterTemp.tempF.toFixed(1) + "°F" : "Unknown"})</p>
-      </div>
-
-      <div class="forecast-factors">
-        <div><span>Trend</span><strong>${item.trendScore}</strong></div>
-        <div><span>Volume</span><strong>${item.volumeScore}</strong></div>
-        <div><span>FPA</span><strong>${item.fpaScore}</strong></div>
-        <div><span>Trips</span><strong>${item.tripScore}</strong></div>
-        <div><span>Moon</span><strong>${item.moon.score}</strong></div>
-        <div><span>Wind</span><strong>${item.wind.score}</strong></div>
-        <div><span>Tide</span><strong>${item.tide.score}</strong></div>
-        <div><span>Temp</span><strong>${item.waterTemp.score}</strong></div>
-      </div>
-
-      <div class="forecast-species">
-        <h5>Top Bite</h5>
-        ${
-          item.topSpecies.length
-            ? item.topSpecies.map(s => `<span>${s.species}: ${formatNumber(s.count)}</span>`).join("")
-            : `<span>No species data</span>`
-        }
-      </div>
-
-      <div class="forecast-species">
-        <h5>Top Boats</h5>
-        ${
-          item.topBoats.length
-            ? item.topBoats.map(b => `<span>${b.boat}: ${formatNumber(b.fish)}</span>`).join("")
-            : `<span>No boat data</span>`
-        }
-      </div>
-    </article>
-  `;
-}
-
-function getTopSpecies(rows) {
-  const totals = {};
-
-  rows.forEach(row => {
-    const fishCounts = getValue(row, ["fish_counts", "Fish Counts"]);
-    if (!fishCounts) return;
-
-    fishCounts.split(",").forEach(item => {
-      const match = item.trim().match(/^(\d+)\s+(.+)$/);
-      if (!match) return;
-
-      const count = Number(match[1]);
-      const species = match[2].trim();
-
-      if (!species || !count) return;
-      totals[species] = (totals[species] || 0) + count;
-    });
-  });
-
-  return Object.entries(totals)
-    .map(([species, count]) => ({ species, count }))
-    .sort((a, b) => b.count - a.count)
-    .slice(0, 3);
+  return { tempF: 0, score: 50, label: "Unknown" };
 }
 
 function getMoonPhaseScore(date = new Date()) {
@@ -540,23 +532,6 @@ function getWaterTempLabel(tempF) {
   if (tempF >= 55 && tempF < 58) return "Cold";
   if (tempF > 76 && tempF <= 80) return "Very Warm";
   return "Poor";
-}
-
-function getTopBoats(rows) {
-  const totals = {};
-
-  rows.forEach(row => {
-    const boat = getValue(row, ["boat", "Boat", "boat_name", "Boat Name"]);
-    const fish = Number(getValue(row, ["total_fish", "fish_count", "count", "fish", "Fish", "Count"]) || 0);
-
-    if (!boat || !fish) return;
-    totals[boat] = (totals[boat] || 0) + fish;
-  });
-
-  return Object.entries(totals)
-    .map(([boat, fish]) => ({ boat, fish }))
-    .sort((a, b) => b.fish - a.fish)
-    .slice(0, 3);
 }
 
 function getValue(row, keys) {
@@ -655,6 +630,10 @@ function getForecastLabel(score) {
   if (score >= 65) return "Good";
   if (score >= 40) return "Fair";
   return "Slow";
+}
+
+function clean(value) {
+  return String(value || "").trim().toLowerCase();
 }
 
 function formatNumber(value) {
