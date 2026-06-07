@@ -6,6 +6,14 @@ const REGIONS = [
   "Santa Barbara"
 ];
 
+const REGION_COORDS = {
+  "San Diego": { latitude: 32.7157, longitude: -117.1611 },
+  "Orange County": { latitude: 33.6189, longitude: -117.9298 },
+  "Los Angeles": { latitude: 33.7701, longitude: -118.1937 },
+  "Ventura": { latitude: 34.2805, longitude: -119.2945 },
+  "Santa Barbara": { latitude: 34.4208, longitude: -119.6982 }
+};
+
 async function loadForecast() {
   const container = document.getElementById("forecastCards");
   const updated = document.getElementById("forecastUpdated");
@@ -16,9 +24,7 @@ async function loadForecast() {
     container.innerHTML = `<div class="loading-card">Loading landing forecasts...</div>`;
 
     const rows = await loadRecentReports(14);
-
-    console.log("Forecast rows loaded:", rows);
-    console.log("Sample row:", rows[0]);
+    const conditionByRegion = await loadRegionalConditions();
 
     if (!rows.length) {
       container.innerHTML = `
@@ -29,7 +35,7 @@ async function loadForecast() {
       return;
     }
 
-    const grouped = buildLandingForecastsByRegion(rows);
+    const grouped = buildLandingForecastsByRegion(rows, conditionByRegion);
 
     container.innerHTML = REGIONS.map(region => {
       const landings = grouped[region] || [];
@@ -102,7 +108,183 @@ async function loadRecentReports(daysBack) {
   return rows;
 }
 
-function buildLandingForecastsByRegion(rows) {
+async function loadRegionalConditions() {
+  const output = {};
+
+  await Promise.all(REGIONS.map(async region => {
+    output[region] = await loadRegionConditions(region);
+  }));
+
+  return output;
+}
+
+async function loadRegionConditions(region) {
+  const coords = REGION_COORDS[region];
+
+  if (!coords) return getDefaultConditions();
+
+  const wind = await loadWindForecast(coords);
+  const marine = await loadMarineForecast(coords);
+
+  return {
+    wind,
+    tide: marine.tide,
+    waterTemp: marine.waterTemp
+  };
+}
+
+async function loadWindForecast(coords) {
+  try {
+    const url =
+      `https://api.open-meteo.com/v1/forecast` +
+      `?latitude=${coords.latitude}` +
+      `&longitude=${coords.longitude}` +
+      `&daily=wind_speed_10m_max,wind_gusts_10m_max` +
+      `&wind_speed_unit=mph` +
+      `&timezone=America%2FLos_Angeles` +
+      `&forecast_days=2`;
+
+    const response = await fetch(url);
+    if (!response.ok) throw new Error("Wind API failed");
+
+    const data = await response.json();
+
+    const windMph = Number(data?.daily?.wind_speed_10m_max?.[1] || 0);
+    const gustMph = Number(data?.daily?.wind_gusts_10m_max?.[1] || 0);
+
+    return {
+      windMph,
+      gustMph,
+      score: getWindScore(windMph, gustMph),
+      label: getWindLabel(windMph, gustMph)
+    };
+
+  } catch (error) {
+    console.warn("Wind forecast failed:", error);
+    return getDefaultWind();
+  }
+}
+
+async function loadMarineForecast(coords) {
+  try {
+    const url =
+      `https://marine-api.open-meteo.com/v1/marine` +
+      `?latitude=${coords.latitude}` +
+      `&longitude=${coords.longitude}` +
+      `&hourly=sea_level_height_msl,sea_surface_temperature` +
+      `&temperature_unit=fahrenheit` +
+      `&length_unit=imperial` +
+      `&timezone=America%2FLos_Angeles` +
+      `&forecast_days=2` +
+      `&cell_selection=sea`;
+
+    const response = await fetch(url);
+    if (!response.ok) throw new Error("Marine API failed");
+
+    const data = await response.json();
+
+    const times = data?.hourly?.time || [];
+    const seaLevels = data?.hourly?.sea_level_height_msl || [];
+    const temps = data?.hourly?.sea_surface_temperature || [];
+
+    const tomorrowIndexes = getTomorrowIndexes(times);
+
+    const tomorrowSeaLevels = tomorrowIndexes
+      .map(index => Number(seaLevels[index]))
+      .filter(value => Number.isFinite(value));
+
+    const tomorrowTemps = tomorrowIndexes
+      .map(index => Number(temps[index]))
+      .filter(value => Number.isFinite(value));
+
+    const tide = calculateTideMovement(tomorrowSeaLevels);
+    const waterTemp = calculateWaterTemp(tomorrowTemps);
+
+    return { tide, waterTemp };
+
+  } catch (error) {
+    console.warn("Marine forecast failed:", error);
+    return {
+      tide: getDefaultTide(),
+      waterTemp: getDefaultWaterTemp()
+    };
+  }
+}
+
+function getTomorrowIndexes(times) {
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+
+  const y = tomorrow.getFullYear();
+  const m = String(tomorrow.getMonth() + 1).padStart(2, "0");
+  const d = String(tomorrow.getDate()).padStart(2, "0");
+  const dateStr = `${y}-${m}-${d}`;
+
+  return times
+    .map((time, index) => String(time).startsWith(dateStr) ? index : -1)
+    .filter(index => index >= 0);
+}
+
+function calculateTideMovement(values) {
+  if (!values.length) return getDefaultTide();
+
+  const min = Math.min(...values);
+  const max = Math.max(...values);
+  const movement = max - min;
+
+  return {
+    movement,
+    score: getTideScore(movement),
+    label: getTideLabel(movement)
+  };
+}
+
+function calculateWaterTemp(values) {
+  if (!values.length) return getDefaultWaterTemp();
+
+  const avg = values.reduce((sum, value) => sum + value, 0) / values.length;
+
+  return {
+    tempF: avg,
+    score: getWaterTempScore(avg),
+    label: getWaterTempLabel(avg)
+  };
+}
+
+function getDefaultConditions() {
+  return {
+    wind: getDefaultWind(),
+    tide: getDefaultTide(),
+    waterTemp: getDefaultWaterTemp()
+  };
+}
+
+function getDefaultWind() {
+  return {
+    windMph: 0,
+    gustMph: 0,
+    score: 50,
+    label: "Unknown"
+  };
+}
+
+function getDefaultTide() {
+  return {
+    movement: 0,
+    score: 50,
+    label: "Unknown"
+  };
+}
+
+function getDefaultWaterTemp() {
+  return {
+    tempF: 0,
+    score: 50,
+    label: "Unknown"
+  };
+}
+
+function buildLandingForecastsByRegion(rows, conditionByRegion) {
   const today = new Date();
   const grouped = {};
 
@@ -132,8 +314,10 @@ function buildLandingForecastsByRegion(rows) {
   const output = {};
 
   Object.keys(grouped).forEach(region => {
+    const conditions = conditionByRegion[region] || getDefaultConditions();
+
     output[region] = Object.values(grouped[region])
-      .map(calculateLandingForecast)
+      .map(item => calculateLandingForecast(item, conditions))
       .filter(item => item.last7Fish > 0 || item.previous7Fish > 0)
       .sort((a, b) => b.finalScore - a.finalScore);
   });
@@ -141,7 +325,7 @@ function buildLandingForecastsByRegion(rows) {
   return output;
 }
 
-function calculateLandingForecast(item) {
+function calculateLandingForecast(item, conditions) {
   const last7Fish = sumFish(item.last7Rows);
   const previous7Fish = sumFish(item.previous7Rows);
 
@@ -162,12 +346,19 @@ function calculateLandingForecast(item) {
   tomorrow.setDate(tomorrow.getDate() + 1);
   const moon = getMoonPhaseScore(tomorrow);
 
+  const wind = conditions.wind;
+  const tide = conditions.tide;
+  const waterTemp = conditions.waterTemp;
+
   const finalScore = Math.round(
-    trendScore * 0.30 +
-    volumeScore * 0.25 +
-    fpaScore * 0.25 +
-    tripScore * 0.10 +
-    moon.score * 0.10
+    trendScore * 0.25 +
+    volumeScore * 0.20 +
+    fpaScore * 0.22 +
+    tripScore * 0.08 +
+    moon.score * 0.07 +
+    wind.score * 0.08 +
+    tide.score * 0.05 +
+    waterTemp.score * 0.05
   );
 
   return {
@@ -185,6 +376,9 @@ function calculateLandingForecast(item) {
     fpaScore,
     tripScore,
     moon,
+    wind,
+    tide,
+    waterTemp,
     finalScore,
     label: getForecastLabel(finalScore),
     topSpecies: getTopSpecies(item.last7Rows),
@@ -213,6 +407,9 @@ function renderLandingCard(item) {
         <p><strong>Trips:</strong> ${formatNumber(item.last7Trips)}</p>
         <p><strong>FPA:</strong> ${item.fpa.toFixed(2)}</p>
         <p><strong>Moon:</strong> ${item.moon.phase}</p>
+        <p><strong>Wind:</strong> ${item.wind.label} (${item.wind.windMph.toFixed(0)} mph, gusts ${item.wind.gustMph.toFixed(0)} mph)</p>
+        <p><strong>Tide Movement:</strong> ${item.tide.label} (${item.tide.movement.toFixed(2)} ft)</p>
+        <p><strong>Water Temp:</strong> ${item.waterTemp.label} (${item.waterTemp.tempF ? item.waterTemp.tempF.toFixed(1) + "°F" : "Unknown"})</p>
       </div>
 
       <div class="forecast-factors">
@@ -221,6 +418,9 @@ function renderLandingCard(item) {
         <div><span>FPA</span><strong>${item.fpaScore}</strong></div>
         <div><span>Trips</span><strong>${item.tripScore}</strong></div>
         <div><span>Moon</span><strong>${item.moon.score}</strong></div>
+        <div><span>Wind</span><strong>${item.wind.score}</strong></div>
+        <div><span>Tide</span><strong>${item.tide.score}</strong></div>
+        <div><span>Temp</span><strong>${item.waterTemp.score}</strong></div>
       </div>
 
       <div class="forecast-species">
@@ -286,6 +486,60 @@ function getMoonPhaseScore(date = new Date()) {
   if (moonAge < 27.68493) return { phase: "Waning Crescent", score: 65, age: moonAge };
 
   return { phase: "New Moon", score: 90, age: moonAge };
+}
+
+function getWindScore(windMph, gustMph) {
+  if (!windMph && !gustMph) return 50;
+  if (windMph <= 10 && gustMph <= 18) return 100;
+  if (windMph <= 15 && gustMph <= 24) return 80;
+  if (windMph <= 20 && gustMph <= 30) return 55;
+  return 25;
+}
+
+function getWindLabel(windMph, gustMph) {
+  if (!windMph && !gustMph) return "Unknown";
+  if (windMph <= 10 && gustMph <= 18) return "Excellent";
+  if (windMph <= 15 && gustMph <= 24) return "Good";
+  if (windMph <= 20 && gustMph <= 30) return "Fair";
+  return "Poor";
+}
+
+function getTideScore(movement) {
+  if (!movement) return 50;
+  if (movement >= 4) return 100;
+  if (movement >= 2.5) return 85;
+  if (movement >= 1.5) return 65;
+  if (movement >= 0.75) return 45;
+  return 25;
+}
+
+function getTideLabel(movement) {
+  if (!movement) return "Unknown";
+  if (movement >= 4) return "Strong";
+  if (movement >= 2.5) return "Good";
+  if (movement >= 1.5) return "Moderate";
+  if (movement >= 0.75) return "Weak";
+  return "Very Weak";
+}
+
+function getWaterTempScore(tempF) {
+  if (!tempF) return 50;
+  if (tempF >= 62 && tempF <= 72) return 100;
+  if (tempF >= 58 && tempF < 62) return 80;
+  if (tempF > 72 && tempF <= 76) return 80;
+  if (tempF >= 55 && tempF < 58) return 60;
+  if (tempF > 76 && tempF <= 80) return 60;
+  return 35;
+}
+
+function getWaterTempLabel(tempF) {
+  if (!tempF) return "Unknown";
+  if (tempF >= 62 && tempF <= 72) return "Prime";
+  if (tempF >= 58 && tempF < 62) return "Cool Good";
+  if (tempF > 72 && tempF <= 76) return "Warm Good";
+  if (tempF >= 55 && tempF < 58) return "Cold";
+  if (tempF > 76 && tempF <= 80) return "Very Warm";
+  return "Poor";
 }
 
 function getTopBoats(rows) {
