@@ -350,3 +350,18 @@ function getSpeciesFromUrl() {
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
 }
+document.title = `${species} Fishing Report | Southern California | SoCal Bite`;
+
+document
+  .querySelector('meta[name="description"]')
+  ?.setAttribute(
+    "content",
+    `${species} fishing report for Southern California. View recent catches, top boats, bite trends, and regional fishing activity.`
+  );
+
+document
+  .querySelector('link[rel="canonical"]')
+  ?.setAttribute(
+    "href",
+    `https://thesocalbite.com/species-detail.html?species=${encodeURIComponent(species)}`
+  );
