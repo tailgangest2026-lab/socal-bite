@@ -4,8 +4,7 @@ document.addEventListener("DOMContentLoaded", loadSpeciesDetail);
 
 async function loadSpeciesDetail() {
   const container = document.getElementById("speciesDetailPage");
-  const params = new URLSearchParams(window.location.search);
-  const species = params.get("species") || "Yellowtail";
+  const species = getSpeciesFromUrl();
 
   document.title = `${species} Fishing Report | SoCal Bite`;
   document.getElementById("pageTitle").textContent = `${species} Fishing Report`;
@@ -332,4 +331,22 @@ function formatShortDate(dateText) {
     month: "short",
     day: "numeric"
   });
+}
+function getSpeciesFromUrl() {
+  const params = new URLSearchParams(window.location.search);
+  const querySpecies = params.get("species");
+
+  if (querySpecies) return querySpecies;
+
+  const fileName = window.location.pathname
+    .split("/")
+    .pop()
+    .replace(".html", "");
+
+  if (!fileName || fileName === "species-detail") return "Yellowtail";
+
+  return fileName
+    .split("-")
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
 }
