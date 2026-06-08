@@ -269,3 +269,15 @@ function escapeHtml(value) {
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
 }
+function formatDate(dateValue) {
+  const date = new Date(dateValue + "T00:00:00");
+
+  if (isNaN(date)) return dateValue;
+
+  return date.toLocaleDateString("en-US", {
+    weekday: "short",
+    month: "short",
+    day: "numeric",
+    year: "numeric"
+  });
+}
