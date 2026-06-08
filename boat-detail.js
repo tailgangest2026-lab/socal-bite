@@ -145,38 +145,64 @@ function renderTopSpecies(rows) {
     </div>
   `;
 }
-
 function renderRecentReports(rows) {
   const container = document.getElementById("recentReports");
+
   const recent = rows.slice(0, 30);
 
   if (!recent.length) {
-    container.innerHTML = '<div class="loading-card">No recent fish reports found.</div>';
+    container.innerHTML = '<div class="loading-card">No recent fish reports found for this boat.</div>';
     return;
   }
 
-  container.innerHTML = `
-    <div class="ratings-grid">
-      ${recent.map(row => `
-        <article class="region-card landing-card">
-          <div class="landing-card-top">
-            <h2>${escapeHtml(row.landing || "Unknown Landing")}</h2>
-            <p>${escapeHtml(row.trip_date || "")} • ${escapeHtml(row.trip_type || "")}</p>
-          </div>
+  const groupedByDate = {};
 
-          <div class="landing-stats">
-            <div><strong>${number(row.anglers)}</strong><span>Anglers</span></div>
-            <div><strong>${number(row.total_fish)}</strong><span>Fish</span></div>
-            <div><strong>${Number(row.anglers || 0) ? (Number(row.total_fish || 0) / Number(row.anglers || 1)).toFixed(2) : "0.00"}</strong><span>FPA</span></div>
-          </div>
+  recent.forEach(row => {
+    const date = row.trip_date || "Unknown Date";
 
-          <div class="landing-info">
-            <p>${escapeHtml(row.fish_counts || "No fish count listed")}</p>
+    if (!groupedByDate[date]) {
+      groupedByDate[date] = [];
+    }
+
+    groupedByDate[date].push(row);
+  });
+
+  container.innerHTML = Object.keys(groupedByDate).map(date => {
+    const dayRows = groupedByDate[date];
+
+    const totalTrips = dayRows.length;
+    const totalAnglers = dayRows.reduce((sum, row) => sum + Number(row.anglers || 0), 0);
+    const totalFish = dayRows.reduce((sum, row) => sum + Number(row.total_fish || 0), 0);
+
+    return `
+      <section class="daily-report-card">
+        <h2>Daily Fishing Report - ${escapeHtml(formatDate(date))}</h2>
+
+        <p class="report-summary">
+          <strong>${number(totalTrips)}</strong> Trips
+          <span>•</span>
+          <strong>${number(totalAnglers)}</strong> Anglers
+          <span>•</span>
+          <strong>${number(totalFish)}</strong> Fish
+        </p>
+
+        ${dayRows.map(row => `
+          <div class="daily-boat-row">
+            <div>
+              <h3>${escapeHtml(row.boat || "Unknown Boat")}</h3>
+              <p>${escapeHtml(row.landing || "")}</p>
+              <p>${escapeHtml(row.trip_type || "")} • ${number(row.anglers)} Anglers</p>
+            </div>
+
+            <div>
+              <strong>${number(row.total_fish)} Fish</strong>
+              <p>${escapeHtml(row.fish_counts || "No fish count listed")}</p>
+            </div>
           </div>
-        </article>
-      `).join("")}
-    </div>
-  `;
+        `).join("")}
+      </section>
+    `;
+  }).join("");
 }
 
 function parseFishCounts(fishCounts) {
