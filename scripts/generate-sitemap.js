@@ -12,6 +12,14 @@ function readJson(filePath) {
   }
 }
 
+function asArray(data) {
+  if (Array.isArray(data)) return data;
+  if (Array.isArray(data.data)) return data.data;
+  if (Array.isArray(data.rows)) return data.rows;
+  if (Array.isArray(data.reports)) return data.reports;
+  return [];
+}
+
 function escapeXml(value) {
   return String(value)
     .replace(/&/g, "&amp;")
@@ -19,21 +27,17 @@ function escapeXml(value) {
     .replace(/>/g, "&gt;");
 }
 
-function addUrl(urls, loc) {
-  if (loc) urls.add(loc);
-}
-
 function extractSpeciesFromFishCounts(fishCounts) {
   if (!fishCounts) return [];
 
   return String(fishCounts)
     .split(",")
-    .map(item =>
-      item
-        .replace(/[0-9]/g, "")
-        .trim()
-    )
+    .map(item => item.replace(/[0-9]/g, "").trim())
     .filter(Boolean);
+}
+
+function addUrl(urls, loc) {
+  if (loc) urls.add(loc);
 }
 
 const urls = new Set();
@@ -52,9 +56,9 @@ const speciesSet = new Set();
   "/about.html"
 ].forEach(page => addUrl(urls, `${SITE_URL}${page}`));
 
-const boatData = readJson(path.join(__dirname, "../boat-detail.json"));
-const landingData = readJson(path.join(__dirname, "../landing-detail.json"));
-const dailyIndex = readJson(path.join(__dirname, "../daily-report-index.json"));
+const boatData = asArray(readJson(path.join(__dirname, "../boat-detail.json")));
+const landingData = asArray(readJson(path.join(__dirname, "../landing-detail.json")));
+const dailyIndex = asArray(readJson(path.join(__dirname, "../daily-report-index.json")));
 
 boatData.forEach(row => {
   const boat = row.boat || row.Boat || row.boat_name || row.boatName;
@@ -78,10 +82,15 @@ dailyIndex.forEach(report => {
   }
 
   const filePath = report.file || `reports/daily-report-${date}.json`;
-  const reportRows = readJson(path.join(__dirname, "..", filePath));
+  const reportRows = asArray(readJson(path.join(__dirname, "..", filePath)));
 
   reportRows.forEach(row => {
-    const fishCounts = row.fish_counts || row.fishCounts || row["fish counts"];
+    const fishCounts =
+      row.fish_counts ||
+      row.fishCounts ||
+      row["fish counts"] ||
+      row.FishCounts ||
+      row["Fish Counts"];
 
     extractSpeciesFromFishCounts(fishCounts).forEach(species => {
       speciesSet.add(species);
@@ -90,10 +99,7 @@ dailyIndex.forEach(report => {
 });
 
 speciesSet.forEach(species => {
-  addUrl(
-    urls,
-    `${SITE_URL}/species-detail.html?species=${encodeURIComponent(species)}`
-  );
+  addUrl(urls, `${SITE_URL}/species-detail.html?species=${encodeURIComponent(species)}`);
 });
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
