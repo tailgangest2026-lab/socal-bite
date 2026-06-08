@@ -42,7 +42,7 @@ function addUrl(urls, loc) {
 
 const urls = new Set();
 const speciesSet = new Set();
-
+const boatSet = new Set();
 [
   "/",
   "/daily-report.html",
