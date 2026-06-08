@@ -7,6 +7,14 @@
   <title>About | SoCal Bite</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="/manifest.json">
+
+<meta name="theme-color" content="#031828">
+
+<link
+  rel="apple-touch-icon"
+  href="/assets/icons/apple-touch-icon.png"
+/>
   <link rel="canonical" href="https://thesocalbite.com/about.html" />
   <meta property="og:title" content="About | SoCal Bite" />
   <meta property="og:description" content="Learn about SoCal Bite, a Southern California fishing report site with daily fish counts, top boats, landings, species trends, and bite updates." />
@@ -122,6 +130,12 @@
   </a>
 </div>
 </footer>
-
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/service-worker.js");
+  });
+}
+</script>
 </body>
 </html>
