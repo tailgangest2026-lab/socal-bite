@@ -19,18 +19,25 @@ function escapeXml(value) {
     .replace(/>/g, "&gt;");
 }
 
-function getValue(row, possibleKeys) {
-  for (const key of possibleKeys) {
-    if (row[key]) return row[key];
-  }
-  return "";
-}
-
 function addUrl(urls, loc) {
   if (loc) urls.add(loc);
 }
 
+function extractSpeciesFromFishCounts(fishCounts) {
+  if (!fishCounts) return [];
+
+  return String(fishCounts)
+    .split(",")
+    .map(item =>
+      item
+        .replace(/[0-9]/g, "")
+        .trim()
+    )
+    .filter(Boolean);
+}
+
 const urls = new Set();
+const speciesSet = new Set();
 
 [
   "/",
@@ -45,73 +52,48 @@ const urls = new Set();
   "/about.html"
 ].forEach(page => addUrl(urls, `${SITE_URL}${page}`));
 
-const speciesData = readJson(path.join(__dirname, "../species.json"));
 const boatData = readJson(path.join(__dirname, "../boat-detail.json"));
 const landingData = readJson(path.join(__dirname, "../landing-detail.json"));
 const dailyIndex = readJson(path.join(__dirname, "../daily-report-index.json"));
 
-speciesData.forEach(row => {
-  const species = getValue(row, [
-    "species",
-    "Species",
-    "fish",
-    "Fish",
-    "name",
-    "Name",
-    "species_name",
-    "speciesName"
-  ]);
-
-  if (species) {
-    addUrl(
-      urls,
-      `${SITE_URL}/species-detail.html?species=${encodeURIComponent(species)}`
-    );
-  }
-});
-
 boatData.forEach(row => {
-  const boat = getValue(row, [
-    "boat",
-    "Boat",
-    "boat_name",
-    "Boat Name",
-    "boatName",
-    "vessel",
-    "Vessel"
-  ]);
-
+  const boat = row.boat || row.Boat || row.boat_name || row.boatName;
   if (boat) {
-    addUrl(
-      urls,
-      `${SITE_URL}/boat-detail.html?boat=${encodeURIComponent(boat)}`
-    );
+    addUrl(urls, `${SITE_URL}/boat-detail.html?boat=${encodeURIComponent(boat)}`);
   }
 });
 
 landingData.forEach(row => {
-  const landing = getValue(row, [
-    "landing",
-    "Landing",
-    "landing_name",
-    "Landing Name",
-    "landingName"
-  ]);
-
+  const landing = row.landing || row.Landing || row.landing_name || row.landingName;
   if (landing) {
-    addUrl(
-      urls,
-      `${SITE_URL}/landing-detail.html?landing=${encodeURIComponent(landing)}`
-    );
+    addUrl(urls, `${SITE_URL}/landing-detail.html?landing=${encodeURIComponent(landing)}`);
   }
 });
 
-dailyIndex.forEach(row => {
-  const date = getValue(row, ["date", "trip_date", "Trip Date"]);
+dailyIndex.forEach(report => {
+  const date = report.date || report.trip_date;
 
   if (date) {
     addUrl(urls, `${SITE_URL}/daily-report.html?date=${encodeURIComponent(date)}`);
   }
+
+  const filePath = report.file || `reports/daily-report-${date}.json`;
+  const reportRows = readJson(path.join(__dirname, "..", filePath));
+
+  reportRows.forEach(row => {
+    const fishCounts = row.fish_counts || row.fishCounts || row["fish counts"];
+
+    extractSpeciesFromFishCounts(fishCounts).forEach(species => {
+      speciesSet.add(species);
+    });
+  });
+});
+
+speciesSet.forEach(species => {
+  addUrl(
+    urls,
+    `${SITE_URL}/species-detail.html?species=${encodeURIComponent(species)}`
+  );
 });
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
@@ -127,7 +109,7 @@ ${Array.from(urls)
 fs.writeFileSync(path.join(__dirname, "../sitemap.xml"), sitemap);
 
 console.log(`Sitemap generated with ${urls.size} URLs`);
-console.log(`Species rows found: ${speciesData.length}`);
+console.log(`Species pages found: ${speciesSet.size}`);
 console.log(`Boat rows found: ${boatData.length}`);
 console.log(`Landing rows found: ${landingData.length}`);
 console.log(`Daily report rows found: ${dailyIndex.length}`);
