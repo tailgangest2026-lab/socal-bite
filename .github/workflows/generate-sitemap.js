@@ -1,93 +1,35 @@
-const fs = require("fs");
-const path = require("path");
+name: Generate Sitemap
 
-const SITE_URL = "https://thesocalbite.com"; ]
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
 
-function readJson(filePath) {
-  try {
-    return JSON.parse(fs.readFileSync(filePath, "utf8"));
-  } catch {
-    console.log(`Skipped missing file: ${filePath}`);
-    return [];
-  }
-}
+permissions:
+  contents: write
 
-function escapeXml(value) {
-  return String(value)
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;");
-}
+jobs:
+  sitemap:
+    runs-on: ubuntu-latest
 
-function addUrl(urls, loc) {
-  if (!loc) return;
-  urls.add(loc);
-}
+    steps:
+      - uses: actions/checkout@v4
 
-const urls = new Set();
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
-// Main pages
-[
-  "/",
-  "/daily-report.html",
-  "/boat-ratings.html",
-  "/top-boats.html",
-  "/top-species.html",
-  "/species.html",
-  "/bite-trends.html",
-  "/landings.html",
-  "/news.html",
-  "/about.html"
-].forEach(page => addUrl(urls, `${SITE_URL}${page}`));
+      - name: Generate sitemap
+        run: node scripts/generate-sitemap.js
 
-// Load JSON files
-const speciesData = readJson(path.join(__dirname, "../species.json"));
-const boatData = readJson(path.join(__dirname, "../boat-detail.json"));
-const landingData = readJson(path.join(__dirname, "../landing-detail.json"));
+      - name: Commit sitemap
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
 
-// Species detail pages
-speciesData.forEach(row => {
-  const species = row.species || row.name;
-  if (species) {
-    addUrl(
-      urls,
-      `${SITE_URL}/species-detail.html?species=${encodeURIComponent(species)}`
-    );
-  }
-});
+          git add sitemap.xml
 
-// Boat detail pages
-boatData.forEach(row => {
-  const boat = row.boat || row.boat_name;
-  if (boat) {
-    addUrl(
-      urls,
-      `${SITE_URL}/boat-detail.html?boat=${encodeURIComponent(boat)}`
-    );
-  }
-});
+          git diff --staged --quiet || git commit -m "Update sitemap"
 
-// Landing detail pages
-landingData.forEach(row => {
-  const landing = row.landing || row.landing_name;
-  if (landing) {
-    addUrl(
-      urls,
-      `${SITE_URL}/landing-detail.html?landing=${encodeURIComponent(landing)}`
-    );
-  }
-});
-
-const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${Array.from(urls)
-  .map(url => `  <url>
-    <loc>${escapeXml(url)}</loc>
-  </url>`)
-  .join("\n")}
-</urlset>
-`;
-
-fs.writeFileSync(path.join(__dirname, "../sitemap.xml"), sitemap);
-
-console.log(`Sitemap generated with ${urls.size} URLs`);
+          git push
