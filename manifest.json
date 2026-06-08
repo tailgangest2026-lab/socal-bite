@@ -1,0 +1,19 @@
+{
+  "name": "SoCal Bite",
+  "short_name": "SoCal Bite",
+  "description": "Southern California fishing reports, bite forecasts, boat rankings, species reports, and landing information.",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#031828",
+  "theme_color": "#031828",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/assets/socal-bite-logo.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    }
+  ]
+}
