@@ -19,14 +19,19 @@ function escapeXml(value) {
     .replace(/>/g, "&gt;");
 }
 
+function getValue(row, possibleKeys) {
+  for (const key of possibleKeys) {
+    if (row[key]) return row[key];
+  }
+  return "";
+}
+
 function addUrl(urls, loc) {
-  if (!loc) return;
-  urls.add(loc);
+  if (loc) urls.add(loc);
 }
 
 const urls = new Set();
 
-// Main pages
 [
   "/",
   "/daily-report.html",
@@ -40,14 +45,23 @@ const urls = new Set();
   "/about.html"
 ].forEach(page => addUrl(urls, `${SITE_URL}${page}`));
 
-// Load JSON files
 const speciesData = readJson(path.join(__dirname, "../species.json"));
 const boatData = readJson(path.join(__dirname, "../boat-detail.json"));
 const landingData = readJson(path.join(__dirname, "../landing-detail.json"));
+const dailyIndex = readJson(path.join(__dirname, "../daily-report-index.json"));
 
-// Species detail pages
 speciesData.forEach(row => {
-  const species = row.species || row.name;
+  const species = getValue(row, [
+    "species",
+    "Species",
+    "fish",
+    "Fish",
+    "name",
+    "Name",
+    "species_name",
+    "speciesName"
+  ]);
+
   if (species) {
     addUrl(
       urls,
@@ -56,9 +70,17 @@ speciesData.forEach(row => {
   }
 });
 
-// Boat detail pages
 boatData.forEach(row => {
-  const boat = row.boat || row.boat_name;
+  const boat = getValue(row, [
+    "boat",
+    "Boat",
+    "boat_name",
+    "Boat Name",
+    "boatName",
+    "vessel",
+    "Vessel"
+  ]);
+
   if (boat) {
     addUrl(
       urls,
@@ -67,14 +89,28 @@ boatData.forEach(row => {
   }
 });
 
-// Landing detail pages
 landingData.forEach(row => {
-  const landing = row.landing || row.landing_name;
+  const landing = getValue(row, [
+    "landing",
+    "Landing",
+    "landing_name",
+    "Landing Name",
+    "landingName"
+  ]);
+
   if (landing) {
     addUrl(
       urls,
       `${SITE_URL}/landing-detail.html?landing=${encodeURIComponent(landing)}`
     );
+  }
+});
+
+dailyIndex.forEach(row => {
+  const date = getValue(row, ["date", "trip_date", "Trip Date"]);
+
+  if (date) {
+    addUrl(urls, `${SITE_URL}/daily-report.html?date=${encodeURIComponent(date)}`);
   }
 });
 
@@ -91,3 +127,7 @@ ${Array.from(urls)
 fs.writeFileSync(path.join(__dirname, "../sitemap.xml"), sitemap);
 
 console.log(`Sitemap generated with ${urls.size} URLs`);
+console.log(`Species rows found: ${speciesData.length}`);
+console.log(`Boat rows found: ${boatData.length}`);
+console.log(`Landing rows found: ${landingData.length}`);
+console.log(`Daily report rows found: ${dailyIndex.length}`);
