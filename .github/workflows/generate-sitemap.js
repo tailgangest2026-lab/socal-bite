@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const SITE_URL = "https://thesocalbite.com";
+const SITE_URL = "https://thesocalbite.com"; ]
 
 function readJson(filePath) {
   try {
