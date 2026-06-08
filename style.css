@@ -1218,3 +1218,18 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+.install-app-btn {
+  background: #14d9e8;
+  color: #031828;
+  border: none;
+  border-radius: 999px;
+  padding: 14px 24px;
+  font-weight: 800;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.install-app-btn:hover {
+  transform: translateY(-2px);
+}
