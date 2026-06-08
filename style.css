@@ -1176,3 +1176,45 @@ footer {
 .landing-title-link:hover {
   text-decoration: underline;
 }
+.daily-report-card {
+  background: rgba(3, 24, 40, 0.92);
+  border: 1px solid rgba(0, 220, 255, 0.35);
+  border-radius: 18px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.daily-report-card h2 {
+  color: #14d9e8;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+
+.report-summary {
+  color: #ffc64d;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.daily-boat-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 18px 0;
+}
+
+.daily-boat-row h3 {
+  margin: 0 0 6px;
+  color: #ffffff;
+}
+
+.daily-boat-row p {
+  margin: 4px 0;
+}
+
+@media (max-width: 700px) {
+  .daily-boat-row {
+    grid-template-columns: 1fr;
+  }
+}
