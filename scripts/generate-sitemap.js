@@ -83,25 +83,34 @@ dailyIndex.forEach(report => {
 
   const filePath = report.file || `reports/daily-report-${date}.json`;
   const reportRows = asArray(readJson(path.join(__dirname, "..", filePath)));
+reportRows.forEach(row => {
 
-  reportRows.forEach(row => {
-    const fishCounts =
-      row.fish_counts ||
-      row.fishCounts ||
-      row["fish counts"] ||
-      row.FishCounts ||
-      row["Fish Counts"];
+  if (row.boat) {
+    boatSet.add(row.boat);
+  }
 
-    extractSpeciesFromFishCounts(fishCounts).forEach(species => {
-      speciesSet.add(species);
-    });
+  const fishCounts =
+    row.fish_counts ||
+    row.fishCounts ||
+    row["fish counts"];
+
+  extractSpeciesFromFishCounts(fishCounts).forEach(species => {
+    speciesSet.add(species);
   });
+
+});
+
 });
 
 speciesSet.forEach(species => {
   addUrl(urls, `${SITE_URL}/species-detail.html?species=${encodeURIComponent(species)}`);
 });
-
+boatSet.forEach(boat => {
+  addUrl(
+    urls,
+    `${SITE_URL}/boat-detail.html?boat=${encodeURIComponent(boat)}`
+  );
+});
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${Array.from(urls)
@@ -116,6 +125,7 @@ fs.writeFileSync(path.join(__dirname, "../sitemap.xml"), sitemap);
 
 console.log(`Sitemap generated with ${urls.size} URLs`);
 console.log(`Species pages found: ${speciesSet.size}`);
+console.log(`Boat pages found: ${boatSet.size}`);
 console.log(`Boat rows found: ${boatData.length}`);
 console.log(`Landing rows found: ${landingData.length}`);
 console.log(`Daily report rows found: ${dailyIndex.length}`);
