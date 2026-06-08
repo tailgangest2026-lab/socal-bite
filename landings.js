@@ -158,7 +158,11 @@ document.addEventListener("DOMContentLoaded", loadLandings);
       <article class="region-card landing-card">
 
         <div class="landing-card-top">
-          <h2>${escapeHtml(landing.landing || "Unknown Landing")}</h2>
+          <h2>
+  <a href="landing-detail.html?landing=${encodeURIComponent(landingName)}" class="landing-title-link">
+    ${escapeHtml(landing.landing || "Unknown Landing")}
+  </a>
+</h2>
           <p>${escapeHtml(landing.region || "")}</p>
         </div>
 
