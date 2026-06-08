@@ -41,7 +41,9 @@
 
 <body class="home-page">
   <main class="full-bg-home">
-
+<button id="installAppBtn" class="install-app-btn" hidden>
+  Install SoCal Bite App
+</button>
 <div class="social-links">
   <a href="https://www.instagram.com/the_socal_bite/" target="_blank" aria-label="Instagram">
     <img src="assets/instagram-icon.png" class="social-logo" alt="Instagram" loading="lazy">
@@ -103,6 +105,30 @@
   </main>
   <script src="site-config.js" defer></script>
   <script src="home.js?v=4" defer></script>
+ <script>
+let deferredPrompt;
+
+window.addEventListener("beforeinstallprompt", event => {
+  event.preventDefault();
+  deferredPrompt = event;
+
+  const installBtn = document.getElementById("installAppBtn");
+  if (installBtn) {
+    installBtn.hidden = false;
+  }
+});
+
+document.getElementById("installAppBtn")?.addEventListener("click", async () => {
+  if (!deferredPrompt) return;
+
+  deferredPrompt.prompt();
+
+  const result = await deferredPrompt.userChoice;
+  deferredPrompt = null;
+
+  document.getElementById("installAppBtn").hidden = true;
+});
+</script>
   <script>
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", () => {
