@@ -12,6 +12,14 @@
   />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="/manifest.json">
+
+<meta name="theme-color" content="#031828">
+
+<link
+  rel="apple-touch-icon"
+  href="/assets/icons/apple-touch-icon.png"
+/>
   <link rel="canonical" href="https://thesocalbite.com/bite-trends.html" />
   <meta property="og:title" content="Bite Trends | SoCal Bite" />
   <meta property="og:description" content="Track Southern California fishing bite trends by region, species, trips, anglers, total fish, and fish per angler." />
@@ -95,6 +103,12 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="site-config.js" defer></script>
   <script src="bite-trends.js?v=1" defer></script>
-
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/service-worker.js");
+  });
+}
+</script>
 </body>
 </html>
