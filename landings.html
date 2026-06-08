@@ -9,6 +9,16 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
+  <link rel="manifest" href="/manifest.json">
+
+<meta name="theme-color" content="#031828">
+
+<link
+  rel="apple-touch-icon"
+  href="/assets/icons/apple-touch-icon.png"
+/>
   <link rel="canonical" href="https://thesocalbite.com/landings.html" />
   <meta property="og:title" content="Book a Fishing Trip | SoCal Bite" />
   <meta property="og:description" content="Find Southern California sportfishing landings with boats, trip types, prices, contact information, directions, and booking links." />
@@ -78,5 +88,12 @@
   </footer>
   <script src="site-config.js" defer></script>
   <script src="landings.js?v=1" defer></script>
+  <script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/service-worker.js");
+  });
+}
+</script>
 </body>
 </html>
