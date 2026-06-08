@@ -1,1 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <meta id="metaDescription" name="description" content="View Southern California sportfishing landing details, boats, top species, and recent fish counts." />
+  <title id="pageTitle">Landing Fishing Report | SoCal Bite</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link id="canonicalLink" rel="canonical" href="https://thesocalbite.com/landing-detail.html" />
+
+  <meta id="ogTitle" property="og:title" content="Landing Fishing Report | SoCal Bite" />
+  <meta id="ogDescription" property="og:description" content="View Southern California sportfishing landing details, boats, top species, and recent fish counts." />
+  <meta property="og:type" content="website" />
+  <meta id="ogUrl" property="og:url" content="https://thesocalbite.com/landing-detail.html" />
+  <meta property="og:image" content="https://thesocalbite.com/assets/socal-bite-logo.webp" />
+</head>
+
+<body class="inner-page">
+
+  <section class="page-top">
+    <h1 id="landingTitle">Landing Fishing Report</h1>
+
+    <nav class="page-nav">
+      <a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
+
+      <div class="dropdown">
+        <button class="dropbtn">
+          <i class="fa-solid fa-chart-line"></i><span>Boat Reports</span><i class="fa-solid fa-caret-down caret"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="daily-report.html">Daily Report</a>
+          <a href="boat-ratings.html">Boat Ratings</a>
+          <a href="top-boats.html">Top Boats</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn">
+          <i class="fa-solid fa-chart-line"></i><span>Species Reports</span><i class="fa-solid fa-caret-down caret"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="bite-trends.html">Bite Trends</a>
+          <a href="forecast">Bite Forecast</a>
+          <a href="species.html">Species</a>
+          <a href="top-species.html">Top Species</a>
+        </div>
+      </div>
+
+      <a href="news.html"><i class="fa-solid fa-newspaper"></i><span>Fishing News</span></a>
+      <a href="landings.html"><i class="fa-solid fa-fish"></i><span>Landings</span></a>
+      <a href="about.html"><i class="fa-solid fa-user"></i><span>About</span></a>
+    </nav>
+  </section>
+
+  <main class="report-page">
+
+    <section class="region-section">
+      <p class="page-subtitle">
+        Landing details, boats, top species, and recent Southern California fish counts.
+      </p>
+
+      <div id="landingInfo" class="landing-region-wrap">
+        <div class="loading-card">Loading landing...</div>
+      </div>
+    </section>
+
+    <section class="region-section">
+      <h2>Boats at This Landing</h2>
+      <div id="landingBoats" class="landing-region-wrap">
+        <div class="loading-card">Loading boats...</div>
+      </div>
+    </section>
+
+    <section class="region-section">
+      <h2>Top Species Last 30 Days</h2>
+      <div id="topSpecies" class="landing-region-wrap">
+        <div class="loading-card">Loading species...</div>
+      </div>
+    </section>
+
+    <section class="region-section">
+      <h2>Recent Daily Fish Reports</h2>
+      <div id="recentReports" class="landing-region-wrap">
+        <div class="loading-card">Loading reports...</div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 The SoCal Bite • Fishing Reports & Bite Updates</p>
+
+    <div class="social-links">
+      <a href="https://www.instagram.com/the_socal_bite/" target="_blank" aria-label="Instagram">
+        <img src="assets/instagram-icon.png" class="social-logo" alt="Instagram" loading="lazy">
+      </a>
+
+      <a href="https://www.facebook.com/profile.php?id=61590740421081" target="_blank" aria-label="Facebook">
+        <img src="assets/facebook-icon.png" class="social-logo" alt="Facebook" loading="lazy">
+      </a>
+    </div>
+  </footer>
+
+  <script src="site-config.js" defer></script>
+  <script src="landing-detail.js?v=1" defer></script>
+</body>
+</html>
