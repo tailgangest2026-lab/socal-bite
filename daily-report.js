@@ -160,7 +160,11 @@ function renderDailyReport(date, rows) {
 
           return `
             <div class="landing-card">
-              <h3>${landing}</h3>
+             <h3>
+  <a href="landing-detail.html?landing=${encodeURIComponent(landing)}" class="landing-title-link">
+    ${landing}
+  </a>
+</h3>
 
               <p class="daily-landing-summary">
                 ${numberFormat(landingTotals.trips)} Trips •
@@ -175,7 +179,11 @@ function renderDailyReport(date, rows) {
                 .map(boat => `
                   <div class="boat-row">
                     <div>
-                      <strong>${boat.boat || "Unknown Boat"}</strong>
+                      <strong>
+  <a href="boat-detail.html?boat=${encodeURIComponent(boat.boat || "")}" class="landing-title-link">
+    ${boat.boat || "Unknown Boat"}
+  </a>
+</strong>
                       <p>${boat.trip_type || "Trip"} • ${numberFormat(boat.anglers)} Anglers</p>
                     </div>
 
