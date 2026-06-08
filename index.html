@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#031828">
+<link rel="apple-touch-icon" href="/assets/socal-bite-logo.webp">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -89,5 +92,12 @@
   </main>
   <script src="site-config.js" defer></script>
   <script src="home.js?v=4" defer></script>
+  <script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("/service-worker.js");
+    });
+  }
+</script>
 </body>
 </html>
