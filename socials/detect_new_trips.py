@@ -8,11 +8,15 @@ REPORT_FILE = Path("reports/daily-report-latest.json")
 SEEN_FILE = Path("last-seen-trips.json")
 OUTPUT_DIR = Path("socials/output")
 ALERT_FLAG_FILE = Path("socials/new-post-created.flag")
+POST_LINKS_FILE = Path("socials/post-links.txt")
+SITE_BASE_URL = "https://thesocalbite.com"
 
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 if ALERT_FLAG_FILE.exists():
     ALERT_FLAG_FILE.unlink()
+if POST_LINKS_FILE.exists():
+    POST_LINKS_FILE.unlink()
 
 with open(REPORT_FILE, "r", encoding="utf-8") as f:
     data = json.load(f)
@@ -219,9 +223,9 @@ https://thesocalbite.com
 
     return caption_file
 
-
 if new_trips:
     trips_by_region = defaultdict(list)
+    post_links = []
 
     for trip in new_trips:
         region = trip.get("region") or "Southern California"
@@ -231,16 +235,24 @@ if new_trips:
         image_file = create_region_image(region, region_trips)
         caption_file = create_region_caption(region, region_trips)
 
+        image_url = f"{SITE_BASE_URL}/{image_file.as_posix()}"
+        post_links.append(f"{region}: {image_url}")
+
         print(f"Created post for {region}")
         print(f"Image: {image_file}")
         print(f"Caption: {caption_file}")
+        print(f"URL: {image_url}")
 
-    # Create alert flag for GitHub Action
+    with open(POST_LINKS_FILE, "w", encoding="utf-8") as f:
+        f.write("New Fish Counts Added\n\n")
+        f.write("\n".join(post_links))
+
     with open(ALERT_FLAG_FILE, "w", encoding="utf-8") as f:
         f.write("new post created")
 
 else:
     print("No new trips found.")
+
 
 with open(SEEN_FILE, "w", encoding="utf-8") as f:
     json.dump(current_ids, f, indent=2)
