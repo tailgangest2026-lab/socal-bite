@@ -74,6 +74,21 @@ jobs:
 
           rm -rf tmp-json
 
+      - name: Debug latest daily report
+        run: |
+          echo "Latest report file:"
+          ls -la reports/daily-report-latest.json || true
+
+          echo "First 500 characters:"
+          head -c 500 reports/daily-report-latest.json || true
+
+          echo ""
+          echo "JSON type:"
+          jq type reports/daily-report-latest.json || true
+
+          echo "Length:"
+          jq length reports/daily-report-latest.json || true
+
       - name: Detect new trips
         run: python socials/detect_new_trips.py
 
