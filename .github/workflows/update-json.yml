@@ -134,7 +134,29 @@ jobs:
           from: "SoCal Bite Alerts"
           body: |
             New Fish Counts Added.
-            
+      - name: Email new social post links
+        if: steps.detect.outputs.created == 'true'
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          subject: "New SoCal Bite Fish Count Posts"
+          to: ${{ secrets.EMAIL_TO }}
+          from: "SoCal Bite Alerts"
+          body: |
+            New Fish Counts Added
+
+            View generated images:
+
+            https://thesocalbite.com/socials/output/
+
+            Direct links may include:
+
+            https://thesocalbite.com/socials/output/new-fish-counts-los-angeles.png
+            https://thesocalbite.com/socials/output/new-fish-counts-orange-county.png
+            https://thesocalbite.com/socials/output/new-fish-counts-san-diego.png
 
       - name: Show downloaded files
         run: |
