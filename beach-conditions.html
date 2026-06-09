@@ -82,22 +82,68 @@
   <main class="report-page">
 
     <section class="region-section">
-      <h2>Southern California Beach Fishing Outlook</h2>
+<h2>Southern California Beach Fishing Conditions</h2>
 
-      <p class="page-subtitle">
-        Select a beach to check surf fishing conditions, wind, water temperature, tide movement,
-        and the best target species for the day.
-      </p>
+<p class="page-subtitle">
+  Check surf, wind, water temperature, tides, and beach fishing outlook by location.
+</p>
 
-      <div class="forecast-intro-card">
-        <div>
-          <span class="forecast-kicker">Surf Fishing Conditions</span>
-          <h3>Find the best beach bite</h3>
-          <p>
-            This page is built for surf anglers targeting corbina, barred surfperch, yellowfin croaker,
-            spotfin croaker, halibut, leopard shark, guitarfish, and other beach species.
-          </p>
-        </div>
+<div class="conditions-hero-card">
+  <div>
+    <span class="forecast-kicker">Surf Fishing Forecast</span>
+    <h3>Find the best beach bite</h3>
+    <p>
+      Select a beach and date to view live weather, NOAA tide data, water temperature,
+      surf conditions, and likely target species.
+    </p>
+  </div>
+</div>
+
+<div class="conditions-controls">
+  <label for="beachSelect">Beach</label>
+  <!-- KEEP YOUR EXISTING beachSelect DROPDOWN HERE -->
+
+  <label for="dateSelect">Date</label>
+  <select id="dateSelect"></select>
+</div>
+
+<div id="beachConditionsUpdated" class="last-updated"></div>
+
+<div class="conditions-dashboard">
+  <div id="beachScoreCard" class="forecast-intro-card conditions-score-panel"></div>
+
+  <div id="beachConditionsSummary" class="conditions-main-panel">
+    <div class="loading-card">Select a beach to load conditions...</div>
+  </div>
+</div>
+
+<div class="conditions-lower-grid">
+  <div class="forecast-intro-card">
+    <div>
+      <span class="forecast-kicker">Surf Fishing Targets</span>
+      <h3>Likely Species</h3>
+      <div id="beachSpeciesTargets">Select a beach to view likely surf fishing targets.</div>
+    </div>
+  </div>
+
+  <div class="forecast-intro-card">
+    <div>
+      <span class="forecast-kicker">Tide Outlook</span>
+      <h3>Highs, Lows & Movement</h3>
+      <div id="beachTideTable">Select a beach to view tide outlook.</div>
+    </div>
+  </div>
+</div>
+
+<div class="forecast-intro-card">
+  <div>
+    <span class="forecast-kicker">Fishing Notes</span>
+    <h3>Beach Condition Breakdown</h3>
+    <div id="beachForecastNotes">
+      Look for light wind, clean water, manageable surf, and good tidal movement.
+    </div>
+  </div>
+</div>
 
         <div class="forecast-legend">
           <span><b class="legend-dot excellent-dot"></b> Excellent</span>
