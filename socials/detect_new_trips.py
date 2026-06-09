@@ -143,14 +143,17 @@ def create_region_image(region, region_trips):
         logo.thumbnail((105, 105))
         img.paste(logo, (45, 25), logo)
 
-        title_x = 170
+        title_x = 210
     else:
         title_x = 55
 
-    draw.text((title_x, 35), "NEW FISH COUNTS ADDED", fill=white, font=title_font)
-    draw.text((title_x, 92), region, fill=teal, font=region_font)
+trip_date = display_trips[0].get("trip_date", "")
 
-    y = 185
+draw.text((title_x, 25), "NEW FISH COUNTS ADDED", fill=white, font=title_font)
+draw.text((title_x, 78), region, fill=teal, font=region_font)
+draw.text((title_x, 125), f"Fishing Rerports: {trip_date}", fill=gold, font=info_font)
+
+    y = 220
 
     for trip in display_trips:
         boat = trip.get("boat", "Unknown Boat")
