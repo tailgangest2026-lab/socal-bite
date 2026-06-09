@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="description" content="Southern California pier fishing conditions including wind, water temperature, tides, and best pier fishing outlook by pier." />
+  <title>Pier Fishing Conditions | SoCal Bite</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#031828">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
+
+  <link rel="canonical" href="https://thesocalbite.com/pier-conditions.html" />
+
+  <meta property="og:title" content="Pier Fishing Conditions | SoCal Bite" />
+  <meta property="og:description" content="Check SoCal pier fishing conditions, wind, tides, water temperature, and best pier fishing outlook." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://thesocalbite.com/pier-conditions.html" />
+  <meta property="og:image" content="https://thesocalbite.com/assets/socal-bite-logo.webp" />
+</head>
+
+<body class="inner-page">
+
+  <section class="page-top">
+    <h1>Pier Fishing Conditions</h1>
+
+    <nav class="page-nav">
+      <a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
+
+      <div class="dropdown">
+        <button class="dropbtn">
+          <i class="fa-solid fa-chart-line"></i>
+          <span>Boat Reports</span>
+          <i class="fa-solid fa-caret-down caret"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="daily-report.html">Daily Report</a>
+          <a href="boat-ratings.html">Boat Ratings</a>
+          <a href="top-boats.html">Top Boats</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn">
+          <i class="fa-solid fa-fish"></i>
+          <span>Species Reports</span>
+          <i class="fa-solid fa-caret-down caret"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="bite-trends.html">Bite Trends</a>
+          <a href="forecast.html">Bite Forecast</a>
+          <a href="species.html">Species</a>
+          <a href="top-species.html">Top Species</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn">
+          <i class="fa-solid fa-water"></i>
+          <span>Conditions</span>
+          <i class="fa-solid fa-caret-down caret"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="conditions.html">Boat Conditions</a>
+          <a href="beach-conditions.html">Beach Conditions</a>
+          <a href="pier-conditions.html">Pier Conditions</a>
+        </div>
+      </div>
+
+      <a href="news.html"><i class="fa-solid fa-newspaper"></i><span>Fishing News</span></a>
+      <a href="landings.html"><i class="fa-solid fa-anchor"></i><span>Landings</span></a>
+      <a href="about.html"><i class="fa-solid fa-user"></i><span>About</span></a>
+    </nav>
+  </section>
+
+  <main class="report-page">
+
+    <section class="region-section">
+      <h2>Southern California Pier Fishing Outlook</h2>
+
+      <p class="page-subtitle">
+        Select a pier to check pier fishing conditions, wind, water temperature, tide movement,
+        and likely target species.
+      </p>
+
+      <div class="forecast-intro-card">
+        <div>
+          <span class="forecast-kicker">Pier Fishing Conditions</span>
+          <h3>Find the best pier bite</h3>
+          <p>
+            This page is built for pier anglers targeting mackerel, bonito, halibut, surfperch,
+            croaker, smelt, bass, sharks, rays, and other Southern California pier species.
+          </p>
+        </div>
+
+        <div class="forecast-legend">
+          <span><b class="legend-dot excellent-dot"></b> Excellent</span>
+          <span><b class="legend-dot good-dot"></b> Good</span>
+          <span><b class="legend-dot fair-dot"></b> Fair</span>
+          <span><b class="legend-dot slow-dot"></b> Slow</span>
+        </div>
+      </div>
+
+      <div class="conditions-controls">
+        <label for="pierSelect">Select Pier</label>
+        <select id="pierSelect">
+          <option value="">Choose a pier...</option>
+
+          <optgroup label="Santa Barbara County">
+            <option value="Stearns Wharf">Stearns Wharf</option>
+            <option value="Goleta Pier">Goleta Pier</option>
+          </optgroup>
+
+          <optgroup label="Ventura County">
+            <option value="Ventura Pier">Ventura Pier</option>
+            <option value="Port Hueneme Pier">Port Hueneme Pier</option>
+          </optgroup>
+
+          <optgroup label="Los Angeles County">
+            <option value="Malibu Pier">Malibu Pier</option>
+            <option value="Santa Monica Pier">Santa Monica Pier</option>
+            <option value="Venice Fishing Pier">Venice Fishing Pier</option>
+            <option value="Manhattan Beach Pier">Manhattan Beach Pier</option>
+            <option value="Hermosa Beach Pier">Hermosa Beach Pier</option>
+            <option value="Redondo Beach Pier">Redondo Beach Pier</option>
+            <option value="Cabrillo Pier">Cabrillo Pier</option>
+          </optgroup>
+
+          <optgroup label="Orange County">
+            <option value="Seal Beach Pier">Seal Beach Pier</option>
+            <option value="Huntington Beach Pier">Huntington Beach Pier</option>
+            <option value="Newport Pier">Newport Pier</option>
+            <option value="Balboa Pier">Balboa Pier</option>
+            <option value="Dana Point Pier">Dana Point Pier</option>
+            <option value="San Clemente Pier">San Clemente Pier</option>
+          </optgroup>
+
+          <optgroup label="San Diego County">
+            <option value="Oceanside Pier">Oceanside Pier</option>
+            <option value="Crystal Pier">Crystal Pier</option>
+            <option value="Ocean Beach Pier">Ocean Beach Pier</option>
+            <option value="Shelter Island Pier">Shelter Island Pier</option>
+            <option value="Embarcadero Marina Park Pier">Embarcadero Marina Park Pier</option>
+            <option value="Coronado Ferry Landing Pier">Coronado Ferry Landing Pier</option>
+            <option value="Imperial Beach Pier">Imperial Beach Pier</option>
+          </optgroup>
+        </select>
+
+        <label for="dateSelect">Select Date</label>
+        <select id="dateSelect"></select>
+      </div>
+
+      <div id="pierConditionsUpdated" class="last-updated"></div>
+
+      <div id="pierConditionsSummary" class="forecast-weather-grid">
+        <div class="loading-card">Select a pier to load conditions...</div>
+      </div>
+
+      <div id="pierScoreCard" class="forecast-intro-card"></div>
+
+      <div class="forecast-intro-card">
+        <div>
+          <span class="forecast-kicker">Pier Fishing Targets</span>
+          <h3>Likely Species</h3>
+          <div id="pierSpeciesTargets">
+            Select a pier to view likely fishing targets.
+          </div>
+        </div>
+      </div>
+
+      <div class="forecast-intro-card">
+        <div>
+          <span class="forecast-kicker">Tide Outlook</span>
+          <h3>Highs, lows, and movement</h3>
+          <div id="pierTideTable">
+            Select a pier to view tide outlook.
+          </div>
+        </div>
+      </div>
+
+      <div class="forecast-intro-card">
+        <div>
+          <span class="forecast-kicker">Fishing Notes</span>
+          <h3>Pier condition breakdown</h3>
+          <div id="pierForecastNotes">
+            Look for good tide movement, clean water, bait activity, light wind, and manageable swell.
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 The SoCal Bite • Fishing Reports & Bite Updates</p>
+
+    <div class="social-links">
+      <a href="https://www.instagram.com/the_socal_bite/" target="_blank" aria-label="Instagram">
+        <img src="assets/instagram-icon.png" class="social-logo" alt="Instagram" loading="lazy">
+      </a>
+
+      <a href="https://www.facebook.com/profile.php?id=61590740421081" target="_blank" aria-label="Facebook">
+        <img src="assets/facebook-icon.png" class="social-logo" alt="Facebook" loading="lazy">
+      </a>
+    </div>
+  </footer>
+
+  <script src="site-config.js" defer></script>
+  <script src="pier-conditions.js" defer></script>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("/service-worker.js");
+      });
+    }
+  </script>
+
+</body>
+</html>
