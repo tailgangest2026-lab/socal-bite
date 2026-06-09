@@ -107,7 +107,7 @@ document.getElementById("pierForecastNotes").innerHTML = `
     ${value(weather.windGusts," mph")}.
   </p>
 `;
-
+  }
   function calculatePierScore(wind, swell, waterTemp, tideMovement, baitActivity, weather) {
     let score = 78;
 
