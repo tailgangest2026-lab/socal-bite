@@ -6,13 +6,40 @@ const REGIONS = [
   "Santa Barbara"
 ];
 
-const REGION_COORDS = {
-  "San Diego": { latitude: 32.7157, longitude: -117.1611 },
-  "Orange County": { latitude: 33.6189, longitude: -117.9298 },
-  "Los Angeles": { latitude: 33.7701, longitude: -118.1937 },
-  "Ventura": { latitude: 34.2805, longitude: -119.2945 },
-  "Santa Barbara": { latitude: 34.4208, longitude: -119.6982 }
+const REGION_CONDITIONS = {
+  "San Diego": {
+    lat: 32.7157,
+    lon: -117.1611,
+    station: "9410170",
+    fallbackWater: 67
+  },
+  "Orange County": {
+    lat: 33.6037,
+    lon: -117.9000,
+    station: "9410580",
+    fallbackWater: 66
+  },
+  "Los Angeles": {
+    lat: 33.7405,
+    lon: -118.2817,
+    station: "9410660",
+    fallbackWater: 65
+  },
+  "Ventura": {
+    lat: 34.2746,
+    lon: -119.2290,
+    station: "9411189",
+    fallbackWater: 62
+  },
+  "Santa Barbara": {
+    lat: 34.4208,
+    lon: -119.6982,
+    station: "9411340",
+    fallbackWater: 61
+  }
 };
+
+document.addEventListener("DOMContentLoaded", loadForecast);
 
 async function loadForecast() {
   const container = document.getElementById("forecastCards");
@@ -44,7 +71,10 @@ async function loadForecast() {
     `;
 
     if (updated) {
-      updated.textContent = "Updated: " + new Date().toLocaleString();
+      updated.textContent =
+        "Updated: " +
+        new Date().toLocaleString() +
+        " • Conditions: NOAA tides/water temp + Open-Meteo weather";
     }
 
   } catch (error) {
@@ -83,7 +113,7 @@ async function loadRecentReports(daysBack) {
           rows.push(...data);
           break;
         }
-      } catch (err) {
+      } catch (error) {
         console.warn("Skipped:", file);
       }
     }
@@ -95,104 +125,79 @@ async function loadRecentReports(daysBack) {
 async function loadRegionalConditions() {
   const output = {};
 
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  const tomorrowStr = tomorrow.toISOString().slice(0, 10);
+
   await Promise.all(REGIONS.map(async region => {
-    output[region] = await loadRegionConditions(region);
+    output[region] = await loadRegionConditions(region, tomorrowStr);
   }));
 
   return output;
 }
 
-async function loadRegionConditions(region) {
-  const coords = REGION_COORDS[region];
+async function loadRegionConditions(region, dateString) {
+  const base = REGION_CONDITIONS[region];
 
-  if (!coords) return getDefaultConditions();
+  if (!base || !window.SCBConditions) {
+    return getDefaultConditions();
+  }
 
-  const wind = await loadWindForecast(coords);
-  const marine = await loadMarineForecast(coords);
+  try {
+    const [weather, tides, waterTemp] = await Promise.all([
+      SCBConditions.getWeather(base.lat, base.lon, dateString),
+      SCBConditions.getTides(base.station, dateString),
+      SCBConditions.getWaterTemp(base.station)
+    ]);
+
+    const windMph = SCBConditions.parseWindSpeed(weather?.windSpeed, 0);
+    const gustMph = Number(weather?.windGusts || 0);
+    const tide = calculateNoaaTideMovement(tides);
+    const tempF = Number(waterTemp || base.fallbackWater);
+
+    return {
+      wind: {
+        windMph,
+        gustMph,
+        score: getWindScore(windMph, gustMph),
+        label: getWindLabel(windMph, gustMph)
+      },
+      tide,
+      waterTemp: {
+        tempF,
+        score: getWaterTempScore(tempF),
+        label: getWaterTempLabel(tempF)
+      },
+      weather: {
+        forecast: weather?.shortForecast || "Forecast available",
+        rainChance: weather?.precipitationProbability ?? null,
+        cloudCover: weather?.cloudCover ?? null,
+        uvIndex: weather?.uvIndex ?? null
+      }
+    };
+
+  } catch (error) {
+    console.warn("Shared NOAA/Open-Meteo conditions failed:", region, error);
+    return getDefaultConditions();
+  }
+}
+
+function calculateNoaaTideMovement(tides) {
+  if (!tides || !tides.length) return getDefaultTide();
+
+  const heights = tides
+    .map(tide => Number(tide.v))
+    .filter(value => Number.isFinite(value));
+
+  if (heights.length < 2) return getDefaultTide();
+
+  const movement = Math.max(...heights) - Math.min(...heights);
 
   return {
-    wind,
-    tide: marine.tide,
-    waterTemp: marine.waterTemp
+    movement,
+    score: getTideScore(movement),
+    label: getTideLabel(movement)
   };
-}
-
-async function loadWindForecast(coords) {
-  try {
-    const url =
-      `https://api.open-meteo.com/v1/forecast` +
-      `?latitude=${coords.latitude}` +
-      `&longitude=${coords.longitude}` +
-      `&daily=wind_speed_10m_max,wind_gusts_10m_max` +
-      `&wind_speed_unit=mph` +
-      `&timezone=America%2FLos_Angeles` +
-      `&forecast_days=2`;
-
-    const response = await fetch(url);
-    if (!response.ok) throw new Error("Wind API failed");
-
-    const data = await response.json();
-
-    const windMph = Number(data?.daily?.wind_speed_10m_max?.[1] || 0);
-    const gustMph = Number(data?.daily?.wind_gusts_10m_max?.[1] || 0);
-
-    return {
-      windMph,
-      gustMph,
-      score: getWindScore(windMph, gustMph),
-      label: getWindLabel(windMph, gustMph)
-    };
-
-  } catch (error) {
-    console.warn("Wind forecast failed:", error);
-    return getDefaultWind();
-  }
-}
-
-async function loadMarineForecast(coords) {
-  try {
-    const url =
-      `https://marine-api.open-meteo.com/v1/marine` +
-      `?latitude=${coords.latitude}` +
-      `&longitude=${coords.longitude}` +
-      `&hourly=sea_level_height_msl,sea_surface_temperature` +
-      `&temperature_unit=fahrenheit` +
-      `&length_unit=imperial` +
-      `&timezone=America%2FLos_Angeles` +
-      `&forecast_days=2` +
-      `&cell_selection=sea`;
-
-    const response = await fetch(url);
-    if (!response.ok) throw new Error("Marine API failed");
-
-    const data = await response.json();
-
-    const times = data?.hourly?.time || [];
-    const seaLevels = data?.hourly?.sea_level_height_msl || [];
-    const temps = data?.hourly?.sea_surface_temperature || [];
-
-    const tomorrowIndexes = getTomorrowIndexes(times);
-
-    const tomorrowSeaLevels = tomorrowIndexes
-      .map(index => Number(seaLevels[index]))
-      .filter(value => Number.isFinite(value));
-
-    const tomorrowTemps = tomorrowIndexes
-      .map(index => Number(temps[index]))
-      .filter(value => Number.isFinite(value));
-
-    return {
-      tide: calculateTideMovement(tomorrowSeaLevels),
-      waterTemp: calculateWaterTemp(tomorrowTemps)
-    };
-
-  } catch (error) {
-    console.warn("Marine forecast failed:", error);
-    return {
-      tide: getDefaultTide(),
-      waterTemp: getDefaultWaterTemp()
-    };
-  }
 }
 
 function buildRegionForecasts(rows, conditionByRegion) {
@@ -213,7 +218,12 @@ function buildRegionForecasts(rows, conditionByRegion) {
       return age >= 8 && age <= 14;
     });
 
-    return calculateRegionForecast(region, last7Rows, previous7Rows, conditionByRegion[region] || getDefaultConditions());
+    return calculateRegionForecast(
+      region,
+      last7Rows,
+      previous7Rows,
+      conditionByRegion[region] || getDefaultConditions()
+    );
   }).sort((a, b) => b.finalScore - a.finalScore);
 }
 
@@ -253,6 +263,7 @@ function calculateRegionForecast(region, last7Rows, previous7Rows, conditions) {
 
   return {
     region,
+    conditions,
     last7Fish,
     previous7Fish,
     last7Anglers,
@@ -297,6 +308,10 @@ function renderRegionCard(item) {
         <p><strong>FPA:</strong> ${item.fpa.toFixed(2)}</p>
         <p><strong>Moon:</strong> ${item.moon.phase}</p>
         <p><strong>Wind:</strong> ${item.wind.label} (${item.wind.windMph.toFixed(0)} mph, gusts ${item.wind.gustMph.toFixed(0)} mph)</p>
+        <p><strong>Forecast:</strong> ${item.conditions?.weather?.forecast || "Forecast available"}</p>
+        <p><strong>Rain Chance:</strong> ${formatPercent(item.conditions?.weather?.rainChance)}</p>
+        <p><strong>Cloud Cover:</strong> ${formatPercent(item.conditions?.weather?.cloudCover)}</p>
+        <p><strong>UV Index:</strong> ${formatValue(item.conditions?.weather?.uvIndex)}</p>
         <p><strong>Tide Movement:</strong> ${item.tide.label} (${item.tide.movement.toFixed(2)} ft)</p>
         <p><strong>Water Temp:</strong> ${item.waterTemp.label} (${item.waterTemp.tempF ? item.waterTemp.tempF.toFixed(1) + "°F" : "Unknown"})</p>
       </div>
@@ -401,51 +416,17 @@ function getTopLandings(rows) {
     .slice(0, 3);
 }
 
-function getTomorrowIndexes(times) {
-  const tomorrow = new Date();
-  tomorrow.setDate(tomorrow.getDate() + 1);
-
-  const y = tomorrow.getFullYear();
-  const m = String(tomorrow.getMonth() + 1).padStart(2, "0");
-  const d = String(tomorrow.getDate()).padStart(2, "0");
-  const dateStr = `${y}-${m}-${d}`;
-
-  return times
-    .map((time, index) => String(time).startsWith(dateStr) ? index : -1)
-    .filter(index => index >= 0);
-}
-
-function calculateTideMovement(values) {
-  if (!values.length) return getDefaultTide();
-
-  const min = Math.min(...values);
-  const max = Math.max(...values);
-  const movement = max - min;
-
-  return {
-    movement,
-    score: getTideScore(movement),
-    label: getTideLabel(movement)
-  };
-}
-
-function calculateWaterTemp(values) {
-  if (!values.length) return getDefaultWaterTemp();
-
-  const avg = values.reduce((sum, value) => sum + value, 0) / values.length;
-
-  return {
-    tempF: avg,
-    score: getWaterTempScore(avg),
-    label: getWaterTempLabel(avg)
-  };
-}
-
 function getDefaultConditions() {
   return {
     wind: getDefaultWind(),
     tide: getDefaultTide(),
-    waterTemp: getDefaultWaterTemp()
+    waterTemp: getDefaultWaterTemp(),
+    weather: {
+      forecast: "Unknown",
+      rainChance: null,
+      cloudCover: null,
+      uvIndex: null
+    }
   };
 }
 
@@ -640,4 +621,10 @@ function formatNumber(value) {
   return Number(value || 0).toLocaleString();
 }
 
-loadForecast();
+function formatPercent(value) {
+  return value === null || value === undefined ? "N/A" : `${Math.round(value)}%`;
+}
+
+function formatValue(value) {
+  return value === null || value === undefined ? "N/A" : `${Math.round(value)}`;
+}
