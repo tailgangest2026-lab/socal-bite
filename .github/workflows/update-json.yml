@@ -89,6 +89,9 @@ jobs:
           echo "Length:"
           jq length reports/daily-report-latest.json || true
 
+      - name: Install Python packages
+        run: pip install pillow
+
       - name: Detect new trips
         run: python socials/detect_new_trips.py
 
