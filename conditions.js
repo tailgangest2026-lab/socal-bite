@@ -1,178 +1,146 @@
-const regionData = {
-  "Los Angeles": {
-    waterTemp: 64,
-    windBase: 8,
-    swellBase: 2.8,
-    tideRange: "Moderate",
-    notes: "Good local conditions for bass, rockfish, sculpin, and surface activity when wind stays light."
-  },
-  "Orange County": {
-    waterTemp: 65,
-    windBase: 7,
-    swellBase: 2.5,
-    tideRange: "Strong",
-    notes: "Good yellowtail, bass, bonito, and mixed surface potential when water is clean and current is moving."
-  },
-  "San Diego": {
-    waterTemp: 66,
-    windBase: 6,
-    swellBase: 2.2,
-    tideRange: "Moderate",
-    notes: "Strong offshore and island potential. Watch wind and swell for longer trips."
+const boatRegions = {
+  "Santa Barbara": {
+    lat: 34.4208,
+    lon: -119.6982,
+    station: "9411340",
+    fallbackWaterTemp: 61,
+    fallbackWind: 8,
+    fallbackSwell: 2.8,
+    targets: ["Rockfish", "Whitefish", "Sheephead", "Lingcod"]
   },
   "Ventura": {
-    waterTemp: 62,
-    windBase: 10,
-    swellBase: 3.1,
-    tideRange: "Moderate",
-    notes: "Good rockfish, whitefish, lingcod, and island fishing when wind stays under control."
+    lat: 34.2746,
+    lon: -119.2290,
+    station: "9411189",
+    fallbackWaterTemp: 62,
+    fallbackWind: 9,
+    fallbackSwell: 3.0,
+    targets: ["Rockfish", "Whitefish", "Calico Bass", "Yellowtail"]
   },
-  "Santa Barbara": {
-    waterTemp: 61,
-    windBase: 9,
-    swellBase: 2.9,
-    tideRange: "Weak",
-    notes: "Best for rockfish, whitefish, sheephead, and local structure fishing."
+  "Los Angeles": {
+    lat: 33.7405,
+    lon: -118.2817,
+    station: "9410660",
+    fallbackWaterTemp: 65,
+    fallbackWind: 8,
+    fallbackSwell: 2.6,
+    targets: ["Calico Bass", "Rockfish", "Sculpin", "Yellowtail"]
+  },
+  "Orange County": {
+    lat: 33.6037,
+    lon: -117.9000,
+    station: "9410580",
+    fallbackWaterTemp: 66,
+    fallbackWind: 7,
+    fallbackSwell: 2.5,
+    targets: ["Yellowtail", "Calico Bass", "Bonito", "Barracuda"]
+  },
+  "San Diego": {
+    lat: 32.7157,
+    lon: -117.1611,
+    station: "9410170",
+    fallbackWaterTemp: 67,
+    fallbackWind: 7,
+    fallbackSwell: 2.4,
+    targets: ["Yellowtail", "Tuna", "Bonito", "Calico Bass"]
   }
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  buildDateDropdown();
+  SCBConditions.buildDateDropdown("dateSelect", 7);
 
-  document.getElementById("regionSelect").addEventListener("change", loadConditions);
-  document.getElementById("dateSelect").addEventListener("change", loadConditions);
+  document.getElementById("regionSelect")?.addEventListener("change", loadBoatConditions);
+  document.getElementById("dateSelect")?.addEventListener("change", loadBoatConditions);
 
-  loadConditions();
+  loadBoatConditions();
 });
 
-function buildDateDropdown() {
-  const dateSelect = document.getElementById("dateSelect");
-  dateSelect.innerHTML = "";
+async function loadBoatConditions() {
+  const region = document.getElementById("regionSelect")?.value || "Los Angeles";
+  const date = document.getElementById("dateSelect")?.value || new Date().toISOString().split("T")[0];
+  const base = boatRegions[region] || boatRegions["Los Angeles"];
 
-  for (let i = 0; i < 10; i++) {
-    const date = new Date();
-    date.setDate(date.getDate() + i);
+  renderBoatLoading();
 
-    const value = date.toISOString().split("T")[0];
-    const label = i === 0
-      ? "Today"
-      : i === 1
-        ? "Tomorrow"
-        : date.toLocaleDateString("en-US", {
-            weekday: "short",
-            month: "short",
-            day: "numeric"
-          });
+  const [weather, tides, waterTemp] = await Promise.all([
+    SCBConditions.getWeather(base.lat, base.lon, date),
+    SCBConditions.getTides(base.station, date),
+    SCBConditions.getWaterTemp(base.station)
+  ]);
 
-    const option = document.createElement("option");
-    option.value = value;
-    option.textContent = label;
-    dateSelect.appendChild(option);
-  }
-}
+  const wind = SCBConditions.parseWindSpeed(weather?.windSpeed, base.fallbackWind);
+  const windDirection = SCBConditions.getWindDirection(weather?.windDirection, "W");
+  const airTemp = weather?.temperature || 70;
+  const temp = waterTemp || base.fallbackWaterTemp;
+  const swell = base.fallbackSwell;
+  const tideList = SCBConditions.formatTides(tides);
+  const tideMovement = getTideMovement(tides);
+  const score = calculateBoatScore(wind, swell, temp, tideMovement);
+  const rating = SCBConditions.rating(score);
 
-function loadConditions() {
-  const region = document.getElementById("regionSelect").value;
-  const selectedDate = document.getElementById("dateSelect").value;
-  const data = getForecastForRegion(region, selectedDate);
-
-  renderConditions(data);
-  renderBiteScore(data);
-  renderTides(data);
-  renderForecastNotes(data);
-}
-
-function getForecastForRegion(region, selectedDate) {
-  const base = regionData[region];
-
-  const dayOffset = getDayOffset(selectedDate);
-
-  const wind = Math.max(3, base.windBase + ((dayOffset % 4) - 1));
-  const swell = Math.max(1.5, base.swellBase + ((dayOffset % 3) * 0.3));
-  const waterTemp = base.waterTemp + (dayOffset % 2);
-  const airTemp = 70 + (dayOffset % 5);
-
-  return {
+  const data = {
     region,
-    date: selectedDate,
+    date,
     airTemp,
     wind,
-    windDirection: getWindDirection(dayOffset),
-    swell: swell.toFixed(1),
-    swellPeriod: 11 + (dayOffset % 4),
-    waterTemp,
-    tideRange: base.tideRange,
-    notes: base.notes,
-    tides: generateTides(dayOffset),
-    score: calculateFishingScore(wind, swell, waterTemp, base.tideRange)
+    windDirection,
+    waterTemp: temp,
+    swell,
+    tideMovement,
+    tideList,
+    score,
+    rating,
+    targets: base.targets
   };
+
+  renderBoatConditions(data);
 }
 
-function getDayOffset(dateString) {
-  const today = new Date();
-  const selected = new Date(dateString + "T00:00:00");
+function calculateBoatScore(wind, swell, waterTemp, tideMovement) {
+  let score = 78;
 
-  today.setHours(0, 0, 0, 0);
+  if (wind <= 8) score += 10;
+  else if (wind > 12) score -= 18;
 
-  return Math.round((selected - today) / (1000 * 60 * 60 * 24));
-}
+  if (swell <= 3) score += 8;
+  else if (swell > 4) score -= 15;
 
-function getWindDirection(offset) {
-  const directions = ["W", "NW", "SW", "S", "W"];
-  return directions[offset % directions.length];
-}
-
-function generateTides(offset) {
-  return [
-    {
-      time: `${4 + offset % 3}:18 AM`,
-      type: "Low Tide",
-      height: `${(0.8 + offset * 0.1).toFixed(1)} ft`
-    },
-    {
-      time: `${10 + offset % 2}:42 AM`,
-      type: "High Tide",
-      height: `${4.1 + (offset % 3) * 0.2} ft`
-    },
-    {
-      time: `${4 + offset % 4}:25 PM`,
-      type: "Low Tide",
-      height: `${1.2 + (offset % 2) * 0.2} ft`
-    },
-    {
-      time: `${9 + offset % 3}:55 PM`,
-      type: "High Tide",
-      height: `${3.8 + (offset % 2) * 0.3} ft`
-    }
-  ];
-}
-
-function calculateFishingScore(wind, swell, waterTemp, tideRange) {
-  let score = 100;
-
-  if (wind > 12) score -= 25;
-  else if (wind > 9) score -= 12;
-
-  if (swell > 4) score -= 20;
-  else if (swell > 3) score -= 10;
-
-  if (waterTemp >= 64 && waterTemp <= 68) score += 8;
+  if (waterTemp >= 64 && waterTemp <= 69) score += 8;
   else if (waterTemp < 60) score -= 8;
 
-  if (tideRange === "Strong") score += 8;
-  if (tideRange === "Weak") score -= 6;
+  if (tideMovement === "Strong") score += 8;
+  if (tideMovement === "Weak") score -= 5;
 
   return Math.max(0, Math.min(100, Math.round(score)));
 }
 
-function renderConditions(data) {
-  const container = document.getElementById("conditionsSummary");
+function getTideMovement(tides) {
+  if (!tides || tides.length < 2) return "Moderate";
 
-  container.innerHTML = `
+  const heights = tides.map(t => Number(t.v)).filter(n => !isNaN(n));
+  if (heights.length < 2) return "Moderate";
+
+  const range = Math.max(...heights) - Math.min(...heights);
+
+  if (range >= 4) return "Strong";
+  if (range >= 2) return "Moderate";
+  return "Weak";
+}
+
+function renderBoatLoading() {
+  document.getElementById("conditionsSummary").innerHTML =
+    `<div class="loading-card">Loading live NOAA conditions...</div>`;
+}
+
+function renderBoatConditions(data) {
+  document.getElementById("conditionsUpdated").textContent =
+    `Showing live conditions for ${data.region}. Water temp may use the nearest NOAA station when available.`;
+
+  document.getElementById("conditionsSummary").innerHTML = `
     <div class="condition-card">
       <h3>Weather</h3>
-      <p class="big-number">${data.airTemp}°F</p>
-      <span>Air Temperature</span>
+      <p class="big-number">${Math.round(data.airTemp)}°F</p>
+      <span>Air temperature</span>
     </div>
 
     <div class="condition-card">
@@ -183,39 +151,36 @@ function renderConditions(data) {
 
     <div class="condition-card">
       <h3>Water Temp</h3>
-      <p class="big-number">${data.waterTemp}°F</p>
-      <span>Estimated surface temp</span>
+      <p class="big-number">${Number(data.waterTemp).toFixed(1)}°F</p>
+      <span>Nearest NOAA station</span>
     </div>
 
     <div class="condition-card">
-      <h3>Swell</h3>
-      <p class="big-number">${data.swell} ft</p>
-      <span>${data.swellPeriod} sec period</span>
+      <h3>Tide Movement</h3>
+      <p class="big-number">${data.tideMovement}</p>
+      <span>Based on tide range</span>
     </div>
   `;
-}
 
-function renderBiteScore(data) {
-  const card = document.getElementById("biteScoreCard");
-
-  let rating = "Poor";
-  if (data.score >= 85) rating = "Excellent";
-  else if (data.score >= 70) rating = "Good";
-  else if (data.score >= 55) rating = "Fair";
-
-  card.innerHTML = `
+  document.getElementById("biteScoreCard").innerHTML = `
     <div class="score-circle">${data.score}</div>
     <div>
-      <h3>${rating} Conditions</h3>
-      <p>${data.region} has a ${rating.toLowerCase()} fishing setup for this date based on wind, swell, water temperature, and tide movement.</p>
+      <span class="forecast-kicker">Boat Fishing Score</span>
+      <h3>${data.rating} Boat Conditions</h3>
+      <p>${data.region} has a ${data.rating.toLowerCase()} boat fishing setup based on wind, water temperature, swell estimate, and tide movement.</p>
     </div>
+  `;
+
+  document.getElementById("tideTable").innerHTML = renderTideTable(data.tideList);
+
+  document.getElementById("forecastNotes").innerHTML = `
+    <p><strong>${data.region}:</strong> Best boat conditions usually line up with light wind, manageable swell, clean water, and moving tide.</p>
+    <p><strong>Likely targets:</strong> ${data.targets.join(", ")}</p>
   `;
 }
 
-function renderTides(data) {
-  const table = document.getElementById("tideTable");
-
-  table.innerHTML = `
+function renderTideTable(tides) {
+  return `
     <table>
       <thead>
         <tr>
@@ -225,7 +190,7 @@ function renderTides(data) {
         </tr>
       </thead>
       <tbody>
-        ${data.tides.map(tide => `
+        ${tides.map(tide => `
           <tr>
             <td>${tide.time}</td>
             <td>${tide.type}</td>
@@ -234,14 +199,5 @@ function renderTides(data) {
         `).join("")}
       </tbody>
     </table>
-  `;
-}
-
-function renderForecastNotes(data) {
-  const notes = document.getElementById("forecastNotes");
-
-  notes.innerHTML = `
-    <p>${data.notes}</p>
-    <p><strong>Best setup:</strong> Look for lighter wind, cleaner water, good tidal movement, and stable water temperature.</p>
   `;
 }
