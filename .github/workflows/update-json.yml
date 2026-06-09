@@ -108,22 +108,19 @@ jobs:
 
           echo "Post links:"
           cat socials/post-links.txt || true
-      - name: Send text alert if new social post was created
-        if: hashFiles('socials/new-post-created.flag') != ''
+
+      - name: Send test text alert
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.gmail.com
           server_port: 465
           username: ${{ secrets.SMTP_USERNAME }}
           password: ${{ secrets.SMTP_PASSWORD }}
-          subject: "SoCal Bite"
+          subject: "SoCal Bite Test"
           to: ${{ secrets.SMS_TO }}
           from: "SoCal Bite Alerts"
           body: |
-            New Fish Counts Added
-
-            View generated posts:
-            https://thesocalbite.com/socials/output/
+            Test text from SoCal Bite GitHub Action.
 
       - name: Show downloaded files
         run: |
