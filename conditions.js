@@ -127,7 +127,7 @@ function generateTides(offset) {
     {
       time: `${4 + offset % 3}:18 AM`,
       type: "Low Tide",
-      height: `${0.8 + offset * 0.1.toFixed || 0.8} ft`
+      height: `${(0.8 + offset * 0.1).toFixed(1)} ft`
     },
     {
       time: `${10 + offset % 2}:42 AM`,
