@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <meta name="description" content="Southern California fishing conditions by region including weather, wind, water temperature, swell, tides, and best day to fish score." />
-  <title>Fishing Conditions | SoCal Bite</title>
+  <meta name="description" content="Southern California beach fishing conditions including surf, wind, water temperature, tides, and best surf fishing outlook by beach." />
+  <title>Beach Fishing Conditions | SoCal Bite</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
@@ -16,19 +16,19 @@
   <meta name="theme-color" content="#031828">
   <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
 
-  <link rel="canonical" href="https://thesocalbite.com/conditions.html" />
+  <link rel="canonical" href="https://thesocalbite.com/beach-conditions.html" />
 
-  <meta property="og:title" content="Fishing Conditions | SoCal Bite" />
-  <meta property="og:description" content="Check SoCal fishing weather, wind, water temperature, swell, tides, and bite conditions by region." />
+  <meta property="og:title" content="Beach Fishing Conditions | SoCal Bite" />
+  <meta property="og:description" content="Check SoCal beach fishing conditions, surf, wind, tides, water temperature, and best beach fishing outlook." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://thesocalbite.com/conditions.html" />
+  <meta property="og:url" content="https://thesocalbite.com/beach-conditions.html" />
   <meta property="og:image" content="https://thesocalbite.com/assets/socal-bite-logo.webp" />
 </head>
 
 <body class="inner-page">
 
   <section class="page-top">
-    <h1>Fishing Conditions</h1>
+    <h1>Beach Fishing Conditions</h1>
 
     <nav class="page-nav">
       <a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
@@ -60,7 +60,19 @@
         </div>
       </div>
 
-      <a href="conditions.html"><i class="fa-solid fa-water"></i><span>Conditions</span></a>
+      <div class="dropdown">
+        <button class="dropbtn">
+          <i class="fa-solid fa-water"></i>
+          <span>Conditions</span>
+          <i class="fa-solid fa-caret-down caret"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="conditions.html">Boat Conditions</a>
+          <a href="beach-conditions.html">Beach Conditions</a>
+          <a href="pier-conditions.html">Pier Conditions</a>
+        </div>
+      </div>
+
       <a href="news.html"><i class="fa-solid fa-newspaper"></i><span>Fishing News</span></a>
       <a href="landings.html"><i class="fa-solid fa-anchor"></i><span>Landings</span></a>
       <a href="about.html"><i class="fa-solid fa-user"></i><span>About</span></a>
@@ -70,19 +82,20 @@
   <main class="report-page">
 
     <section class="region-section">
-      <h2>Southern California Fishing Conditions</h2>
+      <h2>Southern California Beach Fishing Outlook</h2>
 
       <p class="page-subtitle">
-        Check weather, wind, swell, water temperature, tide movement, and overall fishing conditions by region.
+        Select a beach to check surf fishing conditions, wind, water temperature, tide movement,
+        and the best target species for the day.
       </p>
 
       <div class="forecast-intro-card">
         <div>
-          <span class="forecast-kicker">Conditions Outlook</span>
-          <h3>Plan your next fishing trip</h3>
+          <span class="forecast-kicker">Surf Fishing Conditions</span>
+          <h3>Find the best beach bite</h3>
           <p>
-            Select a region and future date to view estimated marine conditions and a best day to fish score.
-            This first version uses sample forecast logic and can later be connected to live NOAA, tide, and water temperature data.
+            This page is built for surf anglers targeting corbina, barred surfperch, yellowfin croaker,
+            spotfin croaker, halibut, leopard shark, guitarfish, and other beach species.
           </p>
         </div>
 
@@ -95,40 +108,131 @@
       </div>
 
       <div class="conditions-controls">
-        <label for="regionSelect">Region</label>
-        <select id="regionSelect">
-          <option value="Los Angeles">Los Angeles</option>
-          <option value="Orange County">Orange County</option>
-          <option value="San Diego">San Diego</option>
-          <option value="Ventura">Ventura</option>
-          <option value="Santa Barbara">Santa Barbara</option>
+        <label for="beachSelect">Select Beach</label>
+        <select id="beachSelect">
+          <option value="">Choose a beach...</option>
+
+          <optgroup label="Santa Barbara County">
+            <option value="Gaviota State Beach">Gaviota State Beach</option>
+            <option value="Refugio State Beach">Refugio State Beach</option>
+            <option value="El Capitan State Beach">El Capitan State Beach</option>
+            <option value="Goleta Beach">Goleta Beach</option>
+            <option value="Leadbetter Beach">Leadbetter Beach</option>
+            <option value="East Beach Santa Barbara">East Beach Santa Barbara</option>
+            <option value="Carpinteria State Beach">Carpinteria State Beach</option>
+          </optgroup>
+
+          <optgroup label="Ventura County">
+            <option value="Rincon Beach">Rincon Beach</option>
+            <option value="Emma Wood State Beach">Emma Wood State Beach</option>
+            <option value="Surfers Point Ventura">Surfers Point Ventura</option>
+            <option value="San Buenaventura State Beach">San Buenaventura State Beach</option>
+            <option value="Oxnard Beach Park">Oxnard Beach Park</option>
+            <option value="Hollywood Beach Oxnard">Hollywood Beach Oxnard</option>
+            <option value="Port Hueneme Beach">Port Hueneme Beach</option>
+            <option value="Point Mugu State Beach">Point Mugu State Beach</option>
+          </optgroup>
+
+          <optgroup label="Los Angeles County">
+            <option value="Leo Carrillo State Beach">Leo Carrillo State Beach</option>
+            <option value="Zuma Beach">Zuma Beach</option>
+            <option value="Point Dume State Beach">Point Dume State Beach</option>
+            <option value="Malibu Surfrider Beach">Malibu Surfrider Beach</option>
+            <option value="Topanga Beach">Topanga Beach</option>
+            <option value="Will Rogers State Beach">Will Rogers State Beach</option>
+            <option value="Santa Monica State Beach">Santa Monica State Beach</option>
+            <option value="Venice Beach">Venice Beach</option>
+            <option value="Dockweiler State Beach">Dockweiler State Beach</option>
+            <option value="El Segundo Beach">El Segundo Beach</option>
+            <option value="Manhattan Beach">Manhattan Beach</option>
+            <option value="Hermosa Beach">Hermosa Beach</option>
+            <option value="Redondo Beach">Redondo Beach</option>
+            <option value="Torrance Beach">Torrance Beach</option>
+            <option value="Cabrillo Beach">Cabrillo Beach</option>
+            <option value="White Point Beach">White Point Beach</option>
+            <option value="Royal Palms Beach">Royal Palms Beach</option>
+          </optgroup>
+
+          <optgroup label="Orange County">
+            <option value="Seal Beach">Seal Beach</option>
+            <option value="Sunset Beach">Sunset Beach</option>
+            <option value="Bolsa Chica State Beach">Bolsa Chica State Beach</option>
+            <option value="Huntington Beach">Huntington Beach</option>
+            <option value="Huntington State Beach">Huntington State Beach</option>
+            <option value="Newport Beach">Newport Beach</option>
+            <option value="Balboa Beach">Balboa Beach</option>
+            <option value="Corona del Mar State Beach">Corona del Mar State Beach</option>
+            <option value="Crystal Cove State Park">Crystal Cove State Park</option>
+            <option value="Laguna Beach">Laguna Beach</option>
+            <option value="Aliso Beach">Aliso Beach</option>
+            <option value="Salt Creek Beach">Salt Creek Beach</option>
+            <option value="Doheny State Beach">Doheny State Beach</option>
+            <option value="Capistrano Beach">Capistrano Beach</option>
+            <option value="San Clemente State Beach">San Clemente State Beach</option>
+            <option value="Trestles Beach">Trestles Beach</option>
+          </optgroup>
+
+          <optgroup label="San Diego County">
+            <option value="Oceanside Beach">Oceanside Beach</option>
+            <option value="Carlsbad State Beach">Carlsbad State Beach</option>
+            <option value="Tamarack State Beach">Tamarack State Beach</option>
+            <option value="South Ponto Beach">South Ponto Beach</option>
+            <option value="Moonlight State Beach">Moonlight State Beach</option>
+            <option value="Cardiff State Beach">Cardiff State Beach</option>
+            <option value="San Elijo State Beach">San Elijo State Beach</option>
+            <option value="Swami's Beach">Swami's Beach</option>
+            <option value="Del Mar Beach">Del Mar Beach</option>
+            <option value="Torrey Pines State Beach">Torrey Pines State Beach</option>
+            <option value="La Jolla Shores">La Jolla Shores</option>
+            <option value="Windansea Beach">Windansea Beach</option>
+            <option value="Pacific Beach">Pacific Beach</option>
+            <option value="Mission Beach">Mission Beach</option>
+            <option value="Ocean Beach">Ocean Beach</option>
+            <option value="Coronado Beach">Coronado Beach</option>
+            <option value="Silver Strand State Beach">Silver Strand State Beach</option>
+            <option value="Imperial Beach">Imperial Beach</option>
+          </optgroup>
         </select>
 
-        <label for="dateSelect">Date</label>
+        <label for="dateSelect">Select Date</label>
         <select id="dateSelect"></select>
       </div>
 
-      <div id="conditionsUpdated" class="last-updated"></div>
+      <div id="beachConditionsUpdated" class="last-updated"></div>
 
-      <div id="conditionsSummary" class="forecast-weather-grid">
-        <div class="loading-card">Loading conditions...</div>
+      <div id="beachConditionsSummary" class="forecast-weather-grid">
+        <div class="loading-card">Select a beach to load conditions...</div>
       </div>
 
-      <div id="biteScoreCard" class="forecast-intro-card"></div>
+      <div id="beachScoreCard" class="forecast-intro-card"></div>
+
+      <div class="forecast-intro-card">
+        <div>
+          <span class="forecast-kicker">Surf Fishing Targets</span>
+          <h3>Likely Species</h3>
+          <div id="beachSpeciesTargets">
+            Select a beach to view likely surf fishing targets.
+          </div>
+        </div>
+      </div>
 
       <div class="forecast-intro-card">
         <div>
           <span class="forecast-kicker">Tide Outlook</span>
           <h3>Highs, lows, and movement</h3>
-          <div id="tideTable"></div>
+          <div id="beachTideTable">
+            Select a beach to view tide outlook.
+          </div>
         </div>
       </div>
 
       <div class="forecast-intro-card">
         <div>
           <span class="forecast-kicker">Fishing Notes</span>
-          <h3>Condition breakdown</h3>
-          <div id="forecastNotes"></div>
+          <h3>Beach condition breakdown</h3>
+          <div id="beachForecastNotes">
+            Look for light wind, clean water, manageable surf, and good tidal movement.
+          </div>
         </div>
       </div>
 
@@ -151,7 +255,7 @@
   </footer>
 
   <script src="site-config.js" defer></script>
-  <script src="conditions.js" defer></script>
+  <script src="beach-conditions.js" defer></script>
 
   <script>
     if ("serviceWorker" in navigator) {
