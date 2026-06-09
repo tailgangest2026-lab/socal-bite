@@ -1,144 +1,239 @@
-(() => {
-  const countyData = {
-    "Santa Barbara County": { lat: 34.4208, lon: -119.6982, station: "9411340", water: 61, swell: 2.4 },
-    "Ventura County": { lat: 34.2746, lon: -119.2290, station: "9411189", water: 62, swell: 2.8 },
-    "Los Angeles County": { lat: 33.7405, lon: -118.2817, station: "9410660", water: 65, swell: 2.4 },
-    "Orange County": { lat: 33.6037, lon: -117.9000, station: "9410580", water: 66, swell: 2.3 },
-    "San Diego County": { lat: 32.7157, lon: -117.1611, station: "9410170", water: 67, swell: 2.3 }
-  };
+<!DOCTYPE html>
 
-  document.addEventListener("DOMContentLoaded", () => {
-    SCBConditions.buildDateDropdown("dateSelect", 10);
-    document.getElementById("pierSelect")?.addEventListener("change", loadPierConditions);
-    document.getElementById("dateSelect")?.addEventListener("change", loadPierConditions);
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta name="description" content="Southern California pier fishing conditions including weather, wind, water temperature, tides, bait activity, and fishing outlook by pier." />
+
+  <title>Pier Fishing Conditions | SoCal Bite</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
+
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#031828">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+
+  <link rel="canonical" href="https://thesocalbite.com/pier-conditions.html">
+
+  <meta property="og:title" content="Pier Fishing Conditions | SoCal Bite">
+  <meta property="og:description" content="Check weather, tides, water temperature, bait activity, and fishing conditions at Southern California piers.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thesocalbite.com/pier-conditions.html">
+  <meta property="og:image" content="https://thesocalbite.com/assets/socal-bite-logo.webp">
+</head>
+
+<body class="inner-page">
+
+<section class="page-top">
+  <h1>Pier Fishing Conditions</h1>
+
+  <nav class="page-nav">
+    <a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
+
+```
+<div class="dropdown">
+  <button class="dropbtn">
+    <i class="fa-solid fa-chart-line"></i>
+    <span>Boat Reports</span>
+    <i class="fa-solid fa-caret-down caret"></i>
+  </button>
+  <div class="dropdown-content">
+    <a href="daily-report.html">Daily Report</a>
+    <a href="boat-ratings.html">Boat Ratings</a>
+    <a href="top-boats.html">Top Boats</a>
+  </div>
+</div>
+
+<div class="dropdown">
+  <button class="dropbtn">
+    <i class="fa-solid fa-fish"></i>
+    <span>Species Reports</span>
+    <i class="fa-solid fa-caret-down caret"></i>
+  </button>
+  <div class="dropdown-content">
+    <a href="bite-trends.html">Bite Trends</a>
+    <a href="forecast.html">Bite Forecast</a>
+    <a href="species.html">Species</a>
+    <a href="top-species.html">Top Species</a>
+  </div>
+</div>
+
+<div class="dropdown">
+  <button class="dropbtn">
+    <i class="fa-solid fa-water"></i>
+    <span>Conditions</span>
+    <i class="fa-solid fa-caret-down caret"></i>
+  </button>
+  <div class="dropdown-content">
+    <a href="conditions.html">Boat Conditions</a>
+    <a href="beach-conditions.html">Beach Conditions</a>
+    <a href="pier-conditions.html">Pier Conditions</a>
+  </div>
+</div>
+
+<a href="news.html"><i class="fa-solid fa-newspaper"></i><span>Fishing News</span></a>
+<a href="landings.html"><i class="fa-solid fa-anchor"></i><span>Landings</span></a>
+<a href="about.html"><i class="fa-solid fa-user"></i><span>About</span></a>
+```
+
+  </nav>
+</section>
+
+<main class="report-page">
+
+  <section class="region-section">
+
+```
+<h2>Southern California Pier Fishing Conditions</h2>
+
+<p class="page-subtitle">
+  Check weather, tides, water temperature, bait activity, and fishing conditions at Southern California piers.
+</p>
+
+<div class="forecast-intro-card">
+  <div>
+    <span class="forecast-kicker">Pier Forecast</span>
+    <h3>Find the best pier fishing conditions</h3>
+    <p>
+      View live weather, NOAA tide data, water temperatures,
+      bait activity, and fishing conditions for popular Southern California piers.
+    </p>
+  </div>
+
+  <div class="forecast-legend">
+    <span><b class="legend-dot excellent-dot"></b> Excellent</span>
+    <span><b class="legend-dot good-dot"></b> Good</span>
+    <span><b class="legend-dot fair-dot"></b> Fair</span>
+    <span><b class="legend-dot slow-dot"></b> Slow</span>
+  </div>
+</div>
+
+<div class="conditions-controls">
+
+  <label for="pierSelect">Pier</label>
+
+  <select id="pierSelect">
+    <option value="">Select Pier</option>
+
+    <optgroup label="Santa Barbara County">
+      <option>Stearns Wharf</option>
+      <option>Goleta Pier</option>
+    </optgroup>
+
+    <optgroup label="Ventura County">
+      <option>Ventura Pier</option>
+      <option>Port Hueneme Pier</option>
+    </optgroup>
+
+    <optgroup label="Los Angeles County">
+      <option>Malibu Pier</option>
+      <option>Santa Monica Pier</option>
+      <option>Venice Fishing Pier</option>
+      <option>Manhattan Beach Pier</option>
+      <option>Hermosa Beach Pier</option>
+      <option>Redondo Beach Pier</option>
+      <option>Cabrillo Pier</option>
+    </optgroup>
+
+    <optgroup label="Orange County">
+      <option>Seal Beach Pier</option>
+      <option>Huntington Beach Pier</option>
+      <option>Newport Pier</option>
+      <option>Balboa Pier</option>
+      <option>Dana Point Pier</option>
+      <option>San Clemente Pier</option>
+    </optgroup>
+
+    <optgroup label="San Diego County">
+      <option>Oceanside Pier</option>
+      <option>Crystal Pier</option>
+      <option>Ocean Beach Pier</option>
+      <option>Shelter Island Pier</option>
+      <option>Embarcadero Marina Park Pier</option>
+      <option>Coronado Ferry Landing Pier</option>
+      <option>Imperial Beach Pier</option>
+    </optgroup>
+  </select>
+
+  <label for="dateSelect">Date</label>
+  <select id="dateSelect"></select>
+
+</div>
+
+<div id="pierConditionsUpdated" class="last-updated"></div>
+
+<div id="pierConditionsSummary" class="forecast-weather-grid">
+  <div class="loading-card">Select a pier to load conditions...</div>
+</div>
+
+<div id="pierScoreCard" class="forecast-intro-card"></div>
+
+<div class="forecast-intro-card">
+  <div>
+    <span class="forecast-kicker">Target Species</span>
+    <h3>Likely Pier Species</h3>
+    <div id="pierSpeciesTargets"></div>
+  </div>
+</div>
+
+<div class="forecast-intro-card">
+  <div>
+    <span class="forecast-kicker">Tide Outlook</span>
+    <h3>Highs, Lows & Movement</h3>
+    <div id="pierTideTable"></div>
+  </div>
+</div>
+
+<div class="forecast-intro-card">
+  <div>
+    <span class="forecast-kicker">Fishing Notes</span>
+    <h3>Pier Fishing Outlook</h3>
+    <div id="pierForecastNotes"></div>
+  </div>
+</div>
+```
+
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>© 2026 The SoCal Bite • Fishing Reports & Bite Updates</p>
+
+  <div class="social-links">
+    <a href="https://www.instagram.com/the_socal_bite/" target="_blank">
+      <img src="assets/instagram-icon.png" class="social-logo" alt="Instagram">
+    </a>
+
+```
+<a href="https://www.facebook.com/profile.php?id=61590740421081" target="_blank">
+  <img src="assets/facebook-icon.png" class="social-logo" alt="Facebook">
+</a>
+```
+
+  </div>
+</footer>
+
+<script src="site-config.js" defer></script>
+
+<script src="noaa-conditions.js" defer></script>
+
+<script src="pier-conditions.js" defer></script>
+
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("/service-worker.js");
   });
+}
+</script>
 
-  async function loadPierConditions() {
-    const pierSelect = document.getElementById("pierSelect");
-    const pier = pierSelect?.value;
-    const date = document.getElementById("dateSelect")?.value || new Date().toISOString().split("T")[0];
+</body>
+</html>
 
-    if (!pier) return;
-
-    const county = pierSelect.selectedOptions[0].parentElement.label;
-    const base = countyData[county] || countyData["Los Angeles County"];
-
-    document.getElementById("pierConditionsSummary").innerHTML = `<div class="loading-card">Loading live pier conditions...</div>`;
-
-    const [weather, tides, waterTemp] = await Promise.all([
-      SCBConditions.getWeather(base.lat, base.lon, date),
-      SCBConditions.getTides(base.station, date),
-      SCBConditions.getWaterTemp(base.station)
-    ]);
-
-    const wind = SCBConditions.parseWindSpeed(weather.windSpeed, 8);
-    const temp = waterTemp || base.water;
-    const tideMovement = getTideMovement(tides);
-    const baitActivity = getBaitActivity(wind, tideMovement, weather);
-    const score = calculatePierScore(wind, base.swell, temp, tideMovement, baitActivity, weather);
-    const rating = SCBConditions.rating(score);
-
-    document.getElementById("pierConditionsUpdated").textContent =
-      `Showing live weather and NOAA tide data for ${pier}.`;
-
-    document.getElementById("pierConditionsSummary").innerHTML = `
-      ${card("Wind", `${wind} mph`, `${weather.windDirection || "W"} wind`)}
-      ${card("Wind Gusts", value(weather.windGusts, "mph"), "Open-Meteo forecast")}
-      ${card("Rain Chance", value(weather.precipitationProbability, "%"), "Precipitation probability")}
-      ${card("Cloud Cover", value(weather.cloudCover, "%"), "Sky cover")}
-      ${card("UV Index", value(weather.uvIndex), "Sun exposure")}
-      ${card("Water Temp", `${Number(temp).toFixed(1)}°F`, "Nearest NOAA station")}
-      ${card("Tide Movement", tideMovement, "Based on tide range")}
-      ${card("Bait Activity", baitActivity, "Estimated pier activity")}
-    `;
-
-    document.getElementById("pierScoreCard").innerHTML = `
-      <div class="score-circle">${score}</div>
-      <div>
-        <span class="forecast-kicker">Pier Fishing Score</span>
-        <h3>${rating} Pier Fishing Conditions</h3>
-        <p>${pier} has a ${rating.toLowerCase()} setup based on wind, gusts, rain chance, water temperature, tide movement, UV, and estimated bait activity.</p>
-      </div>
-    `;
-
-    document.getElementById("pierSpeciesTargets").innerHTML = `
-      <div class="species-pill-wrap">
-        ${getPierTargets(county).map(s => `<span class="species-pill">${s}</span>`).join("")}
-      </div>
-    `;
-
-    document.getElementById("pierTideTable").innerHTML = tideTable(SCBConditions.formatTides(tides));
-
-    document.getElementById("pierForecastNotes").innerHTML = `
-      <p><strong>${pier}:</strong> Best pier fishing usually happens with moving tide, bait around the pier, clean water, light wind, and lower gusts.</p>
-      <p>For mackerel and bonito, watch for bait schools, birds, current breaks, and surface activity near the end of the pier.</p>
-      <p><strong>Data sources:</strong> NOAA tides/water temperature + Open-Meteo weather.</p>
-    `;
-  }
-
-  function calculatePierScore(wind, swell, waterTemp, tideMovement, baitActivity, weather) {
-    let score = 78;
-
-    if (wind <= 8) score += 8;
-    else if (wind > 12) score -= 15;
-
-    if ((weather.windGusts || 0) > 20) score -= 10;
-    if ((weather.precipitationProbability || 0) > 40) score -= 8;
-    if ((weather.uvIndex || 0) > 7) score -= 3;
-
-    if (swell <= 2.8) score += 6;
-    else if (swell > 4) score -= 12;
-
-    if (waterTemp >= 64 && waterTemp <= 69) score += 8;
-    else if (waterTemp < 61) score -= 8;
-
-    if (tideMovement === "Strong") score += 8;
-    if (tideMovement === "Weak") score -= 5;
-
-    if (baitActivity === "High") score += 8;
-    if (baitActivity === "Low") score -= 4;
-
-    return Math.max(0, Math.min(100, Math.round(score)));
-  }
-
-  function getBaitActivity(wind, tideMovement, weather) {
-    if (wind <= 8 && tideMovement === "Strong" && (weather.cloudCover || 0) < 80) return "High";
-    if (wind > 13 || (weather.precipitationProbability || 0) > 50) return "Low";
-    return "Medium";
-  }
-
-  function getPierTargets(county) {
-    if (county === "San Diego County") return ["Mackerel", "Bonito", "Halibut", "Spotted Bay Bass", "Shark/Ray"];
-    if (county === "Orange County") return ["Mackerel", "Bonito", "Halibut", "Croaker", "Stingray"];
-    if (county === "Los Angeles County") return ["Mackerel", "Bonito", "Halibut", "Croaker", "Bass"];
-    return ["Mackerel", "Surfperch", "Halibut", "Shark/Ray"];
-  }
-
-  function getTideMovement(tides) {
-    const heights = tides.map(t => Number(t.v)).filter(n => !isNaN(n));
-    if (heights.length < 2) return "Moderate";
-    const range = Math.max(...heights) - Math.min(...heights);
-    if (range >= 4) return "Strong";
-    if (range >= 2) return "Moderate";
-    return "Weak";
-  }
-
-  function card(title, big, sub) {
-    return `<div class="condition-card"><h3>${title}</h3><p class="big-number">${big}</p><span>${sub}</span></div>`;
-  }
-
-  function value(v, suffix = "") {
-    return v === null || v === undefined ? "N/A" : `${Math.round(v)}${suffix}`;
-  }
-
-  function tideTable(tides) {
-    return `
-      <table>
-        <thead><tr><th>Time</th><th>Tide</th><th>Height</th></tr></thead>
-        <tbody>
-          ${tides.map(t => `<tr><td>${t.time}</td><td>${t.type}</td><td>${t.height}</td></tr>`).join("")}
-        </tbody>
-      </table>
-    `;
-  }
-})();
