@@ -1,203 +1,165 @@
-const boatRegions = {
-  "Santa Barbara": {
-    lat: 34.4208,
-    lon: -119.6982,
-    station: "9411340",
-    fallbackWaterTemp: 61,
-    fallbackWind: 8,
-    fallbackSwell: 2.8,
-    targets: ["Rockfish", "Whitefish", "Sheephead", "Lingcod"]
-  },
-  "Ventura": {
-    lat: 34.2746,
-    lon: -119.2290,
-    station: "9411189",
-    fallbackWaterTemp: 62,
-    fallbackWind: 9,
-    fallbackSwell: 3.0,
-    targets: ["Rockfish", "Whitefish", "Calico Bass", "Yellowtail"]
-  },
-  "Los Angeles": {
-    lat: 33.7405,
-    lon: -118.2817,
-    station: "9410660",
-    fallbackWaterTemp: 65,
-    fallbackWind: 8,
-    fallbackSwell: 2.6,
-    targets: ["Calico Bass", "Rockfish", "Sculpin", "Yellowtail"]
-  },
-  "Orange County": {
-    lat: 33.6037,
-    lon: -117.9000,
-    station: "9410580",
-    fallbackWaterTemp: 66,
-    fallbackWind: 7,
-    fallbackSwell: 2.5,
-    targets: ["Yellowtail", "Calico Bass", "Bonito", "Barracuda"]
-  },
-  "San Diego": {
-    lat: 32.7157,
-    lon: -117.1611,
-    station: "9410170",
-    fallbackWaterTemp: 67,
-    fallbackWind: 7,
-    fallbackSwell: 2.4,
-    targets: ["Yellowtail", "Tuna", "Bonito", "Calico Bass"]
-  }
-};
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-document.addEventListener("DOMContentLoaded", () => {
-  SCBConditions.buildDateDropdown("dateSelect", 7);
+  <meta name="description" content="Southern California fishing conditions by region including weather, wind, water temperature, swell, tides, and best day to fish score." />
+  <title>Fishing Conditions | SoCal Bite</title>
 
-  document.getElementById("regionSelect")?.addEventListener("change", loadBoatConditions);
-  document.getElementById("dateSelect")?.addEventListener("change", loadBoatConditions);
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
 
-  loadBoatConditions();
-});
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#031828">
+  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png" />
 
-async function loadBoatConditions() {
-  const region = document.getElementById("regionSelect")?.value || "Los Angeles";
-  const date = document.getElementById("dateSelect")?.value || new Date().toISOString().split("T")[0];
-  const base = boatRegions[region] || boatRegions["Los Angeles"];
+  <link rel="canonical" href="https://thesocalbite.com/conditions.html" />
 
-  renderBoatLoading();
+  <meta property="og:title" content="Fishing Conditions | SoCal Bite" />
+  <meta property="og:description" content="Check SoCal fishing weather, wind, water temperature, swell, tides, and bite conditions by region." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://thesocalbite.com/conditions.html" />
+  <meta property="og:image" content="https://thesocalbite.com/assets/socal-bite-logo.webp" />
+</head>
 
-  const [weather, tides, waterTemp] = await Promise.all([
-    SCBConditions.getWeather(base.lat, base.lon, date),
-    SCBConditions.getTides(base.station, date),
-    SCBConditions.getWaterTemp(base.station)
-  ]);
+<body class="inner-page">
 
-  const wind = SCBConditions.parseWindSpeed(weather?.windSpeed, base.fallbackWind);
-  const windDirection = SCBConditions.getWindDirection(weather?.windDirection, "W");
-  const airTemp = weather?.temperature || 70;
-  const temp = waterTemp || base.fallbackWaterTemp;
-  const swell = base.fallbackSwell;
-  const tideList = SCBConditions.formatTides(tides);
-  const tideMovement = getTideMovement(tides);
-  const score = calculateBoatScore(wind, swell, temp, tideMovement);
-  const rating = SCBConditions.rating(score);
+  <section class="page-top">
+    <h1>Fishing Conditions</h1>
 
-  const data = {
-    region,
-    date,
-    airTemp,
-    wind,
-    windDirection,
-    waterTemp: temp,
-    swell,
-    tideMovement,
-    tideList,
-    score,
-    rating,
-    targets: base.targets
-  };
+    <nav class="page-nav">
+      <a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
 
-  renderBoatConditions(data);
-}
+      <div class="dropdown">
+        <button class="dropbtn">
+          <i class="fa-solid fa-chart-line"></i>
+          <span>Boat Reports</span>
+          <i class="fa-solid fa-caret-down caret"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="daily-report.html">Daily Report</a>
+          <a href="boat-ratings.html">Boat Ratings</a>
+          <a href="top-boats.html">Top Boats</a>
+        </div>
+      </div>
 
-function calculateBoatScore(wind, swell, waterTemp, tideMovement) {
-  let score = 78;
+      <div class="dropdown">
+        <button class="dropbtn">
+          <i class="fa-solid fa-fish"></i>
+          <span>Species Reports</span>
+          <i class="fa-solid fa-caret-down caret"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="bite-trends.html">Bite Trends</a>
+          <a href="forecast.html">Bite Forecast</a>
+          <a href="species.html">Species</a>
+          <a href="top-species.html">Top Species</a>
+        </div>
+      </div>
 
-  if (wind <= 8) score += 10;
-  else if (wind > 12) score -= 18;
+      <a href="conditions.html"><i class="fa-solid fa-water"></i><span>Conditions</span></a>
+      <a href="news.html"><i class="fa-solid fa-newspaper"></i><span>Fishing News</span></a>
+      <a href="landings.html"><i class="fa-solid fa-anchor"></i><span>Landings</span></a>
+      <a href="about.html"><i class="fa-solid fa-user"></i><span>About</span></a>
+    </nav>
+  </section>
 
-  if (swell <= 3) score += 8;
-  else if (swell > 4) score -= 15;
+  <main class="report-page">
 
-  if (waterTemp >= 64 && waterTemp <= 69) score += 8;
-  else if (waterTemp < 60) score -= 8;
+    <section class="region-section">
+      <h2>Southern California Fishing Conditions</h2>
 
-  if (tideMovement === "Strong") score += 8;
-  if (tideMovement === "Weak") score -= 5;
+      <p class="page-subtitle">
+        Check weather, wind, swell, water temperature, tide movement, and overall fishing conditions by region.
+      </p>
 
-  return Math.max(0, Math.min(100, Math.round(score)));
-}
+      <div class="forecast-intro-card">
+        <div>
+          <span class="forecast-kicker">Conditions Outlook</span>
+          <h3>Plan your next fishing trip</h3>
+          <p>
+            Select a region and future date to view estimated marine conditions and a best day to fish score.
+            This first version uses sample forecast logic and can later be connected to live NOAA, tide, and water temperature data.
+          </p>
+        </div>
 
-function getTideMovement(tides) {
-  if (!tides || tides.length < 2) return "Moderate";
+        <div class="forecast-legend">
+          <span><b class="legend-dot excellent-dot"></b> Excellent</span>
+          <span><b class="legend-dot good-dot"></b> Good</span>
+          <span><b class="legend-dot fair-dot"></b> Fair</span>
+          <span><b class="legend-dot slow-dot"></b> Slow</span>
+        </div>
+      </div>
 
-  const heights = tides.map(t => Number(t.v)).filter(n => !isNaN(n));
-  if (heights.length < 2) return "Moderate";
+      <div class="conditions-controls">
+        <label for="regionSelect">Region</label>
+        <select id="regionSelect">
+          <option value="Los Angeles">Los Angeles</option>
+          <option value="Orange County">Orange County</option>
+          <option value="San Diego">San Diego</option>
+          <option value="Ventura">Ventura</option>
+          <option value="Santa Barbara">Santa Barbara</option>
+        </select>
 
-  const range = Math.max(...heights) - Math.min(...heights);
+        <label for="dateSelect">Date</label>
+        <select id="dateSelect"></select>
+      </div>
 
-  if (range >= 4) return "Strong";
-  if (range >= 2) return "Moderate";
-  return "Weak";
-}
+      <div id="conditionsUpdated" class="last-updated"></div>
 
-function renderBoatLoading() {
-  document.getElementById("conditionsSummary").innerHTML =
-    `<div class="loading-card">Loading live NOAA conditions...</div>`;
-}
+      <div id="conditionsSummary" class="forecast-weather-grid">
+        <div class="loading-card">Loading conditions...</div>
+      </div>
 
-function renderBoatConditions(data) {
-  document.getElementById("conditionsUpdated").textContent =
-    `Showing live conditions for ${data.region}. Water temp may use the nearest NOAA station when available.`;
+      <div id="biteScoreCard" class="forecast-intro-card"></div>
 
-  document.getElementById("conditionsSummary").innerHTML = `
-    <div class="condition-card">
-      <h3>Weather</h3>
-      <p class="big-number">${Math.round(data.airTemp)}°F</p>
-      <span>Air temperature</span>
+      <div class="forecast-intro-card">
+        <div>
+          <span class="forecast-kicker">Tide Outlook</span>
+          <h3>Highs, lows, and movement</h3>
+          <div id="tideTable"></div>
+        </div>
+      </div>
+
+      <div class="forecast-intro-card">
+        <div>
+          <span class="forecast-kicker">Fishing Notes</span>
+          <h3>Condition breakdown</h3>
+          <div id="forecastNotes"></div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 The SoCal Bite • Fishing Reports & Bite Updates</p>
+
+    <div class="social-links">
+      <a href="https://www.instagram.com/the_socal_bite/" target="_blank" aria-label="Instagram">
+        <img src="assets/instagram-icon.png" class="social-logo" alt="Instagram" loading="lazy">
+      </a>
+
+      <a href="https://www.facebook.com/profile.php?id=61590740421081" target="_blank" aria-label="Facebook">
+        <img src="assets/facebook-icon.png" class="social-logo" alt="Facebook" loading="lazy">
+      </a>
     </div>
+  </footer>
 
-    <div class="condition-card">
-      <h3>Wind</h3>
-      <p class="big-number">${data.wind} mph</p>
-      <span>${data.windDirection} wind</span>
-    </div>
+  <script src="site-config.js" defer></script>
+  <script src="conditions.js" defer></script>
 
-    <div class="condition-card">
-      <h3>Water Temp</h3>
-      <p class="big-number">${Number(data.waterTemp).toFixed(1)}°F</p>
-      <span>Nearest NOAA station</span>
-    </div>
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("/service-worker.js");
+      });
+    }
+  </script>
 
-    <div class="condition-card">
-      <h3>Tide Movement</h3>
-      <p class="big-number">${data.tideMovement}</p>
-      <span>Based on tide range</span>
-    </div>
-  `;
-
-  document.getElementById("biteScoreCard").innerHTML = `
-    <div class="score-circle">${data.score}</div>
-    <div>
-      <span class="forecast-kicker">Boat Fishing Score</span>
-      <h3>${data.rating} Boat Conditions</h3>
-      <p>${data.region} has a ${data.rating.toLowerCase()} boat fishing setup based on wind, water temperature, swell estimate, and tide movement.</p>
-    </div>
-  `;
-
-  document.getElementById("tideTable").innerHTML = renderTideTable(data.tideList);
-
-  document.getElementById("forecastNotes").innerHTML = `
-    <p><strong>${data.region}:</strong> Best boat conditions usually line up with light wind, manageable swell, clean water, and moving tide.</p>
-    <p><strong>Likely targets:</strong> ${data.targets.join(", ")}</p>
-  `;
-}
-
-function renderTideTable(tides) {
-  return `
-    <table>
-      <thead>
-        <tr>
-          <th>Time</th>
-          <th>Tide</th>
-          <th>Height</th>
-        </tr>
-      </thead>
-      <tbody>
-        ${tides.map(tide => `
-          <tr>
-            <td>${tide.time}</td>
-            <td>${tide.type}</td>
-            <td>${tide.height}</td>
-          </tr>
-        `).join("")}
-      </tbody>
-    </table>
-  `;
-}
+</body>
+</html>
