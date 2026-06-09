@@ -102,7 +102,8 @@ document.getElementById("beachForecastNotes").innerHTML = `
     water clarity and bait visibility along the beach.
   </p>
 `;
-
+  }
+  
   function calculateBeachScore(wind, surf, waterTemp, tideMovement, weather) {
     let score = 78;
 
@@ -139,10 +140,6 @@ document.getElementById("beachForecastNotes").innerHTML = `
     if (range >= 4) return "Strong";
     if (range >= 2) return "Moderate";
     return "Weak";
-  }
-
-  function card(title, big, sub) {
-    return `<div class="condition-card"><h3>${title}</h3><p class="big-number">${big}</p><span>${sub}</span></div>`;
   }
 
   function value(v, suffix = "") {
