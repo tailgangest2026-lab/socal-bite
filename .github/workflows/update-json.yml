@@ -95,23 +95,23 @@ jobs:
       - name: Detect new trips
         run: python socials/detect_new_trips.py
 
-- name: Send text alert if new social post was created
-  if: hashFiles('socials/new-post-created.flag') != ''
-  uses: dawidd6/action-send-mail@v3
-  with:
-    server_address: smtp.gmail.com
-    server_port: 465
-    username: ${{ secrets.SMTP_USERNAME }}
-    password: ${{ secrets.SMTP_PASSWORD }}
-    subject: "SoCal Bite"
-    to: ${{ secrets.SMS_TO }}
-    from: SoCal Bite Alerts
-    body: |
-      New Fish Counts Added
+      - name: Send text alert if new social post was created
+        if: hashFiles('socials/new-post-created.flag') != ''
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          subject: "SoCal Bite"
+          to: ${{ secrets.SMS_TO }}
+          from: "SoCal Bite Alerts"
+          body: |
+            New Fish Counts Added
 
-      View generated posts:
-      https://thesocalbite.com/socials/output/
-      
+            View generated posts:
+            https://thesocalbite.com/socials/output/
+
       - name: Show downloaded files
         run: |
           echo "Root JSON files:"
