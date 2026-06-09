@@ -109,7 +109,7 @@ jobs:
           echo "Post links:"
           cat socials/post-links.txt || true
 
-         - name: Send text alert if new social post was created
+      - name: Send text alert if new social post was created
         if: hashFiles('socials/new-fish-counts-*.txt') != ''
         uses: dawidd6/action-send-mail@v3
         with:
