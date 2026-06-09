@@ -100,8 +100,8 @@ def wrap_text(draw, text, font, max_width):
 def create_region_image(region, region_trips):
     width = 1080
 
-    title_font = load_font(50, bold=True)
-    region_font = load_font(42, bold=True)
+    title_font = load_font(44, bold=True)
+    region_font = load_font(40, bold=True)
     boat_font = load_font(36, bold=True)
     info_font = load_font(25)
     fish_font = load_font(25)
@@ -114,7 +114,6 @@ def create_region_image(region, region_trips):
     white = (255, 255, 255)
     soft = (220, 236, 242)
 
-    # Auto height based on number of trips
     card_height = 245
     top_height = 175
     bottom_height = 105
@@ -127,8 +126,20 @@ def create_region_image(region, region_trips):
     draw = ImageDraw.Draw(img)
 
     draw.rectangle((0, 0, width, 155), fill=card)
-    draw.text((55, 28), "🎣 New Fish Counts Added", fill=white, font=title_font)
-    draw.text((55, 95), region, fill=teal, font=region_font)
+
+    logo_path = Path("assets/socal-bite-logo.png")
+
+    if logo_path.exists():
+        logo = Image.open(logo_path).convert("RGBA")
+        logo.thumbnail((105, 105))
+        img.paste(logo, (45, 25), logo)
+
+        title_x = 170
+    else:
+        title_x = 55
+
+    draw.text((title_x, 35), "NEW FISH COUNTS ADDED", fill=white, font=title_font)
+    draw.text((title_x, 92), region, fill=teal, font=region_font)
 
     y = 185
 
