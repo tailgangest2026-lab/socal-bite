@@ -109,18 +109,20 @@ jobs:
           echo "Post links:"
           cat socials/post-links.txt || true
 
-      - name: Send test text alert
+         - name: Send text alert if new social post was created
+        if: hashFiles('socials/new-fish-counts-*.txt') != ''
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.gmail.com
           server_port: 465
           username: ${{ secrets.SMTP_USERNAME }}
           password: ${{ secrets.SMTP_PASSWORD }}
-          subject: "SoCal Bite Test"
+          subject: "SoCal Bite"
           to: ${{ secrets.SMS_TO }}
           from: "SoCal Bite Alerts"
           body: |
-            Test text from SoCal Bite GitHub Action.
+            New Fish Counts Added.
+            https://thesocalbite.com/socials/output/
 
       - name: Show downloaded files
         run: |
