@@ -97,11 +97,11 @@
       <div class="conditions-controls">
         <label for="regionSelect">Region</label>
         <select id="regionSelect">
-          <option value="Los Angeles">Los Angeles</option>
-          <option value="Orange County">Orange County</option>
-          <option value="San Diego">San Diego</option>
-          <option value="Ventura">Ventura</option>
-          <option value="Santa Barbara">Santa Barbara</option>
+<option value="Los Angeles">Los Angeles</option>
+<option value="Orange County">Orange County</option>
+<option value="San Diego">San Diego</option>
+<option value="Ventura">Ventura</option>
+<option value="Santa Barbara">Santa Barbara</option>
         </select>
 
         <label for="dateSelect">Date</label>
@@ -150,16 +150,17 @@
     </div>
   </footer>
 
-  <script src="site-config.js" defer></script>
-  <script src="conditions.js" defer></script>
+<script src="site-config.js" defer></script>
+<script src="noaa-conditions.js" defer></script>
+<script src="conditions.js" defer></script>
 
-  <script>
-    if ("serviceWorker" in navigator) {
-      window.addEventListener("load", () => {
-        navigator.serviceWorker.register("/service-worker.js");
-      });
-    }
-  </script>
+<script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("/service-worker.js");
+    });
+  }
+</script>
 
 </body>
 </html>
