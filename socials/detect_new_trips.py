@@ -1,14 +1,14 @@
 import json
+import re
 from pathlib import Path
+from collections import defaultdict
 from PIL import Image, ImageDraw, ImageFont
 
 REPORT_FILE = Path("reports/daily-report-latest.json")
 SEEN_FILE = Path("last-seen-trips.json")
-POST_FILE = Path("socials/new-trip-post.txt")
-IMAGE_FILE = Path("socials/output/new-trip-post.png")
+OUTPUT_DIR = Path("socials/output")
 
-POST_FILE.parent.mkdir(parents=True, exist_ok=True)
-IMAGE_FILE.parent.mkdir(parents=True, exist_ok=True)
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 with open(REPORT_FILE, "r", encoding="utf-8") as f:
     data = json.load(f)
@@ -48,21 +48,27 @@ for trip in trips:
     if trip_id not in seen_set:
         new_trips.append(trip)
 
+# First run only saves current trips
 if not seen_trips:
     with open(SEEN_FILE, "w", encoding="utf-8") as f:
         json.dump(current_ids, f, indent=2)
-
     print(f"First run complete. Saved {len(current_ids)} trips.")
     exit()
 
 
-def load_font(size):
-    possible_fonts = [
-        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+def slugify(text):
+    text = str(text).lower().strip()
+    text = re.sub(r"[^a-z0-9]+", "-", text)
+    return text.strip("-") or "region"
+
+
+def load_font(size, bold=False):
+    fonts = [
+        "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf" if bold else "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
         "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
     ]
 
-    for font in possible_fonts:
+    for font in fonts:
         if Path(font).exists():
             return ImageFont.truetype(font, size)
 
@@ -91,9 +97,15 @@ def wrap_text(draw, text, font, max_width):
     return lines
 
 
-def create_social_image(new_trips):
+def create_region_image(region, region_trips):
     width = 1080
-    height = 1080
+
+    title_font = load_font(50, bold=True)
+    region_font = load_font(42, bold=True)
+    boat_font = load_font(36, bold=True)
+    info_font = load_font(25)
+    fish_font = load_font(25)
+    footer_font = load_font(28, bold=True)
 
     bg = (3, 18, 32)
     card = (6, 25, 42)
@@ -102,23 +114,25 @@ def create_social_image(new_trips):
     white = (255, 255, 255)
     soft = (220, 236, 242)
 
+    # Auto height based on number of trips
+    card_height = 245
+    top_height = 175
+    bottom_height = 105
+    gap = 25
+
+    display_trips = region_trips[:4]
+    height = top_height + bottom_height + (len(display_trips) * (card_height + gap)) + 40
+
     img = Image.new("RGB", (width, height), bg)
     draw = ImageDraw.Draw(img)
 
-    title_font = load_font(58)
-    sub_font = load_font(34)
-    boat_font = load_font(34)
-    small_font = load_font(25)
-    fish_font = load_font(23)
-    footer_font = load_font(26)
+    draw.rectangle((0, 0, width, 155), fill=card)
+    draw.text((55, 28), "🎣 New Fish Counts Added", fill=white, font=title_font)
+    draw.text((55, 95), region, fill=teal, font=region_font)
 
-    draw.rectangle((0, 0, width, 150), fill=(6, 25, 42))
-    draw.text((60, 35), "🚨 New Reports Added", fill=white, font=title_font)
-    draw.text((60, 105), "The SoCal Bite", fill=teal, font=sub_font)
+    y = 185
 
-    y = 190
-
-    for trip in new_trips[:4]:
+    for trip in display_trips:
         boat = trip.get("boat", "Unknown Boat")
         landing = trip.get("landing", "")
         trip_type = trip.get("trip_type", "")
@@ -126,31 +140,38 @@ def create_social_image(new_trips):
         fish_counts = trip.get("fish_counts", "")
         total_fish = trip.get("total_fish", trip.get("fish", ""))
 
-        draw.rounded_rectangle((50, y, 1030, y + 170), radius=22, fill=card)
+        draw.rounded_rectangle((45, y, 1035, y + card_height), radius=24, fill=card)
 
-        draw.text((80, y + 20), boat, fill=gold, font=boat_font)
-        draw.text((80, y + 62), f"{landing}", fill=soft, font=small_font)
-        draw.text((80, y + 95), f"{trip_type} | {anglers} anglers | {total_fish} fish", fill=teal, font=small_font)
+        draw.text((75, y + 20), boat, fill=gold, font=boat_font)
+        draw.text((75, y + 68), landing, fill=soft, font=info_font)
+        draw.text(
+            (75, y + 102),
+            f"{trip_type} | {anglers} anglers | {total_fish} total fish",
+            fill=teal,
+            font=info_font,
+        )
 
-        fish_lines = wrap_text(draw, fish_counts, fish_font, 880)
+        fish_lines = wrap_text(draw, fish_counts, fish_font, 900)
 
-        fish_y = y + 128
-        for line in fish_lines[:1]:
-            draw.text((80, fish_y), line, fill=white, font=fish_font)
+        fish_y = y + 142
+        for i, line in enumerate(fish_lines[:4]):
+            draw.text((75, fish_y + (i * 28)), line, fill=white, font=fish_font)
 
-        y += 195
+        y += card_height + gap
 
-    draw.rectangle((0, 980, width, 1080), fill=(6, 25, 42))
-    draw.text((60, 1005), "Full report: thesocalbite.com", fill=white, font=footer_font)
-    draw.text((735, 1005), "#SoCalBite", fill=teal, font=footer_font)
+    draw.rectangle((0, height - 90, width, height), fill=card)
+    draw.text((55, height - 62), "Full report: thesocalbite.com", fill=white, font=footer_font)
+    draw.text((760, height - 62), "#SoCalBite", fill=teal, font=footer_font)
 
-    img.save(IMAGE_FILE)
+    image_file = OUTPUT_DIR / f"new-fish-counts-{slugify(region)}.png"
+    img.save(image_file)
+    return image_file
 
 
-if new_trips:
+def create_region_caption(region, region_trips):
     lines = []
 
-    for trip in new_trips[:8]:
+    for trip in region_trips[:8]:
         boat = trip.get("boat", "Unknown Boat")
         landing = trip.get("landing", "")
         trip_type = trip.get("trip_type", "")
@@ -166,7 +187,7 @@ if new_trips:
 Total Fish: {total_fish}"""
         )
 
-    caption = f"""🚨 New SoCal Bite Reports Added
+    caption = f"""🎣 New Fish Counts Added - {region}
 
 {chr(10).join(chr(10) + line + chr(10) for line in lines)}
 
@@ -176,14 +197,29 @@ https://thesocalbite.com
 #SoCalBite #SoCalFishing #FishingReports #Sportfishing #Fishing
 """
 
-    with open(POST_FILE, "w", encoding="utf-8") as f:
+    caption_file = Path(f"socials/new-fish-counts-{slugify(region)}.txt")
+
+    with open(caption_file, "w", encoding="utf-8") as f:
         f.write(caption)
 
-    create_social_image(new_trips)
+    return caption_file
 
-    print(f"New trips found: {len(new_trips)}")
-    print(f"Caption saved to {POST_FILE}")
-    print(f"Image saved to {IMAGE_FILE}")
+
+if new_trips:
+    trips_by_region = defaultdict(list)
+
+    for trip in new_trips:
+        region = trip.get("region") or "Southern California"
+        trips_by_region[region].append(trip)
+
+    for region, region_trips in trips_by_region.items():
+        image_file = create_region_image(region, region_trips)
+        caption_file = create_region_caption(region, region_trips)
+
+        print(f"Created post for {region}")
+        print(f"Image: {image_file}")
+        print(f"Caption: {caption_file}")
+
 else:
     print("No new trips found.")
 
