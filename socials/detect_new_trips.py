@@ -7,8 +7,12 @@ from PIL import Image, ImageDraw, ImageFont
 REPORT_FILE = Path("reports/daily-report-latest.json")
 SEEN_FILE = Path("last-seen-trips.json")
 OUTPUT_DIR = Path("socials/output")
+ALERT_FLAG_FILE = Path("socials/new-post-created.flag")
 
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+
+if ALERT_FLAG_FILE.exists():
+    ALERT_FLAG_FILE.unlink()
 
 with open(REPORT_FILE, "r", encoding="utf-8") as f:
     data = json.load(f)
@@ -230,6 +234,10 @@ if new_trips:
         print(f"Created post for {region}")
         print(f"Image: {image_file}")
         print(f"Caption: {caption_file}")
+
+    # Create alert flag for GitHub Action
+    with open(ALERT_FLAG_FILE, "w", encoding="utf-8") as f:
+        f.write("new post created")
 
 else:
     print("No new trips found.")
