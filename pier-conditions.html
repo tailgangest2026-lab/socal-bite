@@ -86,28 +86,66 @@
 
   <section class="region-section">
 
-```
 <h2>Southern California Pier Fishing Conditions</h2>
 
 <p class="page-subtitle">
-  Check weather, tides, water temperature, bait activity, and fishing conditions at Southern California piers.
+  Check wind, tides, water temperature, bait activity, and pier fishing outlook by location.
 </p>
+
+<div class="conditions-hero-card">
+  <div>
+    <span class="forecast-kicker">Pier Fishing Forecast</span>
+    <h3>Find the best pier bite</h3>
+    <p>
+      Select a pier and date to view live weather, NOAA tide data, water temperature,
+      bait activity, and likely target species.
+    </p>
+  </div>
+</div>
+
+<div class="conditions-controls">
+  <label for="pierSelect">Pier</label>
+  <!-- KEEP YOUR EXISTING pierSelect DROPDOWN HERE -->
+
+  <label for="dateSelect">Date</label>
+  <select id="dateSelect"></select>
+</div>
+
+<div id="pierConditionsUpdated" class="last-updated"></div>
+
+<div class="conditions-dashboard">
+  <div id="pierScoreCard" class="forecast-intro-card conditions-score-panel"></div>
+
+  <div id="pierConditionsSummary" class="conditions-main-panel">
+    <div class="loading-card">Select a pier to load conditions...</div>
+  </div>
+</div>
+
+<div class="conditions-lower-grid">
+  <div class="forecast-intro-card">
+    <div>
+      <span class="forecast-kicker">Pier Fishing Targets</span>
+      <h3>Likely Species</h3>
+      <div id="pierSpeciesTargets">Select a pier to view likely fishing targets.</div>
+    </div>
+  </div>
+
+  <div class="forecast-intro-card">
+    <div>
+      <span class="forecast-kicker">Tide Outlook</span>
+      <h3>Highs, Lows & Movement</h3>
+      <div id="pierTideTable">Select a pier to view tide outlook.</div>
+    </div>
+  </div>
+</div>
 
 <div class="forecast-intro-card">
   <div>
-    <span class="forecast-kicker">Pier Forecast</span>
-    <h3>Find the best pier fishing conditions</h3>
-    <p>
-      View live weather, NOAA tide data, water temperatures,
-      bait activity, and fishing conditions for popular Southern California piers.
-    </p>
-  </div>
-
-  <div class="forecast-legend">
-    <span><b class="legend-dot excellent-dot"></b> Excellent</span>
-    <span><b class="legend-dot good-dot"></b> Good</span>
-    <span><b class="legend-dot fair-dot"></b> Fair</span>
-    <span><b class="legend-dot slow-dot"></b> Slow</span>
+    <span class="forecast-kicker">Fishing Notes</span>
+    <h3>Pier Condition Breakdown</h3>
+    <div id="pierForecastNotes">
+      Look for moving tide, bait activity, clean water, and lighter wind.
+    </div>
   </div>
 </div>
 
