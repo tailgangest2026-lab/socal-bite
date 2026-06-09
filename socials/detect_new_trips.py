@@ -10,17 +10,19 @@ POST_FILE.parent.mkdir(parents=True, exist_ok=True)
 with open(REPORT_FILE, "r", encoding="utf-8") as f:
     data = json.load(f)
 
-# Handles both formats:
-# [ {...}, {...} ]
-# or { "data": [ {...}, {...} ] }
 if isinstance(data, list):
     trips = data
 elif isinstance(data, dict):
-    trips = data.get("data") or data.get("trips") or data.get("reports") or []
+    trips = (
+        data.get("data")
+        or data.get("trips")
+        or data.get("reports")
+        or data.get("rows")
+        or []
+    )
 else:
     trips = []
 
-# Keep only real trip rows
 trips = [trip for trip in trips if isinstance(trip, dict)]
 
 if SEEN_FILE.exists() and SEEN_FILE.stat().st_size > 0:
@@ -49,7 +51,7 @@ for trip in trips:
     if trip_id not in seen_set:
         new_trips.append(trip)
 
-# First run: save only, do not create post
+# First run only saves the current trips
 if not seen_trips:
     with open(SEEN_FILE, "w", encoding="utf-8") as f:
         json.dump(current_ids, f, indent=2)
@@ -60,18 +62,27 @@ if not seen_trips:
 if new_trips:
     lines = []
 
-    for trip in new_trips[:10]:
+    for trip in new_trips[:8]:
         boat = trip.get("boat", "Unknown Boat")
+        landing = trip.get("landing", "")
         trip_type = trip.get("trip_type", "")
-        fish = trip.get("total_fish", trip.get("fish", ""))
+        anglers = trip.get("anglers", "")
+        fish_counts = trip.get("fish_counts", "")
+        total_fish = trip.get("total_fish", trip.get("fish", ""))
 
-        lines.append(f"• {boat} - {trip_type} - {fish} fish")
+        lines.append(
+            f"""🎣 {boat}
+{landing}
+{trip_type} | {anglers} anglers
+{fish_counts}
+Total Fish: {total_fish}"""
+        )
 
-    caption = f"""🎣 New SoCal fishing reports added!
+    caption = f"""🚨 New SoCal Bite Reports Added
 
-{chr(10).join(lines)}
+{chr(10).join(chr(10) + line + chr(10) for line in lines)}
 
-Check the latest bite:
+Full report:
 https://thesocalbite.com
 
 #SoCalBite #SoCalFishing #FishingReports #Sportfishing #Fishing
@@ -81,6 +92,7 @@ https://thesocalbite.com
         f.write(caption)
 
     print(f"New trips found: {len(new_trips)}")
+    print(f"Post saved to {POST_FILE}")
 else:
     print("No new trips found.")
 
