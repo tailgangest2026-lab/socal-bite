@@ -10,12 +10,15 @@ POST_FILE.parent.mkdir(parents=True, exist_ok=True)
 
 with open(REPORT_FILE, "r", encoding="utf-8") as f:
     trips = json.load(f)
-
-if SEEN_FILE.exists():
-    with open(SEEN_FILE, "r", encoding="utf-8") as f:
-        seen_trips = json.load(f)
+if SEEN_FILE.exists() and SEEN_FILE.stat().st_size > 0:
+    try:
+        with open(SEEN_FILE, "r", encoding="utf-8") as f:
+            seen_trips = json.load(f)
+    except json.JSONDecodeError:
+        seen_trips = []
 else:
     seen_trips = []
+
 
 seen_set = set(seen_trips)
 
