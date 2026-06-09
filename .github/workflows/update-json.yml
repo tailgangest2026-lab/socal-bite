@@ -106,14 +106,7 @@ jobs:
           subject: "New SoCal Bite Fish Count Post"
           to: ${{ secrets.SMS_TO }}
           from: SoCal Bite Alerts
-          body: |
-            New Fish Counts Added.
-
-            A new SoCal Bite social media post was created.
-
-            Check:
-            socials/output/
-
+          body: file://socials/post-links.txt
       - name: Show downloaded files
         run: |
           echo "Root JSON files:"
