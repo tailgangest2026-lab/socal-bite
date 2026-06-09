@@ -93,8 +93,20 @@ jobs:
         run: pip install pillow
 
       - name: Detect new trips
-        run: python socials/detect_new_trips.py
-        
+        id: detect
+        run: |
+          python socials/detect_new_trips.py
+
+          echo "Checking for alert flag..."
+
+          if [ -f "socials/new-post-created.flag" ]; then
+            echo "created=true" >> $GITHUB_OUTPUT
+            echo "New post flag found"
+          else
+            echo "created=false" >> $GITHUB_OUTPUT
+            echo "No new post flag found"
+          fi
+
       - name: Debug new trip post files
         run: |
           echo "Socials folder:"
@@ -110,7 +122,7 @@ jobs:
           cat socials/post-links.txt || true
 
       - name: Send text alert if new social post was created
-        if: hashFiles('socials/new-fish-counts-*.txt') != ''
+        if: steps.detect.outputs.created == 'true'
         uses: dawidd6/action-send-mail@v3
         with:
           server_address: smtp.gmail.com
@@ -134,6 +146,9 @@ jobs:
 
           echo "Socials folder:"
           ls -la socials || true
+
+          echo "Output folder:"
+          ls -la socials/output || true
 
       - name: Commit updated JSON and trip tracking
         run: |
