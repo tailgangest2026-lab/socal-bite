@@ -54,6 +54,7 @@ for trip in trips:
     current_ids.append(trip_id)
 
     if trip_id not in seen_set:
+        print(f"NEW TRIP DETECTED: {trip_id}")
         new_trips.append(trip)
 
 # First run only saves current trips
@@ -222,6 +223,17 @@ https://thesocalbite.com
         f.write(caption)
 
     return caption_file
+print(f"Current trip IDs: {len(current_ids)}")
+print(f"Seen trip IDs: {len(seen_set)}")
+print(f"New trips found: {len(new_trips)}")
+
+if current_ids:
+    print("First current trip:")
+    print(current_ids[0])
+
+if seen_trips:
+    print("First seen trip:")
+    print(seen_trips[0])
 
 if new_trips:
     trips_by_region = defaultdict(list)
