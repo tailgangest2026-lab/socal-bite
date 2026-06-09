@@ -87,12 +87,21 @@ document.getElementById("beachConditionsSummary").innerHTML = `
 
     document.getElementById("beachTideTable").innerHTML = tideTable(SCBConditions.formatTides(tides));
 
-    document.getElementById("beachForecastNotes").innerHTML = `
-      <p><strong>${beach}:</strong> Best surf fishing usually happens with clean water, light wind, lower gusts, manageable surf, and moving tide.</p>
-      <p>For corbina and croaker, look for troughs, holes, sand crab beds, and soft current edges.</p>
-      <p><strong>Data sources:</strong> NOAA tides/water temperature + Open-Meteo weather.</p>
-    `;
-  }
+document.getElementById("beachForecastNotes").innerHTML = `
+  <p><strong>${beach}</strong> currently shows <strong>${rating}</strong> surf fishing conditions.</p>
+
+  <p>
+    Water temperatures around ${Number(temp).toFixed(1)}°F combined with
+    ${tideMovement.toLowerCase()} tidal movement should favor
+    corbina, croaker, surfperch, halibut, and leopard shark activity.
+  </p>
+
+  <p>
+    Wind is forecast around ${wind} mph with gusts reaching
+    ${value(weather.windGusts," mph")}. Lower wind generally improves
+    water clarity and bait visibility along the beach.
+  </p>
+`;
 
   function calculateBeachScore(wind, surf, waterTemp, tideMovement, weather) {
     let score = 78;
