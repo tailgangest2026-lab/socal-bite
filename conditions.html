@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Fishing Conditions | SoCal Bite</title>
+  <meta name="description" content="Check Southern California fishing weather, wind, water temperature, tides, and bite conditions by region." />
+
+  <link rel="stylesheet" href="style.css?v=4" />
+  <link rel="canonical" href="https://thesocalbite.com/conditions.html" />
+</head>
+
+<body>
+  <header class="site-header">
+    <a href="index.html" class="logo-link">
+      <img src="assets/socal-bite-logo.webp" alt="SoCal Bite Logo" class="site-logo">
+    </a>
+
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="daily-report.html">Daily Report</a>
+      <a href="species.html">Species</a>
+      <a href="forecast.html">Forecast</a>
+      <a href="conditions.html" class="active">Conditions</a>
+    </nav>
+  </header>
+
+  <main class="conditions-page">
+    <section class="page-hero">
+      <h1>Fishing Conditions</h1>
+      <p>Weather, wind, water temperature, tides, and bite outlook by SoCal region.</p>
+    </section>
+
+    <section class="conditions-controls">
+      <label for="regionSelect">Select Region</label>
+      <select id="regionSelect">
+        <option value="Los Angeles">Los Angeles</option>
+        <option value="Orange County">Orange County</option>
+        <option value="San Diego">San Diego</option>
+        <option value="Ventura">Ventura</option>
+        <option value="Santa Barbara">Santa Barbara</option>
+      </select>
+
+      <label for="dateSelect">Select Date</label>
+      <select id="dateSelect"></select>
+    </section>
+
+    <section id="conditionsSummary" class="conditions-grid"></section>
+
+    <section class="conditions-section">
+      <h2>Best Day To Fish Score</h2>
+      <div id="biteScoreCard" class="bite-score-card"></div>
+    </section>
+
+    <section class="conditions-section">
+      <h2>Tide Outlook</h2>
+      <div id="tideTable" class="tide-table"></div>
+    </section>
+
+    <section class="conditions-section">
+      <h2>Fishing Forecast Notes</h2>
+      <div id="forecastNotes" class="forecast-notes"></div>
+    </section>
+  </main>
+
+  <script src="conditions.js?v=1"></script>
+</body>
+</html>
