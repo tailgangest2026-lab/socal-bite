@@ -95,6 +95,24 @@ jobs:
       - name: Detect new trips
         run: python socials/detect_new_trips.py
 
+      - name: Send text alert if social post was created
+        if: hashFiles('socials/new-fish-counts-*.txt') != ''
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          subject: "New SoCal Bite Fish Count Post"
+          to: ${{ secrets.SMS_TO }}
+          from: SoCal Bite Alerts
+          body: |
+            New Fish Counts Added.
+
+            A new SoCal Bite social post was created.
+
+            Check the GitHub repository for the image and caption.
+
       - name: Show downloaded files
         run: |
           echo "Root JSON files:"
