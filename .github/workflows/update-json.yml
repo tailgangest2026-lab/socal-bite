@@ -94,7 +94,20 @@ jobs:
 
       - name: Detect new trips
         run: python socials/detect_new_trips.py
+        
+      - name: Debug new trip post files
+        run: |
+          echo "Socials folder:"
+          ls -la socials || true
 
+          echo "Output folder:"
+          ls -la socials/output || true
+
+          echo "Flag file:"
+          ls -la socials/new-post-created.flag || true
+
+          echo "Post links:"
+          cat socials/post-links.txt || true
       - name: Send text alert if new social post was created
         if: hashFiles('socials/new-post-created.flag') != ''
         uses: dawidd6/action-send-mail@v3
