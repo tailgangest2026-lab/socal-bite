@@ -134,7 +134,7 @@ jobs:
           from: "SoCal Bite Alerts"
           body: |
             New Fish Counts Added.
-            https://thesocalbite.com/socials/output/
+            
 
       - name: Show downloaded files
         run: |
