@@ -1,224 +1,144 @@
-const pierData = {
-  "Stearns Wharf": { county: "Santa Barbara", waterTemp: 61, wind: 7, swell: 2.4, targets: ["Mackerel", "Surfperch", "Halibut", "Shark/Ray"] },
-  "Goleta Pier": { county: "Santa Barbara", waterTemp: 61, wind: 7, swell: 2.3, targets: ["Mackerel", "Surfperch", "Halibut", "Croaker"] },
-
-  "Ventura Pier": { county: "Ventura", waterTemp: 62, wind: 9, swell: 2.8, targets: ["Mackerel", "Surfperch", "Halibut", "Shark/Ray"] },
-  "Port Hueneme Pier": { county: "Ventura", waterTemp: 63, wind: 8, swell: 2.7, targets: ["Mackerel", "Surfperch", "Croaker", "Halibut"] },
-
-  "Malibu Pier": { county: "Los Angeles", waterTemp: 64, wind: 7, swell: 2.5, targets: ["Mackerel", "Halibut", "Surfperch", "Leopard Shark"] },
-  "Santa Monica Pier": { county: "Los Angeles", waterTemp: 65, wind: 7, swell: 2.4, targets: ["Mackerel", "Bonito", "Halibut", "Croaker"] },
-  "Venice Fishing Pier": { county: "Los Angeles", waterTemp: 65, wind: 7, swell: 2.4, targets: ["Mackerel", "Halibut", "Croaker", "Shark/Ray"] },
-  "Manhattan Beach Pier": { county: "Los Angeles", waterTemp: 65, wind: 7, swell: 2.3, targets: ["Mackerel", "Bonito", "Halibut", "Croaker"] },
-  "Hermosa Beach Pier": { county: "Los Angeles", waterTemp: 65, wind: 7, swell: 2.3, targets: ["Mackerel", "Bonito", "Halibut", "Croaker"] },
-  "Redondo Beach Pier": { county: "Los Angeles", waterTemp: 65, wind: 7, swell: 2.2, targets: ["Mackerel", "Bonito", "Bass", "Halibut"] },
-  "Cabrillo Pier": { county: "Los Angeles", waterTemp: 66, wind: 7, swell: 2.0, targets: ["Mackerel", "Bass", "Halibut", "Croaker"] },
-
-  "Seal Beach Pier": { county: "Orange County", waterTemp: 66, wind: 7, swell: 2.2, targets: ["Mackerel", "Croaker", "Halibut", "Stingray"] },
-  "Huntington Beach Pier": { county: "Orange County", waterTemp: 66, wind: 7, swell: 2.5, targets: ["Mackerel", "Bonito", "Halibut", "Croaker"] },
-  "Newport Pier": { county: "Orange County", waterTemp: 66, wind: 6, swell: 2.2, targets: ["Mackerel", "Bonito", "Halibut", "Croaker"] },
-  "Balboa Pier": { county: "Orange County", waterTemp: 66, wind: 6, swell: 2.1, targets: ["Mackerel", "Bonito", "Halibut", "Croaker"] },
-  "Dana Point Pier": { county: "Orange County", waterTemp: 67, wind: 6, swell: 2.0, targets: ["Mackerel", "Bass", "Halibut", "Croaker"] },
-  "San Clemente Pier": { county: "Orange County", waterTemp: 67, wind: 7, swell: 2.4, targets: ["Mackerel", "Bonito", "Halibut", "Croaker"] },
-
-  "Oceanside Pier": { county: "San Diego", waterTemp: 67, wind: 7, swell: 2.5, targets: ["Mackerel", "Bonito", "Halibut", "Croaker"] },
-  "Crystal Pier": { county: "San Diego", waterTemp: 67, wind: 6, swell: 2.3, targets: ["Mackerel", "Halibut", "Croaker", "Surfperch"] },
-  "Ocean Beach Pier": { county: "San Diego", waterTemp: 67, wind: 7, swell: 2.4, targets: ["Mackerel", "Bonito", "Halibut", "Shark/Ray"] },
-  "Shelter Island Pier": { county: "San Diego", waterTemp: 68, wind: 6, swell: 1.5, targets: ["Bass", "Mackerel", "Halibut", "Spotted Bay Bass"] },
-  "Embarcadero Marina Park Pier": { county: "San Diego", waterTemp: 68, wind: 6, swell: 1.4, targets: ["Bass", "Mackerel", "Halibut", "Spotted Bay Bass"] },
-  "Coronado Ferry Landing Pier": { county: "San Diego", waterTemp: 68, wind: 6, swell: 1.3, targets: ["Bass", "Mackerel", "Halibut", "Spotted Bay Bass"] },
-  "Imperial Beach Pier": { county: "San Diego", waterTemp: 68, wind: 7, swell: 2.4, targets: ["Mackerel", "Croaker", "Halibut", "Shark/Ray"] }
-};
-
-document.addEventListener("DOMContentLoaded", () => {
-  buildPierDateDropdown();
-
-  document.getElementById("pierSelect").addEventListener("change", loadPierConditions);
-  document.getElementById("dateSelect").addEventListener("change", loadPierConditions);
-});
-
-function buildPierDateDropdown() {
-  const dateSelect = document.getElementById("dateSelect");
-  dateSelect.innerHTML = "";
-
-  for (let i = 0; i < 10; i++) {
-    const date = new Date();
-    date.setDate(date.getDate() + i);
-
-    const option = document.createElement("option");
-    option.value = date.toISOString().split("T")[0];
-    option.textContent = i === 0 ? "Today" : i === 1 ? "Tomorrow" : date.toLocaleDateString("en-US", {
-      weekday: "short",
-      month: "short",
-      day: "numeric"
-    });
-
-    dateSelect.appendChild(option);
-  }
-}
-
-function loadPierConditions() {
-  const pier = document.getElementById("pierSelect").value;
-  const date = document.getElementById("dateSelect").value;
-
-  if (!pier || !pierData[pier]) return;
-
-  const data = getPierForecast(pier, date);
-
-  renderPierCards(data);
-  renderPierScore(data);
-  renderPierTargets(data);
-  renderPierTides(data);
-  renderPierNotes(data);
-}
-
-function getPierForecast(pier, date) {
-  const base = pierData[pier];
-  const offset = getPierDayOffset(date);
-
-  const wind = Math.max(3, base.wind + ((offset % 5) - 2));
-  const swell = Math.max(1.0, base.swell + ((offset % 4) * 0.2));
-  const waterTemp = base.waterTemp + (offset % 2);
-  const tideMovement = ["Weak", "Moderate", "Strong"][offset % 3];
-  const baitActivity = ["Low", "Medium", "High"][(offset + 1) % 3];
-
-  return {
-    pier,
-    county: base.county,
-    date,
-    wind,
-    windDirection: ["W", "NW", "SW", "S"][offset % 4],
-    swell: swell.toFixed(1),
-    waterTemp,
-    tideMovement,
-    baitActivity,
-    targets: base.targets,
-    score: calculatePierScore(wind, swell, waterTemp, tideMovement, baitActivity),
-    tides: generatePierTides(offset)
+(() => {
+  const countyData = {
+    "Santa Barbara County": { lat: 34.4208, lon: -119.6982, station: "9411340", water: 61, swell: 2.4 },
+    "Ventura County": { lat: 34.2746, lon: -119.2290, station: "9411189", water: 62, swell: 2.8 },
+    "Los Angeles County": { lat: 33.7405, lon: -118.2817, station: "9410660", water: 65, swell: 2.4 },
+    "Orange County": { lat: 33.6037, lon: -117.9000, station: "9410580", water: 66, swell: 2.3 },
+    "San Diego County": { lat: 32.7157, lon: -117.1611, station: "9410170", water: 67, swell: 2.3 }
   };
-}
 
-function getPierDayOffset(dateString) {
-  const today = new Date();
-  const selected = new Date(dateString + "T00:00:00");
-  today.setHours(0, 0, 0, 0);
-  return Math.round((selected - today) / (1000 * 60 * 60 * 24));
-}
+  document.addEventListener("DOMContentLoaded", () => {
+    SCBConditions.buildDateDropdown("dateSelect", 10);
+    document.getElementById("pierSelect")?.addEventListener("change", loadPierConditions);
+    document.getElementById("dateSelect")?.addEventListener("change", loadPierConditions);
+  });
 
-function calculatePierScore(wind, swell, waterTemp, tideMovement, baitActivity) {
-  let score = 78;
+  async function loadPierConditions() {
+    const pierSelect = document.getElementById("pierSelect");
+    const pier = pierSelect?.value;
+    const date = document.getElementById("dateSelect")?.value || new Date().toISOString().split("T")[0];
 
-  if (wind <= 8) score += 8;
-  else if (wind > 12) score -= 15;
+    if (!pier) return;
 
-  if (swell <= 2.8) score += 6;
-  else if (swell > 4) score -= 12;
+    const county = pierSelect.selectedOptions[0].parentElement.label;
+    const base = countyData[county] || countyData["Los Angeles County"];
 
-  if (waterTemp >= 64 && waterTemp <= 69) score += 8;
-  else if (waterTemp < 61) score -= 8;
+    document.getElementById("pierConditionsSummary").innerHTML = `<div class="loading-card">Loading live pier conditions...</div>`;
 
-  if (tideMovement === "Strong") score += 8;
-  if (tideMovement === "Weak") score -= 5;
+    const [weather, tides, waterTemp] = await Promise.all([
+      SCBConditions.getWeather(base.lat, base.lon, date),
+      SCBConditions.getTides(base.station, date),
+      SCBConditions.getWaterTemp(base.station)
+    ]);
 
-  if (baitActivity === "High") score += 8;
-  if (baitActivity === "Low") score -= 4;
+    const wind = SCBConditions.parseWindSpeed(weather.windSpeed, 8);
+    const temp = waterTemp || base.water;
+    const tideMovement = getTideMovement(tides);
+    const baitActivity = getBaitActivity(wind, tideMovement, weather);
+    const score = calculatePierScore(wind, base.swell, temp, tideMovement, baitActivity, weather);
+    const rating = SCBConditions.rating(score);
 
-  return Math.max(0, Math.min(100, Math.round(score)));
-}
+    document.getElementById("pierConditionsUpdated").textContent =
+      `Showing live weather and NOAA tide data for ${pier}.`;
 
-function generatePierTides(offset) {
-  return [
-    { time: `${(4 + offset) % 12 || 12}:18 AM`, type: "Low Tide", height: `${(0.8 + offset * 0.1).toFixed(1)} ft` },
-    { time: `${(10 + offset) % 12 || 12}:42 AM`, type: "High Tide", height: `${(4.1 + (offset % 3) * 0.2).toFixed(1)} ft` },
-    { time: `${(4 + offset) % 12 || 12}:25 PM`, type: "Low Tide", height: `${(1.2 + (offset % 2) * 0.2).toFixed(1)} ft` },
-    { time: `${(9 + offset) % 12 || 12}:55 PM`, type: "High Tide", height: `${(3.8 + (offset % 2) * 0.3).toFixed(1)} ft` }
-  ];
-}
+    document.getElementById("pierConditionsSummary").innerHTML = `
+      ${card("Wind", `${wind} mph`, `${weather.windDirection || "W"} wind`)}
+      ${card("Wind Gusts", value(weather.windGusts, "mph"), "Open-Meteo forecast")}
+      ${card("Rain Chance", value(weather.precipitationProbability, "%"), "Precipitation probability")}
+      ${card("Cloud Cover", value(weather.cloudCover, "%"), "Sky cover")}
+      ${card("UV Index", value(weather.uvIndex), "Sun exposure")}
+      ${card("Water Temp", `${Number(temp).toFixed(1)}°F`, "Nearest NOAA station")}
+      ${card("Tide Movement", tideMovement, "Based on tide range")}
+      ${card("Bait Activity", baitActivity, "Estimated pier activity")}
+    `;
 
-function renderPierCards(data) {
-  document.getElementById("pierConditionsUpdated").textContent =
-    `Showing estimated conditions for ${data.pier}, ${data.county}`;
+    document.getElementById("pierScoreCard").innerHTML = `
+      <div class="score-circle">${score}</div>
+      <div>
+        <span class="forecast-kicker">Pier Fishing Score</span>
+        <h3>${rating} Pier Fishing Conditions</h3>
+        <p>${pier} has a ${rating.toLowerCase()} setup based on wind, gusts, rain chance, water temperature, tide movement, UV, and estimated bait activity.</p>
+      </div>
+    `;
 
-  document.getElementById("pierConditionsSummary").innerHTML = `
-    <div class="condition-card">
-      <h3>Wind</h3>
-      <p class="big-number">${data.wind} mph</p>
-      <span>${data.windDirection} wind</span>
-    </div>
+    document.getElementById("pierSpeciesTargets").innerHTML = `
+      <div class="species-pill-wrap">
+        ${getPierTargets(county).map(s => `<span class="species-pill">${s}</span>`).join("")}
+      </div>
+    `;
 
-    <div class="condition-card">
-      <h3>Swell</h3>
-      <p class="big-number">${data.swell} ft</p>
-      <span>Estimated swell near pier</span>
-    </div>
+    document.getElementById("pierTideTable").innerHTML = tideTable(SCBConditions.formatTides(tides));
 
-    <div class="condition-card">
-      <h3>Water Temp</h3>
-      <p class="big-number">${data.waterTemp}°F</p>
-      <span>Estimated surface temp</span>
-    </div>
+    document.getElementById("pierForecastNotes").innerHTML = `
+      <p><strong>${pier}:</strong> Best pier fishing usually happens with moving tide, bait around the pier, clean water, light wind, and lower gusts.</p>
+      <p>For mackerel and bonito, watch for bait schools, birds, current breaks, and surface activity near the end of the pier.</p>
+      <p><strong>Data sources:</strong> NOAA tides/water temperature + Open-Meteo weather.</p>
+    `;
+  }
 
-    <div class="condition-card">
-      <h3>Bait Activity</h3>
-      <p class="big-number">${data.baitActivity}</p>
-      <span>Estimated bait movement</span>
-    </div>
-  `;
-}
+  function calculatePierScore(wind, swell, waterTemp, tideMovement, baitActivity, weather) {
+    let score = 78;
 
-function renderPierScore(data) {
-  const rating = getPierRating(data.score);
+    if (wind <= 8) score += 8;
+    else if (wind > 12) score -= 15;
 
-  document.getElementById("pierScoreCard").innerHTML = `
-    <div class="score-circle">${data.score}</div>
-    <div>
-      <span class="forecast-kicker">Pier Fishing Score</span>
-      <h3>${rating} Pier Fishing Conditions</h3>
-      <p>${data.pier} has a ${rating.toLowerCase()} pier fishing setup based on wind, swell, water temperature, tide movement, and bait activity.</p>
-    </div>
-  `;
-}
+    if ((weather.windGusts || 0) > 20) score -= 10;
+    if ((weather.precipitationProbability || 0) > 40) score -= 8;
+    if ((weather.uvIndex || 0) > 7) score -= 3;
 
-function renderPierTargets(data) {
-  document.getElementById("pierSpeciesTargets").innerHTML = `
-    <div class="species-pill-wrap">
-      ${data.targets.map(species => `<span class="species-pill">${species}</span>`).join("")}
-    </div>
-  `;
-}
+    if (swell <= 2.8) score += 6;
+    else if (swell > 4) score -= 12;
 
-function renderPierTides(data) {
-  document.getElementById("pierTideTable").innerHTML = `
-    <table>
-      <thead>
-        <tr>
-          <th>Time</th>
-          <th>Tide</th>
-          <th>Height</th>
-        </tr>
-      </thead>
-      <tbody>
-        ${data.tides.map(tide => `
-          <tr>
-            <td>${tide.time}</td>
-            <td>${tide.type}</td>
-            <td>${tide.height}</td>
-          </tr>
-        `).join("")}
-      </tbody>
-    </table>
-  `;
-}
+    if (waterTemp >= 64 && waterTemp <= 69) score += 8;
+    else if (waterTemp < 61) score -= 8;
 
-function renderPierNotes(data) {
-  document.getElementById("pierForecastNotes").innerHTML = `
-    <p><strong>${data.pier}:</strong> Best pier fishing usually happens with moving tide, clean water, bait near the pier, and light wind.</p>
-    <p>For mackerel and bonito, watch for bait schools, birds, current breaks, and surface activity around the end of the pier.</p>
-  `;
-}
+    if (tideMovement === "Strong") score += 8;
+    if (tideMovement === "Weak") score -= 5;
 
-function getPierRating(score) {
-  if (score >= 85) return "Excellent";
-  if (score >= 70) return "Good";
-  if (score >= 55) return "Fair";
-  return "Slow";
-}
+    if (baitActivity === "High") score += 8;
+    if (baitActivity === "Low") score -= 4;
+
+    return Math.max(0, Math.min(100, Math.round(score)));
+  }
+
+  function getBaitActivity(wind, tideMovement, weather) {
+    if (wind <= 8 && tideMovement === "Strong" && (weather.cloudCover || 0) < 80) return "High";
+    if (wind > 13 || (weather.precipitationProbability || 0) > 50) return "Low";
+    return "Medium";
+  }
+
+  function getPierTargets(county) {
+    if (county === "San Diego County") return ["Mackerel", "Bonito", "Halibut", "Spotted Bay Bass", "Shark/Ray"];
+    if (county === "Orange County") return ["Mackerel", "Bonito", "Halibut", "Croaker", "Stingray"];
+    if (county === "Los Angeles County") return ["Mackerel", "Bonito", "Halibut", "Croaker", "Bass"];
+    return ["Mackerel", "Surfperch", "Halibut", "Shark/Ray"];
+  }
+
+  function getTideMovement(tides) {
+    const heights = tides.map(t => Number(t.v)).filter(n => !isNaN(n));
+    if (heights.length < 2) return "Moderate";
+    const range = Math.max(...heights) - Math.min(...heights);
+    if (range >= 4) return "Strong";
+    if (range >= 2) return "Moderate";
+    return "Weak";
+  }
+
+  function card(title, big, sub) {
+    return `<div class="condition-card"><h3>${title}</h3><p class="big-number">${big}</p><span>${sub}</span></div>`;
+  }
+
+  function value(v, suffix = "") {
+    return v === null || v === undefined ? "N/A" : `${Math.round(v)}${suffix}`;
+  }
+
+  function tideTable(tides) {
+    return `
+      <table>
+        <thead><tr><th>Time</th><th>Tide</th><th>Height</th></tr></thead>
+        <tbody>
+          ${tides.map(t => `<tr><td>${t.time}</td><td>${t.type}</td><td>${t.height}</td></tr>`).join("")}
+        </tbody>
+      </table>
+    `;
+  }
+})();
