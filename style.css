@@ -1426,3 +1426,28 @@ footer {
   color: var(--soft);
   font-weight: 700;
 }
+
+.condition-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.condition-grid div {
+  background: rgba(255,255,255,.05);
+  padding: 12px;
+  border-radius: 10px;
+  color: var(--soft);
+}
+
+.weather-card,
+.water-card {
+  min-height: auto;
+}
+
+@media (max-width: 768px) {
+  .condition-grid {
+    grid-template-columns: 1fr;
+  }
+}
