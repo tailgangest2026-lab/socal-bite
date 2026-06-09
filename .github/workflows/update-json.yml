@@ -43,9 +43,7 @@ jobs:
               echo "Saved $OUT"
             else
               echo "Invalid JSON returned for $OUT"
-              echo "First 500 characters returned:"
               head -c 500 "$TEMP" || true
-              echo ""
               rm -f "$TEMP"
               exit 1
             fi
@@ -72,7 +70,12 @@ jobs:
             download_json "$URL_PAGE" "reports/daily-report-$DATE.json"
           done
 
+          cp "reports/daily-report-$TODAY.json" "reports/daily-report-latest.json"
+
           rm -rf tmp-json
+
+      - name: Detect new trips
+        run: python socials/detect_new_trips.py
 
       - name: Show downloaded files
         run: |
@@ -82,7 +85,10 @@ jobs:
           echo "Reports folder:"
           ls -la reports || true
 
-      - name: Commit updated JSON
+          echo "Socials folder:"
+          ls -la socials || true
+
+      - name: Commit updated JSON and trip tracking
         run: |
           set -x
 
@@ -94,9 +100,9 @@ jobs:
           git status
 
           if git diff --cached --quiet; then
-            echo "No JSON changes to commit"
+            echo "No changes to commit"
             exit 0
           fi
 
-          git commit -m "Update SoCal Bite JSON"
+          git commit -m "Update SoCal Bite JSON and trip tracking"
           git push
