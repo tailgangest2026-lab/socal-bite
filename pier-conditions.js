@@ -41,16 +41,35 @@
     document.getElementById("pierConditionsUpdated").textContent =
       `Showing live weather and NOAA tide data for ${pier}.`;
 
-    document.getElementById("pierConditionsSummary").innerHTML = `
-      ${card("Wind", `${wind} mph`, `${weather.windDirection || "W"} wind`)}
-      ${card("Wind Gusts", value(weather.windGusts, "mph"), "Open-Meteo forecast")}
-      ${card("Rain Chance", value(weather.precipitationProbability, "%"), "Precipitation probability")}
-      ${card("Cloud Cover", value(weather.cloudCover, "%"), "Sky cover")}
-      ${card("UV Index", value(weather.uvIndex), "Sun exposure")}
-      ${card("Water Temp", `${Number(temp).toFixed(1)}°F`, "Nearest NOAA station")}
-      ${card("Tide Movement", tideMovement, "Based on tide range")}
-      ${card("Bait Activity", baitActivity, "Estimated pier activity")}
-    `;
+document.getElementById("pierConditionsSummary").innerHTML = `
+  <div class="condition-card weather-card">
+    <h3><i class="fa-solid fa-cloud-sun"></i> Weather Conditions</h3>
+
+    <div class="condition-grid">
+      <div><strong>Forecast:</strong> ${weather.shortForecast}</div>
+      <div><strong>Air Temp:</strong> ${Math.round(weather.temperature)}°F</div>
+      <div><strong>Wind:</strong> ${wind} mph ${weather.windDirection}</div>
+      <div><strong>Wind Gusts:</strong> ${value(weather.windGusts," mph")}</div>
+      <div><strong>Rain Chance:</strong> ${value(weather.precipitationProbability,"%")}</div>
+      <div><strong>Cloud Cover:</strong> ${value(weather.cloudCover,"%")}</div>
+      <div><strong>Humidity:</strong> ${value(weather.humidity,"%")}</div>
+      <div><strong>UV Index:</strong> ${value(weather.uvIndex)}</div>
+    </div>
+  </div>
+
+  <div class="condition-card water-card">
+    <h3><i class="fa-solid fa-fish-fins"></i> Pier Conditions</h3>
+
+    <div class="condition-grid">
+      <div><strong>Water Temp:</strong> ${Number(temp).toFixed(1)}°F</div>
+      <div><strong>Tide Movement:</strong> ${tideMovement}</div>
+      <div><strong>Bait Activity:</strong> ${baitActivity}</div>
+      <div><strong>Visibility:</strong> ${value(weather.visibility," mi")}</div>
+      <div><strong>Pressure:</strong> ${value(weather.pressure," mb")}</div>
+      <div><strong>Fishing Score:</strong> ${score}/100</div>
+    </div>
+  </div>
+`;
 
     document.getElementById("pierScoreCard").innerHTML = `
       <div class="score-circle">${score}</div>
@@ -69,12 +88,25 @@
 
     document.getElementById("pierTideTable").innerHTML = tideTable(SCBConditions.formatTides(tides));
 
-    document.getElementById("pierForecastNotes").innerHTML = `
-      <p><strong>${pier}:</strong> Best pier fishing usually happens with moving tide, bait around the pier, clean water, light wind, and lower gusts.</p>
-      <p>For mackerel and bonito, watch for bait schools, birds, current breaks, and surface activity near the end of the pier.</p>
-      <p><strong>Data sources:</strong> NOAA tides/water temperature + Open-Meteo weather.</p>
-    `;
-  }
+document.getElementById("pierForecastNotes").innerHTML = `
+  <p><strong>${pier}</strong> currently shows <strong>${rating}</strong> pier fishing conditions.</p>
+
+  <p>
+    Water temperatures around ${Number(temp).toFixed(1)}°F combined with
+    ${tideMovement.toLowerCase()} tidal movement should support
+    mackerel, bonito, halibut, croaker, bass, and shark activity.
+  </p>
+
+  <p>
+    Bait activity is estimated as <strong>${baitActivity}</strong>.
+    Increased bait activity often improves mackerel, bonito, and halibut opportunities.
+  </p>
+
+  <p>
+    Wind is forecast around ${wind} mph with gusts reaching
+    ${value(weather.windGusts," mph")}.
+  </p>
+`;
 
   function calculatePierScore(wind, swell, waterTemp, tideMovement, baitActivity, weather) {
     let score = 78;
