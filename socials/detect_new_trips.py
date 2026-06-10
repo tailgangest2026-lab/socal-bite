@@ -136,7 +136,7 @@ def create_region_image(region, region_trips):
 
     draw.rectangle((0, 0, width, 155), fill=card)
 
-    logo_path = Path("assets/socal-bite-logo.webp")
+    logo_path = Path("assets/icons/socal-bite-logo.webp")
 
     if logo_path.exists():
         logo = Image.open(logo_path).convert("RGBA")
