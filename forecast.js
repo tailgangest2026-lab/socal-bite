@@ -7,36 +7,11 @@ const REGIONS = [
 ];
 
 const REGION_CONDITIONS = {
-  "San Diego": {
-    lat: 32.7157,
-    lon: -117.1611,
-    station: "9410170",
-    fallbackWater: 67
-  },
-  "Orange County": {
-    lat: 33.6037,
-    lon: -117.9000,
-    station: "9410580",
-    fallbackWater: 66
-  },
-  "Los Angeles": {
-    lat: 33.7405,
-    lon: -118.2817,
-    station: "9410660",
-    fallbackWater: 65
-  },
-  "Ventura": {
-    lat: 34.2746,
-    lon: -119.2290,
-    station: "9411189",
-    fallbackWater: 62
-  },
-  "Santa Barbara": {
-    lat: 34.4208,
-    lon: -119.6982,
-    station: "9411340",
-    fallbackWater: 61
-  }
+  "San Diego": { lat: 32.7157, lon: -117.1611, station: "9410170", fallbackWater: 67 },
+  "Orange County": { lat: 33.6037, lon: -117.9000, station: "9410580", fallbackWater: 66 },
+  "Los Angeles": { lat: 33.7405, lon: -118.2817, station: "9410660", fallbackWater: 65 },
+  "Ventura": { lat: 34.2746, lon: -119.2290, station: "9411189", fallbackWater: 62 },
+  "Santa Barbara": { lat: 34.4208, lon: -119.6982, station: "9411340", fallbackWater: 61 }
 };
 
 document.addEventListener("DOMContentLoaded", loadForecast);
@@ -74,9 +49,8 @@ async function loadForecast() {
       updated.textContent =
         "Updated: " +
         new Date().toLocaleString() +
-        " • Conditions: NOAA tides/water temp + Open-Meteo weather";
+        " • Forecast uses recent catch data, NOAA tides/water temp, and Open-Meteo weather.";
     }
-
   } catch (error) {
     console.error("Forecast error:", error);
     container.innerHTML = `
@@ -113,7 +87,7 @@ async function loadRecentReports(daysBack) {
           rows.push(...data);
           break;
         }
-      } catch (error) {
+      } catch {
         console.warn("Skipped:", file);
       }
     }
@@ -139,7 +113,7 @@ async function loadRegionalConditions() {
 async function loadRegionConditions(region, dateString) {
   const base = REGION_CONDITIONS[region];
 
- if (!base || !SCBConditions) {
+  if (!base || typeof SCBConditions === "undefined") {
     return getDefaultConditions();
   }
 
@@ -175,7 +149,6 @@ async function loadRegionConditions(region, dateString) {
         uvIndex: weather?.uvIndex ?? null
       }
     };
-
   } catch (error) {
     console.warn("Shared NOAA/Open-Meteo conditions failed:", region, error);
     return getDefaultConditions();
@@ -251,14 +224,14 @@ function calculateRegionForecast(region, last7Rows, previous7Rows, conditions) {
   const waterTemp = conditions.waterTemp;
 
   const finalScore = Math.round(
-    trendScore * 0.25 +
-    volumeScore * 0.20 +
-    fpaScore * 0.22 +
-    tripScore * 0.08 +
-    moon.score * 0.07 +
-    wind.score * 0.08 +
-    tide.score * 0.05 +
-    waterTemp.score * 0.05
+    trendScore * 0.30 +
+    volumeScore * 0.22 +
+    fpaScore * 0.25 +
+    tripScore * 0.10 +
+    moon.score * 0.04 +
+    wind.score * 0.04 +
+    tide.score * 0.03 +
+    waterTemp.score * 0.02
   );
 
   return {
@@ -431,15 +404,15 @@ function getDefaultConditions() {
 }
 
 function getDefaultWind() {
-  return { windMph: 0, gustMph: 0, score: 50, label: "Unknown" };
+  return { windMph: 0, gustMph: 0, score: 55, label: "Unknown" };
 }
 
 function getDefaultTide() {
-  return { movement: 0, score: 50, label: "Unknown" };
+  return { movement: 0, score: 55, label: "Unknown" };
 }
 
 function getDefaultWaterTemp() {
-  return { tempF: 0, score: 50, label: "Unknown" };
+  return { tempF: 0, score: 55, label: "Unknown" };
 }
 
 function getMoonPhaseScore(date = new Date()) {
@@ -449,41 +422,43 @@ function getMoonPhaseScore(date = new Date()) {
   const daysSinceNewMoon = (date - knownNewMoon) / (1000 * 60 * 60 * 24);
   const moonAge = ((daysSinceNewMoon % lunarCycle) + lunarCycle) % lunarCycle;
 
-  if (moonAge < 1.84566) return { phase: "New Moon", score: 90, age: moonAge };
+  if (moonAge < 1.84566) return { phase: "New Moon", score: 85, age: moonAge };
   if (moonAge < 5.53699) return { phase: "Waxing Crescent", score: 65, age: moonAge };
-  if (moonAge < 9.22831) return { phase: "First Quarter", score: 75, age: moonAge };
+  if (moonAge < 9.22831) return { phase: "First Quarter", score: 72, age: moonAge };
   if (moonAge < 12.91963) return { phase: "Waxing Gibbous", score: 60, age: moonAge };
-  if (moonAge < 16.61096) return { phase: "Full Moon", score: 85, age: moonAge };
+  if (moonAge < 16.61096) return { phase: "Full Moon", score: 82, age: moonAge };
   if (moonAge < 20.30228) return { phase: "Waning Gibbous", score: 60, age: moonAge };
-  if (moonAge < 23.99361) return { phase: "Last Quarter", score: 75, age: moonAge };
+  if (moonAge < 23.99361) return { phase: "Last Quarter", score: 72, age: moonAge };
   if (moonAge < 27.68493) return { phase: "Waning Crescent", score: 65, age: moonAge };
 
-  return { phase: "New Moon", score: 90, age: moonAge };
+  return { phase: "New Moon", score: 85, age: moonAge };
 }
 
 function getWindScore(windMph, gustMph) {
-  if (!windMph && !gustMph) return 50;
-  if (windMph <= 10 && gustMph <= 18) return 100;
-  if (windMph <= 15 && gustMph <= 24) return 80;
-  if (windMph <= 20 && gustMph <= 30) return 55;
+  if (!windMph && !gustMph) return 55;
+  if (windMph <= 6 && gustMph <= 12) return 90;
+  if (windMph <= 10 && gustMph <= 18) return 78;
+  if (windMph <= 15 && gustMph <= 24) return 62;
+  if (windMph <= 20 && gustMph <= 30) return 42;
   return 25;
 }
 
 function getWindLabel(windMph, gustMph) {
   if (!windMph && !gustMph) return "Unknown";
-  if (windMph <= 10 && gustMph <= 18) return "Excellent";
-  if (windMph <= 15 && gustMph <= 24) return "Good";
-  if (windMph <= 20 && gustMph <= 30) return "Fair";
-  return "Poor";
+  if (windMph <= 6 && gustMph <= 12) return "Excellent";
+  if (windMph <= 10 && gustMph <= 18) return "Good";
+  if (windMph <= 15 && gustMph <= 24) return "Fair";
+  if (windMph <= 20 && gustMph <= 30) return "Poor";
+  return "Rough";
 }
 
 function getTideScore(movement) {
-  if (!movement) return 50;
-  if (movement >= 4) return 100;
-  if (movement >= 2.5) return 85;
-  if (movement >= 1.5) return 65;
+  if (!movement) return 55;
+  if (movement >= 4) return 90;
+  if (movement >= 2.5) return 78;
+  if (movement >= 1.5) return 62;
   if (movement >= 0.75) return 45;
-  return 25;
+  return 30;
 }
 
 function getTideLabel(movement) {
@@ -496,22 +471,22 @@ function getTideLabel(movement) {
 }
 
 function getWaterTempScore(tempF) {
-  if (!tempF) return 50;
-  if (tempF >= 62 && tempF <= 72) return 100;
-  if (tempF >= 58 && tempF < 62) return 80;
-  if (tempF > 72 && tempF <= 76) return 80;
-  if (tempF >= 55 && tempF < 58) return 60;
-  if (tempF > 76 && tempF <= 80) return 60;
-  return 35;
+  if (!tempF) return 55;
+  if (tempF >= 64 && tempF <= 68) return 90;
+  if (tempF >= 61 && tempF < 64) return 76;
+  if (tempF > 68 && tempF <= 72) return 76;
+  if (tempF >= 58 && tempF < 61) return 60;
+  if (tempF > 72 && tempF <= 76) return 58;
+  return 40;
 }
 
 function getWaterTempLabel(tempF) {
   if (!tempF) return "Unknown";
-  if (tempF >= 62 && tempF <= 72) return "Prime";
-  if (tempF >= 58 && tempF < 62) return "Cool Good";
-  if (tempF > 72 && tempF <= 76) return "Warm Good";
-  if (tempF >= 55 && tempF < 58) return "Cold";
-  if (tempF > 76 && tempF <= 80) return "Very Warm";
+  if (tempF >= 64 && tempF <= 68) return "Prime";
+  if (tempF >= 61 && tempF < 64) return "Cool Good";
+  if (tempF > 68 && tempF <= 72) return "Warm Good";
+  if (tempF >= 58 && tempF < 61) return "Cool";
+  if (tempF > 72 && tempF <= 76) return "Warm";
   return "Poor";
 }
 
@@ -564,52 +539,53 @@ function countTrips(rows) {
 
 function getTrendScore(last7, previous7) {
   if (last7 <= 0) return 0;
-  if (previous7 <= 0) return 70;
+  if (previous7 <= 0) return 65;
 
   const change = (last7 - previous7) / previous7;
 
-  if (change >= 0.5) return 100;
-  if (change >= 0.25) return 85;
-  if (change >= 0) return 70;
-  if (change >= -0.25) return 50;
-  return 25;
+  if (change >= 0.75) return 95;
+  if (change >= 0.40) return 85;
+  if (change >= 0.15) return 75;
+  if (change >= 0) return 65;
+  if (change >= -0.25) return 48;
+  return 30;
 }
 
 function getVolumeScore(fish) {
-  if (fish >= 10000) return 100;
-  if (fish >= 5000) return 85;
+  if (fish >= 10000) return 92;
+  if (fish >= 5000) return 82;
   if (fish >= 2500) return 70;
-  if (fish >= 1000) return 50;
-  if (fish > 0) return 30;
+  if (fish >= 1000) return 52;
+  if (fish > 0) return 32;
   return 0;
 }
 
 function getFpaScore(fpa) {
-  if (fpa >= 8) return 100;
-  if (fpa >= 5) return 85;
+  if (fpa >= 8) return 92;
+  if (fpa >= 5) return 82;
   if (fpa >= 3) return 70;
-  if (fpa >= 1.5) return 50;
-  if (fpa > 0) return 30;
+  if (fpa >= 1.5) return 52;
+  if (fpa > 0) return 32;
   return 0;
 }
 
 function getTripScore(last7Trips, previous7Trips) {
   if (last7Trips <= 0) return 0;
-  if (previous7Trips <= 0) return 70;
+  if (previous7Trips <= 0) return 65;
 
   const change = (last7Trips - previous7Trips) / previous7Trips;
 
-  if (change >= 0.35) return 100;
-  if (change >= 0.15) return 85;
-  if (change >= 0) return 70;
-  if (change >= -0.25) return 50;
-  return 25;
+  if (change >= 0.50) return 90;
+  if (change >= 0.25) return 80;
+  if (change >= 0) return 65;
+  if (change >= -0.25) return 48;
+  return 30;
 }
 
 function getForecastLabel(score) {
   if (score >= 85) return "Excellent";
-  if (score >= 65) return "Good";
-  if (score >= 40) return "Fair";
+  if (score >= 70) return "Good";
+  if (score >= 55) return "Fair";
   return "Slow";
 }
 
