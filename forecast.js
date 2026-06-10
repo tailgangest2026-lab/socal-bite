@@ -139,7 +139,7 @@ async function loadRegionalConditions() {
 async function loadRegionConditions(region, dateString) {
   const base = REGION_CONDITIONS[region];
 
-  if (!base || !window.SCBConditions) {
+ if (!base || !SCBConditions) {
     return getDefaultConditions();
   }
 
