@@ -1,0 +1,195 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ============================================================
+   The SoCal Bite — Marine Intelligence design system
+   Brand: #031828 (deep navy), #19c2d1 (sonar cyan), #e7b85a (signal gold)
+   Inspiration: ESPN data density, Windy clarity, Fishbrain warmth
+   ============================================================ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-surface-sunken: var(--surface-sunken);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-gold: var(--gold);
+  --color-gold-foreground: var(--gold-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+:root {
+  --radius: 0.625rem;
+
+  /* Deep navy ocean palette */
+  --background: oklch(0.16 0.04 240);          /* #031828-ish surface base */
+  --surface-sunken: oklch(0.12 0.035 240);
+  --surface: oklch(0.20 0.04 240);
+  --surface-elevated: oklch(0.24 0.04 240);
+  --foreground: oklch(0.97 0.005 240);
+
+  --card: oklch(0.20 0.04 240);
+  --card-foreground: oklch(0.97 0.005 240);
+  --popover: oklch(0.22 0.04 240);
+  --popover-foreground: oklch(0.97 0.005 240);
+
+  --primary: oklch(0.76 0.13 207);             /* #19c2d1 sonar cyan */
+  --primary-foreground: oklch(0.14 0.04 240);
+  --secondary: oklch(0.28 0.04 240);
+  --secondary-foreground: oklch(0.96 0.005 240);
+  --muted: oklch(0.26 0.035 240);
+  --muted-foreground: oklch(0.72 0.025 235);
+  --accent: oklch(0.76 0.13 207);
+  --accent-foreground: oklch(0.14 0.04 240);
+
+  --gold: oklch(0.79 0.14 84);                 /* #e7b85a signal gold */
+  --gold-foreground: oklch(0.16 0.04 240);
+
+  --destructive: oklch(0.65 0.22 27);
+  --destructive-foreground: oklch(0.98 0.005 240);
+  --success: oklch(0.72 0.17 155);
+  --warning: oklch(0.78 0.16 70);
+
+  --border: oklch(0.30 0.035 235 / 60%);
+  --border-strong: oklch(0.42 0.04 235 / 80%);
+  --input: oklch(0.30 0.035 235 / 60%);
+  --ring: oklch(0.76 0.13 207);
+
+  --chart-1: oklch(0.76 0.13 207);
+  --chart-2: oklch(0.79 0.14 84);
+  --chart-3: oklch(0.72 0.17 155);
+  --chart-4: oklch(0.65 0.20 30);
+  --chart-5: oklch(0.65 0.18 290);
+
+  /* Signature gradients & shadows */
+  --gradient-abyss: linear-gradient(180deg, oklch(0.10 0.035 240) 0%, oklch(0.18 0.04 240) 100%);
+  --gradient-sonar: linear-gradient(135deg, oklch(0.76 0.13 207) 0%, oklch(0.62 0.16 220) 100%);
+  --gradient-gold: linear-gradient(135deg, oklch(0.82 0.14 84) 0%, oklch(0.68 0.16 60) 100%);
+  --gradient-hero: radial-gradient(ellipse 80% 60% at 50% 0%, oklch(0.76 0.13 207 / 0.18), transparent 70%),
+                    linear-gradient(180deg, oklch(0.10 0.035 240) 0%, oklch(0.16 0.04 240) 100%);
+  --shadow-sonar: 0 0 0 1px oklch(0.76 0.13 207 / 0.3), 0 10px 40px -10px oklch(0.76 0.13 207 / 0.35);
+  --shadow-deep: 0 20px 60px -20px oklch(0 0 0 / 0.6);
+  --shadow-card: 0 1px 0 0 oklch(1 0 0 / 0.04) inset, 0 8px 24px -12px oklch(0 0 0 / 0.5);
+}
+
+.dark { color-scheme: dark; }
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html, body { background: var(--color-background); color: var(--color-foreground); }
+  body {
+    font-family: var(--font-sans);
+    font-feature-settings: "cv11", "ss01", "ss03";
+    -webkit-font-smoothing: antialiased;
+    background:
+      radial-gradient(ellipse 100% 50% at 50% 0%, oklch(0.76 0.13 207 / 0.06), transparent 60%),
+      var(--color-background);
+  }
+  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
+  ::selection { background: oklch(0.76 0.13 207 / 0.35); color: white; }
+}
+
+@utility tabular { font-variant-numeric: tabular-nums; }
+@utility text-balance { text-wrap: balance; }
+@utility gradient-text-sonar {
+  background: var(--gradient-sonar);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+@utility surface-card {
+  background: linear-gradient(180deg, oklch(0.22 0.04 240) 0%, oklch(0.18 0.04 240) 100%);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-card);
+  border-radius: var(--radius-lg);
+}
+@utility surface-glass {
+  background: oklch(0.20 0.04 240 / 0.7);
+  backdrop-filter: blur(12px) saturate(140%);
+  border: 1px solid var(--color-border);
+}
+@utility chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.625rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  border: 1px solid var(--color-border-strong);
+  color: var(--color-muted-foreground);
+  font-family: var(--font-mono);
+}
+@utility chip-live {
+  color: oklch(0.85 0.16 155);
+  border-color: oklch(0.72 0.17 155 / 0.4);
+  background: oklch(0.72 0.17 155 / 0.1);
+}
+@utility chip-gold {
+  color: var(--color-gold);
+  border-color: oklch(0.79 0.14 84 / 0.4);
+  background: oklch(0.79 0.14 84 / 0.1);
+}
+@utility chip-cyan {
+  color: var(--color-primary);
+  border-color: oklch(0.76 0.13 207 / 0.4);
+  background: oklch(0.76 0.13 207 / 0.1);
+}
+@utility pulse-dot {
+  position: relative;
+}
+@utility grid-mesh {
+  background-image:
+    linear-gradient(oklch(0.76 0.13 207 / 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, oklch(0.76 0.13 207 / 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+@keyframes sonar-ping {
+  0% { box-shadow: 0 0 0 0 oklch(0.72 0.17 155 / 0.6); }
+  100% { box-shadow: 0 0 0 12px oklch(0.72 0.17 155 / 0); }
+}
+.live-dot {
+  width: 8px; height: 8px; border-radius: 999px;
+  background: oklch(0.72 0.17 155);
+  animation: sonar-ping 1.8s ease-out infinite;
+}
+
+@keyframes wave-drift {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
