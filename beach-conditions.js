@@ -8,6 +8,11 @@
   };
 
   document.addEventListener("DOMContentLoaded", () => {
+    if (typeof SCBConditions === "undefined") {
+      console.error("SCBConditions not found. Load noaa-conditions.js before beach-conditions.js.");
+      return;
+    }
+
     SCBConditions.buildDateDropdown("dateSelect", 10);
     document.getElementById("beachSelect")?.addEventListener("change", loadBeachConditions);
     document.getElementById("dateSelect")?.addEventListener("change", loadBeachConditions);
@@ -23,127 +28,203 @@
     const county = beachSelect.selectedOptions[0].parentElement.label;
     const base = countyData[county] || countyData["Los Angeles County"];
 
-    document.getElementById("beachConditionsSummary").innerHTML = `<div class="loading-card">Loading live beach conditions...</div>`;
+    document.getElementById("beachConditionsSummary").innerHTML =
+      `<div class="loading-card">Loading live beach conditions...</div>`;
 
-    const [weather, tides, waterTemp] = await Promise.all([
-      SCBConditions.getWeather(base.lat, base.lon, date),
-      SCBConditions.getTides(base.station, date),
-      SCBConditions.getWaterTemp(base.station)
-    ]);
+    try {
+      const [weather, tides, waterTemp] = await Promise.all([
+        SCBConditions.getWeather(base.lat, base.lon, date),
+        SCBConditions.getTides(base.station, date),
+        SCBConditions.getWaterTemp(base.station)
+      ]);
 
-    const wind = SCBConditions.parseWindSpeed(weather.windSpeed, 8);
-    const temp = waterTemp || base.water;
-    const tideMovement = getTideMovement(tides);
-    const score = calculateBeachScore(wind, base.surf, temp, tideMovement, weather);
-    const rating = SCBConditions.rating(score);
+      const wind = SCBConditions.parseWindSpeed(weather?.windSpeed, 8);
+      const gusts = Number(weather?.windGusts || 0);
+      const temp = Number(waterTemp || base.water);
+      const surf = Number(base.surf);
+      const tideMovement = getTideMovement(tides);
 
-    document.getElementById("beachConditionsUpdated").textContent =
-      `Showing live weather and NOAA tide data for ${beach}.`;
+      const scoreBreakdown = calculateBeachScore({
+        wind,
+        gusts,
+        surf,
+        waterTemp: temp,
+        tideMovement,
+        rainChance: weather?.precipitationProbability,
+        uvIndex: weather?.uvIndex
+      });
 
-document.getElementById("beachConditionsSummary").innerHTML = `
-  <div class="condition-card weather-card">
-    <h3><i class="fa-solid fa-cloud-sun"></i> Weather Conditions</h3>
+      const score = scoreBreakdown.finalScore;
+      const rating = getRating(score);
 
-    <div class="condition-grid">
-      <div><strong>Forecast:</strong> ${weather.shortForecast}</div>
-      <div><strong>Air Temp:</strong> ${Math.round(weather.temperature)}°F</div>
-      <div><strong>Wind:</strong> ${wind} mph ${weather.windDirection}</div>
-      <div><strong>Wind Gusts:</strong> ${value(weather.windGusts," mph")}</div>
-      <div><strong>Rain Chance:</strong> ${value(weather.precipitationProbability,"%")}</div>
-      <div><strong>Cloud Cover:</strong> ${value(weather.cloudCover,"%")}</div>
-      <div><strong>Humidity:</strong> ${value(weather.humidity,"%")}</div>
-      <div><strong>UV Index:</strong> ${value(weather.uvIndex)}</div>
-    </div>
-  </div>
+      document.getElementById("beachConditionsUpdated").textContent =
+        `Showing live weather and NOAA tide data for ${beach}.`;
 
-  <div class="condition-card water-card">
-    <h3><i class="fa-solid fa-person-swimming"></i> Surf Conditions</h3>
+      document.getElementById("beachConditionsSummary").innerHTML = `
+        <div class="condition-card weather-card">
+          <h3><i class="fa-solid fa-cloud-sun"></i> Weather Conditions</h3>
 
-    <div class="condition-grid">
-      <div><strong>Water Temp:</strong> ${Number(temp).toFixed(1)}°F</div>
-      <div><strong>Surf Height:</strong> ${base.surf.toFixed(1)} ft</div>
-      <div><strong>Tide Movement:</strong> ${tideMovement}</div>
-      <div><strong>Visibility:</strong> ${value(weather.visibility," mi")}</div>
-      <div><strong>Pressure:</strong> ${value(weather.pressure," mb")}</div>
-      <div><strong>Fishing Score:</strong> ${score}/100</div>
-    </div>
-  </div>
-`;
+          <div class="condition-grid">
+            <div><strong>Forecast:</strong> ${weather?.shortForecast || "Forecast available"}</div>
+            <div><strong>Air Temp:</strong> ${formatValue(weather?.temperature, "°F")}</div>
+            <div><strong>Wind:</strong> ${wind} mph ${weather?.windDirection || "W"}</div>
+            <div><strong>Wind Gusts:</strong> ${formatValue(gusts, " mph")}</div>
+            <div><strong>Rain Chance:</strong> ${formatValue(weather?.precipitationProbability, "%")}</div>
+            <div><strong>Cloud Cover:</strong> ${formatValue(weather?.cloudCover, "%")}</div>
+            <div><strong>Humidity:</strong> ${formatValue(weather?.humidity, "%")}</div>
+            <div><strong>UV Index:</strong> ${formatValue(weather?.uvIndex)}</div>
+          </div>
+        </div>
 
-    document.getElementById("beachScoreCard").innerHTML = `
-      <div class="score-circle">${score}</div>
-      <div>
-        <span class="forecast-kicker">Beach Fishing Score</span>
-        <h3>${rating} Surf Fishing Conditions</h3>
-        <p>${beach} has a ${rating.toLowerCase()} surf fishing setup based on surf, wind, gusts, rain chance, water temperature, UV, and tide movement.</p>
-      </div>
-    `;
+        <div class="condition-card water-card">
+          <h3><i class="fa-solid fa-person-swimming"></i> Surf Conditions</h3>
 
-    document.getElementById("beachSpeciesTargets").innerHTML = `
-      <div class="species-pill-wrap">
-        ${getBeachTargets(county).map(s => `<span class="species-pill">${s}</span>`).join("")}
-      </div>
-    `;
+          <div class="condition-grid">
+            <div><strong>Water Temp:</strong> ${temp.toFixed(1)}°F</div>
+            <div><strong>Surf Height:</strong> ${surf.toFixed(1)} ft</div>
+            <div><strong>Tide Movement:</strong> ${tideMovement}</div>
+            <div><strong>Visibility:</strong> ${formatValue(weather?.visibility, " mi")}</div>
+            <div><strong>Pressure:</strong> ${formatValue(weather?.pressure, " mb")}</div>
+            <div><strong>Fishing Score:</strong> ${score}/100</div>
+          </div>
+        </div>
+      `;
 
-    document.getElementById("beachTideTable").innerHTML = tideTable(SCBConditions.formatTides(tides));
+      document.getElementById("beachScoreCard").innerHTML = `
+        <div class="score-circle">${score}</div>
+        <div>
+          <span class="forecast-kicker">Beach Fishing Score</span>
+          <h3>${rating} Surf Fishing Conditions</h3>
+          <p>${beach} has a ${rating.toLowerCase()} surf fishing setup based on surf, wind, gusts, rain chance, water temperature, UV, and tide movement.</p>
+        </div>
+      `;
 
-document.getElementById("beachForecastNotes").innerHTML = `
-  <p><strong>${beach}</strong> currently shows <strong>${rating}</strong> surf fishing conditions.</p>
+      document.getElementById("beachSpeciesTargets").innerHTML = `
+        <div class="species-pill-wrap">
+          ${getBeachTargets(county).map(s => `<span class="species-pill">${s}</span>`).join("")}
+        </div>
+      `;
 
-  <p>
-    Water temperatures around ${Number(temp).toFixed(1)}°F combined with
-    ${tideMovement.toLowerCase()} tidal movement should favor
-    corbina, croaker, surfperch, halibut, and leopard shark activity.
-  </p>
+      document.getElementById("beachTideTable").innerHTML =
+        tideTable(SCBConditions.formatTides(tides));
 
-  <p>
-    Wind is forecast around ${wind} mph with gusts reaching
-    ${value(weather.windGusts," mph")}. Lower wind generally improves
-    water clarity and bait visibility along the beach.
-  </p>
-`;
+      document.getElementById("beachForecastNotes").innerHTML = `
+        <p><strong>${beach}</strong> currently shows <strong>${rating}</strong> surf fishing conditions.</p>
+        <p>Water temperatures around ${temp.toFixed(1)}°F combined with ${tideMovement.toLowerCase()} tidal movement should help shape corbina, croaker, surfperch, halibut, and leopard shark activity.</p>
+        <p>Wind is forecast around ${wind} mph with gusts reaching ${formatValue(gusts, " mph")}.</p>
+        <p><strong>Score breakdown:</strong> Surf ${scoreBreakdown.surfScore}, Wind ${scoreBreakdown.windScore}, Water Temp ${scoreBreakdown.tempScore}, Tide ${scoreBreakdown.tideScore}, Rain ${scoreBreakdown.rainScore}, UV ${scoreBreakdown.uvScore}.</p>
+      `;
+    } catch (error) {
+      console.error("Beach conditions error:", error);
+      document.getElementById("beachConditionsSummary").innerHTML =
+        `<div class="loading-card">Beach conditions could not be loaded. Check the console.</div>`;
+    }
   }
-  
-  function calculateBeachScore(wind, surf, waterTemp, tideMovement, weather) {
-    let score = 78;
 
-    if (surf <= 2.8) score += 10;
-    else if (surf > 4) score -= 18;
+  function calculateBeachScore(data) {
+    const surfScore = getSurfScore(data.surf);
+    const windScore = getWindScore(data.wind, data.gusts);
+    const tempScore = getWaterTempScore(data.waterTemp);
+    const tideScore = getTideScore(data.tideMovement);
+    const rainScore = getRainScore(data.rainChance);
+    const uvScore = getUvScore(data.uvIndex);
 
-    if (wind <= 8) score += 8;
-    else if (wind > 12) score -= 15;
+    const finalScore = Math.round(
+      surfScore * 0.27 +
+      windScore * 0.24 +
+      tempScore * 0.18 +
+      tideScore * 0.16 +
+      rainScore * 0.10 +
+      uvScore * 0.05
+    );
 
-    if ((weather.windGusts || 0) > 20) score -= 10;
-    if ((weather.precipitationProbability || 0) > 40) score -= 8;
-    if ((weather.uvIndex || 0) > 7) score -= 3;
+    return {
+      finalScore: Math.max(0, Math.min(100, finalScore)),
+      surfScore,
+      windScore,
+      tempScore,
+      tideScore,
+      rainScore,
+      uvScore
+    };
+  }
 
-    if (waterTemp >= 64 && waterTemp <= 69) score += 8;
-    else if (waterTemp < 61) score -= 8;
+  function getSurfScore(surf) {
+    if (!surf) return 55;
+    if (surf <= 1.5) return 82;
+    if (surf <= 2.5) return 88;
+    if (surf <= 3.5) return 72;
+    if (surf <= 4.5) return 52;
+    if (surf <= 6) return 34;
+    return 20;
+  }
 
-    if (tideMovement === "Strong") score += 8;
-    if (tideMovement === "Weak") score -= 5;
+  function getWindScore(wind, gusts) {
+    if (!wind && !gusts) return 55;
+    if (wind <= 5 && gusts <= 10) return 90;
+    if (wind <= 8 && gusts <= 15) return 82;
+    if (wind <= 11 && gusts <= 20) return 70;
+    if (wind <= 15 && gusts <= 25) return 55;
+    if (wind <= 20 && gusts <= 32) return 38;
+    return 22;
+  }
 
-    return Math.max(0, Math.min(100, Math.round(score)));
+  function getWaterTempScore(temp) {
+    if (!temp) return 55;
+    if (temp >= 64 && temp <= 68) return 88;
+    if (temp >= 61 && temp < 64) return 74;
+    if (temp > 68 && temp <= 72) return 74;
+    if (temp >= 58 && temp < 61) return 58;
+    if (temp > 72 && temp <= 76) return 56;
+    return 38;
+  }
+
+  function getTideScore(tideMovement) {
+    if (tideMovement === "Strong") return 84;
+    if (tideMovement === "Moderate") return 72;
+    if (tideMovement === "Weak") return 48;
+    return 55;
+  }
+
+  function getRainScore(rainChance) {
+    if (rainChance === null || rainChance === undefined) return 60;
+    if (rainChance <= 5) return 82;
+    if (rainChance <= 15) return 74;
+    if (rainChance <= 30) return 60;
+    if (rainChance <= 50) return 42;
+    return 25;
+  }
+
+  function getUvScore(uvIndex) {
+    if (uvIndex === null || uvIndex === undefined) return 65;
+    if (uvIndex <= 3) return 82;
+    if (uvIndex <= 6) return 72;
+    if (uvIndex <= 8) return 58;
+    return 45;
+  }
+
+  function getTideMovement(tides) {
+    const heights = tides.map(t => Number(t.v)).filter(n => Number.isFinite(n));
+    if (heights.length < 2) return "Unknown";
+    const range = Math.max(...heights) - Math.min(...heights);
+    if (range >= 4) return "Strong";
+    if (range >= 1.5) return "Moderate";
+    return "Weak";
   }
 
   function getBeachTargets(county) {
     if (county === "San Diego County") return ["Corbina", "Croaker", "Halibut", "Leopard Shark", "Surfperch"];
-    if (county === "Orange County") return ["Corbina", "Spotfin Croaker", "Yellowfin Croaker", "Halibut", "Surfperch"];
-    if (county === "Los Angeles County") return ["Corbina", "Croaker", "Halibut", "Leopard Shark", "Surfperch"];
-    return ["Surfperch", "Halibut", "Croaker", "Leopard Shark"];
+    if (county === "Orange County") return ["Corbina", "Spotfin Croaker", "Yellowfin Croaker", "Halibut", "Leopard Shark"];
+    if (county === "Los Angeles County") return ["Corbina", "Yellowfin Croaker", "Spotfin Croaker", "Halibut", "Leopard Shark"];
+    if (county === "Ventura County") return ["Surfperch", "Corbina", "Croaker", "Halibut"];
+    return ["Surfperch", "Corbina", "Leopard Shark", "Halibut"];
   }
 
-  function getTideMovement(tides) {
-    const heights = tides.map(t => Number(t.v)).filter(n => !isNaN(n));
-    if (heights.length < 2) return "Moderate";
-    const range = Math.max(...heights) - Math.min(...heights);
-    if (range >= 4) return "Strong";
-    if (range >= 2) return "Moderate";
-    return "Weak";
-  }
-
-  function value(v, suffix = "") {
-    return v === null || v === undefined ? "N/A" : `${Math.round(v)}${suffix}`;
+  function getRating(score) {
+    if (score >= 85) return "Excellent";
+    if (score >= 70) return "Good";
+    if (score >= 55) return "Fair";
+    return "Slow";
   }
 
   function tideTable(tides) {
@@ -155,5 +236,11 @@ document.getElementById("beachForecastNotes").innerHTML = `
         </tbody>
       </table>
     `;
+  }
+
+  function formatValue(value, suffix = "") {
+    if (value === null || value === undefined || value === "" || Number.isNaN(value)) return "N/A";
+    if (typeof value === "number") return `${Math.round(value)}${suffix}`;
+    return `${value}${suffix}`;
   }
 })();
