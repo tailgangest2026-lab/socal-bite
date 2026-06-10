@@ -1,4 +1,4 @@
-const SCBConditions = (() => {
+window.SCBConditions = (() => {
   const noaaStations = {
     "Santa Barbara": "9411340",
     "Ventura": "9411189",
