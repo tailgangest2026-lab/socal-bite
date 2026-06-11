@@ -1752,3 +1752,237 @@ main {
     text-align: left;
   }
 }
+.landings-hero,
+.price-compare-panel,
+.landings-directory-panel {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 60px 28px 30px;
+}
+
+.landings-hero h1 {
+  margin: 0;
+  font-size: clamp(3rem, 7vw, 5.8rem);
+  line-height: 0.95;
+  letter-spacing: -3px;
+}
+
+.landings-hero p,
+.price-compare-header p {
+  color: var(--soft);
+  line-height: 1.7;
+  font-size: 1.15rem;
+}
+
+.price-compare-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: flex-end;
+}
+
+.price-compare-header h2,
+.landings-directory-panel h2 {
+  font-size: 2.5rem;
+  margin: 10px 0;
+}
+
+.price-controls {
+  display: flex;
+  gap: 12px;
+}
+
+.price-controls select {
+  height: 46px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.06);
+  color: var(--white);
+  padding: 0 14px;
+  font-weight: 800;
+}
+
+.price-table-wrap {
+  margin-top: 24px;
+  overflow-x: auto;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.04);
+}
+
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 850px;
+}
+
+.price-table th,
+.price-table td {
+  padding: 16px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  text-align: left;
+}
+
+.price-table th {
+  color: var(--muted);
+  text-transform: uppercase;
+  font-size: .75rem;
+  letter-spacing: 1.4px;
+}
+
+.price-table a {
+  color: var(--cyan);
+  font-weight: 900;
+}
+
+.landings-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.landing-card-love {
+  padding: 24px;
+  border-radius: 24px;
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(255,255,255,.09), rgba(255,255,255,.035));
+}
+
+.landing-card-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.landing-card-top h3 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.landing-card-top h3 a {
+  color: var(--white);
+}
+
+.landing-card-top h3 a:hover {
+  color: var(--cyan);
+}
+
+.landing-card-top p {
+  margin: 8px 0 0;
+  color: var(--muted);
+}
+
+.landing-price-badge {
+  background: rgba(65,245,162,.12);
+  color: var(--green);
+  border: 1px solid rgba(65,245,162,.3);
+  padding: 9px 13px;
+  border-radius: 999px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.landing-kpis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 22px 0;
+}
+
+.landing-kpis div {
+  padding: 13px;
+  border-radius: 15px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid var(--border);
+}
+
+.landing-kpis span {
+  display: block;
+  color: var(--muted);
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 7px;
+}
+
+.landing-kpis strong {
+  font-size: 1.15rem;
+}
+
+.landing-trip-types {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.landing-trip-types span {
+  padding: 7px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--soft);
+  font-size: .78rem;
+  font-weight: 800;
+}
+
+.landing-price-list {
+  display: grid;
+  gap: 8px;
+}
+
+.landing-price-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.landing-price-row span {
+  color: var(--soft);
+}
+
+.landing-price-row strong {
+  color: var(--gold);
+}
+
+.landing-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.landing-actions a {
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: rgba(255,255,255,.07);
+  border: 1px solid var(--border);
+  color: var(--white);
+  font-weight: 900;
+}
+
+.landing-actions a:hover {
+  background: var(--cyan);
+  color: #031828;
+}
+
+@media (max-width: 900px) {
+  .price-compare-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .price-controls {
+    flex-direction: column;
+  }
+
+  .landings-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .landing-kpis {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
