@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Species Detail | The SoCal Bite</title>
-  <meta name="description" content="Southern California species detail with total fish, fish-per-angler, regional split, weekly trend, and top producing boats." />
+  <meta name="description" content="Southern California species intelligence with activity score, trend, total fish, FPA, top region, top boats, weekly trend and recent reports." />
 
-  <link rel="stylesheet" href="style.css?v=loveable-species-detail-1" />
+  <link rel="stylesheet" href="style.css?v=species-detail-v2" />
 </head>
 
 <body>
@@ -38,29 +38,40 @@
   <main>
     <section class="species-detail-hero">
       <a class="back-link" href="/species.html">← All Species</a>
-
       <span class="page-kicker">Species Dossier</span>
 
       <h1 id="speciesTitle">Loading species...</h1>
+      <p id="speciesSubTitle">Recent Southern California catch intelligence.</p>
 
       <div class="species-detail-kpis">
-        <article>
-          <span>Total Fish</span>
-          <strong id="speciesTotalFish">--</strong>
-        </article>
-        <article>
-          <span>Anglers</span>
-          <strong id="speciesAnglers">--</strong>
-        </article>
-        <article>
-          <span>FPA</span>
-          <strong id="speciesFpa">--</strong>
-        </article>
-        <article>
-          <span>Top Region</span>
-          <strong id="speciesTopRegion">--</strong>
-        </article>
+        <article><span>Activity Score</span><strong id="speciesScore">--</strong></article>
+        <article><span>Total Fish</span><strong id="speciesTotalFish">--</strong></article>
+        <article><span>Anglers</span><strong id="speciesAnglers">--</strong></article>
+        <article><span>FPA</span><strong id="speciesFpa">--</strong></article>
+        <article><span>Top Region</span><strong id="speciesTopRegion">--</strong></article>
       </div>
+    </section>
+
+    <section class="species-detail-chart-grid">
+      <article class="species-chart-card">
+        <div class="species-chart-header">
+          <h2>Species Intelligence</h2>
+          <span>Last 84 days</span>
+        </div>
+        <div id="speciesIntel" class="species-intel-list">
+          <div class="loading-card">Loading intelligence...</div>
+        </div>
+      </article>
+
+      <article class="species-chart-card">
+        <div class="species-chart-header">
+          <h2>Current Trend</h2>
+          <span>Recent vs previous</span>
+        </div>
+        <div id="speciesTrendBox" class="species-trend-box">
+          <div class="loading-card">Loading trend...</div>
+        </div>
+      </article>
     </section>
 
     <section class="species-detail-chart-grid">
@@ -87,9 +98,7 @@
 
     <section class="species-detail-section">
       <h2>🏆 Top boats producing <span id="speciesBoatTitle">this species</span></h2>
-      <p id="speciesBoatNote">
-        Boats ranked by production and fish-per-angler where this species appears in recent reports.
-      </p>
+      <p id="speciesBoatNote">Boats ranked by production and fish-per-angler where this species appears in recent reports.</p>
 
       <div id="speciesTopBoats" class="species-top-boats-grid">
         <div class="loading-card">Loading boats...</div>
@@ -125,6 +134,6 @@
   </footer>
 
   <script src="site-config.js"></script>
-  <script src="species-detail.js?v=loveable-species-detail-1"></script>
+  <script src="species-detail.js?v=species-detail-v2"></script>
 </body>
 </html>
