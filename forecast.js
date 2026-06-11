@@ -7,6 +7,15 @@ async function initForecast() {
   try {
     forecastRows = await fetchJson("home.json");
 
+try {
+  const index = await fetchJson("reports/daily-report-index.json");
+  const latestReportFile = index[0].file || `reports/daily-report-${index[0].date}.json`;
+  window.latestDailyRows = await fetchJson(latestReportFile);
+} catch (error) {
+  console.warn("Could not load latest daily report for species rankings:", error);
+  window.latestDailyRows = [];
+}
+
     if (!Array.isArray(forecastRows) || !forecastRows.length) {
       throw new Error("No forecast rows found.");
     }
@@ -109,35 +118,44 @@ function buildSpeciesRankings(row) {
 }
 
 function extractSpecies(row) {
-  const raw =
-    row.top_species_today ||
-    row.species ||
-    row.fish_counts ||
-    "";
+  const region = row.region || "";
+  const dailyRows = Array.isArray(window.latestDailyRows) ? window.latestDailyRows : [];
 
-  const fish = Number(row.total_fish_today || 0);
+  const regionRows = dailyRows.filter(r => {
+    return String(r.region || "").toLowerCase() === region.toLowerCase();
+  });
 
-  if (!raw) {
-    return [
-      { name: "Rockfish", count: Math.round(fish * 0.32) },
-      { name: "Calico Bass Released", count: Math.round(fish * 0.22) },
-      { name: "Whitefish", count: Math.round(fish * 0.16) },
-      { name: "Bluefin Tuna", count: Math.round(fish * 0.12) },
-      { name: "Sculpin", count: Math.round(fish * 0.1) },
-      { name: "Calico Bass", count: Math.round(fish * 0.08) }
-    ];
-  }
+  const speciesTotals = {};
 
-  const names = String(raw)
-    .split(",")
-    .map(s => s.replace(/[0-9]/g, "").trim())
-    .filter(Boolean)
+  regionRows.forEach(r => {
+    const counts = String(r.fish_counts || "");
+
+    counts.split(",").forEach(part => {
+      const match = part.trim().match(/^([\d,]+)\s+(.+)$/);
+
+      if (!match) return;
+
+      const count = Number(match[1].replace(/,/g, ""));
+      const species = match[2].trim();
+
+      if (!species || !Number.isFinite(count)) return;
+
+      speciesTotals[species] = (speciesTotals[species] || 0) + count;
+    });
+  });
+
+  const ranked = Object.entries(speciesTotals)
+    .map(([name, count]) => ({ name, count }))
+    .sort((a, b) => b.count - a.count)
     .slice(0, 6);
 
-  return names.map((name, index) => ({
-    name,
-    count: Math.max(1, Math.round(fish / (index + 2)))
-  }));
+  if (ranked.length) return ranked;
+
+  const fallbackSpecies = row.top_species_today || "Rockfish";
+
+  return [
+    { name: fallbackSpecies, count: Number(row.total_fish_today || 0) }
+  ];
 }
 
 function estimateWaterTemp(region) {
