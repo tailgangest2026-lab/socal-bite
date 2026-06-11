@@ -1597,3 +1597,158 @@ main {
     gap: 30px;
   }
 }
+.species-hero {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 70px 28px 40px;
+}
+
+.species-hero h1 {
+  margin: 0;
+  max-width: 1100px;
+  font-size: clamp(3rem, 7vw, 5.8rem);
+  line-height: 0.95;
+  letter-spacing: -3px;
+}
+
+.species-hero p {
+  max-width: 850px;
+  color: var(--soft);
+  line-height: 1.7;
+  font-size: 1.2rem;
+}
+
+.species-grid {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 34px 28px 60px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.species-card-love {
+  display: block;
+  padding: 22px;
+  border-radius: 22px;
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.035));
+  transition: 0.2s ease;
+}
+
+.species-card-love:hover {
+  transform: translateY(-3px);
+  border-color: rgba(32,211,226,0.45);
+}
+
+.species-card-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.species-title-wrap {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.species-rank {
+  color: var(--gold);
+  font-weight: 900;
+  margin-top: 8px;
+}
+
+.species-title-wrap h2 {
+  margin: 0;
+  font-size: 1.45rem;
+}
+
+.species-title-wrap p {
+  margin: 7px 0 0;
+  color: var(--muted);
+}
+
+.species-total {
+  text-align: right;
+}
+
+.species-total strong {
+  display: block;
+  font-size: 2rem;
+}
+
+.species-total span {
+  color: var(--muted);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 1.3px;
+}
+
+.species-bar-track {
+  margin: 18px 0;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+  overflow: hidden;
+}
+
+.species-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--cyan), var(--gold));
+}
+
+.species-region-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.species-region-pills span {
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  padding: 7px 11px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 900;
+}
+
+.species-region-pills b {
+  color: var(--white);
+}
+
+.species-cta {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px 80px;
+}
+
+.species-cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cyan);
+  color: #00111d;
+  font-weight: 900;
+  font-size: 1.05rem;
+  padding: 16px 32px;
+  border-radius: 12px;
+}
+
+@media (max-width: 850px) {
+  .species-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .species-card-top {
+    flex-direction: column;
+  }
+
+  .species-total {
+    text-align: left;
+  }
+}
