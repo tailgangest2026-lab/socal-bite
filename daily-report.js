@@ -1,264 +1,260 @@
-let dailyIndex = [];
-let currentDateIndex = 0;
+document.addEventListener("DOMContentLoaded", initReports);
 
-document.addEventListener("DOMContentLoaded", loadDailyReportIndex);
+let reportIndex = [];
+let currentRegion = "All";
+let currentRows = [];
 
-async function loadDailyReportIndex() {
-  const container = document.getElementById("dailyReport");
-
+async function initReports() {
   try {
-    container.innerHTML = "<h2>Loading available report dates...</h2>";
+    reportIndex = await fetchJson("daily-report-index.json");
 
-    const response = await fetch(socalBiteDataUrl("daily-report-index.json"));
-
-    if (!response.ok) {
-      throw new Error("Could not load daily-report-index.json");
-    }
-
-    const data = await response.json();
-
-    if (!Array.isArray(data) || !data.length) {
-      container.innerHTML = "<h2>No daily report dates found.</h2>";
+    if (!Array.isArray(reportIndex) || !reportIndex.length) {
+      showDateListMessage("No report dates found.");
       return;
     }
 
-    dailyIndex = data;
-    currentDateIndex = 0;
+    buildRegionTabs();
+    buildDateList();
 
-    buildDateDropdown();
-    loadDailyReportDate(dailyIndex[currentDateIndex].date);
-
+    loadReport(reportIndex[0]);
   } catch (error) {
-    console.error("Daily index load error:", error);
-    container.innerHTML = "<h2>Could not load daily report index.</h2>";
+    console.error("Daily report load error:", error);
+    showDateListMessage("Could not load daily reports.");
   }
 }
 
-function buildDateDropdown() {
-  const select = document.getElementById("dateSelect");
-  const prevBtn = document.getElementById("prevDay");
-  const nextBtn = document.getElementById("nextDay");
+async function fetchJson(path) {
+  const url =
+    typeof socalBiteDataUrl === "function"
+      ? socalBiteDataUrl(path)
+      : path;
 
-  select.innerHTML = "";
+  const response = await fetch(url + "?v=" + Date.now());
 
-  dailyIndex.forEach(item => {
-    const option = document.createElement("option");
-    option.value = item.date;
-    option.textContent = formatDisplayDate(item.date);
-    select.appendChild(option);
+  if (!response.ok) {
+    throw new Error("Could not load " + path);
+  }
+
+  return response.json();
+}
+
+function buildRegionTabs() {
+  const tabs = document.getElementById("reportRegionTabs");
+  if (!tabs) return;
+
+  const regions = [
+    "All",
+    "Los Angeles",
+    "Orange County",
+    "San Diego",
+    "Ventura",
+    "Santa Barbara",
+    "San Luis Obispo"
+  ];
+
+  tabs.innerHTML = regions.map(region => `
+    <button
+      type="button"
+      class="${region === currentRegion ? "active" : ""}"
+      data-region="${safeAttr(region)}"
+    >
+      ${safe(region)}
+    </button>
+  `).join("");
+
+  tabs.querySelectorAll("button").forEach(button => {
+    button.addEventListener("click", () => {
+      currentRegion = button.dataset.region || "All";
+      buildRegionTabs();
+      renderReportRows(currentRows);
+    });
   });
-
-  select.value = dailyIndex[currentDateIndex].date;
-
-  select.onchange = e => {
-    currentDateIndex = dailyIndex.findIndex(x => x.date === e.target.value);
-
-    if (currentDateIndex < 0) {
-      currentDateIndex = 0;
-    }
-
-    loadDailyReportDate(dailyIndex[currentDateIndex].date);
-    updateNavButtons();
-  };
-
-  prevBtn.onclick = () => {
-    if (currentDateIndex < dailyIndex.length - 1) {
-      currentDateIndex++;
-      select.value = dailyIndex[currentDateIndex].date;
-      loadDailyReportDate(select.value);
-      updateNavButtons();
-    }
-  };
-
-  nextBtn.onclick = () => {
-    if (currentDateIndex > 0) {
-      currentDateIndex--;
-      select.value = dailyIndex[currentDateIndex].date;
-      loadDailyReportDate(select.value);
-      updateNavButtons();
-    }
-  };
-
-  updateNavButtons();
 }
 
-function updateNavButtons() {
-  const prevBtn = document.getElementById("prevDay");
-  const nextBtn = document.getElementById("nextDay");
+function buildDateList() {
+  const container = document.getElementById("reportDateList");
+  if (!container) return;
 
-  prevBtn.disabled = currentDateIndex >= dailyIndex.length - 1;
-  nextBtn.disabled = currentDateIndex <= 0;
+  container.innerHTML = reportIndex.map((report, index) => {
+    const label = formatDisplayDate(report.date);
+
+    return `
+      <button
+        class="report-date-card ${index === 0 ? "active" : ""}"
+        type="button"
+        data-date="${safeAttr(report.date)}"
+      >
+        <span class="report-date-icon">▣</span>
+        <span>
+          <strong>${safe(label)}</strong>
+          <small>${safe(report.date)}</small>
+        </span>
+        <b>›</b>
+      </button>
+    `;
+  }).join("");
+
+  container.querySelectorAll(".report-date-card").forEach(button => {
+    button.addEventListener("click", () => {
+      container
+        .querySelectorAll(".report-date-card")
+        .forEach(btn => btn.classList.remove("active"));
+
+      button.classList.add("active");
+
+      const date = button.dataset.date;
+      const report = reportIndex.find(item => item.date === date);
+
+      if (report) {
+        loadReport(report);
+      }
+    });
+  });
 }
 
-async function loadDailyReportDate(date) {
-  const container = document.getElementById("dailyReport");
-
+async function loadReport(report) {
   try {
-    container.innerHTML =
-      `<h2>Loading report for ${formatDisplayDate(date)}...</h2>`;
+    const filePath = report.file || `reports/daily-report-${report.date}.json`;
+    currentRows = await fetchJson(filePath);
 
-    const reportInfo =
-      dailyIndex.find(x => x.date === date);
-
-    if (!reportInfo) {
-      throw new Error("Report not found in index: " + date);
+    if (!Array.isArray(currentRows)) {
+      currentRows = [];
     }
 
-    const filePath =
-      reportInfo.file || `reports/daily-report-${date}.json`;
+    setText("selectedReportTitle", formatDisplayDate(report.date));
+    setText("selectedReportMeta", report.date);
 
-    const response =
-      await fetch(socalBiteDataUrl(filePath));
-
-    if (!response.ok) {
-      throw new Error("Could not load " + filePath);
-    }
-
-    const rows =
-      await response.json();
-
-    renderDailyReport(date, rows);
-
+    renderReportRows(currentRows);
   } catch (error) {
-    console.error("Daily report date load error:", error);
-
-    container.innerHTML =
-      `<h2>Could not load report for ${formatDisplayDate(date)}.</h2>`;
+    console.error("Report file load error:", error);
+    currentRows = [];
+    renderReportRows([]);
   }
 }
 
-function renderDailyReport(date, rows) {
-  const container = document.getElementById("dailyReport");
+function renderReportRows(rows) {
+  const tbody = document.getElementById("reportRows");
+  if (!tbody) return;
 
-  if (!Array.isArray(rows) || !rows.length) {
-    container.innerHTML =
-      `<h2>No report data found for ${formatDisplayDate(date)}.</h2>`;
+  let filtered = rows;
+
+  if (currentRegion !== "All") {
+    filtered = rows.filter(row => clean(row.region) === currentRegion);
+  }
+
+  const trips = filtered.length;
+  const anglers = filtered.reduce((sum, row) => sum + Number(row.anglers || 0), 0);
+  const fish = filtered.reduce((sum, row) => sum + Number(row.total_fish || 0), 0);
+
+  setText("reportTrips", format(trips));
+  setText("reportAnglers", format(anglers));
+  setText("reportFish", format(fish));
+
+  if (!filtered.length) {
+    tbody.innerHTML = `
+      <tr>
+        <td colspan="7">No trips found for this region/date.</td>
+      </tr>
+    `;
     return;
   }
 
-  const grouped = groupDailyRows(rows);
-  const totals = getTotals(rows);
+  tbody.innerHTML = filtered.map(row => `
+    <tr>
+      <td>
+        <a class="data-link" href="/boat-detail.html?boat=${encodeURIComponent(row.boat || "")}">
+          ${safe(row.boat || "Unknown Boat")}
+        </a>
+      </td>
 
-  container.innerHTML = `
-    <section class="region-section">
-      <h2>Daily Fishing Report - ${formatDisplayDate(date)}</h2>
+      <td>
+        <a class="data-link" href="/landing-detail.html?landing=${encodeURIComponent(row.landing || "")}">
+          ${safe(row.landing || "Unknown Landing")}
+        </a>
+      </td>
 
-      <div class="summary-row">
-        <span>${numberFormat(totals.trips)} Trips</span>
-        <span>${numberFormat(totals.anglers)} Anglers</span>
-        <span>${numberFormat(totals.fish)} Fish</span>
-      </div>
-    </section>
+      <td>${safe(row.region)}</td>
 
-    ${Object.keys(grouped).sort().map(region => `
-      <section class="region-section">
-        <h2>${region}</h2>
+      <td>
+        <span class="trip-pill">${safe(row.trip_type || "Trip")}</span>
+      </td>
 
-        ${Object.keys(grouped[region]).sort().map(landing => {
-          const boats = grouped[region][landing];
-          const landingTotals = getTotals(boats);
+      <td>${format(row.anglers)}</td>
 
-          return `
-            <div class="landing-card">
-             <h3>
-  <a href="landing-detail.html?landing=${encodeURIComponent(landing)}" class="landing-title-link">
-    ${landing}
-  </a>
-</h3>
+      <td>${format(row.total_fish)}</td>
 
-              <p class="daily-landing-summary">
-                ${numberFormat(landingTotals.trips)} Trips •
-                ${numberFormat(landingTotals.anglers)} Anglers •
-                ${numberFormat(landingTotals.fish)} Fish
-              </p>
-
-              ${boats
-                .sort((a, b) =>
-                  String(a.boat || "").localeCompare(String(b.boat || ""))
-                )
-                .map(boat => `
-                  <div class="boat-row">
-                    <div>
-                      <strong>
-  <a href="boat-detail.html?boat=${encodeURIComponent(boat.boat || "")}" class="landing-title-link">
-    ${boat.boat || "Unknown Boat"}
-  </a>
-</strong>
-                      <p>${boat.trip_type || "Trip"} • ${numberFormat(boat.anglers)} Anglers</p>
-                    </div>
-
-                    <div>
-                      <strong>${numberFormat(boat.total_fish)} Fish</strong>
-                      <p>${boat.fish_counts || "No fish counts listed"}</p>
-                    </div>
-                  </div>
-                `).join("")}
-            </div>
-          `;
-        }).join("")}
-      </section>
-    `).join("")}
-  `;
+      <td class="fish-count-cell">
+        ${renderFishCounts(row.fish_counts)}
+      </td>
+    </tr>
+  `).join("");
 }
 
-function groupDailyRows(rows) {
-  const grouped = {};
+function renderFishCounts(fishCounts) {
+  if (!fishCounts) return "N/A";
 
-  rows.forEach(row => {
-    const region = row.region || "Unknown Region";
-    const landing = row.landing || "Unknown Landing";
+  return String(fishCounts)
+    .split(",")
+    .map(part => {
+      const text = part.trim();
+      const species = text.replace(/^[\d,]+\s+/, "");
 
-    if (!grouped[region]) {
-      grouped[region] = {};
-    }
-
-    if (!grouped[region][landing]) {
-      grouped[region][landing] = [];
-    }
-
-    grouped[region][landing].push(row);
-  });
-
-  return grouped;
+      return `
+        <a class="fish-count-pill" href="/species-detail.html?species=${encodeURIComponent(species)}">
+          ${safe(text)}
+        </a>
+      `;
+    })
+    .join("");
 }
 
-function getTotals(rows) {
-  return rows.reduce(
-    (totals, row) => {
-      totals.trips += 1;
-      totals.anglers += Number(row.anglers || 0);
-      totals.fish += Number(row.total_fish || 0);
-      return totals;
-    },
-    {
-      trips: 0,
-      anglers: 0,
-      fish: 0
-    }
-  );
+function showDateListMessage(message) {
+  const container = document.getElementById("reportDateList");
+
+  if (container) {
+    container.innerHTML = `<div class="empty-card">${safe(message)}</div>`;
+  }
 }
 
 function formatDisplayDate(dateString) {
-  const parts = String(dateString).split("-");
+  const date = new Date(`${dateString}T12:00:00`);
 
-  if (parts.length !== 3) {
+  if (Number.isNaN(date.getTime())) {
     return dateString;
   }
 
-  const date = new Date(
-    Number(parts[0]),
-    Number(parts[1]) - 1,
-    Number(parts[2])
-  );
-
-  return date.toLocaleDateString(undefined, {
+  return date.toLocaleDateString("en-US", {
     weekday: "short",
-    year: "numeric",
     month: "short",
     day: "numeric"
   });
 }
 
-function numberFormat(value) {
-  return Number(value || 0).toLocaleString();
+function clean(value) {
+  return String(value || "").trim();
+}
+
+function format(value) {
+  return Number(value || 0).toLocaleString("en-US");
+}
+
+function setText(id, value) {
+  const el = document.getElementById(id);
+
+  if (el) {
+    el.textContent = value;
+  }
+}
+
+function safe(value) {
+  return String(value || "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
+function safeAttr(value) {
+  return safe(value);
 }
