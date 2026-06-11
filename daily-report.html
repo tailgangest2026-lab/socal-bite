@@ -4,126 +4,130 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Daily Fishing Report | SoCal Bite</title>
+  <title>Daily Reports | The SoCal Bite</title>
+  <meta name="description" content="Southern California daily sportfishing reports by date, region, boat, landing, trip type, anglers, and fish counts." />
 
-  <meta
-    name="description"
-    content="Daily Southern California fishing report by region, landing, boat, trip type, anglers, and fish counts."
-  />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css" />
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
-<link rel="manifest" href="/manifest.json">
-
-<meta name="theme-color" content="#031828">
-
-<link
-  rel="apple-touch-icon"
-  href="/assets/icons/apple-touch-icon.png"
-/>
-  
-  <link rel="canonical" href="https://thesocalbite.com/daily-report.html" />
-  <meta property="og:title" content="Daily Fishing Report | SoCal Bite" />
-  <meta property="og:description" content="Daily Southern California fishing report by region, landing, boat, trip type, anglers, and fish counts." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://thesocalbite.com/daily-report.html" />
-  <meta property="og:image" content="https://thesocalbite.com/assets/socal-bite-logo.webp" />
+  <link rel="stylesheet" href="style.css?v=loveable-reports-1" />
 </head>
 
-<body class="inner-page">
-    
-  <section class="page-top">
-    <h1>Daily Fishing Report</h1>
-
-     <nav class="page-nav">
-      <a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
-
-      <div class="dropdown">
-        <button class="dropbtn">
-          <i class="fa-solid fa-chart-line"></i>
-          <span>Boat Reports</span>
-          <i class="fa-solid fa-caret-down caret"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="daily-report.html">Daily Report</a>
-          <a href="boat-ratings.html">Boat Ratings</a>
-          <a href="top-boats.html">Top Boats</a>
-        </div>
+<body>
+  <header class="app-header">
+    <a class="brand" href="/">
+      <img src="assets/socal-bite-logo.webp" alt="The SoCal Bite Logo" />
+      <div>
+        <strong>The SoCal Bite</strong>
+        <span>Marine Intelligence</span>
       </div>
+    </a>
 
-      <div class="dropdown">
-        <button class="dropbtn">
-          <i class="fa-solid fa-fish"></i>
-          <span>Species Reports</span>
-          <i class="fa-solid fa-caret-down caret"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="bite-trends.html">Bite Trends</a>
-          <a href="forecast.html">Bite Forecast</a>
-          <a href="species.html">Species</a>
-          <a href="top-species.html">Top Species</a>
-        </div>
-      </div>
-
-        <div class="dropdown">
-        <button class="dropbtn">
-          <i class="fa-solid fa-water"></i>
-          <span>Conditions</span>
-          <i class="fa-solid fa-caret-down caret"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="boat-conditions.html">Boat Conditions</a>
-          <a href="beach-conditions.html">Surf Conditions</a>
-          <a href="pier-conditions.html">Pier Conditions</a>
-        </div>
-      </div>
-
-      <a href="news.html"><i class="fa-solid fa-newspaper"></i><span>Fishing News</span></a>
-      <a href="landings.html"><i class="fa-solid fa-anchor"></i><span>Landings</span></a>
-      <a href="about.html"><i class="fa-solid fa-user"></i><span>About</span></a>
+    <nav class="top-nav">
+      <a href="/">Today</a>
+      <a href="/forecast.html">Forecast</a>
+      <a href="/conditions.html">Conditions</a>
+      <a href="/rankings.html">Rankings</a>
+      <a href="/species.html">Species</a>
+      <a href="/landings.html">Landings</a>
+      <a class="active" href="/daily-report.html">Reports</a>
+      <a href="/gear.html">Fishing Gear</a>
+      <a href="/news.html">News</a>
     </nav>
-  </section>
 
-  <main class="report-page">
-
-    <div class="date-controls">
-      <button id="prevDay" type="button">‹ Previous Day</button>
-
-      <select id="dateSelect" aria-label="Select report date">
-        <option>Loading dates...</option>
-      </select>
-
-      <button id="nextDay" type="button">Next Day ›</button>
+    <div class="live-pill">
+      <span></span> Live
     </div>
+  </header>
 
-    <div id="dailyReport">
-      <h2>Loading daily fishing report...</h2>
-    </div>
+  <main>
+    <section class="reports-hero">
+      <span class="page-kicker">Daily Reports</span>
+      <h1>Every trip, every day.</h1>
+      <p>
+        A scrollable archive of every sportfishing trip filed across SoCal.
+        Tap a date to drill into boats, fish counts and trip types.
+      </p>
 
+      <div id="reportRegionTabs" class="forecast-tabs"></div>
+    </section>
+
+    <section class="reports-layout">
+      <aside class="report-date-list">
+        <div id="reportDateList" class="report-date-items">
+          <div class="loading-card">Loading report dates...</div>
+        </div>
+      </aside>
+
+      <section class="report-detail-panel">
+        <div class="report-detail-header">
+          <div>
+            <span class="page-kicker">Selected Report</span>
+            <h2 id="selectedReportTitle">Choose a date</h2>
+            <p id="selectedReportMeta">Select a report date to view trips.</p>
+          </div>
+
+          <div class="report-kpis">
+            <article>
+              <span>Trips</span>
+              <strong id="reportTrips">--</strong>
+            </article>
+            <article>
+              <span>Anglers</span>
+              <strong id="reportAnglers">--</strong>
+            </article>
+            <article>
+              <span>Fish</span>
+              <strong id="reportFish">--</strong>
+            </article>
+          </div>
+        </div>
+
+        <div class="report-table-wrap">
+          <table class="report-table">
+            <thead>
+              <tr>
+                <th>Boat</th>
+                <th>Landing</th>
+                <th>Region</th>
+                <th>Trip</th>
+                <th>Anglers</th>
+                <th>Fish</th>
+                <th>Counts</th>
+              </tr>
+            </thead>
+            <tbody id="reportRows">
+              <tr>
+                <td colspan="7">Choose a date to view reports.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </section>
   </main>
 
-<footer class="site-footer">
-  <p>© 2026 The SoCal Bite • Fishing Reports & Bite Updates</p>
+  <footer class="love-footer">
+    <div class="footer-brand">
+      <strong>◎ The SoCal Bite</strong>
+      <p>
+        Real-time fishing intelligence for Southern California — from San Luis Obispo to San Diego.
+        Sportfishing reports, NOAA conditions, species analytics, and boat rankings.
+      </p>
+      <span>Data refresh · Every 15 min</span>
+    </div>
 
-<div class="social-links">
-  <a href="https://www.instagram.com/the_socal_bite/" target="_blank" aria-label="Instagram">
-    <img src="assets/instagram-icon.png" class="social-logo" alt="Instagram" loading="lazy">
-  </a>
+    <div class="footer-links">
+      <h4>Intelligence</h4>
+      <a href="/forecast.html">Bite Forecast</a>
+      <a href="/rankings.html">Rankings</a>
+      <a href="/species.html">Species</a>
+    </div>
 
-  <a href="https://www.facebook.com/profile.php?id=61590740421081" target="_blank" aria-label="Facebook">
-    <img src="assets/facebook-icon.png" class="social-logo" alt="Facebook" loading="lazy">
-  </a>
-</div>
-</footer>
-  <script src="site-config.js" defer></script>
-  <script src="daily-report.js?v=2" defer></script>
-<script>
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("/service-worker.js");
-  });
-}
-</script>
+    <div class="footer-links">
+      <h4>Account</h4>
+      <a href="/">Legacy site</a>
+    </div>
+  </footer>
+
+  <script src="site-config.js"></script>
+  <script src="daily-report.js?v=loveable-reports-1"></script>
 </body>
 </html>
