@@ -153,7 +153,7 @@ draw.text((title_x, 25), "NEW FISH COUNTS ADDED", fill=white, font=title_font)
 draw.text((title_x, 78), region, fill=teal, font=region_font)
 draw.text((title_x, 125), f"Fishing Rerports: {trip_date}", fill=gold, font=info_font)
 
-    y = 220
+y = 220
 
     for trip in display_trips:
         boat = trip.get("boat", "Unknown Boat")
