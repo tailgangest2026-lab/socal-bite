@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Rankings | The SoCal Bite</title>
+  <meta name="description" content="Southern California sportfishing boat and landing rankings by fish-per-angler, total catch, trips, and anglers." />
+
+  <link rel="stylesheet" href="style.css?v=loveable-rankings-1" />
+</head>
+
+<body>
+  <header class="app-header">
+    <a class="brand" href="/">
+      <img src="assets/socal-bite-logo.webp" alt="The SoCal Bite Logo" />
+      <div>
+        <strong>The SoCal Bite</strong>
+        <span>Marine Intelligence</span>
+      </div>
+    </a>
+
+    <nav class="top-nav">
+      <a href="/">Today</a>
+      <a href="/forecast.html">Forecast</a>
+      <a href="/conditions.html">Conditions</a>
+      <a class="active" href="/rankings.html">Rankings</a>
+      <a href="/species.html">Species</a>
+      <a href="/landings.html">Landings</a>
+      <a href="/daily-report.html">Reports</a>
+      <a href="/gear.html">Fishing Gear</a>
+      <a href="/news.html">News</a>
+    </nav>
+
+    <div class="live-pill">
+      <span></span> Live
+    </div>
+  </header>
+
+  <main>
+    <section class="rankings-hero">
+      <span class="page-kicker">Rankings Dashboard</span>
+      <h1>Who’s actually putting fish on the deck.</h1>
+      <p>
+        Sortable boat and landing leaderboards across every SoCal region —
+        ranked by fish-per-angler, total catch and trip volume.
+      </p>
+
+      <div class="ranking-kpis">
+        <article>
+          <span>Trips</span>
+          <strong id="rankTrips">--</strong>
+        </article>
+        <article>
+          <span>Anglers</span>
+          <strong id="rankAnglers">--</strong>
+        </article>
+        <article>
+          <span>Fish Landed</span>
+          <strong id="rankFish">--</strong>
+        </article>
+        <article>
+          <span>Avg FPA</span>
+          <strong id="rankFpa">--</strong>
+        </article>
+      </div>
+    </section>
+
+    <section class="rankings-panel">
+      <div class="rankings-toolbar">
+        <div class="rank-toggle">
+          <button class="active" type="button" data-view="boats">⚓ Boats</button>
+          <button type="button" data-view="landings">▦ Landings</button>
+        </div>
+
+        <div class="rank-controls">
+          <input id="rankSearch" type="search" placeholder="Search boats..." />
+          <select id="rankRegion">
+            <option value="all">All regions</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="ranking-table-wrap">
+        <table class="ranking-table">
+          <thead id="rankingHead"></thead>
+          <tbody id="rankingBody">
+            <tr>
+              <td colspan="7">Loading rankings...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="love-footer">
+    <div class="footer-brand">
+      <strong>◎ The SoCal Bite</strong>
+      <p>
+        Real-time fishing intelligence for Southern California — from San Luis Obispo to San Diego.
+        Sportfishing reports, NOAA conditions, species analytics, and boat rankings.
+      </p>
+      <span>Data refresh · Every 15 min</span>
+    </div>
+
+    <div class="footer-links">
+      <h4>Intelligence</h4>
+      <a href="/forecast.html">Bite Forecast</a>
+      <a href="/rankings.html">Rankings</a>
+      <a href="/species.html">Species</a>
+    </div>
+
+    <div class="footer-links">
+      <h4>Account</h4>
+      <a href="/">Legacy site</a>
+    </div>
+  </footer>
+
+  <script src="site-config.js"></script>
+  <script src="rankings.js?v=loveable-rankings-1"></script>
+</body>
+</html>
