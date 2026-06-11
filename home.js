@@ -69,9 +69,9 @@ function buildRegionBoard(data) {
       </div>
 
       <div class="region-details">
-        <p><span>Top Boat</span>${safe(r.top_boat_today)}</p>
-        <p><span>Landing</span>${safe(r.top_landing_today)}</p>
-        <p><span>Hot Species</span>${safe(r.top_species_today)}</p>
+<p><span>Top Boat</span>${detailLink("boat-detail.html", "boat", r.top_boat_today)}</p>
+<p><span>Landing</span>${detailLink("landing-detail.html", "landing", r.top_landing_today)}</p>
+<p><span>Hot Species</span>${detailLink("species-detail.html", "species", r.top_species_today)}</p>
       </div>
     </article>
   `).join("");
@@ -160,4 +160,9 @@ function safe(value) {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
+}
+function detailLink(page, param, value) {
+  if (!value) return "N/A";
+
+  return `<a class="data-link" href="/${page}?${param}=${encodeURIComponent(value)}">${safe(value)}</a>`;
 }
