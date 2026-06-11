@@ -2899,3 +2899,55 @@ main { padding-top: 86px; }
     grid-template-columns: 1fr;
   }
 }
+.affiliate-disclaimer {
+  margin-top: 20px;
+  padding: 16px 18px;
+  border: 1px solid rgba(231,184,90,0.35);
+  border-radius: 14px;
+  background: rgba(231,184,90,0.08);
+  color: var(--soft);
+  font-size: 0.95rem;
+}
+
+.gear-tabs a {
+  color: var(--soft);
+  text-decoration: none;
+}
+
+.gear-list {
+  margin: 18px 0;
+  padding-left: 18px;
+  color: var(--soft);
+}
+
+.gear-list li {
+  margin: 8px 0;
+  color: var(--muted);
+}
+
+.gear-list strong {
+  color: var(--white);
+}
+
+.gear-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.gear-buttons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 13px;
+  border-radius: 999px;
+  background: var(--cyan);
+  color: #031828;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.gear-buttons a:hover {
+  background: var(--gold);
+}
