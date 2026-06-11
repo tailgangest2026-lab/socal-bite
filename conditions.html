@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Fishing Conditions | The SoCal Bite</title>
+  <meta name="description" content="Southern California boat, pier, and surf fishing conditions using NOAA weather, tide, wind, water temperature, swell, and moon data." />
+
+  <link rel="stylesheet" href="style.css?v=loveable-conditions-1" />
+  <link rel="canonical" href="https://thesocalbite.com/conditions.html" />
+</head>
+
+<body>
+  <header class="app-header">
+    <a class="brand" href="/">
+      <img src="assets/socal-bite-logo.webp" alt="The SoCal Bite Logo" />
+      <div>
+        <strong>The SoCal Bite</strong>
+        <span>Marine Intelligence</span>
+      </div>
+    </a>
+
+    <nav class="top-nav">
+      <a href="/">Today</a>
+      <a href="/forecast.html">Forecast</a>
+      <a class="active" href="/conditions.html">Conditions</a>
+      <a href="/top-boats.html">Rankings</a>
+      <a href="/species.html">Species</a>
+      <a href="/landings.html">Landings</a>
+      <a href="/daily-report.html">Reports</a>
+      <a href="/gear.html">Fishing Gear</a>
+      <a href="/news.html">News</a>
+    </nav>
+
+    <div class="live-pill">
+      <span></span> Live
+    </div>
+  </header>
+
+  <main>
+    <section class="conditions-hero">
+      <span class="page-kicker">Conditions</span>
+      <h1>Wind, water, tide — all on one screen.</h1>
+      <p>Bait, tide windows, surf, pier-side and offshore bite conditions for Southern California anglers.</p>
+
+      <div class="mode-tabs">
+        <button class="active" type="button" data-mode="pier">◎ Pier</button>
+        <button type="button" data-mode="beach">≋ Surf</button>
+        <button type="button" data-mode="boat">⚓ Boat</button>
+      </div>
+
+      <div id="regionTabs" class="forecast-tabs"></div>
+
+      <select id="dateSelect" class="hidden-select"></select>
+    </section>
+
+    <section class="conditions-dashboard">
+      <article class="now-card">
+        <span id="conditionLocationLabel">Region · Mode</span>
+        <h2>Right now</h2>
+
+        <div class="now-temp-row">
+          <strong id="conditionWaterTemp">--°</strong>
+          <span id="conditionAirTemp">water · air --°F</span>
+        </div>
+
+        <div id="conditionRating" class="green-pill">Loading</div>
+      </article>
+
+      <div class="condition-grid">
+        <article class="condition-card">
+          <span>💨 Wind</span>
+          <strong id="conditionWind">--</strong>
+          <p id="conditionWindDir">--</p>
+        </article>
+
+        <article class="condition-card">
+          <span>🌊 Swell</span>
+          <strong id="conditionSwell">--</strong>
+          <p id="conditionSwellPeriod">Estimated</p>
+        </article>
+
+        <article class="condition-card">
+          <span>↕ Tide</span>
+          <strong id="conditionTide">--</strong>
+          <p id="conditionNextTide">Next tide window</p>
+        </article>
+
+        <article class="condition-card">
+          <span>☀ Visibility</span>
+          <strong id="conditionVisibility">--</strong>
+          <p>Estimated</p>
+        </article>
+
+        <article class="condition-card">
+          <span>≋ Clarity</span>
+          <strong id="conditionClarity">--</strong>
+          <p id="conditionClarityNote">Water color</p>
+        </article>
+
+        <article class="condition-card">
+          <span>☾ Moon</span>
+          <strong id="conditionMoon">Waxing 62%</strong>
+          <p>Current phase</p>
+        </article>
+
+        <article class="condition-card">
+          <span>Sunrise</span>
+          <strong id="conditionSunrise">5:42 AM</strong>
+          <p>Local</p>
+        </article>
+
+        <article class="condition-card">
+          <span>Sunset</span>
+          <strong id="conditionSunset">8:01 PM</strong>
+          <p>Local</p>
+        </article>
+
+        <article class="condition-card">
+          <span>Small Craft</span>
+          <strong id="conditionAdvisory">--</strong>
+          <p>Advisory</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="all-regions-panel">
+      <h2 id="allRegionsTitle">All regions · Pier</h2>
+      <div id="allRegionsGrid" class="all-regions-grid"></div>
+    </section>
+  </main>
+
+  <footer class="love-footer">
+    <div class="footer-brand">
+      <strong>◎ The SoCal Bite</strong>
+      <p>
+        Real-time fishing intelligence for Southern California — from San Luis Obispo to San Diego.
+        Sportfishing reports, NOAA conditions, species analytics, and boat rankings.
+      </p>
+      <span>Data refresh · Every 15 min</span>
+    </div>
+
+    <div class="footer-links">
+      <h4>Intelligence</h4>
+      <a href="/forecast.html">Bite Forecast</a>
+      <a href="/top-boats.html">Rankings</a>
+      <a href="/species.html">Species</a>
+    </div>
+
+    <div class="footer-links">
+      <h4>Account</h4>
+      <a href="/">Legacy site</a>
+    </div>
+  </footer>
+
+  <script src="site-config.js"></script>
+  <script src="noaa-conditions.js"></script>
+  <script src="conditions.js?v=loveable-conditions-1"></script>
+</body>
+</html>
