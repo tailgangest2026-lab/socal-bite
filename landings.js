@@ -29,7 +29,7 @@ document
 
 document
   .getElementById("priceRegionSelect")
-  ?.addEventListener("change", );
+  ?.addEventListener("change", renderPriceComparison);
 
 } catch (error) {
 console.error("Landings load failed:", error);
