@@ -4,141 +4,111 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <meta id="metaDescription" name="description" content="View Southern California sportfishing landing details, boats, top species, and recent fish counts." />
-  <title id="pageTitle">Landing Fishing Report | SoCal Bite</title>
+  <title>Landing Profile | The SoCal Bite</title>
+  <meta name="description" content="Southern California sportfishing landing profile with fleet rankings, fish counts, trip prices and recent reports." />
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="style.css" />
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
-  <link rel="manifest" href="/manifest.json">
-
-<meta name="theme-color" content="#031828">
-
-<link
-  rel="apple-touch-icon"
-  href="/assets/icons/apple-touch-icon.png"
-/>
-  <link id="canonicalLink" rel="canonical" href="https://thesocalbite.com/landing-detail.html" />
-
-  <meta id="ogTitle" property="og:title" content="Landing Fishing Report | SoCal Bite" />
-  <meta id="ogDescription" property="og:description" content="View Southern California sportfishing landing details, boats, top species, and recent fish counts." />
-  <meta property="og:type" content="website" />
-  <meta id="ogUrl" property="og:url" content="https://thesocalbite.com/landing-detail.html" />
-  <meta property="og:image" content="https://thesocalbite.com/assets/socal-bite-logo.webp" />
+  <link rel="stylesheet" href="style.css?v=loveable-landing-detail-1" />
 </head>
 
-<body class="inner-page">
-
-  <section class="page-top">
-    <h1 id="landingTitle">Landing Fishing Report</h1>
-
-      <nav class="page-nav">
-      <a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
-
-      <div class="dropdown">
-        <button class="dropbtn">
-          <i class="fa-solid fa-chart-line"></i>
-          <span>Boat Reports</span>
-          <i class="fa-solid fa-caret-down caret"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="daily-report.html">Daily Report</a>
-          <a href="boat-ratings.html">Boat Ratings</a>
-          <a href="top-boats.html">Top Boats</a>
-        </div>
+<body>
+  <header class="app-header">
+    <a class="brand" href="/">
+      <img src="assets/socal-bite-logo.webp" alt="The SoCal Bite Logo" />
+      <div>
+        <strong>The SoCal Bite</strong>
+        <span>Marine Intelligence</span>
       </div>
+    </a>
 
-      <div class="dropdown">
-        <button class="dropbtn">
-          <i class="fa-solid fa-fish"></i>
-          <span>Species Reports</span>
-          <i class="fa-solid fa-caret-down caret"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="bite-trends.html">Bite Trends</a>
-          <a href="forecast.html">Bite Forecast</a>
-          <a href="species.html">Species</a>
-          <a href="top-species.html">Top Species</a>
-        </div>
-      </div>
-
-        <div class="dropdown">
-        <button class="dropbtn">
-          <i class="fa-solid fa-water"></i>
-          <span>Conditions</span>
-          <i class="fa-solid fa-caret-down caret"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="boat-conditions.html">Boat Conditions</a>
-          <a href="beach-conditions.html">Surf Conditions</a>
-          <a href="pier-conditions.html">Pier Conditions</a>
-        </div>
-      </div>
-
-      <a href="news.html"><i class="fa-solid fa-newspaper"></i><span>Fishing News</span></a>
-      <a href="landings.html"><i class="fa-solid fa-anchor"></i><span>Landings</span></a>
-      <a href="about.html"><i class="fa-solid fa-user"></i><span>About</span></a>
+    <nav class="top-nav">
+      <a href="/">Today</a>
+      <a href="/forecast.html">Forecast</a>
+      <a href="/conditions.html">Conditions</a>
+      <a href="/rankings.html">Rankings</a>
+      <a href="/species.html">Species</a>
+      <a class="active" href="/landings.html">Landings</a>
+      <a href="/daily-report.html">Reports</a>
+      <a href="/gear.html">Fishing Gear</a>
+      <a href="/news.html">News</a>
     </nav>
-  </section>
 
-  <main class="report-page">
+    <div class="live-pill"><span></span> Live</div>
+  </header>
 
-    <section class="region-section">
-      <p class="page-subtitle">
-        Landing details, boats, top species, and recent Southern California fish counts.
-      </p>
+  <main>
+    <section class="landing-detail-hero">
+      <a class="back-link" href="/landings.html">← All Landings</a>
 
-      <div id="landingInfo" class="landing-region-wrap">
-        <div class="loading-card">Loading landing...</div>
+      <span class="page-kicker">Landing Profile</span>
+
+      <h1 id="landingTitle">Loading landing...</h1>
+      <p id="landingRegion">Region loading...</p>
+
+      <div class="landing-detail-kpis">
+        <article>
+          <span>Trips</span>
+          <strong id="landingTrips">--</strong>
+        </article>
+        <article>
+          <span>Anglers</span>
+          <strong id="landingAnglers">--</strong>
+        </article>
+        <article>
+          <span>Fish Landed</span>
+          <strong id="landingFish">--</strong>
+        </article>
+        <article>
+          <span>FPA</span>
+          <strong id="landingFpa">--</strong>
+        </article>
       </div>
     </section>
 
-    <section class="region-section">
-      <h2>Boats at This Landing</h2>
-      <div id="landingBoats" class="landing-region-wrap">
-        <div class="loading-card">Loading boats...</div>
+    <section class="landing-info-strip">
+      <div>
+        <span class="page-kicker">Trip Types / Prices</span>
+        <div id="landingPriceList" class="landing-detail-price-list">
+          <div class="loading-card">Loading prices...</div>
+        </div>
       </div>
     </section>
 
-    <section class="region-section">
-      <h2>Top Species Last 30 Days</h2>
-      <div id="topSpecies" class="landing-region-wrap">
-        <div class="loading-card">Loading species...</div>
+    <section class="landing-detail-section">
+      <h2>🏆 Fleet · ranked by FPA</h2>
+      <div id="landingFleet" class="landing-fleet-grid">
+        <div class="loading-card">Loading fleet...</div>
       </div>
     </section>
 
-    <section class="region-section">
-      <h2>Recent Daily Fish Reports</h2>
-      <div id="recentReports" class="landing-region-wrap">
+    <section class="landing-detail-section">
+      <h2>Most recent reports</h2>
+      <div id="landingRecentReports" class="landing-reports-grid">
         <div class="loading-card">Loading reports...</div>
       </div>
     </section>
-
   </main>
 
-  <footer class="site-footer">
-    <p>© 2026 The SoCal Bite • Fishing Reports & Bite Updates</p>
+  <footer class="love-footer">
+    <div class="footer-brand">
+      <strong>◎ The SoCal Bite</strong>
+      <p>Real-time fishing intelligence for Southern California.</p>
+      <span>Data refresh · Every 15 min</span>
+    </div>
 
-    <div class="social-links">
-      <a href="https://www.instagram.com/the_socal_bite/" target="_blank" aria-label="Instagram">
-        <img src="assets/instagram-icon.png" class="social-logo" alt="Instagram" loading="lazy">
-      </a>
+    <div class="footer-links">
+      <h4>Intelligence</h4>
+      <a href="/forecast.html">Bite Forecast</a>
+      <a href="/rankings.html">Rankings</a>
+      <a href="/species.html">Species</a>
+    </div>
 
-      <a href="https://www.facebook.com/profile.php?id=61590740421081" target="_blank" aria-label="Facebook">
-        <img src="assets/facebook-icon.png" class="social-logo" alt="Facebook" loading="lazy">
-      </a>
+    <div class="footer-links">
+      <h4>Account</h4>
+      <a href="/">Legacy site</a>
     </div>
   </footer>
 
-  <script src="site-config.js" defer></script>
-  <script src="landing-detail.js?v=1" defer></script>
-  <script>
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("/service-worker.js");
-  });
-}
-</script>
+  <script src="site-config.js"></script>
+  <script src="landing-detail.js?v=loveable-landing-detail-1"></script>
 </body>
 </html>
