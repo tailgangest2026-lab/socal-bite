@@ -2572,19 +2572,32 @@ main { padding-top: 86px; }
   letter-spacing: -3px;
 }
 
+.species-detail-hero p {
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
 .species-detail-kpis {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 14px;
   margin-top: 36px;
+}
+
+.species-detail-kpis article,
+.species-chart-card,
+.species-boat-card,
+.species-report-card {
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(255,255,255,0.075), rgba(255,255,255,0.035));
+  box-shadow: 0 18px 45px rgba(0,0,0,0.22);
+  backdrop-filter: blur(10px);
 }
 
 .species-detail-kpis article,
 .species-chart-card {
   padding: 22px;
   border-radius: 18px;
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,0.055);
 }
 
 .species-detail-kpis span {
@@ -2592,18 +2605,23 @@ main { padding-top: 86px; }
   color: var(--muted);
   text-transform: uppercase;
   letter-spacing: 1.3px;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 900;
   margin-bottom: 10px;
 }
 
 .species-detail-kpis strong {
   font-size: 2rem;
+  color: var(--soft);
+}
+
+.species-detail-kpis article:first-child strong {
+  color: var(--gold);
 }
 
 .species-detail-chart-grid {
   display: grid;
-  grid-template-columns: 1.3fr 0.7fr;
+  grid-template-columns: 1fr 1fr;
   gap: 24px;
 }
 
@@ -2624,6 +2642,53 @@ main { padding-top: 86px; }
   font-size: 0.75rem;
   letter-spacing: 1.2px;
   font-weight: 900;
+}
+
+.species-intel-list,
+.species-trend-box {
+  display: grid;
+  gap: 12px;
+}
+
+.species-intel-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.species-intel-row span {
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.species-intel-row strong {
+  color: var(--cyan);
+  text-align: right;
+}
+
+.species-trend-main {
+  padding: 22px;
+  border-radius: 16px;
+  background: rgba(25,194,209,0.12);
+  border: 1px solid rgba(25,194,209,0.3);
+  margin-bottom: 8px;
+}
+
+.species-trend-main strong {
+  display: block;
+  font-size: 2.2rem;
+  color: var(--cyan);
+  line-height: 1;
+}
+
+.species-trend-main span {
+  display: block;
+  margin-top: 8px;
+  color: var(--muted);
+  font-weight: 800;
 }
 
 .weekly-trend-chart {
@@ -2653,9 +2718,16 @@ main { padding-top: 86px; }
   background: linear-gradient(180deg, var(--cyan), var(--gold));
 }
 
-.weekly-bar-item span {
+.weekly-bar-item span,
+.weekly-bar-item em {
   color: var(--muted);
-  font-size: 0.75rem;
+  font-size: 0.72rem;
+  font-style: normal;
+}
+
+.weekly-bar-item em {
+  color: var(--gold);
+  font-weight: 900;
 }
 
 .regional-bar-chart {
@@ -2665,7 +2737,7 @@ main { padding-top: 86px; }
 
 .regional-split-row {
   display: grid;
-  grid-template-columns: 115px 1fr auto;
+  grid-template-columns: 115px 1fr auto auto;
   gap: 10px;
   align-items: center;
 }
@@ -2693,6 +2765,13 @@ main { padding-top: 86px; }
   color: var(--gold);
 }
 
+.regional-split-row em {
+  color: var(--muted);
+  font-style: normal;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
 .species-detail-section h2 {
   font-size: 2rem;
 }
@@ -2715,8 +2794,13 @@ main { padding-top: 86px; }
   gap: 18px;
   padding: 20px;
   border-radius: 18px;
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,0.055);
+  transition: 0.2s ease;
+}
+
+.species-boat-card:hover,
+.species-report-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(25,194,209,0.45);
 }
 
 .species-boat-card h3,
@@ -2752,8 +2836,26 @@ main { padding-top: 86px; }
   color: var(--cyan);
 }
 
+.loading-card,
+.empty-card {
+  padding: 16px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.055);
+  color: var(--muted);
+  font-weight: 800;
+}
+
+@media (max-width: 1100px) {
+  .species-detail-kpis {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .species-detail-kpis article:first-child {
+    grid-column: span 2;
+  }
+}
+
 @media (max-width: 950px) {
-  .species-detail-kpis,
   .species-detail-chart-grid,
   .species-top-boats-grid,
   .species-recent-grid {
@@ -2761,3 +2863,39 @@ main { padding-top: 86px; }
   }
 }
 
+@media (max-width: 600px) {
+  .species-detail-hero,
+  .species-detail-chart-grid,
+  .species-detail-section {
+    padding: 34px 18px 18px;
+  }
+
+  .species-detail-kpis {
+    grid-template-columns: 1fr;
+  }
+
+  .species-detail-kpis article:first-child {
+    grid-column: auto;
+  }
+
+  .species-detail-hero h1 {
+    letter-spacing: -1.5px;
+  }
+
+  .species-boat-card,
+  .species-report-card,
+  .species-intel-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .species-boat-card strong,
+  .species-report-card strong,
+  .species-intel-row strong {
+    text-align: left;
+  }
+
+  .regional-split-row {
+    grid-template-columns: 1fr;
+  }
+}
