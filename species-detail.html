@@ -4,111 +4,127 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Yellowtail Fishing Report | Southern California | SoCal Bite</title>
-  <meta name="description" content="Latest Southern California Yellowtail fishing report with recent catches, top boats, top regions, trip types, and 30 day bite trends." />
+  <title>Species Detail | The SoCal Bite</title>
+  <meta name="description" content="Southern California species detail with total fish, fish-per-angler, regional split, weekly trend, and top producing boats." />
 
-  <link rel="canonical" href="https://thesocalbite.com/species/yellowtail.html" />
-  <link rel="stylesheet" href="style.css" />
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
-  <link rel="manifest" href="/manifest.json">
-
-<meta name="theme-color" content="#031828">
-
-<link
-  rel="apple-touch-icon"
-  href="/assets/icons/apple-touch-icon.png"
-/>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="style.css?v=loveable-species-detail-1" />
 </head>
 
-<body class="inner-page">
-
-  <section class="page-top">
-    <h1 id="pageTitle">Yellowtail Fishing Report</h1>
-
-       <nav class="page-nav">
-      <a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
-
-      <div class="dropdown">
-        <button class="dropbtn">
-          <i class="fa-solid fa-chart-line"></i>
-          <span>Boat Reports</span>
-          <i class="fa-solid fa-caret-down caret"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="daily-report.html">Daily Report</a>
-          <a href="boat-ratings.html">Boat Ratings</a>
-          <a href="top-boats.html">Top Boats</a>
-        </div>
+<body>
+  <header class="app-header">
+    <a class="brand" href="/">
+      <img src="assets/socal-bite-logo.webp" alt="The SoCal Bite Logo" />
+      <div>
+        <strong>The SoCal Bite</strong>
+        <span>Marine Intelligence</span>
       </div>
+    </a>
 
-      <div class="dropdown">
-        <button class="dropbtn">
-          <i class="fa-solid fa-fish"></i>
-          <span>Species Reports</span>
-          <i class="fa-solid fa-caret-down caret"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="bite-trends.html">Bite Trends</a>
-          <a href="forecast.html">Bite Forecast</a>
-          <a href="species.html">Species</a>
-          <a href="top-species.html">Top Species</a>
-        </div>
-      </div>
-
-        <div class="dropdown">
-        <button class="dropbtn">
-          <i class="fa-solid fa-water"></i>
-          <span>Conditions</span>
-          <i class="fa-solid fa-caret-down caret"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="boat-conditions.html">Boat Conditions</a>
-          <a href="beach-conditions.html">Surf Conditions</a>
-          <a href="pier-conditions.html">Pier Conditions</a>
-        </div>
-      </div>
-
-      <a href="news.html"><i class="fa-solid fa-newspaper"></i><span>Fishing News</span></a>
-      <a href="landings.html"><i class="fa-solid fa-anchor"></i><span>Landings</span></a>
-      <a href="about.html"><i class="fa-solid fa-user"></i><span>About</span></a>
+    <nav class="top-nav">
+      <a href="/">Today</a>
+      <a href="/forecast.html">Forecast</a>
+      <a href="/conditions.html">Conditions</a>
+      <a href="/rankings.html">Rankings</a>
+      <a class="active" href="/species.html">Species</a>
+      <a href="/landings.html">Landings</a>
+      <a href="/daily-report.html">Reports</a>
+      <a href="/gear.html">Fishing Gear</a>
+      <a href="/news.html">News</a>
     </nav>
-  </section>
 
-  <main class="report-page">
-    <div id="speciesDetailPage">
-      <h2>Loading Yellowtail report...</h2>
-    </div>
+    <div class="live-pill"><span></span> Live</div>
+  </header>
+
+  <main>
+    <section class="species-detail-hero">
+      <a class="back-link" href="/species.html">← All Species</a>
+
+      <span class="page-kicker">Species Dossier</span>
+
+      <h1 id="speciesTitle">Loading species...</h1>
+
+      <div class="species-detail-kpis">
+        <article>
+          <span>Total Fish</span>
+          <strong id="speciesTotalFish">--</strong>
+        </article>
+        <article>
+          <span>Anglers</span>
+          <strong id="speciesAnglers">--</strong>
+        </article>
+        <article>
+          <span>FPA</span>
+          <strong id="speciesFpa">--</strong>
+        </article>
+        <article>
+          <span>Top Region</span>
+          <strong id="speciesTopRegion">--</strong>
+        </article>
+      </div>
+    </section>
+
+    <section class="species-detail-chart-grid">
+      <article class="species-chart-card">
+        <div class="species-chart-header">
+          <h2>Weekly fish landed</h2>
+          <span>Last 12 weeks</span>
+        </div>
+        <div id="weeklyTrendChart" class="weekly-trend-chart">
+          <div class="loading-card">Loading trend...</div>
+        </div>
+      </article>
+
+      <article class="species-chart-card">
+        <div class="species-chart-header">
+          <h2>Regional split</h2>
+          <span>Fish by region</span>
+        </div>
+        <div id="regionalSplitChart" class="regional-bar-chart">
+          <div class="loading-card">Loading regions...</div>
+        </div>
+      </article>
+    </section>
+
+    <section class="species-detail-section">
+      <h2>🏆 Top boats producing <span id="speciesBoatTitle">this species</span></h2>
+      <p id="speciesBoatNote">
+        Boats ranked by production and fish-per-angler where this species appears in recent reports.
+      </p>
+
+      <div id="speciesTopBoats" class="species-top-boats-grid">
+        <div class="loading-card">Loading boats...</div>
+      </div>
+    </section>
+
+    <section class="species-detail-section">
+      <h2>Most recent reports</h2>
+      <div id="speciesRecentReports" class="species-recent-grid">
+        <div class="loading-card">Loading recent reports...</div>
+      </div>
+    </section>
   </main>
-<footer class="site-footer">
-    <p>© 2026 The SoCal Bite • Fishing Reports & Bite Updates</p>
 
-<div class="social-links">
-  <a href="https://www.instagram.com/the_socal_bite/" target="_blank" aria-label="Instagram">
-    <img src="assets/instagram-icon.png" class="social-logo" alt="Instagram" loading="lazy">
-  </a>
+  <footer class="love-footer">
+    <div class="footer-brand">
+      <strong>◎ The SoCal Bite</strong>
+      <p>Real-time fishing intelligence for Southern California.</p>
+      <span>Data refresh · Every 15 min</span>
+    </div>
 
-  <a href="https://www.facebook.com/profile.php?id=61590740421081" target="_blank" aria-label="Facebook">
-    <img src="assets/facebook-icon.png" class="social-logo" alt="Facebook" loading="lazy">
-  </a>
-</div>
+    <div class="footer-links">
+      <h4>Intelligence</h4>
+      <a href="/forecast.html">Bite Forecast</a>
+      <a href="/rankings.html">Rankings</a>
+      <a href="/species.html">Species</a>
+    </div>
+
+    <div class="footer-links">
+      <h4>Account</h4>
+      <a href="/">Legacy site</a>
+    </div>
   </footer>
-  <script src="site-config.js" defer></script>
-  <script src="species.js?v=1" defer></script>
 
-</body>
-</html>
-  <script src="site-config.js" defer></script>
-  <script src="species-detail.js?v=2" defer></script>
-
-<script>
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("/service-worker.js");
-  });
-}
-</script>
-
+  <script src="site-config.js"></script>
+  <script src="species-detail.js?v=loveable-species-detail-1"></script>
 </body>
 </html>
