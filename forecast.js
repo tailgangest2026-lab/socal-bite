@@ -1,11 +1,13 @@
 document.addEventListener("DOMContentLoaded", initForecast);
 
 let forecastRows = [];
+let dailyRows = [];
 let selectedRegion = "";
 
 async function initForecast() {
   try {
     forecastRows = await fetchJson("home.json");
+    dailyRows = await loadRecentDailyRows();
 
     if (!Array.isArray(forecastRows) || !forecastRows.length) {
       throw new Error("No forecast rows found.");
@@ -29,6 +31,38 @@ async function fetchJson(path) {
   }
 
   return response.json();
+}
+
+async function loadRecentDailyRows() {
+  try {
+    const index = await fetchJson("daily-report-index.json");
+
+    if (!Array.isArray(index) || !index.length) {
+      return [];
+    }
+
+    const recentReports = index.slice(0, 30);
+    const rows = [];
+
+    for (const report of recentReports) {
+      const filePath = report.file || `reports/daily-report-${report.date}.json`;
+
+      try {
+        const reportRows = await fetchJson(filePath);
+
+        if (Array.isArray(reportRows)) {
+          rows.push(...reportRows);
+        }
+      } catch (error) {
+        console.warn("Skipped report:", filePath, error);
+      }
+    }
+
+    return rows;
+  } catch (error) {
+    console.warn("Could not load daily-report-index.json:", error);
+    return [];
+  }
 }
 
 function buildRegionTabs() {
@@ -86,69 +120,89 @@ function renderForecast(region) {
   setText("sunset", row.sunset || "8:01 PM");
   setText("moon", row.moon || "Waxing 62%");
 
-  buildSpeciesRankings(row);
+  buildSpeciesRankings(region);
 }
 
-function buildSpeciesRankings(row) {
+function buildSpeciesRankings(region) {
   const container = document.getElementById("speciesRankings");
   if (!container) return;
 
-  const species = extractSpecies(row);
-  const anglers = Number(row.total_anglers_today || 1);
+  const species = buildSpeciesFpaByRegion(region);
 
-  container.innerHTML = species.map((item, index) => {
-    const fpa = item.count / Math.max(anglers, 1);
-
-    return `
-      <a class="species-rank-card" href="/species-detail.html?species=${encodeURIComponent(item.name)}">
-        <div>
-          <span>Rank #${index + 1}</span>
-          <h3>${safe(item.name)}</h3>
-        </div>
-        <strong>${fpa.toFixed(2)}</strong>
-        <small>Fish Per Angler</small>
-      </a>
+  if (!species.length) {
+    container.innerHTML = `
+      <div class="empty-card">
+        No species fish-per-angler data found for ${safe(region)}.
+      </div>
     `;
-  }).join("");
-}
-
-function extractSpecies(row) {
-  const totalFish = Number(row.total_fish_today || 0);
-
-  const speciesFields = [
-    row.top_species_today,
-    row.most_caught_species_last_30_days,
-    row.most_caught_species_last_90_days,
-    row.best_species_today,
-    row.hot_species
-  ];
-
-  const names = [];
-
-  speciesFields.forEach(value => {
-    if (!value) return;
-
-    String(value)
-      .split(",")
-      .map(item => item.replace(/[0-9]/g, "").trim())
-      .filter(Boolean)
-      .forEach(name => {
-        if (!names.includes(name)) {
-          names.push(name);
-        }
-      });
-  });
-
-  if (!names.length) {
-    names.push("Top Species");
+    return;
   }
 
-  return names.slice(0, 6).map((name, index) => ({
-    name,
-    count: index === 0
-      ? totalFish
-      : Math.max(1, Math.round(totalFish / (index + 2)))
-  }));
+  container.innerHTML = species.map((item, index) => `
+    <a class="species-rank-card" href="/species-detail.html?species=${encodeURIComponent(item.name)}">
+      <div>
+        <span>Rank #${index + 1}</span>
+        <h3>${safe(item.name)}</h3>
+      </div>
+      <strong>${item.fpa.toFixed(2)}</strong>
+      <small>${format(item.count)} fish · ${format(item.anglers)} anglers</small>
+    </a>
+  `).join("");
+}
+
+function buildSpeciesFpaByRegion(region) {
+  const targetRegion = String(region || "").toLowerCase();
+
+  const regionRows = dailyRows.filter(row => {
+    return String(row.region || "").toLowerCase() === targetRegion;
+  });
+
+  const speciesTotals = {};
+  const speciesAnglers = {};
+
+  regionRows.forEach(row => {
+    const anglers = Number(row.anglers || 0);
+    const fishCounts = String(row.fish_counts || "");
+
+    parseFishCounts(fishCounts).forEach(item => {
+      if (!item.species || !Number.isFinite(item.count)) return;
+
+      speciesTotals[item.species] = (speciesTotals[item.species] || 0) + item.count;
+      speciesAnglers[item.species] = (speciesAnglers[item.species] || 0) + anglers;
+    });
+  });
+
+  return Object.entries(speciesTotals)
+    .map(([name, count]) => {
+      const anglers = Math.max(speciesAnglers[name] || 1, 1);
+
+      return {
+        name,
+        count,
+        anglers,
+        fpa: count / anglers
+      };
+    })
+    .filter(item => item.count > 0)
+    .sort((a, b) => b.fpa - a.fpa)
+    .slice(0, 6);
+}
+
+function parseFishCounts(text) {
+  return String(text || "")
+    .split(",")
+    .map(part => {
+      const cleaned = part.trim();
+      const match = cleaned.match(/^([\d,]+)\s+(.+)$/);
+
+      if (!match) return null;
+
+      return {
+        count: Number(match[1].replace(/,/g, "")),
+        species: match[2].trim()
+      };
+    })
+    .filter(Boolean);
 }
 
 function estimateWaterTemp(region) {
