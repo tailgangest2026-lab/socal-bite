@@ -2073,3 +2073,161 @@ main { padding-top: 86px; }
     scroll-behavior: auto !important;
   }
 }
+/* =========================
+   Landing detail styles
+========================= */
+
+.landing-detail-hero,
+.landing-info-strip,
+.landing-detail-section {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 50px 28px 25px;
+}
+
+.back-link {
+  display: inline-flex;
+  color: var(--muted);
+  font-weight: 900;
+  margin-bottom: 28px;
+}
+
+.back-link:hover {
+  color: var(--cyan);
+}
+
+.landing-detail-hero h1 {
+  margin: 10px 0;
+  font-size: clamp(3rem, 7vw, 5.8rem);
+  line-height: 0.95;
+  letter-spacing: -3px;
+}
+
+.landing-detail-hero p {
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+
+.landing-detail-kpis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-top: 36px;
+}
+
+.landing-detail-kpis article {
+  padding: 22px;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.055);
+}
+
+.landing-detail-kpis span {
+  display: block;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  font-size: 0.75rem;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.landing-detail-kpis strong {
+  font-size: 2.1rem;
+}
+
+.landing-detail-price-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.landing-detail-price-row {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 14px;
+  align-items: center;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: rgba(255,255,255,0.045);
+}
+
+.landing-detail-price-row strong {
+  color: var(--gold);
+}
+
+.landing-detail-price-row a {
+  color: var(--cyan);
+  font-weight: 900;
+}
+
+.landing-detail-section h2 {
+  font-size: 2rem;
+}
+
+.landing-fleet-grid,
+.landing-reports-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.landing-fleet-card,
+.landing-report-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: flex-start;
+  padding: 20px;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.055);
+}
+
+.landing-fleet-card h3,
+.landing-report-card h3 {
+  margin: 0 0 6px;
+}
+
+.landing-fleet-card p,
+.landing-report-card p {
+  color: var(--muted);
+  margin: 0;
+}
+
+.landing-fleet-card strong {
+  color: var(--cyan);
+  font-size: 1.5rem;
+}
+
+.landing-report-card {
+  display: block;
+}
+
+.landing-report-card h3 a {
+  color: var(--white);
+}
+
+.landing-report-card h3 a:hover {
+  color: var(--cyan);
+}
+
+.landing-report-counts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 14px;
+}
+
+@media (max-width: 900px) {
+  .landing-detail-kpis,
+  .landing-fleet-grid,
+  .landing-reports-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .landing-detail-price-row {
+    grid-template-columns: 1fr;
+  }
+}
