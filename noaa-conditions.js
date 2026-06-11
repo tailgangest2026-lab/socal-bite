@@ -33,13 +33,19 @@ window.SCBConditions = (() => {
   async function getNwsWeather(lat, lon, dateString) {
     try {
       const pointRes = await fetch(`https://api.weather.gov/points/${lat},${lon}`);
-      if (!pointRes.ok) throw new Error("NWS point lookup failed");
+
+      if (!pointRes.ok) {
+        throw new Error("NWS point lookup failed");
+      }
 
       const pointData = await pointRes.json();
       const hourlyUrl = pointData.properties.forecastHourly;
 
       const hourlyRes = await fetch(hourlyUrl);
-      if (!hourlyRes.ok) throw new Error("NWS hourly forecast failed");
+
+      if (!hourlyRes.ok) {
+        throw new Error("NWS hourly forecast failed");
+      }
 
       const hourlyData = await hourlyRes.json();
       const periods = hourlyData.properties.periods || [];
@@ -87,17 +93,17 @@ window.SCBConditions = (() => {
         "&forecast_days=10";
 
       const res = await fetch(url);
-      if (!res.ok) throw new Error("Open-Meteo request failed");
+
+      if (!res.ok) {
+        throw new Error("Open-Meteo request failed");
+      }
 
       const data = await res.json();
       const hourly = data.hourly;
 
       if (!hourly || !hourly.time) return null;
 
-      const index =
-        hourly.time.findIndex(t => t.startsWith(`${dateString}T06`)) >= 0
-          ? hourly.time.findIndex(t => t.startsWith(`${dateString}T06`))
-          : hourly.time.findIndex(t => t.startsWith(dateString));
+      const index = findForecastIndex(hourly.time, dateString);
 
       if (index < 0) return null;
 
@@ -121,6 +127,68 @@ window.SCBConditions = (() => {
     }
   }
 
+  async function getMarine(lat, lon, dateString) {
+    try {
+      const hourlyVars = [
+        "wave_height",
+        "wave_direction",
+        "wave_period",
+        "wind_wave_height",
+        "wind_wave_direction",
+        "wind_wave_period",
+        "swell_wave_height",
+        "swell_wave_direction",
+        "swell_wave_period"
+      ].join(",");
+
+      const url =
+        "https://marine-api.open-meteo.com/v1/marine" +
+        `?latitude=${lat}` +
+        `&longitude=${lon}` +
+        `&hourly=${hourlyVars}` +
+        "&length_unit=imperial" +
+        "&timezone=America%2FLos_Angeles" +
+        "&forecast_days=10";
+
+      const res = await fetch(url);
+
+      if (!res.ok) {
+        throw new Error("Open-Meteo marine request failed");
+      }
+
+      const data = await res.json();
+      const hourly = data.hourly;
+
+      if (!hourly || !hourly.time) return null;
+
+      const index = findForecastIndex(hourly.time, dateString);
+
+      if (index < 0) return null;
+
+      return {
+        waveHeight: roundOne(hourly.wave_height?.[index]),
+        waveDirection: hourly.wave_direction?.[index],
+        waveDirectionText: degreesToCompass(hourly.wave_direction?.[index]),
+        wavePeriod: roundOne(hourly.wave_period?.[index]),
+
+        windWaveHeight: roundOne(hourly.wind_wave_height?.[index]),
+        windWaveDirection: hourly.wind_wave_direction?.[index],
+        windWaveDirectionText: degreesToCompass(hourly.wind_wave_direction?.[index]),
+        windWavePeriod: roundOne(hourly.wind_wave_period?.[index]),
+
+        swellWaveHeight: roundOne(hourly.swell_wave_height?.[index]),
+        swellWaveDirection: hourly.swell_wave_direction?.[index],
+        swellWaveDirectionText: degreesToCompass(hourly.swell_wave_direction?.[index]),
+        swellWavePeriod: roundOne(hourly.swell_wave_period?.[index]),
+
+        source: "Open-Meteo Marine"
+      };
+    } catch (error) {
+      console.warn("Marine fallback used:", error);
+      return null;
+    }
+  }
+
   async function getTides(stationId, dateString) {
     try {
       const cleanDate = dateString.replaceAll("-", "");
@@ -138,7 +206,10 @@ window.SCBConditions = (() => {
         "&format=json";
 
       const res = await fetch(url);
-      if (!res.ok) throw new Error("NOAA tide request failed");
+
+      if (!res.ok) {
+        throw new Error("NOAA tide request failed");
+      }
 
       const data = await res.json();
       return data.predictions || [];
@@ -160,9 +231,13 @@ window.SCBConditions = (() => {
         "&format=json";
 
       const res = await fetch(url);
-      if (!res.ok) throw new Error("NOAA water temp request failed");
+
+      if (!res.ok) {
+        throw new Error("NOAA water temp request failed");
+      }
 
       const data = await res.json();
+
       if (!data.data || !data.data.length) return null;
 
       return Number(data.data[0].v);
@@ -192,6 +267,7 @@ window.SCBConditions = (() => {
 
   function buildDateDropdown(selectId = "dateSelect", days = 10) {
     const dateSelect = document.getElementById(selectId);
+
     if (!dateSelect) return;
 
     dateSelect.innerHTML = "";
@@ -217,11 +293,29 @@ window.SCBConditions = (() => {
     }
   }
 
+  function findForecastIndex(times, dateString) {
+    if (!Array.isArray(times)) return -1;
+
+    const preferredHours = ["T06", "T08", "T10", "T12", "T14"];
+
+    for (const hour of preferredHours) {
+      const index = times.findIndex(t => String(t).startsWith(`${dateString}${hour}`));
+
+      if (index >= 0) {
+        return index;
+      }
+    }
+
+    return times.findIndex(t => String(t).startsWith(dateString));
+  }
+
   function parseWindSpeed(windSpeedText, fallback = 8) {
     if (typeof windSpeedText === "number") return Math.round(windSpeedText);
+
     if (!windSpeedText) return fallback;
 
     const match = String(windSpeedText).match(/\d+/);
+
     return match ? Number(match[0]) : fallback;
   }
 
@@ -236,13 +330,22 @@ window.SCBConditions = (() => {
 
   function getWindDirection(text, fallback = "W") {
     if (!text) return fallback;
+
     const dirs = ["NW", "SW", "NE", "SE", "N", "S", "E", "W"];
+
     return dirs.find(dir => String(text).includes(dir)) || fallback;
   }
 
   function metersToMiles(meters) {
     if (meters === null || meters === undefined || isNaN(meters)) return null;
+
     return Number((meters / 1609.344).toFixed(1));
+  }
+
+  function roundOne(value) {
+    if (value === null || value === undefined || isNaN(value)) return null;
+
+    return Number(Number(value).toFixed(1));
   }
 
   function getWeatherSummary(code) {
@@ -269,10 +372,11 @@ window.SCBConditions = (() => {
   }
 
   function rating(score) {
-    if (score >= 85) return "Excellent";
-    if (score >= 70) return "Good";
-    if (score >= 55) return "Fair";
-    return "Slow";
+    if (score >= 90) return "Excellent";
+    if (score >= 75) return "Good";
+    if (score >= 60) return "Fair";
+    if (score >= 45) return "Slow";
+    return "Poor";
   }
 
   function stationForCounty(county) {
@@ -284,6 +388,7 @@ window.SCBConditions = (() => {
     getWeather,
     getNwsWeather,
     getOpenMeteoWeather,
+    getMarine,
     getTides,
     getWaterTemp,
     formatTides,
