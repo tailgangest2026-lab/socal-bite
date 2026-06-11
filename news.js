@@ -44,7 +44,7 @@ function featuredCard(item) {
   return `
     <article class="news-feature">
       <span class="page-kicker">${safe(item.category || "Featured")}</span>
-      <h2>${safe(item.title)}</h2>
+      <h2>${safe(item.headline)}</h2>
       <p>${safe(item.summary || item.description || "")}</p>
       <div class="news-meta">
         <span>${formatDate(item.date || item.published)}</span>
@@ -61,13 +61,13 @@ function newsCard(item) {
   return `
     <article class="news-card-love">
       <span>${safe(item.category || "News")}</span>
-      <h3>${safe(item.title)}</h3>
+      <h3>${safe(item.headline)}</h3>
       <p>${safe(item.summary || item.description || "")}</p>
       <div class="news-meta">
         <small>${formatDate(item.date || item.published)}</small>
         <small>${safe(item.source || "")}</small>
       </div>
-      <a href="${safeUrl(item.url || item.link || "#")}" target="_blank" rel="noopener">
+      <a href="${safeUrl(item.link || item.url || "#")}" target="_blank" rel="noopener">
         Read more
       </a>
     </article>
