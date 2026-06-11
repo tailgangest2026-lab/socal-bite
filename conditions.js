@@ -1,5 +1,11 @@
 (() => {
   const LOCATIONS = {
+   "San Luis Obispo": {
+     county: "San Luis Obispo County",
+     lat: 35.2828,
+     lon: -120.6596,
+     station: "9412110"
+   },
     "Santa Barbara": {
       county: "Santa Barbara County",
       lat: 34.4208,
