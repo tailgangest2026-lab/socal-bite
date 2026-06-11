@@ -371,48 +371,61 @@
     return Math.max(25, Math.min(100, Math.round(score)));
   }
 
-  function getTideMovement(tides) {
-    if (!Array.isArray(tides) || tides.length < 2) return "Unknown";
+ function getTideMovement(tides) {
+  if (!Array.isArray(tides) || tides.length < 2) return "Unknown";
 
-    const now = new Date();
+  const parsed = tides
+    .map(t => ({
+      time: new Date(String(t.t || t.time || t.date).replace(" ", "T")),
+      height: Number(t.v || t.height || t.prediction),
+      type: t.type || ""
+    }))
+    .filter(t => !Number.isNaN(t.time.getTime()) && Number.isFinite(t.height))
+    .sort((a, b) => a.time - b.time);
 
-    const future = tides
-      .map(t => ({
-        time: new Date(String(t.t || t.time || t.date).replace(" ", "T")),
-        height: Number(t.v || t.height || t.prediction)
-      }))
-      .filter(t => t.time > now && Number.isFinite(t.height))
-      .slice(0, 2);
+  if (parsed.length < 2) return "Unknown";
 
-    if (future.length < 2) return "Unknown";
+  const now = new Date();
 
-    const diff = future[1].height - future[0].height;
+  let nextIndex = parsed.findIndex(t => t.time > now);
 
-    if (Math.abs(diff) < 0.15) return "Slack";
-    return diff > 0 ? "Rising / Moving" : "Falling / Moving";
+  if (nextIndex <= 0) {
+    nextIndex = 1;
   }
 
-  function getNextTideLabel(tides) {
-    if (!Array.isArray(tides) || !tides.length) return "Tide data pending";
+  const previous = parsed[nextIndex - 1];
+  const next = parsed[nextIndex];
 
-    const now = new Date();
+  if (!previous || !next) return "Unknown";
 
-    const next = tides
-      .map(t => ({
-        time: new Date(String(t.t || t.time || t.date).replace(" ", "T")),
-        height: Number(t.v || t.height || t.prediction)
-      }))
-      .filter(t => t.time > now && Number.isFinite(t.height))
-      .sort((a, b) => a.time - b.time)[0];
+  const diff = next.height - previous.height;
 
-    if (!next) return "Tide data pending";
+  if (Math.abs(diff) < 0.15) return "Slack";
+  return diff > 0 ? "Rising / Moving" : "Falling / Moving";
+}
 
-    return `${next.height.toFixed(1)} ft · ${next.time.toLocaleTimeString([], {
-      hour: "numeric",
-      minute: "2-digit"
-    })}`;
-  }
+function getNextTideLabel(tides) {
+  if (!Array.isArray(tides) || !tides.length) return "Tide data pending";
 
+  const parsed = tides
+    .map(t => ({
+      time: new Date(String(t.t || t.time || t.date).replace(" ", "T")),
+      height: Number(t.v || t.height || t.prediction),
+      type: t.type === "H" ? "High" : t.type === "L" ? "Low" : "Tide"
+    }))
+    .filter(t => !Number.isNaN(t.time.getTime()) && Number.isFinite(t.height))
+    .sort((a, b) => a.time - b.time);
+
+  if (!parsed.length) return "Tide data pending";
+
+  const now = new Date();
+  const next = parsed.find(t => t.time > now) || parsed[0];
+
+  return `${next.type} ${next.height.toFixed(1)} ft · ${next.time.toLocaleTimeString([], {
+    hour: "numeric",
+    minute: "2-digit"
+  })}`;
+}
   function estimateVisibility(region, wind, apiVisibility) {
     if (apiVisibility) return `${apiVisibility} mi`;
     if (wind >= 15) return "6 mi";
