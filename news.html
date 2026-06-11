@@ -1,124 +1,130 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Read the latest Southern California fishing news and sportfishing headlines from trusted sources." />
-  <title>Fishing News | SoCal Bite</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css" />
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
-  <link rel="manifest" href="/manifest.json">
 
-<meta name="theme-color" content="#031828">
+  <title>Fishing News | The SoCal Bite</title>
 
-<link
-  rel="apple-touch-icon"
-  href="/assets/icons/apple-touch-icon.png"
+<meta
+ name="description"
+ content="Latest Southern California fishing news, regulations, tuna updates, closures, and offshore reports."
 />
-  <link rel="canonical" href="https://thesocalbite.com/news.html" />
-  <meta property="og:title" content="Fishing News | SoCal Bite" />
-  <meta property="og:description" content="Read the latest Southern California fishing news and sportfishing headlines from trusted sources." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://thesocalbite.com/news.html" />
-  <meta property="og:image" content="https://thesocalbite.com/assets/socal-bite-logo.webp" />
+
+  <link rel="stylesheet" href="style.css?v=loveable-news-1" />
 </head>
 
-<body class="inner-page">
+<body>
 
-    <section class="page-top">
-      <h1>Fishing News</h1>
+<header class="app-header">
+  <a class="brand" href="/">
+    <img src="assets/socal-bite-logo.webp" alt="The SoCal Bite Logo" />
+    <div>
+      <strong>The SoCal Bite</strong>
+      <span>Marine Intelligence</span>
+    </div>
+  </a>
 
-           <nav class="page-nav">
-      <a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
+  <nav class="top-nav">
+    <a href="/">Today</a>
+    <a href="/forecast.html">Forecast</a>
+    <a href="/conditions.html">Conditions</a>
+    <a href="/rankings.html">Rankings</a>
+    <a href="/species.html">Species</a>
+    <a href="/landings.html">Landings</a>
+    <a href="/daily-report.html">Reports</a>
+    <a href="/gear.html">Fishing Gear</a>
+    <a class="active" href="/news.html">News</a>
+  </nav>
 
-      <div class="dropdown">
-        <button class="dropbtn">
-          <i class="fa-solid fa-chart-line"></i>
-          <span>Boat Reports</span>
-          <i class="fa-solid fa-caret-down caret"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="daily-report.html">Daily Report</a>
-          <a href="boat-ratings.html">Boat Ratings</a>
-          <a href="top-boats.html">Top Boats</a>
-        </div>
-      </div>
+  <div class="live-pill">
+    <span></span> Live
+  </div>
+</header>
 
-      <div class="dropdown">
-        <button class="dropbtn">
-          <i class="fa-solid fa-fish"></i>
-          <span>Species Reports</span>
-          <i class="fa-solid fa-caret-down caret"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="bite-trends.html">Bite Trends</a>
-          <a href="forecast.html">Bite Forecast</a>
-          <a href="species.html">Species</a>
-          <a href="top-species.html">Top Species</a>
-        </div>
-      </div>
+<main>
 
-        <div class="dropdown">
-        <button class="dropbtn">
-          <i class="fa-solid fa-water"></i>
-          <span>Conditions</span>
-          <i class="fa-solid fa-caret-down caret"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="boat-conditions.html">Boat Conditions</a>
-          <a href="beach-conditions.html">Surf Conditions</a>
-          <a href="pier-conditions.html">Pier Conditions</a>
-        </div>
-      </div>
+  <section class="news-hero">
+    <span class="page-kicker">Fishing News</span>
 
-      <a href="news.html"><i class="fa-solid fa-newspaper"></i><span>Fishing News</span></a>
-      <a href="landings.html"><i class="fa-solid fa-anchor"></i><span>Landings</span></a>
-      <a href="about.html"><i class="fa-solid fa-user"></i><span>About</span></a>
-    </nav>
+```
+<h1>
+  Southern California
+  Fishing News
+</h1>
+
+<p>
+  Regulations, tuna movement,
+  fishery announcements,
+  offshore updates, closures,
+  stocking reports and more.
+</p>
+```
+
   </section>
 
-    <main class="report-page">
+  <section class="news-layout">
 
-      <div class="region-section">
-        <h2>Latest Fishing Headlines</h2>
-        <p>
-          Fresh fishing news from trusted RSS sources. Headlines update automatically
-          and link directly to the original article.
-        </p>
-      </div>
-
-      <div class="region-section">
-        <div id="newsList" class="news-list">
-          <p>Loading fishing news...</p>
-        </div>
-      </div>
-
-    </main>
-
-<footer class="site-footer">
-  <p>© 2026 The SoCal Bite • Fishing Reports & Bite Updates</p>
-
-<div class="social-links">
-  <a href="https://www.instagram.com/the_socal_bite/" target="_blank" aria-label="Instagram">
-    <img src="assets/instagram-icon.png" class="social-logo" alt="Instagram" loading="lazy">
-  </a>
-
-  <a href="https://www.facebook.com/profile.php?id=61590740421081" target="_blank" aria-label="Facebook">
-    <img src="assets/facebook-icon.png" class="social-logo" alt="Facebook" loading="lazy">
-  </a>
+```
+<div id="featuredNews" class="featured-news-card">
+  <div class="loading-card">
+    Loading featured story...
+  </div>
 </div>
+
+<div id="newsGrid" class="news-grid">
+  <div class="loading-card">
+    Loading news...
+  </div>
+</div>
+```
+
+  </section>
+
+</main>
+
+<footer class="love-footer">
+
+  <div class="footer-brand">
+    <strong>◎ The SoCal Bite</strong>
+
+```
+<p>
+  Real-time fishing intelligence for Southern California —
+  from San Luis Obispo to San Diego.
+</p>
+
+<span>Data refresh · Every 15 min</span>
+```
+
+  </div>
+
+  <div class="footer-links">
+    <h4>Intelligence</h4>
+
+```
+<a href="/forecast.html">Bite Forecast</a>
+<a href="/rankings.html">Rankings</a>
+<a href="/species.html">Species</a>
+```
+
+  </div>
+
+  <div class="footer-links">
+    <h4>Account</h4>
+
+```
+<a href="/">Legacy Site</a>
+```
+
+  </div>
+
 </footer>
 
-  <script src="site-config.js" defer></script>
-  <script src="news.js?v=1" defer></script>
-  <script>
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("/service-worker.js");
-  });
-}
-</script>
+<script src="site-config.js"></script>
+
+<script src="news.js?v=loveable-news-1"></script>
+
 </body>
 </html>
