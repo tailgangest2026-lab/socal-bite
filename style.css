@@ -2257,17 +2257,23 @@ main { padding-top: 86px; }
 
 .boat-detail-kpis {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 14px;
   margin-top: 36px;
 }
 
 .boat-detail-kpis article,
-.boat-detail-card {
+.boat-detail-card,
+.boat-report-card {
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(255,255,255,0.075), rgba(255,255,255,0.035));
+  box-shadow: 0 18px 45px rgba(0,0,0,0.22);
+  backdrop-filter: blur(10px);
+}
+
+.boat-detail-kpis article {
   padding: 22px;
   border-radius: 18px;
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,0.055);
 }
 
 .boat-detail-kpis span {
@@ -2275,13 +2281,18 @@ main { padding-top: 86px; }
   color: var(--muted);
   text-transform: uppercase;
   letter-spacing: 1.3px;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 900;
   margin-bottom: 10px;
 }
 
 .boat-detail-kpis strong {
   font-size: 2.1rem;
+  color: var(--soft);
+}
+
+.boat-detail-kpis article:first-child strong {
+  color: var(--gold);
 }
 
 .boat-detail-grid {
@@ -2290,16 +2301,64 @@ main { padding-top: 86px; }
   gap: 24px;
 }
 
+.boat-detail-card {
+  padding: 22px;
+  border-radius: 18px;
+}
+
 .boat-detail-card h2,
 .boat-detail-section h2 {
   margin-top: 0;
   font-size: 2rem;
 }
 
+.boat-intel-list,
+.boat-trend-box,
 .boat-trip-mix,
 .boat-price-list {
   display: grid;
   gap: 12px;
+}
+
+.boat-intel-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.boat-intel-row span {
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.boat-intel-row strong {
+  color: var(--cyan);
+  text-align: right;
+}
+
+.boat-trend-main {
+  padding: 22px;
+  border-radius: 16px;
+  background: rgba(25,194,209,0.12);
+  border: 1px solid rgba(25,194,209,0.3);
+  margin-bottom: 8px;
+}
+
+.boat-trend-main strong {
+  display: block;
+  font-size: 2.2rem;
+  color: var(--cyan);
+  line-height: 1;
+}
+
+.boat-trend-main span {
+  display: block;
+  margin-top: 8px;
+  color: var(--muted);
+  font-weight: 800;
 }
 
 .boat-trip-row,
@@ -2314,6 +2373,19 @@ main { padding-top: 86px; }
 
 .boat-trip-row strong {
   color: var(--cyan);
+}
+
+.trip-pill {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  border-radius: 999px;
+  padding: 7px 11px;
+  background: rgba(231,184,90,0.13);
+  border: 1px solid rgba(231,184,90,0.3);
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: 900;
 }
 
 .boat-price-row {
@@ -2354,14 +2426,28 @@ main { padding-top: 86px; }
   padding: 10px 14px;
   color: var(--soft);
   font-weight: 900;
+  background: rgba(255,255,255,0.045);
+  transition: 0.2s ease;
 }
 
 .boat-species-pill strong {
   color: var(--gold);
 }
 
+.boat-species-pill em {
+  color: var(--muted);
+  font-style: normal;
+  font-size: 0.78rem;
+}
+
 .boat-species-pill:hover {
   background: var(--cyan);
+  color: #031828;
+  transform: translateY(-2px);
+}
+
+.boat-species-pill:hover strong,
+.boat-species-pill:hover em {
   color: #031828;
 }
 
@@ -2374,14 +2460,13 @@ main { padding-top: 86px; }
 .boat-report-card {
   padding: 20px;
   border-radius: 18px;
-  border: 1px solid var(--border);
-  background: rgba(255,255,255,0.055);
 }
 
 .boat-report-top {
   display: flex;
   justify-content: space-between;
   gap: 14px;
+  align-items: flex-start;
 }
 
 .boat-report-card h3 {
@@ -2392,8 +2477,48 @@ main { padding-top: 86px; }
   color: var(--muted);
 }
 
+.landing-report-counts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.fish-count-pill {
+  display: inline-flex;
+  border-radius: 999px;
+  padding: 7px 10px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--soft);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.fish-count-pill:hover {
+  background: var(--gold);
+  color: #031828;
+}
+
+.loading-card,
+.empty-card {
+  padding: 16px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.055);
+  color: var(--muted);
+  font-weight: 800;
+}
+
+@media (max-width: 1100px) {
+  .boat-detail-kpis {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .boat-detail-kpis article:first-child {
+    grid-column: span 2;
+  }
+}
+
 @media (max-width: 900px) {
-  .boat-detail-kpis,
   .boat-detail-grid,
   .boat-reports-grid {
     grid-template-columns: 1fr;
@@ -2402,6 +2527,30 @@ main { padding-top: 86px; }
   .boat-trip-row,
   .boat-price-row {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .boat-detail-hero,
+  .boat-detail-grid,
+  .boat-detail-section {
+    padding: 34px 18px 18px;
+  }
+
+  .boat-detail-kpis {
+    grid-template-columns: 1fr;
+  }
+
+  .boat-detail-kpis article:first-child {
+    grid-column: auto;
+  }
+
+  .boat-detail-hero h1 {
+    letter-spacing: -1.5px;
+  }
+
+  .boat-report-top {
+    flex-direction: column;
   }
 }
 /* =========================
