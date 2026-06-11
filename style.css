@@ -2938,17 +2938,19 @@ main { padding-top: 86px; }
   flex-wrap: wrap;
   gap: 10px;
   margin-top: 18px;
+  justify-content: center;
 }
 
 .gear-buttons a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 13px;
+  padding: 7px 14px;
   border-radius: 999px;
   background: var(--cyan);
   color: #031828;
-  font-weight: 900;
+  font-weight: 700;
+  font-size: 0.85rem;
   text-decoration: none;
 }
 
