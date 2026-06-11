@@ -90,7 +90,7 @@ function selectRegion(region) {
   renderForecast(region);
 }
 
-function renderForecast(region) {
+async function renderForecast(region) {
   const row = forecastRows.find(r => r.region === region) || forecastRows[0];
 
   const fish = Number(row.total_fish_today || 0);
@@ -98,7 +98,7 @@ function renderForecast(region) {
   const trips = Number(row.total_trips_today || 1);
   const fpa = fish / Math.max(anglers, 1);
 
-  const score = Math.round(Math.min(96, Math.max(35, 45 + fpa * 8 + trips * 1.5)));
+  const score = await calculateForecastScore(row, region, fpa, trips);
 
   const label =
     score >= 85 ? "Excellent" :
@@ -184,6 +184,76 @@ function buildSpeciesRankings(region) {
       <small>${format(item.count)} fish · ${format(item.anglers)} anglers</small>
     </a>
   `).join("");
+}
+async function calculateForecastScore(row, region, fpa, trips) {
+  const locations = {
+    "Santa Barbara": { lat: 34.4208, lon: -119.6982, station: "9411340" },
+    "Ventura": { lat: 34.2746, lon: -119.2290, station: "9411189" },
+    "Los Angeles": { lat: 33.7405, lon: -118.2817, station: "9410660" },
+    "Orange County": { lat: 33.6037, lon: -117.9, station: "9410580" },
+    "San Diego": { lat: 32.7157, lon: -117.1611, station: "9410170" },
+    "San Luis Obispo": { lat: 35.2828, lon: -120.6596, station: "9412110" }
+  };
+
+  const base = locations[region];
+
+  let score = 45;
+
+  // Catch history
+  if (fpa >= 8) score += 25;
+  else if (fpa >= 5) score += 18;
+  else if (fpa >= 3) score += 12;
+  else if (fpa >= 1.5) score += 7;
+
+  // Trip volume
+  if (trips >= 20) score += 10;
+  else if (trips >= 10) score += 6;
+  else if (trips >= 5) score += 3;
+
+  if (!base || typeof SCBConditions === "undefined") {
+    return Math.max(35, Math.min(96, Math.round(score)));
+  }
+
+  try {
+    const today = new Date().toISOString().split("T")[0];
+
+    const [weather, tides, waterTemp, marine] = await Promise.all([
+      SCBConditions.getWeather(base.lat, base.lon, today),
+      SCBConditions.getTides(base.station, today),
+      SCBConditions.getWaterTemp(base.station),
+      typeof SCBConditions.getMarine === "function"
+        ? SCBConditions.getMarine(base.lat, base.lon, today)
+        : Promise.resolve(null)
+    ]);
+
+    const wind = SCBConditions.parseWindSpeed(weather?.windSpeed, 8);
+    const gusts = Number(weather?.windGusts || 0);
+    const temp = Number(waterTemp || 65);
+    const swell = Number(marine?.waveHeight || marine?.swellWaveHeight || 3);
+    const tideMovement = getTideMovement(tides);
+
+    // Weather / marine conditions
+    if (wind <= 6) score += 10;
+    else if (wind <= 10) score += 6;
+    else if (wind <= 15) score += 1;
+    else score -= 10;
+
+    if (gusts >= 25) score -= 8;
+
+    if (swell <= 2.5) score += 8;
+    else if (swell <= 4) score += 4;
+    else if (swell >= 5) score -= 10;
+
+    if (temp >= 63 && temp <= 70) score += 6;
+    else if (temp < 58 || temp > 74) score -= 6;
+
+    if (String(tideMovement).toLowerCase().includes("moving")) score += 7;
+
+    return Math.max(35, Math.min(96, Math.round(score)));
+  } catch (error) {
+    console.warn("NOAA forecast score fallback used:", error);
+    return Math.max(35, Math.min(96, Math.round(score)));
+  }
 }
 
 function buildSpeciesFpaByRegion(region) {
