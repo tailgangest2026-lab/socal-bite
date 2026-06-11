@@ -7,8 +7,6 @@ async function initForecast() {
   try {
     forecastRows = await fetchJson("home.json");
 
-window.latestDailyRows = [];
-
     if (!Array.isArray(forecastRows) || !forecastRows.length) {
       throw new Error("No forecast rows found.");
     }
@@ -64,10 +62,9 @@ function renderForecast(region) {
   const fish = Number(row.total_fish_today || 0);
   const anglers = Number(row.total_anglers_today || 1);
   const trips = Number(row.total_trips_today || 1);
-
   const fpa = fish / Math.max(anglers, 1);
 
-  let score = Math.round(Math.min(96, Math.max(35, 45 + fpa * 8 + trips * 1.5)));
+  const score = Math.round(Math.min(96, Math.max(35, 45 + fpa * 8 + trips * 1.5)));
 
   const label =
     score >= 85 ? "Excellent" :
@@ -111,34 +108,42 @@ function buildSpeciesRankings(row) {
 }
 
 function extractSpecies(row) {
-  return [
-    {
-      name: row.top_species_today || row.most_caught_species_last_30_days || "Rockfish",
-      count: Number(row.total_fish_today || 0)
-    },
-    {
-      name: row.most_caught_species_last_30_days || "Rockfish",
-      count: Math.round(Number(row.total_fish_today || 0) * 0.6)
-    },
-    {
-      name: row.most_caught_species_last_90_days || "Mixed Bag",
-      count: Math.round(Number(row.total_fish_today || 0) * 0.35)
-    }
+  const totalFish = Number(row.total_fish_today || 0);
+
+  const speciesFields = [
+    row.top_species_today,
+    row.most_caught_species_last_30_days,
+    row.most_caught_species_last_90_days,
+    row.best_species_today,
+    row.hot_species
   ];
-}
 
-  const ranked = Object.entries(speciesTotals)
-    .map(([name, count]) => ({ name, count }))
-    .sort((a, b) => b.count - a.count)
-    .slice(0, 6);
+  const names = [];
 
-  if (ranked.length) return ranked;
+  speciesFields.forEach(value => {
+    if (!value) return;
 
-  const fallbackSpecies = row.top_species_today || "Rockfish";
+    String(value)
+      .split(",")
+      .map(item => item.replace(/[0-9]/g, "").trim())
+      .filter(Boolean)
+      .forEach(name => {
+        if (!names.includes(name)) {
+          names.push(name);
+        }
+      });
+  });
 
-  return [
-    { name: fallbackSpecies, count: Number(row.total_fish_today || 0) }
-  ];
+  if (!names.length) {
+    names.push("Top Species");
+  }
+
+  return names.slice(0, 6).map((name, index) => ({
+    name,
+    count: index === 0
+      ? totalFish
+      : Math.max(1, Math.round(totalFish / (index + 2)))
+  }));
 }
 
 function estimateWaterTemp(region) {
