@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Boat Profile | The SoCal Bite</title>
-  <meta name="description" content="Southern California sportfishing boat profile with trips, anglers, fish counts, fish-per-angler, top species and recent reports." />
+  <meta name="description" content="Southern California sportfishing boat profile with trips, anglers, fish counts, fish-per-angler, top species, trends and recent reports." />
 
-  <link rel="stylesheet" href="style.css?v=loveable-boat-detail-1" />
+  <link rel="stylesheet" href="style.css?v=boat-detail-v2" />
 </head>
 
 <body>
@@ -45,6 +45,7 @@
       <p id="boatLanding">Loading landing...</p>
 
       <div class="boat-detail-kpis">
+        <article><span>30-Day Score</span><strong id="boatScore">--</strong></article>
         <article><span>Trips</span><strong id="boatTrips">--</strong></article>
         <article><span>Anglers</span><strong id="boatAnglers">--</strong></article>
         <article><span>Fish Landed</span><strong id="boatFish">--</strong></article>
@@ -54,9 +55,25 @@
 
     <section class="boat-detail-grid">
       <article class="boat-detail-card">
+        <h2>Boat Intelligence</h2>
+        <div id="boatIntel" class="boat-intel-list">
+          <div class="loading-card">Loading boat intelligence...</div>
+        </div>
+      </article>
+
+      <article class="boat-detail-card">
         <h2>Trip Mix</h2>
         <div id="boatTripMix" class="boat-trip-mix">
           <div class="loading-card">Loading trip mix...</div>
+        </div>
+      </article>
+    </section>
+
+    <section class="boat-detail-grid">
+      <article class="boat-detail-card">
+        <h2>Recent Trend</h2>
+        <div id="boatTrend" class="boat-trend-box">
+          <div class="loading-card">Loading trend...</div>
         </div>
       </article>
 
@@ -76,7 +93,7 @@
     </section>
 
     <section class="boat-detail-section">
-      <h2>Most recent reported trips</h2>
+      <h2>Most Recent Reported Trips</h2>
       <div id="boatReports" class="boat-reports-grid">
         <div class="loading-card">Loading reports...</div>
       </div>
@@ -104,6 +121,6 @@
   </footer>
 
   <script src="site-config.js"></script>
-  <script src="boat-detail.js?v=loveable-boat-detail-1"></script>
+  <script src="boat-detail.js?v=boat-detail-v2"></script>
 </body>
 </html>
