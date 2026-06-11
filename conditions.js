@@ -218,35 +218,72 @@
     grid.innerHTML = cards.join("");
   }
 
-  function calculateModeScore({ mode, wind, gusts, swell, waterTemp, tideMovement, rainChance, uvIndex }) {
-    let score = 100;
+  function calculateModeScore({
+  mode,
+  wind,
+  gusts,
+  swell,
+  waterTemp,
+  tideMovement,
+  rainChance,
+  uvIndex
+}) {
 
-    if (mode === "boat") {
-      score -= wind > 18 ? 28 : wind > 12 ? 16 : wind > 8 ? 8 : 0;
-      score -= swell > 5 ? 25 : swell > 3.5 ? 14 : swell > 2.5 ? 6 : 0;
-    }
+  let score = 60;
 
-    if (mode === "pier") {
-      score -= wind > 18 ? 22 : wind > 12 ? 12 : wind > 8 ? 5 : 0;
-      score -= swell > 5 ? 18 : swell > 3.5 ? 8 : 0;
-    }
+  // WIND
+  if (wind <= 5) score += 15;
+  else if (wind <= 8) score += 10;
+  else if (wind <= 12) score += 5;
+  else if (wind <= 16) score -= 5;
+  else if (wind <= 20) score -= 15;
+  else score -= 25;
 
-    if (mode === "beach") {
-      score -= wind > 16 ? 20 : wind > 10 ? 10 : 0;
-      score -= swell > 5 ? 24 : swell > 3.5 ? 10 : 0;
-    }
+  // GUSTS
+  if (gusts > 25) score -= 15;
+  else if (gusts > 18) score -= 8;
 
-    score -= gusts > 25 ? 12 : gusts > 18 ? 6 : 0;
-    score -= rainChance > 40 ? 10 : rainChance > 20 ? 5 : 0;
-
-    if (waterTemp >= 62 && waterTemp <= 69) score += 4;
-    if (String(tideMovement).toLowerCase().includes("moving")) score += 5;
-
-    if (uvIndex >= 8 && mode === "beach") score -= 5;
-
-    return Math.max(35, Math.min(100, Math.round(score)));
+  // SWELL
+  if (mode === "boat") {
+    if (swell <= 2) score += 15;
+    else if (swell <= 3) score += 10;
+    else if (swell <= 4) score += 5;
+    else if (swell <= 5) score -= 10;
+    else score -= 25;
   }
 
+  if (mode === "pier") {
+    if (swell <= 3) score += 10;
+    else if (swell <= 5) score += 2;
+    else score -= 12;
+  }
+
+  if (mode === "beach") {
+    if (swell >= 2 && swell <= 4) score += 12;
+    else if (swell > 6) score -= 15;
+  }
+
+  // WATER TEMP
+  if (waterTemp >= 63 && waterTemp <= 69) {
+    score += 8;
+  }
+
+  // TIDE
+  if (String(tideMovement).includes("Moving")) {
+    score += 10;
+  }
+
+  // RAIN
+  if (rainChance > 60) score -= 15;
+  else if (rainChance > 30) score -= 8;
+
+  // UV
+  if (mode === "beach" && uvIndex > 9) {
+    score -= 5;
+  }
+
+  return Math.max(25, Math.min(100, Math.round(score)));
+}
   function getTideMovement(tides) {
     if (!Array.isArray(tides) || tides.length < 2) return "Unknown";
 
