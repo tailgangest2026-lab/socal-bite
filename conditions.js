@@ -1,135 +1,333 @@
 (() => {
-  const boatRegions = {
-    "Santa Barbara": { lat: 34.4208, lon: -119.6982, station: "9411340", water: 61, swell: 2.8, targets: ["Rockfish", "Whitefish", "Sheephead", "Lingcod"] },
-    "Ventura": { lat: 34.2746, lon: -119.2290, station: "9411189", water: 62, swell: 3.0, targets: ["Rockfish", "Whitefish", "Calico Bass", "Yellowtail"] },
-    "Los Angeles": { lat: 33.7405, lon: -118.2817, station: "9410660", water: 65, swell: 2.6, targets: ["Calico Bass", "Rockfish", "Sculpin", "Yellowtail"] },
-    "Orange County": { lat: 33.6037, lon: -117.9000, station: "9410580", water: 66, swell: 2.5, targets: ["Yellowtail", "Calico Bass", "Bonito", "Barracuda"] },
-    "San Diego": { lat: 32.7157, lon: -117.1611, station: "9410170", water: 67, swell: 2.4, targets: ["Yellowtail", "Tuna", "Bonito", "Calico Bass"] }
+  const LOCATIONS = {
+    "Santa Barbara": { county: "Santa Barbara County", lat: 34.4208, lon: -119.6982, station: "9411340", water: 61, swell: 2.8 },
+    "Ventura": { county: "Ventura County", lat: 34.2746, lon: -119.2290, station: "9411189", water: 62, swell: 3.0 },
+    "Los Angeles": { county: "Los Angeles County", lat: 33.7405, lon: -118.2817, station: "9410660", water: 65, swell: 2.6 },
+    "Orange County": { county: "Orange County", lat: 33.6037, lon: -117.9, station: "9410580", water: 66, swell: 2.5 },
+    "San Diego": { county: "San Diego County", lat: 32.7157, lon: -117.1611, station: "9410170", water: 67, swell: 2.4 }
   };
 
+  let currentMode = "pier";
+  let currentRegion = "Los Angeles";
+
   document.addEventListener("DOMContentLoaded", () => {
+    if (typeof SCBConditions === "undefined") {
+      console.error("SCBConditions not found. Load noaa-conditions.js before conditions.js.");
+      return;
+    }
+
     SCBConditions.buildDateDropdown("dateSelect", 10);
-    document.getElementById("regionSelect")?.addEventListener("change", loadBoatConditions);
-    document.getElementById("dateSelect")?.addEventListener("change", loadBoatConditions);
-    loadBoatConditions();
+    buildModeTabs();
+    buildRegionTabs();
+    loadConditions();
   });
 
-  async function loadBoatConditions() {
-    const region = document.getElementById("regionSelect")?.value || "Los Angeles";
-    const date = document.getElementById("dateSelect")?.value || new Date().toISOString().split("T")[0];
-    const base = boatRegions[region];
+  function buildModeTabs() {
+    document.querySelectorAll(".mode-tabs button").forEach(button => {
+      button.addEventListener("click", () => {
+        currentMode = button.dataset.mode || "pier";
 
-    document.getElementById("conditionsSummary").innerHTML = `<div class="loading-card">Loading live conditions...</div>`;
+        document.querySelectorAll(".mode-tabs button").forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
 
-    const [weather, tides, waterTemp] = await Promise.all([
-      SCBConditions.getWeather(base.lat, base.lon, date),
-      SCBConditions.getTides(base.station, date),
-      SCBConditions.getWaterTemp(base.station)
-    ]);
-
-    const wind = SCBConditions.parseWindSpeed(weather.windSpeed, 8);
-    const temp = waterTemp || base.water;
-    const tideMovement = getTideMovement(tides);
-    const score = calculateScore(wind, base.swell, temp, tideMovement, weather);
-    const rating = SCBConditions.rating(score);
-
-    document.getElementById("conditionsUpdated").textContent =
-      `Showing live weather and NOAA tide data for ${region}.`;
-
-document.getElementById("conditionsSummary").innerHTML = `
-  <div class="condition-card weather-card">
-    <h3><i class="fa-solid fa-cloud-sun"></i> Weather Conditions</h3>
-
-    <div class="condition-grid">
-      <div><strong>Forecast:</strong> ${weather.shortForecast}</div>
-      <div><strong>Air Temp:</strong> ${Math.round(weather.temperature)}°F</div>
-      <div><strong>Wind:</strong> ${wind} mph ${weather.windDirection}</div>
-      <div><strong>Wind Gusts:</strong> ${value(weather.windGusts," mph")}</div>
-      <div><strong>Rain Chance:</strong> ${value(weather.precipitationProbability,"%")}</div>
-      <div><strong>Cloud Cover:</strong> ${value(weather.cloudCover,"%")}</div>
-      <div><strong>Humidity:</strong> ${value(weather.humidity,"%")}</div>
-      <div><strong>UV Index:</strong> ${value(weather.uvIndex)}</div>
-    </div>
-  </div>
-
-  <div class="condition-card water-card">
-    <h3><i class="fa-solid fa-water"></i> Water Conditions</h3>
-
-    <div class="condition-grid">
-      <div><strong>Water Temp:</strong> ${Number(temp).toFixed(1)}°F</div>
-      <div><strong>Swell:</strong> ${base.swell} ft</div>
-      <div><strong>Tide Movement:</strong> ${tideMovement}</div>
-      <div><strong>Visibility:</strong> ${value(weather.visibility," mi")}</div>
-      <div><strong>Pressure:</strong> ${value(weather.pressure," mb")}</div>
-    </div>
-  </div>
-`;
-
-    document.getElementById("biteScoreCard").innerHTML = `
-      <div class="score-circle">${score}</div>
-      <div>
-        <span class="forecast-kicker">Boat Fishing Score</span>
-        <h3>${rating} Boat Conditions</h3>
-        <p>${region} has a ${rating.toLowerCase()} setup based on wind, gusts, weather, water temperature, swell, and tide movement.</p>
-      </div>
-    `;
-
-    document.getElementById("tideTable").innerHTML = tideTable(SCBConditions.formatTides(tides));
-
-    document.getElementById("forecastNotes").innerHTML = `
-      <p><strong>${region}:</strong> Best boat fishing usually lines up with light wind, lower gusts, manageable swell, clean water, and moving tide.</p>
-      <p><strong>Likely targets:</strong> ${base.targets.join(", ")}</p>
-      <p><strong>Data sources:</strong> NOAA tides/water temperature + Open-Meteo weather.</p>
-    `;
+        loadConditions();
+      });
+    });
   }
 
-  function calculateScore(wind, swell, waterTemp, tideMovement, weather) {
-    let score = 78;
+  function buildRegionTabs() {
+    const tabs = document.getElementById("regionTabs");
+    if (!tabs) return;
 
-    if (wind <= 8) score += 10;
-    else if (wind > 12) score -= 18;
+    tabs.innerHTML = Object.keys(LOCATIONS).map(region => `
+      <button
+        type="button"
+        class="${region === currentRegion ? "active" : ""}"
+        data-region="${safeAttr(region)}"
+      >
+        ${safe(region)}
+      </button>
+    `).join("");
 
-    if ((weather.windGusts || 0) > 20) score -= 10;
-    if ((weather.precipitationProbability || 0) > 40) score -= 8;
-    if ((weather.uvIndex || 0) > 7) score -= 3;
+    tabs.querySelectorAll("button").forEach(button => {
+      button.addEventListener("click", () => {
+        currentRegion = button.dataset.region || "Los Angeles";
+        buildRegionTabs();
+        loadConditions();
+      });
+    });
+  }
 
-    if (swell <= 3) score += 8;
-    else if (swell > 4) score -= 15;
+  async function loadConditions() {
+    const base = LOCATIONS[currentRegion] || LOCATIONS["Los Angeles"];
+    const date = document.getElementById("dateSelect")?.value || new Date().toISOString().split("T")[0];
 
-    if (waterTemp >= 64 && waterTemp <= 69) score += 8;
-    else if (waterTemp < 60) score -= 8;
+    setText("conditionLocationLabel", `${currentRegion} · ${labelMode(currentMode)}`);
+    setText("conditionRating", "Loading");
 
-    if (tideMovement === "Strong") score += 8;
-    if (tideMovement === "Weak") score -= 5;
+    try {
+      const [weather, tides, waterTemp] = await Promise.all([
+        SCBConditions.getWeather(base.lat, base.lon, date),
+        SCBConditions.getTides(base.station, date),
+        SCBConditions.getWaterTemp(base.station)
+      ]);
 
-    return Math.max(0, Math.min(100, Math.round(score)));
+      const wind = SCBConditions.parseWindSpeed(weather?.windSpeed, 8);
+      const gusts = Number(weather?.windGusts || 0);
+      const temp = Number(waterTemp || base.water);
+      const swell = Number(base.swell);
+      const tideMovement = getTideMovement(tides);
+      const score = calculateModeScore({
+        mode: currentMode,
+        wind,
+        gusts,
+        swell,
+        waterTemp: temp,
+        tideMovement,
+        rainChance: weather?.precipitationProbability,
+        uvIndex: weather?.uvIndex
+      });
+
+      const rating = getRating(score);
+
+      renderMainConditions({
+        mode: currentMode,
+        region: currentRegion,
+        base,
+        weather,
+        tides,
+        wind,
+        gusts,
+        temp,
+        swell,
+        tideMovement,
+        score,
+        rating
+      });
+
+      renderAllRegions(date);
+    } catch (error) {
+      console.error("Conditions load failed:", error);
+      setText("conditionRating", "Unavailable");
+    }
+  }
+
+  function renderMainConditions(data) {
+    const { mode, region, weather, tides, wind, gusts, temp, swell, tideMovement, score, rating } = data;
+
+    setText("conditionLocationLabel", `${region} · ${labelMode(mode)}`);
+    setText("conditionWaterTemp", `${Math.round(temp)}°`);
+    setText("conditionAirTemp", `water · air ${weather?.temperature || "--"}°F`);
+
+    const ratingEl = document.getElementById("conditionRating");
+    if (ratingEl) {
+      ratingEl.textContent = `${score}/100 · ${rating}`;
+      ratingEl.className = "green-pill";
+    }
+
+    setText("conditionWind", `${wind} mph`);
+    setText("conditionWindDir", gusts ? `Gusts ${gusts} mph` : "Light to moderate");
+    setText("conditionSwell", `${swell.toFixed(1)} ft`);
+    setText("conditionSwellPeriod", mode === "boat" ? "Offshore estimate" : mode === "beach" ? "Surf estimate" : "Nearshore estimate");
+    setText("conditionTide", tideMovement);
+    setText("conditionNextTide", getNextTideLabel(tides));
+    setText("conditionVisibility", estimateVisibility(region, wind));
+    setText("conditionClarity", estimateClarity(mode, wind, swell));
+    setText("conditionClarityNote", mode === "beach" ? "Surf zone" : mode === "pier" ? "Pier zone" : "Offshore zone");
+    setText("conditionMoon", weather?.moonPhase || "Waxing 62%");
+    setText("conditionSunrise", weather?.sunrise || "5:42 AM");
+    setText("conditionSunset", weather?.sunset || "8:01 PM");
+    setText("conditionAdvisory", wind >= 18 || gusts >= 25 ? "Possible" : "None");
+  }
+
+  async function renderAllRegions(date) {
+    const grid = document.getElementById("allRegionsGrid");
+    const title = document.getElementById("allRegionsTitle");
+    if (!grid) return;
+
+    if (title) {
+      title.textContent = `All regions · ${labelMode(currentMode)}`;
+    }
+
+    grid.innerHTML = `<div class="loading-card">Loading regional board...</div>`;
+
+    const cards = [];
+
+    for (const [region, base] of Object.entries(LOCATIONS)) {
+      try {
+        const [weather, tides, waterTemp] = await Promise.all([
+          SCBConditions.getWeather(base.lat, base.lon, date),
+          SCBConditions.getTides(base.station, date),
+          SCBConditions.getWaterTemp(base.station)
+        ]);
+
+        const wind = SCBConditions.parseWindSpeed(weather?.windSpeed, 8);
+        const temp = Number(waterTemp || base.water);
+        const tideMovement = getTideMovement(tides);
+        const score = calculateModeScore({
+          mode: currentMode,
+          wind,
+          gusts: Number(weather?.windGusts || 0),
+          swell: base.swell,
+          waterTemp: temp,
+          tideMovement,
+          rainChance: weather?.precipitationProbability,
+          uvIndex: weather?.uvIndex
+        });
+
+        cards.push(`
+          <article class="region-card condition-region-card">
+            <div class="region-top">
+              <span>${safe(region)}</span>
+              <strong>${score}</strong>
+            </div>
+
+            <div class="region-stat-row">
+              <div>
+                <small>Wind</small>
+                <b>${wind} mph</b>
+              </div>
+              <div>
+                <small>Water</small>
+                <b>${Math.round(temp)}°</b>
+              </div>
+            </div>
+
+            <div class="region-details">
+              <p><span>Swell</span>${Number(base.swell).toFixed(1)} ft</p>
+              <p><span>Tide</span>${safe(tideMovement)}</p>
+              <p><span>Rating</span>${safe(getRating(score))}</p>
+            </div>
+          </article>
+        `);
+      } catch (error) {
+        cards.push(`
+          <article class="region-card condition-region-card">
+            <div class="region-top">
+              <span>${safe(region)}</span>
+              <strong>--</strong>
+            </div>
+            <div class="region-details">
+              <p><span>Status</span>Unavailable</p>
+            </div>
+          </article>
+        `);
+      }
+    }
+
+    grid.innerHTML = cards.join("");
+  }
+
+  function calculateModeScore({ mode, wind, gusts, swell, waterTemp, tideMovement, rainChance, uvIndex }) {
+    let score = 100;
+
+    if (mode === "boat") {
+      score -= wind > 18 ? 28 : wind > 12 ? 16 : wind > 8 ? 8 : 0;
+      score -= swell > 5 ? 25 : swell > 3.5 ? 14 : swell > 2.5 ? 6 : 0;
+    }
+
+    if (mode === "pier") {
+      score -= wind > 18 ? 22 : wind > 12 ? 12 : wind > 8 ? 5 : 0;
+      score -= swell > 5 ? 18 : swell > 3.5 ? 8 : 0;
+    }
+
+    if (mode === "beach") {
+      score -= wind > 16 ? 20 : wind > 10 ? 10 : 0;
+      score -= swell > 5 ? 24 : swell > 3.5 ? 10 : 0;
+    }
+
+    score -= gusts > 25 ? 12 : gusts > 18 ? 6 : 0;
+    score -= rainChance > 40 ? 10 : rainChance > 20 ? 5 : 0;
+
+    if (waterTemp >= 62 && waterTemp <= 69) score += 4;
+    if (String(tideMovement).toLowerCase().includes("moving")) score += 5;
+
+    if (uvIndex >= 8 && mode === "beach") score -= 5;
+
+    return Math.max(35, Math.min(100, Math.round(score)));
   }
 
   function getTideMovement(tides) {
-    const heights = tides.map(t => Number(t.v)).filter(n => !isNaN(n));
-    if (heights.length < 2) return "Moderate";
-    const range = Math.max(...heights) - Math.min(...heights);
-    if (range >= 4) return "Strong";
-    if (range >= 2) return "Moderate";
-    return "Weak";
+    if (!Array.isArray(tides) || tides.length < 2) return "Unknown";
+
+    const now = new Date();
+    const future = tides
+      .map(t => ({
+        time: new Date(t.time || t.t || t.date),
+        height: Number(t.height || t.v || t.prediction)
+      }))
+      .filter(t => t.time > now && Number.isFinite(t.height))
+      .slice(0, 2);
+
+    if (future.length < 2) return "Unknown";
+
+    const diff = future[1].height - future[0].height;
+
+    if (Math.abs(diff) < 0.15) return "Slack";
+    return diff > 0 ? "Rising / Moving" : "Falling / Moving";
   }
 
-  function card(title, big, sub) {
-    return `<div class="condition-card"><h3>${title}</h3><p class="big-number">${big}</p><span>${sub}</span></div>`;
+  function getNextTideLabel(tides) {
+    if (!Array.isArray(tides) || !tides.length) return "Tide data pending";
+
+    const now = new Date();
+    const next = tides
+      .map(t => ({
+        time: new Date(t.time || t.t || t.date),
+        height: Number(t.height || t.v || t.prediction)
+      }))
+      .filter(t => t.time > now && Number.isFinite(t.height))
+      .sort((a, b) => a.time - b.time)[0];
+
+    if (!next) return "Tide data pending";
+
+    return `${next.height.toFixed(1)} ft · ${next.time.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" })}`;
   }
 
-  function value(v, suffix = "") {
-    return v === null || v === undefined ? "N/A" : `${Math.round(v)}${suffix}`;
+  function estimateVisibility(region, wind) {
+    if (wind >= 15) return "6 mi";
+    if (region === "San Diego") return "13 mi";
+    return "10 mi";
   }
 
-  function tideTable(tides) {
-    return `
-      <table>
-        <thead><tr><th>Time</th><th>Tide</th><th>Height</th></tr></thead>
-        <tbody>
-          ${tides.map(t => `<tr><td>${t.time}</td><td>${t.type}</td><td>${t.height}</td></tr>`).join("")}
-        </tbody>
-      </table>
-    `;
+  function estimateClarity(mode, wind, swell) {
+    if (mode === "beach" && swell > 4) return "Choppy";
+    if (wind > 14) return "Stirred";
+    if (swell < 3) return "Clean";
+    return "Fair";
+  }
+
+  function getRating(score) {
+    if (score >= 85) return "Excellent";
+    if (score >= 70) return "Good";
+    if (score >= 55) return "Fair";
+    return "Slow";
+  }
+
+  function labelMode(mode) {
+    if (mode === "boat") return "Boat";
+    if (mode === "beach") return "Surf";
+    return "Pier";
+  }
+
+  function setText(id, value) {
+    const el = document.getElementById(id);
+    if (el) el.textContent = value || "--";
+  }
+
+  function safe(value) {
+    return String(value || "N/A")
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+  }
+
+  function safeAttr(value) {
+    return String(value || "")
+      .replaceAll("&", "&amp;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
   }
 })();
