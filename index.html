@@ -4,153 +4,105 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>The SoCal Bite</title>
+  <title>The SoCal Bite | Southern California Fishing Reports</title>
 
-  <meta
-    name="description"
-    content="SoCal Bite delivers Southern California fishing reports, top boats, top species, regional bite updates, and boat intelligence."
-  />
+  <meta name="description" content="Southern California fishing reports, bite forecasts, boat conditions, pier conditions, surf conditions, top boats, and fishing gear." />
 
-  <link rel="manifest" href="/manifest.json">
-  <meta name="theme-color" content="#031828">
-
-  <link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
-
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-  />
-
-  <link rel="stylesheet" href="style.css?v=4" />
-
-  <link rel="canonical" href="https://thesocalbite.com/" />
-  <meta property="og:title" content="The SoCal Bite" />
-  <meta property="og:description" content="SoCal Bite delivers Southern California fishing reports, top boats, top species, regional bite updates, and boat intelligence." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://thesocalbite.com/" />
-  <meta property="og:image" content="https://thesocalbite.com/assets/socal-bite-logo.webp" />
+  <link rel="stylesheet" href="style.css?v=1" />
 </head>
 
-<body class="home-page">
-  <main class="full-bg-home">
-
-    <div class="social-links">
-      <a href="https://www.instagram.com/the_socal_bite/" target="_blank" aria-label="Instagram">
-        <img src="assets/instagram-icon.png" class="social-logo" alt="Instagram" loading="lazy">
+<body>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="logo" href="/">
+        <img src="assets/socal-bite-logo.webp" alt="SoCal Bite Logo" />
+        <span>The SoCal Bite</span>
       </a>
 
-      <a href="https://www.facebook.com/profile.php?id=61590740421081" target="_blank" aria-label="Facebook">
-        <img src="assets/facebook-icon.png" class="social-logo" alt="Facebook" loading="lazy">
-      </a>
+      <nav class="nav-links">
+        <a href="/daily-report.html">Reports</a>
+        <a href="/bite-forecast.html">Forecast</a>
+        <a href="/boat-conditions.html">Boat Conditions</a>
+        <a href="/pier-conditions.html">Pier</a>
+        <a href="/gear.html">Gear</a>
+      </nav>
     </div>
+  </header>
 
-    <section class="home-hero">
-      <h1>SoCal Bite</h1>
-      <p>Southern California fishing reports, boat ratings, landing data, and bite trends.</p>
+  <main>
+    <section class="hero">
+      <div class="hero-overlay"></div>
 
-      <button id="installAppBtn" class="install-app-btn" hidden>
-        Install SoCal Bite App
-      </button>
-    </section>
+      <div class="hero-content">
+        <p class="eyebrow">Southern California Fishing Intelligence</p>
 
-    <nav class="floating-nav">
-      <a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
+        <h1>Know where the bite is before you go.</h1>
 
-      <div class="dropdown">
-        <button class="dropbtn">
-          <i class="fa-solid fa-chart-line"></i><span>Boat Reports</span><i class="fa-solid fa-caret-down caret"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="daily-report.html">Daily Report</a>
-          <a href="boat-ratings.html">Boat Ratings</a>
-          <a href="top-boats.html">Top Boats</a>
-        </div>
-      </div>
+        <p class="hero-subtitle">
+          Daily fish counts, bite forecasts, boat trends, pier conditions, surf conditions,
+          and gear recommendations for SoCal anglers.
+        </p>
 
-      <div class="dropdown">
-        <button class="dropbtn">
-          <i class="fa-solid fa-chart-line"></i><span>Species Reports</span><i class="fa-solid fa-caret-down caret"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="bite-trends.html">Bite Trends</a>
-          <a href="forecast">Bite Forecast</a>
-          <a href="species.html">Species</a>
-          <a href="top-species.html">Top Species</a>
-        </div>
-      </div>
-
-        <div class="dropdown">
-        <button class="dropbtn">
-          <i class="fa-solid fa-water"></i>
-          <span>Conditions</span>
-          <i class="fa-solid fa-caret-down caret"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="boat-conditions.html">Boat Conditions</a>
-          <a href="beach-conditions.html">Surf Conditions</a>
-          <a href="pier-conditions.html">Pier Conditions</a>
-        </div>
-      </div>
-      <a href="news.html"><i class="fa-solid fa-newspaper"></i><span>Fishing News</span></a>
-      <a href="landings.html"><i class="fa-solid fa-fish"></i><span>Landings</span></a>
-      <a href="about.html"><i class="fa-solid fa-user"></i><span>About</span></a>
-    </nav>
-
-    <section class="home-summary">
-      <h2>Yesterday’s Bite by Region</h2>
-      <p class="section-subtitle">Summary from SoCal Bite processed data.</p>
-
-      <div id="homeRegionCards" class="region-card-grid">
-        <div class="loading-card">Loading bite data...</div>
-      </div>
-    </section>
-
-    <section class="home-status">
-      <div class="status-card">
-        <i class="fa-regular fa-clock status-icon"></i>
-
-        <div>
-          <h3>Last Updated</h3>
-          <div id="lastUpdated" class="updated-big">Loading...</div>
+        <div class="hero-buttons">
+          <a href="/daily-report.html" class="btn primary">View Daily Report</a>
+          <a href="/bite-forecast.html" class="btn secondary">Check Bite Forecast</a>
         </div>
       </div>
     </section>
 
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Live Tools</p>
+        <h2>Fishing reports built for quick decisions</h2>
+      </div>
+
+      <div class="card-grid">
+        <a class="feature-card" href="/daily-report.html">
+          <div class="icon">🎣</div>
+          <h3>Daily Fish Counts</h3>
+          <p>See recent catches by region, landing, boat, species, and trip type.</p>
+        </a>
+
+        <a class="feature-card" href="/bite-forecast.html">
+          <div class="icon">📈</div>
+          <h3>Bite Forecast</h3>
+          <p>Forecasts based on recent catches, weather, tides, moon phase, and water conditions.</p>
+        </a>
+
+        <a class="feature-card" href="/boat-conditions.html">
+          <div class="icon">🚤</div>
+          <h3>Boat Conditions</h3>
+          <p>Check wind, weather, tide movement, and water temperature before booking.</p>
+        </a>
+
+        <a class="feature-card" href="/pier-conditions.html">
+          <div class="icon">🌊</div>
+          <h3>Pier & Surf Conditions</h3>
+          <p>Plan pier and surf trips with better visibility into the current conditions.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="section dark-section">
+      <div class="section-heading">
+        <p class="eyebrow">Top Picks</p>
+        <h2>Gear guides coming next</h2>
+        <p>
+          Beginner combos, pier setups, surf fishing gear, yellowtail setups, and tuna gear
+          will be added as affiliate pages.
+        </p>
+      </div>
+
+      <div class="gear-preview">
+        <a href="/gear.html" class="btn primary">View Gear Guides</a>
+      </div>
+    </section>
   </main>
 
-  <script src="site-config.js" defer></script>
-  <script src="home.js?v=4" defer></script>
+  <footer class="site-footer">
+    <p>© <span id="year"></span> The SoCal Bite. Built for Southern California anglers.</p>
+  </footer>
 
-  <script>
-    let deferredPrompt;
-
-    window.addEventListener("beforeinstallprompt", event => {
-      event.preventDefault();
-      deferredPrompt = event;
-
-      const installBtn = document.getElementById("installAppBtn");
-      if (installBtn) {
-        installBtn.hidden = false;
-      }
-    });
-
-    document.getElementById("installAppBtn")?.addEventListener("click", async () => {
-      if (!deferredPrompt) return;
-
-      deferredPrompt.prompt();
-      await deferredPrompt.userChoice;
-
-      deferredPrompt = null;
-      document.getElementById("installAppBtn").hidden = true;
-    });
-
-    if ("serviceWorker" in navigator) {
-      window.addEventListener("load", () => {
-        navigator.serviceWorker.register("/service-worker.js");
-      });
-    }
-  </script>
+  <script src="main.js"></script>
 </body>
 </html>
