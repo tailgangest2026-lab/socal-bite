@@ -29,7 +29,7 @@ document
 
 document
   .getElementById("priceRegionSelect")
-  ?.addEventListener("change", renderPriceComparison);
+  ?.addEventListener("change", );
 
 } catch (error) {
 console.error("Landings load failed:", error);
@@ -206,8 +206,6 @@ function renderPriceComparison() {
   `).join("");
 }
 
-}
-
 function renderLandingCards() {
 const grid =
 document.getElementById("landingsGrid");
@@ -367,10 +365,10 @@ return Number(value || 0)
 }
 
 function safe(value) {
-return String(value || "")
-.replaceAll("&", "&")
-.replaceAll("<", "<")
-.replaceAll(">", ">")
-.replaceAll('"', """)
-.replaceAll("'", "'");
+  return String(value || "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
 }
