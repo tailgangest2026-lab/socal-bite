@@ -1,180 +1,187 @@
-const TARGET_SPECIES = [
-  "Yellowtail",
-  "Bluefin Tuna",
-  "Yellowfin Tuna",
-  "Rockfish",
-  "White Seabass",
-  "Halibut",
-  "Calico Bass",
-  "Sheephead",
-  "Whitefish",
-  "Lingcod"
-];
-
 document.addEventListener("DOMContentLoaded", loadSpeciesReports);
 
 async function loadSpeciesReports() {
-  const container = document.getElementById("speciesPage");
+  const container = document.getElementById("speciesGrid");
+  if (!container) return;
 
   try {
-    container.innerHTML = "<h2>Loading species reports...</h2>";
+    container.innerHTML = `<div class="loading-card">Loading species analytics...</div>`;
 
-    const indexResponse = await fetch(socalBiteDataUrl("daily-report-index.json"));
+    const index = await fetchJson("daily-report-index.json");
 
-    if (!indexResponse.ok) {
-      throw new Error("Could not load daily-report-index.json");
-    }
-
-    const dailyIndex = await indexResponse.json();
-
-    if (!Array.isArray(dailyIndex) || !dailyIndex.length) {
-      container.innerHTML = "<h2>No daily reports found.</h2>";
+    if (!Array.isArray(index) || !index.length) {
+      container.innerHTML = `<div class="empty-card">No daily reports found.</div>`;
       return;
     }
 
-    const recentReports = dailyIndex.slice(0, 30);
-
+    const recentReports = index.slice(0, 84);
     const allRows = [];
 
     for (const report of recentReports) {
       const filePath = report.file || `reports/daily-report-${report.date}.json`;
 
       try {
-        const response = await fetch(socalBiteDataUrl(filePath));
-
-        if (!response.ok) continue;
-
-        const rows = await response.json();
-
-        if (Array.isArray(rows)) {
-          allRows.push(...rows);
-        }
+        const rows = await fetchJson(filePath);
+        if (Array.isArray(rows)) allRows.push(...rows);
       } catch (error) {
         console.warn("Skipped report:", filePath, error);
       }
     }
 
-    renderSpeciesReports(allRows);
-
+    const speciesData = buildSpeciesSummary(allRows);
+    renderSpeciesCards(speciesData);
   } catch (error) {
     console.error("Species report load error:", error);
-    container.innerHTML = "<h2>Could not load species reports.</h2>";
+    container.innerHTML = `<div class="empty-card">Could not load species reports.</div>`;
   }
 }
 
-function renderSpeciesReports(rows) {
-  const container = document.getElementById("speciesPage");
+async function fetchJson(path) {
+  const url = typeof socalBiteDataUrl === "function" ? socalBiteDataUrl(path) : path;
+  const response = await fetch(url + "?v=" + Date.now());
 
-  if (!Array.isArray(rows) || !rows.length) {
-    container.innerHTML = "<h2>No species data found.</h2>";
-    return;
+  if (!response.ok) {
+    throw new Error(`Could not load ${path}`);
   }
 
-  const speciesData = buildSpeciesSummary(rows);
-
-  container.innerHTML = `
-    <section class="region-section">
-      <h2>Southern California Species Reports</h2>
-      <p class="updated">Last 30 days based on reported sportfishing catches</p>
-    </section>
-
-    <section class="region-section">
-      ${TARGET_SPECIES.map(species => {
-        const item = speciesData[species] || {
-          fish: 0,
-          topRegion: "No data",
-          topBoat: "No data",
-          biteStatus: "Slow"
-        };
-
-  return `
-  <a class="boat-row" href="species-detail.html?species=${encodeURIComponent(species)}">
-    <div>
-      <strong>${species}</strong>
-      <p>${item.biteStatus} bite • Top Region: ${item.topRegion}</p>
-      <p>Top Boat: ${item.topBoat}</p>
-    </div>
-
-    <div>
-      <strong>${numberFormat(item.fish)} Fish</strong>
-      <p>Last 30 Days</p>
-    </div>
-  </a>
-`;
-      }).join("")}
-    </section>
-  `;
+  return response.json();
 }
 
 function buildSpeciesSummary(rows) {
-  const data = {};
-
-  TARGET_SPECIES.forEach(species => {
-    data[species] = {
-      fish: 0,
-      regions: {},
-      boats: {}
-    };
-  });
+  const speciesMap = {};
+  const maxRegions = [
+    "Los Angeles",
+    "Orange County",
+    "San Diego",
+    "Ventura",
+    "Santa Barbara",
+    "San Luis Obispo"
+  ];
 
   rows.forEach(row => {
-    const region = row.region || "Unknown Region";
-    const boat = row.boat || "Unknown Boat";
-    const fishItems = parseFishCounts(row.fish_counts);
+    const fishCounts = String(row.fish_counts || "");
+    const region = clean(row.region || "Unknown");
+    const anglers = Number(row.anglers || 0);
 
-    fishItems.forEach(item => {
-      if (!TARGET_SPECIES.includes(item.species)) return;
+    parseFishCounts(fishCounts).forEach(item => {
+      if (!speciesMap[item.species]) {
+        speciesMap[item.species] = {
+          name: item.species,
+          fish: 0,
+          trips: 0,
+          anglers: 0,
+          regions: {}
+        };
+      }
 
-      data[item.species].fish += item.count;
+      speciesMap[item.species].fish += item.count;
+      speciesMap[item.species].trips += 1;
+      speciesMap[item.species].anglers += anglers;
 
-      data[item.species].regions[region] =
-        (data[item.species].regions[region] || 0) + item.count;
+      if (!speciesMap[item.species].regions[region]) {
+        speciesMap[item.species].regions[region] = 0;
+      }
 
-      data[item.species].boats[boat] =
-        (data[item.species].boats[boat] || 0) + item.count;
+      speciesMap[item.species].regions[region] += item.count;
     });
   });
 
-  Object.keys(data).forEach(species => {
-    const item = data[species];
-
-    item.topRegion = getTopKey(item.regions) || "No data";
-    item.topBoat = getTopKey(item.boats) || "No data";
-    item.biteStatus = getBiteStatus(item.fish);
-  });
-
-  return data;
+  return Object.values(speciesMap)
+    .map(item => ({
+      ...item,
+      fpa: item.fish / Math.max(item.anglers, 1),
+      regionList: maxRegions
+        .filter(region => item.regions[region])
+        .map(region => ({
+          region,
+          fish: item.regions[region]
+        }))
+    }))
+    .sort((a, b) => b.fish - a.fish)
+    .slice(0, 30);
 }
 
-function parseFishCounts(fishCounts) {
-  return String(fishCounts || "")
+function parseFishCounts(text) {
+  return String(text || "")
     .split(",")
-    .map(part => part.trim())
-    .filter(Boolean)
     .map(part => {
-      const match = part.match(/^(\d+)\s+(.+)$/);
-
+      const match = part.trim().match(/^([\d,]+)\s+(.+)$/);
       if (!match) return null;
 
       return {
-        count: Number(match[1] || 0),
+        count: Number(match[1].replace(/,/g, "")),
         species: match[2].trim()
       };
     })
     .filter(Boolean);
 }
 
-function getTopKey(obj) {
-  return Object.keys(obj || {}).sort((a, b) => obj[b] - obj[a])[0];
+function renderSpeciesCards(speciesData) {
+  const container = document.getElementById("speciesGrid");
+  if (!container) return;
+
+  if (!speciesData.length) {
+    container.innerHTML = `<div class="empty-card">No species data found.</div>`;
+    return;
+  }
+
+  const maxFish = Math.max(...speciesData.map(item => item.fish), 1);
+
+  container.innerHTML = speciesData.map((item, index) => {
+    const width = Math.max(2, Math.round((item.fish / maxFish) * 100));
+
+    return `
+      <a class="species-card-love" href="/species-detail.html?species=${encodeURIComponent(item.name)}">
+        <div class="species-card-top">
+          <div class="species-title-wrap">
+            <span class="species-rank">${String(index + 1).padStart(2, "0")}</span>
+            <div>
+              <h2>🐟 ${safe(item.name)}</h2>
+              <p>${format(item.trips)} trips · ${format(item.anglers)} anglers · ${item.fpa.toFixed(2)} FPA</p>
+            </div>
+          </div>
+
+          <div class="species-total">
+            <strong>${format(item.fish)}</strong>
+            <span>Fish</span>
+          </div>
+        </div>
+
+        <div class="species-bar-track">
+          <div class="species-bar-fill" style="width:${width}%"></div>
+        </div>
+
+        <div class="species-region-pills">
+          ${renderRegionPills(item.regionList)}
+        </div>
+      </a>
+    `;
+  }).join("");
 }
 
-function getBiteStatus(count) {
-  if (count >= 1000) return "Hot";
-  if (count >= 300) return "Good";
-  if (count >= 75) return "Fair";
-  return "Slow";
+function renderRegionPills(regions) {
+  if (!regions.length) {
+    return `<span>Regional data unavailable</span>`;
+  }
+
+  return regions.map(item => `
+    <span>${safe(item.region)}: <b>${format(item.fish)}</b></span>
+  `).join("");
 }
 
-function numberFormat(value) {
-  return Number(value || 0).toLocaleString();
+function clean(value) {
+  return String(value || "").trim();
+}
+
+function format(value) {
+  return Number(value || 0).toLocaleString("en-US");
+}
+
+function safe(value) {
+  return String(value || "N/A")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
 }
