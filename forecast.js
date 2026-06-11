@@ -94,17 +94,22 @@ function buildSpeciesRankings(row) {
   if (!container) return;
 
   const species = extractSpecies(row);
+  const anglers = Number(row.total_anglers_today || 1);
 
-  container.innerHTML = species.map((item, index) => `
-    <a class="species-rank-card" href="/species-detail.html?species=${encodeURIComponent(item.name)}">
-      <div>
-        <span>Rank #${index + 1}</span>
-        <h3>${safe(item.name)}</h3>
-      </div>
-      <strong>${format(item.count)}</strong>
-      <small>Total Fish</small>
-    </a>
-  `).join("");
+  container.innerHTML = species.map((item, index) => {
+    const fpa = item.count / Math.max(anglers, 1);
+
+    return `
+      <a class="species-rank-card" href="/species-detail.html?species=${encodeURIComponent(item.name)}">
+        <div>
+          <span>Rank #${index + 1}</span>
+          <h3>${safe(item.name)}</h3>
+        </div>
+        <strong>${fpa.toFixed(2)}</strong>
+        <small>Fish Per Angler</small>
+      </a>
+    `;
+  }).join("");
 }
 
 function extractSpecies(row) {
