@@ -121,8 +121,44 @@ function renderForecast(region) {
   setText("moon", row.moon || "Waxing 62%");
 
   buildSpeciesRankings(region);
+  buildSpeciesFpaChart(region);
 }
+function buildSpeciesFpaChart(region) {
+  const chart = document.getElementById("speciesFpaChart");
+  if (!chart) return;
 
+  const species = buildSpeciesFpaByRegion(region);
+
+  if (!species.length) {
+    chart.innerHTML = `
+      <div class="empty-card">
+        No chart data found for ${safe(region)}.
+      </div>
+    `;
+    return;
+  }
+
+  const maxFpa = Math.max(...species.map(item => item.fpa), 1);
+
+  chart.innerHTML = species.map(item => {
+    const width = Math.max(6, Math.round((item.fpa / maxFpa) * 100));
+
+    return `
+      <div class="fpa-row">
+        <div class="fpa-label">
+          <strong>${safe(item.name)}</strong>
+          <span>${format(item.count)} fish · ${format(item.anglers)} anglers</span>
+        </div>
+
+        <div class="fpa-bar-wrap">
+          <div class="fpa-bar" style="width:${width}%"></div>
+        </div>
+
+        <b>${item.fpa.toFixed(2)}</b>
+      </div>
+    `;
+  }).join("");
+}
 function buildSpeciesRankings(region) {
   const container = document.getElementById("speciesRankings");
   if (!container) return;
