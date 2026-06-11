@@ -4,105 +4,163 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>The SoCal Bite | Southern California Fishing Reports</title>
+  <title>The SoCal Bite | Southern California Fishing Intelligence</title>
+  <meta name="description" content="Live Southern California sportfishing reports, bite forecasts, conditions, rankings, species analytics, landings, and fishing gear." />
 
-  <meta name="description" content="Southern California fishing reports, bite forecasts, boat conditions, pier conditions, surf conditions, top boats, and fishing gear." />
-
-  <link rel="stylesheet" href="style.css?v=1" />
+  <link rel="stylesheet" href="style.css?v=loveable-home-1" />
 </head>
 
 <body>
-  <header class="site-header">
-    <div class="nav-wrap">
-      <a class="logo" href="/">
-        <img src="assets/socal-bite-logo.webp" alt="SoCal Bite Logo" />
-        <span>The SoCal Bite</span>
-      </a>
+  <header class="app-header">
+    <a class="brand" href="/">
+      <img src="assets/socal-bite-logo.webp" alt="The SoCal Bite Logo" />
+      <div>
+        <strong>The SoCal Bite</strong>
+        <span>Marine Intelligence</span>
+      </div>
+    </a>
 
-      <nav class="nav-links">
-        <a href="/daily-report.html">Reports</a>
-        <a href="/bite-forecast.html">Forecast</a>
-        <a href="/boat-conditions.html">Boat Conditions</a>
-        <a href="/pier-conditions.html">Pier</a>
-        <a href="/gear.html">Gear</a>
-      </nav>
+    <nav class="top-nav">
+      <a class="active" href="/">Today</a>
+      <a href="/bite-forecast.html">Forecast</a>
+      <a href="/boat-conditions.html">Conditions</a>
+      <a href="/top-boats.html">Rankings</a>
+      <a href="/species.html">Species</a>
+      <a href="/landings.html">Landings</a>
+      <a href="/daily-report.html">Reports</a>
+      <a href="/gear.html">Fishing Gear</a>
+      <a href="/news.html">News</a>
+    </nav>
+
+    <div class="live-pill">
+      <span></span> Live
     </div>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="hero-overlay"></div>
+    <section class="hero-panel">
+      <div class="hero-copy">
+        <div class="status-row">
+          <span class="green-pill">● Reporting Now</span>
+          <span id="todayDate" class="small-pill">Today</span>
+          <span class="cyan-pill">SoCal Coast · 6 Regions</span>
+        </div>
 
-      <div class="hero-content">
-        <p class="eyebrow">Southern California Fishing Intelligence</p>
+        <h1>Today’s bite,<br><span>decoded.</span></h1>
 
-        <h1>Know where the bite is before you go.</h1>
-
-        <p class="hero-subtitle">
-          Daily fish counts, bite forecasts, boat trends, pier conditions, surf conditions,
-          and gear recommendations for SoCal anglers.
+        <p>
+          Live sportfishing reports, NOAA-driven bite forecasts and species analytics
+          from San Luis Obispo to San Diego — the way modern anglers read the water.
         </p>
 
-        <div class="hero-buttons">
-          <a href="/daily-report.html" class="btn primary">View Daily Report</a>
-          <a href="/bite-forecast.html" class="btn secondary">Check Bite Forecast</a>
+        <div class="hero-actions">
+          <a class="primary-btn" href="/bite-forecast.html">See the forecast →</a>
+          <a class="ghost-btn" href="/top-boats.html">Explore rankings</a>
         </div>
       </div>
-    </section>
 
-    <section class="section">
-      <div class="section-heading">
-        <p class="eyebrow">Live Tools</p>
-        <h2>Fishing reports built for quick decisions</h2>
-      </div>
+      <div class="kpi-grid">
+        <article class="kpi-card">
+          <span>⚓ Trips Today</span>
+          <strong id="kpiTrips">--</strong>
+        </article>
 
-      <div class="card-grid">
-        <a class="feature-card" href="/daily-report.html">
-          <div class="icon">🎣</div>
-          <h3>Daily Fish Counts</h3>
-          <p>See recent catches by region, landing, boat, species, and trip type.</p>
-        </a>
+        <article class="kpi-card">
+          <span>♟ Anglers</span>
+          <strong id="kpiAnglers">--</strong>
+        </article>
 
-        <a class="feature-card" href="/bite-forecast.html">
-          <div class="icon">📈</div>
-          <h3>Bite Forecast</h3>
-          <p>Forecasts based on recent catches, weather, tides, moon phase, and water conditions.</p>
-        </a>
-
-        <a class="feature-card" href="/boat-conditions.html">
-          <div class="icon">🚤</div>
-          <h3>Boat Conditions</h3>
-          <p>Check wind, weather, tide movement, and water temperature before booking.</p>
-        </a>
-
-        <a class="feature-card" href="/pier-conditions.html">
-          <div class="icon">🌊</div>
-          <h3>Pier & Surf Conditions</h3>
-          <p>Plan pier and surf trips with better visibility into the current conditions.</p>
-        </a>
+        <article class="kpi-card highlight">
+          <span>🐟 Fish Landed</span>
+          <strong id="kpiFish">--</strong>
+        </article>
       </div>
     </section>
 
-    <section class="section dark-section">
-      <div class="section-heading">
-        <p class="eyebrow">Top Picks</p>
-        <h2>Gear guides coming next</h2>
+    <section class="content-section">
+      <div class="section-title">
+        <span>Regional Board</span>
+        <h2>The coastline, region by region</h2>
+        <p>Every region’s top boat, landing and species — pulled from the latest reports.</p>
+      </div>
+
+      <div id="regionBoard" class="region-grid"></div>
+    </section>
+
+    <section class="split-section">
+      <article class="ranking-card">
+        <div class="ranking-header">
+          <div>
+            <span>🏆 Fish-Per-Angler · 30 Days</span>
+            <h3>Top boats this season</h3>
+          </div>
+          <a href="/top-boats.html">All →</a>
+        </div>
+
+        <div id="topBoatsList" class="ranking-list"></div>
+      </article>
+
+      <article class="ranking-card">
+        <div class="ranking-header">
+          <div>
+            <span>🔥 By Total Fish · 30 Days</span>
+            <h3>Hottest landings</h3>
+          </div>
+          <a href="/landings.html">All →</a>
+        </div>
+
+        <div id="topLandingsList" class="ranking-list"></div>
+      </article>
+    </section>
+
+    <section class="forecast-panel">
+      <div>
+        <span class="outline-pill">Bite Forecast</span>
+        <h2>Tomorrow’s bite, modeled on swell, tide and recent history.</h2>
         <p>
-          Beginner combos, pier setups, surf fishing gear, yellowtail setups, and tuna gear
-          will be added as affiliate pages.
+          Forecast scores blend marine conditions with recent catch trends to surface
+          where the fish may be before the boats leave the harbor.
         </p>
+        <a href="/bite-forecast.html">Open forecast ↗</a>
       </div>
 
-      <div class="gear-preview">
-        <a href="/gear.html" class="btn primary">View Gear Guides</a>
+      <div id="forecastPreview" class="forecast-grid"></div>
+    </section>
+
+    <section class="content-section">
+      <div class="section-title">
+        <span>Fishing Gear</span>
+        <h2>Recommended Fishing Gear</h2>
+        <p>Hand-picked rod and reel combos tuned for Southern California fishing.</p>
+      </div>
+
+      <div class="gear-grid">
+        <a class="gear-card" href="/gear.html">
+          <div class="gear-img gear-1"></div>
+          <span>Gear Pick</span>
+          <h3>Best Pier Fishing Combos</h3>
+        </a>
+
+        <a class="gear-card" href="/gear.html">
+          <div class="gear-img gear-2"></div>
+          <span>Gear Pick</span>
+          <h3>Best Surf Fishing Combos</h3>
+        </a>
+
+        <a class="gear-card" href="/gear.html">
+          <div class="gear-img gear-3"></div>
+          <span>Gear Pick</span>
+          <h3>Best Yellowtail Setups</h3>
+        </a>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>© <span id="year"></span> The SoCal Bite. Built for Southern California anglers.</p>
+    <p>© <span id="year"></span> The SoCal Bite · Southern California Fishing Intelligence</p>
   </footer>
 
-  <script src="main.js"></script>
+  <script src="site-config.js"></script>
+  <script src="home.js?v=loveable-home-1"></script>
 </body>
 </html>
