@@ -765,3 +765,54 @@ main {
   color: var(--gold);
   text-decoration: underline;
 }
+.love-footer {
+  margin-top: 80px;
+  padding: 55px 28px;
+  border-top: 1px solid var(--border);
+  background: #020a12;
+  display: grid;
+  grid-template-columns: 1.3fr 0.6fr 0.6fr;
+  gap: 40px;
+}
+
+.footer-brand strong {
+  display: block;
+  margin-bottom: 18px;
+  font-size: 1.05rem;
+}
+
+.footer-brand p {
+  max-width: 460px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.footer-brand span,
+.footer-links h4 {
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  font-size: 0.72rem;
+  font-weight: 900;
+}
+
+.footer-links {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+}
+
+.footer-links a {
+  color: var(--soft);
+  font-weight: 800;
+}
+
+.footer-links a:hover {
+  color: var(--cyan);
+}
+
+@media (max-width: 750px) {
+  .love-footer {
+    grid-template-columns: 1fr;
+  }
+}
