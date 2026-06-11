@@ -1516,3 +1516,84 @@ main {
     width: 100%;
   }
 }
+.species-cta {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px 80px;
+}
+
+.species-cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #16d9ff;
+  color: #00111d;
+  font-weight: 800;
+  font-size: 1.1rem;
+  text-decoration: none;
+  padding: 16px 32px;
+  border-radius: 12px;
+  transition: 0.2s;
+}
+
+.species-cta-button:hover {
+  transform: translateY(-2px);
+}
+
+.love-footer {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 60px;
+  padding: 70px 40px;
+  border-top: 1px solid rgba(255,255,255,.08);
+  background: #031423;
+}
+
+.footer-brand h3 {
+  margin: 0 0 20px;
+}
+
+.footer-brand p {
+  max-width: 500px;
+  line-height: 1.7;
+  color: #9aa7b8;
+}
+
+.footer-refresh {
+  display: block;
+  margin-top: 20px;
+  color: #8ea3b8;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: .8rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-links h4 {
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  color: #8ea3b8;
+  font-size: .85rem;
+  letter-spacing: 1px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #16d9ff;
+}
+
+@media (max-width: 900px) {
+  .love-footer {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
