@@ -23,8 +23,8 @@ async function initHome() {
   }
 
   try {
-    const topLandings = await fetchJson("top-landings.json");
-    buildTopLandings(topLandings);
+    const topLandings = homeData;
+    buildTopLandingsFromHome(homeData);
   } catch (error) {
     console.error("Top landings error:", error);
     showEmpty("topLandingsList", "Landing rankings unavailable.");
@@ -69,9 +69,9 @@ function setYear() {
 function buildKpis(data) {
   const rows = getRows(data);
 
-  const trips = rows.length;
-  const anglers = sumField(rows, ["anglers", "Anglers"]);
-  const fish = sumField(rows, ["total_fish", "totalFish", "Total Fish", "fish"]);
+  const trips = sumField(rows, ["total_trips_today"]);
+  const anglers = sumField(rows, ["total_anglers_today"]);
+  const fish = sumField(rows, ["total_fish_today"]);
 
   setText("kpiTrips", formatNumber(trips));
   setText("kpiAnglers", formatNumber(anglers));
@@ -84,10 +84,34 @@ function buildRegionBoard(data) {
 
   const rows = getRows(data);
 
-  if (!rows.length) {
-    container.innerHTML = `<div class="empty-card">No regional data available.</div>`;
-    return;
-  }
+  container.innerHTML = rows.map(row => {
+    return `
+      <article class="region-card">
+        <div class="region-top">
+          <span>${escapeHtml(row.region)}</span>
+          <strong>${formatNumber(row.total_fish_today)}</strong>
+        </div>
+
+        <div class="region-stat-row">
+          <div>
+            <small>Trips</small>
+            <b>${formatNumber(row.total_trips_today)}</b>
+          </div>
+          <div>
+            <small>Anglers</small>
+            <b>${formatNumber(row.total_anglers_today)}</b>
+          </div>
+        </div>
+
+        <div class="region-details">
+          <p><span>Top Boat</span>${escapeHtml(row.top_boat_today)}</p>
+          <p><span>Landing</span>${escapeHtml(row.top_landing_today)}</p>
+          <p><span>Hot Species</span>${escapeHtml(row.top_species_today)}</p>
+        </div>
+      </article>
+    `;
+  }).join("");
+}
 
   const regions = groupBy(rows, row => clean(row.region || row.Region || "Unknown"));
 
@@ -130,7 +154,24 @@ function buildRegionBoard(data) {
 
   container.innerHTML = cards;
 }
+function buildTopLandingsFromHome(data) {
+  const container = document.getElementById("topLandingsList");
+  if (!container) return;
 
+  const rows = getRows(data)
+    .slice()
+    .sort((a, b) => Number(b.total_fish_today || 0) - Number(a.total_fish_today || 0))
+    .slice(0, 6);
+
+  container.innerHTML = rows.map((row, index) => {
+    return rankingItem(
+      index + 1,
+      row.top_landing_today || "Unknown Landing",
+      row.region || "Southern California",
+      `${formatNumber(row.total_fish_today)} fish`
+    );
+  }).join("");
+}
 function buildTopBoats(data) {
   const container = document.getElementById("topBoatsList");
   if (!container) return;
