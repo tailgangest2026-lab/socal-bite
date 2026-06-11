@@ -2204,3 +2204,25 @@ main {
     grid-template-columns: 1fr;
   }
 }
+.report-table td {
+  white-space: normal;
+}
+
+.report-table td:last-child {
+  max-width: 460px;
+  white-space: normal;
+}
+
+.fish-count-cell {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  min-width: 360px;
+  max-width: 520px;
+  overflow: visible;
+}
+
+.fish-count-pill {
+  white-space: normal;
+  line-height: 1.3;
+}
