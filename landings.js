@@ -12,7 +12,7 @@ fetchJson("trip-prices.json"),
 fetchJson("landing-trip-types.json")
 ]);
 
-```
+
 tripPrices = Array.isArray(prices) ? prices : [];
 tripTypes = Array.isArray(types) ? types : [];
 
@@ -30,7 +30,6 @@ document
 document
   .getElementById("priceRegionSelect")
   ?.addEventListener("change", renderPriceComparison);
-```
 
 } catch (error) {
 console.error("Landings load failed:", error);
@@ -64,7 +63,7 @@ const filePath =
 report.file ||
 `reports/daily-report-${report.date}.json`;
 
-```
+
 try {
   const reportRows = await fetchJson(filePath);
 
@@ -74,7 +73,7 @@ try {
 } catch (error) {
   console.warn("Skipped report:", filePath);
 }
-```
+
 
 }
 
@@ -87,7 +86,7 @@ const map = {};
 rows.forEach(row => {
 const landing = String(row.landing || "").trim();
 
-```
+
 if (!landing) return;
 
 if (!map[landing]) {
@@ -103,7 +102,6 @@ if (!map[landing]) {
 map[landing].trips += 1;
 map[landing].anglers += Number(row.anglers || 0);
 map[landing].fish += Number(row.total_fish || 0);
-```
 
 });
 
@@ -219,7 +217,6 @@ if (!grid) return;
 grid.innerHTML = landingStats
 .map(landing => {
 
-```
   const landingPrices =
     tripPrices.filter(
       row => row.landing === landing.landing
@@ -361,7 +358,6 @@ grid.innerHTML = landingStats
   `;
 })
 .join("");
-```
 
 }
 
