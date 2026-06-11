@@ -161,77 +161,52 @@ region =>
 .join("");
 }
 function renderPriceComparison() {
-const tbody =
-document.getElementById("priceCompareBody");
+  const tbody = document.getElementById("priceCompareBody");
+  if (!tbody) return;
 
-if (!tbody) return;
+  const selectedType = document.getElementById("tripTypeSelect")?.value || "";
+  const selectedRegion = document.getElementById("priceRegionSelect")?.value || "all";
 
-const selectedType =
-document.getElementById("tripTypeSelect")?.value || "";
+  let prices = tripPrices;
 
-const selectedRegion =
-document.getElementById("priceRegionSelect")?.value || "all";
+  if (selectedType) {
+    prices = prices.filter(row => row.trip_type === selectedType);
+  }
 
-let prices = tripPrices;
+  if (selectedRegion !== "all") {
+    prices = prices.filter(row => row.region === selectedRegion);
+  }
 
-if (selectedType) {
-prices = prices.filter(
-row => row.trip_type === selectedType
-);
-}
+  prices = [...prices].sort((a, b) => Number(a.price || 999999) - Number(b.price || 999999));
 
-if (selectedRegion !== "all") {
-prices = prices.filter(
-row => row.region === selectedRegion
-);
-}
-
-prices = [...prices].sort(
-(a, b) =>
-Number(a.price || 999999) -
-Number(b.price || 999999)
-);
-
-if (!prices.length) {
-tbody.innerHTML = `       <tr>         <td colspan="6">
-          No prices found.         </td>       </tr>
+  if (!prices.length) {
+    tbody.innerHTML = `
+      <tr>
+        <td colspan="6">No prices found.</td>
+      </tr>
     `;
-return;
+    return;
+  }
+
+  tbody.innerHTML = prices.slice(0, 100).map(row => `
+    <tr>
+      <td>
+        <a href="/landing-detail.html?landing=${encodeURIComponent(row.landing)}">
+          ${safe(row.landing)}
+        </a>
+      </td>
+      <td>${safe(row.region)}</td>
+      <td>${safe(row.trip_type)}</td>
+      <td>${row.price ? "$" + Number(row.price).toFixed(2) : "Check Website"}</td>
+      <td>${row.last_updated || ""}</td>
+      <td>
+        <a href="${row.booking_url || row.source_url || "#"}" target="_blank" rel="noopener">
+          Book
+        </a>
+      </td>
+    </tr>
+  `).join("");
 }
-
-tbody.innerHTML = prices
-.slice(0, 100)
-.map(row => ` <tr> <td> <a href="/landing-detail.html?landing=${encodeURIComponent(row.landing)}">
-${safe(row.landing)} </a> </td>
-
-```
-    <td>${safe(row.region)}</td>
-
-    <td>${safe(row.trip_type)}</td>
-
-    <td>
-      ${row.price
-        ? "$" + Number(row.price).toFixed(2)
-        : "Check Website"}
-    </td>
-
-    <td>
-      ${row.last_updated || ""}
-    </td>
-
-    <td>
-      <a
-        href="${row.booking_url || row.source_url || "#"}"
-        target="_blank"
-        rel="noopener"
-      >
-        Book
-      </a>
-    </td>
-  </tr>
-`)
-.join("");
-```
 
 }
 
