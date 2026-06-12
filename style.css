@@ -1479,7 +1479,21 @@ main { padding-top: 86px; }
   .rank-controls { justify-content: stretch; flex-direction: column; }
   .rank-controls input { min-width: 0; width: 100%; }
 }
+.custom-date-range {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 
+.custom-date-range.hidden {
+  display: none;
+}
+
+.rank-controls select,
+.rank-controls input[type="date"] {
+  padding: 10px 14px;
+  border-radius: 10px;
+}
 /* =========================================================
    SPECIES PAGE
    ========================================================= */
