@@ -136,8 +136,8 @@ async function renderForecast(region) {
 function updateBiteScoreGauge(score, label) {
   const cleanScore = Math.max(0, Math.min(100, Number(score || 0)));
 
-  const scoreValue = document.getElementById("biteScore");
-  const scoreLabel = document.getElementById("biteLabel");
+  const scoreValue = document.getElementById("biteScoreValue");
+  const scoreLabel = document.getElementById("biteScoreLabel");
   const scoreRing =
     document.getElementById("biteScoreRing") ||
     document.querySelector(".score-ring");
@@ -182,24 +182,30 @@ function buildSpeciesFpaChart(region) {
 
   const maxFpa = Math.max(...species.map(item => item.fpa), 1);
 
-  chart.innerHTML = species.map(item => {
-    const width = Math.max(6, Math.round((item.fpa / maxFpa) * 100));
+  chart.innerHTML = `
+    <div class="species-bar-chart">
+      ${species.map(item => {
+        const height = Math.max(8, Math.round((item.fpa / maxFpa) * 100));
 
-    return `
-      <div class="fpa-row">
-        <div class="fpa-label">
-          <strong>${safe(item.name)}</strong>
-          <span>${format(item.count)} fish · ${format(item.anglers)} anglers</span>
-        </div>
-        <div class="fpa-bar-wrap">
-          <div class="fpa-bar" style="width:${width}%"></div>
-        </div>
-        <b>${item.fpa.toFixed(2)}</b>
-      </div>
-    `;
-  }).join("");
+        return `
+          <div class="species-bar-item">
+            <div class="species-bar-value">${item.fpa.toFixed(2)}</div>
+
+            <div class="species-bar-track">
+              <div class="species-bar-fill" style="height:${height}%"></div>
+            </div>
+
+            <div class="species-bar-name">${safe(item.name)}</div>
+            <div class="species-bar-meta">
+              ${format(item.count)} fish<br>
+              ${format(item.anglers)} anglers
+            </div>
+          </div>
+        `;
+      }).join("")}
+    </div>
+  `;
 }
-
 function buildSpeciesRankings(region) {
   const container = document.getElementById("speciesRankings");
   if (!container) return;
