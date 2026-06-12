@@ -1,538 +1,385 @@
-(() => {
-  const DEBUG = true;
-
-  const LOCATIONS = {
-    "San Luis Obispo": {
-      county: "San Luis Obispo County",
-      lat: 35.2828,
-      lon: -120.6596,
-      station: "9412110",
-      fallbackWater: 60,
-      fallbackSwell: 3.0
-    },
-    "Santa Barbara": {
-      county: "Santa Barbara County",
-      lat: 34.4208,
-      lon: -119.6982,
-      station: "9411340",
-      fallbackWater: 61,
-      fallbackSwell: 2.8
-    },
-    "Ventura": {
-      county: "Ventura County",
-      lat: 34.2746,
-      lon: -119.229,
-      station: "9411189",
-      fallbackWater: 62,
-      fallbackSwell: 3.0
-    },
-    "Los Angeles": {
-      county: "Los Angeles County",
-      lat: 33.7405,
-      lon: -118.2817,
-      station: "9410660",
-      fallbackWater: 65,
-      fallbackSwell: 2.6
-    },
-    "Orange County": {
-      county: "Orange County",
-      lat: 33.6037,
-      lon: -117.9,
-      station: "9410580",
-      fallbackWater: 66,
-      fallbackSwell: 2.5
-    },
-    "San Diego": {
-      county: "San Diego County",
-      lat: 32.7157,
-      lon: -117.1611,
-      station: "9410170",
-      fallbackWater: 67,
-      fallbackSwell: 2.4
-    }
+window.SCBConditions = (() => {
+  const noaaStations = {
+    "Santa Barbara": "9411340",
+    "Ventura": "9411189",
+    "Los Angeles": "9410660",
+    "Orange County": "9410580",
+    "San Diego": "9410170",
+    "La Jolla": "9410230"
   };
 
-  let currentMode = "pier";
-  let currentRegion = "Los Angeles";
-  let requestId = 0;
-
-  document.addEventListener("DOMContentLoaded", () => {
-    if (typeof SCBConditions === "undefined") {
-      console.error("SCBConditions not found. Load noaa-conditions.js before conditions.js.");
-      return;
-    }
-
-    SCBConditions.buildDateDropdown("dateSelect", 10);
-
-    const dateSelect = document.getElementById("dateSelect");
-    if (dateSelect) {
-      dateSelect.addEventListener("change", () => {
-        debug("DATE CHANGED:", dateSelect.value);
-        loadConditions();
-      });
-    }
-
-    buildModeTabs();
-    buildRegionTabs();
-    loadConditions();
-  });
-
-  function buildModeTabs() {
-    document.querySelectorAll(".mode-tabs button").forEach(button => {
-      button.addEventListener("click", () => {
-        currentMode = button.dataset.mode || "pier";
-
-        document
-          .querySelectorAll(".mode-tabs button")
-          .forEach(btn => btn.classList.remove("active"));
-
-        button.classList.add("active");
-        loadConditions();
-      });
-    });
-  }
-
-  function buildRegionTabs() {
-    const tabs = document.getElementById("regionTabs");
-    if (!tabs) return;
-
-    tabs.innerHTML = Object.keys(LOCATIONS).map(region => `
-      <button
-        type="button"
-        class="${region === currentRegion ? "active" : ""}"
-        data-region="${safeAttr(region)}"
-      >
-        ${safe(region)}
-      </button>
-    `).join("");
-
-    tabs.querySelectorAll("button").forEach(button => {
-      button.addEventListener("click", () => {
-        currentRegion = button.dataset.region || "Los Angeles";
-        buildRegionTabs();
-        loadConditions();
-      });
-    });
-  }
-
-  async function loadConditions() {
-    const thisRequest = ++requestId;
-
-    const base = LOCATIONS[currentRegion] || LOCATIONS["Los Angeles"];
-
-    const date =
-      document.getElementById("dateSelect")?.value ||
-      new Date().toISOString().split("T")[0];
-
-    debug("FETCHING CONDITIONS FOR:", {
-      date,
-      region: currentRegion,
-      mode: currentMode,
-      base
-    });
-
-    setLoadingState();
-
-    try {
-      const data = await fetchConditionData(base, date);
-
-      if (thisRequest !== requestId) {
-        debug("Skipped old request:", thisRequest);
-        return;
-      }
-
-      renderMainConditions({
-        mode: currentMode,
-        region: currentRegion,
-        base,
-        ...data
-      });
-
-      renderAllRegions(date, thisRequest);
-    } catch (error) {
-      console.error("Conditions load failed:", error);
-      setText("conditionRating", "Unavailable");
-    }
-  }
-
-  function setLoadingState() {
-    setText("conditionLocationLabel", `${currentRegion} · ${labelMode(currentMode)}`);
-    setText("conditionWaterTemp", "--°");
-    setText("conditionAirTemp", "water · air --°F");
-    setText("conditionRating", "Loading");
-
-    setText("conditionWind", "--");
-    setText("conditionWindDir", "--");
-
-    setText("conditionForecast", "--");
-    setText("conditionCloudRain", "Cloud / rain");
-
-    setText("conditionSwell", "--");
-    setText("conditionSwellPeriod", "Loading");
-    setText("conditionTide", "--");
-    setText("conditionNextTide", "Loading tide window");
-    setText("conditionVisibility", "--");
-    setText("conditionClarity", "--");
-    setText("conditionMoon", "--");
-    setText("conditionSunrise", "--");
-    setText("conditionSunset", "--");
-    setText("conditionAdvisory", "--");
-  }
-
-  async function fetchConditionData(base, date) {
-    const [weather, tides, waterTemp, marine] = await Promise.all([
-      SCBConditions.getWeather(base.lat, base.lon, date),
-      SCBConditions.getTides(base.station, date),
-      SCBConditions.getWaterTemp(base.station),
-      typeof SCBConditions.getMarine === "function"
-        ? SCBConditions.getMarine(base.lat, base.lon, date)
-        : Promise.resolve(null)
+  async function getWeather(lat, lon, dateString) {
+    const [nws, openMeteo] = await Promise.all([
+      getNwsWeather(lat, lon, dateString),
+      getOpenMeteoWeather(lat, lon, dateString)
     ]);
 
-    debug("NOAA RESPONSE:", {
-      date,
-      weather,
-      tides,
-      waterTemp,
-      marine
-    });
-
-    const wind = SCBConditions.parseWindSpeed(weather?.windSpeed, 8);
-    const gusts = Number(weather?.windGusts || 0);
-    const temp = Number(waterTemp || base.fallbackWater || 65);
-
-    const swell = Number(
-      marine?.waveHeight ||
-      marine?.swellWaveHeight ||
-      base.fallbackSwell ||
-      3
-    );
-
-    const swellPeriod = Number(
-      marine?.wavePeriod ||
-      marine?.swellWavePeriod ||
-      0
-    );
-
-    const swellDirection =
-      marine?.waveDirectionText ||
-      marine?.swellWaveDirectionText ||
-      "W";
-
-    const tideMovement = getTideMovement(tides, date);
-
-    const score = calculateModeScore({
-      mode: currentMode,
-      wind,
-      gusts,
-      swell,
-      waterTemp: temp,
-      tideMovement,
-      rainChance: Number(weather?.precipitationProbability || 0),
-      uvIndex: Number(weather?.uvIndex || 0)
-    });
-
-    const rating = getRating(score);
-
     return {
-      date,
-      weather,
-      tides,
-      marine,
-      wind,
-      gusts,
-      temp,
-      swell,
-      swellPeriod,
-      swellDirection,
-      tideMovement,
-      score,
-      rating
+      temperature: openMeteo?.temperature ?? nws?.temperature ?? 70,
+      windSpeed: openMeteo?.windSpeed ?? nws?.windSpeed ?? 8,
+      windGusts: openMeteo?.windGusts ?? null,
+      windDirection: openMeteo?.windDirectionText ?? nws?.windDirection ?? "W",
+      precipitationProbability: openMeteo?.precipitationProbability ?? null,
+      cloudCover: openMeteo?.cloudCover ?? null,
+      humidity: openMeteo?.humidity ?? null,
+      pressure: openMeteo?.pressure ?? null,
+      visibility: openMeteo?.visibility ?? null,
+      uvIndex: openMeteo?.uvIndex ?? null,
+      sunrise: openMeteo?.sunrise ?? null,
+      sunset: openMeteo?.sunset ?? null,
+      shortForecast: nws?.shortForecast ?? getWeatherSummary(openMeteo?.weatherCode),
+      source: openMeteo ? "Open-Meteo + NOAA" : "NOAA"
     };
   }
 
-  function renderMainConditions(data) {
-    const {
-      mode,
-      region,
-      date,
-      weather,
-      tides,
-      wind,
-      gusts,
-      temp,
-      swell,
-      swellPeriod,
-      swellDirection,
-      tideMovement,
-      score,
-      rating
-    } = data;
+  async function getNwsWeather(lat, lon, dateString) {
+    try {
+      const pointRes = await fetch(`https://api.weather.gov/points/${lat},${lon}`);
+      if (!pointRes.ok) throw new Error("NWS point lookup failed");
 
-    setText("conditionLocationLabel", `${region} · ${labelMode(mode)} · ${formatDateLabel(date)}`);
-    setText("conditionWaterTemp", `${Math.round(temp)}°`);
-    setText("conditionAirTemp", `water · air ${weather?.temperature ?? "--"}°F`);
+      const pointData = await pointRes.json();
+      const hourlyUrl = pointData.properties.forecastHourly;
 
-    const ratingEl = document.getElementById("conditionRating");
-    if (ratingEl) {
-      ratingEl.textContent = `${score}/100 · ${rating}`;
-      ratingEl.className = ratingClass(score);
-    }
+      const hourlyRes = await fetch(hourlyUrl);
+      if (!hourlyRes.ok) throw new Error("NWS hourly forecast failed");
 
-    setText("conditionWind", `${wind} mph`);
-    setText(
-      "conditionWindDir",
-      gusts ? `Gusts ${gusts} mph` : weather?.windDirection || "Light to moderate"
-    );
+      const hourlyData = await hourlyRes.json();
+      const periods = hourlyData.properties.periods || [];
 
-    setText("conditionForecast", weather?.shortForecast || "Forecast available");
+      const period =
+        periods.find(p => String(p.startTime).startsWith(`${dateString}T12`)) ||
+        periods.find(p => String(p.startTime).startsWith(dateString)) ||
+        periods[0];
 
-    setText(
-      "conditionCloudRain",
-      `${weather?.cloudCover ?? "--"}% clouds · ${weather?.precipitationProbability ?? "--"}% rain`
-    );
+      if (!period) return null;
 
-    setText("conditionSwell", `${swell.toFixed(1)} ft`);
-    setText(
-      "conditionSwellPeriod",
-      swellPeriod
-        ? `${swellPeriod.toFixed(1)} sec · ${swellDirection}`
-        : `${swellDirection} · marine estimate`
-    );
-
-    setText("conditionTide", tideMovement);
-    setText("conditionNextTide", getNextTideLabel(tides, date));
-
-    setText("conditionVisibility", estimateVisibility(region, wind, weather?.visibility));
-    setText("conditionClarity", estimateClarity(mode, wind, swell));
-
-    setText(
-      "conditionClarityNote",
-      mode === "beach" ? "Surf zone" : mode === "pier" ? "Pier zone" : "Offshore zone"
-    );
-
-    setText("conditionMoon", getMoonPhase(date));
-    setText("conditionSunrise", weather?.sunrise || getEstimatedSunrise(date));
-    setText("conditionSunset", weather?.sunset || getEstimatedSunset(date));
-    setText("conditionAdvisory", wind >= 18 || gusts >= 25 || swell >= 5 ? "Possible" : "None");
-  }
-
-  async function renderAllRegions(date, activeRequest) {
-    const grid = document.getElementById("allRegionsGrid");
-    const title = document.getElementById("allRegionsTitle");
-
-    if (!grid) return;
-
-    if (title) {
-      title.textContent = `All regions · ${labelMode(currentMode)} · ${formatDateLabel(date)}`;
-    }
-
-    grid.innerHTML = `<div class="loading-card">Loading regional board...</div>`;
-
-    const cards = [];
-
-    for (const [region, base] of Object.entries(LOCATIONS)) {
-      if (activeRequest !== requestId) return;
-
-      try {
-        const data = await fetchConditionData(base, date);
-
-        cards.push(`
-          <article class="region-card condition-region-card">
-            <div class="region-top">
-              <span>${safe(region)}</span>
-              <strong>${data.score}</strong>
-            </div>
-
-            <div class="region-stat-row">
-              <div>
-                <small>Wind</small>
-                <b>${data.wind} mph</b>
-              </div>
-              <div>
-                <small>Water</small>
-                <b>${Math.round(data.temp)}°</b>
-              </div>
-            </div>
-
-            <div class="region-details">
-              <p><span>Forecast</span>${safe(data.weather?.shortForecast || "Available")}</p>
-              <p><span>Clouds</span>${data.weather?.cloudCover ?? "--"}%</p>
-              <p><span>Rain</span>${data.weather?.precipitationProbability ?? "--"}%</p>
-              <p><span>Swell</span>${data.swell.toFixed(1)} ft</p>
-              <p><span>Tide</span>${safe(data.tideMovement)}</p>
-              <p><span>Moon</span>${safe(getMoonPhase(date))}</p>
-              <p><span>Rating</span>${safe(data.rating)}</p>
-            </div>
-          </article>
-        `);
-      } catch (error) {
-        console.warn("Region unavailable:", region, error);
-
-        cards.push(`
-          <article class="region-card condition-region-card">
-            <div class="region-top">
-              <span>${safe(region)}</span>
-              <strong>--</strong>
-            </div>
-            <div class="region-details">
-              <p><span>Status</span>Unavailable</p>
-            </div>
-          </article>
-        `);
-      }
-    }
-
-    if (activeRequest === requestId) {
-      grid.innerHTML = cards.join("");
+      return {
+        temperature: period.temperature,
+        windSpeed: parseWindSpeed(period.windSpeed, 8),
+        windDirection: period.windDirection || "W",
+        shortForecast: period.shortForecast || ""
+      };
+    } catch (error) {
+      console.warn("NWS fallback used:", error);
+      return null;
     }
   }
 
-  function calculateModeScore({
-    mode,
-    wind,
-    gusts,
-    swell,
-    waterTemp,
-    tideMovement,
-    rainChance,
-    uvIndex
-  }) {
-    let score = 60;
+  async function getOpenMeteoWeather(lat, lon, dateString) {
+    try {
+      const hourlyVars = [
+        "temperature_2m",
+        "relative_humidity_2m",
+        "precipitation_probability",
+        "weather_code",
+        "cloud_cover",
+        "visibility",
+        "pressure_msl",
+        "wind_speed_10m",
+        "wind_direction_10m",
+        "wind_gusts_10m",
+        "uv_index"
+      ].join(",");
 
-    if (wind <= 5) score += 15;
-    else if (wind <= 8) score += 10;
-    else if (wind <= 12) score += 5;
-    else if (wind <= 16) score -= 5;
-    else if (wind <= 20) score -= 15;
-    else score -= 25;
+      const dailyVars = [
+        "sunrise",
+        "sunset",
+        "uv_index_max"
+      ].join(",");
 
-    if (gusts > 25) score -= 15;
-    else if (gusts > 18) score -= 8;
+      const url =
+        "https://api.open-meteo.com/v1/forecast" +
+        `?latitude=${lat}` +
+        `&longitude=${lon}` +
+        `&hourly=${hourlyVars}` +
+        `&daily=${dailyVars}` +
+        "&temperature_unit=fahrenheit" +
+        "&wind_speed_unit=mph" +
+        "&precipitation_unit=inch" +
+        "&timezone=America%2FLos_Angeles" +
+        "&forecast_days=10";
 
-    if (mode === "boat") {
-      if (swell <= 2) score += 15;
-      else if (swell <= 3) score += 10;
-      else if (swell <= 4) score += 5;
-      else if (swell <= 5) score -= 10;
-      else score -= 25;
+      const res = await fetch(url);
+      if (!res.ok) throw new Error("Open-Meteo request failed");
+
+      const data = await res.json();
+      const hourly = data.hourly;
+      const daily = data.daily;
+
+      if (!hourly || !hourly.time) return null;
+
+      const index = findForecastIndex(hourly.time, dateString);
+      const dailyIndex = findDailyIndex(daily?.time, dateString);
+
+      if (index < 0) return null;
+
+      return {
+        temperature: hourly.temperature_2m?.[index],
+        humidity: hourly.relative_humidity_2m?.[index],
+        precipitationProbability: hourly.precipitation_probability?.[index],
+        weatherCode: hourly.weather_code?.[index],
+        cloudCover: hourly.cloud_cover?.[index],
+        visibility: metersToMiles(hourly.visibility?.[index]),
+        pressure: hourly.pressure_msl?.[index],
+        windSpeed: hourly.wind_speed_10m?.[index],
+        windDirection: hourly.wind_direction_10m?.[index],
+        windDirectionText: degreesToCompass(hourly.wind_direction_10m?.[index]),
+        windGusts: hourly.wind_gusts_10m?.[index],
+        uvIndex: hourly.uv_index?.[index] ?? daily?.uv_index_max?.[dailyIndex],
+        sunrise: formatTime(daily?.sunrise?.[dailyIndex]),
+        sunset: formatTime(daily?.sunset?.[dailyIndex])
+      };
+    } catch (error) {
+      console.warn("Open-Meteo fallback used:", error);
+      return null;
     }
-
-    if (mode === "pier") {
-      if (swell <= 3) score += 10;
-      else if (swell <= 5) score += 2;
-      else score -= 12;
-    }
-
-    if (mode === "beach") {
-      if (swell >= 2 && swell <= 4) score += 12;
-      else if (swell > 6) score -= 15;
-      else if (swell < 1.5) score -= 5;
-    }
-
-    if (waterTemp >= 63 && waterTemp <= 69) {
-      score += 8;
-    } else if (waterTemp < 58 || waterTemp > 74) {
-      score -= 8;
-    }
-
-    const tideText = String(tideMovement).toLowerCase();
-
-    if (tideText.includes("moving")) {
-      score += 10;
-    } else if (tideText.includes("slack")) {
-      score -= 6;
-    }
-
-    if (rainChance > 60) score -= 15;
-    else if (rainChance > 30) score -= 8;
-
-    if (mode === "beach" && uvIndex > 9) {
-      score -= 5;
-    }
-
-    return Math.max(25, Math.min(100, Math.round(score)));
   }
 
-  function getTideMovement(tides, selectedDate) {
-    if (!Array.isArray(tides) || tides.length < 2) return "Unknown";
+  async function getMarine(lat, lon, dateString) {
+    try {
+      const hourlyVars = [
+        "wave_height",
+        "wave_direction",
+        "wave_period",
+        "wind_wave_height",
+        "wind_wave_direction",
+        "wind_wave_period",
+        "swell_wave_height",
+        "swell_wave_direction",
+        "swell_wave_period"
+      ].join(",");
 
-    const parsed = parseTides(tides);
-    if (parsed.length < 2) return "Unknown";
+      const url =
+        "https://marine-api.open-meteo.com/v1/marine" +
+        `?latitude=${lat}` +
+        `&longitude=${lon}` +
+        `&hourly=${hourlyVars}` +
+        "&length_unit=imperial" +
+        "&timezone=America%2FLos_Angeles" +
+        "&forecast_days=10";
 
-    const targetTime = getTargetTideTime(selectedDate);
-    let nextIndex = parsed.findIndex(t => t.time > targetTime);
+      const res = await fetch(url);
+      if (!res.ok) throw new Error("Open-Meteo marine request failed");
 
-    if (nextIndex <= 0) nextIndex = 1;
+      const data = await res.json();
+      const hourly = data.hourly;
 
-    const previous = parsed[nextIndex - 1];
-    const next = parsed[nextIndex];
+      if (!hourly || !hourly.time) return null;
 
-    if (!previous || !next) return "Unknown";
+      const index = findForecastIndex(hourly.time, dateString);
+      if (index < 0) return null;
 
-    const diff = next.height - previous.height;
+      return {
+        waveHeight: roundOne(hourly.wave_height?.[index]),
+        waveDirection: hourly.wave_direction?.[index],
+        waveDirectionText: degreesToCompass(hourly.wave_direction?.[index]),
+        wavePeriod: roundOne(hourly.wave_period?.[index]),
 
-    if (Math.abs(diff) < 0.15) return "Slack";
-    return diff > 0 ? "Rising / Moving" : "Falling / Moving";
+        windWaveHeight: roundOne(hourly.wind_wave_height?.[index]),
+        windWaveDirection: hourly.wind_wave_direction?.[index],
+        windWaveDirectionText: degreesToCompass(hourly.wind_wave_direction?.[index]),
+        windWavePeriod: roundOne(hourly.wind_wave_period?.[index]),
+
+        swellWaveHeight: roundOne(hourly.swell_wave_height?.[index]),
+        swellWaveDirection: hourly.swell_wave_direction?.[index],
+        swellWaveDirectionText: degreesToCompass(hourly.swell_wave_direction?.[index]),
+        swellWavePeriod: roundOne(hourly.swell_wave_period?.[index]),
+
+        source: "Open-Meteo Marine"
+      };
+    } catch (error) {
+      console.warn("Marine fallback used:", error);
+      return null;
+    }
   }
 
-  function getNextTideLabel(tides, selectedDate) {
-    if (!Array.isArray(tides) || !tides.length) return "Tide data pending";
+  async function getTides(stationId, dateString) {
+    try {
+      const cleanDate = dateString.replaceAll("-", "");
 
-    const parsed = parseTides(tides);
-    if (!parsed.length) return "Tide data pending";
+      const url =
+        "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter" +
+        `?begin_date=${cleanDate}` +
+        "&range=24" +
+        `&station=${stationId}` +
+        "&product=predictions" +
+        "&datum=MLLW" +
+        "&time_zone=lst_ldt" +
+        "&interval=hilo" +
+        "&units=english" +
+        "&format=json";
 
-    const targetTime = getTargetTideTime(selectedDate);
-    const next = parsed.find(t => t.time > targetTime) || parsed[0];
+      const res = await fetch(url);
+      if (!res.ok) throw new Error("NOAA tide request failed");
 
-    return `${next.type} ${next.height.toFixed(1)} ft · ${next.time.toLocaleTimeString([], {
+      const data = await res.json();
+      return data.predictions || [];
+    } catch (error) {
+      console.warn("Tide fallback used:", error);
+      return [];
+    }
+  }
+
+  async function getWaterTemp(stationId) {
+    try {
+      const url =
+        "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter" +
+        "?date=latest" +
+        `&station=${stationId}` +
+        "&product=water_temperature" +
+        "&time_zone=lst_ldt" +
+        "&units=english" +
+        "&format=json";
+
+      const res = await fetch(url);
+      if (!res.ok) throw new Error("NOAA water temp request failed");
+
+      const data = await res.json();
+      if (!data.data || !data.data.length) return null;
+
+      return Number(data.data[0].v);
+    } catch (error) {
+      console.warn("Water temp fallback used:", error);
+      return null;
+    }
+  }
+
+  function formatTides(tides) {
+    if (!tides.length) {
+      return [
+        { time: "N/A", type: "High Tide", height: "Unavailable" },
+        { time: "N/A", type: "Low Tide", height: "Unavailable" }
+      ];
+    }
+
+    return tides.map(tide => ({
+      time: new Date(tide.t.replace(" ", "T")).toLocaleTimeString("en-US", {
+        hour: "numeric",
+        minute: "2-digit"
+      }),
+      type: tide.type === "H" ? "High Tide" : "Low Tide",
+      height: `${Number(tide.v).toFixed(1)} ft`
+    }));
+  }
+
+  function buildDateDropdown(selectId = "dateSelect", days = 10) {
+    const dateSelect = document.getElementById(selectId);
+    if (!dateSelect) return;
+
+    dateSelect.innerHTML = "";
+
+    for (let i = 0; i < days; i++) {
+      const date = new Date();
+      date.setDate(date.getDate() + i);
+
+      const value = date.toISOString().split("T")[0];
+
+      const option = document.createElement("option");
+      option.value = value;
+      option.textContent =
+        i === 0
+          ? "Today"
+          : i === 1
+            ? "Tomorrow"
+            : date.toLocaleDateString("en-US", {
+                weekday: "short",
+                month: "short",
+                day: "numeric"
+              });
+
+      dateSelect.appendChild(option);
+    }
+  }
+
+  function findForecastIndex(times, dateString) {
+    if (!Array.isArray(times)) return -1;
+
+    const preferredHours = ["T12", "T10", "T14", "T08", "T16", "T06"];
+
+    for (const hour of preferredHours) {
+      const index = times.findIndex(t => String(t).startsWith(`${dateString}${hour}`));
+      if (index >= 0) return index;
+    }
+
+    return times.findIndex(t => String(t).startsWith(dateString));
+  }
+
+  function findDailyIndex(days, dateString) {
+    if (!Array.isArray(days)) return -1;
+    return days.findIndex(day => String(day) === dateString);
+  }
+
+  function formatTime(value) {
+    if (!value) return null;
+
+    const date = new Date(value);
+
+    if (Number.isNaN(date.getTime())) return null;
+
+    return date.toLocaleTimeString("en-US", {
       hour: "numeric",
       minute: "2-digit"
-    })}`;
+    });
   }
 
-  function parseTides(tides) {
-    return tides
-      .map(t => {
-        const rawTime = String(t.t || t.time || t.date || "").replace(" ", "T");
+  function parseWindSpeed(windSpeedText, fallback = 8) {
+    if (typeof windSpeedText === "number") return Math.round(windSpeedText);
+    if (!windSpeedText) return fallback;
 
-        return {
-          time: new Date(rawTime),
-          height: Number(t.v || t.height || t.prediction),
-          type: t.type === "H" ? "High" : t.type === "L" ? "Low" : "Tide"
-        };
-      })
-      .filter(t => !Number.isNaN(t.time.getTime()) && Number.isFinite(t.height))
-      .sort((a, b) => a.time - b.time);
+    const match = String(windSpeedText).match(/\d+/);
+    return match ? Number(match[0]) : fallback;
   }
 
-  function getTargetTideTime(selectedDate) {
-    if (!selectedDate) return new Date();
+  function degreesToCompass(degrees) {
+    if (degrees === null || degrees === undefined || isNaN(degrees)) return "W";
 
-    const today = new Date().toISOString().split("T")[0];
+    const directions = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"];
+    const index = Math.round(degrees / 45) % 8;
 
-    if (selectedDate === today) {
-      return new Date();
-    }
-
-    return new Date(`${selectedDate}T12:00:00`);
+    return directions[index];
   }
 
-  function estimateVisibility(region, wind, apiVisibility) {
-    if (apiVisibility) return `${apiVisibility} mi`;
-    if (wind >= 15) return "6 mi";
-    if (region === "San Diego") return "13 mi";
-    return "10 mi";
+  function getWindDirection(text, fallback = "W") {
+    if (!text) return fallback;
+
+    const dirs = ["NW", "SW", "NE", "SE", "N", "S", "E", "W"];
+    return dirs.find(dir => String(text).includes(dir)) || fallback;
   }
 
-  function estimateClarity(mode, wind, swell) {
-    if (mode === "beach" && swell > 4) return "Choppy";
-    if (wind > 14) return "Stirred";
-    if (swell < 3) return "Clean";
-    return "Fair";
+  function metersToMiles(meters) {
+    if (meters === null || meters === undefined || isNaN(meters)) return null;
+    return Number((meters / 1609.344).toFixed(1));
   }
 
-  function getRating(score) {
+  function roundOne(value) {
+    if (value === null || value === undefined || isNaN(value)) return null;
+    return Number(Number(value).toFixed(1));
+  }
+
+  function getWeatherSummary(code) {
+    const map = {
+      0: "Clear",
+      1: "Mostly clear",
+      2: "Partly cloudy",
+      3: "Overcast",
+      45: "Fog",
+      48: "Fog",
+      51: "Light drizzle",
+      53: "Drizzle",
+      55: "Heavy drizzle",
+      61: "Light rain",
+      63: "Rain",
+      65: "Heavy rain",
+      80: "Rain showers",
+      81: "Rain showers",
+      82: "Heavy rain showers",
+      95: "Thunderstorms"
+    };
+
+    return map[code] || "Forecast available";
+  }
+
+  function rating(score) {
     if (score >= 90) return "Excellent";
     if (score >= 75) return "Good";
     if (score >= 60) return "Fair";
@@ -540,119 +387,24 @@
     return "Poor";
   }
 
-  function ratingClass(score) {
-    if (score >= 90) return "green-pill";
-    if (score >= 75) return "cyan-pill";
-    if (score >= 60) return "small-pill";
-    return "outline-pill";
+  function stationForCounty(county) {
+    return noaaStations[county] || noaaStations["Los Angeles"];
   }
 
-  function labelMode(mode) {
-    if (mode === "boat") return "Boat";
-    if (mode === "beach") return "Surf";
-    return "Pier";
-  }
-
-  function formatDateLabel(dateString) {
-    if (!dateString) return "Today";
-
-    const today = new Date().toISOString().split("T")[0];
-
-    const tomorrowDate = new Date();
-    tomorrowDate.setDate(tomorrowDate.getDate() + 1);
-    const tomorrow = tomorrowDate.toISOString().split("T")[0];
-
-    if (dateString === today) return "Today";
-    if (dateString === tomorrow) return "Tomorrow";
-
-    const date = new Date(`${dateString}T12:00:00`);
-
-    return date.toLocaleDateString("en-US", {
-      weekday: "short",
-      month: "short",
-      day: "numeric"
-    });
-  }
-
-  function getMoonPhase(dateString) {
-    const date = dateString
-      ? new Date(`${dateString}T12:00:00`)
-      : new Date();
-
-    const knownNewMoon = new Date("2026-06-10T12:00:00");
-    const lunarCycle = 29.53058867;
-
-    const daysSinceNewMoon = (date - knownNewMoon) / 86400000;
-    const moonAge = ((daysSinceNewMoon % lunarCycle) + lunarCycle) % lunarCycle;
-
-    const illumination = Math.round(
-      (1 - Math.cos((2 * Math.PI * moonAge) / lunarCycle)) * 50
-    );
-
-    let phase = "New Moon";
-
-    if (moonAge < 1.84566) phase = "New Moon";
-    else if (moonAge < 5.53699) phase = "Waxing Crescent";
-    else if (moonAge < 9.22831) phase = "First Quarter";
-    else if (moonAge < 12.91963) phase = "Waxing Gibbous";
-    else if (moonAge < 16.61096) phase = "Full Moon";
-    else if (moonAge < 20.30228) phase = "Waning Gibbous";
-    else if (moonAge < 23.99361) phase = "Last Quarter";
-    else if (moonAge < 27.68493) phase = "Waning Crescent";
-
-    return `${phase} ${illumination}%`;
-  }
-
-  function getEstimatedSunrise(dateString) {
-    const month = getDateMonth(dateString);
-
-    if (month >= 5 && month <= 8) return "5:45 AM";
-    if (month >= 3 && month <= 4) return "6:20 AM";
-    if (month >= 9 && month <= 10) return "6:35 AM";
-
-    return "6:50 AM";
-  }
-
-  function getEstimatedSunset(dateString) {
-    const month = getDateMonth(dateString);
-
-    if (month >= 5 && month <= 8) return "8:00 PM";
-    if (month >= 3 && month <= 4) return "7:15 PM";
-    if (month >= 9 && month <= 10) return "6:45 PM";
-
-    return "5:00 PM";
-  }
-
-  function getDateMonth(dateString) {
-    const date = dateString
-      ? new Date(`${dateString}T12:00:00`)
-      : new Date();
-
-    return date.getMonth() + 1;
-  }
-
-  function setText(id, value) {
-    const el = document.getElementById(id);
-    if (el) el.textContent = value || "--";
-  }
-
-  function safe(value) {
-    return String(value || "N/A")
-      .replaceAll("&", "&amp;")
-      .replaceAll("<", "&lt;")
-      .replaceAll(">", "&gt;")
-      .replaceAll('"', "&quot;")
-      .replaceAll("'", "&#039;");
-  }
-
-  function safeAttr(value) {
-    return String(value || "")
-      .replaceAll("&", "&amp;")
-      .replaceAll('"', "&quot;")
-      .replaceAll("'", "&#039;");
-  }
-
-  function debug(...args) {
-    if (DEBUG) console.log("[conditions.js]", ...args);
-  }
+  return {
+    noaaStations,
+    getWeather,
+    getNwsWeather,
+    getOpenMeteoWeather,
+    getMarine,
+    getTides,
+    getWaterTemp,
+    formatTides,
+    buildDateDropdown,
+    parseWindSpeed,
+    getWindDirection,
+    degreesToCompass,
+    rating,
+    stationForCounty
+  };
 })();
