@@ -25,6 +25,8 @@ window.SCBConditions = (() => {
       pressure: openMeteo?.pressure ?? null,
       visibility: openMeteo?.visibility ?? null,
       uvIndex: openMeteo?.uvIndex ?? null,
+      sunrise: openMeteo?.sunrise ?? null,
+      sunset: openMeteo?.sunset ?? null,
       shortForecast: nws?.shortForecast ?? getWeatherSummary(openMeteo?.weatherCode),
       source: openMeteo ? "Open-Meteo + NOAA" : "NOAA"
     };
@@ -33,23 +35,21 @@ window.SCBConditions = (() => {
   async function getNwsWeather(lat, lon, dateString) {
     try {
       const pointRes = await fetch(`https://api.weather.gov/points/${lat},${lon}`);
-
-      if (!pointRes.ok) {
-        throw new Error("NWS point lookup failed");
-      }
+      if (!pointRes.ok) throw new Error("NWS point lookup failed");
 
       const pointData = await pointRes.json();
       const hourlyUrl = pointData.properties.forecastHourly;
 
       const hourlyRes = await fetch(hourlyUrl);
-
-      if (!hourlyRes.ok) {
-        throw new Error("NWS hourly forecast failed");
-      }
+      if (!hourlyRes.ok) throw new Error("NWS hourly forecast failed");
 
       const hourlyData = await hourlyRes.json();
       const periods = hourlyData.properties.periods || [];
-      const period = periods.find(p => p.startTime.startsWith(dateString)) || periods[0];
+
+      const period =
+        periods.find(p => String(p.startTime).startsWith(`${dateString}T12`)) ||
+        periods.find(p => String(p.startTime).startsWith(dateString)) ||
+        periods[0];
 
       if (!period) return null;
 
@@ -81,11 +81,18 @@ window.SCBConditions = (() => {
         "uv_index"
       ].join(",");
 
+      const dailyVars = [
+        "sunrise",
+        "sunset",
+        "uv_index_max"
+      ].join(",");
+
       const url =
         "https://api.open-meteo.com/v1/forecast" +
         `?latitude=${lat}` +
         `&longitude=${lon}` +
         `&hourly=${hourlyVars}` +
+        `&daily=${dailyVars}` +
         "&temperature_unit=fahrenheit" +
         "&wind_speed_unit=mph" +
         "&precipitation_unit=inch" +
@@ -93,17 +100,16 @@ window.SCBConditions = (() => {
         "&forecast_days=10";
 
       const res = await fetch(url);
-
-      if (!res.ok) {
-        throw new Error("Open-Meteo request failed");
-      }
+      if (!res.ok) throw new Error("Open-Meteo request failed");
 
       const data = await res.json();
       const hourly = data.hourly;
+      const daily = data.daily;
 
       if (!hourly || !hourly.time) return null;
 
       const index = findForecastIndex(hourly.time, dateString);
+      const dailyIndex = findDailyIndex(daily?.time, dateString);
 
       if (index < 0) return null;
 
@@ -119,7 +125,9 @@ window.SCBConditions = (() => {
         windDirection: hourly.wind_direction_10m?.[index],
         windDirectionText: degreesToCompass(hourly.wind_direction_10m?.[index]),
         windGusts: hourly.wind_gusts_10m?.[index],
-        uvIndex: hourly.uv_index?.[index]
+        uvIndex: hourly.uv_index?.[index] ?? daily?.uv_index_max?.[dailyIndex],
+        sunrise: formatTime(daily?.sunrise?.[dailyIndex]),
+        sunset: formatTime(daily?.sunset?.[dailyIndex])
       };
     } catch (error) {
       console.warn("Open-Meteo fallback used:", error);
@@ -151,10 +159,7 @@ window.SCBConditions = (() => {
         "&forecast_days=10";
 
       const res = await fetch(url);
-
-      if (!res.ok) {
-        throw new Error("Open-Meteo marine request failed");
-      }
+      if (!res.ok) throw new Error("Open-Meteo marine request failed");
 
       const data = await res.json();
       const hourly = data.hourly;
@@ -162,7 +167,6 @@ window.SCBConditions = (() => {
       if (!hourly || !hourly.time) return null;
 
       const index = findForecastIndex(hourly.time, dateString);
-
       if (index < 0) return null;
 
       return {
@@ -206,10 +210,7 @@ window.SCBConditions = (() => {
         "&format=json";
 
       const res = await fetch(url);
-
-      if (!res.ok) {
-        throw new Error("NOAA tide request failed");
-      }
+      if (!res.ok) throw new Error("NOAA tide request failed");
 
       const data = await res.json();
       return data.predictions || [];
@@ -231,13 +232,9 @@ window.SCBConditions = (() => {
         "&format=json";
 
       const res = await fetch(url);
-
-      if (!res.ok) {
-        throw new Error("NOAA water temp request failed");
-      }
+      if (!res.ok) throw new Error("NOAA water temp request failed");
 
       const data = await res.json();
-
       if (!data.data || !data.data.length) return null;
 
       return Number(data.data[0].v);
@@ -267,7 +264,6 @@ window.SCBConditions = (() => {
 
   function buildDateDropdown(selectId = "dateSelect", days = 10) {
     const dateSelect = document.getElementById(selectId);
-
     if (!dateSelect) return;
 
     dateSelect.innerHTML = "";
@@ -276,8 +272,10 @@ window.SCBConditions = (() => {
       const date = new Date();
       date.setDate(date.getDate() + i);
 
+      const value = date.toISOString().split("T")[0];
+
       const option = document.createElement("option");
-      option.value = date.toISOString().split("T")[0];
+      option.value = value;
       option.textContent =
         i === 0
           ? "Today"
@@ -296,26 +294,39 @@ window.SCBConditions = (() => {
   function findForecastIndex(times, dateString) {
     if (!Array.isArray(times)) return -1;
 
-    const preferredHours = ["T06", "T08", "T10", "T12", "T14"];
+    const preferredHours = ["T12", "T10", "T14", "T08", "T16", "T06"];
 
     for (const hour of preferredHours) {
       const index = times.findIndex(t => String(t).startsWith(`${dateString}${hour}`));
-
-      if (index >= 0) {
-        return index;
-      }
+      if (index >= 0) return index;
     }
 
     return times.findIndex(t => String(t).startsWith(dateString));
   }
 
+  function findDailyIndex(days, dateString) {
+    if (!Array.isArray(days)) return -1;
+    return days.findIndex(day => String(day) === dateString);
+  }
+
+  function formatTime(value) {
+    if (!value) return null;
+
+    const date = new Date(value);
+
+    if (Number.isNaN(date.getTime())) return null;
+
+    return date.toLocaleTimeString("en-US", {
+      hour: "numeric",
+      minute: "2-digit"
+    });
+  }
+
   function parseWindSpeed(windSpeedText, fallback = 8) {
     if (typeof windSpeedText === "number") return Math.round(windSpeedText);
-
     if (!windSpeedText) return fallback;
 
     const match = String(windSpeedText).match(/\d+/);
-
     return match ? Number(match[0]) : fallback;
   }
 
@@ -332,19 +343,16 @@ window.SCBConditions = (() => {
     if (!text) return fallback;
 
     const dirs = ["NW", "SW", "NE", "SE", "N", "S", "E", "W"];
-
     return dirs.find(dir => String(text).includes(dir)) || fallback;
   }
 
   function metersToMiles(meters) {
     if (meters === null || meters === undefined || isNaN(meters)) return null;
-
     return Number((meters / 1609.344).toFixed(1));
   }
 
   function roundOne(value) {
     if (value === null || value === undefined || isNaN(value)) return null;
-
     return Number(Number(value).toFixed(1));
   }
 
