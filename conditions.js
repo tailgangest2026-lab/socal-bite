@@ -163,6 +163,10 @@
 
     setText("conditionWind", "--");
     setText("conditionWindDir", "--");
+
+    setText("conditionForecast", "--");
+    setText("conditionCloudRain", "Cloud / rain");
+
     setText("conditionSwell", "--");
     setText("conditionSwellPeriod", "Loading");
     setText("conditionTide", "--");
@@ -267,7 +271,7 @@
 
     setText("conditionLocationLabel", `${region} · ${labelMode(mode)} · ${formatDateLabel(date)}`);
     setText("conditionWaterTemp", `${Math.round(temp)}°`);
-    setText("conditionAirTemp", `water · air ${weather?.temperature || "--"}°F`);
+    setText("conditionAirTemp", `water · air ${weather?.temperature ?? "--"}°F`);
 
     const ratingEl = document.getElementById("conditionRating");
     if (ratingEl) {
@@ -279,6 +283,13 @@
     setText(
       "conditionWindDir",
       gusts ? `Gusts ${gusts} mph` : weather?.windDirection || "Light to moderate"
+    );
+
+    setText("conditionForecast", weather?.shortForecast || "Forecast available");
+
+    setText(
+      "conditionCloudRain",
+      `${weather?.cloudCover ?? "--"}% clouds · ${weather?.precipitationProbability ?? "--"}% rain`
     );
 
     setText("conditionSwell", `${swell.toFixed(1)} ft`);
@@ -300,9 +311,9 @@
       mode === "beach" ? "Surf zone" : mode === "pier" ? "Pier zone" : "Offshore zone"
     );
 
-    setText("conditionMoon", weather?.moonPhase || "Moon data pending");
-    setText("conditionSunrise", weather?.sunrise || "--");
-    setText("conditionSunset", weather?.sunset || "--");
+    setText("conditionMoon", getMoonPhase(date));
+    setText("conditionSunrise", weather?.sunrise || getEstimatedSunrise(date));
+    setText("conditionSunset", weather?.sunset || getEstimatedSunset(date));
     setText("conditionAdvisory", wind >= 18 || gusts >= 25 || swell >= 5 ? "Possible" : "None");
   }
 
@@ -345,9 +356,12 @@
             </div>
 
             <div class="region-details">
+              <p><span>Forecast</span>${safe(data.weather?.shortForecast || "Available")}</p>
+              <p><span>Clouds</span>${data.weather?.cloudCover ?? "--"}%</p>
+              <p><span>Rain</span>${data.weather?.precipitationProbability ?? "--"}%</p>
               <p><span>Swell</span>${data.swell.toFixed(1)} ft</p>
-              <p><span>Period</span>${data.swellPeriod ? data.swellPeriod.toFixed(1) + " sec" : "N/A"}</p>
               <p><span>Tide</span>${safe(data.tideMovement)}</p>
+              <p><span>Moon</span>${safe(getMoonPhase(date))}</p>
               <p><span>Rating</span>${safe(data.rating)}</p>
             </div>
           </article>
@@ -558,6 +572,63 @@
       month: "short",
       day: "numeric"
     });
+  }
+
+  function getMoonPhase(dateString) {
+    const date = dateString
+      ? new Date(`${dateString}T12:00:00`)
+      : new Date();
+
+    const knownNewMoon = new Date("2026-06-10T12:00:00");
+    const lunarCycle = 29.53058867;
+
+    const daysSinceNewMoon = (date - knownNewMoon) / 86400000;
+    const moonAge = ((daysSinceNewMoon % lunarCycle) + lunarCycle) % lunarCycle;
+
+    const illumination = Math.round(
+      (1 - Math.cos((2 * Math.PI * moonAge) / lunarCycle)) * 50
+    );
+
+    let phase = "New Moon";
+
+    if (moonAge < 1.84566) phase = "New Moon";
+    else if (moonAge < 5.53699) phase = "Waxing Crescent";
+    else if (moonAge < 9.22831) phase = "First Quarter";
+    else if (moonAge < 12.91963) phase = "Waxing Gibbous";
+    else if (moonAge < 16.61096) phase = "Full Moon";
+    else if (moonAge < 20.30228) phase = "Waning Gibbous";
+    else if (moonAge < 23.99361) phase = "Last Quarter";
+    else if (moonAge < 27.68493) phase = "Waning Crescent";
+
+    return `${phase} ${illumination}%`;
+  }
+
+  function getEstimatedSunrise(dateString) {
+    const month = getDateMonth(dateString);
+
+    if (month >= 5 && month <= 8) return "5:45 AM";
+    if (month >= 3 && month <= 4) return "6:20 AM";
+    if (month >= 9 && month <= 10) return "6:35 AM";
+
+    return "6:50 AM";
+  }
+
+  function getEstimatedSunset(dateString) {
+    const month = getDateMonth(dateString);
+
+    if (month >= 5 && month <= 8) return "8:00 PM";
+    if (month >= 3 && month <= 4) return "7:15 PM";
+    if (month >= 9 && month <= 10) return "6:45 PM";
+
+    return "5:00 PM";
+  }
+
+  function getDateMonth(dateString) {
+    const date = dateString
+      ? new Date(`${dateString}T12:00:00`)
+      : new Date();
+
+    return date.getMonth() + 1;
   }
 
   function setText(id, value) {
