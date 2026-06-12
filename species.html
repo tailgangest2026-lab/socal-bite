@@ -6,10 +6,12 @@
 
   <title>Species Analytics | The SoCal Bite</title>
   <meta name="description" content="Southern California species fishing analytics by total catch, fish-per-angler, trips, anglers, and region." />
+
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://thesocalbite.com/species.html" />
   <meta property="og:image" content="https://thesocalbite.com/assets/socal-bite-logo.webp" />
-  <link rel="stylesheet" href="style.css?v=loveable-species-1" />
+
+  <link rel="stylesheet" href="style.css?v=loveable-species-3" />
 </head>
 
 <body>
@@ -41,74 +43,72 @@
 
   <main>
     <section class="species-hero">
-  <span class="page-kicker">Species Analytics</span>
-  <h1>What’s biting, where it’s biting.</h1>
-  <p>
-    Catch data by species, region, total fish landed, trips, anglers, and fish-per-angler.
-  </p>
+      <span class="page-kicker">Species Analytics</span>
+      <h1>What’s biting, where it’s biting.</h1>
+      <p>
+        Catch data by species, region, total fish landed, trips, anglers, and fish-per-angler.
+      </p>
 
-  <div class="species-controls">
-    <select id="speciesRegion">
-      <option value="all">All regions</option>
-    </select>
+      <div class="species-controls">
+        <select id="speciesRegion">
+          <option value="all">All regions</option>
+        </select>
 
-    <select id="speciesDateRange">
-      <option value="today">Today</option>
-      <option value="yesterday">Previous Day</option>
-      <option value="week">Current Week</option>
-      <option value="month" selected>Current Month</option>
-      <option value="prevMonth">Previous Month</option>
-      <option value="custom">Custom Range</option>
-    </select>
+        <select id="speciesDateRange">
+          <option value="today" selected>Today</option>
+          <option value="yesterday">Previous Day</option>
+          <option value="week">Current Week</option>
+          <option value="month">Current Month</option>
+          <option value="prevMonth">Previous Month</option>
+          <option value="custom">Custom Range</option>
+        </select>
 
-    <div id="speciesCustomDateRange" class="custom-date-range hidden">
-      <input type="date" id="speciesStartDate">
-      <span>to</span>
-      <input type="date" id="speciesEndDate">
-    </div>
-  </div>
-</section>
+        <div id="speciesCustomDateRange" class="custom-date-range hidden">
+          <input type="date" id="speciesStartDate" />
+          <span>to</span>
+          <input type="date" id="speciesEndDate" />
+        </div>
+      </div>
+    </section>
+
+    <section id="speciesGrid" class="species-grid">
+      <div class="loading-card">Loading species analytics...</div>
+    </section>
+
+    <section class="species-cta">
+      <a href="/forecast.html" class="species-cta-button">
+        See species in the forecast
+      </a>
+    </section>
   </main>
-  
-<section class="species-cta">
-  <a href="/forecast.html" class="species-cta-button">
-    See species in the forecast
-  </a>
-</section>
-  
+
   <footer class="love-footer">
+    <div class="footer-brand">
+      <h3>The SoCal Bite</h3>
+      <p>
+        Real-time fishing intelligence for Southern California —
+        from San Luis Obispo to San Diego. Sportfishing reports,
+        NOAA conditions, species analytics, and boat rankings.
+      </p>
+      <span class="footer-refresh">
+        Data refresh • Every 15 min
+      </span>
+    </div>
 
-  <div class="footer-brand">
-    <h3>The SoCal Bite</h3>
+    <div class="footer-links">
+      <h4>Intelligence</h4>
+      <a href="/forecast.html">Bite Forecast</a>
+      <a href="/rankings.html">Rankings</a>
+      <a href="/species.html">Species</a>
+    </div>
 
-    <p>
-      Real-time fishing intelligence for Southern California —
-      from San Luis Obispo to San Diego. Sportfishing reports,
-      NOAA conditions, species analytics, and boat rankings.
-    </p>
-
-    <span class="footer-refresh">
-      Data refresh • Every 15 min
-    </span>
-  </div>
-
-  <div class="footer-links">
-    <h4>Intelligence</h4>
-
-    <a href="/forecast.html">Bite Forecast</a>
-    <a href="/rankings.html">Rankings</a>
-    <a href="/species.html">Species</a>
-  </div>
-
-  <div class="footer-links">
-    <h4>Account</h4>
-
-    <a href="/">Legacy site</a>
-  </div>
-
-</footer>
+    <div class="footer-links">
+      <h4>Account</h4>
+      <a href="/">Legacy site</a>
+    </div>
+  </footer>
 
   <script src="site-config.js"></script>
-  <script src="species.js?v=loveable-species-1"></script>
+  <script src="species.js?v=loveable-species-3"></script>
 </body>
 </html>
