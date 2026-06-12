@@ -21,14 +21,10 @@ async function initForecast() {
     console.error("Forecast load failed:", error);
   }
 }
-
 async function fetchJson(path) {
-  const url = typeof socalBiteDataUrl === "function" ? socalBiteDataUrl(path) : path;
-  const response = await fetch(url + "?v=" + Date.now());
-
-  if (!response.ok) {
-    throw new Error("Could not load " + path);
-  }
+  const url = socalBiteDataUrl(path);
+  const response = await fetch(url);
+}
 
   return response.json();
 }
