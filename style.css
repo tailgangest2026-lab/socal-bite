@@ -1,7 +1,7 @@
 /* =========================================================
    SoCal Bite — Marine Intelligence UI
    Visual refresh: tokens, depth, motion, typography, a11y.
-   No HTML/JS changes. All original selectors preserved.
+   No HTML/JS changes. Shared selector conflicts cleaned/scoped.
    ========================================================= */
 
 *,
@@ -1047,7 +1047,7 @@ main { padding-top: 86px; }
   color: var(--soft);
   font-weight: 700;
 }
-.conditions-date-select {
+.conditions-filter-row .conditions-date-select {
   padding: 11px 16px;
   border-radius: 999px;
   border: 1px solid rgba(255,255,255,0.2);
@@ -1205,7 +1205,7 @@ main { padding-top: 86px; }
 .temp-box strong {
   display: block;
   font-size: clamp(2.8rem, 7vw, 5rem);
-  color: #ffc766;
+  color: var(--gold);
   line-height: 1;
   margin-top: 8px;
 }
@@ -1233,7 +1233,8 @@ main { padding-top: 86px; }
   flex-shrink: 0;
 }
 
-.conditions-date-select {
+.region-filter-row .conditions-date-select,
+.date-filter-inline .conditions-date-select {
   min-width: 170px;
   padding: 12px 16px;
   border-radius: 12px;
@@ -1244,7 +1245,8 @@ main { padding-top: 86px; }
   cursor: pointer;
 }
 
-.conditions-date-select:hover {
+.region-filter-row .conditions-date-select:hover,
+.date-filter-inline .conditions-date-select:hover {
   border-color: rgba(255,255,255,0.3);
 }
 
@@ -1258,7 +1260,8 @@ main { padding-top: 86px; }
     width: 100%;
   }
 
-  .conditions-date-select {
+  .region-filter-row .conditions-date-select,
+  .date-filter-inline .conditions-date-select {
     width: 100%;
   }
 }
@@ -2420,8 +2423,8 @@ main { padding-top: 86px; }
 .boat-trend-main {
   padding: 22px;
   border-radius: 16px;
-  background: rgba(25,194,209,0.12);
-  border: 1px solid rgba(25,194,209,0.3);
+  background: rgba(32,211,226,0.12);
+  border: 1px solid rgba(32,211,226,0.30);
   margin-bottom: 8px;
 }
 
@@ -2453,7 +2456,7 @@ main { padding-top: 86px; }
   color: var(--cyan);
 }
 
-.trip-pill {
+.boat-trip-row .trip-pill {
   display: inline-flex;
   width: fit-content;
   align-items: center;
@@ -2561,7 +2564,7 @@ main { padding-top: 86px; }
   gap: 8px;
 }
 
-.fish-count-pill {
+.landing-report-counts .fish-count-pill {
   display: inline-flex;
   border-radius: 999px;
   padding: 7px 10px;
@@ -2572,7 +2575,7 @@ main { padding-top: 86px; }
   font-weight: 800;
 }
 
-.fish-count-pill:hover {
+.landing-report-counts .fish-count-pill:hover {
   background: var(--gold);
   color: #031828;
 }
@@ -2750,8 +2753,8 @@ main { padding-top: 86px; }
 .species-trend-main {
   padding: 22px;
   border-radius: 16px;
-  background: rgba(25,194,209,0.12);
-  border: 1px solid rgba(25,194,209,0.3);
+  background: rgba(32,211,226,0.12);
+  border: 1px solid rgba(32,211,226,0.30);
   margin-bottom: 8px;
 }
 
@@ -3149,5 +3152,450 @@ main { padding-top: 86px; }
 @media (max-width: 950px) {
   .gear-coming-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================================================
+   v2 REFINEMENTS — Modern SaaS polish, mobile-first overrides,
+   accessibility, and table improvements.
+   Appended overrides only. No selectors removed; original
+   rules above are preserved verbatim for compatibility.
+   ========================================================= */
+
+/* ---------- Token refinements (subtle, no palette shift) ---------- */
+:root {
+  /* Tighter, more consistent radii */
+  --r-xs: 8px;
+
+  /* Modern SaaS shadow stack (softer, layered) */
+  --shadow-xs: 0 1px 2px rgba(0,0,0,0.30);
+  --shadow-soft: 0 1px 2px rgba(0,0,0,0.25), 0 8px 24px -8px rgba(0,0,0,0.45);
+  --shadow-pop: 0 2px 4px rgba(0,0,0,0.20), 0 18px 40px -12px rgba(0,0,0,0.55);
+
+  /* Spacing scale (8pt baseline) */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 64px;
+
+  /* Focus ring (high-contrast, accessible) */
+  --focus-ring: 0 0 0 2px var(--navy-deep), 0 0 0 4px var(--cyan);
+}
+
+/* ---------- Base polish ---------- */
+html { scroll-behavior: smooth; }
+body { text-rendering: optimizeLegibility; }
+
+/* Tighten heading rhythm site-wide */
+h1, h2, h3, h4 { text-wrap: balance; }
+p { text-wrap: pretty; }
+
+/* Accessible, consistent focus ring across all interactives */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+  border-radius: var(--r-sm);
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---------- Button polish (consolidated hover/active feedback) ---------- */
+.primary-btn,
+.ghost-btn,
+button {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+.primary-btn:focus-visible,
+.ghost-btn:focus-visible {
+  box-shadow: var(--focus-ring), 0 12px 28px rgba(244,189,95,0.30);
+}
+
+/* ---------- Card polish (subtle premium depth) ---------- */
+.kpi-card,
+.region-card,
+.ranking-card,
+.forecast-card,
+.gear-card,
+.empty-card,
+.hero-dashboard,
+.dashboard-main-stat {
+  box-shadow: var(--shadow-soft);
+}
+.kpi-card:hover,
+.region-card:hover,
+.ranking-card:hover,
+.forecast-card:hover,
+.gear-card:hover {
+  box-shadow: var(--shadow-pop);
+}
+
+/* ---------- Tables — readable, scrollable on mobile ---------- */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.95rem;
+  color: var(--soft);
+}
+thead th {
+  position: sticky;
+  top: 0;
+  text-align: left;
+  font-size: 0.74rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--muted);
+  background: rgba(3,24,40,0.95);
+  border-bottom: 1px solid var(--border-strong);
+  padding: 14px 16px;
+  backdrop-filter: blur(8px);
+}
+tbody td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+tbody tr {
+  transition: background var(--t-fast);
+}
+tbody tr:hover {
+  background: rgba(32,211,226,0.06);
+}
+tbody tr:last-child td { border-bottom: none; }
+
+/* Wrap any table in a horizontal scroller on small screens.
+   Targets common container classes used across the site. */
+.table-wrap,
+.table-responsive,
+.data-table-wrap,
+.scroll-x {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: var(--r-lg);
+  border: 1px solid var(--border);
+  background: var(--grad-card);
+  box-shadow: var(--shadow-soft);
+}
+.table-wrap table,
+.table-responsive table,
+.data-table-wrap table,
+.scroll-x table { min-width: 640px; }
+
+/* Stylized scrollbar where supported (WebKit) */
+.table-wrap::-webkit-scrollbar,
+.table-responsive::-webkit-scrollbar,
+.top-nav::-webkit-scrollbar,
+.scroll-x::-webkit-scrollbar { height: 8px; }
+.table-wrap::-webkit-scrollbar-thumb,
+.table-responsive::-webkit-scrollbar-thumb,
+.scroll-x::-webkit-scrollbar-thumb {
+  background: rgba(32,211,226,0.35);
+  border-radius: 999px;
+}
+
+/* ---------- Form controls (filters, dropdowns, inputs) ---------- */
+input[type="text"],
+input[type="search"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+select,
+textarea {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 14px;
+  color: var(--white);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--r-md);
+  font: inherit;
+  font-size: 0.95rem;
+  transition: border-color var(--t-fast), background var(--t-fast), box-shadow var(--t-fast);
+}
+input::placeholder,
+textarea::placeholder { color: var(--muted); }
+input:hover, select:hover, textarea:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(32,211,226,0.40);
+}
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--cyan);
+  background: rgba(255,255,255,0.10);
+  box-shadow: 0 0 0 3px rgba(32,211,226,0.20);
+}
+
+/* Native select arrow */
+select {
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--cyan) 50%),
+    linear-gradient(135deg, var(--cyan) 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) 50%,
+    calc(100% - 13px) 50%;
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+  padding-right: 36px;
+}
+
+/* Generic filter chips / dropdowns */
+.filter-chip,
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 36px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--border-strong);
+  color: var(--soft);
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background var(--t-fast), color var(--t-fast), border-color var(--t-fast);
+}
+.filter-chip:hover, .chip:hover {
+  background: rgba(32,211,226,0.10);
+  border-color: rgba(32,211,226,0.40);
+  color: var(--cyan);
+}
+.filter-chip.active, .chip.active {
+  background: rgba(244,189,95,0.15);
+  border-color: rgba(244,189,95,0.45);
+  color: var(--gold);
+}
+
+/* ---------- Touch targets — minimum 44px on mobile ---------- */
+@media (max-width: 768px) {
+  button,
+  .primary-btn,
+  .ghost-btn,
+  .top-nav a,
+  .forecast-tabs button,
+  .mode-tabs button,
+  .filter-chip,
+  .chip {
+    min-height: 44px;
+  }
+  .top-nav a { padding: 12px 14px; }
+}
+
+/* =========================================================
+   MOBILE OPTIMIZATION — comprehensive responsive overrides
+   ========================================================= */
+
+/* Tablet & below */
+@media (max-width: 1024px) {
+  .hero-panel,
+  .content-section,
+  .split-section,
+  .forecast-panel,
+  .forecast-hero,
+  .site-footer,
+  .love-footer {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .region-grid,
+  .gear-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Phones */
+@media (max-width: 768px) {
+  /* Header: tighter padding, scrollable nav */
+  .app-header {
+    padding: 12px 16px;
+    gap: 12px;
+  }
+  .brand { min-width: 0; flex: 0 0 auto; }
+  .brand img { width: 38px; height: 38px; }
+  .brand strong { font-size: 0.95rem; }
+  .brand span { font-size: 0.68rem; }
+  .live-pill { padding: 7px 11px; font-size: 0.72rem; }
+  main { padding-top: 170px; } /* fixed: header stacks on mobile, so content needs full clearance */
+
+  /* Hero: single column, calmer scale */
+  .hero-panel {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    gap: 22px;
+    padding: 36px 16px 24px;
+  }
+  .hero-copy { padding: 26px 22px; }
+  .hero-copy h1 { font-size: clamp(2.4rem, 11vw, 3.8rem); }
+  .hero-copy p { font-size: 1rem; margin-top: 18px; }
+  .hero-actions { gap: 10px; }
+  .primary-btn, .ghost-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-dashboard { padding: 22px; }
+  .dashboard-top h2 { font-size: 1.4rem; }
+  .mini-stat { padding: 16px; }
+  .mini-stat strong { font-size: 1.5rem; }
+
+  /* Sections: tighter rhythm */
+  .content-section,
+  .split-section,
+  .forecast-panel,
+  .forecast-hero {
+    padding: 48px 16px;
+  }
+  .section-title h2,
+  .forecast-panel h2 { font-size: clamp(1.8rem, 7vw, 2.4rem); }
+  .section-title p, .forecast-panel p { font-size: 0.98rem; }
+
+  /* Grids collapse to single column */
+  .region-grid,
+  .gear-grid,
+  .forecast-grid,
+  .kpi-grid,
+  .split-section,
+  .mini-stat-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px;
+  }
+
+  /* Cards: comfortable padding */
+  .kpi-card,
+  .region-card,
+  .ranking-card,
+  .forecast-card { padding: 22px; }
+  .kpi-card { min-height: 0; }
+  .kpi-card strong { font-size: clamp(2rem, 9vw, 2.8rem); }
+
+  /* Ranking items: keep readable */
+  .ranking-item {
+    grid-template-columns: 38px 1fr auto;
+    gap: 10px;
+    padding: 12px;
+  }
+  .rank-num { width: 32px; height: 32px; font-size: 0.9rem; }
+  .ranking-header h3 { font-size: 1.25rem; }
+
+  /* Forecast panel: stack */
+  .forecast-panel {
+    grid-template-columns: 1fr;
+  }
+
+  /* Gear images: reduce dead space */
+  .gear-img { height: 180px; }
+
+  /* Footer collapses */
+  .love-footer {
+    grid-template-columns: 1fr;
+    padding: 40px 20px;
+    gap: 28px;
+  }
+
+  /* Tabs scroll horizontally without overflow */
+  .forecast-tabs,
+  .mode-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 4px;
+  }
+  .forecast-tabs::-webkit-scrollbar,
+  .mode-tabs::-webkit-scrollbar { display: none; }
+  .forecast-tabs button,
+  .mode-tabs button { flex: 0 0 auto; }
+
+  /* Tables: force horizontal scroll fallback */
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+  thead th, tbody td { padding: 12px; font-size: 0.9rem; }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .hero-copy { padding: 22px 18px; }
+  .hero-copy h1 { font-size: clamp(2.1rem, 12vw, 3rem); letter-spacing: -0.04em; }
+  .status-row { gap: 6px; margin-bottom: 22px; }
+  .green-pill, .small-pill, .cyan-pill, .outline-pill {
+    font-size: 0.7rem;
+    padding: 7px 10px;
+  }
+  .section-title h2,
+  .forecast-panel h2 { font-size: clamp(1.6rem, 8vw, 2rem); }
+  .content-section,
+  .split-section,
+  .forecast-panel,
+  .forecast-hero { padding: 36px 14px; }
+  .kpi-card, .region-card, .ranking-card, .forecast-card { padding: 18px; border-radius: var(--r-lg); }
+  .hero-dashboard { padding: 18px; border-radius: var(--r-xl); }
+  .dashboard-main-stat strong { font-size: clamp(2.6rem, 13vw, 3.6rem); }
+}
+
+/* ---------- Charts / maps / media containers ---------- */
+canvas,
+svg.chart,
+.chart,
+.map,
+#map {
+  max-width: 100%;
+  height: auto;
+}
+.chart-wrap,
+.map-wrap {
+  width: 100%;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--grad-card);
+}
+
+/* ---------- Contrast pass on muted text for AA compliance ---------- */
+@media (max-width: 768px) {
+  .region-stat-row small,
+  .mini-stat span,
+  .kpi-card span,
+  .forecast-card span {
+    color: #a8c5d2; /* lifted from --muted for small-screen legibility */
+  }
+}
+
+/* ---------- Print: minimal, ink-friendly ---------- */
+@media print {
+  body { background: #fff; color: #000; }
+  .app-header, .love-footer, .hero-actions, .forecast-tabs, .mode-tabs { display: none; }
+  .kpi-card, .region-card, .ranking-card, .forecast-card {
+    box-shadow: none;
+    border-color: #ccc;
+    background: #fff;
+    color: #000;
   }
 }
