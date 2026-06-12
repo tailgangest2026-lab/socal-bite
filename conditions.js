@@ -1,11 +1,13 @@
 (() => {
   const LOCATIONS = {
-   "San Luis Obispo": {
-     county: "San Luis Obispo County",
-     lat: 35.2828,
-     lon: -120.6596,
-     station: "9412110"
-   },
+    "San Luis Obispo": {
+      county: "San Luis Obispo County",
+      lat: 35.2828,
+      lon: -120.6596,
+      station: "9412110",
+      fallbackWater: 60,
+      fallbackSwell: 3.0
+    },
     "Santa Barbara": {
       county: "Santa Barbara County",
       lat: 34.4208,
@@ -17,7 +19,7 @@
     "Ventura": {
       county: "Ventura County",
       lat: 34.2746,
-      lon: -119.2290,
+      lon: -119.229,
       station: "9411189",
       fallbackWater: 62,
       fallbackSwell: 3.0
@@ -58,6 +60,14 @@
     }
 
     SCBConditions.buildDateDropdown("dateSelect", 10);
+
+    const dateSelect = document.getElementById("dateSelect");
+    if (dateSelect) {
+      dateSelect.addEventListener("change", () => {
+        loadConditions();
+      });
+    }
+
     buildModeTabs();
     buildRegionTabs();
     loadConditions();
@@ -73,7 +83,6 @@
           .forEach(btn => btn.classList.remove("active"));
 
         button.classList.add("active");
-
         loadConditions();
       });
     });
@@ -104,6 +113,7 @@
 
   async function loadConditions() {
     const base = LOCATIONS[currentRegion] || LOCATIONS["Los Angeles"];
+
     const date =
       document.getElementById("dateSelect")?.value ||
       new Date().toISOString().split("T")[0];
@@ -160,7 +170,7 @@
       marine?.swellWaveDirectionText ||
       "W";
 
-    const tideMovement = getTideMovement(tides);
+    const tideMovement = getTideMovement(tides, date);
 
     const score = calculateModeScore({
       mode: currentMode,
@@ -169,13 +179,14 @@
       swell,
       waterTemp: temp,
       tideMovement,
-      rainChance: weather?.precipitationProbability,
-      uvIndex: weather?.uvIndex
+      rainChance: Number(weather?.precipitationProbability || 0),
+      uvIndex: Number(weather?.uvIndex || 0)
     });
 
     const rating = getRating(score);
 
     return {
+      date,
       weather,
       tides,
       marine,
@@ -195,6 +206,7 @@
     const {
       mode,
       region,
+      date,
       weather,
       tides,
       wind,
@@ -219,27 +231,33 @@
     }
 
     setText("conditionWind", `${wind} mph`);
-    setText("conditionWindDir", gusts ? `Gusts ${gusts} mph` : weather?.windDirection || "Light to moderate");
+    setText(
+      "conditionWindDir",
+      gusts ? `Gusts ${gusts} mph` : weather?.windDirection || "Light to moderate"
+    );
 
     setText("conditionSwell", `${swell.toFixed(1)} ft`);
     setText(
       "conditionSwellPeriod",
-      swellPeriod ? `${swellPeriod.toFixed(1)} sec · ${swellDirection}` : `${swellDirection} · marine estimate`
+      swellPeriod
+        ? `${swellPeriod.toFixed(1)} sec · ${swellDirection}`
+        : `${swellDirection} · marine estimate`
     );
 
     setText("conditionTide", tideMovement);
-    setText("conditionNextTide", getNextTideLabel(tides));
+    setText("conditionNextTide", getNextTideLabel(tides, date));
 
     setText("conditionVisibility", estimateVisibility(region, wind, weather?.visibility));
     setText("conditionClarity", estimateClarity(mode, wind, swell));
+
     setText(
       "conditionClarityNote",
       mode === "beach" ? "Surf zone" : mode === "pier" ? "Pier zone" : "Offshore zone"
     );
 
-    setText("conditionMoon", weather?.moonPhase || "Waxing 62%");
-    setText("conditionSunrise", weather?.sunrise || "5:42 AM");
-    setText("conditionSunset", weather?.sunset || "8:01 PM");
+    setText("conditionMoon", weather?.moonPhase || "Moon data pending");
+    setText("conditionSunrise", weather?.sunrise || "--");
+    setText("conditionSunset", weather?.sunset || "--");
     setText("conditionAdvisory", wind >= 18 || gusts >= 25 || swell >= 5 ? "Possible" : "None");
   }
 
@@ -355,9 +373,11 @@
       score -= 8;
     }
 
-    if (String(tideMovement).toLowerCase().includes("moving")) {
+    const tideText = String(tideMovement).toLowerCase();
+
+    if (tideText.includes("moving")) {
       score += 10;
-    } else if (String(tideMovement).toLowerCase().includes("slack")) {
+    } else if (tideText.includes("slack")) {
       score -= 6;
     }
 
@@ -371,61 +391,73 @@
     return Math.max(25, Math.min(100, Math.round(score)));
   }
 
- function getTideMovement(tides) {
-  if (!Array.isArray(tides) || tides.length < 2) return "Unknown";
+  function getTideMovement(tides, selectedDate) {
+    if (!Array.isArray(tides) || tides.length < 2) return "Unknown";
 
-  const parsed = tides
-    .map(t => ({
-      time: new Date(String(t.t || t.time || t.date).replace(" ", "T")),
-      height: Number(t.v || t.height || t.prediction),
-      type: t.type || ""
-    }))
-    .filter(t => !Number.isNaN(t.time.getTime()) && Number.isFinite(t.height))
-    .sort((a, b) => a.time - b.time);
+    const parsed = parseTides(tides);
+    if (parsed.length < 2) return "Unknown";
 
-  if (parsed.length < 2) return "Unknown";
+    const targetTime = getTargetTideTime(selectedDate);
 
-  const now = new Date();
+    let nextIndex = parsed.findIndex(t => t.time > targetTime);
 
-  let nextIndex = parsed.findIndex(t => t.time > now);
+    if (nextIndex <= 0) {
+      nextIndex = 1;
+    }
 
-  if (nextIndex <= 0) {
-    nextIndex = 1;
+    const previous = parsed[nextIndex - 1];
+    const next = parsed[nextIndex];
+
+    if (!previous || !next) return "Unknown";
+
+    const diff = next.height - previous.height;
+
+    if (Math.abs(diff) < 0.15) return "Slack";
+    return diff > 0 ? "Rising / Moving" : "Falling / Moving";
   }
 
-  const previous = parsed[nextIndex - 1];
-  const next = parsed[nextIndex];
+  function getNextTideLabel(tides, selectedDate) {
+    if (!Array.isArray(tides) || !tides.length) return "Tide data pending";
 
-  if (!previous || !next) return "Unknown";
+    const parsed = parseTides(tides);
+    if (!parsed.length) return "Tide data pending";
 
-  const diff = next.height - previous.height;
+    const targetTime = getTargetTideTime(selectedDate);
+    const next = parsed.find(t => t.time > targetTime) || parsed[0];
 
-  if (Math.abs(diff) < 0.15) return "Slack";
-  return diff > 0 ? "Rising / Moving" : "Falling / Moving";
-}
+    return `${next.type} ${next.height.toFixed(1)} ft · ${next.time.toLocaleTimeString([], {
+      hour: "numeric",
+      minute: "2-digit"
+    })}`;
+  }
 
-function getNextTideLabel(tides) {
-  if (!Array.isArray(tides) || !tides.length) return "Tide data pending";
+  function parseTides(tides) {
+    return tides
+      .map(t => {
+        const rawTime = String(t.t || t.time || t.date || "").replace(" ", "T");
 
-  const parsed = tides
-    .map(t => ({
-      time: new Date(String(t.t || t.time || t.date).replace(" ", "T")),
-      height: Number(t.v || t.height || t.prediction),
-      type: t.type === "H" ? "High" : t.type === "L" ? "Low" : "Tide"
-    }))
-    .filter(t => !Number.isNaN(t.time.getTime()) && Number.isFinite(t.height))
-    .sort((a, b) => a.time - b.time);
+        return {
+          time: new Date(rawTime),
+          height: Number(t.v || t.height || t.prediction),
+          type: t.type === "H" ? "High" : t.type === "L" ? "Low" : "Tide"
+        };
+      })
+      .filter(t => !Number.isNaN(t.time.getTime()) && Number.isFinite(t.height))
+      .sort((a, b) => a.time - b.time);
+  }
 
-  if (!parsed.length) return "Tide data pending";
+  function getTargetTideTime(selectedDate) {
+    if (!selectedDate) return new Date();
 
-  const now = new Date();
-  const next = parsed.find(t => t.time > now) || parsed[0];
+    const today = new Date().toISOString().split("T")[0];
 
-  return `${next.type} ${next.height.toFixed(1)} ft · ${next.time.toLocaleTimeString([], {
-    hour: "numeric",
-    minute: "2-digit"
-  })}`;
-}
+    if (selectedDate === today) {
+      return new Date();
+    }
+
+    return new Date(`${selectedDate}T12:00:00`);
+  }
+
   function estimateVisibility(region, wind, apiVisibility) {
     if (apiVisibility) return `${apiVisibility} mi`;
     if (wind >= 15) return "6 mi";
