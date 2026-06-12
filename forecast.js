@@ -56,7 +56,7 @@ async function loadRecentDailyRows() {
       return [];
     }
 
-    const recentReports = index.slice(0, 30);
+    const recentReports = index.slice(0, 100);
     const rows = [];
 
     for (const report of recentReports) {
