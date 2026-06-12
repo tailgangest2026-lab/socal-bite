@@ -1610,7 +1610,61 @@ main { padding-top: 86px; }
   .species-card-top { flex-direction: column; }
   .species-total { text-align: left; }
 }
+.species-controls {
+  margin-top: 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
 
+.species-controls select,
+.species-controls input[type="date"] {
+  min-height: 50px;
+  padding: 0 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: #102235;
+  color: #fff;
+  font-weight: 800;
+}
+
+.species-controls select option {
+  background: #102235;
+  color: #fff;
+}
+
+.custom-date-range {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.custom-date-range.hidden {
+  display: none;
+}
+
+.custom-date-range span {
+  color: var(--muted);
+  font-weight: 800;
+}
+
+@media (max-width: 700px) {
+  .species-controls {
+    align-items: stretch;
+  }
+
+  .species-controls select,
+  .species-controls input[type="date"] {
+    width: 100%;
+  }
+
+  .custom-date-range {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
 /* =========================================================
    LANDINGS PAGE
    ========================================================= */
