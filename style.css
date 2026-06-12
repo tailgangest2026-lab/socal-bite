@@ -3472,3 +3472,14 @@ svg.chart,
     grid-template-columns: repeat(6, 1fr);
   }
 }
+.species-fpa-chart {
+  position: relative;
+  height: 360px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.species-fpa-chart canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
