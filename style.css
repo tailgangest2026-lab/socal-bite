@@ -810,6 +810,7 @@ main { padding-top: 86px; }
 @media (max-width: 900px) {
   .love-footer { grid-template-columns: 1fr; gap: 30px; padding: 50px 24px; }
 }
+
 /* =========================================================
    FORECAST PAGE
    ========================================================= */
@@ -1073,7 +1074,6 @@ main { padding-top: 86px; }
   opacity: 0.85;
   text-align: center;
 }
-
 /* ---------- FPA chart bars ---------- */
 .species-fpa-chart {
   min-height: 360px;
