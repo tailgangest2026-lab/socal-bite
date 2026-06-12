@@ -1044,6 +1044,28 @@ main { padding-top: 86px; }
   .forecast-dashboard,
   .trend-panel { padding-left: 16px; padding-right: 16px; }
 }
+.conditions-filter-row {
+  margin: 18px auto 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.conditions-filter-row label {
+  color: var(--soft);
+  font-weight: 700;
+}
+
+.conditions-date-select {
+  padding: 11px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(3,18,32,0.85);
+  color: var(--white);
+  font-weight: 800;
+}
 
 /* ---------- FPA chart bars ---------- */
 .species-fpa-chart {
