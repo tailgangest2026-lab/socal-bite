@@ -62,6 +62,16 @@
   {
     "trip_date": "2026-06-12",
     "region": "Los Angeles",
+    "landing": "Long Beach Sportfishing",
+    "boat": "El Patron",
+    "trip_type": "Full Day",
+    "anglers": 21,
+    "fish_counts": "2 Barracuda, 4 Calico Bass, 32 Rockfish, 150 Whitefish, 2 Yellowtail",
+    "total_fish": 190
+  },
+  {
+    "trip_date": "2026-06-12",
+    "region": "Los Angeles",
     "landing": "Marina Del Rey Sportfishing",
     "boat": "Betty-O",
     "trip_type": "3/4 Day",
@@ -243,11 +253,31 @@
     "trip_date": "2026-06-12",
     "region": "San Diego",
     "landing": "Patriot Sportfishing",
+    "boat": "Flying Fish",
+    "trip_type": "1/2 Day AM",
+    "anglers": 16,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-06-12",
+    "region": "San Diego",
+    "landing": "Patriot Sportfishing",
     "boat": "Patriot (Avila Beach)",
     "trip_type": "Full Day",
     "anglers": 11,
     "fish_counts": "",
     "total_fish": 0
+  },
+  {
+    "trip_date": "2026-06-12",
+    "region": "San Diego",
+    "landing": "Patriot Sportfishing",
+    "boat": "Patriot (Avila Beach)",
+    "trip_type": "3/4 Day",
+    "anglers": 13,
+    "fish_counts": "3 Lingcod",
+    "total_fish": 3
   },
   {
     "trip_date": "2026-06-12",
@@ -282,6 +312,16 @@
   {
     "trip_date": "2026-06-12",
     "region": "San Diego",
+    "landing": "Point Loma Sportfishing",
+    "boat": "Point Loma",
+    "trip_type": "Full Day Coronado Islands",
+    "anglers": 18,
+    "fish_counts": "11 Calico Bass, 46 Yellowtail",
+    "total_fish": 57
+  },
+  {
+    "trip_date": "2026-06-12",
+    "region": "San Diego",
     "landing": "Seaforth Sportfishing",
     "boat": "New Seaforth",
     "trip_type": "1/2 Day AM",
@@ -298,6 +338,16 @@
     "anglers": 32,
     "fish_counts": "3 Barracuda, 26 Calico Bass, 7 Rockfish",
     "total_fish": 36
+  },
+  {
+    "trip_date": "2026-06-12",
+    "region": "San Diego",
+    "landing": "Seaforth Sportfishing",
+    "boat": "Sea Watch",
+    "trip_type": "3/4 Day",
+    "anglers": 24,
+    "fish_counts": "2 Barracuda, 120 Calico Bass, 1 Halibut, 6 Rockfish, 8 Sand Bass, 3 Sheephead",
+    "total_fish": 140
   },
   {
     "trip_date": "2026-06-12",
@@ -348,6 +398,16 @@
     "anglers": 26,
     "fish_counts": "48 Barracuda, 77 Bonito, 17 Calico Bass, 1 Halibut, 6 Whitefish, 3 Yellowtail",
     "total_fish": 152
+  },
+  {
+    "trip_date": "2026-06-12",
+    "region": "Ventura",
+    "landing": "Channel Islands Sportfishing",
+    "boat": "Aloha Spirit",
+    "trip_type": "Full Day",
+    "anglers": 29,
+    "fish_counts": "118 Barracuda, 20 Bonito, 24 Calico Bass, 4 Halibut, 2 Rockfish, 1 Sheephead, 21 Whitefish, 7 Yellowtail",
+    "total_fish": 197
   },
   {
     "trip_date": "2026-06-12",
