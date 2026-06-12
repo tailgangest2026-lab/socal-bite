@@ -845,7 +845,6 @@ main { padding-top: 86px; }
   text-wrap: balance;
 }
 .forecast-hero p { max-width: 800px; color: var(--soft); line-height: 1.7; font-size: 1.15rem; margin-top: 20px; }
-
 .forecast-tabs,
 .mode-tabs {
   display: flex;
@@ -877,7 +876,6 @@ main { padding-top: 86px; }
   color: var(--cyan);
   box-shadow: 0 0 24px rgba(32,211,226,0.20);
 }
-
 .forecast-dashboard {
   max-width: 1280px;
   margin: 0 auto;
@@ -886,7 +884,6 @@ main { padding-top: 86px; }
   grid-template-columns: 420px 1fr;
   gap: 24px;
 }
-
 .bite-score-card {
   padding: 30px;
   border-radius: var(--r-xl);
@@ -903,7 +900,6 @@ main { padding-top: 86px; }
   font-weight: 900;
 }
 .bite-score-card h2 { margin: 12px 0 0; font-size: 1.9rem; font-weight: 900; letter-spacing: -0.02em; }
-
 .score-ring { margin-top: 50px; text-align: center; }
 .score-arc {
   width: 260px; height: 130px;
@@ -925,7 +921,6 @@ main { padding-top: 86px; }
   color: transparent;
 }
 .score-ring small { color: var(--muted); text-transform: uppercase; letter-spacing: 2px; font-weight: 800; }
-
 .condition-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -953,7 +948,6 @@ main { padding-top: 86px; }
   font-weight: 800;
 }
 .condition-card strong { font-size: 1.9rem; font-weight: 900; letter-spacing: -0.02em; }
-
 .trend-panel {
   max-width: 1280px;
   margin: 0 auto;
@@ -982,7 +976,6 @@ main { padding-top: 86px; }
   font-weight: 800;
   font-size: 0.85rem;
 }
-
 .fake-chart {
   height: 360px;
   border-radius: var(--r-xl);
@@ -998,7 +991,6 @@ main { padding-top: 86px; }
 .line-2 { background: linear-gradient(transparent 50%, rgba(255,80,80,0.14));  }
 .line-3 { background: linear-gradient(transparent 70%, rgba(80,255,140,0.14)); }
 .line-4 { background: linear-gradient(transparent 80%, rgba(255,220,90,0.14)); }
-
 .forecast-species-grid {
   max-width: 1280px;
   margin: 0 auto;
@@ -1030,7 +1022,6 @@ main { padding-top: 86px; }
 .species-rank-card h3 { margin: 10px 0; font-size: 1.7rem; font-weight: 900; letter-spacing: -0.02em; }
 .species-rank-card strong { display: block; font-size: 2.4rem; font-weight: 900; letter-spacing: -0.03em; }
 .species-rank-card small { color: var(--muted); text-transform: uppercase; letter-spacing: 1px; font-weight: 800; }
-
 @media (max-width: 1100px) {
   .forecast-dashboard { grid-template-columns: 1fr; }
   .condition-grid     { grid-template-columns: repeat(2, 1fr); }
@@ -1052,12 +1043,10 @@ main { padding-top: 86px; }
   gap: 12px;
   flex-wrap: wrap;
 }
-
 .conditions-filter-row label {
   color: var(--soft);
   font-weight: 700;
 }
-
 .conditions-date-select {
   padding: 11px 16px;
   border-radius: 999px;
