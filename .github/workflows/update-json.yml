@@ -21,7 +21,7 @@ jobs:
 
       - name: Download JSON files
         run: |
-          BASE_URL="https://script.google.com/macros/s/AKfycbxQeZ9NYmh-HkZvPLcIlHSDafDtYLtkpolTvBgICXPFbloqRigvEk8mzWqpr0kzXJfs/exec"
+          BASE_URL="https://script.google.com/macros/s/AKfycbyEEjmsgGEK6TN9R0-YzW45ZreWIYcEW0kk5_T4ulryssJDtmuOTy-zAWqXVYKrloni/exec"
 
           mkdir -p reports
           mkdir -p tmp-json
