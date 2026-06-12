@@ -919,6 +919,79 @@ main { padding-top: 86px; }
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+/* ---------- FPA chart bars ---------- */
+.species-fpa-chart {
+  min-height: 360px;
+  border-radius: var(--r-xl);
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.025));
+  padding: 26px;
+  display: grid;
+  gap: 16px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
+}
+.fpa-row {
+  display: grid;
+  grid-template-columns: 220px 1fr 70px;
+  gap: 16px;
+  align-items: center;
+}
+.fpa-label strong { display: block; color: var(--white); font-weight: 800; }
+.fpa-label span   { display: block; color: var(--muted); font-size: 0.82rem; margin-top: 4px; }
+
+.fpa-bar-wrap {
+  height: 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.07);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.fpa-bar {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--cyan), var(--gold));
+  box-shadow: 0 0 16px rgba(32,211,226,0.30);
+  transition: width var(--t-slow);
+.species-bar-meta {
+  margin-top: 6px;
+  color: #9cc4d5;
+  font-size: 0.78rem;
+  text-align: center;
+  line-height: 1.35;
+}
+.fpa-row b { text-align: right; color: var(--gold); font-weight: 900; }
+
+@media (max-width: 700px) {
+  .fpa-row { grid-template-columns: 1fr; gap: 8px; }
+  .fpa-row b { text-align: left; }
+@media (max-width: 900px) {
+  .species-bar-chart {
+    grid-template-columns: repeat(3, 1fr);
+    height: 520px;
+    gap: 18px;
+  }
+}
+
+@media (max-width: 520px) {
+  .species-bar-chart {
+    grid-template-columns: repeat(2, 1fr);
+    height: auto;
+    min-height: 560px;
+  }
+
+  .species-bar-track {
+    max-width: 68px;
+  }
+
+  .species-bar-name {
+    font-size: 0.82rem;
+  }
+
+  .species-bar-meta {
+    font-size: 0.72rem;
+  }
+}
+   
 /* =========================================================
    FORECAST PAGE - SPECIES FPA VERTICAL BAR CHART
    ========================================================= */
