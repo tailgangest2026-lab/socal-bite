@@ -3409,3 +3409,66 @@ svg.chart,
     color: #000;
   }
 }
+/* =========================================================
+   FORECAST PAGE - 12 WEEK FPA LINE CHART
+   ========================================================= */
+
+.fpa-line-chart {
+  width: 100%;
+  padding: 20px 8px 6px;
+}
+
+.fpa-line-chart svg {
+  width: 100%;
+  height: 280px;
+  overflow: visible;
+}
+
+.fpa-line {
+  fill: none;
+  stroke: #20d3e2;
+  stroke-width: 2.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 10px rgba(32,211,226,0.45));
+}
+
+.fpa-dot {
+  fill: #ffc766;
+  stroke: #00111d;
+  stroke-width: 0.7;
+}
+
+.fpa-line-labels {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.fpa-line-labels span {
+  text-align: center;
+  color: #9cc4d5;
+  font-size: 0.72rem;
+}
+
+.fpa-line-labels b {
+  display: block;
+  color: #ffffff;
+  font-size: 0.78rem;
+}
+
+.fpa-line-labels small {
+  display: block;
+  margin-top: 3px;
+}
+
+@media (max-width: 700px) {
+  .fpa-line-chart svg {
+    height: 220px;
+  }
+
+  .fpa-line-labels {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
