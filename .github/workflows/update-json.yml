@@ -50,7 +50,6 @@ jobs:
           }
 
           download_json "landing-trip-types" "landing-trip-types.json"
-          download_json "conditions" "conditions.json"
           download_json "landing-detail" "landing-detail.json"
           download_json "trip-prices" "trip-prices.json"
           download_json "landings" "landings.json"
