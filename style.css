@@ -1180,7 +1180,88 @@ main { padding-top: 86px; }
   .all-regions-panel { padding-left: 16px; padding-right: 16px; }
   .all-regions-grid  { grid-template-columns: 1fr; }
 }
+.temp-split-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 24px 0 18px;
+}
 
+.temp-box {
+  padding: 18px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.temp-box small {
+  display: block;
+  color: var(--soft);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.temp-box strong {
+  display: block;
+  font-size: clamp(2.8rem, 7vw, 5rem);
+  color: #ffc766;
+  line-height: 1;
+  margin-top: 8px;
+}
+
+.temp-box span {
+  display: block;
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.region-filter-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.region-filter-row .forecast-tabs {
+  flex: 1;
+}
+
+.date-filter-inline {
+  flex-shrink: 0;
+}
+
+.conditions-date-select {
+  min-width: 170px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.06);
+  color: var(--white);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.conditions-date-select:hover {
+  border-color: rgba(255,255,255,0.3);
+}
+
+@media (max-width: 768px) {
+  .region-filter-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .date-filter-inline {
+    width: 100%;
+  }
+
+  .conditions-date-select {
+    width: 100%;
+  }
+}
 /* =========================================================
    RANKINGS PAGE
    ========================================================= */
