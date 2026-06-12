@@ -1,4 +1,6 @@
 (() => {
+  const DEBUG = true;
+
   const LOCATIONS = {
     "San Luis Obispo": {
       county: "San Luis Obispo County",
@@ -52,6 +54,7 @@
 
   let currentMode = "pier";
   let currentRegion = "Los Angeles";
+  let requestId = 0;
 
   document.addEventListener("DOMContentLoaded", () => {
     if (typeof SCBConditions === "undefined") {
@@ -64,6 +67,7 @@
     const dateSelect = document.getElementById("dateSelect");
     if (dateSelect) {
       dateSelect.addEventListener("change", () => {
+        debug("DATE CHANGED:", dateSelect.value);
         loadConditions();
       });
     }
@@ -112,17 +116,30 @@
   }
 
   async function loadConditions() {
+    const thisRequest = ++requestId;
+
     const base = LOCATIONS[currentRegion] || LOCATIONS["Los Angeles"];
 
     const date =
       document.getElementById("dateSelect")?.value ||
       new Date().toISOString().split("T")[0];
 
-    setText("conditionLocationLabel", `${currentRegion} · ${labelMode(currentMode)}`);
-    setText("conditionRating", "Loading");
+    debug("FETCHING CONDITIONS FOR:", {
+      date,
+      region: currentRegion,
+      mode: currentMode,
+      base
+    });
+
+    setLoadingState();
 
     try {
       const data = await fetchConditionData(base, date);
+
+      if (thisRequest !== requestId) {
+        debug("Skipped old request:", thisRequest);
+        return;
+      }
 
       renderMainConditions({
         mode: currentMode,
@@ -131,11 +148,31 @@
         ...data
       });
 
-      renderAllRegions(date);
+      renderAllRegions(date, thisRequest);
     } catch (error) {
       console.error("Conditions load failed:", error);
       setText("conditionRating", "Unavailable");
     }
+  }
+
+  function setLoadingState() {
+    setText("conditionLocationLabel", `${currentRegion} · ${labelMode(currentMode)}`);
+    setText("conditionWaterTemp", "--°");
+    setText("conditionAirTemp", "water · air --°F");
+    setText("conditionRating", "Loading");
+
+    setText("conditionWind", "--");
+    setText("conditionWindDir", "--");
+    setText("conditionSwell", "--");
+    setText("conditionSwellPeriod", "Loading");
+    setText("conditionTide", "--");
+    setText("conditionNextTide", "Loading tide window");
+    setText("conditionVisibility", "--");
+    setText("conditionClarity", "--");
+    setText("conditionMoon", "--");
+    setText("conditionSunrise", "--");
+    setText("conditionSunset", "--");
+    setText("conditionAdvisory", "--");
   }
 
   async function fetchConditionData(base, date) {
@@ -147,6 +184,14 @@
         ? SCBConditions.getMarine(base.lat, base.lon, date)
         : Promise.resolve(null)
     ]);
+
+    debug("NOAA RESPONSE:", {
+      date,
+      weather,
+      tides,
+      waterTemp,
+      marine
+    });
 
     const wind = SCBConditions.parseWindSpeed(weather?.windSpeed, 8);
     const gusts = Number(weather?.windGusts || 0);
@@ -220,7 +265,7 @@
       rating
     } = data;
 
-    setText("conditionLocationLabel", `${region} · ${labelMode(mode)}`);
+    setText("conditionLocationLabel", `${region} · ${labelMode(mode)} · ${formatDateLabel(date)}`);
     setText("conditionWaterTemp", `${Math.round(temp)}°`);
     setText("conditionAirTemp", `water · air ${weather?.temperature || "--"}°F`);
 
@@ -261,14 +306,14 @@
     setText("conditionAdvisory", wind >= 18 || gusts >= 25 || swell >= 5 ? "Possible" : "None");
   }
 
-  async function renderAllRegions(date) {
+  async function renderAllRegions(date, activeRequest) {
     const grid = document.getElementById("allRegionsGrid");
     const title = document.getElementById("allRegionsTitle");
 
     if (!grid) return;
 
     if (title) {
-      title.textContent = `All regions · ${labelMode(currentMode)}`;
+      title.textContent = `All regions · ${labelMode(currentMode)} · ${formatDateLabel(date)}`;
     }
 
     grid.innerHTML = `<div class="loading-card">Loading regional board...</div>`;
@@ -276,6 +321,8 @@
     const cards = [];
 
     for (const [region, base] of Object.entries(LOCATIONS)) {
+      if (activeRequest !== requestId) return;
+
       try {
         const data = await fetchConditionData(base, date);
 
@@ -322,7 +369,9 @@
       }
     }
 
-    grid.innerHTML = cards.join("");
+    if (activeRequest === requestId) {
+      grid.innerHTML = cards.join("");
+    }
   }
 
   function calculateModeScore({
@@ -398,12 +447,9 @@
     if (parsed.length < 2) return "Unknown";
 
     const targetTime = getTargetTideTime(selectedDate);
-
     let nextIndex = parsed.findIndex(t => t.time > targetTime);
 
-    if (nextIndex <= 0) {
-      nextIndex = 1;
-    }
+    if (nextIndex <= 0) nextIndex = 1;
 
     const previous = parsed[nextIndex - 1];
     const next = parsed[nextIndex];
@@ -493,6 +539,27 @@
     return "Pier";
   }
 
+  function formatDateLabel(dateString) {
+    if (!dateString) return "Today";
+
+    const today = new Date().toISOString().split("T")[0];
+
+    const tomorrowDate = new Date();
+    tomorrowDate.setDate(tomorrowDate.getDate() + 1);
+    const tomorrow = tomorrowDate.toISOString().split("T")[0];
+
+    if (dateString === today) return "Today";
+    if (dateString === tomorrow) return "Tomorrow";
+
+    const date = new Date(`${dateString}T12:00:00`);
+
+    return date.toLocaleDateString("en-US", {
+      weekday: "short",
+      month: "short",
+      day: "numeric"
+    });
+  }
+
   function setText(id, value) {
     const el = document.getElementById(id);
     if (el) el.textContent = value || "--";
@@ -512,5 +579,9 @@
       .replaceAll("&", "&amp;")
       .replaceAll('"', "&quot;")
       .replaceAll("'", "&#039;");
+  }
+
+  function debug(...args) {
+    if (DEBUG) console.log("[conditions.js]", ...args);
   }
 })();
