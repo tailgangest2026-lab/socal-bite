@@ -1066,7 +1066,14 @@ main { padding-top: 86px; }
   color: var(--white);
   font-weight: 800;
 }
-
+.conditions-note {
+  max-width: 760px;
+  margin: 14px auto 0;
+  color: var(--soft);
+  font-size: 0.9rem;
+  opacity: 0.85;
+  text-align: center;
+}
 /* ---------- FPA chart bars ---------- */
 .species-fpa-chart {
   min-height: 360px;
