@@ -3,6 +3,16 @@
     "trip_date": "2026-06-11",
     "region": "Los Angeles",
     "landing": "22nd Street Landing",
+    "boat": "Freedom",
+    "trip_type": "Overnight",
+    "anglers": 35,
+    "fish_counts": "3 Bonito, 20 Calico Bass, 3 Sheephead, 10 Whitefish, 15 Yellowtail",
+    "total_fish": 51
+  },
+  {
+    "trip_date": "2026-06-11",
+    "region": "Los Angeles",
+    "landing": "22nd Street Landing",
     "boat": "Monte Carlo",
     "trip_type": "1/2 Day AM",
     "anglers": 32,
@@ -43,11 +53,41 @@
     "trip_date": "2026-06-11",
     "region": "Los Angeles",
     "landing": "LA Waterfront Cruises and Sportfishing",
+    "boat": "Gail Force",
+    "trip_type": "3/4 Day",
+    "anglers": 19,
+    "fish_counts": "44 Calico Bass, 61 Calico Bass Released, 2 Sheephead",
+    "total_fish": 107
+  },
+  {
+    "trip_date": "2026-06-11",
+    "region": "Los Angeles",
+    "landing": "LA Waterfront Cruises and Sportfishing",
     "boat": "Sport King",
     "trip_type": "3/4 Day",
     "anglers": 23,
     "fish_counts": "17 Bonito, 47 Calico Bass, 60 Calico Bass Released, 21 Yellowtail",
     "total_fish": 145
+  },
+  {
+    "trip_date": "2026-06-11",
+    "region": "Los Angeles",
+    "landing": "LA Waterfront Cruises and Sportfishing",
+    "boat": "Sport King",
+    "trip_type": "3/4 Day",
+    "anglers": 30,
+    "fish_counts": "21 Bonito, 111 Calico Bass, 77 Calico Bass Released, 6 Yellowtail",
+    "total_fish": 215
+  },
+  {
+    "trip_date": "2026-06-11",
+    "region": "Los Angeles",
+    "landing": "LA Waterfront Cruises and Sportfishing",
+    "boat": "Triton",
+    "trip_type": "3/4 Day",
+    "anglers": 23,
+    "fish_counts": "6 Barracuda Released, 12 Bonito, 67 Calico Bass, 41 Calico Bass Released, 3 Sheephead, 2 Yellowtail",
+    "total_fish": 131
   },
   {
     "trip_date": "2026-06-11",
@@ -63,6 +103,16 @@
     "trip_date": "2026-06-11",
     "region": "Los Angeles",
     "landing": "Marina Del Rey Sportfishing",
+    "boat": "Betty-O",
+    "trip_type": "3/4 Day",
+    "anglers": 18,
+    "fish_counts": "10 Calico Bass, 28 Rockfish, 4 Sand Bass, 1 Sheephead",
+    "total_fish": 43
+  },
+  {
+    "trip_date": "2026-06-11",
+    "region": "Los Angeles",
+    "landing": "Marina Del Rey Sportfishing",
     "boat": "New Del Mar",
     "trip_type": "3/4 Day",
     "anglers": 51,
@@ -73,11 +123,31 @@
     "trip_date": "2026-06-11",
     "region": "Los Angeles",
     "landing": "Marina Del Rey Sportfishing",
+    "boat": "New Del Mar",
+    "trip_type": "1/2 Day Twilight",
+    "anglers": 36,
+    "fish_counts": "1 Lingcod, 265 Rockfish, 180 Sculpin",
+    "total_fish": 446
+  },
+  {
+    "trip_date": "2026-06-11",
+    "region": "Los Angeles",
+    "landing": "Marina Del Rey Sportfishing",
     "boat": "Spitfire",
     "trip_type": "3/4 Day",
     "anglers": 17,
     "fish_counts": "129 Rockfish, 85 Sculpin",
     "total_fish": 214
+  },
+  {
+    "trip_date": "2026-06-11",
+    "region": "Los Angeles",
+    "landing": "Marina Del Rey Sportfishing",
+    "boat": "Spitfire",
+    "trip_type": "3/4 Day",
+    "anglers": 13,
+    "fish_counts": "33 Calico Bass, 75 Rockfish",
+    "total_fish": 108
   },
   {
     "trip_date": "2026-06-11",
@@ -188,6 +258,16 @@
     "anglers": 30,
     "fish_counts": "36 Calico Bass, 2 Lingcod, 6 Sheephead, 52 Whitefish, 13 Yellowtail",
     "total_fish": 109
+  },
+  {
+    "trip_date": "2026-06-11",
+    "region": "Orange County",
+    "landing": "Newport Landing",
+    "boat": "Thunderbird",
+    "trip_type": "Overnight",
+    "anglers": 30,
+    "fish_counts": "14 Barracuda, 23 Bonito, 57 Calico Bass, 25 Sheephead, 48 Whitefish, 17 Yellowtail",
+    "total_fish": 184
   },
   {
     "trip_date": "2026-06-11",
