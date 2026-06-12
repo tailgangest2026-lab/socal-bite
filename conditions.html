@@ -71,17 +71,26 @@
     </section>
 
     <section class="conditions-dashboard">
-      <article class="now-card">
-        <span id="conditionLocationLabel">Region · Mode</span>
-        <h2>Selected Conditions</h2>
+      <article class="now-card split-temp-card">
+  <span id="conditionLocationLabel">Region · Mode</span>
+  <h2 id="conditionTitle">Selected Conditions</h2>
 
-        <div class="now-temp-row">
-          <strong id="conditionWaterTemp">--°</strong>
-          <span id="conditionAirTemp">water · air --°F</span>
-        </div>
+  <div class="temp-split-row">
+    <div class="temp-box">
+      <small>Water</small>
+      <strong id="conditionWaterTemp">--°</strong>
+      <span id="conditionWaterLabel">NOAA latest</span>
+    </div>
 
-        <div id="conditionRating" class="green-pill">Loading</div>
-      </article>
+    <div class="temp-box">
+      <small>Air</small>
+      <strong id="conditionAirOnlyTemp">--°</strong>
+      <span id="conditionAirLabel">Forecast</span>
+    </div>
+  </div>
+
+  <div id="conditionRating" class="green-pill">Loading</div>
+</article>
 
       <div class="condition-grid">
         <article class="condition-card">
