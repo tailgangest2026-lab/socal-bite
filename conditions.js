@@ -122,7 +122,7 @@
 
     const date =
       document.getElementById("dateSelect")?.value ||
-      new Date().toISOString().split("T")[0];
+      getTodayString();
 
     debug("FETCHING CONDITIONS FOR:", {
       date,
@@ -199,7 +199,18 @@
 
     const wind = SCBConditions.parseWindSpeed(weather?.windSpeed, 8);
     const gusts = Number(weather?.windGusts || 0);
-    const temp = Number(waterTemp || base.fallbackWater || 65);
+
+    const currentWaterTemp = Number(waterTemp || base.fallbackWater || 65);
+
+    const temp = estimateFutureWaterTemp(
+      currentWaterTemp,
+      date,
+      weather?.temperature
+    );
+
+    const waterTempLabel = isToday(date)
+      ? "NOAA latest water"
+      : "estimated water";
 
     const swell = Number(
       marine?.waveHeight ||
@@ -241,7 +252,9 @@
       marine,
       wind,
       gusts,
+      currentWaterTemp,
       temp,
+      waterTempLabel,
       swell,
       swellPeriod,
       swellDirection,
@@ -261,6 +274,7 @@
       wind,
       gusts,
       temp,
+      waterTempLabel,
       swell,
       swellPeriod,
       swellDirection,
@@ -271,7 +285,10 @@
 
     setText("conditionLocationLabel", `${region} · ${labelMode(mode)} · ${formatDateLabel(date)}`);
     setText("conditionWaterTemp", `${Math.round(temp)}°`);
-    setText("conditionAirTemp", `water · air ${weather?.temperature ?? "--"}°F`);
+    setText(
+      "conditionAirTemp",
+      `${waterTempLabel} · air ${Math.round(weather?.temperature ?? 0) || "--"}°F`
+    );
 
     const ratingEl = document.getElementById("conditionRating");
     if (ratingEl) {
@@ -346,11 +363,11 @@
 
             <div class="region-stat-row">
               <div>
-                <small>Wind</small>
-                <b>${data.wind} mph</b>
+                <small>Air</small>
+                <b>${Math.round(data.weather?.temperature ?? data.temp)}°</b>
               </div>
               <div>
-                <small>Water</small>
+                <small>${isToday(date) ? "Water Now" : "Water Est."}</small>
                 <b>${Math.round(data.temp)}°</b>
               </div>
             </div>
@@ -386,6 +403,46 @@
     if (activeRequest === requestId) {
       grid.innerHTML = cards.join("");
     }
+  }
+
+  function estimateFutureWaterTemp(currentWaterTemp, dateString, airTemp) {
+    const today = new Date(`${getTodayString()}T12:00:00`);
+    const target = new Date(`${dateString}T12:00:00`);
+
+    const daysAhead = Math.max(
+      0,
+      Math.round((target - today) / 86400000)
+    );
+
+    if (daysAhead === 0) {
+      return roundOne(currentWaterTemp);
+    }
+
+    const air = Number(airTemp || 70);
+    const airInfluence = (air - currentWaterTemp) * 0.08;
+    const seasonalTrend = getSeasonalWaterTrend(dateString);
+
+    const estimate =
+      currentWaterTemp +
+      daysAhead * seasonalTrend +
+      airInfluence;
+
+    const limitedEstimate = clamp(
+      estimate,
+      currentWaterTemp - 3,
+      currentWaterTemp + 3
+    );
+
+    return roundOne(limitedEstimate);
+  }
+
+  function getSeasonalWaterTrend(dateString) {
+    const month = getDateMonth(dateString);
+
+    if (month >= 4 && month <= 8) return 0.15;
+    if (month >= 9 && month <= 11) return -0.12;
+
+    return -0.03;
   }
 
   function calculateModeScore({
@@ -509,9 +566,7 @@
   function getTargetTideTime(selectedDate) {
     if (!selectedDate) return new Date();
 
-    const today = new Date().toISOString().split("T")[0];
-
-    if (selectedDate === today) {
+    if (isToday(selectedDate)) {
       return new Date();
     }
 
@@ -556,11 +611,11 @@
   function formatDateLabel(dateString) {
     if (!dateString) return "Today";
 
-    const today = new Date().toISOString().split("T")[0];
+    const today = getTodayString();
 
     const tomorrowDate = new Date();
     tomorrowDate.setDate(tomorrowDate.getDate() + 1);
-    const tomorrow = tomorrowDate.toISOString().split("T")[0];
+    const tomorrow = toLocalDateString(tomorrowDate);
 
     if (dateString === today) return "Today";
     if (dateString === tomorrow) return "Tomorrow";
@@ -629,6 +684,31 @@
       : new Date();
 
     return date.getMonth() + 1;
+  }
+
+  function isToday(dateString) {
+    return dateString === getTodayString();
+  }
+
+  function getTodayString() {
+    return toLocalDateString(new Date());
+  }
+
+  function toLocalDateString(date) {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+
+    return `${year}-${month}-${day}`;
+  }
+
+  function clamp(value, min, max) {
+    return Math.min(max, Math.max(min, value));
+  }
+
+  function roundOne(value) {
+    if (value === null || value === undefined || isNaN(value)) return null;
+    return Number(Number(value).toFixed(1));
   }
 
   function setText(id, value) {
