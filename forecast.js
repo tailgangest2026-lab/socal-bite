@@ -64,9 +64,19 @@ async function loadRecentDailyRows() {
       try {
         const reportRows = await fetchJson(filePath);
 
-        if (Array.isArray(reportRows)) {
-          rows.push(...reportRows);
-        }
+if (Array.isArray(reportRows)) {
+  const reportDate =
+    String(report.date || "").split("T")[0] ||
+    String(filePath).match(/\d{4}-\d{2}-\d{2}/)?.[0] ||
+    "";
+
+  reportRows.forEach(row => {
+    rows.push({
+      ...row,
+      __reportDate: reportDate
+    });
+  });
+}
       } catch (error) {
         console.warn("Skipped report:", filePath, error);
       }
@@ -505,7 +515,7 @@ function buildRegionalFpaTrend(region) {
   dailyRows.forEach(row => {
     if (String(row.region || "").toLowerCase() !== targetRegion) return;
 
-    const rowDate = new Date(row.date || row.report_date || row.reportDate || "");
+    const rowDate = new Date(row.__reportDate || row.date || row.report_date || row.reportDate || "");
     if (isNaN(rowDate)) return;
 
     const anglers = Number(row.anglers || 0);
