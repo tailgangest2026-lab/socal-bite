@@ -1,39 +1,56 @@
-document.addEventListener("DOMContentLoaded", loadSpeciesReports);
+document.addEventListener("DOMContentLoaded", initSpeciesReports);
 
-async function loadSpeciesReports() {
+let allSpeciesRows = [];
+
+async function initSpeciesReports() {
   const container = document.getElementById("speciesGrid");
   if (!container) return;
 
   try {
     container.innerHTML = `<div class="loading-card">Loading species analytics...</div>`;
 
-    const index = await fetchJson("daily-report-index.json");
+    allSpeciesRows = await loadSpeciesRows();
 
-    if (!Array.isArray(index) || !index.length) {
-      container.innerHTML = `<div class="empty-card">No daily reports found.</div>`;
-      return;
-    }
-
-    const recentReports = index.slice(0, 84);
-    const allRows = [];
-
-    for (const report of recentReports) {
-      const filePath = report.file || `reports/daily-report-${report.date}.json`;
-
-      try {
-        const rows = await fetchJson(filePath);
-        if (Array.isArray(rows)) allRows.push(...rows);
-      } catch (error) {
-        console.warn("Skipped report:", filePath, error);
-      }
-    }
-
-    const speciesData = buildSpeciesSummary(allRows);
-    renderSpeciesCards(speciesData);
+    setupDefaultCustomDates();
+    buildSpeciesRegionFilter(allSpeciesRows);
+    bindSpeciesControls();
+    renderFilteredSpecies();
   } catch (error) {
     console.error("Species report load error:", error);
     container.innerHTML = `<div class="empty-card">Could not load species reports.</div>`;
   }
+}
+
+async function loadSpeciesRows() {
+  const index = await fetchJson("daily-report-index.json");
+
+  if (!Array.isArray(index) || !index.length) {
+    return [];
+  }
+
+  const recentReports = index.slice(0, 90);
+  const allRows = [];
+
+  for (const report of recentReports) {
+    const filePath = report.file || `reports/daily-report-${report.date}.json`;
+
+    try {
+      const rows = await fetchJson(filePath);
+
+      if (Array.isArray(rows)) {
+        rows.forEach(row => {
+          allRows.push({
+            ...row,
+            report_date: row.report_date || row.date || report.date
+          });
+        });
+      }
+    } catch (error) {
+      console.warn("Skipped report:", filePath, error);
+    }
+  }
+
+  return allRows;
 }
 
 async function fetchJson(path) {
@@ -45,6 +62,81 @@ async function fetchJson(path) {
   }
 
   return response.json();
+}
+
+function bindSpeciesControls() {
+  const dateRangeSelect = document.getElementById("speciesDateRange");
+  const customDateRange = document.getElementById("speciesCustomDateRange");
+
+  dateRangeSelect?.addEventListener("change", () => {
+    if (customDateRange) {
+      customDateRange.classList.toggle("hidden", dateRangeSelect.value !== "custom");
+    }
+
+    renderFilteredSpecies();
+  });
+
+  document.getElementById("speciesStartDate")?.addEventListener("change", () => {
+    if (dateRangeSelect) dateRangeSelect.value = "custom";
+    if (customDateRange) customDateRange.classList.remove("hidden");
+    renderFilteredSpecies();
+  });
+
+  document.getElementById("speciesEndDate")?.addEventListener("change", () => {
+    if (dateRangeSelect) dateRangeSelect.value = "custom";
+    if (customDateRange) customDateRange.classList.remove("hidden");
+    renderFilteredSpecies();
+  });
+
+  document.getElementById("speciesRegion")?.addEventListener("change", renderFilteredSpecies);
+}
+
+function renderFilteredSpecies() {
+  const container = document.getElementById("speciesGrid");
+  if (!container) return;
+
+  const dateRows = filterRowsByDateRange(allSpeciesRows);
+  const region = document.getElementById("speciesRegion")?.value || "all";
+
+  const filteredRows = dateRows.filter(row => {
+    return region === "all" || clean(row.region) === region;
+  });
+
+  const speciesData = buildSpeciesSummary(filteredRows);
+  renderSpeciesCards(speciesData);
+}
+
+function filterRowsByDateRange(rows) {
+  const range = getSpeciesDateFilter();
+
+  if (!range.start || !range.end) {
+    return rows;
+  }
+
+  const start = new Date(`${range.start}T00:00:00`);
+  const end = new Date(`${range.end}T23:59:59`);
+
+  return rows.filter(row => {
+    const rowDateString = getRowDate(row);
+    if (!rowDateString) return false;
+
+    const rowDate = new Date(`${rowDateString}T12:00:00`);
+
+    return rowDate >= start && rowDate <= end;
+  });
+}
+
+function buildSpeciesRegionFilter(rows) {
+  const select = document.getElementById("speciesRegion");
+  if (!select) return;
+
+  const regions = [...new Set(rows.map(row => clean(row.region)).filter(Boolean))].sort();
+
+  select.innerHTML =
+    `<option value="all">All regions</option>` +
+    regions.map(region => `
+      <option value="${safeAttr(region)}">${safe(region)}</option>
+    `).join("");
 }
 
 function buildSpeciesSummary(rows) {
@@ -121,7 +213,7 @@ function renderSpeciesCards(speciesData) {
   if (!container) return;
 
   if (!speciesData.length) {
-    container.innerHTML = `<div class="empty-card">No species data found.</div>`;
+    container.innerHTML = `<div class="empty-card">No species data found for this selection.</div>`;
     return;
   }
 
@@ -169,6 +261,131 @@ function renderRegionPills(regions) {
   `).join("");
 }
 
+function getSpeciesDateFilter() {
+  const option = document.getElementById("speciesDateRange")?.value || "month";
+  const today = new Date();
+
+  switch (option) {
+    case "today": {
+      return {
+        start: formatDate(today),
+        end: formatDate(today)
+      };
+    }
+
+    case "yesterday": {
+      const y = new Date(today);
+      y.setDate(y.getDate() - 1);
+
+      return {
+        start: formatDate(y),
+        end: formatDate(y)
+      };
+    }
+
+    case "week": {
+      const weekStart = new Date(today);
+      weekStart.setDate(today.getDate() - today.getDay());
+
+      return {
+        start: formatDate(weekStart),
+        end: formatDate(today)
+      };
+    }
+
+    case "month": {
+      return {
+        start: formatDate(new Date(today.getFullYear(), today.getMonth(), 1)),
+        end: formatDate(today)
+      };
+    }
+
+    case "prevMonth": {
+      return {
+        start: formatDate(new Date(today.getFullYear(), today.getMonth() - 1, 1)),
+        end: formatDate(new Date(today.getFullYear(), today.getMonth(), 0))
+      };
+    }
+
+    case "custom": {
+      return {
+        start: document.getElementById("speciesStartDate")?.value || "",
+        end: document.getElementById("speciesEndDate")?.value || ""
+      };
+    }
+
+    default: {
+      return {
+        start: formatDate(new Date(today.getFullYear(), today.getMonth(), 1)),
+        end: formatDate(today)
+      };
+    }
+  }
+}
+
+function setupDefaultCustomDates() {
+  const today = new Date();
+  const monthStart = new Date(today.getFullYear(), today.getMonth(), 1);
+
+  const startInput = document.getElementById("speciesStartDate");
+  const endInput = document.getElementById("speciesEndDate");
+
+  if (startInput && !startInput.value) startInput.value = formatDate(monthStart);
+  if (endInput && !endInput.value) endInput.value = formatDate(today);
+}
+
+function getRowDate(row) {
+  const possibleDate =
+    row.report_date ||
+    row.date ||
+    row.trip_date ||
+    row.tripDate ||
+    row.TripDate ||
+    row["Trip Date"] ||
+    "";
+
+  return normalizeDateString(possibleDate);
+}
+
+function normalizeDateString(value) {
+  if (!value) return "";
+
+  if (value instanceof Date && !Number.isNaN(value.getTime())) {
+    return formatDate(value);
+  }
+
+  const text = String(value).trim();
+
+  const isoMatch = text.match(/^(\d{4})-(\d{2})-(\d{2})/);
+  if (isoMatch) return `${isoMatch[1]}-${isoMatch[2]}-${isoMatch[3]}`;
+
+  const compactMatch = text.match(/^(\d{4})(\d{2})(\d{2})$/);
+  if (compactMatch) return `${compactMatch[1]}-${compactMatch[2]}-${compactMatch[3]}`;
+
+  const slashMatch = text.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+  if (slashMatch) {
+    const month = slashMatch[1].padStart(2, "0");
+    const day = slashMatch[2].padStart(2, "0");
+    const year = slashMatch[3];
+    return `${year}-${month}-${day}`;
+  }
+
+  const parsed = new Date(text);
+  if (!Number.isNaN(parsed.getTime())) {
+    return formatDate(parsed);
+  }
+
+  return "";
+}
+
+function formatDate(date) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+
+  return `${year}-${month}-${day}`;
+}
+
 function clean(value) {
   return String(value || "").trim();
 }
@@ -184,4 +401,8 @@ function safe(value) {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
+}
+
+function safeAttr(value) {
+  return safe(value);
 }
