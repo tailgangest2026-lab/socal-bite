@@ -284,11 +284,16 @@
     } = data;
 
     setText("conditionLocationLabel", `${region} · ${labelMode(mode)} · ${formatDateLabel(date)}`);
-    setText("conditionWaterTemp", `${Math.round(temp)}°`);
-    setText(
-      "conditionAirTemp",
-      `${waterTempLabel} · air ${Math.round(weather?.temperature ?? 0) || "--"}°F`
-    );
+    setText("conditionTitle", `${formatDateLabel(date)}'s Conditions`);
+
+setText("conditionWaterTemp", `${Math.round(temp)}°`);
+setText("conditionWaterLabel", waterTempLabel);
+
+setText(
+  "conditionAirOnlyTemp",
+  `${Math.round(weather?.temperature ?? 0) || "--"}°`
+);
+setText("conditionAirLabel", "Forecast air temp");
 
     const ratingEl = document.getElementById("conditionRating");
     if (ratingEl) {
