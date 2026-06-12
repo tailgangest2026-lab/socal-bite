@@ -21,6 +21,7 @@ async function initForecast() {
     console.error("Forecast load failed:", error);
   }
 }
+
 async function fetchJson(path) {
   const url = window.socalBiteDataUrl
     ? window.socalBiteDataUrl(path)
@@ -35,6 +36,17 @@ async function fetchJson(path) {
   return response.json();
 }
 
+function normalizeReportFile(report) {
+  if (report.file) {
+    const match = String(report.file).match(/daily-report-(\d{4}-\d{2}-\d{2})/);
+    if (match) return `reports/daily-report-${match[1]}.json`;
+    return report.file;
+  }
+
+  const date = String(report.date || "").split("T")[0];
+  return `reports/daily-report-${date}.json`;
+}
+
 async function loadRecentDailyRows() {
   try {
     const index = await fetchJson("daily-report-index.json");
@@ -47,7 +59,7 @@ async function loadRecentDailyRows() {
     const rows = [];
 
     for (const report of recentReports) {
-      const filePath = report.file || `reports/daily-report-${report.date}.json`;
+      const filePath = normalizeReportFile(report);
 
       try {
         const reportRows = await fetchJson(filePath);
@@ -121,10 +133,6 @@ async function renderForecast(region) {
   buildSpeciesFpaChart(region);
 }
 
-/* =========================
-   Bite score gauge
-========================= */
-
 function updateBiteScoreGauge(score, label) {
   const cleanScore = Math.max(0, Math.min(100, Number(score || 0)));
 
@@ -141,19 +149,12 @@ function updateBiteScoreGauge(score, label) {
 
   scoreRing.style.setProperty("--score", cleanScore);
 
-  scoreRing.classList.remove(
-    "score-poor",
-    "score-ok",
-    "score-fair",
-    "score-good"
-  );
-
+  scoreRing.classList.remove("score-poor", "score-ok", "score-fair", "score-good");
   scoreRing.classList.add(getScoreClass(cleanScore));
 }
 
 function getScoreClass(score) {
   score = Number(score || 0);
-
   if (score < 40) return "score-poor";
   if (score < 60) return "score-ok";
   if (score < 80) return "score-fair";
@@ -162,16 +163,11 @@ function getScoreClass(score) {
 
 function getScoreLabel(score) {
   score = Number(score || 0);
-
   if (score >= 85) return "Excellent";
   if (score >= 70) return "Good";
   if (score >= 55) return "Fair";
   return "Slow";
 }
-
-/* =========================
-   Species FPA chart
-========================= */
 
 function buildSpeciesFpaChart(region) {
   const chart = document.getElementById("speciesFpaChart");
@@ -180,11 +176,7 @@ function buildSpeciesFpaChart(region) {
   const species = buildSpeciesFpaByRegion(region);
 
   if (!species.length) {
-    chart.innerHTML = `
-      <div class="empty-card">
-        No chart data found for ${safe(region)}.
-      </div>
-    `;
+    chart.innerHTML = `<div class="empty-card">No chart data found for ${safe(region)}.</div>`;
     return;
   }
 
@@ -199,11 +191,9 @@ function buildSpeciesFpaChart(region) {
           <strong>${safe(item.name)}</strong>
           <span>${format(item.count)} fish · ${format(item.anglers)} anglers</span>
         </div>
-
         <div class="fpa-bar-wrap">
           <div class="fpa-bar" style="width:${width}%"></div>
         </div>
-
         <b>${item.fpa.toFixed(2)}</b>
       </div>
     `;
@@ -217,11 +207,7 @@ function buildSpeciesRankings(region) {
   const species = buildSpeciesFpaByRegion(region);
 
   if (!species.length) {
-    container.innerHTML = `
-      <div class="empty-card">
-        No species fish-per-angler data found for ${safe(region)}.
-      </div>
-    `;
+    container.innerHTML = `<div class="empty-card">No species fish-per-angler data found for ${safe(region)}.</div>`;
     return;
   }
 
@@ -236,10 +222,6 @@ function buildSpeciesRankings(region) {
     </a>
   `).join("");
 }
-
-/* =========================
-   Forecast score calculation
-========================= */
 
 async function calculateForecastScore(row, region, fpa, trips) {
   const locations = {
@@ -309,13 +291,51 @@ async function calculateForecastScore(row, region, fpa, trips) {
   }
 }
 
+function getTideMovement(tides) {
+  if (!Array.isArray(tides) || tides.length < 2) {
+    return "Unknown";
+  }
+
+  const now = new Date();
+
+  const validTides = tides
+    .map(tide => {
+      const time = tide.t || tide.time || tide.dateTime || tide.timestamp;
+      const value = Number(tide.v || tide.value || tide.height || tide.prediction);
+
+      return {
+        time: time ? new Date(time) : null,
+        value
+      };
+    })
+    .filter(tide => tide.time instanceof Date && !isNaN(tide.time) && Number.isFinite(tide.value))
+    .sort((a, b) => a.time - b.time);
+
+  if (validTides.length < 2) {
+    return "Unknown";
+  }
+
+  let previous = validTides[0];
+  let next = validTides[1];
+
+  for (let i = 1; i < validTides.length; i++) {
+    if (validTides[i].time >= now) {
+      previous = validTides[i - 1] || validTides[i];
+      next = validTides[i];
+      break;
+    }
+  }
+
+  const diff = next.value - previous.value;
+
+  if (Math.abs(diff) < 0.15) return "Slack";
+  if (diff > 0) return "Moving Rising";
+  return "Moving Falling";
+}
+
 function clampScore(score) {
   return Math.max(35, Math.min(96, Math.round(Number(score || 0))));
 }
-
-/* =========================
-   Species calculations
-========================= */
 
 function buildSpeciesFpaByRegion(region) {
   const targetRegion = String(region || "").toLowerCase();
@@ -372,10 +392,6 @@ function parseFishCounts(text) {
     .filter(Boolean);
 }
 
-/* =========================
-   Fallback estimates
-========================= */
-
 function estimateWaterTemp(region) {
   const temps = {
     "San Diego": "67°F",
@@ -424,10 +440,6 @@ function estimateTide(score) {
   if (score >= 55) return "Rising";
   return "Falling";
 }
-
-/* =========================
-   Helpers
-========================= */
 
 function setText(id, value) {
   const el = document.getElementById(id);
