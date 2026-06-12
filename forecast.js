@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", initForecast);
 let forecastRows = [];
 let dailyRows = [];
 let selectedRegion = "";
+let speciesFpaChartInstance = null;
 
 async function initForecast() {
   try {
@@ -180,50 +181,63 @@ function getScoreLabel(score) {
 }
 
 function buildSpeciesFpaChart(region) {
-  const chart = document.getElementById("speciesFpaChart");
-  if (!chart) return;
+  const canvas = document.getElementById("speciesFpaChart");
+  if (!canvas) return;
 
-  const trend = buildRegionalFpaTrend(region);
+  const trend = buildSpeciesWeeklyTrend(region);
 
-  if (!trend.length) {
-    chart.innerHTML = `<div class="empty-card">No 12-week trend data found for ${safe(region)}.</div>`;
+  if (!trend.weeks.length || !trend.datasets.length) {
+    canvas.parentElement.innerHTML = `<div class="empty-card">No 12-week trend data found for ${safe(region)}.</div>`;
     return;
   }
 
-  const maxFpa = Math.max(...trend.map(item => item.fpa), 1);
+  if (speciesFpaChartInstance) {
+    speciesFpaChartInstance.destroy();
+  }
 
-  chart.innerHTML = `
-    <div class="fpa-line-chart">
-      <svg viewBox="0 0 100 55" preserveAspectRatio="none">
-        <polyline
-          class="fpa-line"
-          points="${trend.map((item, index) => {
-            const x = trend.length === 1 ? 50 : (index / (trend.length - 1)) * 100;
-            const y = 50 - ((item.fpa / maxFpa) * 42);
-            return `${x},${y}`;
-          }).join(" ")}"
-        ></polyline>
-
-        ${trend.map((item, index) => {
-          const x = trend.length === 1 ? 50 : (index / (trend.length - 1)) * 100;
-          const y = 50 - ((item.fpa / maxFpa) * 42);
-
-          return `
-            <circle class="fpa-dot" cx="${x}" cy="${y}" r="1.6"></circle>
-          `;
-        }).join("")}
-      </svg>
-
-      <div class="fpa-line-labels">
-        ${trend.map(item => `
-          <span>
-            <b>${item.fpa.toFixed(2)}</b>
-            <small>${safe(item.label)}</small>
-          </span>
-        `).join("")}
-      </div>
-    </div>
-  `;
+  speciesFpaChartInstance = new Chart(canvas, {
+    type: "line",
+    data: {
+      labels: trend.weeks,
+      datasets: trend.datasets
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: {
+        mode: "index",
+        intersect: false
+      },
+      plugins: {
+        legend: {
+          position: "bottom",
+          labels: {
+            color: "#9cc4d5",
+            usePointStyle: true
+          }
+        }
+      },
+      scales: {
+        x: {
+          ticks: {
+            color: "#9cc4d5"
+          },
+          grid: {
+            color: "rgba(255,255,255,0.05)"
+          }
+        },
+        y: {
+          beginAtZero: true,
+          ticks: {
+            color: "#9cc4d5"
+          },
+          grid: {
+            color: "rgba(255,255,255,0.08)"
+          }
+        }
+      }
+    }
+  });
 }
 function buildSpeciesRankings(region) {
   const container = document.getElementById("speciesRankings");
@@ -540,4 +554,108 @@ function buildRegionalFpaTrend(region) {
       fpa: week.anglers > 0 ? week.fish / week.anglers : 0
     }))
     .filter(week => week.fish > 0 || week.anglers > 0);
+}
+function buildSpeciesWeeklyTrend(region) {
+  const targetRegion = String(region || "").toLowerCase();
+
+  const rows = dailyRows.filter(row =>
+    String(row.region || "").toLowerCase() === targetRegion
+  );
+
+  const today = new Date();
+  const weeks = [];
+
+  for (let i = 11; i >= 0; i--) {
+    const start = new Date(today);
+    start.setDate(today.getDate() - i * 7 - 6);
+
+    const end = new Date(today);
+    end.setDate(today.getDate() - i * 7);
+
+    weeks.push({
+      key: `${start.getFullYear()}-W${String(getWeekNumber(start)).padStart(2, "0")}`,
+      label: `${start.getFullYear()}-W${String(getWeekNumber(start)).padStart(2, "0")}`,
+      start,
+      end
+    });
+  }
+
+  const speciesTotals = {};
+
+  rows.forEach(row => {
+    const rowDate = new Date(row.trip_date || row.__reportDate || row.date || "");
+    if (isNaN(rowDate)) return;
+
+    const anglers = Number(row.anglers || 0);
+    if (!anglers) return;
+
+    const week = weeks.find(w => rowDate >= w.start && rowDate <= w.end);
+    if (!week) return;
+
+    parseFishCounts(row.fish_counts).forEach(item => {
+      if (!speciesTotals[item.species]) {
+        speciesTotals[item.species] = {};
+      }
+
+      if (!speciesTotals[item.species][week.key]) {
+        speciesTotals[item.species][week.key] = {
+          fish: 0,
+          anglers: 0
+        };
+      }
+
+      speciesTotals[item.species][week.key].fish += Number(item.count || 0);
+      speciesTotals[item.species][week.key].anglers += anglers;
+    });
+  });
+
+  const topSpecies = Object.entries(speciesTotals)
+    .map(([name, weekData]) => {
+      const fish = Object.values(weekData).reduce((sum, item) => sum + item.fish, 0);
+      return { name, fish };
+    })
+    .sort((a, b) => b.fish - a.fish)
+    .slice(0, 6)
+    .map(item => item.name);
+
+  const colors = [
+    "#20d3e2",
+    "#7b61ff",
+    "#ff5b5b",
+    "#24d17e",
+    "#ffc766",
+    "#00c2ff"
+  ];
+
+  const datasets = topSpecies.map((species, index) => ({
+    label: species,
+    data: weeks.map(week => {
+      const item = speciesTotals[species]?.[week.key];
+      if (!item || !item.anglers) return null;
+      return Number((item.fish / item.anglers).toFixed(2));
+    }),
+    borderColor: colors[index],
+    backgroundColor: colors[index],
+    borderWidth: 2,
+    tension: 0.4,
+    pointRadius: 2,
+    pointHoverRadius: 5,
+    fill: false,
+    spanGaps: true
+  }));
+
+  return {
+    weeks: weeks.map(w => w.label),
+    datasets
+  };
+}
+function getWeekNumber(date) {
+  const d = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
+  const dayNum = d.getUTCDay() || 7;
+
+  d.setUTCDate(d.getUTCDate() + 4 - dayNum);
+
+  const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
+
+  return Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
 }
