@@ -7,7 +7,7 @@
   <title>Species Analytics | The SoCal Bite</title>
   <meta name="description" content="Southern California species fishing analytics by total catch, fish-per-angler, trips, anglers, and region." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://thesocalbite.com/rankings.html" />
+  <meta property="og:url" content="https://thesocalbite.com/species.html" />
   <meta property="og:image" content="https://thesocalbite.com/assets/socal-bite-logo.webp" />
   <link rel="stylesheet" href="style.css?v=loveable-species-1" />
 </head>
@@ -41,16 +41,33 @@
 
   <main>
     <section class="species-hero">
-      <span class="page-kicker">Species Analytics</span>
-      <h1>What’s biting, where it’s biting.</h1>
-      <p>
-        Twelve weeks of catch data, every species, every region — sorted by total fish landed.
-      </p>
-    </section>
+  <span class="page-kicker">Species Analytics</span>
+  <h1>What’s biting, where it’s biting.</h1>
+  <p>
+    Catch data by species, region, total fish landed, trips, anglers, and fish-per-angler.
+  </p>
 
-    <section id="speciesGrid" class="species-grid">
-      <div class="loading-card">Loading species analytics...</div>
-    </section>
+  <div class="species-controls">
+    <select id="speciesRegion">
+      <option value="all">All regions</option>
+    </select>
+
+    <select id="speciesDateRange">
+      <option value="today">Today</option>
+      <option value="yesterday">Previous Day</option>
+      <option value="week">Current Week</option>
+      <option value="month" selected>Current Month</option>
+      <option value="prevMonth">Previous Month</option>
+      <option value="custom">Custom Range</option>
+    </select>
+
+    <div id="speciesCustomDateRange" class="custom-date-range hidden">
+      <input type="date" id="speciesStartDate">
+      <span>to</span>
+      <input type="date" id="speciesEndDate">
+    </div>
+  </div>
+</section>
   </main>
   
 <section class="species-cta">
