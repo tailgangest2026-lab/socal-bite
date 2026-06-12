@@ -1,1 +1,80 @@
-[]
+[
+  {
+    "region": "Los Angeles",
+    "total_trips_today": 15,
+    "total_anglers_today": 411,
+    "total_fish_today": 2733,
+    "top_boat_today": "New Del Mar",
+    "top_landing_today": "Marina Del Rey Sportfishing",
+    "top_species_today": "Sculpin",
+    "best_boat_last_30_days": "Victory",
+    "best_boat_last_90_days": "Eldorado",
+    "most_caught_species_last_30_days": "Rockfish",
+    "most_caught_species_last_90_days": "Rockfish"
+  },
+  {
+    "region": "Orange County",
+    "total_trips_today": 12,
+    "total_anglers_today": 336,
+    "total_fish_today": 1223,
+    "top_boat_today": "Thunderbird",
+    "top_landing_today": "Dana Wharf Sportfishing",
+    "top_species_today": "Calico Bass",
+    "best_boat_last_30_days": "Current",
+    "best_boat_last_90_days": "Fury",
+    "most_caught_species_last_30_days": "Rockfish",
+    "most_caught_species_last_90_days": "Rockfish"
+  },
+  {
+    "region": "San Diego",
+    "total_trips_today": 22,
+    "total_anglers_today": 499,
+    "total_fish_today": 2348,
+    "top_boat_today": "Dolphin",
+    "top_landing_today": "Seaforth Sportfishing",
+    "top_species_today": "Calico Bass",
+    "best_boat_last_30_days": "Pronto",
+    "best_boat_last_90_days": "Horizon",
+    "most_caught_species_last_30_days": "Calico Bass Released",
+    "most_caught_species_last_90_days": "Rockfish"
+  },
+  {
+    "region": "San Luis Obispo",
+    "total_trips_today": 2,
+    "total_anglers_today": 41,
+    "total_fish_today": 295,
+    "top_boat_today": "Avenger",
+    "top_landing_today": "Morro Bay Landing",
+    "top_species_today": "Rockfish",
+    "best_boat_last_30_days": "Endeavor (MB)",
+    "best_boat_last_90_days": "Endeavor (MB)",
+    "most_caught_species_last_30_days": "Rockfish",
+    "most_caught_species_last_90_days": "Rockfish"
+  },
+  {
+    "region": "Santa Barbara",
+    "total_trips_today": 4,
+    "total_anglers_today": 86,
+    "total_fish_today": 1341,
+    "top_boat_today": "Coral Sea",
+    "top_landing_today": "Santa Barbara Landing",
+    "top_species_today": "Rockfish",
+    "best_boat_last_30_days": "Coral Sea",
+    "best_boat_last_90_days": "Coral Sea",
+    "most_caught_species_last_30_days": "Rockfish",
+    "most_caught_species_last_90_days": "Rockfish"
+  },
+  {
+    "region": "Ventura",
+    "total_trips_today": 17,
+    "total_anglers_today": 330,
+    "total_fish_today": 3266,
+    "top_boat_today": "Ranger 85",
+    "top_landing_today": "Channel Islands Sportfishing",
+    "top_species_today": "Whitefish",
+    "best_boat_last_30_days": "Ranger 85",
+    "best_boat_last_90_days": "Ranger 85",
+    "most_caught_species_last_30_days": "Rockfish",
+    "most_caught_species_last_90_days": "Rockfish"
+  }
+]
