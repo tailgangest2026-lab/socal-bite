@@ -99,17 +99,12 @@ async function renderForecast(region) {
   const fpa = fish / Math.max(anglers, 1);
 
   const score = await calculateForecastScore(row, region, fpa, trips);
-
-  const label =
-    score >= 85 ? "Excellent" :
-    score >= 70 ? "Good" :
-    score >= 55 ? "Fair" :
-    "Slow";
+  const label = getScoreLabel(score);
 
   setText("selectedRegionLabel", region);
   setText("trendRegion", region);
-  setText("biteScore", score);
-  setText("biteLabel", label);
+
+  updateBiteScoreGauge(score, label);
 
   setText("waterTemp", row.water_temp || row.waterTemp || estimateWaterTemp(region));
   setText("wind", row.wind || estimateWind(region));
@@ -123,6 +118,59 @@ async function renderForecast(region) {
   buildSpeciesRankings(region);
   buildSpeciesFpaChart(region);
 }
+
+/* =========================
+   Bite score gauge
+========================= */
+
+function updateBiteScoreGauge(score, label) {
+  const cleanScore = Math.max(0, Math.min(100, Number(score || 0)));
+
+  const scoreValue = document.getElementById("biteScore");
+  const scoreLabel = document.getElementById("biteLabel");
+  const scoreRing =
+    document.getElementById("biteScoreRing") ||
+    document.querySelector(".score-ring");
+
+  if (scoreValue) scoreValue.textContent = Math.round(cleanScore);
+  if (scoreLabel) scoreLabel.textContent = label || getScoreLabel(cleanScore);
+
+  if (!scoreRing) return;
+
+  scoreRing.style.setProperty("--score", cleanScore);
+
+  scoreRing.classList.remove(
+    "score-poor",
+    "score-ok",
+    "score-fair",
+    "score-good"
+  );
+
+  scoreRing.classList.add(getScoreClass(cleanScore));
+}
+
+function getScoreClass(score) {
+  score = Number(score || 0);
+
+  if (score < 40) return "score-poor";
+  if (score < 60) return "score-ok";
+  if (score < 80) return "score-fair";
+  return "score-good";
+}
+
+function getScoreLabel(score) {
+  score = Number(score || 0);
+
+  if (score >= 85) return "Excellent";
+  if (score >= 70) return "Good";
+  if (score >= 55) return "Fair";
+  return "Slow";
+}
+
+/* =========================
+   Species FPA chart
+========================= */
+
 function buildSpeciesFpaChart(region) {
   const chart = document.getElementById("speciesFpaChart");
   if (!chart) return;
@@ -159,6 +207,7 @@ function buildSpeciesFpaChart(region) {
     `;
   }).join("");
 }
+
 function buildSpeciesRankings(region) {
   const container = document.getElementById("speciesRankings");
   if (!container) return;
@@ -185,6 +234,11 @@ function buildSpeciesRankings(region) {
     </a>
   `).join("");
 }
+
+/* =========================
+   Forecast score calculation
+========================= */
+
 async function calculateForecastScore(row, region, fpa, trips) {
   const locations = {
     "Santa Barbara": { lat: 34.4208, lon: -119.6982, station: "9411340" },
@@ -199,19 +253,17 @@ async function calculateForecastScore(row, region, fpa, trips) {
 
   let score = 45;
 
-  // Catch history
   if (fpa >= 8) score += 25;
   else if (fpa >= 5) score += 18;
   else if (fpa >= 3) score += 12;
   else if (fpa >= 1.5) score += 7;
 
-  // Trip volume
   if (trips >= 20) score += 10;
   else if (trips >= 10) score += 6;
   else if (trips >= 5) score += 3;
 
   if (!base || typeof SCBConditions === "undefined") {
-    return Math.max(35, Math.min(96, Math.round(score)));
+    return clampScore(score);
   }
 
   try {
@@ -232,7 +284,6 @@ async function calculateForecastScore(row, region, fpa, trips) {
     const swell = Number(marine?.waveHeight || marine?.swellWaveHeight || 3);
     const tideMovement = getTideMovement(tides);
 
-    // Weather / marine conditions
     if (wind <= 6) score += 10;
     else if (wind <= 10) score += 6;
     else if (wind <= 15) score += 1;
@@ -249,12 +300,20 @@ async function calculateForecastScore(row, region, fpa, trips) {
 
     if (String(tideMovement).toLowerCase().includes("moving")) score += 7;
 
-    return Math.max(35, Math.min(96, Math.round(score)));
+    return clampScore(score);
   } catch (error) {
     console.warn("NOAA forecast score fallback used:", error);
-    return Math.max(35, Math.min(96, Math.round(score)));
+    return clampScore(score);
   }
 }
+
+function clampScore(score) {
+  return Math.max(35, Math.min(96, Math.round(Number(score || 0))));
+}
+
+/* =========================
+   Species calculations
+========================= */
 
 function buildSpeciesFpaByRegion(region) {
   const targetRegion = String(region || "").toLowerCase();
@@ -311,6 +370,10 @@ function parseFishCounts(text) {
     .filter(Boolean);
 }
 
+/* =========================
+   Fallback estimates
+========================= */
+
 function estimateWaterTemp(region) {
   const temps = {
     "San Diego": "67°F",
@@ -359,6 +422,10 @@ function estimateTide(score) {
   if (score >= 55) return "Rising";
   return "Falling";
 }
+
+/* =========================
+   Helpers
+========================= */
 
 function setText(id, value) {
   const el = document.getElementById(id);
