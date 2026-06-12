@@ -6,11 +6,16 @@
 
   <title>Fishing Conditions | The SoCal Bite</title>
   <meta name="description" content="Southern California boat, pier, and surf fishing conditions using NOAA weather, tide, wind, water temperature, swell, and moon data." />
-  <meta property=" og:type" content="website" />
-  <link rel="stylesheet" href="style.css?v=loveable-conditions-1" />
+
   <link rel="canonical" href="https://thesocalbite.com/conditions.html" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Fishing Conditions | The SoCal Bite" />
+  <meta property="og:description" content="Check Southern California boat, pier, and surf fishing conditions by region and future date." />
+  <meta property="og:url" content="https://thesocalbite.com/conditions.html" />
   <meta property="og:image" content="https://thesocalbite.com/assets/socal-bite-logo.webp" />
 
+  <link rel="stylesheet" href="style.css?v=loveable-conditions-2" />
 </head>
 
 <body>
@@ -54,13 +59,16 @@
 
       <div id="regionTabs" class="forecast-tabs"></div>
 
-      <select id="dateSelect" class="hidden-select"></select>
+      <div class="conditions-filter-row">
+        <label for="dateSelect">Check future conditions</label>
+        <select id="dateSelect" class="conditions-date-select"></select>
+      </div>
     </section>
 
     <section class="conditions-dashboard">
       <article class="now-card">
         <span id="conditionLocationLabel">Region · Mode</span>
-        <h2>Right now</h2>
+        <h2>Selected Conditions</h2>
 
         <div class="now-temp-row">
           <strong id="conditionWaterTemp">--°</strong>
@@ -103,19 +111,19 @@
 
         <article class="condition-card">
           <span>☾ Moon</span>
-          <strong id="conditionMoon">Waxing 62%</strong>
+          <strong id="conditionMoon">--</strong>
           <p>Current phase</p>
         </article>
 
         <article class="condition-card">
           <span>Sunrise</span>
-          <strong id="conditionSunrise">5:42 AM</strong>
+          <strong id="conditionSunrise">--</strong>
           <p>Local</p>
         </article>
 
         <article class="condition-card">
           <span>Sunset</span>
-          <strong id="conditionSunset">8:01 PM</strong>
+          <strong id="conditionSunset">--</strong>
           <p>Local</p>
         </article>
 
@@ -157,7 +165,7 @@
   </footer>
 
   <script src="site-config.js"></script>
-  <script src="noaa-conditions.js"></script>
-  <script src="conditions.js?v=loveable-conditions-1"></script>
+  <script src="noaa-conditions.js?v=loveable-conditions-2"></script>
+  <script src="conditions.js?v=loveable-conditions-2"></script>
 </body>
 </html>
