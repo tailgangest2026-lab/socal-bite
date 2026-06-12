@@ -1505,6 +1505,7 @@ main { padding-top: 86px; }
   justify-content: center;
   padding: 40px 20px 80px;
 }
+
 .species-cta-button {
   display: inline-flex;
   align-items: center;
@@ -1519,6 +1520,7 @@ main { padding-top: 86px; }
   box-shadow: 0 14px 30px rgba(32,211,226,0.30);
   transition: transform var(--t), box-shadow var(--t);
 }
+
 .species-cta-button:hover {
   transform: translateY(-2px);
   box-shadow: 0 20px 40px rgba(32,211,226,0.45);
@@ -1529,7 +1531,13 @@ main { padding-top: 86px; }
   margin: 0 auto;
   padding: 80px 28px 40px;
 }
-.species-hero p { max-width: 850px; color: var(--soft); line-height: 1.7; font-size: 1.15rem; }
+
+.species-hero p {
+  max-width: 850px;
+  color: var(--soft);
+  line-height: 1.7;
+  font-size: 1.15rem;
+}
 
 .species-grid {
   max-width: 1280px;
@@ -1549,6 +1557,7 @@ main { padding-top: 86px; }
   transition: transform var(--t), border-color var(--t), box-shadow var(--t);
   box-shadow: var(--shadow-sm);
 }
+
 .species-card-love:hover {
   transform: translateY(-4px);
   border-color: rgba(32,211,226,0.45);
@@ -1561,13 +1570,43 @@ main { padding-top: 86px; }
   gap: 18px;
   align-items: flex-start;
 }
-.species-title-wrap { display: flex; gap: 14px; align-items: flex-start; }
-.species-rank { color: var(--gold); font-weight: 900; margin-top: 8px; font-size: 1.1rem; }
-.species-title-wrap h2 { margin: 0; font-size: 1.4rem; font-weight: 900; letter-spacing: -0.02em; }
-.species-title-wrap p { margin: 6px 0 0; color: var(--muted); }
 
-.species-total { text-align: right; }
-.species-total strong { display: block; font-size: 2rem; font-weight: 900; letter-spacing: -0.025em; }
+.species-title-wrap {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.species-rank {
+  color: var(--gold);
+  font-weight: 900;
+  margin-top: 8px;
+  font-size: 1.1rem;
+}
+
+.species-title-wrap h2 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.species-title-wrap p {
+  margin: 6px 0 0;
+  color: var(--muted);
+}
+
+.species-total {
+  text-align: right;
+}
+
+.species-total strong {
+  display: block;
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: -0.025em;
+}
+
 .species-total span {
   color: var(--muted);
   text-transform: uppercase;
@@ -1583,6 +1622,7 @@ main { padding-top: 86px; }
   background: rgba(255,255,255,0.07);
   overflow: hidden;
 }
+
 .species-bar-fill {
   height: 100%;
   border-radius: 999px;
@@ -1595,6 +1635,7 @@ main { padding-top: 86px; }
   flex-wrap: wrap;
   gap: 8px;
 }
+
 .species-region-pills span {
   border-radius: 999px;
   border: 1px solid var(--border);
@@ -1606,30 +1647,41 @@ main { padding-top: 86px; }
   font-weight: 900;
   background: rgba(255,255,255,0.03);
 }
-.species-region-pills b { color: var(--white); }
 
-@media (max-width: 850px) {
-  .species-grid { grid-template-columns: 1fr; }
-  .species-card-top { flex-direction: column; }
-  .species-total { text-align: left; }
+.species-region-pills b {
+  color: var(--white);
 }
+
+/* Species filter controls */
 .species-controls {
   margin-top: 28px;
   display: flex;
   align-items: center;
-  gap: 12px;
+  justify-content: flex-start;
+  gap: 10px;
   flex-wrap: wrap;
 }
 
 .species-controls select,
 .species-controls input[type="date"] {
-  min-height: 50px;
-  padding: 0 16px;
+  min-height: 46px;
+  width: auto;
+  padding: 0 14px;
   border-radius: 14px;
   border: 1px solid rgba(255,255,255,0.14);
   background: #102235;
   color: #fff;
   font-weight: 800;
+}
+
+.species-controls select {
+  min-width: 160px;
+  max-width: 185px;
+}
+
+.species-controls input[type="date"] {
+  min-width: 145px;
+  max-width: 165px;
 }
 
 .species-controls select option {
@@ -1641,6 +1693,7 @@ main { padding-top: 86px; }
   display: flex;
   align-items: center;
   gap: 8px;
+  width: auto;
 }
 
 .custom-date-range.hidden {
@@ -1652,27 +1705,62 @@ main { padding-top: 86px; }
   font-weight: 800;
 }
 
-@media (max-width: 700px) {
-  .species-controls {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+/* Tablet/mobile card layout */
+@media (max-width: 850px) {
+  .species-grid {
+    grid-template-columns: 1fr;
   }
 
-  .species-controls select,
+  .species-card-top {
+    flex-direction: column;
+  }
+
+  .species-total {
+    text-align: left;
+  }
+}
+
+/* Keep Region + Date dropdowns side by side on mobile */
+@media (max-width: 700px) {
+  .species-controls {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .species-controls select {
+    flex: 0 0 auto;
+    min-width: 145px;
+    max-width: 155px;
+  }
+
   .species-controls input[type="date"] {
-    width: auto;
-    min-width: 140px;
+    flex: 0 0 auto;
+    min-width: 135px;
+    max-width: 145px;
   }
 
   .custom-date-range {
-    display: flex;
+    flex: 0 0 auto;
     flex-direction: row;
     align-items: center;
     width: auto;
-    gap: 8px;
+    gap: 6px;
+  }
+}
+
+@media (max-width: 420px) {
+  .species-controls select {
+    min-width: 135px;
+    max-width: 145px;
+  }
+
+  .species-controls input[type="date"] {
+    min-width: 130px;
+    max-width: 140px;
   }
 }
 /* =========================================================
