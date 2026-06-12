@@ -173,36 +173,45 @@ function buildSpeciesFpaChart(region) {
   const chart = document.getElementById("speciesFpaChart");
   if (!chart) return;
 
-  const species = buildSpeciesFpaByRegion(region);
+  const trend = buildRegionalFpaTrend(region);
 
-  if (!species.length) {
-    chart.innerHTML = `<div class="empty-card">No chart data found for ${safe(region)}.</div>`;
+  if (!trend.length) {
+    chart.innerHTML = `<div class="empty-card">No 12-week trend data found for ${safe(region)}.</div>`;
     return;
   }
 
-  const maxFpa = Math.max(...species.map(item => item.fpa), 1);
+  const maxFpa = Math.max(...trend.map(item => item.fpa), 1);
 
   chart.innerHTML = `
-    <div class="species-bar-chart">
-      ${species.map(item => {
-        const height = Math.max(8, Math.round((item.fpa / maxFpa) * 100));
+    <div class="fpa-line-chart">
+      <svg viewBox="0 0 100 55" preserveAspectRatio="none">
+        <polyline
+          class="fpa-line"
+          points="${trend.map((item, index) => {
+            const x = trend.length === 1 ? 50 : (index / (trend.length - 1)) * 100;
+            const y = 50 - ((item.fpa / maxFpa) * 42);
+            return `${x},${y}`;
+          }).join(" ")}"
+        ></polyline>
 
-        return `
-          <div class="species-bar-item">
-            <div class="species-bar-value">${item.fpa.toFixed(2)}</div>
+        ${trend.map((item, index) => {
+          const x = trend.length === 1 ? 50 : (index / (trend.length - 1)) * 100;
+          const y = 50 - ((item.fpa / maxFpa) * 42);
 
-            <div class="species-bar-track">
-              <div class="species-bar-fill" style="height:${height}%"></div>
-            </div>
+          return `
+            <circle class="fpa-dot" cx="${x}" cy="${y}" r="1.6"></circle>
+          `;
+        }).join("")}
+      </svg>
 
-            <div class="species-bar-name">${safe(item.name)}</div>
-            <div class="species-bar-meta">
-              ${format(item.count)} fish<br>
-              ${format(item.anglers)} anglers
-            </div>
-          </div>
-        `;
-      }).join("")}
+      <div class="fpa-line-labels">
+        ${trend.map(item => `
+          <span>
+            <b>${item.fpa.toFixed(2)}</b>
+            <small>${safe(item.label)}</small>
+          </span>
+        `).join("")}
+      </div>
     </div>
   `;
 }
@@ -470,4 +479,55 @@ function escapeAttr(value) {
     .replaceAll("\\", "\\\\")
     .replaceAll("'", "\\'")
     .replaceAll('"', "&quot;");
+}
+function buildRegionalFpaTrend(region) {
+  const targetRegion = String(region || "").toLowerCase();
+  const today = new Date();
+
+  const weeks = [];
+
+  for (let i = 11; i >= 0; i--) {
+    const end = new Date(today);
+    end.setDate(today.getDate() - i * 7);
+
+    const start = new Date(end);
+    start.setDate(end.getDate() - 6);
+
+    weeks.push({
+      start,
+      end,
+      fish: 0,
+      anglers: 0,
+      label: `${start.getMonth() + 1}/${start.getDate()}`
+    });
+  }
+
+  dailyRows.forEach(row => {
+    if (String(row.region || "").toLowerCase() !== targetRegion) return;
+
+    const rowDate = new Date(row.date || row.report_date || row.reportDate || "");
+    if (isNaN(rowDate)) return;
+
+    const anglers = Number(row.anglers || 0);
+    const fishCounts = String(row.fish_counts || "");
+
+    const totalFish = parseFishCounts(fishCounts)
+      .reduce((sum, item) => sum + Number(item.count || 0), 0);
+
+    weeks.forEach(week => {
+      if (rowDate >= week.start && rowDate <= week.end) {
+        week.fish += totalFish;
+        week.anglers += anglers;
+      }
+    });
+  });
+
+  return weeks
+    .map(week => ({
+      label: week.label,
+      fish: week.fish,
+      anglers: week.anglers,
+      fpa: week.anglers > 0 ? week.fish / week.anglers : 0
+    }))
+    .filter(week => week.fish > 0 || week.anglers > 0);
 }
