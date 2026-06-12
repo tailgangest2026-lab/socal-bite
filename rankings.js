@@ -1,25 +1,24 @@
 document.addEventListener("DOMContentLoaded", initRankings);
 
 let currentView = "boats";
+let allDailyRows = [];
+let currentDateRows = [];
 let boatRows = [];
 let landingRows = [];
 let filteredRows = [];
 
 async function initRankings() {
   try {
-    const dailyRows = await loadRecentDailyRows();
+    allDailyRows = await loadRecentDailyRows();
 
-    boatRows = buildBoatRankings(dailyRows);
-    landingRows = buildLandingRankings(dailyRows);
-
-    buildRegionFilter(dailyRows);
+    setupDefaultCustomDates();
     bindControls();
-    renderKpis(dailyRows);
-    renderRankings();
+
+    rebuildRankingsForDateRange();
   } catch (error) {
     console.error("Rankings load failed:", error);
     document.getElementById("rankingBody").innerHTML = `
-      <tr><td colspan="7">Could not load rankings.</td></tr>
+      <tr><td colspan="8">Could not load rankings.</td></tr>
     `;
   }
 }
@@ -42,7 +41,7 @@ async function loadRecentDailyRows() {
     return [];
   }
 
-  const recentReports = index.slice(0, 30);
+  const recentReports = index.slice(0, 90);
   const allRows = [];
 
   for (const report of recentReports) {
@@ -52,7 +51,12 @@ async function loadRecentDailyRows() {
       const rows = await fetchJson(filePath);
 
       if (Array.isArray(rows)) {
-        allRows.push(...rows);
+        rows.forEach(row => {
+          allRows.push({
+            ...row,
+            report_date: row.report_date || row.date || report.date
+          });
+        });
       }
     } catch (error) {
       console.warn("Skipped report:", filePath, error);
@@ -60,6 +64,37 @@ async function loadRecentDailyRows() {
   }
 
   return allRows;
+}
+
+function rebuildRankingsForDateRange() {
+  currentDateRows = filterRowsByDateRange(allDailyRows);
+
+  boatRows = buildBoatRankings(currentDateRows);
+  landingRows = buildLandingRankings(currentDateRows);
+
+  buildRegionFilter(currentDateRows);
+  renderKpis(currentDateRows);
+  renderRankings();
+}
+
+function filterRowsByDateRange(rows) {
+  const range = getDateFilter();
+
+  if (!range.start || !range.end) {
+    return rows;
+  }
+
+  const start = new Date(`${range.start}T00:00:00`);
+  const end = new Date(`${range.end}T23:59:59`);
+
+  return rows.filter(row => {
+    const rowDateString = getRowDate(row);
+    if (!rowDateString) return false;
+
+    const rowDate = new Date(`${rowDateString}T12:00:00`);
+
+    return rowDate >= start && rowDate <= end;
+  });
 }
 
 function buildBoatRankings(rows) {
@@ -72,7 +107,6 @@ function buildBoatRankings(rows) {
     const key = boat.toLowerCase();
     const fish = Number(row.total_fish || 0);
     const anglers = Number(row.anglers || 0);
-    const trips = 1;
 
     if (!map[key]) {
       map[key] = {
@@ -86,7 +120,7 @@ function buildBoatRankings(rows) {
       };
     }
 
-    map[key].trips += trips;
+    map[key].trips += 1;
     map[key].anglers += anglers;
     map[key].fish += fish;
 
@@ -161,16 +195,44 @@ function bindControls() {
 
   document.getElementById("rankSearch")?.addEventListener("input", renderRankings);
   document.getElementById("rankRegion")?.addEventListener("change", renderRankings);
+
+  const dateRangeSelect = document.getElementById("rankDateRange");
+  const customDateRange = document.getElementById("customDateRange");
+
+  dateRangeSelect?.addEventListener("change", () => {
+    if (customDateRange) {
+      customDateRange.classList.toggle("hidden", dateRangeSelect.value !== "custom");
+    }
+
+    rebuildRankingsForDateRange();
+  });
+
+  document.getElementById("rankStartDate")?.addEventListener("change", () => {
+    if (dateRangeSelect) dateRangeSelect.value = "custom";
+    if (customDateRange) customDateRange.classList.remove("hidden");
+    rebuildRankingsForDateRange();
+  });
+
+  document.getElementById("rankEndDate")?.addEventListener("change", () => {
+    if (dateRangeSelect) dateRangeSelect.value = "custom";
+    if (customDateRange) customDateRange.classList.remove("hidden");
+    rebuildRankingsForDateRange();
+  });
 }
 
 function buildRegionFilter(rows) {
   const select = document.getElementById("rankRegion");
   if (!select) return;
 
+  const currentValue = select.value || "all";
   const regions = [...new Set(rows.map(r => clean(r.region)).filter(Boolean))].sort();
 
   select.innerHTML = `<option value="all">All regions</option>` +
     regions.map(region => `<option value="${safeAttr(region)}">${safe(region)}</option>`).join("");
+
+  if ([...select.options].some(option => option.value === currentValue)) {
+    select.value = currentValue;
+  }
 }
 
 function renderKpis(rows) {
@@ -232,7 +294,7 @@ function renderBoatTable(head, body, rows) {
   `;
 
   if (!rows.length) {
-    body.innerHTML = `<tr><td colspan="8">No boats found.</td></tr>`;
+    body.innerHTML = `<tr><td colspan="8">No boats found for this date range.</td></tr>`;
     return;
   }
 
@@ -269,7 +331,7 @@ function renderLandingTable(head, body, rows) {
   `;
 
   if (!rows.length) {
-    body.innerHTML = `<tr><td colspan="7">No landings found.</td></tr>`;
+    body.innerHTML = `<tr><td colspan="7">No landings found for this date range.</td></tr>`;
     return;
   }
 
@@ -288,6 +350,131 @@ function renderLandingTable(head, body, rows) {
       <td><span class="fpa-pill">${row.fpa.toFixed(2)}</span></td>
     </tr>
   `).join("");
+}
+
+function getDateFilter() {
+  const option = document.getElementById("rankDateRange")?.value || "month";
+  const today = new Date();
+
+  switch (option) {
+    case "today": {
+      return {
+        start: formatDate(today),
+        end: formatDate(today)
+      };
+    }
+
+    case "yesterday": {
+      const y = new Date(today);
+      y.setDate(y.getDate() - 1);
+
+      return {
+        start: formatDate(y),
+        end: formatDate(y)
+      };
+    }
+
+    case "week": {
+      const weekStart = new Date(today);
+      weekStart.setDate(today.getDate() - today.getDay());
+
+      return {
+        start: formatDate(weekStart),
+        end: formatDate(today)
+      };
+    }
+
+    case "month": {
+      return {
+        start: formatDate(new Date(today.getFullYear(), today.getMonth(), 1)),
+        end: formatDate(today)
+      };
+    }
+
+    case "prevMonth": {
+      return {
+        start: formatDate(new Date(today.getFullYear(), today.getMonth() - 1, 1)),
+        end: formatDate(new Date(today.getFullYear(), today.getMonth(), 0))
+      };
+    }
+
+    case "custom": {
+      return {
+        start: document.getElementById("rankStartDate")?.value || "",
+        end: document.getElementById("rankEndDate")?.value || ""
+      };
+    }
+
+    default: {
+      return {
+        start: formatDate(new Date(today.getFullYear(), today.getMonth(), 1)),
+        end: formatDate(today)
+      };
+    }
+  }
+}
+
+function setupDefaultCustomDates() {
+  const today = new Date();
+  const monthStart = new Date(today.getFullYear(), today.getMonth(), 1);
+
+  const startInput = document.getElementById("rankStartDate");
+  const endInput = document.getElementById("rankEndDate");
+
+  if (startInput && !startInput.value) startInput.value = formatDate(monthStart);
+  if (endInput && !endInput.value) endInput.value = formatDate(today);
+}
+
+function getRowDate(row) {
+  const possibleDate =
+    row.report_date ||
+    row.date ||
+    row.trip_date ||
+    row.tripDate ||
+    row.TripDate ||
+    row["Trip Date"] ||
+    "";
+
+  return normalizeDateString(possibleDate);
+}
+
+function normalizeDateString(value) {
+  if (!value) return "";
+
+  if (value instanceof Date && !Number.isNaN(value.getTime())) {
+    return formatDate(value);
+  }
+
+  const text = String(value).trim();
+
+  const isoMatch = text.match(/^(\d{4})-(\d{2})-(\d{2})/);
+  if (isoMatch) return `${isoMatch[1]}-${isoMatch[2]}-${isoMatch[3]}`;
+
+  const compactMatch = text.match(/^(\d{4})(\d{2})(\d{2})$/);
+  if (compactMatch) return `${compactMatch[1]}-${compactMatch[2]}-${compactMatch[3]}`;
+
+  const slashMatch = text.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+  if (slashMatch) {
+    const month = slashMatch[1].padStart(2, "0");
+    const day = slashMatch[2].padStart(2, "0");
+    const year = slashMatch[3];
+    return `${year}-${month}-${day}`;
+  }
+
+  const parsed = new Date(text);
+  if (!Number.isNaN(parsed.getTime())) {
+    return formatDate(parsed);
+  }
+
+  return "";
+}
+
+function formatDate(date) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+
+  return `${year}-${month}-${day}`;
 }
 
 function rankDisplay(rank) {
