@@ -93,11 +93,41 @@
     "trip_date": "2026-06-12",
     "region": "Los Angeles",
     "landing": "Marina Del Rey Sportfishing",
+    "boat": "New Del Mar",
+    "trip_type": "1/2 Day AM",
+    "anglers": 49,
+    "fish_counts": "2 Lingcod, 255 Rockfish, 155 Sculpin, 2 Sheephead, 35 Whitefish",
+    "total_fish": 449
+  },
+  {
+    "trip_date": "2026-06-12",
+    "region": "Los Angeles",
+    "landing": "Marina Del Rey Sportfishing",
     "boat": "Spitfire",
     "trip_type": "3/4 Day",
     "anglers": 13,
     "fish_counts": "33 Calico Bass, 75 Rockfish",
     "total_fish": 108
+  },
+  {
+    "trip_date": "2026-06-12",
+    "region": "Los Angeles",
+    "landing": "Marina Del Rey Sportfishing",
+    "boat": "Spitfire",
+    "trip_type": "3/4 Day",
+    "anglers": 24,
+    "fish_counts": "42 Calico Bass, 15 Rockfish, 1 Sheephead, 3 Whitefish",
+    "total_fish": 61
+  },
+  {
+    "trip_date": "2026-06-12",
+    "region": "Los Angeles",
+    "landing": "Redondo Beach Sportfishing",
+    "boat": "Redondo Special",
+    "trip_type": "1/2 Day AM",
+    "anglers": 26,
+    "fish_counts": "202 Rockfish",
+    "total_fish": 202
   },
   {
     "trip_date": "2026-06-12",
@@ -208,6 +238,16 @@
     "anglers": 30,
     "fish_counts": "14 Barracuda, 23 Bonito, 57 Calico Bass, 25 Sheephead, 48 Whitefish, 17 Yellowtail",
     "total_fish": 184
+  },
+  {
+    "trip_date": "2026-06-12",
+    "region": "Orange County",
+    "landing": "Newport Landing",
+    "boat": "Thunderbird",
+    "trip_type": "Overnight",
+    "anglers": 30,
+    "fish_counts": "15 Barracuda, 63 Calico Bass, 137 Rockfish, 19 Sheephead, 158 Whitefish, 21 Yellowtail",
+    "total_fish": 413
   },
   {
     "trip_date": "2026-06-12",
@@ -528,6 +568,16 @@
     "anglers": 5,
     "fish_counts": "1 Calico Bass, 4 Halibut, 10 Rockfish, 7 Sheephead",
     "total_fish": 22
+  },
+  {
+    "trip_date": "2026-06-12",
+    "region": "Ventura",
+    "landing": "Channel Islands Sportfishing",
+    "boat": "Indicator",
+    "trip_type": "Overnight",
+    "anglers": 17,
+    "fish_counts": "1 Barracuda, 1 Halibut, 158 Rockfish, 6 Sheephead, 146 Whitefish",
+    "total_fish": 312
   },
   {
     "trip_date": "2026-06-12",
