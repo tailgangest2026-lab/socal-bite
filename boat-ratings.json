@@ -434,10 +434,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Daily Double",
     "landing": "Point Loma Sportfishing",
-    "trips": 20,
-    "anglers": 419,
-    "fish": 1866,
-    "fpa": 4.45
+    "trips": 21,
+    "anglers": 446,
+    "fish": 1932,
+    "fpa": 4.33
   },
   {
     "rank": 6,
@@ -474,6 +474,17 @@
   },
   {
     "rank": 9,
+    "region": "San Diego",
+    "trip_type": "1/2 Day AM",
+    "boat": "Patriot (Avila Beach)",
+    "landing": "Patriot Sportfishing",
+    "trips": 5,
+    "anglers": 130,
+    "fish": 20,
+    "fpa": 0.15
+  },
+  {
+    "rank": 10,
     "region": "San Diego",
     "trip_type": "1/2 Day AM",
     "boat": "Flying Fish",
