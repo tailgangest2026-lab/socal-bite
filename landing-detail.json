@@ -70,6 +70,20 @@
     "fpa": 5.8
   },
   {
+    "landing": "Fish Emeryville",
+    "region": "NorCal",
+    "phone": "",
+    "website": "",
+    "address": "",
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Fish%20Emeryville",
+    "booking_url": "",
+    "trips": 19,
+    "boats": 11,
+    "anglers": 244,
+    "fish": 587,
+    "fpa": 2.41
+  },
+  {
     "landing": "Stagnaros Charters",
     "region": "NorCal",
     "phone": "",
@@ -98,18 +112,18 @@
     "fpa": 9.27
   },
   {
-    "landing": "Fish Emeryville",
+    "landing": "Riptide Sportfishing",
     "region": "NorCal",
     "phone": "",
     "website": "",
     "address": "",
-    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Fish%20Emeryville",
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Riptide%20Sportfishing",
     "booking_url": "",
-    "trips": 14,
-    "boats": 9,
-    "anglers": 165,
-    "fish": 237,
-    "fpa": 1.44
+    "trips": 3,
+    "boats": 1,
+    "anglers": 16,
+    "fish": 40,
+    "fpa": 2.5
   },
   {
     "landing": "Happy Hooker Sportfishing",
@@ -189,9 +203,9 @@
     "address": "",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Lovely%20Martha%20Sportfishing",
     "booking_url": "",
-    "trips": 2,
+    "trips": 3,
     "boats": 1,
-    "anglers": 37,
+    "anglers": 54,
     "fish": 0,
     "fpa": 0
   },
@@ -206,20 +220,6 @@
     "trips": 2,
     "boats": 2,
     "anglers": 14,
-    "fish": 0,
-    "fpa": 0
-  },
-  {
-    "landing": "Riptide Sportfishing",
-    "region": "NorCal",
-    "phone": "",
-    "website": "",
-    "address": "",
-    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Riptide%20Sportfishing",
-    "booking_url": "",
-    "trips": 1,
-    "boats": 1,
-    "anglers": 6,
     "fish": 0,
     "fpa": 0
   },
@@ -273,10 +273,10 @@
     "address": "1717 Quivira Rd, San Diego, CA 92109",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=1717%20Quivira%20Rd%2C%20San%20Diego%2C%20CA%2092109",
     "booking_url": "https://www.seaforthlanding.com",
-    "trips": 440,
+    "trips": 443,
     "boats": 12,
-    "anglers": 12301,
-    "fish": 39095,
+    "anglers": 12442,
+    "fish": 39587,
     "fpa": 3.18
   },
   {
@@ -287,11 +287,11 @@
     "address": "2803 Emerson St, San Diego, CA 92106",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=2803%20Emerson%20St%2C%20San%20Diego%2C%20CA%2092106",
     "booking_url": "https://www.hmlanding.com",
-    "trips": 270,
+    "trips": 274,
     "boats": 17,
-    "anglers": 6650,
-    "fish": 28080,
-    "fpa": 4.22
+    "anglers": 6729,
+    "fish": 28638,
+    "fpa": 4.26
   },
   {
     "landing": "Fisherman's Landing",
@@ -343,10 +343,10 @@
     "address": "1838 Harbor Dr N, Oceanside, CA 92054",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=1838%20Harbor%20Dr%20N%2C%20Oceanside%2C%20CA%2092054",
     "booking_url": "https://patriotsportfishing.com",
-    "trips": 110,
+    "trips": 113,
     "boats": 3,
-    "anglers": 1645,
-    "fish": 234,
+    "anglers": 1699,
+    "fish": 237,
     "fpa": 0.14
   },
   {
@@ -399,11 +399,11 @@
     "address": "4151 Victoria Ave, Oxnard, CA 93035",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=4151%20Victoria%20Ave%2C%20Oxnard%2C%20CA%2093035",
     "booking_url": "https://www.channelislandssportfishing.com",
-    "trips": 405,
+    "trips": 406,
     "boats": 11,
-    "anglers": 8059,
-    "fish": 89556,
-    "fpa": 11.11
+    "anglers": 8079,
+    "fish": 89804,
+    "fpa": 11.12
   },
   {
     "landing": "Ventura Harbor Sportfishing",
