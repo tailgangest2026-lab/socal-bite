@@ -363,11 +363,31 @@
     "trip_date": "2026-06-12",
     "region": "San Diego",
     "landing": "Seaforth Sportfishing",
+    "boat": "San Diego",
+    "trip_type": "Full Day Coronado Islands",
+    "anglers": 13,
+    "fish_counts": "65 Yellowtail",
+    "total_fish": 65
+  },
+  {
+    "trip_date": "2026-06-12",
+    "region": "San Diego",
+    "landing": "Seaforth Sportfishing",
     "boat": "Sea Watch",
     "trip_type": "3/4 Day",
     "anglers": 24,
     "fish_counts": "2 Barracuda, 120 Calico Bass, 1 Halibut, 6 Rockfish, 8 Sand Bass, 3 Sheephead",
     "total_fish": 140
+  },
+  {
+    "trip_date": "2026-06-12",
+    "region": "San Diego",
+    "landing": "Seaforth Sportfishing",
+    "boat": "Sea Watch",
+    "trip_type": "3/4 Day",
+    "anglers": 24,
+    "fish_counts": "2 Barracuda, 120 Calico Bass, 1 Halibut, 6 Rockfish, 3 Sheephead",
+    "total_fish": 132
   },
   {
     "trip_date": "2026-06-12",
@@ -448,6 +468,16 @@
     "anglers": 6,
     "fish_counts": "25 Bonito, 10 Calico Bass, 1 Sheephead, 1 Yellowtail",
     "total_fish": 37
+  },
+  {
+    "trip_date": "2026-06-12",
+    "region": "Ventura",
+    "landing": "Channel Islands Sportfishing",
+    "boat": "Graylight",
+    "trip_type": "Full Day",
+    "anglers": 5,
+    "fish_counts": "1 Calico Bass, 4 Halibut, 10 Rockfish, 7 Sheephead",
+    "total_fish": 22
   },
   {
     "trip_date": "2026-06-12",
