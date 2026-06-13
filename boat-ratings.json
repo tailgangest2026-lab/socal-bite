@@ -828,6 +828,17 @@
     "rank": 2,
     "region": "Ventura",
     "trip_type": "3/4 Day",
+    "boat": "Enterprise",
+    "landing": "Pierpoint Landing",
+    "trips": 5,
+    "anglers": 138,
+    "fish": 1541,
+    "fpa": 11.17
+  },
+  {
+    "rank": 3,
+    "region": "Ventura",
+    "trip_type": "3/4 Day",
     "boat": "Coroloma",
     "landing": "Hooks Landing",
     "trips": 5,
@@ -836,7 +847,7 @@
     "fpa": 10.07
   },
   {
-    "rank": 3,
+    "rank": 4,
     "region": "Ventura",
     "trip_type": "3/4 Day",
     "boat": "Gentleman",
@@ -847,7 +858,7 @@
     "fpa": 8.3
   },
   {
-    "rank": 4,
+    "rank": 5,
     "region": "Ventura",
     "trip_type": "3/4 Day",
     "boat": "Island Fox",
