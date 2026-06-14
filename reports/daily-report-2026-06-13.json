@@ -402,6 +402,16 @@
   {
     "trip_date": "2026-06-13",
     "region": "San Diego",
+    "landing": "Fisherman's Landing",
+    "boat": "Tradition",
+    "trip_type": "1/2 Day Twilight",
+    "anglers": 19,
+    "fish_counts": "65 Barracuda, 27 Calico Bass, 1 Whitefish, 62 Yellowtail",
+    "total_fish": 155
+  },
+  {
+    "trip_date": "2026-06-13",
+    "region": "San Diego",
     "landing": "H&M Landing",
     "boat": "Daiwa Pacific",
     "trip_type": "1.5 Day",
@@ -673,6 +683,16 @@
     "trip_date": "2026-06-13",
     "region": "San Luis Obispo",
     "landing": "Morro Bay Landing",
+    "boat": "Avenger",
+    "trip_type": "1/2 Day PM",
+    "anglers": 17,
+    "fish_counts": "4 Red Rockfish, 140 Rockfish",
+    "total_fish": 144
+  },
+  {
+    "trip_date": "2026-06-13",
+    "region": "San Luis Obispo",
+    "landing": "Morro Bay Landing",
     "boat": "Endeavor (MB)",
     "trip_type": "1/2 Day AM",
     "anglers": 12,
@@ -728,6 +748,16 @@
     "anglers": 29,
     "fish_counts": "118 Barracuda, 20 Bonito, 24 Calico Bass, 4 Halibut, 2 Rockfish, 1 Sheephead, 21 Whitefish, 7 Yellowtail",
     "total_fish": 197
+  },
+  {
+    "trip_date": "2026-06-13",
+    "region": "Ventura",
+    "landing": "Channel Islands Sportfishing",
+    "boat": "Estella",
+    "trip_type": "1/2 Day AM",
+    "anglers": 36,
+    "fish_counts": "6 Lingcod, 293 Rockfish, 5 Sculpin, 16 Sheephead, 81 Whitefish",
+    "total_fish": 401
   },
   {
     "trip_date": "2026-06-13",
@@ -848,6 +878,16 @@
     "anglers": 35,
     "fish_counts": "7 Barracuda, 27 Bonito, 109 Calico Bass, 2 Sculpin, 23 Sheephead, 3 Whitefish, 10 Yellowtail",
     "total_fish": 181
+  },
+  {
+    "trip_date": "2026-06-13",
+    "region": "Ventura",
+    "landing": "Ventura Harbor Sportfishing",
+    "boat": "Endeavor (Ventura)",
+    "trip_type": "2 Day",
+    "anglers": 18,
+    "fish_counts": "3 Calico Bass, 3 Halibut, 6 Lingcod, 280 Rockfish, 50 Sheephead, 250 Whitefish",
+    "total_fish": 592
   },
   {
     "trip_date": "2026-06-13",
