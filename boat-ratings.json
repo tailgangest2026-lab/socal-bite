@@ -234,6 +234,17 @@
     "rank": 3,
     "region": "NorCal",
     "trip_type": "Full Day",
+    "boat": "New Huck Finn",
+    "landing": "Fish Emeryville",
+    "trips": 5,
+    "anglers": 93,
+    "fish": 23,
+    "fpa": 0.25
+  },
+  {
+    "rank": 4,
+    "region": "NorCal",
+    "trip_type": "Full Day",
     "boat": "Goldeneye 2000",
     "landing": "Berkeley Charter Boats",
     "trips": 6,
@@ -242,7 +253,7 @@
     "fpa": 0
   },
   {
-    "rank": 4,
+    "rank": 5,
     "region": "NorCal",
     "trip_type": "Full Day",
     "boat": "California Dawn II",
@@ -253,7 +264,7 @@
     "fpa": 0
   },
   {
-    "rank": 5,
+    "rank": 6,
     "region": "NorCal",
     "trip_type": "Full Day",
     "boat": "New California Dawn",
@@ -707,23 +718,23 @@
     "rank": 1,
     "region": "San Diego",
     "trip_type": "3/4 Day",
-    "boat": "Chubasco II",
-    "landing": "Oceanside Sea Center",
-    "trips": 12,
-    "anglers": 187,
-    "fish": 2013,
-    "fpa": 10.76
+    "boat": "Malihini",
+    "landing": "H&M Landing",
+    "trips": 10,
+    "anglers": 188,
+    "fish": 1916,
+    "fpa": 10.19
   },
   {
     "rank": 2,
     "region": "San Diego",
     "trip_type": "3/4 Day",
-    "boat": "Malihini",
-    "landing": "H&M Landing",
-    "trips": 9,
-    "anglers": 170,
-    "fish": 1623,
-    "fpa": 9.55
+    "boat": "Chubasco II",
+    "landing": "Oceanside Sea Center",
+    "trips": 13,
+    "anglers": 201,
+    "fish": 2021,
+    "fpa": 10.05
   },
   {
     "rank": 3,
@@ -1028,10 +1039,10 @@
     "trip_type": "Full Day",
     "boat": "Graylight",
     "landing": "Channel Islands Sportfishing",
-    "trips": 29,
-    "anglers": 161,
-    "fish": 791,
-    "fpa": 4.91
+    "trips": 30,
+    "anglers": 166,
+    "fish": 844,
+    "fpa": 5.08
   },
   {
     "rank": 1,

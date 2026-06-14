@@ -348,6 +348,18 @@
     "top_species_3": ""
   },
   {
+    "boat": "Lady K",
+    "landing": "Fish Emeryville",
+    "region": "NorCal",
+    "trips": 4,
+    "anglers": 38,
+    "fish": 98,
+    "fpa": 2.58,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Halibut",
+    "top_species_3": "Lingcod"
+  },
+  {
     "boat": "New Rayann",
     "landing": "New Rayann Sportfishing",
     "region": "NorCal",
@@ -384,30 +396,6 @@
     "top_species_3": ""
   },
   {
-    "boat": "Lady K",
-    "landing": "Fish Emeryville",
-    "region": "NorCal",
-    "trips": 3,
-    "anglers": 30,
-    "fish": 9,
-    "fpa": 0.3,
-    "top_species_1": "Halibut",
-    "top_species_2": "",
-    "top_species_3": ""
-  },
-  {
-    "boat": "New Huck Finn",
-    "landing": "Fish Emeryville",
-    "region": "NorCal",
-    "trips": 4,
-    "anglers": 77,
-    "fish": 23,
-    "fpa": 0.3,
-    "top_species_1": "Halibut",
-    "top_species_2": "",
-    "top_species_3": ""
-  },
-  {
     "boat": "Oakland Anglers II",
     "landing": "Fish Emeryville",
     "region": "NorCal",
@@ -427,6 +415,18 @@
     "anglers": 101,
     "fish": 27,
     "fpa": 0.27,
+    "top_species_1": "Halibut",
+    "top_species_2": "",
+    "top_species_3": ""
+  },
+  {
+    "boat": "New Huck Finn",
+    "landing": "Fish Emeryville",
+    "region": "NorCal",
+    "trips": 5,
+    "anglers": 93,
+    "fish": 23,
+    "fpa": 0.25,
     "top_species_1": "Halibut",
     "top_species_2": "",
     "top_species_3": ""
@@ -831,10 +831,10 @@
     "boat": "Malihini",
     "landing": "H&M Landing",
     "region": "San Diego",
-    "trips": 17,
-    "anglers": 279,
-    "fish": 2502,
-    "fpa": 8.97,
+    "trips": 18,
+    "anglers": 297,
+    "fish": 2795,
+    "fpa": 9.41,
     "top_species_1": "Rockfish",
     "top_species_2": "Calico Bass Released",
     "top_species_3": "Red Rockfish"
@@ -867,13 +867,13 @@
     "boat": "Chubasco II",
     "landing": "Oceanside Sea Center",
     "region": "San Diego",
-    "trips": 53,
-    "anglers": 915,
-    "fish": 7299,
+    "trips": 55,
+    "anglers": 943,
+    "fish": 7521,
     "fpa": 7.98,
     "top_species_1": "Rockfish",
     "top_species_2": "Calico Bass Released",
-    "top_species_3": "Whitefish"
+    "top_species_3": "Calico Bass"
   },
   {
     "boat": "Pacific Voyager",
@@ -886,18 +886,6 @@
     "top_species_1": "Bluefin Tuna",
     "top_species_2": "Rockfish",
     "top_species_3": "Yellowtail"
-  },
-  {
-    "boat": "Tradition",
-    "landing": "Fisherman's Landing",
-    "region": "San Diego",
-    "trips": 3,
-    "anglers": 60,
-    "fish": 396,
-    "fpa": 6.6,
-    "top_species_1": "Yellowtail",
-    "top_species_2": "Barracuda",
-    "top_species_3": "Calico Bass"
   },
   {
     "boat": "Spirit of Adventure",
@@ -934,6 +922,18 @@
     "top_species_1": "Rockfish",
     "top_species_2": "Whitefish",
     "top_species_3": "Bonito"
+  },
+  {
+    "boat": "Tradition",
+    "landing": "Fisherman's Landing",
+    "region": "San Diego",
+    "trips": 4,
+    "anglers": 82,
+    "fish": 482,
+    "fpa": 5.88,
+    "top_species_1": "Yellowtail",
+    "top_species_2": "Calico Bass",
+    "top_species_3": "Barracuda"
   },
   {
     "boat": "Sea Star",
@@ -1779,13 +1779,13 @@
     "boat": "Graylight",
     "landing": "Channel Islands Sportfishing",
     "region": "Ventura",
-    "trips": 49,
-    "anglers": 267,
-    "fish": 1809,
-    "fpa": 6.78,
+    "trips": 50,
+    "anglers": 272,
+    "fish": 1862,
+    "fpa": 6.85,
     "top_species_1": "Rockfish",
     "top_species_2": "Whitefish",
-    "top_species_3": "Calico Bass"
+    "top_species_3": "Lingcod"
   },
   {
     "boat": "City of Long Beach",

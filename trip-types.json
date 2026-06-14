@@ -93,10 +93,10 @@
     "rank": 3,
     "region": "NorCal",
     "trip_type": "Full Day",
-    "trips": 56,
-    "anglers": 869,
+    "trips": 57,
+    "anglers": 885,
     "fish": 2082,
-    "fpa": 2.4
+    "fpa": 2.35
   },
   {
     "rank": 4,
@@ -192,10 +192,10 @@
     "rank": 3,
     "region": "San Diego",
     "trip_type": "3/4 Day",
-    "trips": 112,
-    "anglers": 1800,
-    "fish": 11329,
-    "fpa": 6.29
+    "trips": 114,
+    "anglers": 1832,
+    "fish": 11630,
+    "fpa": 6.35
   },
   {
     "rank": 4,
@@ -272,20 +272,20 @@
   {
     "rank": 12,
     "region": "San Diego",
+    "trip_type": "Overnight",
+    "trips": 48,
+    "anglers": 910,
+    "fish": 1708,
+    "fpa": 1.88
+  },
+  {
+    "rank": 13,
+    "region": "San Diego",
     "trip_type": "Full Day Offshore",
     "trips": 12,
     "anglers": 223,
     "fish": 410,
     "fpa": 1.84
-  },
-  {
-    "rank": 13,
-    "region": "San Diego",
-    "trip_type": "Overnight",
-    "trips": 47,
-    "anglers": 888,
-    "fish": 1622,
-    "fpa": 1.83
   },
   {
     "rank": 14,
@@ -408,9 +408,9 @@
     "rank": 6,
     "region": "Ventura",
     "trip_type": "Full Day",
-    "trips": 204,
-    "anglers": 3082,
-    "fish": 29883,
+    "trips": 205,
+    "anglers": 3087,
+    "fish": 29936,
     "fpa": 9.7
   },
   {
