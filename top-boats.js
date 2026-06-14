@@ -1,5 +1,6 @@
 let dailyIndex = [];
 let currentDateIndex = 0;
+let reportYearCache = {};
 
 document.addEventListener("DOMContentLoaded", loadTopBoatsIndex);
 
@@ -38,6 +39,8 @@ function buildDateDropdown() {
   const select = document.getElementById("dateSelect");
   const prevBtn = document.getElementById("prevDay");
   const nextBtn = document.getElementById("nextDay");
+
+  if (!select || !prevBtn || !nextBtn) return;
 
   select.innerHTML = "";
 
@@ -80,11 +83,34 @@ function buildDateDropdown() {
 }
 
 function updateNavButtons() {
-  document.getElementById("prevDay").disabled =
-    currentDateIndex >= dailyIndex.length - 1;
+  const prevBtn = document.getElementById("prevDay");
+  const nextBtn = document.getElementById("nextDay");
 
-  document.getElementById("nextDay").disabled =
-    currentDateIndex <= 0;
+  if (prevBtn) {
+    prevBtn.disabled = currentDateIndex >= dailyIndex.length - 1;
+  }
+
+  if (nextBtn) {
+    nextBtn.disabled = currentDateIndex <= 0;
+  }
+}
+
+async function fetchReportYear(year) {
+  if (reportYearCache[year]) {
+    return reportYearCache[year];
+  }
+
+  const filePath = `reports/reports-${year}.json`;
+  const response = await fetch(socalBiteDataUrl(filePath));
+
+  if (!response.ok) {
+    throw new Error("Could not load " + filePath);
+  }
+
+  const rows = await response.json();
+  reportYearCache[year] = Array.isArray(rows) ? rows : [];
+
+  return reportYearCache[year];
 }
 
 async function loadTopBoatsDate(date) {
@@ -93,23 +119,12 @@ async function loadTopBoatsDate(date) {
   try {
     container.innerHTML = `<h2>Loading top boats for ${formatDisplayDate(date)}...</h2>`;
 
-    const reportInfo = dailyIndex.find(x => x.date === date);
+    const year = String(date).substring(0, 4);
+    const yearRows = await fetchReportYear(year);
 
-    if (!reportInfo) {
-      throw new Error("Report not found in index: " + date);
-    }
-
-    const filePath =
-      reportInfo.file || `reports/daily-report-${date}.json`;
-
-    const response =
-      await fetch(socalBiteDataUrl(filePath));
-
-    if (!response.ok) {
-      throw new Error("Could not load " + filePath);
-    }
-
-    const rows = await response.json();
+    const rows = yearRows.filter(row => {
+      return String(row.trip_date || "") === String(date);
+    });
 
     renderTopBoats(date, rows);
 
@@ -119,6 +134,7 @@ async function loadTopBoatsDate(date) {
       `<h2>Could not load top boats for ${formatDisplayDate(date)}.</h2>`;
   }
 }
+
 function renderTopBoats(date, rows) {
   const container = document.getElementById("topBoatsPage");
 
@@ -172,19 +188,19 @@ function renderTopBoats(date, rows) {
 
       return `
         <section class="region-section">
-          <h2>${region}</h2>
+          <h2>${safe(region)}</h2>
 
           ${regionBoats.map((boat, index) => `
             <div class="boat-row">
               <div>
-                <strong>#${index + 1} ${boat.boat}</strong>
-                <p>${boat.landing} • ${boat.tripType}</p>
+                <strong>#${index + 1} ${safe(boat.boat)}</strong>
+                <p>${safe(boat.landing)} • ${safe(boat.tripType)}</p>
               </div>
 
               <div>
                 <strong>${boat.fpa.toFixed(2)} FPA</strong>
                 <p>${numberFormat(boat.totalFish)} Fish • ${numberFormat(boat.anglers)} Anglers</p>
-                <p>${boat.fishCounts || "No fish counts listed"}</p>
+                <p>${safe(boat.fishCounts || "No fish counts listed")}</p>
               </div>
             </div>
           `).join("")}
@@ -193,7 +209,6 @@ function renderTopBoats(date, rows) {
     }).join("")}
   `;
 }
-
 
 function formatDisplayDate(dateString) {
   const parts = String(dateString).split("-");
@@ -216,4 +231,13 @@ function formatDisplayDate(dateString) {
 
 function numberFormat(value) {
   return Number(value || 0).toLocaleString();
+}
+
+function safe(value) {
+  return String(value || "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
 }
