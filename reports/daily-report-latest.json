@@ -393,6 +393,16 @@
     "trip_date": "2026-06-13",
     "region": "San Diego",
     "landing": "H&M Landing",
+    "boat": "Grande",
+    "trip_type": "Full Day Coronado Islands",
+    "anglers": 40,
+    "fish_counts": "30 Barracuda, 20 Calico Bass, 5 Rockfish, 1 Sheephead, 48 Yellowtail",
+    "total_fish": 104
+  },
+  {
+    "trip_date": "2026-06-13",
+    "region": "San Diego",
+    "landing": "H&M Landing",
     "boat": "Malihini",
     "trip_type": "3/4 Day",
     "anglers": 19,
@@ -591,6 +601,16 @@
   },
   {
     "trip_date": "2026-06-13",
+    "region": "San Diego",
+    "landing": "Seaforth Sportfishing",
+    "boat": "Sea Watch",
+    "trip_type": "3/4 Day",
+    "anglers": 14,
+    "fish_counts": "2 Barracuda, 28 Calico Bass, 7 Rockfish, 1 Sand Bass, 2 Sculpin, 1 Sheephead",
+    "total_fish": 41
+  },
+  {
+    "trip_date": "2026-06-13",
     "region": "San Luis Obispo",
     "landing": "Morro Bay Landing",
     "boat": "Avenger",
@@ -768,5 +788,15 @@
     "anglers": 24,
     "fish_counts": "38 Barracuda, 41 Bonito, 27 Calico Bass, 4 Halibut, 49 Whitefish",
     "total_fish": 159
+  },
+  {
+    "trip_date": "2026-06-13",
+    "region": "Ventura",
+    "landing": "Ventura Harbor Sportfishing",
+    "boat": "Island Spirit",
+    "trip_type": "1/2 Day AM",
+    "anglers": 18,
+    "fish_counts": "43 Barracuda, 29 Bonito, 12 Calico Bass, 1 Halibut, 13 Whitefish, 1 Yellowtail",
+    "total_fish": 99
   }
 ]
