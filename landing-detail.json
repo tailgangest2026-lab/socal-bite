@@ -7,10 +7,10 @@
     "address": "13759 Fiji Way, Marina Del Rey, CA 90292",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=13759%20Fiji%20Way%2C%20Marina%20Del%20Rey%2C%20CA%2090292",
     "booking_url": "https://mdrsf.com",
-    "trips": 207,
+    "trips": 209,
     "boats": 3,
-    "anglers": 8153,
-    "fish": 54625,
+    "anglers": 8244,
+    "fish": 55224,
     "fpa": 6.7
   },
   {
@@ -21,11 +21,11 @@
     "address": "141 W 22nd St, San Pedro, CA 90731",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=141%20W%2022nd%20St%2C%20San%20Pedro%2C%20CA%2090731",
     "booking_url": "https://www.22ndstreet.com",
-    "trips": 205,
+    "trips": 207,
     "boats": 8,
-    "anglers": 6637,
-    "fish": 42447,
-    "fpa": 6.4
+    "anglers": 6707,
+    "fish": 42756,
+    "fpa": 6.37
   },
   {
     "landing": "Long Beach Sportfishing",
@@ -49,11 +49,11 @@
     "address": "140 International Boardwalk, Redondo Beach, CA 90277",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=140%20International%20Boardwalk%2C%20Redondo%20Beach%2C%20CA%2090277",
     "booking_url": "https://www.redondosportfishing.com",
-    "trips": 54,
+    "trips": 55,
     "boats": 2,
-    "anglers": 1533,
-    "fish": 10861,
-    "fpa": 7.08
+    "anglers": 1580,
+    "fish": 11058,
+    "fpa": 7
   },
   {
     "landing": "LA Waterfront Cruises and Sportfishing",
@@ -68,6 +68,20 @@
     "anglers": 690,
     "fish": 4001,
     "fpa": 5.8
+  },
+  {
+    "landing": "J&M Sportfishing",
+    "region": "NorCal",
+    "phone": "",
+    "website": "",
+    "address": "",
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=J%26M%20Sportfishing",
+    "booking_url": "",
+    "trips": 7,
+    "boats": 2,
+    "anglers": 121,
+    "fish": 1094,
+    "fpa": 9.04
   },
   {
     "landing": "Fish Emeryville",
@@ -96,20 +110,6 @@
     "anglers": 40,
     "fish": 406,
     "fpa": 10.15
-  },
-  {
-    "landing": "J&M Sportfishing",
-    "region": "NorCal",
-    "phone": "",
-    "website": "",
-    "address": "",
-    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=J%26M%20Sportfishing",
-    "booking_url": "",
-    "trips": 2,
-    "boats": 1,
-    "anglers": 33,
-    "fish": 306,
-    "fpa": 9.27
   },
   {
     "landing": "Riptide Sportfishing",
@@ -245,11 +245,11 @@
     "address": "34675 Golden Lantern, Dana Point, CA 92629",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=34675%20Golden%20Lantern%2C%20Dana%20Point%2C%20CA%2092629",
     "booking_url": "https://www.danawharf.com",
-    "trips": 310,
+    "trips": 317,
     "boats": 9,
-    "anglers": 7836,
-    "fish": 40202,
-    "fpa": 5.13
+    "anglers": 8106,
+    "fish": 40915,
+    "fpa": 5.05
   },
   {
     "landing": "Newport Landing",
@@ -399,11 +399,11 @@
     "address": "4151 Victoria Ave, Oxnard, CA 93035",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=4151%20Victoria%20Ave%2C%20Oxnard%2C%20CA%2093035",
     "booking_url": "https://www.channelislandssportfishing.com",
-    "trips": 412,
+    "trips": 416,
     "boats": 13,
-    "anglers": 8236,
-    "fish": 91599,
-    "fpa": 11.12
+    "anglers": 8333,
+    "fish": 92617,
+    "fpa": 11.11
   },
   {
     "landing": "Ventura Harbor Sportfishing",
