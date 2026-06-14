@@ -57,9 +57,9 @@
     "rank": 7,
     "region": "Los Angeles",
     "trip_type": "1/2 Day Twilight",
-    "trips": 58,
-    "anglers": 3318,
-    "fish": 18767,
+    "trips": 59,
+    "anglers": 3324,
+    "fish": 18821,
     "fpa": 5.66
   },
   {
@@ -84,19 +84,19 @@
     "rank": 2,
     "region": "NorCal",
     "trip_type": "1/2 Day AM",
-    "trips": 26,
-    "anglers": 388,
-    "fish": 1267,
-    "fpa": 3.27
+    "trips": 30,
+    "anglers": 424,
+    "fish": 1308,
+    "fpa": 3.08
   },
   {
     "rank": 3,
     "region": "NorCal",
     "trip_type": "Full Day",
-    "trips": 52,
-    "anglers": 794,
-    "fish": 1341,
-    "fpa": 1.69
+    "trips": 54,
+    "anglers": 838,
+    "fish": 1831,
+    "fpa": 2.18
   },
   {
     "rank": 4,
@@ -183,22 +183,13 @@
     "rank": 2,
     "region": "San Diego",
     "trip_type": "3 Day",
-    "trips": 50,
-    "anglers": 1118,
-    "fish": 8627,
-    "fpa": 7.72
+    "trips": 52,
+    "anglers": 1156,
+    "fish": 8833,
+    "fpa": 7.64
   },
   {
     "rank": 3,
-    "region": "San Diego",
-    "trip_type": "2.5 Day",
-    "trips": 12,
-    "anglers": 209,
-    "fish": 1386,
-    "fpa": 6.63
-  },
-  {
-    "rank": 4,
     "region": "San Diego",
     "trip_type": "3/4 Day",
     "trips": 111,
@@ -207,31 +198,40 @@
     "fpa": 6.33
   },
   {
+    "rank": 4,
+    "region": "San Diego",
+    "trip_type": "2.5 Day",
+    "trips": 14,
+    "anglers": 252,
+    "fish": 1519,
+    "fpa": 6.03
+  },
+  {
     "rank": 5,
     "region": "San Diego",
     "trip_type": "1/2 Day Twilight",
-    "trips": 69,
-    "anglers": 1564,
-    "fish": 7653,
-    "fpa": 4.89
+    "trips": 71,
+    "anglers": 1647,
+    "fish": 7935,
+    "fpa": 4.82
   },
   {
     "rank": 6,
     "region": "San Diego",
     "trip_type": "2 Day",
-    "trips": 80,
-    "anglers": 1630,
-    "fish": 6918,
-    "fpa": 4.24
+    "trips": 82,
+    "anglers": 1677,
+    "fish": 7189,
+    "fpa": 4.29
   },
   {
     "rank": 7,
     "region": "San Diego",
     "trip_type": "1/2 Day AM",
-    "trips": 443,
-    "anglers": 10804,
-    "fish": 37514,
-    "fpa": 3.47
+    "trips": 447,
+    "anglers": 10910,
+    "fish": 37763,
+    "fpa": 3.46
   },
   {
     "rank": 8,
@@ -245,20 +245,20 @@
   {
     "rank": 9,
     "region": "San Diego",
+    "trip_type": "1.5 Day",
+    "trips": 66,
+    "anglers": 1381,
+    "fish": 3579,
+    "fpa": 2.59
+  },
+  {
+    "rank": 10,
+    "region": "San Diego",
     "trip_type": "Full Day Coronado Islands",
     "trips": 200,
     "anglers": 5609,
     "fish": 14130,
     "fpa": 2.52
-  },
-  {
-    "rank": 10,
-    "region": "San Diego",
-    "trip_type": "1.5 Day",
-    "trips": 64,
-    "anglers": 1325,
-    "fish": 3245,
-    "fpa": 2.45
   },
   {
     "rank": 11,
@@ -381,10 +381,10 @@
     "rank": 3,
     "region": "Ventura",
     "trip_type": "Overnight",
-    "trips": 108,
-    "anglers": 2066,
-    "fish": 32525,
-    "fpa": 15.74
+    "trips": 109,
+    "anglers": 2085,
+    "fish": 32730,
+    "fpa": 15.7
   },
   {
     "rank": 4,

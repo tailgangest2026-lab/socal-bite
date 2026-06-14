@@ -189,6 +189,17 @@
   {
     "rank": 1,
     "region": "NorCal",
+    "trip_type": "1/2 Day AM",
+    "boat": "Pacific Pearl",
+    "landing": "Fish Emeryville",
+    "trips": 5,
+    "anglers": 64,
+    "fish": 8,
+    "fpa": 0.13
+  },
+  {
+    "rank": 1,
+    "region": "NorCal",
     "trip_type": "Full Day",
     "boat": "Riptide",
     "landing": "Riptide Sportfishing",
@@ -456,10 +467,10 @@
     "trip_type": "1.5 Day",
     "boat": "Old Glory",
     "landing": "H&M Landing",
-    "trips": 5,
-    "anglers": 127,
-    "fish": 577,
-    "fpa": 4.54
+    "trips": 6,
+    "anglers": 156,
+    "fish": 883,
+    "fpa": 5.66
   },
   {
     "rank": 2,
@@ -471,6 +482,17 @@
     "anglers": 174,
     "fish": 255,
     "fpa": 1.47
+  },
+  {
+    "rank": 3,
+    "region": "San Diego",
+    "trip_type": "1.5 Day",
+    "boat": "Aztec",
+    "landing": "Seaforth Sportfishing",
+    "trips": 5,
+    "anglers": 128,
+    "fish": 108,
+    "fpa": 0.84
   },
   {
     "rank": 1,
@@ -533,10 +555,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Premier",
     "landing": "H&M Landing",
-    "trips": 21,
-    "anglers": 685,
-    "fish": 2671,
-    "fpa": 3.9
+    "trips": 22,
+    "anglers": 724,
+    "fish": 2722,
+    "fpa": 3.76
   },
   {
     "rank": 7,
@@ -544,10 +566,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
-    "trips": 26,
-    "anglers": 890,
-    "fish": 2169,
-    "fpa": 2.44
+    "trips": 27,
+    "anglers": 933,
+    "fish": 2360,
+    "fpa": 2.53
   },
   {
     "rank": 8,
@@ -555,10 +577,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Sunny Day",
     "landing": "Patriot Sportfishing",
-    "trips": 9,
-    "anglers": 25,
-    "fish": 12,
-    "fpa": 0.48
+    "trips": 10,
+    "anglers": 29,
+    "fish": 19,
+    "fpa": 0.66
   },
   {
     "rank": 9,
@@ -577,10 +599,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Flying Fish",
     "landing": "Patriot Sportfishing",
-    "trips": 18,
-    "anglers": 315,
+    "trips": 19,
+    "anglers": 335,
     "fish": 38,
-    "fpa": 0.12
+    "fpa": 0.11
   },
   {
     "rank": 1,
@@ -632,10 +654,10 @@
     "trip_type": "1/2 Day Twilight",
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
-    "trips": 25,
-    "anglers": 708,
-    "fish": 3958,
-    "fpa": 5.59
+    "trips": 26,
+    "anglers": 755,
+    "fish": 4129,
+    "fpa": 5.47
   },
   {
     "rank": 2,
@@ -665,10 +687,10 @@
     "trip_type": "3 Day",
     "boat": "Polaris Supreme",
     "landing": "Seaforth Sportfishing",
-    "trips": 9,
-    "anglers": 199,
-    "fish": 1184,
-    "fpa": 5.95
+    "trips": 10,
+    "anglers": 221,
+    "fish": 1285,
+    "fpa": 5.81
   },
   {
     "rank": 1,
@@ -1039,9 +1061,9 @@
     "trip_type": "Overnight",
     "boat": "Mirage",
     "landing": "Channel Islands Sportfishing",
-    "trips": 24,
-    "anglers": 446,
-    "fish": 6254,
-    "fpa": 14.02
+    "trips": 25,
+    "anglers": 465,
+    "fish": 6459,
+    "fpa": 13.89
   }
 ]
