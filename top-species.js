@@ -1,5 +1,6 @@
 let dailyIndex = [];
 let currentDateIndex = 0;
+const yearlyReportCache = {};
 
 document.addEventListener("DOMContentLoaded", loadTopSpeciesIndex);
 
@@ -52,10 +53,7 @@ function buildDateDropdown() {
 
   select.onchange = e => {
     currentDateIndex = dailyIndex.findIndex(x => x.date === e.target.value);
-
-    if (currentDateIndex < 0) {
-      currentDateIndex = 0;
-    }
+    if (currentDateIndex < 0) currentDateIndex = 0;
 
     loadTopSpeciesDate(dailyIndex[currentDateIndex].date);
     updateNavButtons();
@@ -97,25 +95,7 @@ async function loadTopSpeciesDate(date) {
     container.innerHTML =
       `<h2>Loading top species for ${formatDisplayDate(date)}...</h2>`;
 
-    const reportInfo =
-      dailyIndex.find(x => x.date === date);
-
-    if (!reportInfo) {
-      throw new Error("Report not found in index: " + date);
-    }
-
-    const filePath =
-      reportInfo.file || `reports/daily-report-${date}.json`;
-
-    const response =
-      await fetch(socalBiteDataUrl(filePath));
-
-    if (!response.ok) {
-      throw new Error("Could not load " + filePath);
-    }
-
-    const rows =
-      await response.json();
+    const rows = await loadRowsForDate(date);
 
     renderTopSpecies(date, rows);
 
@@ -125,6 +105,31 @@ async function loadTopSpeciesDate(date) {
     container.innerHTML =
       `<h2>Could not load top species for ${formatDisplayDate(date)}.</h2>`;
   }
+}
+
+async function loadRowsForDate(selectedDate) {
+  const year = String(selectedDate).slice(0, 4);
+  const filePath = `reports/reports-${year}.json`;
+
+  if (!year || year.length !== 4) {
+    throw new Error("Invalid selected date: " + selectedDate);
+  }
+
+  if (!yearlyReportCache[year]) {
+    const response = await fetch(socalBiteDataUrl(filePath));
+
+    if (!response.ok) {
+      throw new Error("Could not load " + filePath);
+    }
+
+    yearlyReportCache[year] = await response.json();
+  }
+
+  const allRows = Array.isArray(yearlyReportCache[year])
+    ? yearlyReportCache[year]
+    : [];
+
+  return allRows.filter(row => row.trip_date === selectedDate);
 }
 
 function renderTopSpecies(date, rows) {
@@ -208,9 +213,7 @@ function parseFishCounts(fishCounts) {
     .map(part => {
       const match = part.match(/^(\d+)\s+(.+)$/);
 
-      if (!match) {
-        return null;
-      }
+      if (!match) return null;
 
       return {
         count: Number(match[1] || 0),
