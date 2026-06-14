@@ -324,6 +324,18 @@
     "top_species_3": ""
   },
   {
+    "boat": "Pacific Dream",
+    "landing": "Happy Hooker Sportfishing",
+    "region": "NorCal",
+    "trips": 2,
+    "anglers": 47,
+    "fish": 251,
+    "fpa": 5.34,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Lingcod",
+    "top_species_3": ""
+  },
+  {
     "boat": "Riptide",
     "landing": "Riptide Sportfishing",
     "region": "NorCal",
@@ -545,18 +557,6 @@
     "region": "NorCal",
     "trips": 1,
     "anglers": 8,
-    "fish": 0,
-    "fpa": 0,
-    "top_species_1": "",
-    "top_species_2": "",
-    "top_species_3": ""
-  },
-  {
-    "boat": "Pacific Dream",
-    "landing": "Happy Hooker Sportfishing",
-    "region": "NorCal",
-    "trips": 1,
-    "anglers": 22,
     "fish": 0,
     "fpa": 0,
     "top_species_1": "",
@@ -864,18 +864,6 @@
     "top_species_3": "Whitefish"
   },
   {
-    "boat": "Tradition",
-    "landing": "Fisherman's Landing",
-    "region": "San Diego",
-    "trips": 2,
-    "anglers": 38,
-    "fish": 310,
-    "fpa": 8.16,
-    "top_species_1": "Barracuda",
-    "top_species_2": "Yellowtail",
-    "top_species_3": "Calico Bass"
-  },
-  {
     "boat": "Chubasco II",
     "landing": "Oceanside Sea Center",
     "region": "San Diego",
@@ -898,6 +886,18 @@
     "top_species_1": "Bluefin Tuna",
     "top_species_2": "Rockfish",
     "top_species_3": "Yellowtail"
+  },
+  {
+    "boat": "Tradition",
+    "landing": "Fisherman's Landing",
+    "region": "San Diego",
+    "trips": 3,
+    "anglers": 60,
+    "fish": 396,
+    "fpa": 6.6,
+    "top_species_1": "Yellowtail",
+    "top_species_2": "Barracuda",
+    "top_species_3": "Calico Bass"
   },
   {
     "boat": "Spirit of Adventure",
@@ -987,10 +987,10 @@
     "boat": "Sea Watch",
     "landing": "Seaforth Sportfishing",
     "region": "San Diego",
-    "trips": 44,
-    "anglers": 880,
-    "fish": 4179,
-    "fpa": 4.75,
+    "trips": 45,
+    "anglers": 916,
+    "fish": 4342,
+    "fpa": 4.74,
     "top_species_1": "Calico Bass Released",
     "top_species_2": "Calico Bass",
     "top_species_3": "Whitefish"
@@ -1561,18 +1561,6 @@
   },
   {
     "boat": "New Hustler",
-    "landing": "Channel Islands Sportfishing",
-    "region": "Ventura",
-    "trips": 2,
-    "anglers": 38,
-    "fish": 644,
-    "fpa": 16.95,
-    "top_species_1": "Whitefish",
-    "top_species_2": "Rockfish",
-    "top_species_3": "Sheephead"
-  },
-  {
-    "boat": "New Hustler",
     "landing": "Hooks Landing",
     "region": "Ventura",
     "trips": 23,
@@ -1582,6 +1570,18 @@
     "top_species_1": "Rockfish",
     "top_species_2": "Whitefish",
     "top_species_3": "Sheephead"
+  },
+  {
+    "boat": "New Hustler",
+    "landing": "Channel Islands Sportfishing",
+    "region": "Ventura",
+    "trips": 3,
+    "anglers": 62,
+    "fish": 944,
+    "fpa": 15.23,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Whitefish",
+    "top_species_3": "Barracuda"
   },
   {
     "boat": "Mirage",
