@@ -1,4 +1,25 @@
-       - name: Download JSON files
+       name: Update SoCal Bite JSON
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-json:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+
+      - name: Download JSON files
         run: |
           BASE_URL="https://script.google.com/macros/s/AKfycbyEEjmsgGEK6TN9R0-YzW45ZreWIYcEW0kk5_T4ulryssJDtmuOTy-zAWqXVYKrloni/exec"
 
