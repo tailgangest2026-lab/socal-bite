@@ -4,6 +4,7 @@ let selectedLanding = "";
 let dailyRows = [];
 let tripPrices = [];
 let tripTypes = [];
+let reportYearCache = {};
 
 async function initLandingDetail() {
   selectedLanding = getParam("landing");
@@ -43,7 +44,8 @@ async function initLandingDetail() {
 
 async function fetchJson(path) {
   const url = typeof socalBiteDataUrl === "function" ? socalBiteDataUrl(path) : path;
-  const response = await fetch(url + "?v=" + Date.now());
+  const sep = url.includes("?") ? "&" : "?";
+  const response = await fetch(url + sep + "v=" + Date.now());
 
   if (!response.ok) {
     throw new Error("Could not load " + path);
@@ -52,25 +54,51 @@ async function fetchJson(path) {
   return response.json();
 }
 
+async function fetchReportYear(year) {
+  if (reportYearCache[year]) {
+    return reportYearCache[year];
+  }
+
+  const rows = await fetchJson(`reports/reports-${year}.json`);
+  reportYearCache[year] = Array.isArray(rows) ? rows : [];
+
+  return reportYearCache[year];
+}
+
 async function loadRecentDailyRows() {
   const index = await fetchJson("daily-report-index.json");
 
-  if (!Array.isArray(index) || !index.length) return [];
+  if (!Array.isArray(index) || !index.length) {
+    return [];
+  }
 
-  const recentReports = index.slice(0, 30);
+  const recentDates = new Set(
+    index
+      .slice(0, 30)
+      .map(report => String(report.date || "").split("T")[0])
+      .filter(Boolean)
+  );
+
+  const years = [
+    ...new Set([...recentDates].map(date => date.substring(0, 4)))
+  ];
+
   const rows = [];
 
-  for (const report of recentReports) {
-    const filePath = report.file || `reports/daily-report-${report.date}.json`;
-
+  for (const year of years) {
     try {
-      const reportRows = await fetchJson(filePath);
+      const yearRows = await fetchReportYear(year);
 
-      if (Array.isArray(reportRows)) {
-        rows.push(...reportRows.map(row => ({ ...row, report_date: report.date })));
-      }
+      rows.push(
+        ...yearRows
+          .filter(row => recentDates.has(String(row.trip_date || "")))
+          .map(row => ({
+            ...row,
+            report_date: row.trip_date
+          }))
+      );
     } catch (error) {
-      console.warn("Skipped report:", filePath, error);
+      console.warn("Could not load yearly report:", year, error);
     }
   }
 
