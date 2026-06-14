@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", initReports);
 let reportIndex = [];
 let currentRegion = "All";
 let currentRows = [];
+let reportYearCache = {};
 
 async function initReports() {
   try {
@@ -36,6 +37,20 @@ async function fetchJson(path) {
   }
 
   return response.json();
+}
+
+async function getYearRowsForDate(date) {
+  const year = String(date).substring(0, 4);
+  const filePath = `reports/reports-${year}.json`;
+
+  if (!reportYearCache[year]) {
+    const rows = await fetchJson(filePath);
+    reportYearCache[year] = Array.isArray(rows) ? rows : [];
+  }
+
+  return reportYearCache[year].filter(row => {
+    return String(row.trip_date || "") === String(date);
+  });
 }
 
 function buildRegionTabs() {
@@ -114,12 +129,7 @@ function buildDateList() {
 
 async function loadReport(report) {
   try {
-    const filePath = report.file || `reports/daily-report-${report.date}.json`;
-    currentRows = await fetchJson(filePath);
-
-    if (!Array.isArray(currentRows)) {
-      currentRows = [];
-    }
+    currentRows = await getYearRowsForDate(report.date);
 
     setText("selectedReportTitle", formatDisplayDate(report.date));
     setText("selectedReportMeta", report.date);
@@ -128,6 +138,10 @@ async function loadReport(report) {
   } catch (error) {
     console.error("Report file load error:", error);
     currentRows = [];
+
+    setText("selectedReportTitle", formatDisplayDate(report.date || ""));
+    setText("selectedReportMeta", report.date || "");
+
     renderReportRows([]);
   }
 }
