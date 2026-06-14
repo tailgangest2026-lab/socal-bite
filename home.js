@@ -1,19 +1,20 @@
 document.addEventListener("DOMContentLoaded", initHome);
 
+let reportYearCache = {};
+
 async function initHome() {
   setText("year", new Date().getFullYear());
 
+  const yesterday = getYesterdayString();
+
   const dateEl = document.getElementById("todayDate");
   if (dateEl) {
-    dateEl.textContent = new Date().toLocaleDateString("en-US", {
-      weekday: "short",
-      month: "short",
-      day: "numeric"
-    });
+    dateEl.textContent = formatDisplayDate(yesterday);
   }
 
   try {
-    const homeData = await fetchJson("home.json");
+    const yesterdayRows = await loadRowsForDate(yesterday);
+    const homeData = buildHomeDataFromRows(yesterdayRows);
 
     buildKpis(homeData);
     buildRegionBoard(homeData);
@@ -27,13 +28,129 @@ async function initHome() {
 
 async function fetchJson(path) {
   const url = typeof socalBiteDataUrl === "function" ? socalBiteDataUrl(path) : path;
-  const response = await fetch(url + "?v=" + Date.now());
+  const sep = url.includes("?") ? "&" : "?";
+  const response = await fetch(url + sep + "v=" + Date.now());
 
   if (!response.ok) {
     throw new Error("Could not load " + path);
   }
 
   return response.json();
+}
+
+async function fetchReportYear(year) {
+  if (reportYearCache[year]) {
+    return reportYearCache[year];
+  }
+
+  const rows = await fetchJson(`reports/reports-${year}.json`);
+  reportYearCache[year] = Array.isArray(rows) ? rows : [];
+
+  return reportYearCache[year];
+}
+
+async function loadRowsForDate(date) {
+  const year = String(date).substring(0, 4);
+  const yearRows = await fetchReportYear(year);
+
+  return yearRows.filter(row => {
+    return String(row.trip_date || "") === String(date);
+  });
+}
+
+function buildHomeDataFromRows(rows) {
+  const regionMap = {};
+
+  rows.forEach(row => {
+    const region = row.region || "Unknown Region";
+
+    if (!regionMap[region]) {
+      regionMap[region] = {
+        region,
+        total_trips_today: 0,
+        total_anglers_today: 0,
+        total_fish_today: 0,
+        top_boat_today: "",
+        top_landing_today: "",
+        top_species_today: "",
+        best_boat_last_30_days: ""
+      };
+    }
+
+    const item = regionMap[region];
+
+    item.total_trips_today += 1;
+    item.total_anglers_today += Number(row.anglers || 0);
+    item.total_fish_today += Number(row.total_fish || 0);
+  });
+
+  Object.values(regionMap).forEach(regionItem => {
+    const regionRows = rows.filter(row => row.region === regionItem.region);
+
+    const topBoat = getTopByField(regionRows, "boat");
+    const topLanding = getTopByField(regionRows, "landing");
+    const topSpecies = getTopSpecies(regionRows);
+
+    regionItem.top_boat_today = topBoat || "N/A";
+    regionItem.best_boat_last_30_days = topBoat || "N/A";
+    regionItem.top_landing_today = topLanding || "N/A";
+    regionItem.top_species_today = topSpecies || "N/A";
+  });
+
+  return Object.values(regionMap).sort((a, b) => {
+    return Number(b.total_fish_today || 0) - Number(a.total_fish_today || 0);
+  });
+}
+
+function getTopByField(rows, field) {
+  const map = {};
+
+  rows.forEach(row => {
+    const key = row[field];
+    if (!key) return;
+
+    if (!map[key]) {
+      map[key] = {
+        name: key,
+        fish: 0
+      };
+    }
+
+    map[key].fish += Number(row.total_fish || 0);
+  });
+
+  return Object.values(map)
+    .sort((a, b) => b.fish - a.fish)[0]?.name || "";
+}
+
+function getTopSpecies(rows) {
+  const speciesTotals = {};
+
+  rows.forEach(row => {
+    parseFishCounts(row.fish_counts).forEach(item => {
+      speciesTotals[item.species] =
+        (speciesTotals[item.species] || 0) + item.count;
+    });
+  });
+
+  return Object.entries(speciesTotals)
+    .map(([name, count]) => ({ name, count }))
+    .sort((a, b) => b.count - a.count)[0]?.name || "";
+}
+
+function parseFishCounts(text) {
+  return String(text || "")
+    .split(",")
+    .map(part => {
+      const match = part.trim().match(/^([\d,]+)\s+(.+)$/);
+      if (!match) return null;
+
+      return {
+        count: Number(match[1].replace(/,/g, "")),
+        species: match[2].trim()
+      };
+    })
+    .filter(Boolean);
 }
 
 function buildKpis(data) {
@@ -49,6 +166,11 @@ function buildKpis(data) {
 function buildRegionBoard(data) {
   const el = document.getElementById("regionBoard");
   if (!el) return;
+
+  if (!data.length) {
+    el.innerHTML = `<div class="empty-card">No report data found for yesterday.</div>`;
+    return;
+  }
 
   el.innerHTML = data.map(r => `
     <article class="region-card">
@@ -69,9 +191,9 @@ function buildRegionBoard(data) {
       </div>
 
       <div class="region-details">
-<p><span>Top Boat</span>${detailLink("boat-detail.html", "boat", r.top_boat_today)}</p>
-<p><span>Landing</span>${detailLink("landing-detail.html", "landing", r.top_landing_today)}</p>
-<p><span>Hot Species</span>${detailLink("species-detail.html", "species", r.top_species_today)}</p>
+        <p><span>Top Boat</span>${detailLink("boat-detail.html", "boat", r.top_boat_today)}</p>
+        <p><span>Landing</span>${detailLink("landing-detail.html", "landing", r.top_landing_today)}</p>
+        <p><span>Hot Species</span>${detailLink("species-detail.html", "species", r.top_species_today)}</p>
       </div>
     </article>
   `).join("");
@@ -144,6 +266,34 @@ function rankingItem(rank, title, subtitle, value) {
   `;
 }
 
+function getYesterdayString() {
+  const date = new Date();
+  date.setDate(date.getDate() - 1);
+  return toLocalDateString(date);
+}
+
+function toLocalDateString(date) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+
+  return `${year}-${month}-${day}`;
+}
+
+function formatDisplayDate(dateString) {
+  const date = new Date(`${dateString}T12:00:00`);
+
+  if (Number.isNaN(date.getTime())) {
+    return dateString;
+  }
+
+  return date.toLocaleDateString("en-US", {
+    weekday: "short",
+    month: "short",
+    day: "numeric"
+  });
+}
+
 function setText(id, value) {
   const el = document.getElementById(id);
   if (el) el.textContent = value;
@@ -161,8 +311,9 @@ function safe(value) {
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
 }
+
 function detailLink(page, param, value) {
-  if (!value) return "N/A";
+  if (!value || value === "N/A") return "N/A";
 
   return `<a class="data-link" href="/${page}?${param}=${encodeURIComponent(value)}">${safe(value)}</a>`;
 }
