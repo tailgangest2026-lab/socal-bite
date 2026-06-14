@@ -4,6 +4,7 @@ let forecastRows = [];
 let dailyRows = [];
 let selectedRegion = "";
 let speciesFpaChartInstance = null;
+let reportYearCache = {};
 
 async function initForecast() {
   try {
@@ -28,7 +29,7 @@ async function fetchJson(path) {
     ? window.socalBiteDataUrl(path)
     : path;
 
-  const response = await fetch(url);
+  const response = await fetch(url + (url.includes("?") ? "&" : "?") + "v=" + Date.now());
 
   if (!response.ok) {
     throw new Error("Could not load " + path);
@@ -37,15 +38,15 @@ async function fetchJson(path) {
   return response.json();
 }
 
-function normalizeReportFile(report) {
-  if (report.file) {
-    const match = String(report.file).match(/daily-report-(\d{4}-\d{2}-\d{2})/);
-    if (match) return `reports/daily-report-${match[1]}.json`;
-    return report.file;
+async function fetchReportYear(year) {
+  if (reportYearCache[year]) {
+    return reportYearCache[year];
   }
 
-  const date = String(report.date || "").split("T")[0];
-  return `reports/daily-report-${date}.json`;
+  const rows = await fetchJson(`reports/reports-${year}.json`);
+  reportYearCache[year] = Array.isArray(rows) ? rows : [];
+
+  return reportYearCache[year];
 }
 
 async function loadRecentDailyRows() {
@@ -56,30 +57,33 @@ async function loadRecentDailyRows() {
       return [];
     }
 
-    const recentReports = index.slice(0, 100);
+    const recentDates = new Set(
+      index
+        .slice(0, 100)
+        .map(report => String(report.date || "").split("T")[0])
+        .filter(Boolean)
+    );
+
+    const years = [
+      ...new Set([...recentDates].map(date => date.substring(0, 4)))
+    ];
+
     const rows = [];
 
-    for (const report of recentReports) {
-      const filePath = normalizeReportFile(report);
-
+    for (const year of years) {
       try {
-        const reportRows = await fetchJson(filePath);
+        const yearRows = await fetchReportYear(year);
 
-if (Array.isArray(reportRows)) {
-  const reportDate =
-    String(report.date || "").split("T")[0] ||
-    String(filePath).match(/\d{4}-\d{2}-\d{2}/)?.[0] ||
-    "";
-
-  reportRows.forEach(row => {
-    rows.push({
-      ...row,
-      __reportDate: reportDate
-    });
-  });
-}
+        rows.push(
+          ...yearRows
+            .filter(row => recentDates.has(String(row.trip_date || "")))
+            .map(row => ({
+              ...row,
+              __reportDate: row.trip_date
+            }))
+        );
       } catch (error) {
-        console.warn("Skipped report:", filePath, error);
+        console.warn("Could not load yearly report:", year, error);
       }
     }
 
@@ -219,26 +223,19 @@ function buildSpeciesFpaChart(region) {
       },
       scales: {
         x: {
-          ticks: {
-            color: "#9cc4d5"
-          },
-          grid: {
-            color: "rgba(255,255,255,0.05)"
-          }
+          ticks: { color: "#9cc4d5" },
+          grid: { color: "rgba(255,255,255,0.05)" }
         },
         y: {
           beginAtZero: true,
-          ticks: {
-            color: "#9cc4d5"
-          },
-          grid: {
-            color: "rgba(255,255,255,0.08)"
-          }
+          ticks: { color: "#9cc4d5" },
+          grid: { color: "rgba(255,255,255,0.08)" }
         }
       }
     }
   });
 }
+
 function buildSpeciesRankings(region) {
   const container = document.getElementById("speciesRankings");
   if (!container) return;
@@ -273,7 +270,6 @@ async function calculateForecastScore(row, region, fpa, trips) {
   };
 
   const base = locations[region];
-
   let score = 45;
 
   if (fpa >= 8) score += 25;
@@ -331,9 +327,7 @@ async function calculateForecastScore(row, region, fpa, trips) {
 }
 
 function getTideMovement(tides) {
-  if (!Array.isArray(tides) || tides.length < 2) {
-    return "Unknown";
-  }
+  if (!Array.isArray(tides) || tides.length < 2) return "Unknown";
 
   const now = new Date();
 
@@ -350,9 +344,7 @@ function getTideMovement(tides) {
     .filter(tide => tide.time instanceof Date && !isNaN(tide.time) && Number.isFinite(tide.value))
     .sort((a, b) => a.time - b.time);
 
-  if (validTides.length < 2) {
-    return "Unknown";
-  }
+  if (validTides.length < 2) return "Unknown";
 
   let previous = validTides[0];
   let next = validTides[1];
@@ -412,6 +404,138 @@ function buildSpeciesFpaByRegion(region) {
     .filter(item => item.count > 0)
     .sort((a, b) => b.fpa - a.fpa)
     .slice(0, 6);
+}
+
+function buildRegionalFpaTrend(region) {
+  const targetRegion = String(region || "").toLowerCase();
+  const today = new Date();
+
+  const weeks = [];
+
+  for (let i = 11; i >= 0; i--) {
+    const end = new Date(today);
+    end.setDate(today.getDate() - i * 7);
+
+    const start = new Date(end);
+    start.setDate(end.getDate() - 6);
+
+    weeks.push({
+      start,
+      end,
+      fish: 0,
+      anglers: 0,
+      label: `${start.getMonth() + 1}/${start.getDate()}`
+    });
+  }
+
+  dailyRows.forEach(row => {
+    if (String(row.region || "").toLowerCase() !== targetRegion) return;
+
+    const rowDate = new Date(row.__reportDate || row.date || row.report_date || row.reportDate || "");
+    if (isNaN(rowDate)) return;
+
+    const anglers = Number(row.anglers || 0);
+    const totalFish = parseFishCounts(row.fish_counts)
+      .reduce((sum, item) => sum + Number(item.count || 0), 0);
+
+    weeks.forEach(week => {
+      if (rowDate >= week.start && rowDate <= week.end) {
+        week.fish += totalFish;
+        week.anglers += anglers;
+      }
+    });
+  });
+
+  return weeks
+    .map(week => ({
+      label: week.label,
+      fish: week.fish,
+      anglers: week.anglers,
+      fpa: week.anglers > 0 ? week.fish / week.anglers : 0
+    }))
+    .filter(week => week.fish > 0 || week.anglers > 0);
+}
+
+function buildSpeciesWeeklyTrend(region) {
+  const targetRegion = String(region || "").toLowerCase();
+
+  const rows = dailyRows.filter(row =>
+    String(row.region || "").toLowerCase() === targetRegion
+  );
+
+  const today = new Date();
+  const weeks = [];
+
+  for (let i = 11; i >= 0; i--) {
+    const start = new Date(today);
+    start.setDate(today.getDate() - i * 7 - 6);
+
+    const end = new Date(today);
+    end.setDate(today.getDate() - i * 7);
+
+    weeks.push({
+      key: `${start.getFullYear()}-W${String(getWeekNumber(start)).padStart(2, "0")}`,
+      label: `${start.getFullYear()}-W${String(getWeekNumber(start)).padStart(2, "0")}`,
+      start,
+      end
+    });
+  }
+
+  const speciesTotals = {};
+
+  rows.forEach(row => {
+    const rowDate = new Date(row.trip_date || row.__reportDate || row.date || "");
+    if (isNaN(rowDate)) return;
+
+    const anglers = Number(row.anglers || 0);
+    if (!anglers) return;
+
+    const week = weeks.find(w => rowDate >= w.start && rowDate <= w.end);
+    if (!week) return;
+
+    parseFishCounts(row.fish_counts).forEach(item => {
+      if (!speciesTotals[item.species]) speciesTotals[item.species] = {};
+      if (!speciesTotals[item.species][week.key]) {
+        speciesTotals[item.species][week.key] = { fish: 0, anglers: 0 };
+      }
+
+      speciesTotals[item.species][week.key].fish += Number(item.count || 0);
+      speciesTotals[item.species][week.key].anglers += anglers;
+    });
+  });
+
+  const topSpecies = Object.entries(speciesTotals)
+    .map(([name, weekData]) => {
+      const fish = Object.values(weekData).reduce((sum, item) => sum + item.fish, 0);
+      return { name, fish };
+    })
+    .sort((a, b) => b.fish - a.fish)
+    .slice(0, 6)
+    .map(item => item.name);
+
+  const colors = ["#20d3e2", "#7b61ff", "#ff5b5b", "#24d17e", "#ffc766", "#00c2ff"];
+
+  const datasets = topSpecies.map((species, index) => ({
+    label: species,
+    data: weeks.map(week => {
+      const item = speciesTotals[species]?.[week.key];
+      if (!item || !item.anglers) return null;
+      return Number((item.fish / item.anglers).toFixed(2));
+    }),
+    borderColor: colors[index],
+    backgroundColor: colors[index],
+    borderWidth: 2,
+    tension: 0.4,
+    pointRadius: 2,
+    pointHoverRadius: 5,
+    fill: false,
+    spanGaps: true
+  }));
+
+  return {
+    weeks: weeks.map(w => w.label),
+    datasets
+  };
 }
 
 function parseFishCounts(text) {
@@ -480,6 +604,17 @@ function estimateTide(score) {
   return "Falling";
 }
 
+function getWeekNumber(date) {
+  const d = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
+  const dayNum = d.getUTCDay() || 7;
+
+  d.setUTCDate(d.getUTCDate() + 4 - dayNum);
+
+  const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
+
+  return Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
+}
+
 function setText(id, value) {
   const el = document.getElementById(id);
   if (el) el.textContent = value || "--";
@@ -503,159 +638,4 @@ function escapeAttr(value) {
     .replaceAll("\\", "\\\\")
     .replaceAll("'", "\\'")
     .replaceAll('"', "&quot;");
-}
-function buildRegionalFpaTrend(region) {
-  const targetRegion = String(region || "").toLowerCase();
-  const today = new Date();
-
-  const weeks = [];
-
-  for (let i = 11; i >= 0; i--) {
-    const end = new Date(today);
-    end.setDate(today.getDate() - i * 7);
-
-    const start = new Date(end);
-    start.setDate(end.getDate() - 6);
-
-    weeks.push({
-      start,
-      end,
-      fish: 0,
-      anglers: 0,
-      label: `${start.getMonth() + 1}/${start.getDate()}`
-    });
-  }
-
-  dailyRows.forEach(row => {
-    if (String(row.region || "").toLowerCase() !== targetRegion) return;
-
-    const rowDate = new Date(row.__reportDate || row.date || row.report_date || row.reportDate || "");
-    if (isNaN(rowDate)) return;
-
-    const anglers = Number(row.anglers || 0);
-    const fishCounts = String(row.fish_counts || "");
-
-    const totalFish = parseFishCounts(fishCounts)
-      .reduce((sum, item) => sum + Number(item.count || 0), 0);
-
-    weeks.forEach(week => {
-      if (rowDate >= week.start && rowDate <= week.end) {
-        week.fish += totalFish;
-        week.anglers += anglers;
-      }
-    });
-  });
-
-  return weeks
-    .map(week => ({
-      label: week.label,
-      fish: week.fish,
-      anglers: week.anglers,
-      fpa: week.anglers > 0 ? week.fish / week.anglers : 0
-    }))
-    .filter(week => week.fish > 0 || week.anglers > 0);
-}
-function buildSpeciesWeeklyTrend(region) {
-  const targetRegion = String(region || "").toLowerCase();
-
-  const rows = dailyRows.filter(row =>
-    String(row.region || "").toLowerCase() === targetRegion
-  );
-
-  const today = new Date();
-  const weeks = [];
-
-  for (let i = 11; i >= 0; i--) {
-    const start = new Date(today);
-    start.setDate(today.getDate() - i * 7 - 6);
-
-    const end = new Date(today);
-    end.setDate(today.getDate() - i * 7);
-
-    weeks.push({
-      key: `${start.getFullYear()}-W${String(getWeekNumber(start)).padStart(2, "0")}`,
-      label: `${start.getFullYear()}-W${String(getWeekNumber(start)).padStart(2, "0")}`,
-      start,
-      end
-    });
-  }
-
-  const speciesTotals = {};
-
-  rows.forEach(row => {
-    const rowDate = new Date(row.trip_date || row.__reportDate || row.date || "");
-    if (isNaN(rowDate)) return;
-
-    const anglers = Number(row.anglers || 0);
-    if (!anglers) return;
-
-    const week = weeks.find(w => rowDate >= w.start && rowDate <= w.end);
-    if (!week) return;
-
-    parseFishCounts(row.fish_counts).forEach(item => {
-      if (!speciesTotals[item.species]) {
-        speciesTotals[item.species] = {};
-      }
-
-      if (!speciesTotals[item.species][week.key]) {
-        speciesTotals[item.species][week.key] = {
-          fish: 0,
-          anglers: 0
-        };
-      }
-
-      speciesTotals[item.species][week.key].fish += Number(item.count || 0);
-      speciesTotals[item.species][week.key].anglers += anglers;
-    });
-  });
-
-  const topSpecies = Object.entries(speciesTotals)
-    .map(([name, weekData]) => {
-      const fish = Object.values(weekData).reduce((sum, item) => sum + item.fish, 0);
-      return { name, fish };
-    })
-    .sort((a, b) => b.fish - a.fish)
-    .slice(0, 6)
-    .map(item => item.name);
-
-  const colors = [
-    "#20d3e2",
-    "#7b61ff",
-    "#ff5b5b",
-    "#24d17e",
-    "#ffc766",
-    "#00c2ff"
-  ];
-
-  const datasets = topSpecies.map((species, index) => ({
-    label: species,
-    data: weeks.map(week => {
-      const item = speciesTotals[species]?.[week.key];
-      if (!item || !item.anglers) return null;
-      return Number((item.fish / item.anglers).toFixed(2));
-    }),
-    borderColor: colors[index],
-    backgroundColor: colors[index],
-    borderWidth: 2,
-    tension: 0.4,
-    pointRadius: 2,
-    pointHoverRadius: 5,
-    fill: false,
-    spanGaps: true
-  }));
-
-  return {
-    weeks: weeks.map(w => w.label),
-    datasets
-  };
-}
-function getWeekNumber(date) {
-  const d = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
-  const dayNum = d.getUTCDay() || 7;
-
-  d.setUTCDate(d.getUTCDate() + 4 - dayNum);
-
-  const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
-
-  return Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
 }
