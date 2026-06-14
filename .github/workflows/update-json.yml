@@ -1,25 +1,4 @@
-name: Update SoCal Bite JSON
-
-on:
-  schedule:
-    - cron: "*/30 * * * *"
-  workflow_dispatch:
-
-permissions:
-  contents: write
-
-jobs:
-  update-json:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
-
-      - name: Install jq
-        run: sudo apt-get update && sudo apt-get install -y jq
-
-      - name: Download JSON files
+       - name: Download JSON files
         run: |
           BASE_URL="https://script.google.com/macros/s/AKfycbyEEjmsgGEK6TN9R0-YzW45ZreWIYcEW0kk5_T4ulryssJDtmuOTy-zAWqXVYKrloni/exec"
 
@@ -57,136 +36,21 @@ jobs:
           download_json "bite-trends" "bite-trends.json"
           download_json "home" "home.json"
           download_json "boat-ratings" "boat-ratings.json"
+          download_json "regions" "regions.json"
+          download_json "species" "species.json"
+          download_json "trip-types" "trip-types.json"
+          download_json "boat-detail" "boat-detail.json"
+          download_json "conditions" "conditions.json"
+          download_json "daily-report" "daily-report.json"
           download_json "daily-report-index" "daily-report-index.json"
 
-          TODAY=$(TZ="America/Los_Angeles" date +"%Y-%m-%d")
-          YESTERDAY=$(TZ="America/Los_Angeles" date -d "1 day ago" +"%Y-%m-%d")
-          TWO_DAYS=$(TZ="America/Los_Angeles" date -d "2 days ago" +"%Y-%m-%d")
-          THREE_DAYS=$(TZ="America/Los_Angeles" date -d "3 days ago" +"%Y-%m-%d")
+          CURRENT_YEAR=$(TZ="America/Los_Angeles" date +"%Y")
+          PREVIOUS_YEAR=$((CURRENT_YEAR - 1))
 
-          for DATE in $TODAY $YESTERDAY $TWO_DAYS $THREE_DAYS
-          do
-            URL_PAGE="daily-report-date&date=$DATE"
-            download_json "$URL_PAGE" "reports/daily-report-$DATE.json"
-          done
+          echo "Current Year: $CURRENT_YEAR"
+          echo "Previous Year: $PREVIOUS_YEAR"
 
-          cp "reports/daily-report-$TODAY.json" "reports/daily-report-latest.json"
+          download_json "file&file=reports-${PREVIOUS_YEAR}.json" "reports/reports-${PREVIOUS_YEAR}.json"
+          download_json "file&file=reports-${CURRENT_YEAR}.json" "reports/reports-${CURRENT_YEAR}.json"
 
           rm -rf tmp-json
-
-      - name: Debug latest daily report
-        run: |
-          echo "Latest report file:"
-          ls -la reports/daily-report-latest.json || true
-
-          echo "First 500 characters:"
-          head -c 500 reports/daily-report-latest.json || true
-
-          echo ""
-          echo "JSON type:"
-          jq type reports/daily-report-latest.json || true
-
-          echo "Length:"
-          jq length reports/daily-report-latest.json || true
-
-      - name: Install Python packages
-        run: pip install pillow
-
-      - name: Detect new trips
-        id: detect
-        run: |
-          python socials/detect_new_trips.py
-
-          echo "Checking for alert flag..."
-
-          if [ -f "socials/new-post-created.flag" ]; then
-            echo "created=true" >> $GITHUB_OUTPUT
-            echo "New post flag found"
-          else
-            echo "created=false" >> $GITHUB_OUTPUT
-            echo "No new post flag found"
-          fi
-
-      - name: Debug new trip post files
-        run: |
-          echo "Socials folder:"
-          ls -la socials || true
-
-          echo "Output folder:"
-          ls -la socials/output || true
-
-          echo "Flag file:"
-          ls -la socials/new-post-created.flag || true
-
-          echo "Post links:"
-          cat socials/post-links.txt || true
-
-      - name: Send text alert if new social post was created
-        if: steps.detect.outputs.created == 'true'
-        uses: dawidd6/action-send-mail@v3
-        with:
-          server_address: smtp.gmail.com
-          server_port: 465
-          username: ${{ secrets.SMTP_USERNAME }}
-          password: ${{ secrets.SMTP_PASSWORD }}
-          subject: "SoCal Bite"
-          to: ${{ secrets.SMS_TO }}
-          from: "SoCal Bite Alerts"
-          body: |
-            New Fish Counts Added.
-      - name: Email new social post links
-        if: steps.detect.outputs.created == 'true'
-        uses: dawidd6/action-send-mail@v3
-        with:
-          server_address: smtp.gmail.com
-          server_port: 465
-          username: ${{ secrets.SMTP_USERNAME }}
-          password: ${{ secrets.SMTP_PASSWORD }}
-          subject: "New SoCal Bite Fish Count Posts"
-          to: ${{ secrets.EMAIL_TO }}
-          from: "SoCal Bite Alerts"
-          body: |
-            New Fish Counts Added
-
-            View generated images:
-
-            https://thesocalbite.com/socials/output/
-
-            Direct links may include:
-
-            https://thesocalbite.com/socials/output/new-fish-counts-los-angeles.png
-            https://thesocalbite.com/socials/output/new-fish-counts-orange-county.png
-            https://thesocalbite.com/socials/output/new-fish-counts-san-diego.png
-
-      - name: Show downloaded files
-        run: |
-          echo "Root JSON files:"
-          ls -la *.json || true
-
-          echo "Reports folder:"
-          ls -la reports || true
-
-          echo "Socials folder:"
-          ls -la socials || true
-
-          echo "Output folder:"
-          ls -la socials/output || true
-
-      - name: Commit updated JSON and trip tracking
-        run: |
-          set -x
-
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          git add -A
-
-          git status
-
-          if git diff --cached --quiet; then
-            echo "No changes to commit"
-            exit 0
-          fi
-
-          git commit -m "Update SoCal Bite JSON and trip tracking"
-          git push
