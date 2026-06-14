@@ -1,5 +1,1130 @@
-{
-  "error": "File not found",
-  "file": "landing-trip-types.json",
-  "message": "Error: File not found: landing-trip-types.json"
-}
+[
+  {
+    "region": "Los Angeles",
+    "landing": "22nd Street Landing",
+    "trip_type": "1.5 Day",
+    "times_seen": 63
+  },
+  {
+    "region": "Los Angeles",
+    "landing": "22nd Street Landing",
+    "trip_type": "1/2 Day AM",
+    "times_seen": 263
+  },
+  {
+    "region": "Los Angeles",
+    "landing": "22nd Street Landing",
+    "trip_type": "1/2 Day PM",
+    "times_seen": 34
+  },
+  {
+    "region": "Los Angeles",
+    "landing": "22nd Street Landing",
+    "trip_type": "1/2 Day Twilight",
+    "times_seen": 65
+  },
+  {
+    "region": "Los Angeles",
+    "landing": "22nd Street Landing",
+    "trip_type": "2 Day",
+    "times_seen": 41
+  },
+  {
+    "region": "Los Angeles",
+    "landing": "22nd Street Landing",
+    "trip_type": "3 Day",
+    "times_seen": 2
+  },
+  {
+    "region": "Los Angeles",
+    "landing": "22nd Street Landing",
+    "trip_type": "3/4 Day",
+    "times_seen": 192
+  },
+  {
+    "region": "Los Angeles",
+    "landing": "22nd Street Landing",
+    "trip_type": "Full Day",
+    "times_seen": 255
+  },
+  {
+    "region": "Los Angeles",
+    "landing": "22nd Street Landing",
+    "trip_type": "Overnight",
+    "times_seen": 166
+  },
+  {
+    "region": "Los Angeles",
+    "landing": "LA Waterfront Cruises and Sportfishing",
+    "trip_type": "1/2 Day AM",
+    "times_seen": 4
+  },
+  {
+    "region": "Los Angeles",
+    "landing": "LA Waterfront Cruises and Sportfishing",
+    "trip_type": "1/2 Day Twilight",
+    "times_seen": 103
+  },
+  {
+    "region": "Los Angeles",
+    "landing": "LA Waterfront Cruises and Sportfishing",
+    "trip_type": "3/4 Day",
+    "times_seen": 70
+  },
+  {
+    "region": "Los Angeles",
+    "landing": "LA Waterfront Cruises and Sportfishing",
+    "trip_type": "Full Day",
+    "times_seen": 18
+  },
+  {
+    "region": "Los Angeles",
+    "landing": "Long Beach Sportfishing",
+    "trip_type": "1.5 Day",
+    "times_seen": 8
+  },
+  {
+    "region": "Los Angeles",
+    "landing": "Long Beach Sportfishing",
+    "trip_type": "1/2 Day AM",
+    "times_seen": 2
+  },
+  {
+    "region": "Los Angeles",
+    "landing": "Long Beach Sportfishing",
+    "trip_type": "1/2 Day Twilight",
+    "times_seen": 4
+  },
+  {
+    "region": "Los Angeles",
+    "landing": "Long Beach Sportfishing",
+    "trip_type": "2 Day",
+    "times_seen": 9
+  },
+  {
+    "region": "Los Angeles",
+    "landing": "Long Beach Sportfishing",
+    "trip_type": "2.5 Day",
+    "times_seen": 1
+  },
+  {
+    "region": "Los Angeles",
+    "landing": "Long Beach Sportfishing",
+    "trip_type": "3/4 Day",
+    "times_seen": 260
+  },
+  {
+    "region": "Los Angeles",
+    "landing": "Long Beach Sportfishing",
+    "trip_type": "Full Day",
+    "times_seen": 231
+  },
+  {
+    "region": "Los Angeles",
+    "landing": "Long Beach Sportfishing",
+    "trip_type": "Overnight",
+    "times_seen": 110
+  },
+  {
+    "region": "Los Angeles",
+    "landing": "Marina Del Rey Sportfishing",
+    "trip_type": "1/2 Day AM",
+    "times_seen": 360
+  },
+  {
+    "region": "Los Angeles",
+    "landing": "Marina Del Rey Sportfishing",
+    "trip_type": "1/2 Day PM",
+    "times_seen": 1
+  },
+  {
+    "region": "Los Angeles",
+    "landing": "Marina Del Rey Sportfishing",
+    "trip_type": "1/2 Day Twilight",
+    "times_seen": 75
+  },
+  {
+    "region": "Los Angeles",
+    "landing": "Marina Del Rey Sportfishing",
+    "trip_type": "3/4 Day",
+    "times_seen": 661
+  },
+  {
+    "region": "Los Angeles",
+    "landing": "Redondo Beach Sportfishing",
+    "trip_type": "1.5 Day",
+    "times_seen": 1
+  },
+  {
+    "region": "Los Angeles",
+    "landing": "Redondo Beach Sportfishing",
+    "trip_type": "1/2 Day AM",
+    "times_seen": 153
+  },
+  {
+    "region": "Los Angeles",
+    "landing": "Redondo Beach Sportfishing",
+    "trip_type": "1/2 Day PM",
+    "times_seen": 61
+  },
+  {
+    "region": "Los Angeles",
+    "landing": "Redondo Beach Sportfishing",
+    "trip_type": "3/4 Day",
+    "times_seen": 12
+  },
+  {
+    "region": "Los Angeles",
+    "landing": "Redondo Beach Sportfishing",
+    "trip_type": "Full Day",
+    "times_seen": 19
+  },
+  {
+    "region": "Los Angeles",
+    "landing": "Redondo Beach Sportfishing",
+    "trip_type": "Overnight",
+    "times_seen": 1
+  },
+  {
+    "region": "NorCal",
+    "landing": "Berkeley Charter Boats",
+    "trip_type": "Full Day",
+    "times_seen": 6
+  },
+  {
+    "region": "NorCal",
+    "landing": "California Dawn Sportfishing",
+    "trip_type": "Full Day",
+    "times_seen": 12
+  },
+  {
+    "region": "NorCal",
+    "landing": "Fish Emeryville",
+    "trip_type": "1/2 Day AM",
+    "times_seen": 16
+  },
+  {
+    "region": "NorCal",
+    "landing": "Fish Emeryville",
+    "trip_type": "Full Day",
+    "times_seen": 16
+  },
+  {
+    "region": "NorCal",
+    "landing": "Happy Hooker Sportfishing",
+    "trip_type": "Full Day",
+    "times_seen": 6
+  },
+  {
+    "region": "NorCal",
+    "landing": "J&M Sportfishing",
+    "trip_type": "1/2 Day AM",
+    "times_seen": 6
+  },
+  {
+    "region": "NorCal",
+    "landing": "J&M Sportfishing",
+    "trip_type": "1/2 Day PM",
+    "times_seen": 4
+  },
+  {
+    "region": "NorCal",
+    "landing": "Lovely Martha Sportfishing",
+    "trip_type": "1/2 Day AM",
+    "times_seen": 3
+  },
+  {
+    "region": "NorCal",
+    "landing": "Lovely Martha Sportfishing",
+    "trip_type": "Full Day",
+    "times_seen": 1
+  },
+  {
+    "region": "NorCal",
+    "landing": "New Rayann Sportfishing",
+    "trip_type": "Full Day",
+    "times_seen": 2
+  },
+  {
+    "region": "NorCal",
+    "landing": "Reel Addiction Sportfishing",
+    "trip_type": "Full Day",
+    "times_seen": 2
+  },
+  {
+    "region": "NorCal",
+    "landing": "Right Hook Sportfishing",
+    "trip_type": "1/2 Day AM",
+    "times_seen": 1
+  },
+  {
+    "region": "NorCal",
+    "landing": "Right Hook Sportfishing",
+    "trip_type": "1/2 Day Twilight",
+    "times_seen": 1
+  },
+  {
+    "region": "NorCal",
+    "landing": "Right Hook Sportfishing",
+    "trip_type": "3/4 Day",
+    "times_seen": 2
+  },
+  {
+    "region": "NorCal",
+    "landing": "Riptide Sportfishing",
+    "trip_type": "Full Day",
+    "times_seen": 5
+  },
+  {
+    "region": "NorCal",
+    "landing": "Stagnaros Charters",
+    "trip_type": "Full Day",
+    "times_seen": 2
+  },
+  {
+    "region": "Orange County",
+    "landing": "Dana Wharf Sportfishing",
+    "trip_type": "1.5 Day",
+    "times_seen": 1
+  },
+  {
+    "region": "Orange County",
+    "landing": "Dana Wharf Sportfishing",
+    "trip_type": "1/2 Day AM",
+    "times_seen": 577
+  },
+  {
+    "region": "Orange County",
+    "landing": "Dana Wharf Sportfishing",
+    "trip_type": "1/2 Day PM",
+    "times_seen": 256
+  },
+  {
+    "region": "Orange County",
+    "landing": "Dana Wharf Sportfishing",
+    "trip_type": "1/2 Day Twilight",
+    "times_seen": 74
+  },
+  {
+    "region": "Orange County",
+    "landing": "Dana Wharf Sportfishing",
+    "trip_type": "2 Day",
+    "times_seen": 24
+  },
+  {
+    "region": "Orange County",
+    "landing": "Dana Wharf Sportfishing",
+    "trip_type": "3/4 Day",
+    "times_seen": 469
+  },
+  {
+    "region": "Orange County",
+    "landing": "Dana Wharf Sportfishing",
+    "trip_type": "Full Day",
+    "times_seen": 112
+  },
+  {
+    "region": "Orange County",
+    "landing": "Dana Wharf Sportfishing",
+    "trip_type": "Overnight",
+    "times_seen": 100
+  },
+  {
+    "region": "Orange County",
+    "landing": "Davey's Locker",
+    "trip_type": "1.5 Day",
+    "times_seen": 2
+  },
+  {
+    "region": "Orange County",
+    "landing": "Davey's Locker",
+    "trip_type": "1/2 Day AM",
+    "times_seen": 238
+  },
+  {
+    "region": "Orange County",
+    "landing": "Davey's Locker",
+    "trip_type": "1/2 Day PM",
+    "times_seen": 303
+  },
+  {
+    "region": "Orange County",
+    "landing": "Davey's Locker",
+    "trip_type": "1/2 Day Twilight",
+    "times_seen": 127
+  },
+  {
+    "region": "Orange County",
+    "landing": "Davey's Locker",
+    "trip_type": "2 Day",
+    "times_seen": 1
+  },
+  {
+    "region": "Orange County",
+    "landing": "Davey's Locker",
+    "trip_type": "3/4 Day",
+    "times_seen": 277
+  },
+  {
+    "region": "Orange County",
+    "landing": "Davey's Locker",
+    "trip_type": "Full Day",
+    "times_seen": 62
+  },
+  {
+    "region": "Orange County",
+    "landing": "Davey's Locker",
+    "trip_type": "Overnight",
+    "times_seen": 25
+  },
+  {
+    "region": "Orange County",
+    "landing": "Newport Landing",
+    "trip_type": "1.5 Day",
+    "times_seen": 12
+  },
+  {
+    "region": "Orange County",
+    "landing": "Newport Landing",
+    "trip_type": "1/2 Day AM",
+    "times_seen": 118
+  },
+  {
+    "region": "Orange County",
+    "landing": "Newport Landing",
+    "trip_type": "1/2 Day PM",
+    "times_seen": 94
+  },
+  {
+    "region": "Orange County",
+    "landing": "Newport Landing",
+    "trip_type": "1/2 Day Twilight",
+    "times_seen": 13
+  },
+  {
+    "region": "Orange County",
+    "landing": "Newport Landing",
+    "trip_type": "2 Day",
+    "times_seen": 19
+  },
+  {
+    "region": "Orange County",
+    "landing": "Newport Landing",
+    "trip_type": "2.5 Day",
+    "times_seen": 5
+  },
+  {
+    "region": "Orange County",
+    "landing": "Newport Landing",
+    "trip_type": "3/4 Day",
+    "times_seen": 222
+  },
+  {
+    "region": "Orange County",
+    "landing": "Newport Landing",
+    "trip_type": "Full Day",
+    "times_seen": 18
+  },
+  {
+    "region": "Orange County",
+    "landing": "Newport Landing",
+    "trip_type": "Overnight",
+    "times_seen": 113
+  },
+  {
+    "region": "San Diego",
+    "landing": "Fisherman's Landing",
+    "trip_type": "1.5 Day",
+    "times_seen": 81
+  },
+  {
+    "region": "San Diego",
+    "landing": "Fisherman's Landing",
+    "trip_type": "1/2 Day AM",
+    "times_seen": 309
+  },
+  {
+    "region": "San Diego",
+    "landing": "Fisherman's Landing",
+    "trip_type": "1/2 Day PM",
+    "times_seen": 326
+  },
+  {
+    "region": "San Diego",
+    "landing": "Fisherman's Landing",
+    "trip_type": "1/2 Day Twilight",
+    "times_seen": 12
+  },
+  {
+    "region": "San Diego",
+    "landing": "Fisherman's Landing",
+    "trip_type": "2 Day",
+    "times_seen": 130
+  },
+  {
+    "region": "San Diego",
+    "landing": "Fisherman's Landing",
+    "trip_type": "2.5 Day",
+    "times_seen": 42
+  },
+  {
+    "region": "San Diego",
+    "landing": "Fisherman's Landing",
+    "trip_type": "3 Day",
+    "times_seen": 60
+  },
+  {
+    "region": "San Diego",
+    "landing": "Fisherman's Landing",
+    "trip_type": "3/4 Day",
+    "times_seen": 25
+  },
+  {
+    "region": "San Diego",
+    "landing": "Fisherman's Landing",
+    "trip_type": "3/4 Day Local",
+    "times_seen": 1
+  },
+  {
+    "region": "San Diego",
+    "landing": "Fisherman's Landing",
+    "trip_type": "Extended 1/2 Day",
+    "times_seen": 1
+  },
+  {
+    "region": "San Diego",
+    "landing": "Fisherman's Landing",
+    "trip_type": "Full Day",
+    "times_seen": 95
+  },
+  {
+    "region": "San Diego",
+    "landing": "Fisherman's Landing",
+    "trip_type": "Full Day Coronado Islands",
+    "times_seen": 5
+  },
+  {
+    "region": "San Diego",
+    "landing": "Fisherman's Landing",
+    "trip_type": "Overnight",
+    "times_seen": 43
+  },
+  {
+    "region": "San Diego",
+    "landing": "H&M Landing",
+    "trip_type": "1.5 Day",
+    "times_seen": 143
+  },
+  {
+    "region": "San Diego",
+    "landing": "H&M Landing",
+    "trip_type": "1/2 Day AM",
+    "times_seen": 320
+  },
+  {
+    "region": "San Diego",
+    "landing": "H&M Landing",
+    "trip_type": "1/2 Day PM",
+    "times_seen": 214
+  },
+  {
+    "region": "San Diego",
+    "landing": "H&M Landing",
+    "trip_type": "1/2 Day Twilight",
+    "times_seen": 161
+  },
+  {
+    "region": "San Diego",
+    "landing": "H&M Landing",
+    "trip_type": "2 Day",
+    "times_seen": 101
+  },
+  {
+    "region": "San Diego",
+    "landing": "H&M Landing",
+    "trip_type": "2.5 Day",
+    "times_seen": 93
+  },
+  {
+    "region": "San Diego",
+    "landing": "H&M Landing",
+    "trip_type": "3 Day",
+    "times_seen": 50
+  },
+  {
+    "region": "San Diego",
+    "landing": "H&M Landing",
+    "trip_type": "3/4 Day",
+    "times_seen": 80
+  },
+  {
+    "region": "San Diego",
+    "landing": "H&M Landing",
+    "trip_type": "3/4 Day Local",
+    "times_seen": 2
+  },
+  {
+    "region": "San Diego",
+    "landing": "H&M Landing",
+    "trip_type": "Full Day",
+    "times_seen": 107
+  },
+  {
+    "region": "San Diego",
+    "landing": "H&M Landing",
+    "trip_type": "Full Day Coronado Islands",
+    "times_seen": 99
+  },
+  {
+    "region": "San Diego",
+    "landing": "H&M Landing",
+    "trip_type": "Full Day Offshore",
+    "times_seen": 32
+  },
+  {
+    "region": "San Diego",
+    "landing": "H&M Landing",
+    "trip_type": "Overnight",
+    "times_seen": 201
+  },
+  {
+    "region": "San Diego",
+    "landing": "H&M Landing",
+    "trip_type": "Reverse Overnight",
+    "times_seen": 1
+  },
+  {
+    "region": "San Diego",
+    "landing": "Helgrens Sportfishing",
+    "trip_type": "1/2 Day AM",
+    "times_seen": 19
+  },
+  {
+    "region": "San Diego",
+    "landing": "Helgrens Sportfishing",
+    "trip_type": "1/2 Day Twilight",
+    "times_seen": 1
+  },
+  {
+    "region": "San Diego",
+    "landing": "Helgrens Sportfishing",
+    "trip_type": "3/4 Day",
+    "times_seen": 7
+  },
+  {
+    "region": "San Diego",
+    "landing": "Limitless Sportfishing",
+    "trip_type": "Overnight",
+    "times_seen": 1
+  },
+  {
+    "region": "San Diego",
+    "landing": "No Patience Sportfishing & Seafood",
+    "trip_type": "1/2 Day AM",
+    "times_seen": 1
+  },
+  {
+    "region": "San Diego",
+    "landing": "Oceanside Sea Center",
+    "trip_type": "1.5 Day",
+    "times_seen": 6
+  },
+  {
+    "region": "San Diego",
+    "landing": "Oceanside Sea Center",
+    "trip_type": "1/2 Day AM",
+    "times_seen": 464
+  },
+  {
+    "region": "San Diego",
+    "landing": "Oceanside Sea Center",
+    "trip_type": "1/2 Day PM",
+    "times_seen": 15
+  },
+  {
+    "region": "San Diego",
+    "landing": "Oceanside Sea Center",
+    "trip_type": "1/2 Day Twilight",
+    "times_seen": 82
+  },
+  {
+    "region": "San Diego",
+    "landing": "Oceanside Sea Center",
+    "trip_type": "2 Day",
+    "times_seen": 3
+  },
+  {
+    "region": "San Diego",
+    "landing": "Oceanside Sea Center",
+    "trip_type": "3/4 Day",
+    "times_seen": 154
+  },
+  {
+    "region": "San Diego",
+    "landing": "Oceanside Sea Center",
+    "trip_type": "3/4 Day Local",
+    "times_seen": 1
+  },
+  {
+    "region": "San Diego",
+    "landing": "Oceanside Sea Center",
+    "trip_type": "Full Day",
+    "times_seen": 6
+  },
+  {
+    "region": "San Diego",
+    "landing": "Oceanside Sea Center",
+    "trip_type": "Overnight",
+    "times_seen": 4
+  },
+  {
+    "region": "San Diego",
+    "landing": "Patriot Sportfishing",
+    "trip_type": "1/2 Day AM",
+    "times_seen": 308
+  },
+  {
+    "region": "San Diego",
+    "landing": "Patriot Sportfishing",
+    "trip_type": "1/2 Day PM",
+    "times_seen": 13
+  },
+  {
+    "region": "San Diego",
+    "landing": "Patriot Sportfishing",
+    "trip_type": "1/2 Day Twilight",
+    "times_seen": 2
+  },
+  {
+    "region": "San Diego",
+    "landing": "Patriot Sportfishing",
+    "trip_type": "3/4 Day",
+    "times_seen": 102
+  },
+  {
+    "region": "San Diego",
+    "landing": "Patriot Sportfishing",
+    "trip_type": "Full Day",
+    "times_seen": 29
+  },
+  {
+    "region": "San Diego",
+    "landing": "Point Loma Sportfishing",
+    "trip_type": "1.5 Day",
+    "times_seen": 13
+  },
+  {
+    "region": "San Diego",
+    "landing": "Point Loma Sportfishing",
+    "trip_type": "1/2 Day AM",
+    "times_seen": 248
+  },
+  {
+    "region": "San Diego",
+    "landing": "Point Loma Sportfishing",
+    "trip_type": "1/2 Day PM",
+    "times_seen": 48
+  },
+  {
+    "region": "San Diego",
+    "landing": "Point Loma Sportfishing",
+    "trip_type": "2 Day",
+    "times_seen": 35
+  },
+  {
+    "region": "San Diego",
+    "landing": "Point Loma Sportfishing",
+    "trip_type": "2.5 Day",
+    "times_seen": 11
+  },
+  {
+    "region": "San Diego",
+    "landing": "Point Loma Sportfishing",
+    "trip_type": "3 Day",
+    "times_seen": 24
+  },
+  {
+    "region": "San Diego",
+    "landing": "Point Loma Sportfishing",
+    "trip_type": "3/4 Day",
+    "times_seen": 6
+  },
+  {
+    "region": "San Diego",
+    "landing": "Point Loma Sportfishing",
+    "trip_type": "3/4 Day Islands",
+    "times_seen": 3
+  },
+  {
+    "region": "San Diego",
+    "landing": "Point Loma Sportfishing",
+    "trip_type": "3/4 Day Local",
+    "times_seen": 4
+  },
+  {
+    "region": "San Diego",
+    "landing": "Point Loma Sportfishing",
+    "trip_type": "Full Day",
+    "times_seen": 152
+  },
+  {
+    "region": "San Diego",
+    "landing": "Point Loma Sportfishing",
+    "trip_type": "Full Day Coronado Islands",
+    "times_seen": 51
+  },
+  {
+    "region": "San Diego",
+    "landing": "Point Loma Sportfishing",
+    "trip_type": "Overnight",
+    "times_seen": 4
+  },
+  {
+    "region": "San Diego",
+    "landing": "Seaforth Sportfishing",
+    "trip_type": "1.5 Day",
+    "times_seen": 186
+  },
+  {
+    "region": "San Diego",
+    "landing": "Seaforth Sportfishing",
+    "trip_type": "1/2 Day AM",
+    "times_seen": 471
+  },
+  {
+    "region": "San Diego",
+    "landing": "Seaforth Sportfishing",
+    "trip_type": "1/2 Day PM",
+    "times_seen": 321
+  },
+  {
+    "region": "San Diego",
+    "landing": "Seaforth Sportfishing",
+    "trip_type": "1/2 Day Twilight",
+    "times_seen": 150
+  },
+  {
+    "region": "San Diego",
+    "landing": "Seaforth Sportfishing",
+    "trip_type": "2 Day",
+    "times_seen": 148
+  },
+  {
+    "region": "San Diego",
+    "landing": "Seaforth Sportfishing",
+    "trip_type": "2.5 Day",
+    "times_seen": 46
+  },
+  {
+    "region": "San Diego",
+    "landing": "Seaforth Sportfishing",
+    "trip_type": "3 Day",
+    "times_seen": 98
+  },
+  {
+    "region": "San Diego",
+    "landing": "Seaforth Sportfishing",
+    "trip_type": "3/4 Day",
+    "times_seen": 87
+  },
+  {
+    "region": "San Diego",
+    "landing": "Seaforth Sportfishing",
+    "trip_type": "Full Day",
+    "times_seen": 148
+  },
+  {
+    "region": "San Diego",
+    "landing": "Seaforth Sportfishing",
+    "trip_type": "Full Day Coronado Islands",
+    "times_seen": 158
+  },
+  {
+    "region": "San Diego",
+    "landing": "Seaforth Sportfishing",
+    "trip_type": "Full Day Local",
+    "times_seen": 2
+  },
+  {
+    "region": "San Diego",
+    "landing": "Seaforth Sportfishing",
+    "trip_type": "Full Day Offshore",
+    "times_seen": 113
+  },
+  {
+    "region": "San Diego",
+    "landing": "Seaforth Sportfishing",
+    "trip_type": "Overnight",
+    "times_seen": 49
+  },
+  {
+    "region": "San Luis Obispo",
+    "landing": "Black Pearl Sportfishing",
+    "trip_type": "1.5 Day",
+    "times_seen": 4
+  },
+  {
+    "region": "San Luis Obispo",
+    "landing": "Black Pearl Sportfishing",
+    "trip_type": "1/2 Day AM",
+    "times_seen": 2
+  },
+  {
+    "region": "San Luis Obispo",
+    "landing": "Black Pearl Sportfishing",
+    "trip_type": "3/4 Day",
+    "times_seen": 18
+  },
+  {
+    "region": "San Luis Obispo",
+    "landing": "Black Pearl Sportfishing",
+    "trip_type": "Overnight",
+    "times_seen": 7
+  },
+  {
+    "region": "San Luis Obispo",
+    "landing": "Morro Bay Landing",
+    "trip_type": "1/2 Day AM",
+    "times_seen": 193
+  },
+  {
+    "region": "San Luis Obispo",
+    "landing": "Morro Bay Landing",
+    "trip_type": "1/2 Day PM",
+    "times_seen": 26
+  },
+  {
+    "region": "San Luis Obispo",
+    "landing": "Morro Bay Landing",
+    "trip_type": "1/2 Day Twilight",
+    "times_seen": 22
+  },
+  {
+    "region": "San Luis Obispo",
+    "landing": "Morro Bay Landing",
+    "trip_type": "3/4 Day",
+    "times_seen": 185
+  },
+  {
+    "region": "San Luis Obispo",
+    "landing": "Morro Bay Landing",
+    "trip_type": "Full Day",
+    "times_seen": 95
+  },
+  {
+    "region": "San Luis Obispo",
+    "landing": "Virg's Landing",
+    "trip_type": "1/2 Day AM",
+    "times_seen": 40
+  },
+  {
+    "region": "San Luis Obispo",
+    "landing": "Virg's Landing",
+    "trip_type": "1/2 Day Twilight",
+    "times_seen": 4
+  },
+  {
+    "region": "San Luis Obispo",
+    "landing": "Virg's Landing",
+    "trip_type": "3/4 Day",
+    "times_seen": 52
+  },
+  {
+    "region": "San Luis Obispo",
+    "landing": "Virg's Landing",
+    "trip_type": "Full Day",
+    "times_seen": 15
+  },
+  {
+    "region": "Santa Barbara",
+    "landing": "Santa Barbara Landing",
+    "trip_type": "1/2 Day AM",
+    "times_seen": 25
+  },
+  {
+    "region": "Santa Barbara",
+    "landing": "Santa Barbara Landing",
+    "trip_type": "1/2 Day Twilight",
+    "times_seen": 1
+  },
+  {
+    "region": "Santa Barbara",
+    "landing": "Santa Barbara Landing",
+    "trip_type": "2 Day",
+    "times_seen": 3
+  },
+  {
+    "region": "Santa Barbara",
+    "landing": "Santa Barbara Landing",
+    "trip_type": "3/4 Day",
+    "times_seen": 412
+  },
+  {
+    "region": "Santa Barbara",
+    "landing": "Santa Barbara Landing",
+    "trip_type": "Overnight",
+    "times_seen": 7
+  },
+  {
+    "region": "Ventura",
+    "landing": "Channel Islands Sportfishing",
+    "trip_type": "1/2 Day AM",
+    "times_seen": 279
+  },
+  {
+    "region": "Ventura",
+    "landing": "Channel Islands Sportfishing",
+    "trip_type": "1/2 Day Twilight",
+    "times_seen": 18
+  },
+  {
+    "region": "Ventura",
+    "landing": "Channel Islands Sportfishing",
+    "trip_type": "2 Day",
+    "times_seen": 10
+  },
+  {
+    "region": "Ventura",
+    "landing": "Channel Islands Sportfishing",
+    "trip_type": "3 Day",
+    "times_seen": 8
+  },
+  {
+    "region": "Ventura",
+    "landing": "Channel Islands Sportfishing",
+    "trip_type": "3/4 Day",
+    "times_seen": 349
+  },
+  {
+    "region": "Ventura",
+    "landing": "Channel Islands Sportfishing",
+    "trip_type": "Full Day",
+    "times_seen": 824
+  },
+  {
+    "region": "Ventura",
+    "landing": "Channel Islands Sportfishing",
+    "trip_type": "Overnight",
+    "times_seen": 321
+  },
+  {
+    "region": "Ventura",
+    "landing": "Hooks Landing",
+    "trip_type": "1/2 Day AM",
+    "times_seen": 25
+  },
+  {
+    "region": "Ventura",
+    "landing": "Hooks Landing",
+    "trip_type": "3/4 Day",
+    "times_seen": 54
+  },
+  {
+    "region": "Ventura",
+    "landing": "Hooks Landing",
+    "trip_type": "Full Day",
+    "times_seen": 7
+  },
+  {
+    "region": "Ventura",
+    "landing": "Hooks Landing",
+    "trip_type": "Overnight",
+    "times_seen": 31
+  },
+  {
+    "region": "Ventura",
+    "landing": "Pierpoint Landing",
+    "trip_type": "1.5 Day",
+    "times_seen": 2
+  },
+  {
+    "region": "Ventura",
+    "landing": "Pierpoint Landing",
+    "trip_type": "1/2 Day AM",
+    "times_seen": 50
+  },
+  {
+    "region": "Ventura",
+    "landing": "Pierpoint Landing",
+    "trip_type": "1/2 Day PM",
+    "times_seen": 2
+  },
+  {
+    "region": "Ventura",
+    "landing": "Pierpoint Landing",
+    "trip_type": "1/2 Day Twilight",
+    "times_seen": 2
+  },
+  {
+    "region": "Ventura",
+    "landing": "Pierpoint Landing",
+    "trip_type": "2 Day",
+    "times_seen": 11
+  },
+  {
+    "region": "Ventura",
+    "landing": "Pierpoint Landing",
+    "trip_type": "3/4 Day",
+    "times_seen": 98
+  },
+  {
+    "region": "Ventura",
+    "landing": "Pierpoint Landing",
+    "trip_type": "Full Day",
+    "times_seen": 1
+  },
+  {
+    "region": "Ventura",
+    "landing": "Pierpoint Landing",
+    "trip_type": "Overnight",
+    "times_seen": 22
+  },
+  {
+    "region": "Ventura",
+    "landing": "Ventura Harbor Sportfishing",
+    "trip_type": "1.5 Day",
+    "times_seen": 1
+  },
+  {
+    "region": "Ventura",
+    "landing": "Ventura Harbor Sportfishing",
+    "trip_type": "1/2 Day AM",
+    "times_seen": 80
+  },
+  {
+    "region": "Ventura",
+    "landing": "Ventura Harbor Sportfishing",
+    "trip_type": "1/2 Day PM",
+    "times_seen": 3
+  },
+  {
+    "region": "Ventura",
+    "landing": "Ventura Harbor Sportfishing",
+    "trip_type": "1/2 Day Twilight",
+    "times_seen": 9
+  },
+  {
+    "region": "Ventura",
+    "landing": "Ventura Harbor Sportfishing",
+    "trip_type": "2 Day",
+    "times_seen": 37
+  },
+  {
+    "region": "Ventura",
+    "landing": "Ventura Harbor Sportfishing",
+    "trip_type": "3/4 Day",
+    "times_seen": 14
+  },
+  {
+    "region": "Ventura",
+    "landing": "Ventura Harbor Sportfishing",
+    "trip_type": "Full Day",
+    "times_seen": 108
+  },
+  {
+    "region": "Ventura",
+    "landing": "Ventura Harbor Sportfishing",
+    "trip_type": "Overnight",
+    "times_seen": 70
+  }
+]
