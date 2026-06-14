@@ -104,10 +104,10 @@
     "trip_type": "3/4 Day",
     "boat": "Gail Force",
     "landing": "LA Waterfront Cruises and Sportfishing",
-    "trips": 6,
-    "anglers": 86,
-    "fish": 522,
-    "fpa": 6.07
+    "trips": 7,
+    "anglers": 111,
+    "fish": 610,
+    "fpa": 5.5
   },
   {
     "rank": 6,
@@ -115,10 +115,10 @@
     "trip_type": "3/4 Day",
     "boat": "Sport King",
     "landing": "LA Waterfront Cruises and Sportfishing",
-    "trips": 10,
-    "anglers": 236,
-    "fish": 1386,
-    "fpa": 5.87
+    "trips": 11,
+    "anglers": 271,
+    "fish": 1482,
+    "fpa": 5.47
   },
   {
     "rank": 7,
@@ -190,6 +190,17 @@
     "rank": 1,
     "region": "NorCal",
     "trip_type": "Full Day",
+    "boat": "Goldeneye 2000",
+    "landing": "Berkeley Charter Boats",
+    "trips": 5,
+    "anglers": 83,
+    "fish": 0,
+    "fpa": 0
+  },
+  {
+    "rank": 2,
+    "region": "NorCal",
+    "trip_type": "Full Day",
     "boat": "California Dawn II",
     "landing": "California Dawn Sportfishing",
     "trips": 5,
@@ -198,7 +209,7 @@
     "fpa": 0
   },
   {
-    "rank": 2,
+    "rank": 3,
     "region": "NorCal",
     "trip_type": "Full Day",
     "boat": "New California Dawn",

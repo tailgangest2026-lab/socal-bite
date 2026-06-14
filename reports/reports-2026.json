@@ -53,11 +53,31 @@
     "trip_date": "2026-06-13",
     "region": "Los Angeles",
     "landing": "LA Waterfront Cruises and Sportfishing",
+    "boat": "Gail Force",
+    "trip_type": "3/4 Day",
+    "anglers": 25,
+    "fish_counts": "10 Bonito, 31 Calico Bass, 27 Calico Bass Released, 8 Sheephead, 12 Yellowtail",
+    "total_fish": 88
+  },
+  {
+    "trip_date": "2026-06-13",
+    "region": "Los Angeles",
+    "landing": "LA Waterfront Cruises and Sportfishing",
     "boat": "Sport King",
     "trip_type": "3/4 Day",
     "anglers": 30,
     "fish_counts": "10 Bonito, 33 Calico Bass, 64 Calico Bass Released, 15 Whitefish, 2 Yellowtail",
     "total_fish": 124
+  },
+  {
+    "trip_date": "2026-06-13",
+    "region": "Los Angeles",
+    "landing": "LA Waterfront Cruises and Sportfishing",
+    "boat": "Sport King",
+    "trip_type": "3/4 Day",
+    "anglers": 35,
+    "fish_counts": "1 Bonito, 28 Calico Bass, 55 Calico Bass Released, 6 Sheephead, 4 Whitefish, 2 Yellowtail",
+    "total_fish": 96
   },
   {
     "trip_date": "2026-06-13",
@@ -206,6 +226,16 @@
     "boat": "Goldeneye 2000",
     "trip_type": "Full Day",
     "anglers": 15,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-06-13",
+    "region": "NorCal",
+    "landing": "Berkeley Charter Boats",
+    "boat": "Goldeneye 2000",
+    "trip_type": "Full Day",
+    "anglers": 20,
     "fish_counts": "",
     "total_fish": 0
   },
