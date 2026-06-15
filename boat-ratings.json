@@ -1,7 +1,128 @@
 [
   {
     "rank": 1,
-    "region": "Los Angeles",
+    "region": "Alameda County",
+    "trip_type": "1/2 Day AM",
+    "boat": "Pacific Pearl",
+    "landing": "Fish Emeryville",
+    "trips": 5,
+    "anglers": 64,
+    "fish": 8,
+    "fpa": 0.13
+  },
+  {
+    "rank": 2,
+    "region": "Alameda County",
+    "trip_type": "1/2 Day AM",
+    "boat": "C Gull II",
+    "landing": "Fish Emeryville",
+    "trips": 5,
+    "anglers": 71,
+    "fish": 4,
+    "fpa": 0.06
+  },
+  {
+    "rank": 1,
+    "region": "Alameda County",
+    "trip_type": "Full Day",
+    "boat": "New Huck Finn",
+    "landing": "Fish Emeryville",
+    "trips": 5,
+    "anglers": 93,
+    "fish": 23,
+    "fpa": 0.25
+  },
+  {
+    "rank": 1,
+    "region": "Central California",
+    "trip_type": "1/2 Day AM",
+    "boat": "Avenger",
+    "landing": "Morro Bay Landing",
+    "trips": 15,
+    "anglers": 309,
+    "fish": 2507,
+    "fpa": 8.11
+  },
+  {
+    "rank": 2,
+    "region": "Central California",
+    "trip_type": "1/2 Day AM",
+    "boat": "Sunny Day",
+    "landing": "Patriot Sportfishing",
+    "trips": 10,
+    "anglers": 29,
+    "fish": 19,
+    "fpa": 0.66
+  },
+  {
+    "rank": 3,
+    "region": "Central California",
+    "trip_type": "1/2 Day AM",
+    "boat": "Patriot (Avila Beach)",
+    "landing": "Patriot Sportfishing",
+    "trips": 6,
+    "anglers": 161,
+    "fish": 21,
+    "fpa": 0.13
+  },
+  {
+    "rank": 4,
+    "region": "Central California",
+    "trip_type": "1/2 Day AM",
+    "boat": "Flying Fish",
+    "landing": "Patriot Sportfishing",
+    "trips": 19,
+    "anglers": 335,
+    "fish": 38,
+    "fpa": 0.11
+  },
+  {
+    "rank": 1,
+    "region": "Central California",
+    "trip_type": "3/4 Day",
+    "boat": "Avenger",
+    "landing": "Morro Bay Landing",
+    "trips": 8,
+    "anglers": 125,
+    "fish": 1184,
+    "fpa": 9.47
+  },
+  {
+    "rank": 2,
+    "region": "Central California",
+    "trip_type": "3/4 Day",
+    "boat": "Starfire",
+    "landing": "Morro Bay Landing",
+    "trips": 10,
+    "anglers": 189,
+    "fish": 1350,
+    "fpa": 7.14
+  },
+  {
+    "rank": 3,
+    "region": "Central California",
+    "trip_type": "3/4 Day",
+    "boat": "Patriot (Avila Beach)",
+    "landing": "Patriot Sportfishing",
+    "trips": 8,
+    "anglers": 155,
+    "fish": 30,
+    "fpa": 0.19
+  },
+  {
+    "rank": 1,
+    "region": "Central California",
+    "trip_type": "Full Day",
+    "boat": "Endeavor (MB)",
+    "landing": "Morro Bay Landing",
+    "trips": 8,
+    "anglers": 173,
+    "fish": 1238,
+    "fpa": 7.16
+  },
+  {
+    "rank": 1,
+    "region": "Los Angeles County",
     "trip_type": "1/2 Day AM",
     "boat": "New Del Mar",
     "landing": "Marina Del Rey Sportfishing",
@@ -12,7 +133,7 @@
   },
   {
     "rank": 2,
-    "region": "Los Angeles",
+    "region": "Los Angeles County",
     "trip_type": "1/2 Day AM",
     "boat": "Monte Carlo",
     "landing": "22nd Street Landing",
@@ -23,18 +144,18 @@
   },
   {
     "rank": 3,
-    "region": "Los Angeles",
+    "region": "Los Angeles County",
     "trip_type": "1/2 Day AM",
     "boat": "Redondo Special",
     "landing": "Redondo Beach Sportfishing",
-    "trips": 15,
-    "anglers": 534,
-    "fish": 2852,
-    "fpa": 5.34
+    "trips": 16,
+    "anglers": 568,
+    "fish": 3018,
+    "fpa": 5.31
   },
   {
     "rank": 1,
-    "region": "Los Angeles",
+    "region": "Los Angeles County",
     "trip_type": "1/2 Day PM",
     "boat": "Redondo Special",
     "landing": "Redondo Beach Sportfishing",
@@ -45,7 +166,7 @@
   },
   {
     "rank": 1,
-    "region": "Los Angeles",
+    "region": "Los Angeles County",
     "trip_type": "1/2 Day Twilight",
     "boat": "New Del Mar",
     "landing": "Marina Del Rey Sportfishing",
@@ -56,7 +177,7 @@
   },
   {
     "rank": 1,
-    "region": "Los Angeles",
+    "region": "Los Angeles County",
     "trip_type": "3/4 Day",
     "boat": "Victory",
     "landing": "Long Beach Sportfishing",
@@ -67,7 +188,18 @@
   },
   {
     "rank": 2,
-    "region": "Los Angeles",
+    "region": "Los Angeles County",
+    "trip_type": "3/4 Day",
+    "boat": "Enterprise",
+    "landing": "Pierpoint Landing",
+    "trips": 5,
+    "anglers": 159,
+    "fish": 1512,
+    "fpa": 9.51
+  },
+  {
+    "rank": 3,
+    "region": "Los Angeles County",
     "trip_type": "3/4 Day",
     "boat": "New Del Mar",
     "landing": "Marina Del Rey Sportfishing",
@@ -77,8 +209,8 @@
     "fpa": 8.89
   },
   {
-    "rank": 3,
-    "region": "Los Angeles",
+    "rank": 4,
+    "region": "Los Angeles County",
     "trip_type": "3/4 Day",
     "boat": "Spitfire",
     "landing": "Marina Del Rey Sportfishing",
@@ -88,8 +220,8 @@
     "fpa": 7.68
   },
   {
-    "rank": 4,
-    "region": "Los Angeles",
+    "rank": 5,
+    "region": "Los Angeles County",
     "trip_type": "3/4 Day",
     "boat": "Betty-O",
     "landing": "Marina Del Rey Sportfishing",
@@ -99,8 +231,8 @@
     "fpa": 6.68
   },
   {
-    "rank": 5,
-    "region": "Los Angeles",
+    "rank": 6,
+    "region": "Los Angeles County",
     "trip_type": "3/4 Day",
     "boat": "Triton",
     "landing": "LA Waterfront Cruises and Sportfishing",
@@ -110,8 +242,8 @@
     "fpa": 5.93
   },
   {
-    "rank": 6,
-    "region": "Los Angeles",
+    "rank": 7,
+    "region": "Los Angeles County",
     "trip_type": "3/4 Day",
     "boat": "Gail Force",
     "landing": "LA Waterfront Cruises and Sportfishing",
@@ -121,8 +253,8 @@
     "fpa": 5.13
   },
   {
-    "rank": 7,
-    "region": "Los Angeles",
+    "rank": 8,
+    "region": "Los Angeles County",
     "trip_type": "3/4 Day",
     "boat": "Sport King",
     "landing": "LA Waterfront Cruises and Sportfishing",
@@ -132,8 +264,8 @@
     "fpa": 4.96
   },
   {
-    "rank": 8,
-    "region": "Los Angeles",
+    "rank": 9,
+    "region": "Los Angeles County",
     "trip_type": "3/4 Day",
     "boat": "Native Sun",
     "landing": "22nd Street Landing",
@@ -144,7 +276,7 @@
   },
   {
     "rank": 1,
-    "region": "Los Angeles",
+    "region": "Los Angeles County",
     "trip_type": "Full Day",
     "boat": "El Patron",
     "landing": "Long Beach Sportfishing",
@@ -155,7 +287,7 @@
   },
   {
     "rank": 2,
-    "region": "Los Angeles",
+    "region": "Los Angeles County",
     "trip_type": "Full Day",
     "boat": "Pursuit",
     "landing": "22nd Street Landing",
@@ -166,7 +298,7 @@
   },
   {
     "rank": 3,
-    "region": "Los Angeles",
+    "region": "Los Angeles County",
     "trip_type": "Full Day",
     "boat": "Ahra-Ahn",
     "landing": "Long Beach Sportfishing",
@@ -177,7 +309,7 @@
   },
   {
     "rank": 1,
-    "region": "Los Angeles",
+    "region": "Los Angeles County",
     "trip_type": "Overnight",
     "boat": "Eldorado",
     "landing": "Long Beach Sportfishing",
@@ -188,7 +320,7 @@
   },
   {
     "rank": 2,
-    "region": "Los Angeles",
+    "region": "Los Angeles County",
     "trip_type": "Overnight",
     "boat": "Freedom",
     "landing": "22nd Street Landing",
@@ -200,39 +332,6 @@
   {
     "rank": 1,
     "region": "NorCal",
-    "trip_type": "1/2 Day AM",
-    "boat": "Pacific Pearl",
-    "landing": "Fish Emeryville",
-    "trips": 5,
-    "anglers": 64,
-    "fish": 8,
-    "fpa": 0.13
-  },
-  {
-    "rank": 2,
-    "region": "NorCal",
-    "trip_type": "1/2 Day AM",
-    "boat": "C Gull II",
-    "landing": "Fish Emeryville",
-    "trips": 5,
-    "anglers": 71,
-    "fish": 4,
-    "fpa": 0.06
-  },
-  {
-    "rank": 1,
-    "region": "NorCal",
-    "trip_type": "Full Day",
-    "boat": "Riptide",
-    "landing": "Riptide Sportfishing",
-    "trips": 5,
-    "anglers": 26,
-    "fish": 80,
-    "fpa": 3.08
-  },
-  {
-    "rank": 2,
-    "region": "NorCal",
     "trip_type": "Full Day",
     "boat": "Happy Hooker",
     "landing": "Happy Hooker Sportfishing",
@@ -240,50 +339,6 @@
     "anglers": 101,
     "fish": 27,
     "fpa": 0.27
-  },
-  {
-    "rank": 3,
-    "region": "NorCal",
-    "trip_type": "Full Day",
-    "boat": "New Huck Finn",
-    "landing": "Fish Emeryville",
-    "trips": 5,
-    "anglers": 93,
-    "fish": 23,
-    "fpa": 0.25
-  },
-  {
-    "rank": 4,
-    "region": "NorCal",
-    "trip_type": "Full Day",
-    "boat": "Goldeneye 2000",
-    "landing": "Berkeley Charter Boats",
-    "trips": 6,
-    "anglers": 103,
-    "fish": 0,
-    "fpa": 0
-  },
-  {
-    "rank": 5,
-    "region": "NorCal",
-    "trip_type": "Full Day",
-    "boat": "California Dawn II",
-    "landing": "California Dawn Sportfishing",
-    "trips": 6,
-    "anglers": 115,
-    "fish": 0,
-    "fpa": 0
-  },
-  {
-    "rank": 6,
-    "region": "NorCal",
-    "trip_type": "Full Day",
-    "boat": "New California Dawn",
-    "landing": "California Dawn Sportfishing",
-    "trips": 6,
-    "anglers": 94,
-    "fish": 0,
-    "fpa": 0
   },
   {
     "rank": 1,
@@ -507,7 +562,7 @@
   },
   {
     "rank": 1,
-    "region": "San Diego",
+    "region": "San Diego County",
     "trip_type": "1.5 Day",
     "boat": "Old Glory",
     "landing": "H&M Landing",
@@ -518,7 +573,7 @@
   },
   {
     "rank": 2,
-    "region": "San Diego",
+    "region": "San Diego County",
     "trip_type": "1.5 Day",
     "boat": "Tribute",
     "landing": "Seaforth Sportfishing",
@@ -529,7 +584,7 @@
   },
   {
     "rank": 3,
-    "region": "San Diego",
+    "region": "San Diego County",
     "trip_type": "1.5 Day",
     "boat": "Aztec",
     "landing": "Seaforth Sportfishing",
@@ -540,7 +595,7 @@
   },
   {
     "rank": 1,
-    "region": "San Diego",
+    "region": "San Diego County",
     "trip_type": "1/2 Day AM",
     "boat": "Pronto",
     "landing": "Oceanside Sea Center",
@@ -551,7 +606,7 @@
   },
   {
     "rank": 2,
-    "region": "San Diego",
+    "region": "San Diego County",
     "trip_type": "1/2 Day AM",
     "boat": "Blue Horizon",
     "landing": "Oceanside Sea Center",
@@ -562,7 +617,7 @@
   },
   {
     "rank": 3,
-    "region": "San Diego",
+    "region": "San Diego County",
     "trip_type": "1/2 Day AM",
     "boat": "Southern Cal",
     "landing": "Oceanside Sea Center",
@@ -573,7 +628,7 @@
   },
   {
     "rank": 4,
-    "region": "San Diego",
+    "region": "San Diego County",
     "trip_type": "1/2 Day AM",
     "boat": "Dolphin",
     "landing": "Fisherman's Landing",
@@ -584,7 +639,7 @@
   },
   {
     "rank": 5,
-    "region": "San Diego",
+    "region": "San Diego County",
     "trip_type": "1/2 Day AM",
     "boat": "Daily Double",
     "landing": "Point Loma Sportfishing",
@@ -595,7 +650,7 @@
   },
   {
     "rank": 6,
-    "region": "San Diego",
+    "region": "San Diego County",
     "trip_type": "1/2 Day AM",
     "boat": "Premier",
     "landing": "H&M Landing",
@@ -606,7 +661,7 @@
   },
   {
     "rank": 7,
-    "region": "San Diego",
+    "region": "San Diego County",
     "trip_type": "1/2 Day AM",
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
@@ -616,41 +671,8 @@
     "fpa": 2.53
   },
   {
-    "rank": 8,
-    "region": "San Diego",
-    "trip_type": "1/2 Day AM",
-    "boat": "Sunny Day",
-    "landing": "Patriot Sportfishing",
-    "trips": 10,
-    "anglers": 29,
-    "fish": 19,
-    "fpa": 0.66
-  },
-  {
-    "rank": 9,
-    "region": "San Diego",
-    "trip_type": "1/2 Day AM",
-    "boat": "Patriot (Avila Beach)",
-    "landing": "Patriot Sportfishing",
-    "trips": 6,
-    "anglers": 161,
-    "fish": 21,
-    "fpa": 0.13
-  },
-  {
-    "rank": 10,
-    "region": "San Diego",
-    "trip_type": "1/2 Day AM",
-    "boat": "Flying Fish",
-    "landing": "Patriot Sportfishing",
-    "trips": 19,
-    "anglers": 335,
-    "fish": 38,
-    "fpa": 0.11
-  },
-  {
     "rank": 1,
-    "region": "San Diego",
+    "region": "San Diego County",
     "trip_type": "1/2 Day PM",
     "boat": "Daily Double",
     "landing": "Point Loma Sportfishing",
@@ -661,7 +683,7 @@
   },
   {
     "rank": 2,
-    "region": "San Diego",
+    "region": "San Diego County",
     "trip_type": "1/2 Day PM",
     "boat": "Premier",
     "landing": "H&M Landing",
@@ -672,7 +694,7 @@
   },
   {
     "rank": 3,
-    "region": "San Diego",
+    "region": "San Diego County",
     "trip_type": "1/2 Day PM",
     "boat": "Dolphin",
     "landing": "Fisherman's Landing",
@@ -683,7 +705,7 @@
   },
   {
     "rank": 4,
-    "region": "San Diego",
+    "region": "San Diego County",
     "trip_type": "1/2 Day PM",
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
@@ -694,7 +716,7 @@
   },
   {
     "rank": 1,
-    "region": "San Diego",
+    "region": "San Diego County",
     "trip_type": "1/2 Day Twilight",
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
@@ -705,7 +727,7 @@
   },
   {
     "rank": 2,
-    "region": "San Diego",
+    "region": "San Diego County",
     "trip_type": "1/2 Day Twilight",
     "boat": "Chubasco II",
     "landing": "Oceanside Sea Center",
@@ -716,7 +738,7 @@
   },
   {
     "rank": 1,
-    "region": "San Diego",
+    "region": "San Diego County",
     "trip_type": "2 Day",
     "boat": "Pacific Voyager",
     "landing": "Seaforth Sportfishing",
@@ -727,7 +749,7 @@
   },
   {
     "rank": 1,
-    "region": "San Diego",
+    "region": "San Diego County",
     "trip_type": "3 Day",
     "boat": "Polaris Supreme",
     "landing": "Seaforth Sportfishing",
@@ -738,7 +760,7 @@
   },
   {
     "rank": 1,
-    "region": "San Diego",
+    "region": "San Diego County",
     "trip_type": "3/4 Day",
     "boat": "Chubasco II",
     "landing": "Oceanside Sea Center",
@@ -749,7 +771,7 @@
   },
   {
     "rank": 2,
-    "region": "San Diego",
+    "region": "San Diego County",
     "trip_type": "3/4 Day",
     "boat": "Malihini",
     "landing": "H&M Landing",
@@ -760,7 +782,7 @@
   },
   {
     "rank": 3,
-    "region": "San Diego",
+    "region": "San Diego County",
     "trip_type": "3/4 Day",
     "boat": "Sea Watch",
     "landing": "Seaforth Sportfishing",
@@ -770,19 +792,8 @@
     "fpa": 6.57
   },
   {
-    "rank": 4,
-    "region": "San Diego",
-    "trip_type": "3/4 Day",
-    "boat": "Patriot (Avila Beach)",
-    "landing": "Patriot Sportfishing",
-    "trips": 8,
-    "anglers": 155,
-    "fish": 30,
-    "fpa": 0.19
-  },
-  {
     "rank": 1,
-    "region": "San Diego",
+    "region": "San Diego County",
     "trip_type": "Full Day",
     "boat": "Got Bait",
     "landing": "Point Loma Sportfishing",
@@ -793,7 +804,7 @@
   },
   {
     "rank": 1,
-    "region": "San Diego",
+    "region": "San Diego County",
     "trip_type": "Full Day Coronado Islands",
     "boat": "Point Loma",
     "landing": "Point Loma Sportfishing",
@@ -804,7 +815,7 @@
   },
   {
     "rank": 2,
-    "region": "San Diego",
+    "region": "San Diego County",
     "trip_type": "Full Day Coronado Islands",
     "boat": "Mission Belle",
     "landing": "Point Loma Sportfishing",
@@ -815,7 +826,7 @@
   },
   {
     "rank": 3,
-    "region": "San Diego",
+    "region": "San Diego County",
     "trip_type": "Full Day Coronado Islands",
     "boat": "Grande",
     "landing": "H&M Landing",
@@ -826,7 +837,7 @@
   },
   {
     "rank": 4,
-    "region": "San Diego",
+    "region": "San Diego County",
     "trip_type": "Full Day Coronado Islands",
     "boat": "San Diego",
     "landing": "Seaforth Sportfishing",
@@ -837,7 +848,7 @@
   },
   {
     "rank": 1,
-    "region": "San Diego",
+    "region": "San Diego County",
     "trip_type": "Full Day Offshore",
     "boat": "San Diego",
     "landing": "Seaforth Sportfishing",
@@ -848,7 +859,7 @@
   },
   {
     "rank": 1,
-    "region": "San Diego",
+    "region": "San Diego County",
     "trip_type": "Overnight",
     "boat": "Producer",
     "landing": "H&M Landing",
@@ -859,7 +870,7 @@
   },
   {
     "rank": 2,
-    "region": "San Diego",
+    "region": "San Diego County",
     "trip_type": "Overnight",
     "boat": "Pegasus",
     "landing": "Fisherman's Landing",
@@ -870,7 +881,7 @@
   },
   {
     "rank": 3,
-    "region": "San Diego",
+    "region": "San Diego County",
     "trip_type": "Overnight",
     "boat": "Highliner",
     "landing": "Seaforth Sportfishing",
@@ -881,51 +892,51 @@
   },
   {
     "rank": 1,
-    "region": "San Luis Obispo",
-    "trip_type": "1/2 Day AM",
-    "boat": "Avenger",
-    "landing": "Morro Bay Landing",
-    "trips": 15,
-    "anglers": 309,
-    "fish": 2507,
-    "fpa": 8.11
-  },
-  {
-    "rank": 1,
-    "region": "San Luis Obispo",
-    "trip_type": "3/4 Day",
-    "boat": "Avenger",
-    "landing": "Morro Bay Landing",
-    "trips": 8,
-    "anglers": 125,
-    "fish": 1184,
-    "fpa": 9.47
+    "region": "San Francisco Bay",
+    "trip_type": "Full Day",
+    "boat": "Goldeneye 2000",
+    "landing": "Berkeley Charter Boats",
+    "trips": 6,
+    "anglers": 103,
+    "fish": 0,
+    "fpa": 0
   },
   {
     "rank": 2,
-    "region": "San Luis Obispo",
-    "trip_type": "3/4 Day",
-    "boat": "Starfire",
-    "landing": "Morro Bay Landing",
-    "trips": 10,
-    "anglers": 189,
-    "fish": 1350,
-    "fpa": 7.14
-  },
-  {
-    "rank": 1,
-    "region": "San Luis Obispo",
+    "region": "San Francisco Bay",
     "trip_type": "Full Day",
-    "boat": "Endeavor (MB)",
-    "landing": "Morro Bay Landing",
-    "trips": 8,
-    "anglers": 173,
-    "fish": 1238,
-    "fpa": 7.16
+    "boat": "California Dawn II",
+    "landing": "California Dawn Sportfishing",
+    "trips": 6,
+    "anglers": 115,
+    "fish": 0,
+    "fpa": 0
+  },
+  {
+    "rank": 3,
+    "region": "San Francisco Bay",
+    "trip_type": "Full Day",
+    "boat": "New California Dawn",
+    "landing": "California Dawn Sportfishing",
+    "trips": 6,
+    "anglers": 94,
+    "fish": 0,
+    "fpa": 0
   },
   {
     "rank": 1,
-    "region": "Santa Barbara",
+    "region": "San Mateo County",
+    "trip_type": "Full Day",
+    "boat": "Riptide",
+    "landing": "Riptide Sportfishing",
+    "trips": 5,
+    "anglers": 26,
+    "fish": 80,
+    "fpa": 3.08
+  },
+  {
+    "rank": 1,
+    "region": "Santa Barbara County",
     "trip_type": "3/4 Day",
     "boat": "Stardust",
     "landing": "Santa Barbara Landing",
@@ -936,7 +947,7 @@
   },
   {
     "rank": 2,
-    "region": "Santa Barbara",
+    "region": "Santa Barbara County",
     "trip_type": "3/4 Day",
     "boat": "Coral Sea",
     "landing": "Santa Barbara Landing",
@@ -947,29 +958,7 @@
   },
   {
     "rank": 1,
-    "region": "Ventura",
-    "trip_type": "1/2 Day AM",
-    "boat": "Estella",
-    "landing": "Hooks Landing",
-    "trips": 7,
-    "anglers": 206,
-    "fish": 2475,
-    "fpa": 12.01
-  },
-  {
-    "rank": 2,
-    "region": "Ventura",
-    "trip_type": "1/2 Day AM",
-    "boat": "Speed Twin",
-    "landing": "Channel Islands Sportfishing",
-    "trips": 30,
-    "anglers": 964,
-    "fish": 9971,
-    "fpa": 10.34
-  },
-  {
-    "rank": 1,
-    "region": "Ventura",
+    "region": "SoCal",
     "trip_type": "2 Day",
     "boat": "Endeavor (Ventura)",
     "landing": "Ventura Harbor Sportfishing",
@@ -980,7 +969,40 @@
   },
   {
     "rank": 1,
-    "region": "Ventura",
+    "region": "SoCal",
+    "trip_type": "Overnight",
+    "boat": "Endeavor (Ventura)",
+    "landing": "Ventura Harbor Sportfishing",
+    "trips": 10,
+    "anglers": 165,
+    "fish": 2341,
+    "fpa": 14.19
+  },
+  {
+    "rank": 1,
+    "region": "Ventura County",
+    "trip_type": "1/2 Day AM",
+    "boat": "Estella",
+    "landing": "Hooks Landing",
+    "trips": 7,
+    "anglers": 206,
+    "fish": 2475,
+    "fpa": 12.01
+  },
+  {
+    "rank": 2,
+    "region": "Ventura County",
+    "trip_type": "1/2 Day AM",
+    "boat": "Speed Twin",
+    "landing": "Channel Islands Sportfishing",
+    "trips": 30,
+    "anglers": 964,
+    "fish": 9971,
+    "fpa": 10.34
+  },
+  {
+    "rank": 1,
+    "region": "Ventura County",
     "trip_type": "3/4 Day",
     "boat": "Orion",
     "landing": "Channel Islands Sportfishing",
@@ -991,7 +1013,7 @@
   },
   {
     "rank": 2,
-    "region": "Ventura",
+    "region": "Ventura County",
     "trip_type": "3/4 Day",
     "boat": "Coroloma",
     "landing": "Hooks Landing",
@@ -1002,18 +1024,7 @@
   },
   {
     "rank": 3,
-    "region": "Ventura",
-    "trip_type": "3/4 Day",
-    "boat": "Enterprise",
-    "landing": "Pierpoint Landing",
-    "trips": 5,
-    "anglers": 159,
-    "fish": 1512,
-    "fpa": 9.51
-  },
-  {
-    "rank": 4,
-    "region": "Ventura",
+    "region": "Ventura County",
     "trip_type": "3/4 Day",
     "boat": "Gentleman",
     "landing": "Channel Islands Sportfishing",
@@ -1023,8 +1034,8 @@
     "fpa": 8.98
   },
   {
-    "rank": 5,
-    "region": "Ventura",
+    "rank": 4,
+    "region": "Ventura County",
     "trip_type": "3/4 Day",
     "boat": "Island Fox",
     "landing": "Channel Islands Sportfishing",
@@ -1035,7 +1046,7 @@
   },
   {
     "rank": 1,
-    "region": "Ventura",
+    "region": "Ventura County",
     "trip_type": "Full Day",
     "boat": "Island Fox",
     "landing": "Channel Islands Sportfishing",
@@ -1046,7 +1057,7 @@
   },
   {
     "rank": 2,
-    "region": "Ventura",
+    "region": "Ventura County",
     "trip_type": "Full Day",
     "boat": "Island Tak",
     "landing": "Channel Islands Sportfishing",
@@ -1057,7 +1068,7 @@
   },
   {
     "rank": 3,
-    "region": "Ventura",
+    "region": "Ventura County",
     "trip_type": "Full Day",
     "boat": "Aloha Spirit",
     "landing": "Channel Islands Sportfishing",
@@ -1068,7 +1079,7 @@
   },
   {
     "rank": 4,
-    "region": "Ventura",
+    "region": "Ventura County",
     "trip_type": "Full Day",
     "boat": "Graylight",
     "landing": "Channel Islands Sportfishing",
@@ -1079,7 +1090,7 @@
   },
   {
     "rank": 1,
-    "region": "Ventura",
+    "region": "Ventura County",
     "trip_type": "Overnight",
     "boat": "Indicator",
     "landing": "Channel Islands Sportfishing",
@@ -1090,7 +1101,7 @@
   },
   {
     "rank": 2,
-    "region": "Ventura",
+    "region": "Ventura County",
     "trip_type": "Overnight",
     "boat": "New Hustler",
     "landing": "Hooks Landing",
@@ -1101,18 +1112,7 @@
   },
   {
     "rank": 3,
-    "region": "Ventura",
-    "trip_type": "Overnight",
-    "boat": "Endeavor (Ventura)",
-    "landing": "Ventura Harbor Sportfishing",
-    "trips": 10,
-    "anglers": 165,
-    "fish": 2341,
-    "fpa": 14.19
-  },
-  {
-    "rank": 4,
-    "region": "Ventura",
+    "region": "Ventura County",
     "trip_type": "Overnight",
     "boat": "Mirage",
     "landing": "Channel Islands Sportfishing",

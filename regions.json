@@ -1,27 +1,27 @@
 [
   {
     "rank": 1,
-    "region": "Ventura",
-    "trips": 305,
-    "anglers": 6294,
-    "fish": 67355,
-    "fpa": 10.7
+    "region": "San Diego County",
+    "trips": 582,
+    "anglers": 14185,
+    "fish": 66379,
+    "fpa": 4.68
   },
   {
     "rank": 2,
-    "region": "San Diego",
-    "trips": 638,
-    "anglers": 15012,
-    "fish": 66513,
-    "fpa": 4.43
+    "region": "Los Angeles County",
+    "trips": 285,
+    "anglers": 9094,
+    "fish": 61599,
+    "fpa": 6.77
   },
   {
     "rank": 3,
-    "region": "Los Angeles",
-    "trips": 274,
-    "anglers": 8779,
-    "fish": 59108,
-    "fpa": 6.73
+    "region": "Ventura County",
+    "trips": 264,
+    "anglers": 5417,
+    "fish": 57784,
+    "fpa": 10.67
   },
   {
     "rank": 4,
@@ -33,7 +33,7 @@
   },
   {
     "rank": 5,
-    "region": "Santa Barbara",
+    "region": "Santa Barbara County",
     "trips": 58,
     "anglers": 1360,
     "fish": 19210,
@@ -41,18 +41,66 @@
   },
   {
     "rank": 6,
-    "region": "San Luis Obispo",
-    "trips": 58,
-    "anglers": 1057,
-    "fish": 8580,
-    "fpa": 8.12
+    "region": "Central California",
+    "trips": 113,
+    "anglers": 1873,
+    "fish": 8712,
+    "fpa": 4.65
   },
   {
     "rank": 7,
+    "region": "SoCal",
+    "trips": 32,
+    "anglers": 607,
+    "fish": 7248,
+    "fpa": 11.94
+  },
+  {
+    "rank": 8,
+    "region": "Monterey County",
+    "trips": 10,
+    "anglers": 173,
+    "fish": 1551,
+    "fpa": 8.97
+  },
+  {
+    "rank": 9,
+    "region": "Alameda County",
+    "trips": 41,
+    "anglers": 566,
+    "fish": 1339,
+    "fpa": 2.37
+  },
+  {
+    "rank": 10,
     "region": "NorCal",
-    "trips": 96,
-    "anglers": 1409,
-    "fish": 3928,
-    "fpa": 2.79
+    "trips": 10,
+    "anglers": 212,
+    "fish": 934,
+    "fpa": 4.41
+  },
+  {
+    "rank": 11,
+    "region": "San Mateo County",
+    "trips": 5,
+    "anglers": 26,
+    "fish": 80,
+    "fpa": 3.08
+  },
+  {
+    "rank": 12,
+    "region": "Marin County",
+    "trips": 2,
+    "anglers": 12,
+    "fish": 16,
+    "fpa": 1.33
+  },
+  {
+    "rank": 13,
+    "region": "San Francisco Bay",
+    "trips": 28,
+    "anglers": 420,
+    "fish": 8,
+    "fpa": 0.02
   }
 ]
