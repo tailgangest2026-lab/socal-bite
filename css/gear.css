@@ -1,0 +1,453 @@
+/* =========================
+   Gear / affiliate styles
+========================= */
+
+.affiliate-disclaimer {
+  margin-top: 20px;
+  padding: 16px 18px;
+  border: 1px solid rgba(231,184,90,0.35);
+  border-radius: 14px;
+  background: rgba(231,184,90,0.08);
+  color: var(--soft);
+  font-size: 0.95rem;
+}
+
+.gear-tabs a {
+  padding: 10px 16px;
+  border-radius: 10px;
+  color: var(--soft);
+  font-weight: 800;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  text-decoration: none;
+}
+
+.gear-tabs a:hover {
+  background: rgba(255,255,255,0.08);
+  color: var(--white);
+}
+
+.gear-tabs a:first-child {
+  background: rgba(32,211,226,0.16);
+  color: var(--cyan);
+  border-color: rgba(32,211,226,0.35);
+}
+
+.gear-list {
+  margin: 8px 22px 10px;
+  padding-left: 18px;
+  color: var(--soft);
+}
+
+.gear-list li {
+  margin: 7px 0;
+  color: var(--muted);
+}
+
+.gear-list strong {
+  color: var(--white);
+}
+
+.gear-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 4px 22px 22px;
+  justify-content: flex-start;
+}
+
+.gear-buttons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: var(--cyan);
+  color: #031828;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+.gear-buttons a:hover {
+  background: var(--gold);
+}
+
+
+/* =========================================================
+   GEAR PAGE
+   ========================================================= */
+
+.gear-hero {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 80px 28px 35px;
+}
+
+.gear-hero h1 span {
+  background: var(--grad-cyan);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.gear-hero p {
+  max-width: 850px;
+  color: var(--soft);
+  line-height: 1.7;
+  font-size: 1.15rem;
+}
+
+.gear-tabs {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 28px 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.gear-tab {
+  border: 0;
+  cursor: pointer;
+}
+
+.gear-tab.active {
+  background: var(--grad-cyan);
+  color: #00111d;
+}
+
+.gear-coming-grid {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 25px 28px 80px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.gear-soon-card {
+  overflow: hidden;
+  border-radius: var(--r-lg);
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.035));
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--t), border-color var(--t), box-shadow var(--t);
+}
+
+.gear-product-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.gear-soon-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(32,211,226,0.40);
+  box-shadow: var(--shadow-md);
+}
+
+.gear-soon-image {
+  height: 210px;
+  background:
+    linear-gradient(rgba(3,24,40,0.15), rgba(3,24,40,0.8)),
+    url("assets/socal-bite-background.png") center / cover;
+  transition: transform var(--t-slow);
+}
+
+.gear-product-image {
+  height: 240px;
+  min-height: 240px;
+  background: #ffffff;
+  border-radius: 0;
+  padding: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gear-product-image img {
+  max-width: 100%;
+  max-height: 200px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.gear-soon-card:hover .gear-soon-image {
+  transform: scale(1.04);
+}
+
+.gear-soon-card span {
+  display: block;
+  padding: 20px 22px 0;
+  color: var(--cyan);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.74rem;
+  font-weight: 900;
+}
+
+.gear-soon-card h2 {
+  padding: 0 22px;
+  margin: 10px 0;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.gear-soon-card p {
+  padding: 0 22px 8px;
+  margin: 0;
+  color: var(--gold);
+  font-weight: 900;
+}
+
+.gear-meta {
+  display: grid;
+  gap: 6px;
+  margin: 12px 22px;
+}
+
+.gear-meta small {
+  color: var(--soft);
+  line-height: 1.4;
+}
+
+.gear-buy-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: fit-content;
+  min-width: 160px;
+
+  margin: auto auto 22px;
+  padding: 12px 20px;
+
+  border-radius: 12px;
+  background: var(--grad-cyan);
+  color: #00111d;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.gear-buy-button.disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 950px) {
+  .gear-coming-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.gear-filter-bar {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 28px 20px;
+}
+.gear-select {
+  width: 100%;
+  max-width: 500px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(32,211,226,0.25);
+  background: rgba(255,255,255,0.06);
+
+  color: var(--soft);
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+.gear-select option {
+  background: #0d1b2a;
+  color: #e5e7eb;
+}
+
+/* =========================================================
+   GEAR PAGE
+   ========================================================= */
+
+.gear-hero {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 80px 28px 35px;
+}
+
+.gear-hero h1 span {
+  background: var(--grad-cyan);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.gear-hero p {
+  max-width: 850px;
+  color: var(--soft);
+  line-height: 1.7;
+  font-size: 1.15rem;
+}
+
+.gear-tabs {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 28px 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.gear-tab {
+  border: 0;
+  cursor: pointer;
+}
+
+.gear-tab.active {
+  background: var(--grad-cyan);
+  color: #00111d;
+}
+
+.gear-coming-grid {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 25px 28px 80px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.gear-soon-card {
+  overflow: hidden;
+  border-radius: var(--r-lg);
+  border: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.035));
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--t), border-color var(--t), box-shadow var(--t);
+}
+
+.gear-product-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.gear-soon-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(32,211,226,0.40);
+  box-shadow: var(--shadow-md);
+}
+
+.gear-soon-image {
+  height: 210px;
+  background:
+    linear-gradient(rgba(3,24,40,0.15), rgba(3,24,40,0.8)),
+    url("assets/socal-bite-background.png") center / cover;
+  transition: transform var(--t-slow);
+}
+
+.gear-product-image {
+  height: 240px;
+  min-height: 240px;
+  background: #ffffff;
+  border-radius: 0;
+  padding: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gear-product-image img {
+  max-width: 100%;
+  max-height: 200px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.gear-soon-card:hover .gear-soon-image {
+  transform: scale(1.04);
+}
+
+.gear-soon-card span {
+  display: block;
+  padding: 20px 22px 0;
+  color: var(--cyan);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.74rem;
+  font-weight: 900;
+}
+
+.gear-soon-card h2 {
+  padding: 0 22px;
+  margin: 10px 0;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.gear-soon-card p {
+  padding: 0 22px 8px;
+  margin: 0;
+  color: var(--gold);
+  font-weight: 900;
+}
+
+.gear-meta {
+  display: grid;
+  gap: 6px;
+  margin: 12px 22px;
+}
+
+.gear-meta small {
+  color: var(--soft);
+  line-height: 1.4;
+}
+
+.gear-buy-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: fit-content;
+  min-width: 160px;
+
+  margin: auto auto 22px;
+  padding: 12px 20px;
+
+  border-radius: 12px;
+  background: var(--grad-cyan);
+  color: #00111d;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.gear-buy-button.disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 950px) {
+  .gear-coming-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.gear-filter-bar {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 28px 20px;
+}
+.gear-select {
+  width: 100%;
+  max-width: 500px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(32,211,226,0.25);
+  background: rgba(255,255,255,0.06);
+
+  color: var(--soft);
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+.gear-select option {
+  background: #0d1b2a;
+  color: #e5e7eb;
+}
