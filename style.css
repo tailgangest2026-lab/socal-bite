@@ -3033,7 +3033,22 @@ main { padding-top: 86px; }
     grid-template-columns: 1fr;
   }
 }
+.gear-filter-bar {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 28px 20px;
+}
 
+.gear-select {
+  width: 100%;
+  max-width: 500px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  font-weight: 800;
+}
 /* =========================================================
    v2 REFINEMENTS — Modern SaaS polish, mobile-first overrides,
    accessibility, and table improvements.
