@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", loadNews);
 
 async function loadNews() {
   try {
-    const news = await fetchJson("news.json");
+    const news = await fetchJson("../news.json");
     const items = Array.isArray(news) ? news : news.items || [];
 
     renderNews(items);
