@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Fishing Gear | The SoCal Bite</title>
-  <meta name="description" content="Southern California fishing gear guides coming soon." />
+  <meta name="description" content="Southern California fishing gear guides, rods, reels, line, hooks and tackle." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://thesocalbite.com/gear.html" />
   <meta property="og:image" content="https://thesocalbite.com/assets/socal-bite-logo.webp" />
-  <link rel="stylesheet" href="../style.css?v=loveable-gear-1" />
+  <link rel="stylesheet" href="../style.css?v=loveable-gear-3" />
 </head>
 
 <body>
@@ -30,8 +30,8 @@
       <a href="/species.html">Species</a>
       <a href="/landings.html">Landings</a>
       <a href="/daily-report.html">Reports</a>
-      <a class="active" href="/gear">Fishing Gear</a>
-      <a href="/news">News</a>
+      <a class="active" href="../gear/">Fishing Gear</a>
+      <a href="../news/">News</a>
     </nav>
 
     <div class="live-pill"><span></span> Live</div>
@@ -40,63 +40,30 @@
   <main>
     <section class="gear-hero">
       <span class="page-kicker">Fishing Gear</span>
-      <h1>Rod & reel combos, <span>decoded.</span></h1>
+      <h1>Rod, reel & tackle picks, <span>decoded.</span></h1>
       <p>
-        Curated Southern California saltwater gear guides are coming soon —
-        pier, surf, yellowtail, tuna, rockfish and beginner setups.
+        Curated Southern California saltwater fishing gear for yellowtail,
+        tuna, calico bass, rockfish, pier, surf and local boat fishing.
+      </p>
+      <p style="font-size:0.85rem;opacity:.75;">
+        As an affiliate, The SoCal Bite may earn from qualifying purchases.
       </p>
     </section>
 
-    <section class="gear-tabs">
-      <span>All Combos</span>
-      <span>Pier Fishing Gear</span>
-      <span>Surf Fishing Gear</span>
-      <span>Yellowtail Gear</span>
-      <span>Tuna Gear</span>
-      <span>Rockfish Gear</span>
+    <section id="gearTabs" class="gear-tabs">
+      <button class="gear-tab active" type="button">Loading...</button>
     </section>
 
-    <section class="gear-coming-grid">
-      <article class="gear-soon-card">
-        <div class="gear-soon-image"></div>
-        <span>Pier Fishing Gear</span>
-        <h2>Budget Pier Combo</h2>
-        <p>Coming soon.</p>
-      </article>
+    <section class="gear-filter-bar">
+      <select id="setupFilter" class="gear-select">
+        <option value="all">All Setups</option>
+      </select>
+    </section>
 
+    <section id="gearGrid" class="gear-coming-grid">
       <article class="gear-soon-card">
-        <div class="gear-soon-image"></div>
-        <span>Surf Fishing Gear</span>
-        <h2>Budget Surf Combo</h2>
-        <p>Coming soon.</p>
-      </article>
-
-      <article class="gear-soon-card">
-        <div class="gear-soon-image"></div>
-        <span>Yellowtail Gear</span>
-        <h2>Yellowtail Iron Combo</h2>
-        <p>Coming soon.</p>
-      </article>
-
-      <article class="gear-soon-card">
-        <div class="gear-soon-image"></div>
-        <span>Tuna Gear</span>
-        <h2>Bluefin Flat-Fall Combo</h2>
-        <p>Coming soon.</p>
-      </article>
-
-      <article class="gear-soon-card">
-        <div class="gear-soon-image"></div>
-        <span>Rockfish Gear</span>
-        <h2>Rockfish Deep Drop Combo</h2>
-        <p>Coming soon.</p>
-      </article>
-
-      <article class="gear-soon-card">
-        <div class="gear-soon-image"></div>
-        <span>Tuna Gear</span>
-        <h2>Yellowfin Popper Combo</h2>
-        <p>Coming soon.</p>
+        <h2>Loading gear...</h2>
+        <p>Pulling latest gear from gear.json.</p>
       </article>
     </section>
   </main>
@@ -120,5 +87,196 @@
       <a href="/">Legacy site</a>
     </div>
   </footer>
+
+  <script>
+    let allGear = [];
+    let activeCategory = "All Gear";
+    let activeSetup = "all";
+
+    document.addEventListener("DOMContentLoaded", initGearPage);
+
+    async function initGearPage() {
+      try {
+        const response = await fetch("../gear.json?v=" + Date.now());
+
+        if (!response.ok) {
+          throw new Error("Could not load gear.json");
+        }
+
+        allGear = await response.json();
+
+        if (!Array.isArray(allGear) || !allGear.length) {
+          showGearError("No gear found.");
+          return;
+        }
+
+        buildGearTabs();
+        buildSetupFilter();
+        renderGearCards();
+
+      } catch (error) {
+        console.error("Gear load error:", error);
+        showGearError("Could not load fishing gear.");
+      }
+    }
+
+    function buildGearTabs() {
+      const tabs = document.getElementById("gearTabs");
+
+      const categories = [
+        "All Gear",
+        ...new Set(
+          allGear
+            .map(item => cleanText(item.category))
+            .filter(Boolean)
+        )
+      ];
+
+      tabs.innerHTML = categories.map(category => `
+        <button
+          class="gear-tab ${category === activeCategory ? "active" : ""}"
+          type="button"
+          data-category="${escapeHtml(category)}"
+        >
+          ${escapeHtml(category)}
+        </button>
+      `).join("");
+
+      tabs.querySelectorAll(".gear-tab").forEach(button => {
+        button.addEventListener("click", () => {
+          activeCategory = button.dataset.category;
+          renderGearCards();
+
+          tabs.querySelectorAll(".gear-tab").forEach(tab => {
+            tab.classList.remove("active");
+          });
+
+          button.classList.add("active");
+        });
+      });
+    }
+
+    function buildSetupFilter() {
+      const select = document.getElementById("setupFilter");
+
+      const setups = [
+        ...new Set(
+          allGear
+            .map(item => cleanText(item.setup_name))
+            .filter(Boolean)
+        )
+      ];
+
+      select.innerHTML = `
+        <option value="all">All Setups</option>
+        ${setups.map(setup => `
+          <option value="${escapeHtml(setup)}">${escapeHtml(setup)}</option>
+        `).join("")}
+      `;
+
+      select.addEventListener("change", () => {
+        activeSetup = select.value;
+        renderGearCards();
+      });
+    }
+
+    function renderGearCards() {
+      const grid = document.getElementById("gearGrid");
+
+      let items = activeCategory === "All Gear"
+        ? allGear
+        : allGear.filter(item => cleanText(item.category) === activeCategory);
+
+      if (activeSetup !== "all") {
+        items = items.filter(item => cleanText(item.setup_name) === activeSetup);
+      }
+
+      if (!items.length) {
+        grid.innerHTML = `
+          <article class="gear-soon-card">
+            <h2>No gear found</h2>
+            <p>No products found for the selected filters.</p>
+          </article>
+        `;
+        return;
+      }
+
+      grid.innerHTML = items.map(item => {
+        const category = cleanText(item.category);
+        const brand = cleanText(item.brand);
+        const model = cleanText(item.model);
+        const title = `${brand} ${model}`.trim();
+        const description = cleanText(item.description);
+        const setupName = cleanText(item.setup_name);
+        const targetSpecies = cleanText(item.target_species);
+        const lineClass = cleanText(item.line_class);
+        const price = formatPrice(item.retail_price);
+        const affiliateLink = cleanText(item.affiliate_link);
+        const network = cleanText(item.affilate_network || item.affiliate_network);
+        const imageUrl = cleanText(item.image_url);
+
+        return `
+          <article class="gear-soon-card gear-product-card">
+            <div class="gear-soon-image gear-product-image">
+              ${
+                imageUrl
+                  ? `<img src="${escapeHtml(imageUrl)}" alt="${escapeHtml(title)}" loading="lazy" />`
+                  : `<span>No Image</span>`
+              }
+            </div>
+
+            <span>${escapeHtml(category || "Fishing Gear")}</span>
+            <h2>${escapeHtml(title || "Unnamed Gear")}</h2>
+
+            ${setupName ? `<p><strong>Setup:</strong> ${escapeHtml(setupName)}</p>` : ""}
+            ${description ? `<p>${escapeHtml(description)}</p>` : ""}
+
+            <div class="gear-meta">
+              ${targetSpecies ? `<small><strong>Species:</strong> ${escapeHtml(targetSpecies)}</small>` : ""}
+              ${lineClass ? `<small><strong>Line:</strong> ${escapeHtml(lineClass)}</small>` : ""}
+              ${price ? `<small><strong>Price:</strong> ${escapeHtml(price)}</small>` : ""}
+              ${network ? `<small><strong>Store:</strong> ${escapeHtml(network)}</small>` : ""}
+            </div>
+
+            ${
+              affiliateLink
+                ? `<a class="gear-buy-button" href="${escapeHtml(affiliateLink)}" target="_blank" rel="nofollow sponsored noopener">View Gear</a>`
+                : `<button class="gear-buy-button disabled" type="button" disabled>Link Coming Soon</button>`
+            }
+          </article>
+        `;
+      }).join("");
+    }
+
+    function showGearError(message) {
+      document.getElementById("gearTabs").innerHTML = "";
+      document.getElementById("setupFilter").innerHTML = `<option value="all">All Setups</option>`;
+      document.getElementById("gearGrid").innerHTML = `
+        <article class="gear-soon-card">
+          <h2>${escapeHtml(message)}</h2>
+          <p>Check that gear.json exists in your repo and GitHub Action downloaded it.</p>
+        </article>
+      `;
+    }
+
+    function cleanText(value) {
+      return value === null || value === undefined ? "" : String(value).trim();
+    }
+
+    function formatPrice(value) {
+      const number = Number(value);
+      if (!Number.isFinite(number) || number <= 0) return "";
+      return "$" + number.toFixed(2);
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+  </script>
 </body>
 </html>
