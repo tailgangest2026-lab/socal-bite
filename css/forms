@@ -1,0 +1,31 @@
+/* =========================================================
+   GLOBAL FORM CONTROLS
+   Visual-only dropdown override. Page CSS keeps width, spacing,
+   min-width, max-width, height, and placement.
+   Load this AFTER the page CSS.
+   ========================================================= */
+
+select {
+  border-color: rgba(32,211,226,0.25);
+  background-color: rgba(255,255,255,0.06);
+  color: var(--soft);
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+select:hover {
+  border-color: rgba(32,211,226,0.45);
+}
+
+select:focus {
+  outline: none;
+  border-color: var(--cyan);
+  box-shadow:
+    0 0 0 3px rgba(32,211,226,0.15),
+    0 6px 18px rgba(0,0,0,0.15);
+}
+
+select option {
+  background: #0d1b2a;
+  color: #e5e7eb;
+}
