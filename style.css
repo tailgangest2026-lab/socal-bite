@@ -2899,6 +2899,16 @@ main { padding-top: 86px; }
   gap: 12px;
 }
 
+.gear-tab {
+  border: 0;
+  cursor: pointer;
+}
+
+.gear-tab.active {
+  background: var(--grad-cyan);
+  color: #00111d;
+}
+
 .gear-coming-grid {
   max-width: 1280px;
   margin: 0 auto;
@@ -2917,6 +2927,11 @@ main { padding-top: 86px; }
   transition: transform var(--t), border-color var(--t), box-shadow var(--t);
 }
 
+.gear-product-card {
+  display: flex;
+  flex-direction: column;
+}
+
 .gear-soon-card:hover {
   transform: translateY(-4px);
   border-color: rgba(32,211,226,0.40);
@@ -2929,6 +2944,26 @@ main { padding-top: 86px; }
     linear-gradient(rgba(3,24,40,0.15), rgba(3,24,40,0.8)),
     url("assets/socal-bite-background.png") center / cover;
   transition: transform var(--t-slow);
+}
+
+.gear-product-image {
+  height: 240px;
+  min-height: 240px;
+  background: #ffffff;
+  border-radius: 0;
+  padding: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gear-product-image img {
+  max-width: 100%;
+  max-height: 200px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
 }
 
 .gear-soon-card:hover .gear-soon-image {
@@ -2959,39 +2994,28 @@ main { padding-top: 86px; }
   font-weight: 900;
 }
 
-@media (max-width: 950px) {
-  .gear-coming-grid {
-    grid-template-columns: 1fr;
-  }
-}
-.gear-tab {
-  border: 0;
-  cursor: pointer;
-}
-
-.gear-tab.active {
-  background: var(--grad-cyan);
-  color: #00111d;
-}
-
-.gear-product-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
 .gear-meta {
   display: grid;
   gap: 6px;
-  margin: 12px 0;
+  margin: 12px 22px;
+}
+
+.gear-meta small {
+  color: var(--soft);
+  line-height: 1.4;
 }
 
 .gear-buy-button {
-  display: inline-flex;
+  display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 12px;
-  padding: 12px 16px;
+
+  width: fit-content;
+  min-width: 160px;
+
+  margin: auto auto 22px;
+  padding: 12px 20px;
+
   border-radius: 12px;
   background: var(--grad-cyan);
   color: #00111d;
@@ -3002,6 +3026,12 @@ main { padding-top: 86px; }
 .gear-buy-button.disabled {
   opacity: .5;
   cursor: not-allowed;
+}
+
+@media (max-width: 950px) {
+  .gear-coming-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* =========================================================
