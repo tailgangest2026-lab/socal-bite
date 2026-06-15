@@ -159,10 +159,10 @@
     "trip_type": "1/2 Day PM",
     "boat": "Redondo Special",
     "landing": "Redondo Beach Sportfishing",
-    "trips": 7,
-    "anglers": 188,
-    "fish": 629,
-    "fpa": 3.35
+    "trips": 8,
+    "anglers": 223,
+    "fish": 722,
+    "fpa": 3.24
   },
   {
     "rank": 1,
@@ -203,10 +203,10 @@
     "trip_type": "3/4 Day",
     "boat": "New Del Mar",
     "landing": "Marina Del Rey Sportfishing",
-    "trips": 6,
-    "anglers": 236,
-    "fish": 2098,
-    "fpa": 8.89
+    "trips": 7,
+    "anglers": 345,
+    "fish": 2694,
+    "fpa": 7.81
   },
   {
     "rank": 4,
@@ -214,10 +214,10 @@
     "trip_type": "3/4 Day",
     "boat": "Spitfire",
     "landing": "Marina Del Rey Sportfishing",
-    "trips": 26,
-    "anglers": 617,
-    "fish": 4738,
-    "fpa": 7.68
+    "trips": 27,
+    "anglers": 645,
+    "fish": 4974,
+    "fpa": 7.71
   },
   {
     "rank": 5,
@@ -225,10 +225,10 @@
     "trip_type": "3/4 Day",
     "boat": "Betty-O",
     "landing": "Marina Del Rey Sportfishing",
-    "trips": 20,
-    "anglers": 292,
-    "fish": 1951,
-    "fpa": 6.68
+    "trips": 21,
+    "anglers": 312,
+    "fish": 2115,
+    "fpa": 6.78
   },
   {
     "rank": 6,
@@ -306,6 +306,17 @@
     "anglers": 119,
     "fish": 562,
     "fpa": 4.72
+  },
+  {
+    "rank": 4,
+    "region": "Los Angeles County",
+    "trip_type": "Full Day",
+    "boat": "Pescador",
+    "landing": "Redondo Beach Sportfishing",
+    "trips": 5,
+    "anglers": 65,
+    "fish": 108,
+    "fpa": 1.66
   },
   {
     "rank": 1,
@@ -555,10 +566,10 @@
     "trip_type": "Overnight",
     "boat": "Thunderbird",
     "landing": "Newport Landing",
-    "trips": 33,
-    "anglers": 982,
-    "fish": 7354,
-    "fpa": 7.49
+    "trips": 34,
+    "anglers": 1012,
+    "fish": 7781,
+    "fpa": 7.69
   },
   {
     "rank": 1,
@@ -894,21 +905,21 @@
     "rank": 1,
     "region": "San Francisco Bay",
     "trip_type": "Full Day",
-    "boat": "Goldeneye 2000",
-    "landing": "Berkeley Charter Boats",
-    "trips": 6,
-    "anglers": 103,
-    "fish": 0,
-    "fpa": 0
+    "boat": "California Dawn II",
+    "landing": "California Dawn Sportfishing",
+    "trips": 7,
+    "anglers": 138,
+    "fish": 149,
+    "fpa": 1.08
   },
   {
     "rank": 2,
     "region": "San Francisco Bay",
     "trip_type": "Full Day",
-    "boat": "California Dawn II",
-    "landing": "California Dawn Sportfishing",
+    "boat": "Goldeneye 2000",
+    "landing": "Berkeley Charter Boats",
     "trips": 6,
-    "anglers": 115,
+    "anglers": 103,
     "fish": 0,
     "fpa": 0
   },
