@@ -772,13 +772,14 @@ main { padding-top: 86px; }
 
 /* ---------- Footer (love-footer) ---------- */
 .love-footer {
-  margin-top: 80px;
-  padding: 60px 40px;
+  margin-top: 40px;
+  padding: 40px 36px 32px;
   border-top: 1px solid var(--border);
   background: linear-gradient(180deg, #02101c 0%, #010812 100%);
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 60px;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 36px;
+  align-items: start;
 }
 
 .footer-brand strong,
@@ -790,6 +791,7 @@ main { padding-top: 86px; }
 .footer-links h4 {
   color: var(--muted);
   text-transform: uppercase;
+
   letter-spacing: 1.8px;
   font-size: 0.72rem;
   font-weight: 900;
