@@ -30,8 +30,8 @@
       <a href="/species.html">Species</a>
       <a href="/landings.html">Landings</a>
       <a href="/daily-report.html">Reports</a>
-      <a class="active" href="/gear.html">Fishing Gear</a>
-      <a href="/news.html">News</a>
+      <a class="active" href="../gear/">Fishing Gear</a>
+      <a href="../news/">News</a>
     </nav>
 
     <div class="live-pill"><span></span> Live</div>
@@ -97,7 +97,7 @@
 
     async function initGearPage() {
       try {
-        const response = await fetch("gear.json?v=" + Date.now());
+        const response = await fetch("../gear.json?v=" + Date.now());
 
         if (!response.ok) {
           throw new Error("Could not load gear.json");
