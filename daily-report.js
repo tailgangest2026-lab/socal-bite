@@ -59,12 +59,19 @@ function buildRegionTabs() {
 
   const regions = [
     "All",
+    "Alameda County",
+    "Central California",
     "Los Angeles",
+    "Marin County",
+    "Monterey County",
     "Orange County",
     "San Diego",
-    "Ventura",
+    "San Francisco Bay",
+    "San Mateo",
     "Santa Barbara",
-    "San Luis Obispo"
+    "Santa Cruz",
+    "Ventura County"
+
   ];
 
   tabs.innerHTML = regions.map(region => `
