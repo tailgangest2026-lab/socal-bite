@@ -892,3 +892,32 @@ svg.chart,
     color: #000;
   }
 }
+/* Fix desktop footer height */
+.love-footer {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  align-items: start;
+  gap: 32px;
+  padding: 48px 36px 32px;
+  min-height: auto !important;
+  height: auto !important;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footer-links a {
+  margin: 0;
+}
+
+/* Mobile footer */
+@media (max-width: 768px) {
+  .love-footer {
+    grid-template-columns: 1fr;
+    padding: 36px 20px 28px;
+    gap: 24px;
+  }
+}
