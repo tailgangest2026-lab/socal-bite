@@ -10,67 +10,29 @@
   <link rel="stylesheet" href="css/components.css">
   <link rel="stylesheet" href="css/about.css">
   <link rel="stylesheet" href="css/forms.css">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16.png">
-  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/icons/favicon-16.png">
+  <link rel="manifest" href="../manifest.json">
 
 <meta name="theme-color" content="#031828">
 
 <link
   rel="apple-touch-icon"
-  href="/assets/icons/apple-touch-icon.png"
+  href="../assets/icons/apple-touch-icon.png"
 />
-  <link rel="canonical" href="https://thesocalbite.com/about.html" />
+  <link rel="canonical" href="https://thesocalbite.com/about" />
   <meta property="og:title" content="About | SoCal Bite" />
   <meta property="og:description" content="Learn about SoCal Bite, a Southern California fishing report site with daily fish counts, top boats, landings, species trends, and bite updates." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://thesocalbite.com/about.html" />
+  <meta property="og:url" content="https://thesocalbite.com/about" />
   <meta property="og:image" content="https://thesocalbite.com/assets/socal-bite-logo.webp" />
 </head>
 
-<body class="inner-page">
-    
+<body>
+    <div id="site-header"></div>
   <section class="page-top">
     <h1>About SoCal Bite</h1>
-
-    <nav class="page-nav">
-           <a href="index.html"><i class="fa-solid fa-house"></i><span>Home</span></a>
-
-      <div class="dropdown">
-        <button class="dropbtn"><i class="fa-solid fa-chart-line"></i><span>Boat Reports</span><i class="fa-solid fa-caret-down caret"></i></button>
-        <div class="dropdown-content">
-          <a href="daily-report.html">Daily Report</a>
-          <a href="boat-ratings.html">Boat Ratings</a>
-          <a href="top-boats.html">Top Boats</a>
-        </div>
-      </div>
-<div class="dropdown">
-        <button class="dropbtn"><i class="fa-solid fa-chart-line"></i><span>Species Reports</span><i class="fa-solid fa-caret-down caret"></i></button>
-        <div class="dropdown-content">
-        <a href="bite-trends.html">Bite Trends</a>
-         <a href="forecast">Bite Forecast</a>
-        <a href="species.html">Species</a>
-        <a href="top-species.html">Top Species</a>
-            </div>
-   </div>
-        <div class="dropdown">
-        <button class="dropbtn">
-          <i class="fa-solid fa-water"></i>
-          <span>Conditions</span>
-          <i class="fa-solid fa-caret-down caret"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="boat-conditions.html">Boat Conditions</a>
-          <a href="beach-conditions.html">Surf Conditions</a>
-          <a href="pier-conditions.html">Pier Conditions</a>
-        </div>
-      </div>
-      <a href="news.html"><i class="fa-solid fa-newspaper"></i><span>Fishing News</span></a>
-      <a href="landings.html"><i class="fa-solid fa-fish"></i><span>Landings</span></a>
-      <a href="about.html"><i class="fa-solid fa-user"></i><span>About</span></a>      
-        </nav>
-  </section>
-
+    
   <main class="report-page">
 
     <div class="region-section">
@@ -133,20 +95,7 @@
     </div>
 
   </main>
-
-<footer class="site-footer">
-  <p>© 2026 The SoCal Bite • Fishing Reports & Bite Updates</p>
-
-<div class="social-links">
-  <a href="https://www.instagram.com/the_socal_bite/" target="_blank" aria-label="Instagram">
-    <img src="assets/instagram-icon.png" class="social-logo" alt="Instagram" loading="lazy">
-  </a>
-
-  <a href="https://www.facebook.com/profile.php?id=61590740421081" target="_blank" aria-label="Facebook">
-    <img src="assets/facebook-icon.png" class="social-logo" alt="Facebook" loading="lazy">
-  </a>
-</div>
-</footer>
+ <div id="site-footer"></div>
 <script>
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
