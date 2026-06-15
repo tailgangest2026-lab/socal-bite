@@ -1,1 +1,31 @@
+<footer class="love-footer">
+  <div class="footer-brand">
+    <strong>◎ The SoCal Bite</strong>
+    <p>
+      Real-time fishing intelligence for Southern California —
+      from San Luis Obispo to San Diego.
+    </p>
+    <span>Data refresh · Every 15 min</span>
+  </div>
 
+  <div class="footer-links">
+    <h4>Intelligence</h4>
+    <a href="/Socal-Bite-test/forecast/">Forecast</a>
+    <a href="/Socal-Bite-test/rankings/">Rankings</a>
+    <a href="/Socal-Bite-test/species/">Species</a>
+  </div>
+
+  <div class="footer-links">
+    <h4>Conditions</h4>
+    <a href="/Socal-Bite-test/conditions/">Conditions</a>
+    <a href="/Socal-Bite-test/landings/">Landings</a>
+    <a href="/Socal-Bite-test/reports/">Reports</a>
+  </div>
+
+  <div class="footer-links">
+    <h4>More</h4>
+    <a href="/Socal-Bite-test/gear/">Fishing Gear</a>
+    <a href="/Socal-Bite-test/news/">News</a>
+    <a href="/Socal-Bite-test/">Home</a>
+  </div>
+</footer>
