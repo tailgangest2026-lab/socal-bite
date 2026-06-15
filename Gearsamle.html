@@ -9,7 +9,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://thesocalbite.com/gear.html" />
   <meta property="og:image" content="https://thesocalbite.com/assets/socal-bite-logo.webp" />
-  <link rel="stylesheet" href="style.css?v=loveable-gear-2" />
+  <link rel="stylesheet" href="style.css?v=loveable-gear-3" />
 </head>
 
 <body>
@@ -51,15 +51,15 @@
     </section>
 
     <section id="gearTabs" class="gear-tabs">
-      <span class="active">Loading...</span>
+      <button class="gear-tab active" type="button">Loading...</button>
     </section>
-    
+
     <section class="gear-filter-bar">
-    <select id="setupFilter" class="gear-select">
-    <option value="all">All Setups</option>
-  
-    </select>
-</section>
+      <select id="setupFilter" class="gear-select">
+        <option value="all">All Setups</option>
+      </select>
+    </section>
+
     <section id="gearGrid" class="gear-coming-grid">
       <article class="gear-soon-card">
         <h2>Loading gear...</h2>
@@ -91,6 +91,7 @@
   <script>
     let allGear = [];
     let activeCategory = "All Gear";
+    let activeSetup = "all";
 
     document.addEventListener("DOMContentLoaded", initGearPage);
 
@@ -110,6 +111,7 @@
         }
 
         buildGearTabs();
+        buildSetupFilter();
         renderGearCards();
 
       } catch (error) {
@@ -123,7 +125,11 @@
 
       const categories = [
         "All Gear",
-        ...new Set(allGear.map(item => cleanText(item.category)).filter(Boolean))
+        ...new Set(
+          allGear
+            .map(item => cleanText(item.category))
+            .filter(Boolean)
+        )
       ];
 
       tabs.innerHTML = categories.map(category => `
@@ -139,24 +145,57 @@
       tabs.querySelectorAll(".gear-tab").forEach(button => {
         button.addEventListener("click", () => {
           activeCategory = button.dataset.category;
-          buildGearTabs();
           renderGearCards();
+
+          tabs.querySelectorAll(".gear-tab").forEach(tab => {
+            tab.classList.remove("active");
+          });
+
+          button.classList.add("active");
         });
+      });
+    }
+
+    function buildSetupFilter() {
+      const select = document.getElementById("setupFilter");
+
+      const setups = [
+        ...new Set(
+          allGear
+            .map(item => cleanText(item.setup_name))
+            .filter(Boolean)
+        )
+      ];
+
+      select.innerHTML = `
+        <option value="all">All Setups</option>
+        ${setups.map(setup => `
+          <option value="${escapeHtml(setup)}">${escapeHtml(setup)}</option>
+        `).join("")}
+      `;
+
+      select.addEventListener("change", () => {
+        activeSetup = select.value;
+        renderGearCards();
       });
     }
 
     function renderGearCards() {
       const grid = document.getElementById("gearGrid");
 
-      const items = activeCategory === "All Gear"
+      let items = activeCategory === "All Gear"
         ? allGear
         : allGear.filter(item => cleanText(item.category) === activeCategory);
+
+      if (activeSetup !== "all") {
+        items = items.filter(item => cleanText(item.setup_name) === activeSetup);
+      }
 
       if (!items.length) {
         grid.innerHTML = `
           <article class="gear-soon-card">
             <h2>No gear found</h2>
-            <p>No products found for ${escapeHtml(activeCategory)}.</p>
+            <p>No products found for the selected filters.</p>
           </article>
         `;
         return;
@@ -211,6 +250,7 @@
 
     function showGearError(message) {
       document.getElementById("gearTabs").innerHTML = "";
+      document.getElementById("setupFilter").innerHTML = `<option value="all">All Setups</option>`;
       document.getElementById("gearGrid").innerHTML = `
         <article class="gear-soon-card">
           <h2>${escapeHtml(message)}</h2>
