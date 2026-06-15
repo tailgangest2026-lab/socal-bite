@@ -59,7 +59,7 @@ jobs:
           download_json "species" "species.json"
           download_json "trip-types" "trip-types.json"
           download_json "boat-detail" "boat-detail.json"
-          download_json "conditions" "conditions.json"
+          download_json "gear" "gear.json"
           download_json "daily-report" "daily-report.json"
           download_json "daily-report-index" "daily-report-index.json"
 
