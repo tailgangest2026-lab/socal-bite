@@ -3,6 +3,16 @@
     "trip_date": "2026-06-14",
     "region": "Los Angeles",
     "landing": "22nd Street Landing",
+    "boat": "Apollo",
+    "trip_type": "2 Day",
+    "anglers": 20,
+    "fish_counts": "10 Bluefin Tuna, 6 Bonito, 4 Calico Bass, 5 Sheephead, 38 Yellowtail",
+    "total_fish": 63
+  },
+  {
+    "trip_date": "2026-06-14",
+    "region": "Los Angeles",
+    "landing": "22nd Street Landing",
     "boat": "Freedom",
     "trip_type": "Overnight",
     "anglers": 36,
@@ -18,6 +28,16 @@
     "anglers": 35,
     "fish_counts": "5 Barracuda, 4 Bonito, 63 Calico Bass, 68 Calico Bass Released, 11 Sheephead, 16 Whitefish",
     "total_fish": 167
+  },
+  {
+    "trip_date": "2026-06-14",
+    "region": "Los Angeles",
+    "landing": "22nd Street Landing",
+    "boat": "Native Sun",
+    "trip_type": "3/4 Day",
+    "anglers": 33,
+    "fish_counts": "11 Barracuda, 42 Bonito, 87 Calico Bass, 61 Calico Bass Released, 34 Sheephead, 64 Whitefish, 3 Yellowtail",
+    "total_fish": 302
   },
   {
     "trip_date": "2026-06-14",
@@ -58,6 +78,26 @@
     "anglers": 35,
     "fish_counts": "1 Bonito, 28 Calico Bass, 55 Calico Bass Released, 6 Sheephead, 4 Whitefish, 2 Yellowtail",
     "total_fish": 96
+  },
+  {
+    "trip_date": "2026-06-14",
+    "region": "Los Angeles",
+    "landing": "LA Waterfront Cruises and Sportfishing",
+    "boat": "Sport King",
+    "trip_type": "3/4 Day",
+    "anglers": 33,
+    "fish_counts": "37 Calico Bass, 50 Calico Bass Released, 15 Yellowtail",
+    "total_fish": 102
+  },
+  {
+    "trip_date": "2026-06-14",
+    "region": "Los Angeles",
+    "landing": "LA Waterfront Cruises and Sportfishing",
+    "boat": "Triton",
+    "trip_type": "3/4 Day",
+    "anglers": 25,
+    "fish_counts": "43 Calico Bass, 55 Calico Bass Released, 17 Whitefish, 5 Yellowtail",
+    "total_fish": 120
   },
   {
     "trip_date": "2026-06-14",
@@ -513,6 +553,16 @@
     "trip_date": "2026-06-14",
     "region": "Orange County",
     "landing": "Dana Wharf Sportfishing",
+    "boat": "Current",
+    "trip_type": "1/2 Day PM",
+    "anglers": 4,
+    "fish_counts": "10 Calico Bass, 40 Calico Bass Released",
+    "total_fish": 50
+  },
+  {
+    "trip_date": "2026-06-14",
+    "region": "Orange County",
+    "landing": "Dana Wharf Sportfishing",
     "boat": "Dana Pride",
     "trip_type": "3/4 Day",
     "anglers": 55,
@@ -563,11 +613,31 @@
     "trip_date": "2026-06-14",
     "region": "Orange County",
     "landing": "Dana Wharf Sportfishing",
+    "boat": "Fury",
+    "trip_type": "Overnight",
+    "anglers": 15,
+    "fish_counts": "10 Barracuda, 1 Bonito, 75 Calico Bass, 20 Rockfish, 13 Sheephead, 49 Whitefish, 26 Yellowtail",
+    "total_fish": 194
+  },
+  {
+    "trip_date": "2026-06-14",
+    "region": "Orange County",
+    "landing": "Dana Wharf Sportfishing",
     "boat": "New San Mateo",
     "trip_type": "Full Day",
     "anglers": 14,
     "fish_counts": "3 Barracuda, 6 Bonito, 40 Calico Bass, 2 Yellowtail",
     "total_fish": 51
+  },
+  {
+    "trip_date": "2026-06-14",
+    "region": "Orange County",
+    "landing": "Dana Wharf Sportfishing",
+    "boat": "New San Mateo",
+    "trip_type": "Full Day",
+    "anglers": 13,
+    "fish_counts": "4 Barracuda, 9 Bonito, 59 Calico Bass, 1 Whitefish, 2 Yellowtail",
+    "total_fish": 75
   },
   {
     "trip_date": "2026-06-14",
