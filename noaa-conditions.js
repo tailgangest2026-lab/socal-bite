@@ -1,11 +1,17 @@
 window.SCBConditions = (() => {
   const noaaStations = {
-    "Santa Barbara": "9411340",
-    "Ventura": "9411189",
-    "Los Angeles": "9410660",
-    "Orange County": "9410580",
-    "San Diego": "9410170",
-    "La Jolla": "9410230"
+  "Los Angeles": "9410660",
+  "Catalina Island": "9410079",
+  "Orange County": "9410580",
+  "San Diego": "9410170",
+  "La Jolla": "9410230",
+  "Ventura": "9411189",
+  "Santa Barbara": "9411340",
+  "Central Coast": "9412110",
+  "Monterey Bay": "9413450",
+  "San Francisco Bay": "9414290",
+  "Bodega Bay": "9415625",
+  "Humboldt": "9418767"
   };
 
   async function getWeather(lat, lon, dateString) {
