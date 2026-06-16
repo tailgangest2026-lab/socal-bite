@@ -39,7 +39,7 @@ async function fetchReportYear(year) {
     return reportYearCache[year];
   }
 
-  const rows = await fetchJson(`reports/reports-${year}.json`);
+  const rows = await fetchJson(`../reports/reports-${year}.json`);
   reportYearCache[year] = Array.isArray(rows) ? rows : [];
 
   return reportYearCache[year];
