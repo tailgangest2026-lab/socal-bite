@@ -1,101 +1,99 @@
 (() => {
   const DEBUG = true;
 
-const LOCATIONS = {
-  "NorCal": {
-    county: "NorCal",
-    lat: 38.4404,
-    lon: -123.1190,
-    station: "9415625",
-    fallbackWater: 54,
-    fallbackSwell: 5.0
-  },
-
-  "San Francisco Bay": {
-    county: "San Francisco Bay",
-    lat: 37.8060,
-    lon: -122.4659,
-    station: "9414290",
-    fallbackWater: 56,
-    fallbackSwell: 4.5
-  },
-
-  "Monterey County": {
-    county: "Monterey County",
-    lat: 36.6002,
-    lon: -121.8947,
-    station: "9413450",
-    fallbackWater: 57,
-    fallbackSwell: 4.0
-  },
-
-  "Central California": {
-    county: "Central California",
-    lat: 35.3658,
-    lon: -120.8499,
-    station: "9412110",
-    fallbackWater: 59,
-    fallbackSwell: 3.5
-  },
-
-  "San Luis Obispo County": {
-    county: "San Luis Obispo County",
-    lat: 35.2828,
-    lon: -120.6596,
-    station: "9412110",
-    fallbackWater: 60,
-    fallbackSwell: 3.0
-  },
-
-  "Santa Barbara County": {
-    county: "Santa Barbara County",
-    lat: 34.4208,
-    lon: -119.6982,
-    station: "9411340",
-    fallbackWater: 61,
-    fallbackSwell: 2.8
-  },
-
-  "Ventura County": {
-    county: "Ventura County",
-    lat: 34.2746,
-    lon: -119.2290,
-    station: "9411189",
-    fallbackWater: 62,
-    fallbackSwell: 3.0
-  },
-
-  "Los Angeles County": {
-    county: "Los Angeles County",
-    lat: 33.7405,
-    lon: -118.2817,
-    station: "9410660",
-    fallbackWater: 65,
-    fallbackSwell: 2.6
-  },
-
-  "Orange County": {
-    county: "Orange County",
-    lat: 33.6037,
-    lon: -117.9000,
-    station: "9410580",
-    fallbackWater: 66,
-    fallbackSwell: 2.5
-  },
-
-  "San Diego County": {
-    county: "San Diego County",
-    lat: 32.7157,
-    lon: -117.1611,
-    station: "9410170",
-    fallbackWater: 67,
-    fallbackSwell: 2.4
-  }
-};
-  
+  const LOCATIONS = {
+    "NorCal": {
+      county: "NorCal",
+      lat: 38.4404,
+      lon: -123.1190,
+      station: "9415625",
+      fallbackWater: 54,
+      fallbackSwell: 5.0
+    },
+    "San Francisco Bay": {
+      county: "San Francisco Bay",
+      lat: 37.8060,
+      lon: -122.4659,
+      station: "9414290",
+      fallbackWater: 56,
+      fallbackSwell: 4.5
+    },
+    "Alameda County": {
+      county: "Alameda County",
+      lat: 37.7749,
+      lon: -122.2960,
+      station: "9414290",
+      fallbackWater: 56,
+      fallbackSwell: 4.5
+    },
+    "Monterey County": {
+      county: "Monterey County",
+      lat: 36.6002,
+      lon: -121.8947,
+      station: "9413450",
+      fallbackWater: 57,
+      fallbackSwell: 4.0
+    },
+    "Central California": {
+      county: "Central California",
+      lat: 35.3658,
+      lon: -120.8499,
+      station: "9412110",
+      fallbackWater: 59,
+      fallbackSwell: 3.5
+    },
+    "San Luis Obispo County": {
+      county: "San Luis Obispo County",
+      lat: 35.2828,
+      lon: -120.6596,
+      station: "9412110",
+      fallbackWater: 60,
+      fallbackSwell: 3.0
+    },
+    "Santa Barbara County": {
+      county: "Santa Barbara County",
+      lat: 34.4208,
+      lon: -119.6982,
+      station: "9411340",
+      fallbackWater: 61,
+      fallbackSwell: 2.8
+    },
+    "Ventura County": {
+      county: "Ventura County",
+      lat: 34.2746,
+      lon: -119.2290,
+      station: "9411189",
+      fallbackWater: 62,
+      fallbackSwell: 3.0
+    },
+    "Los Angeles County": {
+      county: "Los Angeles County",
+      lat: 33.7405,
+      lon: -118.2817,
+      station: "9410660",
+      fallbackWater: 65,
+      fallbackSwell: 2.6
+    },
+    "Orange County": {
+      county: "Orange County",
+      lat: 33.6037,
+      lon: -117.9000,
+      station: "9410580",
+      fallbackWater: 66,
+      fallbackSwell: 2.5
+    },
+    "San Diego County": {
+      county: "San Diego County",
+      lat: 32.7157,
+      lon: -117.1611,
+      station: "9410170",
+      fallbackWater: 67,
+      fallbackSwell: 2.4
+    }
+  };
 
   let currentMode = "pier";
-  let currentRegion = "Los Angeles";
+  let currentRegion = "Los Angeles County";
   let requestId = 0;
 
   document.addEventListener("DOMContentLoaded", () => {
@@ -150,7 +148,7 @@ const LOCATIONS = {
 
     tabs.querySelectorAll("button").forEach(button => {
       button.addEventListener("click", () => {
-        currentRegion = button.dataset.region || "Los Angeles";
+        currentRegion = button.dataset.region || "Los Angeles County";
         buildRegionTabs();
         loadConditions();
       });
@@ -160,7 +158,7 @@ const LOCATIONS = {
   async function loadConditions() {
     const thisRequest = ++requestId;
 
-    const base = LOCATIONS[currentRegion] || LOCATIONS["Los Angeles"];
+    const base = LOCATIONS[currentRegion] || LOCATIONS["Los Angeles County"];
 
     const date =
       document.getElementById("dateSelect")?.value ||
@@ -178,10 +176,7 @@ const LOCATIONS = {
     try {
       const data = await fetchConditionData(base, date);
 
-      if (thisRequest !== requestId) {
-        debug("Skipped old request:", thisRequest);
-        return;
-      }
+      if (thisRequest !== requestId) return;
 
       renderMainConditions({
         mode: currentMode,
@@ -200,15 +195,12 @@ const LOCATIONS = {
   function setLoadingState() {
     setText("conditionLocationLabel", `${currentRegion} · ${labelMode(currentMode)}`);
     setText("conditionWaterTemp", "--°");
-    setText("conditionAirTemp", "water · air --°F");
+    setText("conditionAirOnlyTemp", "--°");
     setText("conditionRating", "Loading");
-
     setText("conditionWind", "--");
     setText("conditionWindDir", "--");
-
     setText("conditionForecast", "--");
     setText("conditionCloudRain", "Cloud / rain");
-
     setText("conditionSwell", "--");
     setText("conditionSwellPeriod", "Loading");
     setText("conditionTide", "--");
@@ -230,14 +222,6 @@ const LOCATIONS = {
         ? SCBConditions.getMarine(base.lat, base.lon, date)
         : Promise.resolve(null)
     ]);
-
-    debug("NOAA RESPONSE:", {
-      date,
-      weather,
-      tides,
-      waterTemp,
-      marine
-    });
 
     const wind = SCBConditions.parseWindSpeed(weather?.windSpeed, 8);
     const gusts = Number(weather?.windGusts || 0);
@@ -274,6 +258,8 @@ const LOCATIONS = {
 
     const tideMovement = getTideMovement(tides, date);
 
+    const astronomy = getAstronomy(base.lat, base.lon, date);
+
     const score = calculateModeScore({
       mode: currentMode,
       wind,
@@ -301,6 +287,7 @@ const LOCATIONS = {
       swellPeriod,
       swellDirection,
       tideMovement,
+      astronomy,
       score,
       rating
     };
@@ -311,6 +298,7 @@ const LOCATIONS = {
       mode,
       region,
       date,
+      base,
       weather,
       tides,
       wind,
@@ -321,6 +309,7 @@ const LOCATIONS = {
       swellPeriod,
       swellDirection,
       tideMovement,
+      astronomy,
       score,
       rating
     } = data;
@@ -328,14 +317,11 @@ const LOCATIONS = {
     setText("conditionLocationLabel", `${region} · ${labelMode(mode)} · ${formatDateLabel(date)}`);
     setText("conditionTitle", `${formatDateLabel(date)}'s Conditions`);
 
-setText("conditionWaterTemp", `${Math.round(temp)}°`);
-setText("conditionWaterLabel", waterTempLabel);
+    setText("conditionWaterTemp", `${Math.round(temp)}°`);
+    setText("conditionWaterLabel", waterTempLabel);
 
-setText(
-  "conditionAirOnlyTemp",
-  `${Math.round(weather?.temperature ?? 0) || "--"}°`
-);
-setText("conditionAirLabel", "Forecast air temp");
+    setText("conditionAirOnlyTemp", `${Math.round(weather?.temperature ?? 0) || "--"}°`);
+    setText("conditionAirLabel", "Forecast air temp");
 
     const ratingEl = document.getElementById("conditionRating");
     if (ratingEl) {
@@ -375,9 +361,9 @@ setText("conditionAirLabel", "Forecast air temp");
       mode === "beach" ? "Surf zone" : mode === "pier" ? "Pier zone" : "Offshore zone"
     );
 
-    setText("conditionMoon", getMoonPhase(date));
-    setText("conditionSunrise", weather?.sunrise || getEstimatedSunrise(date));
-    setText("conditionSunset", weather?.sunset || getEstimatedSunset(date));
+    setText("conditionMoon", astronomy.moon);
+    setText("conditionSunrise", weather?.sunrise || astronomy.sunrise);
+    setText("conditionSunset", weather?.sunset || astronomy.sunset);
     setText("conditionAdvisory", wind >= 18 || gusts >= 25 || swell >= 5 ? "Possible" : "None");
   }
 
@@ -425,7 +411,7 @@ setText("conditionAirLabel", "Forecast air temp");
               <p><span>Rain</span>${data.weather?.precipitationProbability ?? "--"}%</p>
               <p><span>Swell</span>${data.swell.toFixed(1)} ft</p>
               <p><span>Tide</span>${safe(data.tideMovement)}</p>
-              <p><span>Moon</span>${safe(getMoonPhase(date))}</p>
+              <p><span>Moon</span>${safe(data.astronomy.moon)}</p>
               <p><span>Rating</span>${safe(data.rating)}</p>
             </div>
           </article>
@@ -452,18 +438,127 @@ setText("conditionAirLabel", "Forecast air temp");
     }
   }
 
+  function getAstronomy(lat, lon, dateString) {
+    return {
+      sunrise: calculateSunTime(lat, lon, dateString, true),
+      sunset: calculateSunTime(lat, lon, dateString, false),
+      moon: getMoonPhase(dateString)
+    };
+  }
+
+  function calculateSunTime(lat, lon, dateString, isSunrise) {
+    const date = dateString
+      ? new Date(`${dateString}T12:00:00`)
+      : new Date();
+
+    const zenith = 90.833;
+    const dayOfYear = getDayOfYear(date);
+    const lngHour = lon / 15;
+
+    const t = isSunrise
+      ? dayOfYear + ((6 - lngHour) / 24)
+      : dayOfYear + ((18 - lngHour) / 24);
+
+    const meanAnomaly = (0.9856 * t) - 3.289;
+
+    let trueLongitude =
+      meanAnomaly +
+      (1.916 * Math.sin(toRadians(meanAnomaly))) +
+      (0.020 * Math.sin(toRadians(2 * meanAnomaly))) +
+      282.634;
+
+    trueLongitude = normalizeDegrees(trueLongitude);
+
+    let rightAscension = toDegrees(
+      Math.atan(0.91764 * Math.tan(toRadians(trueLongitude)))
+    );
+
+    rightAscension = normalizeDegrees(rightAscension);
+
+    const longitudeQuadrant = Math.floor(trueLongitude / 90) * 90;
+    const raQuadrant = Math.floor(rightAscension / 90) * 90;
+    rightAscension = rightAscension + longitudeQuadrant - raQuadrant;
+    rightAscension = rightAscension / 15;
+
+    const sinDeclination = 0.39782 * Math.sin(toRadians(trueLongitude));
+    const cosDeclination = Math.cos(Math.asin(sinDeclination));
+
+    const cosHourAngle =
+      (Math.cos(toRadians(zenith)) -
+        (sinDeclination * Math.sin(toRadians(lat)))) /
+      (cosDeclination * Math.cos(toRadians(lat)));
+
+    if (cosHourAngle > 1 || cosHourAngle < -1) return "--";
+
+    let hourAngle = isSunrise
+      ? 360 - toDegrees(Math.acos(cosHourAngle))
+      : toDegrees(Math.acos(cosHourAngle));
+
+    hourAngle = hourAngle / 15;
+
+    const localMeanTime =
+      hourAngle +
+      rightAscension -
+      (0.06571 * t) -
+      6.622;
+
+    const utcTime = normalizeHours(localMeanTime - lngHour);
+
+    const utcDate = new Date(Date.UTC(
+      date.getFullYear(),
+      date.getMonth(),
+      date.getDate(),
+      0,
+      0,
+      0
+    ));
+
+    utcDate.setUTCHours(0, 0, 0, 0);
+    utcDate.setUTCMinutes(Math.round(utcTime * 60));
+
+    return utcDate.toLocaleTimeString("en-US", {
+      hour: "numeric",
+      minute: "2-digit",
+      timeZone: "America/Los_Angeles"
+    });
+  }
+
+  function getMoonPhase(dateString) {
+    const date = dateString
+      ? new Date(`${dateString}T12:00:00`)
+      : new Date();
+
+    const knownNewMoon = new Date("2026-06-10T12:00:00");
+    const lunarCycle = 29.53058867;
+
+    const daysSinceNewMoon = (date - knownNewMoon) / 86400000;
+    const moonAge = ((daysSinceNewMoon % lunarCycle) + lunarCycle) % lunarCycle;
+
+    const illumination = Math.round(
+      (1 - Math.cos((2 * Math.PI * moonAge) / lunarCycle)) * 50
+    );
+
+    let phase = "New Moon";
+
+    if (moonAge < 1.84566) phase = "New Moon";
+    else if (moonAge < 5.53699) phase = "Waxing Crescent";
+    else if (moonAge < 9.22831) phase = "First Quarter";
+    else if (moonAge < 12.91963) phase = "Waxing Gibbous";
+    else if (moonAge < 16.61096) phase = "Full Moon";
+    else if (moonAge < 20.30228) phase = "Waning Gibbous";
+    else if (moonAge < 23.99361) phase = "Last Quarter";
+    else if (moonAge < 27.68493) phase = "Waning Crescent";
+
+    return `${phase} ${illumination}%`;
+  }
+
   function estimateFutureWaterTemp(currentWaterTemp, dateString, airTemp) {
     const today = new Date(`${getTodayString()}T12:00:00`);
     const target = new Date(`${dateString}T12:00:00`);
 
-    const daysAhead = Math.max(
-      0,
-      Math.round((target - today) / 86400000)
-    );
+    const daysAhead = Math.max(0, Math.round((target - today) / 86400000));
 
-    if (daysAhead === 0) {
-      return roundOne(currentWaterTemp);
-    }
+    if (daysAhead === 0) return roundOne(currentWaterTemp);
 
     const air = Number(airTemp || 70);
     const airInfluence = (air - currentWaterTemp) * 0.08;
@@ -474,13 +569,7 @@ setText("conditionAirLabel", "Forecast air temp");
       daysAhead * seasonalTrend +
       airInfluence;
 
-    const limitedEstimate = clamp(
-      estimate,
-      currentWaterTemp - 3,
-      currentWaterTemp + 3
-    );
-
-    return roundOne(limitedEstimate);
+    return roundOne(clamp(estimate, currentWaterTemp - 3, currentWaterTemp + 3));
   }
 
   function getSeasonalWaterTrend(dateString) {
@@ -534,26 +623,18 @@ setText("conditionAirLabel", "Forecast air temp");
       else if (swell < 1.5) score -= 5;
     }
 
-    if (waterTemp >= 63 && waterTemp <= 69) {
-      score += 8;
-    } else if (waterTemp < 58 || waterTemp > 74) {
-      score -= 8;
-    }
+    if (waterTemp >= 63 && waterTemp <= 69) score += 8;
+    else if (waterTemp < 58 || waterTemp > 74) score -= 8;
 
     const tideText = String(tideMovement).toLowerCase();
 
-    if (tideText.includes("moving")) {
-      score += 10;
-    } else if (tideText.includes("slack")) {
-      score -= 6;
-    }
+    if (tideText.includes("moving")) score += 10;
+    else if (tideText.includes("slack")) score -= 6;
 
     if (rainChance > 60) score -= 15;
     else if (rainChance > 30) score -= 8;
 
-    if (mode === "beach" && uvIndex > 9) {
-      score -= 5;
-    }
+    if (mode === "beach" && uvIndex > 9) score -= 5;
 
     return Math.max(25, Math.min(100, Math.round(score)));
   }
@@ -612,10 +693,7 @@ setText("conditionAirLabel", "Forecast air temp");
 
   function getTargetTideTime(selectedDate) {
     if (!selectedDate) return new Date();
-
-    if (isToday(selectedDate)) {
-      return new Date();
-    }
+    if (isToday(selectedDate)) return new Date();
 
     return new Date(`${selectedDate}T12:00:00`);
   }
@@ -623,7 +701,7 @@ setText("conditionAirLabel", "Forecast air temp");
   function estimateVisibility(region, wind, apiVisibility) {
     if (apiVisibility) return `${apiVisibility} mi`;
     if (wind >= 15) return "6 mi";
-    if (region === "San Diego") return "13 mi";
+    if (region === "San Diego County") return "13 mi";
     return "10 mi";
   }
 
@@ -676,55 +754,6 @@ setText("conditionAirLabel", "Forecast air temp");
     });
   }
 
-  function getMoonPhase(dateString) {
-    const date = dateString
-      ? new Date(`${dateString}T12:00:00`)
-      : new Date();
-
-    const knownNewMoon = new Date("2026-06-10T12:00:00");
-    const lunarCycle = 29.53058867;
-
-    const daysSinceNewMoon = (date - knownNewMoon) / 86400000;
-    const moonAge = ((daysSinceNewMoon % lunarCycle) + lunarCycle) % lunarCycle;
-
-    const illumination = Math.round(
-      (1 - Math.cos((2 * Math.PI * moonAge) / lunarCycle)) * 50
-    );
-
-    let phase = "New Moon";
-
-    if (moonAge < 1.84566) phase = "New Moon";
-    else if (moonAge < 5.53699) phase = "Waxing Crescent";
-    else if (moonAge < 9.22831) phase = "First Quarter";
-    else if (moonAge < 12.91963) phase = "Waxing Gibbous";
-    else if (moonAge < 16.61096) phase = "Full Moon";
-    else if (moonAge < 20.30228) phase = "Waning Gibbous";
-    else if (moonAge < 23.99361) phase = "Last Quarter";
-    else if (moonAge < 27.68493) phase = "Waning Crescent";
-
-    return `${phase} ${illumination}%`;
-  }
-
-  function getEstimatedSunrise(dateString) {
-    const month = getDateMonth(dateString);
-
-    if (month >= 5 && month <= 8) return "5:45 AM";
-    if (month >= 3 && month <= 4) return "6:20 AM";
-    if (month >= 9 && month <= 10) return "6:35 AM";
-
-    return "6:50 AM";
-  }
-
-  function getEstimatedSunset(dateString) {
-    const month = getDateMonth(dateString);
-
-    if (month >= 5 && month <= 8) return "8:00 PM";
-    if (month >= 3 && month <= 4) return "7:15 PM";
-    if (month >= 9 && month <= 10) return "6:45 PM";
-
-    return "5:00 PM";
-  }
-
   function getDateMonth(dateString) {
     const date = dateString
       ? new Date(`${dateString}T12:00:00`)
@@ -747,6 +776,27 @@ setText("conditionAirLabel", "Forecast air temp");
     const day = String(date.getDate()).padStart(2, "0");
 
     return `${year}-${month}-${day}`;
+  }
+
+  function getDayOfYear(date) {
+    const start = new Date(date.getFullYear(), 0, 0);
+    return Math.floor((date - start) / 86400000);
+  }
+
+  function toRadians(degrees) {
+    return degrees * Math.PI / 180;
+  }
+
+  function toDegrees(radians) {
+    return radians * 180 / Math.PI;
+  }
+
+  function normalizeDegrees(value) {
+    return ((value % 360) + 360) % 360;
+  }
+
+  function normalizeHours(value) {
+    return ((value % 24) + 24) % 24;
   }
 
   function clamp(value, min, max) {
