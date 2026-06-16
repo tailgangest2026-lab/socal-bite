@@ -9,7 +9,7 @@ async function loadBiteTrends() {
   try {
     container.innerHTML = "<h2>Loading bite trends...</h2>";
 
-    const data = await fetchJsonSafe(socalBiteDataUrl("bite-trends.json"));
+    const data = await fetchJsonSafe(socalBiteDataUrl("../bite-trends.json"));
 
     if (!Array.isArray(data) || !data.length) {
       container.innerHTML = "<h2>No bite trend data found.</h2>";
