@@ -940,3 +940,140 @@ function escapeAttr(value) {
     .replaceAll("'", "\\'")
     .replaceAll('"', "&quot;");
 }
+function getAstronomy(lat, lon, dateString) {
+  return {
+    sunrise: calculateSunTime(lat, lon, dateString, true),
+    sunset: calculateSunTime(lat, lon, dateString, false),
+    moon: getMoonPhase(dateString)
+  };
+}
+
+function calculateSunTime(lat, lon, dateString, isSunrise) {
+  const date = dateString
+    ? new Date(`${dateString}T12:00:00`)
+    : new Date();
+
+  const zenith = 90.833;
+  const dayOfYear = getDayOfYear(date);
+  const lngHour = lon / 15;
+
+  const t = isSunrise
+    ? dayOfYear + ((6 - lngHour) / 24)
+    : dayOfYear + ((18 - lngHour) / 24);
+
+  const meanAnomaly = (0.9856 * t) - 3.289;
+
+  let trueLongitude =
+    meanAnomaly +
+    (1.916 * Math.sin(toRadians(meanAnomaly))) +
+    (0.020 * Math.sin(toRadians(2 * meanAnomaly))) +
+    282.634;
+
+  trueLongitude = normalizeDegrees(trueLongitude);
+
+  let rightAscension = toDegrees(
+    Math.atan(0.91764 * Math.tan(toRadians(trueLongitude)))
+  );
+
+  rightAscension = normalizeDegrees(rightAscension);
+
+  const longitudeQuadrant = Math.floor(trueLongitude / 90) * 90;
+  const raQuadrant = Math.floor(rightAscension / 90) * 90;
+
+  rightAscension = rightAscension + longitudeQuadrant - raQuadrant;
+  rightAscension = rightAscension / 15;
+
+  const sinDeclination = 0.39782 * Math.sin(toRadians(trueLongitude));
+  const cosDeclination = Math.cos(Math.asin(sinDeclination));
+
+  const cosHourAngle =
+    (Math.cos(toRadians(zenith)) -
+      (sinDeclination * Math.sin(toRadians(lat)))) /
+    (cosDeclination * Math.cos(toRadians(lat)));
+
+  if (cosHourAngle > 1 || cosHourAngle < -1) {
+    return "--";
+  }
+
+  let hourAngle = isSunrise
+    ? 360 - toDegrees(Math.acos(cosHourAngle))
+    : toDegrees(Math.acos(cosHourAngle));
+
+  hourAngle = hourAngle / 15;
+
+  const localMeanTime =
+    hourAngle +
+    rightAscension -
+    (0.06571 * t) -
+    6.622;
+
+  const utcTime = normalizeHours(localMeanTime - lngHour);
+
+  const utcDate = new Date(Date.UTC(
+    date.getFullYear(),
+    date.getMonth(),
+    date.getDate(),
+    0,
+    0,
+    0
+  ));
+
+  utcDate.setUTCMinutes(Math.round(utcTime * 60));
+
+  return utcDate.toLocaleTimeString("en-US", {
+    hour: "numeric",
+    minute: "2-digit",
+    timeZone: "America/Los_Angeles"
+  });
+}
+
+function getMoonPhase(dateString) {
+  const date = dateString
+    ? new Date(`${dateString}T12:00:00`)
+    : new Date();
+
+  const knownNewMoon = new Date("2000-01-06T18:14:00Z");
+  const lunarCycle = 29.53058867;
+
+  const daysSinceNewMoon = (date - knownNewMoon) / 86400000;
+  const moonAge =
+    ((daysSinceNewMoon % lunarCycle) + lunarCycle) % lunarCycle;
+
+  const illumination = Math.round(
+    (1 - Math.cos((2 * Math.PI * moonAge) / lunarCycle)) * 50
+  );
+
+  let phase = "New Moon";
+
+  if (moonAge < 1.84566) phase = "New Moon";
+  else if (moonAge < 5.53699) phase = "Waxing Crescent";
+  else if (moonAge < 9.22831) phase = "First Quarter";
+  else if (moonAge < 12.91963) phase = "Waxing Gibbous";
+  else if (moonAge < 16.61096) phase = "Full Moon";
+  else if (moonAge < 20.30228) phase = "Waning Gibbous";
+  else if (moonAge < 23.99361) phase = "Last Quarter";
+  else if (moonAge < 27.68493) phase = "Waning Crescent";
+
+  return `${phase} ${illumination}%`;
+}
+
+function getDayOfYear(date) {
+  const start = new Date(date.getFullYear(), 0, 0);
+  return Math.floor((date - start) / 86400000);
+}
+
+function toRadians(degrees) {
+  return degrees * Math.PI / 180;
+}
+
+function toDegrees(radians) {
+  return radians * 180 / Math.PI;
+}
+
+function normalizeDegrees(value) {
+  return ((value % 360) + 360) % 360;
+}
+
+function normalizeHours(value) {
+  return ((value % 24) + 24) % 24;
+}
