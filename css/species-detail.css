@@ -1,0 +1,390 @@
+/* =========================================================
+   SPECIES DETAIL PAGE
+   ========================================================= */
+
+.species-detail-hero {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 24px 32px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--accent, #20d3e2);
+  text-decoration: none;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
+.back-link:hover {
+  opacity: .85;
+}
+
+.page-kicker {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: .78rem;
+  font-weight: 900;
+  color: #20d3e2;
+  margin-bottom: 10px;
+}
+
+.species-detail-hero h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-weight: 950;
+  color: #fff;
+}
+
+#speciesSubTitle {
+  margin-top: 10px;
+  color: #9fb6c8;
+  font-size: 1rem;
+}
+
+/* KPI ROW */
+
+.species-detail-kpis {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.species-detail-kpis article {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 18px;
+  padding: 18px;
+}
+
+.species-detail-kpis span {
+  display: block;
+  color: #8fb2c8;
+  font-size: .78rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: .08em;
+}
+
+.species-detail-kpis strong {
+  display: block;
+  margin-top: 8px;
+  font-size: 1.8rem;
+  color: #fff;
+  font-weight: 950;
+}
+
+/* CHART GRID */
+
+.species-detail-chart-grid {
+  max-width: 1200px;
+  margin: 0 auto 22px;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.species-chart-card {
+  background:
+    linear-gradient(
+      145deg,
+      rgba(8, 33, 52, .95),
+      rgba(3, 18, 31, .95)
+    );
+  border: 1px solid rgba(32,211,226,.16);
+  border-radius: 22px;
+  padding: 22px;
+}
+
+.species-chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.species-chart-header h2 {
+  margin: 0;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.species-chart-header span {
+  color: #8fb2c8;
+  font-size: .82rem;
+}
+
+/* INTEL BOX */
+
+.species-intel-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.species-intel-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+
+.species-intel-row span {
+  color: #9fb6c8;
+}
+
+.species-intel-row strong {
+  color: #fff;
+  font-weight: 800;
+}
+
+/* TREND BOX */
+
+.species-trend-main {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.species-trend-main strong {
+  display: block;
+  font-size: 2rem;
+  color: #20d3e2;
+}
+
+.species-trend-main span {
+  color: #9fb6c8;
+}
+
+/* WEEKLY CHART */
+
+.weekly-bars {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 10px;
+  height: 280px;
+}
+
+.weekly-bar-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.weekly-bar {
+  width: 100%;
+  max-width: 34px;
+  border-radius: 12px 12px 0 0;
+  background: linear-gradient(
+    180deg,
+    #20d3e2,
+    #0f7b90
+  );
+}
+
+.weekly-bar-item span {
+  margin-top: 8px;
+  color: #9fb6c8;
+  font-size: .72rem;
+}
+
+.weekly-bar-item em {
+  font-style: normal;
+  color: #fff;
+  font-size: .72rem;
+}
+
+/* REGIONAL SPLIT */
+
+.regional-bar-chart {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.regional-split-row {
+  display: grid;
+  grid-template-columns: 120px 1fr 60px 50px;
+  gap: 10px;
+  align-items: center;
+}
+
+.regional-split-row span {
+  color: #fff;
+}
+
+.regional-split-row div {
+  height: 12px;
+  background: rgba(255,255,255,.08);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.regional-split-row b {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: #20d3e2;
+}
+
+.regional-split-row strong {
+  color: #fff;
+}
+
+.regional-split-row em {
+  font-style: normal;
+  color: #8fb2c8;
+}
+
+/* SECTIONS */
+
+.species-detail-section {
+  max-width: 1200px;
+  margin: 0 auto 28px;
+  padding: 0 24px;
+}
+
+.species-detail-section h2 {
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+.species-detail-section p {
+  color: #9fb6c8;
+}
+
+/* TOP BOATS */
+
+.species-top-boats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
+  gap: 16px;
+}
+
+.species-boat-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 18px;
+  padding: 18px;
+  transition: .2s;
+}
+
+.species-boat-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(32,211,226,.4);
+}
+
+.species-boat-card h3 {
+  color: #fff;
+  margin: 0;
+}
+
+.species-boat-card p,
+.species-boat-card span {
+  color: #8fb2c8;
+}
+
+.species-boat-card strong {
+  color: #20d3e2;
+  font-size: 1.3rem;
+}
+
+/* REPORTS */
+
+.species-recent-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.species-report-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 18px;
+}
+
+.species-report-card h3 {
+  margin: 0;
+}
+
+.species-report-card a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.species-report-card p,
+.species-report-card span {
+  color: #8fb2c8;
+}
+
+.species-report-card strong {
+  color: #20d3e2;
+  font-size: 1.25rem;
+}
+
+/* EMPTY */
+
+.loading-card,
+.empty-card {
+  text-align: center;
+  padding: 28px;
+  border-radius: 18px;
+  background: rgba(255,255,255,.04);
+  color: #9fb6c8;
+}
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+  .species-detail-kpis {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .species-detail-chart-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .species-report-card,
+  .species-boat-card {
+    flex-direction: column;
+  }
+
+  .regional-split-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .species-detail-kpis {
+    grid-template-columns: 1fr;
+  }
+
+  .weekly-bars {
+    height: 220px;
+    gap: 6px;
+  }
+
+  .species-detail-hero,
+  .species-detail-chart-grid,
+  .species-detail-section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
