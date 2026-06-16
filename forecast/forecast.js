@@ -111,19 +111,7 @@ const REGION_ORDER = [
   "Orange County",
   "San Diego County"
 ];
-const REGION_ASTRONOMY = {
-  "NorCal": { sunrise: "5:46 AM", sunset: "8:40 PM", moon: "Waxing 62%" },
-  "San Francisco Bay": { sunrise: "5:48 AM", sunset: "8:34 PM", moon: "Waxing 62%" },
-  "Alameda County": { sunrise: "5:48 AM", sunset: "8:34 PM", moon: "Waxing 62%" },
-  "Monterey County": { sunrise: "5:49 AM", sunset: "8:29 PM", moon: "Waxing 62%" },
-  "Central California": { sunrise: "5:47 AM", sunset: "8:24 PM", moon: "Waxing 62%" },
-  "San Luis Obispo County": { sunrise: "5:47 AM", sunset: "8:23 PM", moon: "Waxing 62%" },
-  "Santa Barbara County": { sunrise: "5:45 AM", sunset: "8:12 PM", moon: "Waxing 62%" },
-  "Ventura County": { sunrise: "5:43 AM", sunset: "8:08 PM", moon: "Waxing 62%" },
-  "Los Angeles County": { sunrise: "5:42 AM", sunset: "8:01 PM", moon: "Waxing 62%" },
-  "Orange County": { sunrise: "5:41 AM", sunset: "7:59 PM", moon: "Waxing 62%" },
-  "San Diego County": { sunrise: "5:40 AM", sunset: "7:55 PM", moon: "Waxing 62%" }
-};
+
 async function initForecast() {
   try {
     forecastRows = await fetchJson("../home.json");
@@ -311,11 +299,10 @@ async function renderForecast(region) {
   setText("swell", formatSwell(condition) || forecast.swellText || estimateSwell(displayRegion));
   setText("visibility", getValue(condition, ["visibility"]) || forecast.visibilityText || estimateVisibility(displayRegion));
   setText("tide", getValue(condition, ["tideMovement", "tide_movement", "tidemovement", "tide"]) || forecast.tideText || estimateTide(score));
-const astronomy = REGION_ASTRONOMY[displayRegion] || REGION_ASTRONOMY[standardRegionName(displayRegion)];
+  setText("sunrise", getValue(condition, ["sunrise"]) || row.sunrise || "5:42 AM");
+  setText("sunset", getValue(condition, ["sunset"]) || row.sunset || "8:01 PM");
+  setText("moon", getValue(condition, ["moon"]) || row.moon || "Waxing 62%");
 
-setText("sunrise", getValue(condition, ["sunrise"]) || row.sunrise || astronomy?.sunrise || "--");
-setText("sunset", getValue(condition, ["sunset"]) || row.sunset || astronomy?.sunset || "--");
-setText("moon", getValue(condition, ["moon"]) || row.moon || astronomy?.moon || "--");
 
   buildSpeciesRankings(displayRegion);
   buildSpeciesFpaChart(displayRegion);
