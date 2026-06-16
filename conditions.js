@@ -962,4 +962,152 @@
         day: "numeric"
       });
   }
+  function getDateMonth(dateString) {
+    const date = dateString
+      ? new Date(`${dateString}T12:00:00`)
+      : new Date();
 
+    return date.getMonth() + 1;
+  }
+
+  function isToday(dateString) {
+    return dateString === getTodayString();
+  }
+
+  function getTodayString() {
+    return toLocalDateString(new Date());
+  }
+
+  function toLocalDateString(date) {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+
+    return `${year}-${month}-${day}`;
+  }
+
+  function getDayOfYear(date) {
+    const start = new Date(date.getFullYear(), 0, 0);
+    return Math.floor((date - start) / 86400000);
+  }
+
+  function parseOptionalNumber(value) {
+    if (value === null || value === undefined || value === "") return null;
+
+    if (typeof value === "string") {
+      const match = value.match(/-?\d+(\.\d+)?/);
+      if (!match) return null;
+      value = match[0];
+    }
+
+    const number = Number(value);
+    return isFiniteNumber(number) ? number : null;
+  }
+
+  function parseNdbcNumber(value) {
+    if (!value || value === "MM") return null;
+
+    const number = Number(value);
+    return isFiniteNumber(number) ? number : null;
+  }
+
+  function firstNumber(...values) {
+    for (const value of values) {
+      const number = parseOptionalNumber(value);
+
+      if (isFiniteNumber(number)) {
+        return number;
+      }
+    }
+
+    return null;
+  }
+
+  function displayNumber(value) {
+    const number = parseOptionalNumber(value);
+    return isFiniteNumber(number) ? Math.round(number) : "--";
+  }
+
+  function isFiniteNumber(value) {
+    return typeof value === "number" && Number.isFinite(value);
+  }
+
+  function metersToFeet(meters) {
+    if (!isFiniteNumber(meters)) return null;
+    return meters * 3.28084;
+  }
+
+  function celsiusToFahrenheit(celsius) {
+    if (!isFiniteNumber(celsius)) return null;
+    return (celsius * 9 / 5) + 32;
+  }
+
+  function degreesToCompass(degrees) {
+    const value = parseOptionalNumber(degrees);
+    if (!isFiniteNumber(value)) return null;
+
+    const directions = [
+      "N", "NNE", "NE", "ENE",
+      "E", "ESE", "SE", "SSE",
+      "S", "SSW", "SW", "WSW",
+      "W", "WNW", "NW", "NNW"
+    ];
+
+    const index = Math.round(value / 22.5) % 16;
+    return directions[index];
+  }
+
+  function toRadians(degrees) {
+    return degrees * Math.PI / 180;
+  }
+
+  function toDegrees(radians) {
+    return radians * 180 / Math.PI;
+  }
+
+  function normalizeDegrees(value) {
+    return ((value % 360) + 360) % 360;
+  }
+
+  function normalizeHours(value) {
+    return ((value % 24) + 24) % 24;
+  }
+
+  function clamp(value, min, max) {
+    return Math.min(max, Math.max(min, value));
+  }
+
+  function roundOne(value) {
+    if (!isFiniteNumber(value)) return null;
+    return Number(value.toFixed(1));
+  }
+
+  function setText(id, value) {
+    const el = document.getElementById(id);
+    if (el) {
+      el.textContent = value || "--";
+    }
+  }
+
+  function safe(value) {
+    return String(value || "N/A")
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+  }
+
+  function safeAttr(value) {
+    return String(value || "")
+      .replaceAll("&", "&amp;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+  }
+
+  function debug(...args) {
+    if (DEBUG) {
+      console.log("[conditions.js]", ...args);
+    }
+  }
+})();
