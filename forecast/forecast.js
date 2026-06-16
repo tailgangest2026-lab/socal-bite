@@ -14,11 +14,17 @@ async function initForecast() {
     conditionRows = await fetchJson("../conditions.json");
     dailyRows = await loadRecentDailyRows();
 
+    forecastRows = forecastRows.filter(row =>
+      conditionRows.some(condition =>
+        normalizeRegion(condition.region) === normalizeRegion(row.region)
+      )
+    );
+
     if (!Array.isArray(forecastRows) || !forecastRows.length) {
-      throw new Error("No forecast rows found.");
+      throw new Error("No matching forecast and condition rows found.");
     }
 
-    selectedRegion = forecastRows[0].region || "Los Angeles";
+    selectedRegion = getDefaultRegion();
 
     buildRegionTabs();
     renderForecast(selectedRegion);
@@ -34,7 +40,9 @@ async function fetchJson(path) {
 
   const response = await fetch(url + (url.includes("?") ? "&" : "?") + "v=" + Date.now());
 
-  if (!response.ok) throw new Error("Could not load " + path);
+  if (!response.ok) {
+    throw new Error("Could not load " + path);
+  }
 
   return response.json();
 }
@@ -82,22 +90,37 @@ async function loadRecentDailyRows() {
 
     return rows;
   } catch (error) {
-    console.warn("Could not load daily-report-index.json:", error);
+    console.warn("Could not load recent daily rows:", error);
     return [];
   }
+}
+
+function getDefaultRegion() {
+  const preferred = [
+    "Los Angeles",
+    "Orange County",
+    "San Diego",
+    "Ventura",
+    "Santa Barbara",
+    "San Luis Obispo"
+  ];
+
+  const match = preferred.find(region =>
+    forecastRows.some(row =>
+      normalizeRegion(row.region) === normalizeRegion(region)
+    )
+  );
+
+  return match || forecastRows[0]?.region || "Los Angeles";
 }
 
 function buildRegionTabs() {
   const tabs = document.getElementById("regionTabs");
   if (!tabs) return;
 
-  const regions = [
-    ...new Set(
-      forecastRows
-        .map(row => row.region || "Unknown")
-        .filter(Boolean)
-    )
-  ];
+  const regions = forecastRows
+    .map(row => row.region)
+    .filter(Boolean);
 
   tabs.innerHTML = regions.map(region => `
     <button
@@ -105,7 +128,7 @@ function buildRegionTabs() {
       type="button"
       onclick="selectRegion('${escapeAttr(region)}')"
     >
-      ${safe(region)}
+      ${safe(cleanRegionLabel(region))}
     </button>
   `).join("");
 }
@@ -134,8 +157,8 @@ async function renderForecast(region) {
   const trips = Number(row.total_trips_today || row.totalTrips || row.trips || 1);
   const fpa = fish / Math.max(anglers, 1);
 
-  setText("selectedRegionLabel", displayRegion);
-  setText("trendRegion", displayRegion);
+  setText("selectedRegionLabel", cleanRegionLabel(displayRegion));
+  setText("trendRegion", cleanRegionLabel(displayRegion));
 
   const forecast = await calculateForecastScore(row, condition, displayRegion, fpa, trips);
 
@@ -146,14 +169,14 @@ async function renderForecast(region) {
 
   updateBiteScoreGauge(score, label);
 
-  setText("waterTemp", formatTemp(condition?.waterTemp || condition?.water_temp) || forecast.waterTempText || estimateWaterTemp(displayRegion));
+  setText("waterTemp", formatTemp(getValue(condition, ["waterTemp", "water_temp", "watertemp"])) || forecast.waterTempText || estimateWaterTemp(displayRegion));
   setText("wind", formatWind(condition) || forecast.windText || estimateWind(displayRegion));
   setText("swell", formatSwell(condition) || forecast.swellText || estimateSwell(displayRegion));
-  setText("visibility", condition?.visibility || forecast.visibilityText || estimateVisibility(displayRegion));
-  setText("tide", condition?.tideMovement || condition?.tide_movement || condition?.tide || forecast.tideText || estimateTide(score));
-  setText("sunrise", condition?.sunrise || row.sunrise || "5:42 AM");
-  setText("sunset", condition?.sunset || row.sunset || "8:01 PM");
-  setText("moon", condition?.moon || row.moon || "Waxing 62%");
+  setText("visibility", getValue(condition, ["visibility"]) || forecast.visibilityText || estimateVisibility(displayRegion));
+  setText("tide", getValue(condition, ["tideMovement", "tide_movement", "tidemovement", "tide"]) || forecast.tideText || estimateTide(score));
+  setText("sunrise", getValue(condition, ["sunrise"]) || row.sunrise || "5:42 AM");
+  setText("sunset", getValue(condition, ["sunset"]) || row.sunset || "8:01 PM");
+  setText("moon", getValue(condition, ["moon"]) || row.moon || "Waxing 62%");
 
   buildSpeciesRankings(displayRegion);
   buildSpeciesFpaChart(displayRegion);
@@ -165,20 +188,10 @@ function getLatestConditionForRegion(region) {
   const target = normalizeRegion(region);
 
   const matches = conditionRows
-    .filter(row => {
-      const rowRegion = normalizeRegion(
-        row.region ||
-        row.county ||
-        row.area ||
-        row.name ||
-        row.location
-      );
-
-      return rowRegion === target;
-    })
+    .filter(row => normalizeRegion(row.region) === target)
     .sort((a, b) => {
-      const dateA = new Date(a.date || a.updatedAt || a.updated_at || 0);
-      const dateB = new Date(b.date || b.updatedAt || b.updated_at || 0);
+      const dateA = new Date(getValue(a, ["date", "updatedAt", "updated_at", "updatedat"]) || 0);
+      const dateB = new Date(getValue(b, ["date", "updatedAt", "updated_at", "updatedat"]) || 0);
       return dateB - dateA;
     });
 
@@ -188,17 +201,27 @@ function getLatestConditionForRegion(region) {
 async function calculateForecastScore(row, condition, region, fpa, trips) {
   const locations = {
     "Santa Barbara": { lat: 34.4208, lon: -119.6982, station: "9411340" },
+    "Santa Barbara County": { lat: 34.4208, lon: -119.6982, station: "9411340" },
+
     "Ventura": { lat: 34.2746, lon: -119.2290, station: "9411189" },
+    "Ventura County": { lat: 34.2746, lon: -119.2290, station: "9411189" },
+
     "Los Angeles": { lat: 33.7405, lon: -118.2817, station: "9410660" },
+    "Los Angeles County": { lat: 33.7405, lon: -118.2817, station: "9410660" },
+
     "Orange County": { lat: 33.6037, lon: -117.9, station: "9410580" },
+
     "San Diego": { lat: 32.7157, lon: -117.1611, station: "9410170" },
-    "San Luis Obispo": { lat: 35.2828, lon: -120.6596, station: "9412110" }
+    "San Diego County": { lat: 32.7157, lon: -117.1611, station: "9410170" },
+
+    "San Luis Obispo": { lat: 35.2828, lon: -120.6596, station: "9412110" },
+    "San Luis Obispo County": { lat: 35.2828, lon: -120.6596, station: "9412110" }
   };
 
-  const base = locations[region];
-  let score = Number(condition?.score || 45);
+  const base = locations[region] || locations[cleanRegionLabel(region)];
+  let score = Number(getValue(condition, ["score"]) || 45);
 
-  if (!condition?.score) {
+  if (!getValue(condition, ["score"])) {
     if (fpa >= 8) score += 25;
     else if (fpa >= 5) score += 18;
     else if (fpa >= 3) score += 12;
@@ -209,11 +232,11 @@ async function calculateForecastScore(row, condition, region, fpa, trips) {
     else if (trips >= 5) score += 3;
   }
 
-  const conditionWind = Number(condition?.windSpeed || condition?.wind_speed);
-  const conditionGust = Number(condition?.windGust || condition?.windGusts || condition?.wind_gust);
-  const conditionTemp = Number(condition?.waterTemp || condition?.water_temp);
-  const conditionSwell = Number(condition?.swellHeight || condition?.swell_height || condition?.waveHeight || condition?.wave_height);
-  const conditionTide = condition?.tideMovement || condition?.tide_movement || condition?.tide;
+  const conditionWind = Number(getValue(condition, ["windSpeed", "wind_speed", "windspeed"]));
+  const conditionGust = Number(getValue(condition, ["windGust", "windGusts", "wind_gust", "windgust"]));
+  const conditionTemp = Number(getValue(condition, ["waterTemp", "water_temp", "watertemp"]));
+  const conditionSwell = Number(getValue(condition, ["swellHeight", "swell_height", "swellheight", "waveHeight", "wave_height", "waveheight"]));
+  const conditionTide = getValue(condition, ["tideMovement", "tide_movement", "tidemovement", "tide"]);
 
   if (Number.isFinite(conditionWind)) {
     if (conditionWind <= 6) score += 10;
@@ -235,7 +258,9 @@ async function calculateForecastScore(row, condition, region, fpa, trips) {
     else if (conditionTemp < 58 || conditionTemp > 74) score -= 6;
   }
 
-  if (String(conditionTide || "").toLowerCase().includes("moving")) score += 7;
+  if (String(conditionTide || "").toLowerCase().includes("moving")) {
+    score += 7;
+  }
 
   if (!base || typeof SCBConditions === "undefined") {
     return {
@@ -243,7 +268,7 @@ async function calculateForecastScore(row, condition, region, fpa, trips) {
       waterTempText: formatTemp(conditionTemp),
       windText: formatWind(condition),
       swellText: formatSwell(condition),
-      visibilityText: condition?.visibility || estimateVisibility(region),
+      visibilityText: getValue(condition, ["visibility"]) || estimateVisibility(region),
       tideText: conditionTide || estimateTide(score)
     };
   }
@@ -274,7 +299,7 @@ async function calculateForecastScore(row, condition, region, fpa, trips) {
       waterTempText: Number.isFinite(temp) ? `${Math.round(temp)}°F` : formatTemp(conditionTemp),
       windText: buildWindText(weather, wind, gusts),
       swellText: Number.isFinite(swell) ? `${swell.toFixed(1)} ft` : formatSwell(condition),
-      visibilityText: weather?.visibility || condition?.visibility || estimateVisibility(region),
+      visibilityText: weather?.visibility || getValue(condition, ["visibility"]) || estimateVisibility(region),
       tideText: tideMovement || conditionTide || estimateTide(score)
     };
   } catch (error) {
@@ -285,7 +310,7 @@ async function calculateForecastScore(row, condition, region, fpa, trips) {
       waterTempText: formatTemp(conditionTemp),
       windText: formatWind(condition),
       swellText: formatSwell(condition),
-      visibilityText: condition?.visibility || estimateVisibility(region),
+      visibilityText: getValue(condition, ["visibility"]) || estimateVisibility(region),
       tideText: conditionTide || estimateTide(score)
     };
   }
@@ -336,7 +361,7 @@ function buildSpeciesFpaChart(region) {
   if (!trend.weeks.length || !trend.datasets.length) {
     const parent = canvas.parentElement;
     if (parent) {
-      parent.innerHTML = `<div class="empty-card">No 12-week trend data found for ${safe(region)}.</div>`;
+      parent.innerHTML = `<div class="empty-card">No 12-week trend data found for ${safe(cleanRegionLabel(region))}.</div>`;
     }
     return;
   }
@@ -387,7 +412,7 @@ function buildSpeciesRankings(region) {
   const species = buildSpeciesFpaByRegion(region);
 
   if (!species.length) {
-    container.innerHTML = `<div class="empty-card">No species fish-per-angler data found for ${safe(region)}.</div>`;
+    container.innerHTML = `<div class="empty-card">No species fish-per-angler data found for ${safe(cleanRegionLabel(region))}.</div>`;
     return;
   }
 
@@ -405,7 +430,9 @@ function buildSpeciesRankings(region) {
 
 function buildSpeciesFpaByRegion(region) {
   const targetRegion = normalizeRegion(region);
-  const regionRows = dailyRows.filter(row => normalizeRegion(row.region) === targetRegion);
+  const regionRows = dailyRows.filter(row =>
+    normalizeRegion(row.region) === targetRegion
+  );
 
   const speciesTotals = {};
   const speciesAnglers = {};
@@ -440,7 +467,9 @@ function buildSpeciesFpaByRegion(region) {
 
 function buildSpeciesWeeklyTrend(region) {
   const targetRegion = normalizeRegion(region);
-  const rows = dailyRows.filter(row => normalizeRegion(row.region) === targetRegion);
+  const rows = dailyRows.filter(row =>
+    normalizeRegion(row.region) === targetRegion
+  );
 
   const today = new Date();
   const weeks = [];
@@ -574,6 +603,18 @@ function parseFishCounts(text) {
     .filter(Boolean);
 }
 
+function getValue(obj, keys) {
+  if (!obj) return "";
+
+  for (const key of keys) {
+    if (obj[key] !== undefined && obj[key] !== null && obj[key] !== "") {
+      return obj[key];
+    }
+  }
+
+  return "";
+}
+
 function formatTemp(value) {
   const temp = Number(value);
   if (!Number.isFinite(temp)) return "";
@@ -583,9 +624,9 @@ function formatTemp(value) {
 function formatWind(row) {
   if (!row) return "";
 
-  const speed = Number(row.windSpeed || row.wind_speed);
-  const gust = Number(row.windGust || row.windGusts || row.wind_gust);
-  const direction = row.windDirection || row.wind_direction || "";
+  const speed = Number(getValue(row, ["windSpeed", "wind_speed", "windspeed"]));
+  const gust = Number(getValue(row, ["windGust", "windGusts", "wind_gust", "windgust"]));
+  const direction = getValue(row, ["windDirection", "wind_direction", "winddirection"]);
 
   if (!Number.isFinite(speed)) return "";
 
@@ -616,62 +657,132 @@ function buildWindText(weather, wind, gusts) {
 function formatSwell(row) {
   if (!row) return "";
 
-  const wave = Number(row.waveHeight || row.wave_height);
-  const swell = Number(row.swellHeight || row.swell_height);
-  const period = Number(row.swellPeriod || row.swell_period);
+  const wave = Number(getValue(row, ["waveHeight", "wave_height", "waveheight"]));
+  const swell = Number(getValue(row, ["swellHeight", "swell_height", "swellheight"]));
+  const period = Number(getValue(row, ["swellPeriod", "swell_period", "swellperiod"]));
 
-  const height = Number.isFinite(swell) ? swell : wave;
+  const height = Number.isFinite(swell) && swell > 0 ? swell : wave;
 
   if (!Number.isFinite(height)) return "";
 
   let text = `${height.toFixed(1)} ft`;
 
-  if (Number.isFinite(period)) text += ` @ ${Math.round(period)}s`;
+  if (Number.isFinite(period) && period > 0) {
+    text += ` @ ${Math.round(period)}s`;
+  }
 
   return text;
+}
+
+function normalizeRegion(value) {
+  const text = String(value || "")
+    .trim()
+    .toLowerCase()
+    .replaceAll(".", "")
+    .replaceAll("-", " ")
+    .replaceAll("_", " ")
+    .replace(/\s+/g, " ");
+
+  const aliases = {
+    "los angeles county": "los angeles",
+    "los angeles": "los angeles",
+    "la": "los angeles",
+    "l a": "los angeles",
+
+    "orange county": "orange county",
+    "orange": "orange county",
+    "oc": "orange county",
+    "o c": "orange county",
+
+    "san diego county": "san diego",
+    "san diego": "san diego",
+
+    "ventura county": "ventura",
+    "ventura": "ventura",
+
+    "santa barbara county": "santa barbara",
+    "santa barbara": "santa barbara",
+
+    "san luis obispo county": "san luis obispo",
+    "san luis obispo": "san luis obispo",
+    "slo": "san luis obispo",
+    "s l o": "san luis obispo"
+  };
+
+  return aliases[text] || text;
+}
+
+function cleanRegionLabel(region) {
+  const normalized = normalizeRegion(region);
+
+  const labels = {
+    "los angeles": "Los Angeles",
+    "orange county": "Orange County",
+    "san diego": "San Diego",
+    "ventura": "Ventura",
+    "santa barbara": "Santa Barbara",
+    "san luis obispo": "San Luis Obispo"
+  };
+
+  return labels[normalized] || region;
 }
 
 function estimateWaterTemp(region) {
   const temps = {
     "San Diego": "67°F",
+    "San Diego County": "67°F",
     "Orange County": "66°F",
     "Los Angeles": "65°F",
+    "Los Angeles County": "65°F",
     "Ventura": "63°F",
+    "Ventura County": "63°F",
     "Santa Barbara": "62°F",
-    "San Luis Obispo": "60°F"
+    "Santa Barbara County": "62°F",
+    "San Luis Obispo": "60°F",
+    "San Luis Obispo County": "60°F"
   };
 
-  return temps[region] || "65°F";
+  return temps[region] || temps[cleanRegionLabel(region)] || "65°F";
 }
 
 function estimateWind(region) {
   const winds = {
     "San Diego": "5 kt S",
+    "San Diego County": "5 kt S",
     "Orange County": "6 kt SW",
     "Los Angeles": "7 kt W",
+    "Los Angeles County": "7 kt W",
     "Ventura": "9 kt W",
+    "Ventura County": "9 kt W",
     "Santa Barbara": "8 kt NW",
-    "San Luis Obispo": "10 kt NW"
+    "Santa Barbara County": "8 kt NW",
+    "San Luis Obispo": "10 kt NW",
+    "San Luis Obispo County": "10 kt NW"
   };
 
-  return winds[region] || "6 kt W";
+  return winds[region] || winds[cleanRegionLabel(region)] || "6 kt W";
 }
 
 function estimateSwell(region) {
   const swells = {
     "San Diego": "4 ft @ 11s",
+    "San Diego County": "4 ft @ 11s",
     "Orange County": "3 ft @ 12s",
     "Los Angeles": "3 ft @ 10s",
+    "Los Angeles County": "3 ft @ 10s",
     "Ventura": "4 ft @ 9s",
+    "Ventura County": "4 ft @ 9s",
     "Santa Barbara": "2 ft @ 11s",
-    "San Luis Obispo": "5 ft @ 10s"
+    "Santa Barbara County": "2 ft @ 11s",
+    "San Luis Obispo": "5 ft @ 10s",
+    "San Luis Obispo County": "5 ft @ 10s"
   };
 
-  return swells[region] || "3 ft @ 10s";
+  return swells[region] || swells[cleanRegionLabel(region)] || "3 ft @ 10s";
 }
 
 function estimateVisibility(region) {
-  return region === "San Diego" ? "13 mi" : "10 mi";
+  return cleanRegionLabel(region) === "San Diego" ? "13 mi" : "10 mi";
 }
 
 function estimateTide(score) {
@@ -693,42 +804,6 @@ function getWeekNumber(date) {
   const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
 
   return Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
-}
-
-function normalizeRegion(value) {
-  let text = String(value || "")
-    .trim()
-    .toLowerCase();
-
-  text = text
-    .replaceAll(".", "")
-    .replaceAll("-", " ")
-    .replaceAll("_", " ")
-    .replace(/\s+/g, " ");
-
-  text = text
-    .replace(/\bcounty\b/g, "")
-    .replace(/\bca\b/g, "")
-    .replace(/\bcalifornia\b/g, "")
-    .trim();
-
-  const aliases = {
-    "la": "los angeles",
-    "l a": "los angeles",
-    "los angeles county": "los angeles",
-    "orange": "orange county",
-    "oc": "orange county",
-    "o c": "orange county",
-    "orange county": "orange county",
-    "san diego county": "san diego",
-    "santa barbara county": "santa barbara",
-    "ventura county": "ventura",
-    "san luis obispo county": "san luis obispo",
-    "slo": "san luis obispo",
-    "s l o": "san luis obispo"
-  };
-
-  return aliases[text] || text;
 }
 
 function setText(id, value) {
