@@ -52,7 +52,7 @@ async function loadRecentDailyRows(days = 84) {
   const rows = [];
 
   for (const report of reports) {
-    const filePath = report.file || `reports/daily-report-${report.date}.json`;
+    const filePath = report.file || `../reports/daily-report-${report.date}.json`;
 
     try {
       const reportRows = await fetchJson(filePath);
