@@ -863,9 +863,29 @@
     "trip_date": "2026-06-15",
     "region": "San Francisco Bay",
     "landing": "California Dawn Sportfishing",
+    "boat": "California Dawn II",
+    "trip_type": "Full Day",
+    "anglers": 23,
+    "fish_counts": "184 Rockfish",
+    "total_fish": 184
+  },
+  {
+    "trip_date": "2026-06-15",
+    "region": "San Francisco Bay",
+    "landing": "California Dawn Sportfishing",
     "boat": "New California Dawn",
     "trip_type": "Full Day",
     "anglers": 18,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-06-15",
+    "region": "San Francisco Bay",
+    "landing": "California Dawn Sportfishing",
+    "boat": "New California Dawn",
+    "trip_type": "Full Day",
+    "anglers": 20,
     "fish_counts": "",
     "total_fish": 0
   },
@@ -905,6 +925,16 @@
     "landing": "Right Hook Sportfishing",
     "boat": "Right Hook",
     "trip_type": "1/2 Day AM",
+    "anglers": 6,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-06-15",
+    "region": "San Francisco Bay",
+    "landing": "Right Hook Sportfishing",
+    "boat": "Right Hook",
+    "trip_type": "1/2 Day Twilight",
     "anglers": 6,
     "fish_counts": "",
     "total_fish": 0
