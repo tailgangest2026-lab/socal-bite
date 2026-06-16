@@ -1,94 +1,98 @@
 (() => {
   const DEBUG = true;
+  const TIME_ZONE = "America/Los_Angeles";
+
+  const REGION_ORDER = [
+    "NorCal",
+    "San Francisco Bay",
+    "Alameda County",
+    "Monterey County",
+    "Central California",
+    "San Luis Obispo County",
+    "Santa Barbara County",
+    "Ventura County",
+    "Los Angeles County",
+    "Orange County",
+    "San Diego County"
+  ];
 
   const LOCATIONS = {
     "NorCal": {
-      county: "NorCal",
       lat: 38.4404,
       lon: -123.1190,
-      station: "9415625",
-      fallbackWater: 54,
-      fallbackSwell: 5.0
+      tideStations: ["9415625"],
+      waterStations: ["9415625"],
+      marineBuoys: ["46013"]
     },
     "San Francisco Bay": {
-      county: "San Francisco Bay",
       lat: 37.8060,
       lon: -122.4659,
-      station: "9414290",
-      fallbackWater: 56,
-      fallbackSwell: 4.5
+      tideStations: ["9414290"],
+      waterStations: ["9414290"],
+      marineBuoys: ["46026"]
     },
     "Alameda County": {
-      county: "Alameda County",
       lat: 37.7749,
       lon: -122.2960,
-      station: "9414290",
-      fallbackWater: 56,
-      fallbackSwell: 4.5
+      tideStations: ["9414750", "9414290"],
+      waterStations: ["9414750", "9414290"],
+      marineBuoys: ["46026"]
     },
     "Monterey County": {
-      county: "Monterey County",
       lat: 36.6002,
       lon: -121.8947,
-      station: "9413450",
-      fallbackWater: 57,
-      fallbackSwell: 4.0
+      tideStations: ["9413450"],
+      waterStations: ["9413450"],
+      marineBuoys: ["46042"]
     },
     "Central California": {
-      county: "Central California",
       lat: 35.3658,
       lon: -120.8499,
-      station: "9412110",
-      fallbackWater: 59,
-      fallbackSwell: 3.5
+      tideStations: ["9412110"],
+      waterStations: ["9412110"],
+      marineBuoys: ["46011", "46028"]
     },
     "San Luis Obispo County": {
-      county: "San Luis Obispo County",
       lat: 35.2828,
       lon: -120.6596,
-      station: "9412110",
-      fallbackWater: 60,
-      fallbackSwell: 3.0
+      tideStations: ["9412110"],
+      waterStations: ["9412110"],
+      marineBuoys: ["46011", "46028"]
     },
     "Santa Barbara County": {
-      county: "Santa Barbara County",
       lat: 34.4208,
       lon: -119.6982,
-      station: "9411340",
-      fallbackWater: 61,
-      fallbackSwell: 2.8
+      tideStations: ["9411340"],
+      waterStations: ["9411340"],
+      marineBuoys: ["46054", "46053"]
     },
     "Ventura County": {
-      county: "Ventura County",
       lat: 34.2746,
       lon: -119.2290,
-      station: "9411189",
-      fallbackWater: 62,
-      fallbackSwell: 3.0
+      tideStations: ["9411189"],
+      waterStations: ["9411189"],
+      marineBuoys: ["46053", "46025"]
     },
     "Los Angeles County": {
-      county: "Los Angeles County",
       lat: 33.7405,
       lon: -118.2817,
-      station: "9410660",
-      fallbackWater: 65,
-      fallbackSwell: 2.6
+      tideStations: ["9410660"],
+      waterStations: ["9410660"],
+      marineBuoys: ["46222", "46025"]
     },
     "Orange County": {
-      county: "Orange County",
       lat: 33.6037,
       lon: -117.9000,
-      station: "9410580",
-      fallbackWater: 66,
-      fallbackSwell: 2.5
+      tideStations: ["9410580"],
+      waterStations: ["9410580"],
+      marineBuoys: ["46256", "46222"]
     },
     "San Diego County": {
-      county: "San Diego County",
       lat: 32.7157,
       lon: -117.1611,
-      station: "9410170",
-      fallbackWater: 67,
-      fallbackSwell: 2.4
+      tideStations: ["9410170", "9410230"],
+      waterStations: ["9410170", "9410230"],
+      marineBuoys: ["46258", "46232"]
     }
   };
 
@@ -102,14 +106,14 @@
       return;
     }
 
-    SCBConditions.buildDateDropdown("dateSelect", 10);
+    SCBConditions.buildDateDropdown("dateSelect", 14);
+
+    const activeMode = document.querySelector(".mode-tabs button.active");
+    if (activeMode?.dataset?.mode) currentMode = normalizeMode(activeMode.dataset.mode);
 
     const dateSelect = document.getElementById("dateSelect");
     if (dateSelect) {
-      dateSelect.addEventListener("change", () => {
-        debug("DATE CHANGED:", dateSelect.value);
-        loadConditions();
-      });
+      dateSelect.addEventListener("change", loadConditions);
     }
 
     buildModeTabs();
@@ -120,11 +124,11 @@
   function buildModeTabs() {
     document.querySelectorAll(".mode-tabs button").forEach(button => {
       button.addEventListener("click", () => {
-        currentMode = button.dataset.mode || "pier";
+        currentMode = normalizeMode(button.dataset.mode || "pier");
 
-        document
-          .querySelectorAll(".mode-tabs button")
-          .forEach(btn => btn.classList.remove("active"));
+        document.querySelectorAll(".mode-tabs button").forEach(btn => {
+          btn.classList.remove("active");
+        });
 
         button.classList.add("active");
         loadConditions();
@@ -136,7 +140,7 @@
     const tabs = document.getElementById("regionTabs");
     if (!tabs) return;
 
-    tabs.innerHTML = Object.keys(LOCATIONS).map(region => `
+    tabs.innerHTML = REGION_ORDER.map(region => `
       <button
         type="button"
         class="${region === currentRegion ? "active" : ""}"
@@ -157,19 +161,10 @@
 
   async function loadConditions() {
     const thisRequest = ++requestId;
-
     const base = LOCATIONS[currentRegion] || LOCATIONS["Los Angeles County"];
+    const date = document.getElementById("dateSelect")?.value || getTodayString();
 
-    const date =
-      document.getElementById("dateSelect")?.value ||
-      getTodayString();
-
-    debug("FETCHING CONDITIONS FOR:", {
-      date,
-      region: currentRegion,
-      mode: currentMode,
-      base
-    });
+    debug("Loading conditions", { region: currentRegion, mode: currentMode, date, base });
 
     setLoadingState();
 
@@ -189,6 +184,7 @@
     } catch (error) {
       console.error("Conditions load failed:", error);
       setText("conditionRating", "Unavailable");
+      setText("conditionAdvisory", "Data temporarily unavailable");
     }
   }
 
@@ -214,50 +210,25 @@
   }
 
   async function fetchConditionData(base, date) {
-    const [weather, tides, waterTemp, marine] = await Promise.all([
-      SCBConditions.getWeather(base.lat, base.lon, date),
-      SCBConditions.getTides(base.station, date),
-      SCBConditions.getWaterTemp(base.station),
-      typeof SCBConditions.getMarine === "function"
-        ? SCBConditions.getMarine(base.lat, base.lon, date)
-        : Promise.resolve(null)
+    const tideStation = base.tideStations[0];
+
+    const [weather, tides, waterResult, marineResult] = await Promise.all([
+      SCBConditions.getWeather(base.lat, base.lon, date).catch(() => null),
+      SCBConditions.getTides(tideStation, date).catch(() => []),
+      getDynamicWaterTemp(base, date),
+      getDynamicMarine(base, date)
     ]);
 
-    const wind = SCBConditions.parseWindSpeed(weather?.windSpeed, 8);
-    const gusts = Number(weather?.windGusts || 0);
+    const wind = parseOptionalNumber(weather?.windSpeed);
+    const gusts = parseOptionalNumber(weather?.windGusts);
+    const airTemp = parseOptionalNumber(weather?.temperature);
 
-    const currentWaterTemp = Number(waterTemp || base.fallbackWater || 65);
-
-    const temp = estimateFutureWaterTemp(
-      currentWaterTemp,
-      date,
-      weather?.temperature
-    );
-
-    const waterTempLabel = isToday(date)
-      ? "NOAA latest water"
-      : "estimated water";
-
-    const swell = Number(
-      marine?.waveHeight ||
-      marine?.swellWaveHeight ||
-      base.fallbackSwell ||
-      3
-    );
-
-    const swellPeriod = Number(
-      marine?.wavePeriod ||
-      marine?.swellWavePeriod ||
-      0
-    );
-
-    const swellDirection =
-      marine?.waveDirectionText ||
-      marine?.swellWaveDirectionText ||
-      "W";
+    const waterTemp = waterResult?.value;
+    const swell = marineResult?.waveHeight;
+    const swellPeriod = marineResult?.wavePeriod;
+    const swellDirection = marineResult?.waveDirectionText;
 
     const tideMovement = getTideMovement(tides, date);
-
     const astronomy = getAstronomy(base.lat, base.lon, date);
 
     const score = calculateModeScore({
@@ -265,32 +236,188 @@
       wind,
       gusts,
       swell,
-      waterTemp: temp,
+      waterTemp,
       tideMovement,
-      rainChance: Number(weather?.precipitationProbability || 0),
-      uvIndex: Number(weather?.uvIndex || 0)
+      rainChance: parseOptionalNumber(weather?.precipitationProbability),
+      uvIndex: parseOptionalNumber(weather?.uvIndex)
     });
-
-    const rating = getRating(score);
 
     return {
       date,
       weather,
       tides,
-      marine,
+      waterResult,
+      marineResult,
       wind,
       gusts,
-      currentWaterTemp,
-      temp,
-      waterTempLabel,
+      airTemp,
+      waterTemp,
       swell,
       swellPeriod,
       swellDirection,
       tideMovement,
       astronomy,
       score,
-      rating
+      rating: getRating(score)
     };
+  }
+
+  async function getDynamicWaterTemp(base, date) {
+    for (const station of base.waterStations || []) {
+      const noaaValue = await getNoaaWaterTemperature(station);
+      if (isFiniteNumber(noaaValue)) {
+        return {
+          value: isToday(date) ? roundOne(noaaValue) : estimateFutureWaterTemp(noaaValue, date),
+          source: isToday(date) ? `NOAA ${station}` : `Estimated from NOAA ${station}`
+        };
+      }
+
+      if (typeof SCBConditions.getWaterTemp === "function") {
+        const scbValue = await SCBConditions.getWaterTemp(station).catch(() => null);
+        if (isFiniteNumber(Number(scbValue))) {
+          return {
+            value: isToday(date) ? roundOne(Number(scbValue)) : estimateFutureWaterTemp(Number(scbValue), date),
+            source: isToday(date) ? `NOAA ${station}` : `Estimated from NOAA ${station}`
+          };
+        }
+      }
+    }
+
+    for (const buoy of base.marineBuoys || []) {
+      const buoyData = await getNdbcLatest(buoy);
+      if (isFiniteNumber(buoyData?.waterTemp)) {
+        return {
+          value: isToday(date)
+            ? roundOne(buoyData.waterTemp)
+            : estimateFutureWaterTemp(buoyData.waterTemp, date),
+          source: isToday(date) ? `NDBC ${buoy}` : `Estimated from NDBC ${buoy}`
+        };
+      }
+    }
+
+    return {
+      value: null,
+      source: "Water temp unavailable"
+    };
+  }
+
+  async function getDynamicMarine(base, date) {
+    let marine = null;
+
+    if (typeof SCBConditions.getMarine === "function") {
+      marine = await SCBConditions.getMarine(base.lat, base.lon, date).catch(() => null);
+    }
+
+    const marineWave = firstNumber(
+      marine?.waveHeight,
+      marine?.swellWaveHeight,
+      marine?.seas,
+      marine?.combinedSeas
+    );
+
+    if (isFiniteNumber(marineWave)) {
+      return {
+        waveHeight: roundOne(marineWave),
+        wavePeriod: firstNumber(marine?.wavePeriod, marine?.swellWavePeriod),
+        waveDirectionText:
+          marine?.waveDirectionText ||
+          marine?.swellWaveDirectionText ||
+          degreesToCompass(marine?.waveDirection),
+        source: "Marine forecast"
+      };
+    }
+
+    if (isToday(date)) {
+      for (const buoy of base.marineBuoys || []) {
+        const buoyData = await getNdbcLatest(buoy);
+        if (isFiniteNumber(buoyData?.waveHeight)) {
+          return {
+            waveHeight: roundOne(buoyData.waveHeight),
+            wavePeriod: buoyData.wavePeriod,
+            waveDirectionText: buoyData.waveDirectionText,
+            source: `NDBC ${buoy}`
+          };
+        }
+      }
+    }
+
+    return {
+      waveHeight: null,
+      wavePeriod: null,
+      waveDirectionText: null,
+      source: "Marine data unavailable"
+    };
+  }
+
+  async function getNoaaWaterTemperature(station) {
+    const url =
+      "https://api.tidesandcurrents.noaa.gov/api/prod/datagetter" +
+      `?date=latest&station=${encodeURIComponent(station)}` +
+      "&product=water_temperature&datum=MLLW&time_zone=lst_ldt" +
+      "&units=english&format=json";
+
+    try {
+      const response = await fetch(url);
+      if (!response.ok) return null;
+
+      const json = await response.json();
+      const row = Array.isArray(json?.data) ? json.data[0] : null;
+      const value = Number(row?.v);
+
+      return isFiniteNumber(value) ? value : null;
+    } catch (error) {
+      debug("NOAA water temp failed", station, error);
+      return null;
+    }
+  }
+
+  async function getNdbcLatest(station) {
+    const url = `https://www.ndbc.noaa.gov/data/realtime2/${encodeURIComponent(station)}.txt`;
+
+    try {
+      const response = await fetch(url);
+      if (!response.ok) return null;
+
+      const text = await response.text();
+      const lines = text.trim().split(/\n+/);
+      if (lines.length < 3) return null;
+
+      const headers = lines[0].replace(/^#/, "").trim().split(/\s+/);
+      const units = lines[1].replace(/^#/, "").trim().split(/\s+/);
+
+      for (let i = 2; i < lines.length; i++) {
+        const values = lines[i].trim().split(/\s+/);
+        const row = {};
+
+        headers.forEach((key, index) => {
+          row[key] = values[index];
+        });
+
+        const waveMeters = parseNdbcNumber(row.WVHT);
+        const waterC = parseNdbcNumber(row.WTMP);
+        const period = parseNdbcNumber(row.DPD || row.APD);
+        const direction = parseNdbcNumber(row.MWD);
+
+        if (
+          isFiniteNumber(waveMeters) ||
+          isFiniteNumber(waterC) ||
+          isFiniteNumber(period)
+        ) {
+          return {
+            waveHeight: isFiniteNumber(waveMeters) ? metersToFeet(waveMeters) : null,
+            waterTemp: isFiniteNumber(waterC) ? celsiusToFahrenheit(waterC) : null,
+            wavePeriod: isFiniteNumber(period) ? period : null,
+            waveDirectionText: isFiniteNumber(direction) ? degreesToCompass(direction) : null,
+            units
+          };
+        }
+      }
+
+      return null;
+    } catch (error) {
+      debug("NDBC latest failed", station, error);
+      return null;
+    }
   }
 
   function renderMainConditions(data) {
@@ -298,13 +425,13 @@
       mode,
       region,
       date,
-      base,
       weather,
-      tides,
+      waterResult,
+      marineResult,
       wind,
       gusts,
-      temp,
-      waterTempLabel,
+      airTemp,
+      waterTemp,
       swell,
       swellPeriod,
       swellDirection,
@@ -315,12 +442,12 @@
     } = data;
 
     setText("conditionLocationLabel", `${region} · ${labelMode(mode)} · ${formatDateLabel(date)}`);
-    setText("conditionTitle", `${formatDateLabel(date)}'s Conditions`);
+    setText("conditionTitle", `${formatDateLabel(date)} Conditions`);
 
-    setText("conditionWaterTemp", `${Math.round(temp)}°`);
-    setText("conditionWaterLabel", waterTempLabel);
+    setText("conditionWaterTemp", isFiniteNumber(waterTemp) ? `${Math.round(waterTemp)}°` : "--°");
+    setText("conditionWaterLabel", waterResult?.source || "Water temp unavailable");
 
-    setText("conditionAirOnlyTemp", `${Math.round(weather?.temperature ?? 0) || "--"}°`);
+    setText("conditionAirOnlyTemp", isFiniteNumber(airTemp) ? `${Math.round(airTemp)}°` : "--°");
     setText("conditionAirLabel", "Forecast air temp");
 
     const ratingEl = document.getElementById("conditionRating");
@@ -329,42 +456,40 @@
       ratingEl.className = ratingClass(score);
     }
 
-    setText("conditionWind", `${wind} mph`);
+    setText("conditionWind", isFiniteNumber(wind) ? `${Math.round(wind)} mph` : "--");
     setText(
       "conditionWindDir",
-      gusts ? `Gusts ${gusts} mph` : weather?.windDirection || "Light to moderate"
+      isFiniteNumber(gusts)
+        ? `Gusts ${Math.round(gusts)} mph`
+        : weather?.windDirection || "Wind data unavailable"
     );
 
-    setText("conditionForecast", weather?.shortForecast || "Forecast available");
+    setText("conditionForecast", weather?.shortForecast || "Forecast unavailable");
 
     setText(
       "conditionCloudRain",
-      `${weather?.cloudCover ?? "--"}% clouds · ${weather?.precipitationProbability ?? "--"}% rain`
+      `${displayNumber(weather?.cloudCover)}% clouds · ${displayNumber(weather?.precipitationProbability)}% rain`
     );
 
-    setText("conditionSwell", `${swell.toFixed(1)} ft`);
+    setText("conditionSwell", isFiniteNumber(swell) ? `${swell.toFixed(1)} ft` : "--");
     setText(
       "conditionSwellPeriod",
-      swellPeriod
-        ? `${swellPeriod.toFixed(1)} sec · ${swellDirection}`
-        : `${swellDirection} · marine estimate`
+      isFiniteNumber(swellPeriod)
+        ? `${roundOne(swellPeriod)} sec · ${swellDirection || "--"}`
+        : marineResult?.source || "Marine data unavailable"
     );
 
     setText("conditionTide", tideMovement);
-    setText("conditionNextTide", getNextTideLabel(tides, date));
+    setText("conditionNextTide", getNextTideLabel(data.tides, date));
 
-    setText("conditionVisibility", estimateVisibility(region, wind, weather?.visibility));
+    setText("conditionVisibility", estimateVisibility(wind, weather?.visibility));
     setText("conditionClarity", estimateClarity(mode, wind, swell));
-
-    setText(
-      "conditionClarityNote",
-      mode === "beach" ? "Surf zone" : mode === "pier" ? "Pier zone" : "Offshore zone"
-    );
+    setText("conditionClarityNote", mode === "surf" ? "Surf zone" : mode === "pier" ? "Pier zone" : "Offshore zone");
 
     setText("conditionMoon", astronomy.moon);
-    setText("conditionSunrise", weather?.sunrise || astronomy.sunrise);
-    setText("conditionSunset", weather?.sunset || astronomy.sunset);
-    setText("conditionAdvisory", wind >= 18 || gusts >= 25 || swell >= 5 ? "Possible" : "None");
+    setText("conditionSunrise", astronomy.sunrise);
+    setText("conditionSunset", astronomy.sunset);
+    setText("conditionAdvisory", getAdvisory({ wind, gusts, swell, mode }));
   }
 
   async function renderAllRegions(date, activeRequest) {
@@ -381,8 +506,10 @@
 
     const cards = [];
 
-    for (const [region, base] of Object.entries(LOCATIONS)) {
+    for (const region of REGION_ORDER) {
       if (activeRequest !== requestId) return;
+
+      const base = LOCATIONS[region];
 
       try {
         const data = await fetchConditionData(base, date);
@@ -397,19 +524,19 @@
             <div class="region-stat-row">
               <div>
                 <small>Air</small>
-                <b>${Math.round(data.weather?.temperature ?? data.temp)}°</b>
+                <b>${isFiniteNumber(data.airTemp) ? Math.round(data.airTemp) + "°" : "--"}</b>
               </div>
               <div>
                 <small>${isToday(date) ? "Water Now" : "Water Est."}</small>
-                <b>${Math.round(data.temp)}°</b>
+                <b>${isFiniteNumber(data.waterTemp) ? Math.round(data.waterTemp) + "°" : "--"}</b>
               </div>
             </div>
 
             <div class="region-details">
-              <p><span>Forecast</span>${safe(data.weather?.shortForecast || "Available")}</p>
-              <p><span>Clouds</span>${data.weather?.cloudCover ?? "--"}%</p>
-              <p><span>Rain</span>${data.weather?.precipitationProbability ?? "--"}%</p>
-              <p><span>Swell</span>${data.swell.toFixed(1)} ft</p>
+              <p><span>Forecast</span>${safe(data.weather?.shortForecast || "Unavailable")}</p>
+              <p><span>Clouds</span>${displayNumber(data.weather?.cloudCover)}%</p>
+              <p><span>Rain</span>${displayNumber(data.weather?.precipitationProbability)}%</p>
+              <p><span>Swell</span>${isFiniteNumber(data.swell) ? data.swell.toFixed(1) + " ft" : "--"}</p>
               <p><span>Tide</span>${safe(data.tideMovement)}</p>
               <p><span>Moon</span>${safe(data.astronomy.moon)}</p>
               <p><span>Rating</span>${safe(data.rating)}</p>
@@ -447,9 +574,7 @@
   }
 
   function calculateSunTime(lat, lon, dateString, isSunrise) {
-    const date = dateString
-      ? new Date(`${dateString}T12:00:00`)
-      : new Date();
+    const date = dateString ? new Date(`${dateString}T12:00:00`) : new Date();
 
     const zenith = 90.833;
     const dayOfYear = getDayOfYear(date);
@@ -477,6 +602,7 @@
 
     const longitudeQuadrant = Math.floor(trueLongitude / 90) * 90;
     const raQuadrant = Math.floor(rightAscension / 90) * 90;
+
     rightAscension = rightAscension + longitudeQuadrant - raQuadrant;
     rightAscension = rightAscension / 15;
 
@@ -513,22 +639,19 @@
       0
     ));
 
-    utcDate.setUTCHours(0, 0, 0, 0);
     utcDate.setUTCMinutes(Math.round(utcTime * 60));
 
     return utcDate.toLocaleTimeString("en-US", {
       hour: "numeric",
       minute: "2-digit",
-      timeZone: "America/Los_Angeles"
+      timeZone: TIME_ZONE
     });
   }
 
   function getMoonPhase(dateString) {
-    const date = dateString
-      ? new Date(`${dateString}T12:00:00`)
-      : new Date();
+    const date = dateString ? new Date(`${dateString}T12:00:00`) : new Date();
 
-    const knownNewMoon = new Date("2026-06-10T12:00:00");
+    const knownNewMoon = new Date("2000-01-06T18:14:00Z");
     const lunarCycle = 29.53058867;
 
     const daysSinceNewMoon = (date - knownNewMoon) / 86400000;
@@ -552,22 +675,15 @@
     return `${phase} ${illumination}%`;
   }
 
-  function estimateFutureWaterTemp(currentWaterTemp, dateString, airTemp) {
+  function estimateFutureWaterTemp(currentWaterTemp, dateString) {
     const today = new Date(`${getTodayString()}T12:00:00`);
     const target = new Date(`${dateString}T12:00:00`);
-
     const daysAhead = Math.max(0, Math.round((target - today) / 86400000));
 
-    if (daysAhead === 0) return roundOne(currentWaterTemp);
+    if (!daysAhead) return roundOne(currentWaterTemp);
 
-    const air = Number(airTemp || 70);
-    const airInfluence = (air - currentWaterTemp) * 0.08;
     const seasonalTrend = getSeasonalWaterTrend(dateString);
-
-    const estimate =
-      currentWaterTemp +
-      daysAhead * seasonalTrend +
-      airInfluence;
+    const estimate = currentWaterTemp + daysAhead * seasonalTrend;
 
     return roundOne(clamp(estimate, currentWaterTemp - 3, currentWaterTemp + 3));
   }
@@ -593,243 +709,29 @@
   }) {
     let score = 60;
 
-    if (wind <= 5) score += 15;
-    else if (wind <= 8) score += 10;
-    else if (wind <= 12) score += 5;
-    else if (wind <= 16) score -= 5;
-    else if (wind <= 20) score -= 15;
-    else score -= 25;
-
-    if (gusts > 25) score -= 15;
-    else if (gusts > 18) score -= 8;
-
-    if (mode === "boat") {
-      if (swell <= 2) score += 15;
-      else if (swell <= 3) score += 10;
-      else if (swell <= 4) score += 5;
-      else if (swell <= 5) score -= 10;
+    if (isFiniteNumber(wind)) {
+      if (wind <= 5) score += 15;
+      else if (wind <= 8) score += 10;
+      else if (wind <= 12) score += 5;
+      else if (wind <= 16) score -= 5;
+      else if (wind <= 20) score -= 15;
       else score -= 25;
     }
 
-    if (mode === "pier") {
-      if (swell <= 3) score += 10;
-      else if (swell <= 5) score += 2;
-      else score -= 12;
+    if (isFiniteNumber(gusts)) {
+      if (gusts > 25) score -= 15;
+      else if (gusts > 18) score -= 8;
     }
 
-    if (mode === "beach") {
-      if (swell >= 2 && swell <= 4) score += 12;
-      else if (swell > 6) score -= 15;
-      else if (swell < 1.5) score -= 5;
-    }
+    if (isFiniteNumber(swell)) {
+      if (mode === "boat") {
+        if (swell <= 2) score += 15;
+        else if (swell <= 3) score += 10;
+        else if (swell <= 4) score += 5;
+        else if (swell <= 5) score -= 10;
+        else score -= 25;
+      }
 
-    if (waterTemp >= 63 && waterTemp <= 69) score += 8;
-    else if (waterTemp < 58 || waterTemp > 74) score -= 8;
-
-    const tideText = String(tideMovement).toLowerCase();
-
-    if (tideText.includes("moving")) score += 10;
-    else if (tideText.includes("slack")) score -= 6;
-
-    if (rainChance > 60) score -= 15;
-    else if (rainChance > 30) score -= 8;
-
-    if (mode === "beach" && uvIndex > 9) score -= 5;
-
-    return Math.max(25, Math.min(100, Math.round(score)));
-  }
-
-  function getTideMovement(tides, selectedDate) {
-    if (!Array.isArray(tides) || tides.length < 2) return "Unknown";
-
-    const parsed = parseTides(tides);
-    if (parsed.length < 2) return "Unknown";
-
-    const targetTime = getTargetTideTime(selectedDate);
-    let nextIndex = parsed.findIndex(t => t.time > targetTime);
-
-    if (nextIndex <= 0) nextIndex = 1;
-
-    const previous = parsed[nextIndex - 1];
-    const next = parsed[nextIndex];
-
-    if (!previous || !next) return "Unknown";
-
-    const diff = next.height - previous.height;
-
-    if (Math.abs(diff) < 0.15) return "Slack";
-    return diff > 0 ? "Rising / Moving" : "Falling / Moving";
-  }
-
-  function getNextTideLabel(tides, selectedDate) {
-    if (!Array.isArray(tides) || !tides.length) return "Tide data pending";
-
-    const parsed = parseTides(tides);
-    if (!parsed.length) return "Tide data pending";
-
-    const targetTime = getTargetTideTime(selectedDate);
-    const next = parsed.find(t => t.time > targetTime) || parsed[0];
-
-    return `${next.type} ${next.height.toFixed(1)} ft · ${next.time.toLocaleTimeString([], {
-      hour: "numeric",
-      minute: "2-digit"
-    })}`;
-  }
-
-  function parseTides(tides) {
-    return tides
-      .map(t => {
-        const rawTime = String(t.t || t.time || t.date || "").replace(" ", "T");
-
-        return {
-          time: new Date(rawTime),
-          height: Number(t.v || t.height || t.prediction),
-          type: t.type === "H" ? "High" : t.type === "L" ? "Low" : "Tide"
-        };
-      })
-      .filter(t => !Number.isNaN(t.time.getTime()) && Number.isFinite(t.height))
-      .sort((a, b) => a.time - b.time);
-  }
-
-  function getTargetTideTime(selectedDate) {
-    if (!selectedDate) return new Date();
-    if (isToday(selectedDate)) return new Date();
-
-    return new Date(`${selectedDate}T12:00:00`);
-  }
-
-  function estimateVisibility(region, wind, apiVisibility) {
-    if (apiVisibility) return `${apiVisibility} mi`;
-    if (wind >= 15) return "6 mi";
-    if (region === "San Diego County") return "13 mi";
-    return "10 mi";
-  }
-
-  function estimateClarity(mode, wind, swell) {
-    if (mode === "beach" && swell > 4) return "Choppy";
-    if (wind > 14) return "Stirred";
-    if (swell < 3) return "Clean";
-    return "Fair";
-  }
-
-  function getRating(score) {
-    if (score >= 90) return "Excellent";
-    if (score >= 75) return "Good";
-    if (score >= 60) return "Fair";
-    if (score >= 45) return "Slow";
-    return "Poor";
-  }
-
-  function ratingClass(score) {
-    if (score >= 90) return "green-pill";
-    if (score >= 75) return "cyan-pill";
-    if (score >= 60) return "small-pill";
-    return "outline-pill";
-  }
-
-  function labelMode(mode) {
-    if (mode === "boat") return "Boat";
-    if (mode === "beach") return "Surf";
-    return "Pier";
-  }
-
-  function formatDateLabel(dateString) {
-    if (!dateString) return "Today";
-
-    const today = getTodayString();
-
-    const tomorrowDate = new Date();
-    tomorrowDate.setDate(tomorrowDate.getDate() + 1);
-    const tomorrow = toLocalDateString(tomorrowDate);
-
-    if (dateString === today) return "Today";
-    if (dateString === tomorrow) return "Tomorrow";
-
-    const date = new Date(`${dateString}T12:00:00`);
-
-    return date.toLocaleDateString("en-US", {
-      weekday: "short",
-      month: "short",
-      day: "numeric"
-    });
-  }
-
-  function getDateMonth(dateString) {
-    const date = dateString
-      ? new Date(`${dateString}T12:00:00`)
-      : new Date();
-
-    return date.getMonth() + 1;
-  }
-
-  function isToday(dateString) {
-    return dateString === getTodayString();
-  }
-
-  function getTodayString() {
-    return toLocalDateString(new Date());
-  }
-
-  function toLocalDateString(date) {
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, "0");
-    const day = String(date.getDate()).padStart(2, "0");
-
-    return `${year}-${month}-${day}`;
-  }
-
-  function getDayOfYear(date) {
-    const start = new Date(date.getFullYear(), 0, 0);
-    return Math.floor((date - start) / 86400000);
-  }
-
-  function toRadians(degrees) {
-    return degrees * Math.PI / 180;
-  }
-
-  function toDegrees(radians) {
-    return radians * 180 / Math.PI;
-  }
-
-  function normalizeDegrees(value) {
-    return ((value % 360) + 360) % 360;
-  }
-
-  function normalizeHours(value) {
-    return ((value % 24) + 24) % 24;
-  }
-
-  function clamp(value, min, max) {
-    return Math.min(max, Math.max(min, value));
-  }
-
-  function roundOne(value) {
-    if (value === null || value === undefined || isNaN(value)) return null;
-    return Number(Number(value).toFixed(1));
-  }
-
-  function setText(id, value) {
-    const el = document.getElementById(id);
-    if (el) el.textContent = value || "--";
-  }
-
-  function safe(value) {
-    return String(value || "N/A")
-      .replaceAll("&", "&amp;")
-      .replaceAll("<", "&lt;")
-      .replaceAll(">", "&gt;")
-      .replaceAll('"', "&quot;")
-      .replaceAll("'", "&#039;");
-  }
-
-  function safeAttr(value) {
-    return String(value || "")
-      .replaceAll("&", "&amp;")
-      .replaceAll('"', "&quot;")
-      .replaceAll("'", "&#039;");
-  }
-
-  function debug(...args) {
-    if (DEBUG) console.log("[conditions.js]", ...args);
-  }
-})();
+      if (mode === "pier") {
+        if (swell <= 3) score += 10;
+        else if (s
