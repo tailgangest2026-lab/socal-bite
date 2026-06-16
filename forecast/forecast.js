@@ -299,9 +299,11 @@ async function renderForecast(region) {
   setText("swell", formatSwell(condition) || forecast.swellText || estimateSwell(displayRegion));
   setText("visibility", getValue(condition, ["visibility"]) || forecast.visibilityText || estimateVisibility(displayRegion));
   setText("tide", getValue(condition, ["tideMovement", "tide_movement", "tidemovement", "tide"]) || forecast.tideText || estimateTide(score));
-  setText("sunrise", getValue(condition, ["sunrise"]) || row.sunrise || "--");
-  setText("sunset", getValue(condition, ["sunset"]) || row.sunset || "--");
-  setText("moon", getValue(condition, ["moon"]) || row.moon || "--");
+const astro = await getAstronomy(lat, lon, targetDate);
+
+setText("sunrise", astro?.sunrise || "--");
+setText("sunset", astro?.sunset || "--");
+setText("moon", astro?.moonPhase || "--");
 
 
   buildSpeciesRankings(displayRegion);
