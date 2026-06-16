@@ -34,9 +34,7 @@ async function fetchJson(path) {
 
   const response = await fetch(url + (url.includes("?") ? "&" : "?") + "v=" + Date.now());
 
-  if (!response.ok) {
-    throw new Error("Could not load " + path);
-  }
+  if (!response.ok) throw new Error("Could not load " + path);
 
   return response.json();
 }
@@ -53,7 +51,6 @@ async function fetchReportYear(year) {
 async function loadRecentDailyRows() {
   try {
     const index = await fetchJson("../daily-report-index.json");
-
     if (!Array.isArray(index) || !index.length) return [];
 
     const recentDates = new Set(
@@ -104,7 +101,7 @@ function buildRegionTabs() {
 
   tabs.innerHTML = regions.map(region => `
     <button
-      class="${normalize(region) === normalize(selectedRegion) ? "active" : ""}"
+      class="${normalizeRegion(region) === normalizeRegion(selectedRegion) ? "active" : ""}"
       type="button"
       onclick="selectRegion('${escapeAttr(region)}')"
     >
@@ -123,11 +120,14 @@ async function renderForecast(region) {
   const currentToken = ++renderToken;
 
   const row =
-    forecastRows.find(r => normalize(r.region) === normalize(region)) ||
+    forecastRows.find(r => normalizeRegion(r.region) === normalizeRegion(region)) ||
     forecastRows[0];
 
   const displayRegion = row.region || region || "Los Angeles";
   const condition = getLatestConditionForRegion(displayRegion);
+
+  console.log("Forecast selected region:", displayRegion);
+  console.log("Forecast matched condition:", condition);
 
   const fish = Number(row.total_fish_today || row.totalFish || row.fish || 0);
   const anglers = Number(row.total_anglers_today || row.totalAnglers || row.anglers || 1);
@@ -162,10 +162,20 @@ async function renderForecast(region) {
 function getLatestConditionForRegion(region) {
   if (!Array.isArray(conditionRows)) return null;
 
-  const target = normalize(region);
+  const target = normalizeRegion(region);
 
   const matches = conditionRows
-    .filter(row => normalize(row.region) === target)
+    .filter(row => {
+      const rowRegion = normalizeRegion(
+        row.region ||
+        row.county ||
+        row.area ||
+        row.name ||
+        row.location
+      );
+
+      return rowRegion === target;
+    })
     .sort((a, b) => {
       const dateA = new Date(a.date || a.updatedAt || a.updated_at || 0);
       const dateB = new Date(b.date || b.updatedAt || b.updated_at || 0);
@@ -394,9 +404,8 @@ function buildSpeciesRankings(region) {
 }
 
 function buildSpeciesFpaByRegion(region) {
-  const targetRegion = normalize(region);
-
-  const regionRows = dailyRows.filter(row => normalize(row.region) === targetRegion);
+  const targetRegion = normalizeRegion(region);
+  const regionRows = dailyRows.filter(row => normalizeRegion(row.region) === targetRegion);
 
   const speciesTotals = {};
   const speciesAnglers = {};
@@ -430,8 +439,8 @@ function buildSpeciesFpaByRegion(region) {
 }
 
 function buildSpeciesWeeklyTrend(region) {
-  const targetRegion = normalize(region);
-  const rows = dailyRows.filter(row => normalize(row.region) === targetRegion);
+  const targetRegion = normalizeRegion(region);
+  const rows = dailyRows.filter(row => normalizeRegion(row.region) === targetRegion);
 
   const today = new Date();
   const weeks = [];
@@ -617,9 +626,7 @@ function formatSwell(row) {
 
   let text = `${height.toFixed(1)} ft`;
 
-  if (Number.isFinite(period)) {
-    text += ` @ ${Math.round(period)}s`;
-  }
+  if (Number.isFinite(period)) text += ` @ ${Math.round(period)}s`;
 
   return text;
 }
@@ -688,8 +695,40 @@ function getWeekNumber(date) {
   return Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
 }
 
-function normalize(value) {
-  return String(value || "").trim().toLowerCase();
+function normalizeRegion(value) {
+  let text = String(value || "")
+    .trim()
+    .toLowerCase();
+
+  text = text
+    .replaceAll(".", "")
+    .replaceAll("-", " ")
+    .replaceAll("_", " ")
+    .replace(/\s+/g, " ");
+
+  text = text
+    .replace(/\bcounty\b/g, "")
+    .replace(/\bca\b/g, "")
+    .replace(/\bcalifornia\b/g, "")
+    .trim();
+
+  const aliases = {
+    "la": "los angeles",
+    "l a": "los angeles",
+    "los angeles county": "los angeles",
+    "orange": "orange county",
+    "oc": "orange county",
+    "o c": "orange county",
+    "orange county": "orange county",
+    "san diego county": "san diego",
+    "santa barbara county": "santa barbara",
+    "ventura county": "ventura",
+    "san luis obispo county": "san luis obispo",
+    "slo": "san luis obispo",
+    "s l o": "san luis obispo"
+  };
+
+  return aliases[text] || text;
 }
 
 function setText(id, value) {
