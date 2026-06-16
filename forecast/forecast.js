@@ -298,7 +298,14 @@ async function renderForecast(region) {
   setText("wind", formatWind(condition) || forecast.windText || estimateWind(displayRegion));
   setText("swell", formatSwell(condition) || forecast.swellText || estimateSwell(displayRegion));
   setText("visibility", getValue(condition, ["visibility"]) || forecast.visibilityText || estimateVisibility(displayRegion));
-  setText("tide", getValue(condition, ["tideMovement", "tide_movement", "tidemovement", "tide"]) || forecast.tideText || estimateTide(score));
+  setText(
+  "tide",
+  getValue(condition, [
+    "tideMovement",
+    "tide_movement",
+    "tidemovement"
+  ]) || forecast.tideText || "Unknown"
+);
 
   const base = LOCATIONS[displayRegion];
 
