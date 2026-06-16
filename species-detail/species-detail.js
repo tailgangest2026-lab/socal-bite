@@ -45,7 +45,7 @@ async function fetchJson(path) {
 }
 
 async function loadRecentDailyRows(days = 84) {
-  const index = await fetchJson("../daily-report-index.json");
+  const index = await fetchJson("daily-report-index.json");
   if (!Array.isArray(index) || !index.length) return [];
 
   const reports = index.slice(0, days);
