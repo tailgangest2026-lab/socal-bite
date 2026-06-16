@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", initForecast);
 
 let forecastRows = [];
+let conditionRows = [];
 let dailyRows = [];
 let selectedRegion = "";
 let speciesFpaChartInstance = null;
@@ -10,6 +11,7 @@ let renderToken = 0;
 async function initForecast() {
   try {
     forecastRows = await fetchJson("../home.json");
+    conditionRows = await fetchJson("../conditions.json");
     dailyRows = await loadRecentDailyRows();
 
     if (!Array.isArray(forecastRows) || !forecastRows.length) {
@@ -40,9 +42,7 @@ async function fetchJson(path) {
 }
 
 async function fetchReportYear(year) {
-  if (reportYearCache[year]) {
-    return reportYearCache[year];
-  }
+  if (reportYearCache[year]) return reportYearCache[year];
 
   const rows = await fetchJson(`../reports/reports-${year}.json`);
   reportYearCache[year] = Array.isArray(rows) ? rows : [];
@@ -54,9 +54,7 @@ async function loadRecentDailyRows() {
   try {
     const index = await fetchJson("../daily-report-index.json");
 
-    if (!Array.isArray(index) || !index.length) {
-      return [];
-    }
+    if (!Array.isArray(index) || !index.length) return [];
 
     const recentDates = new Set(
       index
@@ -65,10 +63,7 @@ async function loadRecentDailyRows() {
         .filter(Boolean)
     );
 
-    const years = [
-      ...new Set([...recentDates].map(date => date.substring(0, 4)))
-    ];
-
+    const years = [...new Set([...recentDates].map(date => date.substring(0, 4)))];
     const rows = [];
 
     for (const year of years) {
@@ -107,17 +102,15 @@ function buildRegionTabs() {
     )
   ];
 
-  tabs.innerHTML = regions.map(region => {
-    return `
-      <button
-        class="${normalize(region) === normalize(selectedRegion) ? "active" : ""}"
-        type="button"
-        onclick="selectRegion('${escapeAttr(region)}')"
-      >
-        ${safe(region)}
-      </button>
-    `;
-  }).join("");
+  tabs.innerHTML = regions.map(region => `
+    <button
+      class="${normalize(region) === normalize(selectedRegion) ? "active" : ""}"
+      type="button"
+      onclick="selectRegion('${escapeAttr(region)}')"
+    >
+      ${safe(region)}
+    </button>
+  `).join("");
 }
 
 function selectRegion(region) {
@@ -134,6 +127,7 @@ async function renderForecast(region) {
     forecastRows[0];
 
   const displayRegion = row.region || region || "Los Angeles";
+  const condition = getLatestConditionForRegion(displayRegion);
 
   const fish = Number(row.total_fish_today || row.totalFish || row.fish || 0);
   const anglers = Number(row.total_anglers_today || row.totalAnglers || row.anglers || 1);
@@ -143,7 +137,7 @@ async function renderForecast(region) {
   setText("selectedRegionLabel", displayRegion);
   setText("trendRegion", displayRegion);
 
-  const forecast = await calculateForecastScore(row, displayRegion, fpa, trips);
+  const forecast = await calculateForecastScore(row, condition, displayRegion, fpa, trips);
 
   if (currentToken !== renderToken) return;
 
@@ -152,17 +146,139 @@ async function renderForecast(region) {
 
   updateBiteScoreGauge(score, label);
 
-  setText("waterTemp", forecast.waterTempText || row.water_temp || row.waterTemp || estimateWaterTemp(displayRegion));
-  setText("wind", forecast.windText || row.wind || estimateWind(displayRegion));
-  setText("swell", forecast.swellText || row.swell || estimateSwell(displayRegion));
-  setText("visibility", forecast.visibilityText || row.visibility || estimateVisibility(displayRegion));
-  setText("tide", forecast.tideText || row.tide_movement || row.tide || estimateTide(score));
-  setText("sunrise", row.sunrise || "5:42 AM");
-  setText("sunset", row.sunset || "8:01 PM");
-  setText("moon", row.moon || "Waxing 62%");
+  setText("waterTemp", formatTemp(condition?.waterTemp || condition?.water_temp) || forecast.waterTempText || estimateWaterTemp(displayRegion));
+  setText("wind", formatWind(condition) || forecast.windText || estimateWind(displayRegion));
+  setText("swell", formatSwell(condition) || forecast.swellText || estimateSwell(displayRegion));
+  setText("visibility", condition?.visibility || forecast.visibilityText || estimateVisibility(displayRegion));
+  setText("tide", condition?.tideMovement || condition?.tide_movement || condition?.tide || forecast.tideText || estimateTide(score));
+  setText("sunrise", condition?.sunrise || row.sunrise || "5:42 AM");
+  setText("sunset", condition?.sunset || row.sunset || "8:01 PM");
+  setText("moon", condition?.moon || row.moon || "Waxing 62%");
 
   buildSpeciesRankings(displayRegion);
   buildSpeciesFpaChart(displayRegion);
+}
+
+function getLatestConditionForRegion(region) {
+  if (!Array.isArray(conditionRows)) return null;
+
+  const target = normalize(region);
+
+  const matches = conditionRows
+    .filter(row => normalize(row.region) === target)
+    .sort((a, b) => {
+      const dateA = new Date(a.date || a.updatedAt || a.updated_at || 0);
+      const dateB = new Date(b.date || b.updatedAt || b.updated_at || 0);
+      return dateB - dateA;
+    });
+
+  return matches[0] || null;
+}
+
+async function calculateForecastScore(row, condition, region, fpa, trips) {
+  const locations = {
+    "Santa Barbara": { lat: 34.4208, lon: -119.6982, station: "9411340" },
+    "Ventura": { lat: 34.2746, lon: -119.2290, station: "9411189" },
+    "Los Angeles": { lat: 33.7405, lon: -118.2817, station: "9410660" },
+    "Orange County": { lat: 33.6037, lon: -117.9, station: "9410580" },
+    "San Diego": { lat: 32.7157, lon: -117.1611, station: "9410170" },
+    "San Luis Obispo": { lat: 35.2828, lon: -120.6596, station: "9412110" }
+  };
+
+  const base = locations[region];
+  let score = Number(condition?.score || 45);
+
+  if (!condition?.score) {
+    if (fpa >= 8) score += 25;
+    else if (fpa >= 5) score += 18;
+    else if (fpa >= 3) score += 12;
+    else if (fpa >= 1.5) score += 7;
+
+    if (trips >= 20) score += 10;
+    else if (trips >= 10) score += 6;
+    else if (trips >= 5) score += 3;
+  }
+
+  const conditionWind = Number(condition?.windSpeed || condition?.wind_speed);
+  const conditionGust = Number(condition?.windGust || condition?.windGusts || condition?.wind_gust);
+  const conditionTemp = Number(condition?.waterTemp || condition?.water_temp);
+  const conditionSwell = Number(condition?.swellHeight || condition?.swell_height || condition?.waveHeight || condition?.wave_height);
+  const conditionTide = condition?.tideMovement || condition?.tide_movement || condition?.tide;
+
+  if (Number.isFinite(conditionWind)) {
+    if (conditionWind <= 6) score += 10;
+    else if (conditionWind <= 10) score += 6;
+    else if (conditionWind <= 15) score += 1;
+    else score -= 10;
+  }
+
+  if (Number.isFinite(conditionGust) && conditionGust >= 25) score -= 8;
+
+  if (Number.isFinite(conditionSwell)) {
+    if (conditionSwell <= 2.5) score += 8;
+    else if (conditionSwell <= 4) score += 4;
+    else if (conditionSwell >= 5) score -= 10;
+  }
+
+  if (Number.isFinite(conditionTemp)) {
+    if (conditionTemp >= 63 && conditionTemp <= 70) score += 6;
+    else if (conditionTemp < 58 || conditionTemp > 74) score -= 6;
+  }
+
+  if (String(conditionTide || "").toLowerCase().includes("moving")) score += 7;
+
+  if (!base || typeof SCBConditions === "undefined") {
+    return {
+      score: clampScore(score),
+      waterTempText: formatTemp(conditionTemp),
+      windText: formatWind(condition),
+      swellText: formatSwell(condition),
+      visibilityText: condition?.visibility || estimateVisibility(region),
+      tideText: conditionTide || estimateTide(score)
+    };
+  }
+
+  try {
+    const today = new Date().toISOString().split("T")[0];
+
+    const [weather, tides, waterTemp, marine] = await Promise.all([
+      SCBConditions.getWeather(base.lat, base.lon, today),
+      SCBConditions.getTides(base.station, today),
+      SCBConditions.getWaterTemp(base.station),
+      typeof SCBConditions.getMarine === "function"
+        ? SCBConditions.getMarine(base.lat, base.lon, today)
+        : Promise.resolve(null)
+    ]);
+
+    const wind = SCBConditions.parseWindSpeed
+      ? SCBConditions.parseWindSpeed(weather?.windSpeed, conditionWind || 8)
+      : Number(weather?.windSpeed || conditionWind || 8);
+
+    const gusts = Number(weather?.windGusts || conditionGust || 0);
+    const temp = Number(waterTemp || conditionTemp || 65);
+    const swell = Number(marine?.waveHeight || marine?.swellWaveHeight || conditionSwell || 3);
+    const tideMovement = getTideMovement(tides) || conditionTide;
+
+    return {
+      score: clampScore(score),
+      waterTempText: Number.isFinite(temp) ? `${Math.round(temp)}°F` : formatTemp(conditionTemp),
+      windText: buildWindText(weather, wind, gusts),
+      swellText: Number.isFinite(swell) ? `${swell.toFixed(1)} ft` : formatSwell(condition),
+      visibilityText: weather?.visibility || condition?.visibility || estimateVisibility(region),
+      tideText: tideMovement || conditionTide || estimateTide(score)
+    };
+  } catch (error) {
+    console.warn("NOAA forecast fallback used:", error);
+
+    return {
+      score: clampScore(score),
+      waterTempText: formatTemp(conditionTemp),
+      windText: formatWind(condition),
+      swellText: formatSwell(condition),
+      visibilityText: condition?.visibility || estimateVisibility(region),
+      tideText: conditionTide || estimateTide(score)
+    };
+  }
 }
 
 function updateBiteScoreGauge(score, label) {
@@ -215,9 +331,7 @@ function buildSpeciesFpaChart(region) {
     return;
   }
 
-  if (speciesFpaChartInstance) {
-    speciesFpaChartInstance.destroy();
-  }
+  if (speciesFpaChartInstance) speciesFpaChartInstance.destroy();
 
   speciesFpaChartInstance = new Chart(canvas, {
     type: "line",
@@ -279,169 +393,10 @@ function buildSpeciesRankings(region) {
   `).join("");
 }
 
-async function calculateForecastScore(row, region, fpa, trips) {
-  const locations = {
-    "Santa Barbara": { lat: 34.4208, lon: -119.6982, station: "9411340" },
-    "Ventura": { lat: 34.2746, lon: -119.2290, station: "9411189" },
-    "Los Angeles": { lat: 33.7405, lon: -118.2817, station: "9410660" },
-    "Orange County": { lat: 33.6037, lon: -117.9, station: "9410580" },
-    "San Diego": { lat: 32.7157, lon: -117.1611, station: "9410170" },
-    "San Luis Obispo": { lat: 35.2828, lon: -120.6596, station: "9412110" }
-  };
-
-  const base = locations[region];
-  let score = 45;
-
-  if (fpa >= 8) score += 25;
-  else if (fpa >= 5) score += 18;
-  else if (fpa >= 3) score += 12;
-  else if (fpa >= 1.5) score += 7;
-
-  if (trips >= 20) score += 10;
-  else if (trips >= 10) score += 6;
-  else if (trips >= 5) score += 3;
-
-  if (!base || typeof SCBConditions === "undefined") {
-    return {
-      score: clampScore(score),
-      waterTempText: row.water_temp || row.waterTemp || estimateWaterTemp(region),
-      windText: row.wind || estimateWind(region),
-      swellText: row.swell || estimateSwell(region),
-      visibilityText: row.visibility || estimateVisibility(region),
-      tideText: row.tide_movement || row.tide || estimateTide(score)
-    };
-  }
-
-  try {
-    const today = new Date().toISOString().split("T")[0];
-
-    const [weather, tides, waterTemp, marine] = await Promise.all([
-      SCBConditions.getWeather(base.lat, base.lon, today),
-      SCBConditions.getTides(base.station, today),
-      SCBConditions.getWaterTemp(base.station),
-      typeof SCBConditions.getMarine === "function"
-        ? SCBConditions.getMarine(base.lat, base.lon, today)
-        : Promise.resolve(null)
-    ]);
-
-    const wind = SCBConditions.parseWindSpeed
-      ? SCBConditions.parseWindSpeed(weather?.windSpeed, 8)
-      : Number(weather?.windSpeed || 8);
-
-    const gusts = Number(weather?.windGusts || 0);
-    const temp = Number(waterTemp || 65);
-    const swell = Number(marine?.waveHeight || marine?.swellWaveHeight || 3);
-    const tideMovement = getTideMovement(tides);
-
-    if (wind <= 6) score += 10;
-    else if (wind <= 10) score += 6;
-    else if (wind <= 15) score += 1;
-    else score -= 10;
-
-    if (gusts >= 25) score -= 8;
-
-    if (swell <= 2.5) score += 8;
-    else if (swell <= 4) score += 4;
-    else if (swell >= 5) score -= 10;
-
-    if (temp >= 63 && temp <= 70) score += 6;
-    else if (temp < 58 || temp > 74) score -= 6;
-
-    if (String(tideMovement).toLowerCase().includes("moving")) score += 7;
-
-    return {
-      score: clampScore(score),
-      waterTempText: Number.isFinite(temp) ? `${Math.round(temp)}°F` : estimateWaterTemp(region),
-      windText: buildWindText(weather, wind),
-      swellText: Number.isFinite(swell) ? `${swell.toFixed(1)} ft` : estimateSwell(region),
-      visibilityText: weather?.visibility || estimateVisibility(region),
-      tideText: tideMovement
-    };
-  } catch (error) {
-    console.warn("NOAA forecast score fallback used:", error);
-
-    return {
-      score: clampScore(score),
-      waterTempText: row.water_temp || row.waterTemp || estimateWaterTemp(region),
-      windText: row.wind || estimateWind(region),
-      swellText: row.swell || estimateSwell(region),
-      visibilityText: row.visibility || estimateVisibility(region),
-      tideText: row.tide_movement || row.tide || estimateTide(score)
-    };
-  }
-}
-
-function buildWindText(weather, wind) {
-  const speed = Math.round(Number(wind || weather?.windSpeed || 0));
-  const direction =
-    weather?.windDirectionText ||
-    weather?.windDirection ||
-    weather?.windDir ||
-    "";
-
-  const gusts = Number(weather?.windGusts || 0);
-
-  let text = `${speed} kt`;
-
-  if (direction) {
-    text += ` ${direction}`;
-  }
-
-  if (gusts > speed) {
-    text += `, gusts ${Math.round(gusts)} kt`;
-  }
-
-  return text;
-}
-
-function getTideMovement(tides) {
-  if (!Array.isArray(tides) || tides.length < 2) return "Unknown";
-
-  const now = new Date();
-
-  const validTides = tides
-    .map(tide => {
-      const time = tide.t || tide.time || tide.dateTime || tide.timestamp;
-      const value = Number(tide.v || tide.value || tide.height || tide.prediction);
-
-      return {
-        time: time ? new Date(time) : null,
-        value
-      };
-    })
-    .filter(tide => tide.time instanceof Date && !isNaN(tide.time) && Number.isFinite(tide.value))
-    .sort((a, b) => a.time - b.time);
-
-  if (validTides.length < 2) return "Unknown";
-
-  let previous = validTides[0];
-  let next = validTides[1];
-
-  for (let i = 1; i < validTides.length; i++) {
-    if (validTides[i].time >= now) {
-      previous = validTides[i - 1] || validTides[i];
-      next = validTides[i];
-      break;
-    }
-  }
-
-  const diff = next.value - previous.value;
-
-  if (Math.abs(diff) < 0.15) return "Slack";
-  if (diff > 0) return "Moving Rising";
-  return "Moving Falling";
-}
-
-function clampScore(score) {
-  return Math.max(35, Math.min(96, Math.round(Number(score || 0))));
-}
-
 function buildSpeciesFpaByRegion(region) {
   const targetRegion = normalize(region);
 
-  const regionRows = dailyRows.filter(row => {
-    return normalize(row.region) === targetRegion;
-  });
+  const regionRows = dailyRows.filter(row => normalize(row.region) === targetRegion);
 
   const speciesTotals = {};
   const speciesAnglers = {};
@@ -474,62 +429,9 @@ function buildSpeciesFpaByRegion(region) {
     .slice(0, 6);
 }
 
-function buildRegionalFpaTrend(region) {
-  const targetRegion = normalize(region);
-  const today = new Date();
-
-  const weeks = [];
-
-  for (let i = 11; i >= 0; i--) {
-    const end = new Date(today);
-    end.setDate(today.getDate() - i * 7);
-
-    const start = new Date(end);
-    start.setDate(end.getDate() - 6);
-
-    weeks.push({
-      start,
-      end,
-      fish: 0,
-      anglers: 0,
-      label: `${start.getMonth() + 1}/${start.getDate()}`
-    });
-  }
-
-  dailyRows.forEach(row => {
-    if (normalize(row.region) !== targetRegion) return;
-
-    const rowDate = new Date(row.__reportDate || row.date || row.report_date || row.reportDate || "");
-    if (isNaN(rowDate)) return;
-
-    const anglers = Number(row.anglers || 0);
-    const totalFish = parseFishCounts(row.fish_counts)
-      .reduce((sum, item) => sum + Number(item.count || 0), 0);
-
-    weeks.forEach(week => {
-      if (rowDate >= week.start && rowDate <= week.end) {
-        week.fish += totalFish;
-        week.anglers += anglers;
-      }
-    });
-  });
-
-  return weeks
-    .map(week => ({
-      label: week.label,
-      fish: week.fish,
-      anglers: week.anglers,
-      fpa: week.anglers > 0 ? week.fish / week.anglers : 0
-    }))
-    .filter(week => week.fish > 0 || week.anglers > 0);
-}
-
 function buildSpeciesWeeklyTrend(region) {
   const targetRegion = normalize(region);
-
-  const rows = dailyRows.filter(row =>
-    normalize(row.region) === targetRegion
-  );
+  const rows = dailyRows.filter(row => normalize(row.region) === targetRegion);
 
   const today = new Date();
   const weeks = [];
@@ -564,10 +466,7 @@ function buildSpeciesWeeklyTrend(region) {
     parseFishCounts(row.fish_counts).forEach(item => {
       if (!item || !item.species) return;
 
-      if (!speciesTotals[item.species]) {
-        speciesTotals[item.species] = {};
-      }
-
+      if (!speciesTotals[item.species]) speciesTotals[item.species] = {};
       if (!speciesTotals[item.species][week.key]) {
         speciesTotals[item.species][week.key] = { fish: 0, anglers: 0 };
       }
@@ -611,6 +510,44 @@ function buildSpeciesWeeklyTrend(region) {
   };
 }
 
+function getTideMovement(tides) {
+  if (!Array.isArray(tides) || tides.length < 2) return "Unknown";
+
+  const now = new Date();
+
+  const validTides = tides
+    .map(tide => {
+      const time = tide.t || tide.time || tide.dateTime || tide.timestamp;
+      const value = Number(tide.v || tide.value || tide.height || tide.prediction);
+
+      return {
+        time: time ? new Date(time) : null,
+        value
+      };
+    })
+    .filter(tide => tide.time instanceof Date && !isNaN(tide.time) && Number.isFinite(tide.value))
+    .sort((a, b) => a.time - b.time);
+
+  if (validTides.length < 2) return "Unknown";
+
+  let previous = validTides[0];
+  let next = validTides[1];
+
+  for (let i = 1; i < validTides.length; i++) {
+    if (validTides[i].time >= now) {
+      previous = validTides[i - 1] || validTides[i];
+      next = validTides[i];
+      break;
+    }
+  }
+
+  const diff = next.value - previous.value;
+
+  if (Math.abs(diff) < 0.15) return "Slack";
+  if (diff > 0) return "Moving Rising";
+  return "Moving Falling";
+}
+
 function parseFishCounts(text) {
   return String(text || "")
     .split(",")
@@ -626,6 +563,65 @@ function parseFishCounts(text) {
       };
     })
     .filter(Boolean);
+}
+
+function formatTemp(value) {
+  const temp = Number(value);
+  if (!Number.isFinite(temp)) return "";
+  return `${Math.round(temp)}°F`;
+}
+
+function formatWind(row) {
+  if (!row) return "";
+
+  const speed = Number(row.windSpeed || row.wind_speed);
+  const gust = Number(row.windGust || row.windGusts || row.wind_gust);
+  const direction = row.windDirection || row.wind_direction || "";
+
+  if (!Number.isFinite(speed)) return "";
+
+  let text = `${Math.round(speed)} kt`;
+
+  if (direction) text += ` ${direction}`;
+  if (Number.isFinite(gust) && gust > speed) text += `, gusts ${Math.round(gust)} kt`;
+
+  return text;
+}
+
+function buildWindText(weather, wind, gusts) {
+  const speed = Math.round(Number(wind || weather?.windSpeed || 0));
+  const direction =
+    weather?.windDirectionText ||
+    weather?.windDirection ||
+    weather?.windDir ||
+    "";
+
+  let text = `${speed} kt`;
+
+  if (direction) text += ` ${direction}`;
+  if (Number.isFinite(gusts) && gusts > speed) text += `, gusts ${Math.round(gusts)} kt`;
+
+  return text;
+}
+
+function formatSwell(row) {
+  if (!row) return "";
+
+  const wave = Number(row.waveHeight || row.wave_height);
+  const swell = Number(row.swellHeight || row.swell_height);
+  const period = Number(row.swellPeriod || row.swell_period);
+
+  const height = Number.isFinite(swell) ? swell : wave;
+
+  if (!Number.isFinite(height)) return "";
+
+  let text = `${height.toFixed(1)} ft`;
+
+  if (Number.isFinite(period)) {
+    text += ` @ ${Math.round(period)}s`;
+  }
+
+  return text;
 }
 
 function estimateWaterTemp(region) {
@@ -677,6 +673,10 @@ function estimateTide(score) {
   return "Falling";
 }
 
+function clampScore(score) {
+  return Math.max(35, Math.min(96, Math.round(Number(score || 0))));
+}
+
 function getWeekNumber(date) {
   const d = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
   const dayNum = d.getUTCDay() || 7;
@@ -689,9 +689,7 @@ function getWeekNumber(date) {
 }
 
 function normalize(value) {
-  return String(value || "")
-    .trim()
-    .toLowerCase();
+  return String(value || "").trim().toLowerCase();
 }
 
 function setText(id, value) {
