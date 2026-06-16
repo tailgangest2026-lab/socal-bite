@@ -1,7 +1,17 @@
 /* =========================================================
    BEACH CONDITIONS PAGE
    ========================================================= */
+#site-header {
+  position: relative;
+  z-index: 1000;
+}
 
+.page-top {
+  position: relative;
+  z-index: 1;
+  padding: 56px 20px 24px;
+  text-align: center;
+}
 .page-top {
   padding: 56px 20px 24px;
   text-align: center;
