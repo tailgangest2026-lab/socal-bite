@@ -165,7 +165,19 @@
   font-weight: 800;
   font-size: 1rem;
 }
+#biteScoreValue {
+  display: block;
+  font-size: 100px !important;
+  line-height: 1 !important;
+  font-weight: 900 !important;
+}
 
+#biteScoreLabel {
+  display: block;
+  font-size: 22px !important;
+  line-height: 1.2 !important;
+  margin-top: 8px;
+}
 /* =========================================================
    CONDITION CARDS
    ========================================================= */
