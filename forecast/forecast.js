@@ -132,7 +132,65 @@ async function initForecast() {
     console.error("Forecast load failed:", error);
   }
 }
+async function fetchReportYear(year) {
+  if (reportYearCache[year]) return reportYearCache[year];
 
+  const rows = await fetchJson(`../reports/reports-${year}.json`);
+  reportYearCache[year] = Array.isArray(rows) ? rows : [];
+
+  return reportYearCache[year];
+}
+
+async function loadRecentDailyRows() {
+  try {
+    const index = await fetchJson("../daily-report-index.json");
+
+    if (!Array.isArray(index) || !index.length) {
+      return [];
+    }
+
+    const recentDates = new Set(
+      index
+        .slice(0, 100)
+        .map(report => String(report.date || "").split("T")[0])
+        .filter(Boolean)
+    );
+
+    const years = [
+      ...new Set(
+        [...recentDates].map(date => date.substring(0, 4))
+      )
+    ];
+
+    const rows = [];
+
+    for (const year of years) {
+      try {
+        const yearRows = await fetchReportYear(year);
+
+        rows.push(
+          ...yearRows
+            .filter(row =>
+              recentDates.has(
+                String(row.trip_date || "").split("T")[0]
+              )
+            )
+            .map(row => ({
+              ...row,
+              __reportDate: String(row.trip_date || "").split("T")[0]
+            }))
+        );
+      } catch (error) {
+        console.warn("Could not load report year", year);
+      }
+    }
+
+    return rows;
+  } catch (error) {
+    console.warn("Could not load daily report data");
+    return [];
+  }
+}
 async function fetchJson(path) {
   const url = window.socalBiteDataUrl
     ? window.socalBiteDataUrl(path)
