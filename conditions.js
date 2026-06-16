@@ -731,7 +731,235 @@
         else if (swell <= 5) score -= 10;
         else score -= 25;
       }
-
       if (mode === "pier") {
         if (swell <= 3) score += 10;
-        else if (s
+        else if (swell <= 5) score += 2;
+        else score -= 12;
+      }
+
+      if (mode === "surf") {
+        if (swell >= 2 && swell <= 4) score += 12;
+        else if (swell > 6) score -= 15;
+        else if (swell < 1.5) score -= 5;
+      }
+    }
+
+    if (isFiniteNumber(waterTemp)) {
+      if (waterTemp >= 63 && waterTemp <= 69) score += 8;
+      else if (waterTemp < 58 || waterTemp > 74) score -= 8;
+    }
+
+    const tideText = String(tideMovement || "").toLowerCase();
+
+    if (tideText.includes("moving")) score += 10;
+    else if (tideText.includes("slack")) score -= 6;
+
+    if (isFiniteNumber(rainChance)) {
+      if (rainChance > 60) score -= 15;
+      else if (rainChance > 30) score -= 8;
+    }
+
+    if (mode === "surf" && isFiniteNumber(uvIndex) && uvIndex > 9) {
+      score -= 5;
+    }
+
+    return clamp(Math.round(score), 25, 100);
+  }
+
+  function getTideMovement(tides, selectedDate) {
+    if (!Array.isArray(tides) || tides.length < 2) return "Unknown";
+
+    const parsed = parseTides(tides);
+
+    if (parsed.length < 2) return "Unknown";
+
+    const targetTime = getTargetTideTime(selectedDate);
+
+    let nextIndex = parsed.findIndex(t => t.time > targetTime);
+
+    if (nextIndex <= 0) nextIndex = 1;
+
+    const previous = parsed[nextIndex - 1];
+    const next = parsed[nextIndex];
+
+    if (!previous || !next) return "Unknown";
+
+    const diff = next.height - previous.height;
+
+    if (Math.abs(diff) < 0.15) return "Slack";
+
+    return diff > 0
+      ? "Rising / Moving"
+      : "Falling / Moving";
+  }
+
+  function getNextTideLabel(tides, selectedDate) {
+    if (!Array.isArray(tides) || !tides.length) {
+      return "Tide data unavailable";
+    }
+
+    const parsed = parseTides(tides);
+
+    if (!parsed.length) {
+      return "Tide data unavailable";
+    }
+
+    const targetTime = getTargetTideTime(selectedDate);
+
+    const next =
+      parsed.find(t => t.time > targetTime) ||
+      parsed[0];
+
+    return `${next.type} ${next.height.toFixed(1)} ft · ${next.time.toLocaleTimeString([], {
+      hour: "numeric",
+      minute: "2-digit"
+    })}`;
+  }
+
+  function parseTides(tides) {
+    return tides
+      .map(t => {
+        const rawTime = String(
+          t.t ||
+          t.time ||
+          t.date ||
+          ""
+        ).replace(" ", "T");
+
+        return {
+          time: new Date(rawTime),
+          height: Number(
+            t.v ||
+            t.height ||
+            t.prediction
+          ),
+          type:
+            t.type === "H"
+              ? "High"
+              : t.type === "L"
+                ? "Low"
+                : "Tide"
+        };
+      })
+      .filter(t =>
+        !Number.isNaN(t.time.getTime()) &&
+        isFiniteNumber(t.height)
+      )
+      .sort((a, b) => a.time - b.time);
+  }
+
+  function getTargetTideTime(selectedDate) {
+    if (!selectedDate) return new Date();
+
+    if (isToday(selectedDate)) {
+      return new Date();
+    }
+
+    return new Date(`${selectedDate}T12:00:00`);
+  }
+
+  function estimateVisibility(wind, apiVisibility) {
+    const vis = parseOptionalNumber(apiVisibility);
+
+    if (isFiniteNumber(vis)) {
+      return `${Math.round(vis)} mi`;
+    }
+
+    if (!isFiniteNumber(wind)) {
+      return "Unavailable";
+    }
+
+    if (wind >= 20) return "Poor";
+    if (wind >= 15) return "Reduced";
+    if (wind >= 10) return "Fair";
+
+    return "Good";
+  }
+
+  function estimateClarity(mode, wind, swell) {
+    if (mode === "surf" && isFiniteNumber(swell) && swell > 4) {
+      return "Choppy";
+    }
+
+    if (isFiniteNumber(wind) && wind > 14) {
+      return "Stirred";
+    }
+
+    if (isFiniteNumber(swell) && swell < 3) {
+      return "Clean";
+    }
+
+    return "Fair";
+  }
+
+  function getAdvisory({ wind, gusts, swell, mode }) {
+    const notes = [];
+
+    if (isFiniteNumber(wind) && wind >= 18) {
+      notes.push("Strong Wind");
+    }
+
+    if (isFiniteNumber(gusts) && gusts >= 25) {
+      notes.push("Wind Gusts");
+    }
+
+    if (isFiniteNumber(swell) && swell >= 5) {
+      notes.push("Large Swell");
+    }
+
+    if (!notes.length) {
+      return "None";
+    }
+
+    return notes.join(" · ");
+  }
+
+  function getRating(score) {
+    if (score >= 90) return "Excellent";
+    if (score >= 75) return "Good";
+    if (score >= 60) return "Fair";
+    if (score >= 45) return "Slow";
+    return "Poor";
+  }
+
+  function ratingClass(score) {
+    if (score >= 90) return "green-pill";
+    if (score >= 75) return "cyan-pill";
+    if (score >= 60) return "small-pill";
+    return "outline-pill";
+  }
+
+  function normalizeMode(mode) {
+    if (mode === "boat") return "boat";
+    if (mode === "beach") return "surf";
+    if (mode === "surf") return "surf";
+    return "pier";
+  }
+
+  function labelMode(mode) {
+    if (mode === "boat") return "Boat";
+    if (mode === "surf") return "Surf";
+    return "Pier";
+  }
+
+  function formatDateLabel(dateString) {
+    if (!dateString) return "Today";
+
+    const today = getTodayString();
+
+    const tomorrowDate = new Date();
+    tomorrowDate.setDate(tomorrowDate.getDate() + 1);
+
+    const tomorrow = toLocalDateString(tomorrowDate);
+
+    if (dateString === today) return "Today";
+    if (dateString === tomorrow) return "Tomorrow";
+
+    return new Date(`${dateString}T12:00:00`)
+      .toLocaleDateString("en-US", {
+        weekday: "short",
+        month: "short",
+        day: "numeric"
+      });
+  }
+
