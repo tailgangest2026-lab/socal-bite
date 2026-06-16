@@ -5,6 +5,7 @@ let dailyRows = [];
 let selectedRegion = "";
 let speciesFpaChartInstance = null;
 let reportYearCache = {};
+let renderToken = 0;
 
 async function initForecast() {
   try {
@@ -76,10 +77,10 @@ async function loadRecentDailyRows() {
 
         rows.push(
           ...yearRows
-            .filter(row => recentDates.has(String(row.trip_date || "")))
+            .filter(row => recentDates.has(String(row.trip_date || "").split("T")[0]))
             .map(row => ({
               ...row,
-              __reportDate: row.trip_date
+              __reportDate: String(row.trip_date || "").split("T")[0]
             }))
         );
       } catch (error) {
@@ -98,12 +99,18 @@ function buildRegionTabs() {
   const tabs = document.getElementById("regionTabs");
   if (!tabs) return;
 
-  tabs.innerHTML = forecastRows.map(row => {
-    const region = row.region || "Unknown";
+  const regions = [
+    ...new Set(
+      forecastRows
+        .map(row => row.region || "Unknown")
+        .filter(Boolean)
+    )
+  ];
 
+  tabs.innerHTML = regions.map(region => {
     return `
       <button
-        class="${region === selectedRegion ? "active" : ""}"
+        class="${normalize(region) === normalize(selectedRegion) ? "active" : ""}"
         type="button"
         onclick="selectRegion('${escapeAttr(region)}')"
       >
@@ -120,32 +127,42 @@ function selectRegion(region) {
 }
 
 async function renderForecast(region) {
-  const row = forecastRows.find(r => r.region === region) || forecastRows[0];
+  const currentToken = ++renderToken;
 
-  const fish = Number(row.total_fish_today || 0);
-  const anglers = Number(row.total_anglers_today || 1);
-  const trips = Number(row.total_trips_today || 1);
+  const row =
+    forecastRows.find(r => normalize(r.region) === normalize(region)) ||
+    forecastRows[0];
+
+  const displayRegion = row.region || region || "Los Angeles";
+
+  const fish = Number(row.total_fish_today || row.totalFish || row.fish || 0);
+  const anglers = Number(row.total_anglers_today || row.totalAnglers || row.anglers || 1);
+  const trips = Number(row.total_trips_today || row.totalTrips || row.trips || 1);
   const fpa = fish / Math.max(anglers, 1);
 
-  const score = await calculateForecastScore(row, region, fpa, trips);
-  const label = getScoreLabel(score);
+  setText("selectedRegionLabel", displayRegion);
+  setText("trendRegion", displayRegion);
 
-  setText("selectedRegionLabel", region);
-  setText("trendRegion", region);
+  const forecast = await calculateForecastScore(row, displayRegion, fpa, trips);
+
+  if (currentToken !== renderToken) return;
+
+  const score = forecast.score;
+  const label = getScoreLabel(score);
 
   updateBiteScoreGauge(score, label);
 
-  setText("waterTemp", row.water_temp || row.waterTemp || estimateWaterTemp(region));
-  setText("wind", row.wind || estimateWind(region));
-  setText("swell", row.swell || estimateSwell(region));
-  setText("visibility", row.visibility || estimateVisibility(region));
-  setText("tide", row.tide_movement || row.tide || estimateTide(score));
+  setText("waterTemp", forecast.waterTempText || row.water_temp || row.waterTemp || estimateWaterTemp(displayRegion));
+  setText("wind", forecast.windText || row.wind || estimateWind(displayRegion));
+  setText("swell", forecast.swellText || row.swell || estimateSwell(displayRegion));
+  setText("visibility", forecast.visibilityText || row.visibility || estimateVisibility(displayRegion));
+  setText("tide", forecast.tideText || row.tide_movement || row.tide || estimateTide(score));
   setText("sunrise", row.sunrise || "5:42 AM");
   setText("sunset", row.sunset || "8:01 PM");
   setText("moon", row.moon || "Waxing 62%");
 
-  buildSpeciesRankings(region);
-  buildSpeciesFpaChart(region);
+  buildSpeciesRankings(displayRegion);
+  buildSpeciesFpaChart(displayRegion);
 }
 
 function updateBiteScoreGauge(score, label) {
@@ -191,7 +208,10 @@ function buildSpeciesFpaChart(region) {
   const trend = buildSpeciesWeeklyTrend(region);
 
   if (!trend.weeks.length || !trend.datasets.length) {
-    canvas.parentElement.innerHTML = `<div class="empty-card">No 12-week trend data found for ${safe(region)}.</div>`;
+    const parent = canvas.parentElement;
+    if (parent) {
+      parent.innerHTML = `<div class="empty-card">No 12-week trend data found for ${safe(region)}.</div>`;
+    }
     return;
   }
 
@@ -282,7 +302,14 @@ async function calculateForecastScore(row, region, fpa, trips) {
   else if (trips >= 5) score += 3;
 
   if (!base || typeof SCBConditions === "undefined") {
-    return clampScore(score);
+    return {
+      score: clampScore(score),
+      waterTempText: row.water_temp || row.waterTemp || estimateWaterTemp(region),
+      windText: row.wind || estimateWind(region),
+      swellText: row.swell || estimateSwell(region),
+      visibilityText: row.visibility || estimateVisibility(region),
+      tideText: row.tide_movement || row.tide || estimateTide(score)
+    };
   }
 
   try {
@@ -297,7 +324,10 @@ async function calculateForecastScore(row, region, fpa, trips) {
         : Promise.resolve(null)
     ]);
 
-    const wind = SCBConditions.parseWindSpeed(weather?.windSpeed, 8);
+    const wind = SCBConditions.parseWindSpeed
+      ? SCBConditions.parseWindSpeed(weather?.windSpeed, 8)
+      : Number(weather?.windSpeed || 8);
+
     const gusts = Number(weather?.windGusts || 0);
     const temp = Number(waterTemp || 65);
     const swell = Number(marine?.waveHeight || marine?.swellWaveHeight || 3);
@@ -319,11 +349,49 @@ async function calculateForecastScore(row, region, fpa, trips) {
 
     if (String(tideMovement).toLowerCase().includes("moving")) score += 7;
 
-    return clampScore(score);
+    return {
+      score: clampScore(score),
+      waterTempText: Number.isFinite(temp) ? `${Math.round(temp)}°F` : estimateWaterTemp(region),
+      windText: buildWindText(weather, wind),
+      swellText: Number.isFinite(swell) ? `${swell.toFixed(1)} ft` : estimateSwell(region),
+      visibilityText: weather?.visibility || estimateVisibility(region),
+      tideText: tideMovement
+    };
   } catch (error) {
     console.warn("NOAA forecast score fallback used:", error);
-    return clampScore(score);
+
+    return {
+      score: clampScore(score),
+      waterTempText: row.water_temp || row.waterTemp || estimateWaterTemp(region),
+      windText: row.wind || estimateWind(region),
+      swellText: row.swell || estimateSwell(region),
+      visibilityText: row.visibility || estimateVisibility(region),
+      tideText: row.tide_movement || row.tide || estimateTide(score)
+    };
   }
+}
+
+function buildWindText(weather, wind) {
+  const speed = Math.round(Number(wind || weather?.windSpeed || 0));
+  const direction =
+    weather?.windDirectionText ||
+    weather?.windDirection ||
+    weather?.windDir ||
+    "";
+
+  const gusts = Number(weather?.windGusts || 0);
+
+  let text = `${speed} kt`;
+
+  if (direction) {
+    text += ` ${direction}`;
+  }
+
+  if (gusts > speed) {
+    text += `, gusts ${Math.round(gusts)} kt`;
+  }
+
+  return text;
 }
 
 function getTideMovement(tides) {
@@ -369,10 +437,10 @@ function clampScore(score) {
 }
 
 function buildSpeciesFpaByRegion(region) {
-  const targetRegion = String(region || "").toLowerCase();
+  const targetRegion = normalize(region);
 
   const regionRows = dailyRows.filter(row => {
-    return String(row.region || "").toLowerCase() === targetRegion;
+    return normalize(row.region) === targetRegion;
   });
 
   const speciesTotals = {};
@@ -407,7 +475,7 @@ function buildSpeciesFpaByRegion(region) {
 }
 
 function buildRegionalFpaTrend(region) {
-  const targetRegion = String(region || "").toLowerCase();
+  const targetRegion = normalize(region);
   const today = new Date();
 
   const weeks = [];
@@ -429,7 +497,7 @@ function buildRegionalFpaTrend(region) {
   }
 
   dailyRows.forEach(row => {
-    if (String(row.region || "").toLowerCase() !== targetRegion) return;
+    if (normalize(row.region) !== targetRegion) return;
 
     const rowDate = new Date(row.__reportDate || row.date || row.report_date || row.reportDate || "");
     if (isNaN(rowDate)) return;
@@ -457,10 +525,10 @@ function buildRegionalFpaTrend(region) {
 }
 
 function buildSpeciesWeeklyTrend(region) {
-  const targetRegion = String(region || "").toLowerCase();
+  const targetRegion = normalize(region);
 
   const rows = dailyRows.filter(row =>
-    String(row.region || "").toLowerCase() === targetRegion
+    normalize(row.region) === targetRegion
   );
 
   const today = new Date();
@@ -494,7 +562,12 @@ function buildSpeciesWeeklyTrend(region) {
     if (!week) return;
 
     parseFishCounts(row.fish_counts).forEach(item => {
-      if (!speciesTotals[item.species]) speciesTotals[item.species] = {};
+      if (!item || !item.species) return;
+
+      if (!speciesTotals[item.species]) {
+        speciesTotals[item.species] = {};
+      }
+
       if (!speciesTotals[item.species][week.key]) {
         speciesTotals[item.species][week.key] = { fish: 0, anglers: 0 };
       }
@@ -613,6 +686,12 @@ function getWeekNumber(date) {
   const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
 
   return Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
+}
+
+function normalize(value) {
+  return String(value || "")
+    .trim()
+    .toLowerCase();
 }
 
 function setText(id, value) {
