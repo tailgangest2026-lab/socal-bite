@@ -46,7 +46,7 @@ async function fetchReportYear(year) {
 }
 
 async function loadSpeciesRows() {
-  const index = await fetchJson("daily-report-index.json");
+  const index = await fetchJson("../daily-report-index.json");
 
   if (!Array.isArray(index) || !index.length) {
     return [];
