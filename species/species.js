@@ -244,7 +244,7 @@ function renderSpeciesCards(speciesData) {
     const width = Math.max(2, Math.round((item.fish / maxFish) * 100));
 
     return `
-    <a class="species-card" href="/species-detail/?species=${encodeURIComponent(species.species || species.name)}">
+    <a class="species-card" href="../species-detail/?species=${encodeURIComponent(species.species || species.name)}">
         <div class="species-card-top">
           <div class="species-title-wrap">
             <span class="species-rank">${String(index + 1).padStart(2, "0")}</span>
