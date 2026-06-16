@@ -208,16 +208,31 @@ async function fetchJson(path) {
 function normalizeForecastRows(rows) {
   if (!Array.isArray(rows)) return [];
 
-  return rows
-    .map(row => {
-      const region = standardRegionName(row.region);
+  const map = {};
 
-      return {
+  rows.forEach(row => {
+    const region = standardRegionName(row.region);
+
+    if (!REGION_ORDER.includes(region)) return;
+
+    if (!map[region]) {
+      map[region] = {
         ...row,
         region
       };
-    })
-    .filter(row => REGION_ORDER.includes(row.region))
+    } else {
+      map[region].total_trips_today =
+        Number(map[region].total_trips_today || 0) + Number(row.total_trips_today || 0);
+
+      map[region].total_anglers_today =
+        Number(map[region].total_anglers_today || 0) + Number(row.total_anglers_today || 0);
+
+      map[region].total_fish_today =
+        Number(map[region].total_fish_today || 0) + Number(row.total_fish_today || 0);
+    }
+  });
+
+  return Object.values(map)
     .sort((a, b) => REGION_ORDER.indexOf(a.region) - REGION_ORDER.indexOf(b.region));
 }
 
