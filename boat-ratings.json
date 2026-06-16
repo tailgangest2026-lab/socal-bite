@@ -3,6 +3,17 @@
     "rank": 1,
     "region": "Alameda County",
     "trip_type": "1/2 Day AM",
+    "boat": "C Gull II",
+    "landing": "Fish Emeryville",
+    "trips": 8,
+    "anglers": 108,
+    "fish": 138,
+    "fpa": 1.28
+  },
+  {
+    "rank": 2,
+    "region": "Alameda County",
+    "trip_type": "1/2 Day AM",
     "boat": "Oakland Anglers II",
     "landing": "Fish Emeryville",
     "trips": 5,
@@ -11,7 +22,7 @@
     "fpa": 0.17
   },
   {
-    "rank": 2,
+    "rank": 3,
     "region": "Alameda County",
     "trip_type": "1/2 Day AM",
     "boat": "Pacific Pearl",
@@ -20,17 +31,6 @@
     "anglers": 93,
     "fish": 10,
     "fpa": 0.11
-  },
-  {
-    "rank": 3,
-    "region": "Alameda County",
-    "trip_type": "1/2 Day AM",
-    "boat": "C Gull II",
-    "landing": "Fish Emeryville",
-    "trips": 7,
-    "anglers": 98,
-    "fish": 7,
-    "fpa": 0.07
   },
   {
     "rank": 1,
@@ -654,10 +654,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Southern Cal",
     "landing": "Oceanside Sea Center",
-    "trips": 21,
-    "anglers": 544,
-    "fish": 3245,
-    "fpa": 5.97
+    "trips": 22,
+    "anglers": 571,
+    "fish": 3303,
+    "fpa": 5.78
   },
   {
     "rank": 3,
@@ -665,10 +665,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Daily Double",
     "landing": "Point Loma Sportfishing",
-    "trips": 20,
-    "anglers": 430,
-    "fish": 1921,
-    "fpa": 4.47
+    "trips": 21,
+    "anglers": 451,
+    "fish": 1967,
+    "fpa": 4.36
   },
   {
     "rank": 4,
