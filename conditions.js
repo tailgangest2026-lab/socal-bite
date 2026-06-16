@@ -1,56 +1,98 @@
 (() => {
   const DEBUG = true;
 
-  const LOCATIONS = {
-    "San Luis Obispo": {
-      county: "San Luis Obispo County",
-      lat: 35.2828,
-      lon: -120.6596,
-      station: "9412110",
-      fallbackWater: 60,
-      fallbackSwell: 3.0
-    },
-    "Santa Barbara": {
-      county: "Santa Barbara County",
-      lat: 34.4208,
-      lon: -119.6982,
-      station: "9411340",
-      fallbackWater: 61,
-      fallbackSwell: 2.8
-    },
-    "Ventura": {
-      county: "Ventura County",
-      lat: 34.2746,
-      lon: -119.229,
-      station: "9411189",
-      fallbackWater: 62,
-      fallbackSwell: 3.0
-    },
-    "Los Angeles": {
-      county: "Los Angeles County",
-      lat: 33.7405,
-      lon: -118.2817,
-      station: "9410660",
-      fallbackWater: 65,
-      fallbackSwell: 2.6
-    },
-    "Orange County": {
-      county: "Orange County",
-      lat: 33.6037,
-      lon: -117.9,
-      station: "9410580",
-      fallbackWater: 66,
-      fallbackSwell: 2.5
-    },
-    "San Diego": {
-      county: "San Diego County",
-      lat: 32.7157,
-      lon: -117.1611,
-      station: "9410170",
-      fallbackWater: 67,
-      fallbackSwell: 2.4
-    }
-  };
+const LOCATIONS = {
+  "NorCal": {
+    county: "NorCal",
+    lat: 38.4404,
+    lon: -123.1190,
+    station: "9415625",
+    fallbackWater: 54,
+    fallbackSwell: 5.0
+  },
+
+  "San Francisco Bay": {
+    county: "San Francisco Bay",
+    lat: 37.8060,
+    lon: -122.4659,
+    station: "9414290",
+    fallbackWater: 56,
+    fallbackSwell: 4.5
+  },
+
+  "Monterey County": {
+    county: "Monterey County",
+    lat: 36.6002,
+    lon: -121.8947,
+    station: "9413450",
+    fallbackWater: 57,
+    fallbackSwell: 4.0
+  },
+
+  "Central California": {
+    county: "Central California",
+    lat: 35.3658,
+    lon: -120.8499,
+    station: "9412110",
+    fallbackWater: 59,
+    fallbackSwell: 3.5
+  },
+
+  "San Luis Obispo County": {
+    county: "San Luis Obispo County",
+    lat: 35.2828,
+    lon: -120.6596,
+    station: "9412110",
+    fallbackWater: 60,
+    fallbackSwell: 3.0
+  },
+
+  "Santa Barbara County": {
+    county: "Santa Barbara County",
+    lat: 34.4208,
+    lon: -119.6982,
+    station: "9411340",
+    fallbackWater: 61,
+    fallbackSwell: 2.8
+  },
+
+  "Ventura County": {
+    county: "Ventura County",
+    lat: 34.2746,
+    lon: -119.2290,
+    station: "9411189",
+    fallbackWater: 62,
+    fallbackSwell: 3.0
+  },
+
+  "Los Angeles County": {
+    county: "Los Angeles County",
+    lat: 33.7405,
+    lon: -118.2817,
+    station: "9410660",
+    fallbackWater: 65,
+    fallbackSwell: 2.6
+  },
+
+  "Orange County": {
+    county: "Orange County",
+    lat: 33.6037,
+    lon: -117.9000,
+    station: "9410580",
+    fallbackWater: 66,
+    fallbackSwell: 2.5
+  },
+
+  "San Diego County": {
+    county: "San Diego County",
+    lat: 32.7157,
+    lon: -117.1611,
+    station: "9410170",
+    fallbackWater: 67,
+    fallbackSwell: 2.4
+  }
+};
+  
 
   let currentMode = "pier";
   let currentRegion = "Los Angeles";
