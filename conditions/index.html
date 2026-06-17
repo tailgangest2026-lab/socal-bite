@@ -12,39 +12,12 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Fishing Conditions | The SoCal Bite" />
   <meta property="og:description" content="Check Southern California boat, pier, and surf fishing conditions by region and future date." />
-  <meta property="og:url" content="https://thesocalbite.com/conditions.html" />
-  <meta property="og:image" content="https://thesocalbite.com/assets/socal-bite-logo.webp" />
-
-  <link rel="icon" href="assets/socal-bite-logo.webp" type="image/webp" />
-  <link rel="stylesheet" href="style.css?v=loveable-conditions-12" />
+  <meta property="og:url" content="https://thesocalbite.com/conditions/" />
+  <link rel="stylesheet" href="../style.css?v=loveable-conditions-12" />
 </head>
 
 <body>
-  <header class="app-header">
-    <a class="brand" href="/">
-      <img src="assets/socal-bite-logo.webp" alt="The SoCal Bite Logo" />
-      <div>
-        <strong>The SoCal Bite</strong>
-        <span>Marine Intelligence</span>
-      </div>
-    </a>
-
-    <nav class="top-nav">
-      <a href="/">Today</a>
-      <a href="/forecast.html">Forecast</a>
-      <a class="active" href="/conditions.html">Conditions</a>
-      <a href="/rankings.html">Rankings</a>
-      <a href="/species.html">Species</a>
-      <a href="/landings.html">Landings</a>
-      <a href="/daily-report.html">Reports</a>
-      <a href="/gear.html">Fishing Gear</a>
-      <a href="/news.html">News</a>
-    </nav>
-
-    <div class="live-pill">
-      <span></span> Live
-    </div>
-  </header>
+ <div id="site-header"></div> 
 
   <main>
     <section class="conditions-hero">
@@ -171,22 +144,10 @@
       </p>
       <span>Data refresh · Every 15 min</span>
     </div>
-
-    <div class="footer-links">
-      <h4>Intelligence</h4>
-      <a href="/forecast.html">Bite Forecast</a>
-      <a href="/top-boats.html">Rankings</a>
-      <a href="/species.html">Species</a>
-    </div>
-
-    <div class="footer-links">
-      <h4>Account</h4>
-      <a href="/">Legacy site</a>
-    </div>
-  </footer>
-
-  <script src="site-config.js"></script>
-  <script src="noaa-conditions.js?v=loveable-conditions-12"></script>
+ <div id="site-footer"></div>
+   
+  <script src="../site-config.js"></script>
+  <script src="../noaa-conditions.js?v=loveable-conditions-12"></script>
   <script src="conditions.js?v=loveable-conditions-12"></script>
 </body>
 </html>
