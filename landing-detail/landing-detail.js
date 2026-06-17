@@ -20,8 +20,8 @@ async function initLandingDetail() {
 
     const [rows, prices, types] = await Promise.all([
       loadRecentDailyRows(),
-      fetchJson("trip-prices.json"),
-      fetchJson("landing-trip-types.json")
+      fetchJson("../trip-prices.json"),
+      fetchJson("../landing-trip-types.json")
     ]);
 
     dailyRows = rows;
@@ -59,14 +59,14 @@ async function fetchReportYear(year) {
     return reportYearCache[year];
   }
 
-  const rows = await fetchJson(`reports/reports-${year}.json`);
+  const rows = await fetchJson(`../reports/reports-${year}.json`);
   reportYearCache[year] = Array.isArray(rows) ? rows : [];
 
   return reportYearCache[year];
 }
 
 async function loadRecentDailyRows() {
-  const index = await fetchJson("daily-report-index.json");
+  const index = await fetchJson("../daily-report-index.json");
 
   if (!Array.isArray(index) || !index.length) {
     return [];
