@@ -8,36 +8,14 @@
   <meta name="description" content="Live Southern California sportfishing reports, bite forecasts, conditions, rankings, species analytics, landings, and fishing gear." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://thesocalbite.com/" />
-  <meta property="og:image" content="https://thesocalbite.com/assets/socal-bite-logo.webp" />
-  <link rel="stylesheet" href="style.css?v=loveable-home-1" />
+
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/forms.css">
 </head>
 
 <body>
-  <header class="app-header">
-    <a class="brand" href="/">
-      <img src="assets/socal-bite-logo.webp" alt="The SoCal Bite Logo" />
-      <div>
-        <strong>The SoCal Bite</strong>
-        <span>Marine Intelligence</span>
-      </div>
-    </a>
-
-    <nav class="top-nav">
-      <a class="active" href="/">Today</a>
-      <a href="/forecast/">Forecast</a>
-      <a href="/conditions.html">Conditions</a>
-      <a href="/rankings.html">Rankings</a>
-      <a href="/species/">Species</a>
-      <a href="/landings.html">Landings</a>
-      <a href="/daily-report.html">Reports</a>
-      <a href="/gear/">Fishing Gear</a>
-      <a href="/news/">News</a>
-    </nav>
-
-    <div class="live-pill">
-      <span></span> Live
-    </div>
-  </header>
+   <div id="site-header"></div>
 
   <main>
     <section class="hero-panel">
@@ -57,7 +35,8 @@
 
         <div class="hero-actions">
           <a class="primary-btn" href="/forecast/">See the forecast →</a>
-          <a class="ghost-btn" href="/rankings.html">Explore rankings</a>
+          <a class="ghost-btn" href="/rankings/
+            ">Explore rankings</a>
         </div>
       </div>
 
@@ -125,7 +104,7 @@
             <span>🔥 By Total Fish · 30 Days</span>
             <h3>Hottest landings</h3>
           </div>
-          <a href="/landings.html">All →</a>
+          <a href="/landings/">All →</a>
         </div>
 
         <div id="topLandingsList" class="ranking-list"></div>
@@ -175,30 +154,10 @@
     </section>
   </main>
 
-<footer class="love-footer">
-  <div class="footer-brand">
-    <strong>◎ The SoCal Bite</strong>
-    <p>
-      Real-time fishing intelligence for Southern California — from San Luis Obispo to San Diego.
-      Sportfishing reports, NOAA conditions, species analytics, and boat rankings.
-    </p>
-    <span>Data refresh · Every 15 min</span>
-  </div>
-
-  <div class="footer-links">
-    <h4>Intelligence</h4>
-    <a href="/forecast.html">Forecast</a>
-    <a href="/top-boats.html">Rankings</a>
-    <a href="/species.html">Species</a>
-  </div>
-
-  <div class="footer-links">
-    <h4>Account</h4>
-    <a href="/">Legacy site</a>
-  </div>
-</footer>
+ <div id="site-footer"></div>
 
   <script src="site-config.js"></script>
   <script src="home.js?v=loveable-home-1"></script>
+  <script src="../js/layout.js"></script>
 </body>
 </html>
