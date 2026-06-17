@@ -3,11 +3,11 @@ const path = require("path");
 
 const SITE_URL = "https://thesocalbite.com";
 
-function readJson(filePath) {
+function readJson(file) {
   try {
-    return JSON.parse(fs.readFileSync(filePath, "utf8"));
+    return JSON.parse(fs.readFileSync(path.join(__dirname, "..", file), "utf8"));
   } catch {
-    console.log(`Skipped missing file: ${filePath}`);
+    console.log(`Skipped missing file: ${file}`);
     return [];
   }
 }
@@ -17,7 +17,21 @@ function asArray(data) {
   if (Array.isArray(data.data)) return data.data;
   if (Array.isArray(data.rows)) return data.rows;
   if (Array.isArray(data.reports)) return data.reports;
+  if (Array.isArray(data.items)) return data.items;
   return [];
+}
+
+function clean(value) {
+  return String(value || "").replace(/\s+/g, " ").trim();
+}
+
+function get(row, fields) {
+  for (const field of fields) {
+    if (row[field] !== undefined && row[field] !== null && row[field] !== "") {
+      return row[field];
+    }
+  }
+  return "";
 }
 
 function escapeXml(value) {
@@ -27,13 +41,11 @@ function escapeXml(value) {
     .replace(/>/g, "&gt;");
 }
 
-function cleanName(value) {
-  return String(value || "")
-    .replace(/\s+/g, " ")
-    .trim();
+function add(urls, url) {
+  if (url) urls.add(url);
 }
 
-function extractSpeciesFromFishCounts(fishCounts) {
+function extractSpecies(fishCounts) {
   if (!fishCounts) return [];
 
   return String(fishCounts)
@@ -51,117 +63,101 @@ function extractSpeciesFromFishCounts(fishCounts) {
     .filter(Boolean);
 }
 
-function addUrl(urls, loc) {
-  if (loc) urls.add(loc);
-}
-
 const urls = new Set();
-const speciesSet = new Set();
-const boatSet = new Set();
+const boats = new Set();
+const species = new Set();
+const landings = new Set();
 
 [
   "/",
-  "/daily-report.html",
-  "/boat-ratings.html",
-  "/top-boats.html",
-  "/top-species.html",
-  "/species.html",
-  "/bite-trends.html",
-  "/landings.html",
-  "/news.html",
-  "/about.html"
-].forEach(page => {
-  addUrl(urls, `${SITE_URL}${page}`);
+  "/forecast/",
+  "/conditions/",
+  "/rankings/",
+  "/species/",
+  "/landings/",
+  "/daily-report/",
+  "/gear/",
+  "/news/",
+  "/about/"
+].forEach(page => add(urls, `${SITE_URL}${page}`));
+
+const speciesRows = asArray(readJson("species.json"));
+const boatRows = asArray(readJson("boat-detail.json"));
+const landingRows = asArray(readJson("landing-detail.json"));
+const dailyIndex = asArray(readJson("daily-report-index.json"));
+
+speciesRows.forEach(row => {
+  const name = clean(get(row, ["species", "Species", "name", "Name", "fish", "Fish"]));
+  if (name) species.add(name);
 });
 
-const landingData = asArray(
-  readJson(path.join(__dirname, "../landing-detail.json"))
-);
+boatRows.forEach(row => {
+  const name = clean(get(row, ["boat", "Boat", "boat_name", "boatName", "name", "Name"]));
+  if (name) boats.add(name);
+});
 
-const dailyIndex = asArray(
-  readJson(path.join(__dirname, "../daily-report-index.json"))
-);
-
-landingData.forEach(row => {
-  const landing = cleanName(
-    row.landing ||
-    row.Landing ||
-    row.landing_name ||
-    row.landingName
-  );
-
-  if (landing) {
-    addUrl(
-      urls,
-      `${SITE_URL}/landing-detail.html?landing=${encodeURIComponent(landing)}`
-    );
-  }
+landingRows.forEach(row => {
+  const name = clean(get(row, ["landing", "Landing", "landing_name", "landingName", "name", "Name"]));
+  if (name) landings.add(name);
 });
 
 dailyIndex.forEach(report => {
-  const date = report.date || report.trip_date;
+  const date = clean(get(report, ["date", "trip_date", "Date"]));
 
   if (date) {
-    addUrl(
-      urls,
-      `${SITE_URL}/daily-report.html?date=${encodeURIComponent(date)}`
-    );
+    add(urls, `${SITE_URL}/daily-report/?date=${encodeURIComponent(date)}`);
   }
 
-  const filePath = report.file || `reports/daily-report-${date}.json`;
-  const reportRows = asArray(
-    readJson(path.join(__dirname, "..", filePath))
-  );
+  const reportFile = report.file || (date ? `reports/daily-report-${date}.json` : "");
+  if (!reportFile) return;
 
-  reportRows.forEach(row => {
-    const boat = cleanName(row.boat || row.Boat || row.boat_name || row.boatName);
+  const rows = asArray(readJson(reportFile));
 
-    if (boat) {
-      boatSet.add(boat);
-    }
+  rows.forEach(row => {
+    const boat = clean(get(row, ["boat", "Boat", "boat_name", "boatName"]));
+    const landing = clean(get(row, ["landing", "Landing", "landing_name", "landingName"]));
+    const directSpecies = clean(get(row, ["species", "Species", "fish", "Fish"]));
 
-    const fishCounts =
-      row.fish_counts ||
-      row.fishCounts ||
-      row["fish counts"] ||
-      row.FishCounts ||
-      row["Fish Counts"];
+    if (boat) boats.add(boat);
+    if (landing) landings.add(landing);
+    if (directSpecies) species.add(directSpecies);
 
-    extractSpeciesFromFishCounts(fishCounts).forEach(species => {
-      speciesSet.add(cleanName(species));
-    });
+    const fishCounts = get(row, [
+      "fish_counts",
+      "fishCounts",
+      "fish counts",
+      "FishCounts",
+      "Fish Counts"
+    ]);
+
+    extractSpecies(fishCounts).forEach(name => species.add(clean(name)));
   });
 });
 
-speciesSet.forEach(species => {
-  addUrl(
-    urls,
-    `${SITE_URL}/species-detail.html?species=${encodeURIComponent(species)}`
-  );
+boats.forEach(name => {
+  add(urls, `${SITE_URL}/boat-detail/?boat=${encodeURIComponent(name)}`);
 });
 
-boatSet.forEach(boat => {
-  addUrl(
-    urls,
-    `${SITE_URL}/boat-detail.html?boat=${encodeURIComponent(boat)}`
-  );
+species.forEach(name => {
+  add(urls, `${SITE_URL}/species-detail/?species=${encodeURIComponent(name)}`);
+});
+
+landings.forEach(name => {
+  add(urls, `${SITE_URL}/landing-detail/?landing=${encodeURIComponent(name)}`);
 });
 
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${Array.from(urls)
-  .sort()
-  .map(url => `  <url>
+${Array.from(urls).sort().map(url => `  <url>
     <loc>${escapeXml(url)}</loc>
-  </url>`)
-  .join("\n")}
+  </url>`).join("\n")}
 </urlset>
 `;
 
 fs.writeFileSync(path.join(__dirname, "../sitemap.xml"), sitemap);
 
 console.log(`Sitemap generated with ${urls.size} URLs`);
-console.log(`Species pages found: ${speciesSet.size}`);
-console.log(`Boat pages found: ${boatSet.size}`);
-console.log(`Landing rows found: ${landingData.length}`);
+console.log(`Species pages found: ${species.size}`);
+console.log(`Boat pages found: ${boats.size}`);
+console.log(`Landing pages found: ${landings.size}`);
 console.log(`Daily report rows found: ${dailyIndex.length}`);
