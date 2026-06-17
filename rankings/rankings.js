@@ -323,7 +323,7 @@ function renderBoatTable(head, body, rows) {
     <tr>
       <td>${rankDisplay(index + 1)}</td>
       <td>
-        <a class="rank-name-link" href="/boat-detail.html?boat=${encodeURIComponent(row.name)}">
+        <a class="rank-name-link" href="/boat-detail/?boat=${encodeURIComponent(row.name)}">
           <strong>${safe(row.name)}</strong>
           <span>${safe(row.landing || "Unknown Landing")}</span>
         </a>
@@ -360,7 +360,7 @@ function renderLandingTable(head, body, rows) {
     <tr>
       <td>${rankDisplay(index + 1)}</td>
       <td>
-        <a class="rank-name-link" href="/landing-detail.html?landing=${encodeURIComponent(row.name)}">
+        <a class="rank-name-link" href="/landing-detail/?landing=${encodeURIComponent(row.name)}">
           <strong>${safe(row.name)}</strong>
         </a>
       </td>
