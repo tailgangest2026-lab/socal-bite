@@ -218,7 +218,12 @@
       getDynamicWaterTemp(base, date),
       getDynamicMarine(base, date)
     ]);
-
+console.log("DATA CHECK", {
+  weather,
+  tides,
+  waterResult,
+  marineResult
+});
     const wind = parseOptionalNumber(weather?.windSpeed);
     const gusts = parseOptionalNumber(weather?.windGusts);
     const airTemp = parseOptionalNumber(weather?.temperature);
