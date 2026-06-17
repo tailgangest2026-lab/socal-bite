@@ -49,10 +49,10 @@
     "trip_type": "Full Day",
     "boat": "New Huck Finn",
     "landing": "Fish Emeryville",
-    "trips": 8,
-    "anglers": 133,
-    "fish": 25,
-    "fpa": 0.19
+    "trips": 9,
+    "anglers": 141,
+    "fish": 108,
+    "fpa": 0.77
   },
   {
     "rank": 1,
@@ -401,10 +401,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Western Pride",
     "landing": "Davey's Locker",
-    "trips": 17,
-    "anglers": 593,
-    "fish": 3753,
-    "fpa": 6.33
+    "trips": 18,
+    "anglers": 675,
+    "fish": 4053,
+    "fpa": 6
   },
   {
     "rank": 3,
@@ -531,23 +531,23 @@
     "rank": 3,
     "region": "Orange County",
     "trip_type": "3/4 Day",
+    "boat": "Freelance",
+    "landing": "Davey's Locker",
+    "trips": 33,
+    "anglers": 1518,
+    "fish": 6951,
+    "fpa": 4.58
+  },
+  {
+    "rank": 4,
+    "region": "Orange County",
+    "trip_type": "3/4 Day",
     "boat": "Dana Pride",
     "landing": "Dana Wharf Sportfishing",
     "trips": 10,
     "anglers": 402,
     "fish": 1837,
     "fpa": 4.57
-  },
-  {
-    "rank": 4,
-    "region": "Orange County",
-    "trip_type": "3/4 Day",
-    "boat": "Freelance",
-    "landing": "Davey's Locker",
-    "trips": 32,
-    "anglers": 1451,
-    "fish": 6575,
-    "fpa": 4.53
   },
   {
     "rank": 5,
@@ -729,23 +729,23 @@
     "rank": 3,
     "region": "San Diego County",
     "trip_type": "1/2 Day PM",
-    "boat": "New Seaforth",
-    "landing": "Seaforth Sportfishing",
-    "trips": 27,
-    "anglers": 1096,
-    "fish": 4853,
-    "fpa": 4.43
-  },
-  {
-    "rank": 4,
-    "region": "San Diego County",
-    "trip_type": "1/2 Day PM",
     "boat": "Dolphin",
     "landing": "Fisherman's Landing",
     "trips": 30,
     "anglers": 1054,
     "fish": 4648,
     "fpa": 4.41
+  },
+  {
+    "rank": 4,
+    "region": "San Diego County",
+    "trip_type": "1/2 Day PM",
+    "boat": "New Seaforth",
+    "landing": "Seaforth Sportfishing",
+    "trips": 28,
+    "anglers": 1151,
+    "fish": 4891,
+    "fpa": 4.25
   },
   {
     "rank": 1,
@@ -819,10 +819,10 @@
     "trip_type": "3/4 Day",
     "boat": "Sea Watch",
     "landing": "Seaforth Sportfishing",
-    "trips": 17,
-    "anglers": 331,
-    "fish": 2309,
-    "fpa": 6.98
+    "trips": 18,
+    "anglers": 365,
+    "fish": 2393,
+    "fpa": 6.56
   },
   {
     "rank": 1,
