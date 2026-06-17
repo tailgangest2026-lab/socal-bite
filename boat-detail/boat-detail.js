@@ -296,7 +296,7 @@ function renderTopSpecies(rows) {
     const percent = total > 0 ? Math.round((item.count / total) * 100) : 0;
 
     return `
-      <a class="boat-species-pill" href="/species-detail.html?species=${encodeURIComponent(item.name)}">
+      <a class="boat-species-pill" href="/species-detail/?species=${encodeURIComponent(item.name)}">
         <span>${safe(item.name)}</span>
         <strong>${format(item.count)}</strong>
         <em>${percent}%</em>
@@ -483,7 +483,7 @@ function renderFishCounts(fishCounts) {
       const species = text.replace(/^[\d,]+\s+/, "");
 
       return `
-        <a class="fish-count-pill" href="/species-detail.html?species=${encodeURIComponent(species)}">
+        <a class="fish-count-pill" href="/species-detail/?species=${encodeURIComponent(species)}">
           ${safe(text)}
         </a>
       `;
