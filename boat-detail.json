@@ -408,6 +408,18 @@
     "top_species_3": "Whitefish"
   },
   {
+    "boat": "Gail Force",
+    "landing": "LA Waterfront Cruises and Sportfishing",
+    "region": "Los Angeles County",
+    "trips": 12,
+    "anglers": 195,
+    "fish": 1089,
+    "fpa": 5.58,
+    "top_species_1": "Calico Bass",
+    "top_species_2": "Calico Bass Released",
+    "top_species_3": "Rockfish"
+  },
+  {
     "boat": "Sport King",
     "landing": "LA Waterfront Cruises and Sportfishing",
     "region": "Los Angeles County",
@@ -415,18 +427,6 @@
     "anglers": 474,
     "fish": 2587,
     "fpa": 5.46,
-    "top_species_1": "Calico Bass",
-    "top_species_2": "Calico Bass Released",
-    "top_species_3": "Rockfish"
-  },
-  {
-    "boat": "Gail Force",
-    "landing": "LA Waterfront Cruises and Sportfishing",
-    "region": "Los Angeles County",
-    "trips": 11,
-    "anglers": 181,
-    "fish": 975,
-    "fpa": 5.39,
     "top_species_1": "Calico Bass",
     "top_species_2": "Calico Bass Released",
     "top_species_3": "Rockfish"
@@ -615,8 +615,8 @@
     "boat": "Telstar",
     "landing": "Telstar Charters",
     "region": "NorCal",
-    "trips": 3,
-    "anglers": 45,
+    "trips": 4,
+    "anglers": 59,
     "fish": 0,
     "fpa": 0,
     "top_species_1": "",
