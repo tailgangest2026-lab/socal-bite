@@ -224,7 +224,7 @@ function renderFleet(rows) {
   }
 
   container.innerHTML = boats.map(boat => `
-    <a class="landing-fleet-card" href="/boat-detail.html?boat=${encodeURIComponent(boat.boat)}">
+    <a class="landing-fleet-card" href="/boat-detail/boat=${encodeURIComponent(boat.boat)}">
       <div>
         <h3>⚓ ${safe(boat.boat)}</h3>
         <p>${format(boat.trips)} trips · ${format(boat.fish)} fish</p>
@@ -252,7 +252,7 @@ function renderRecentReports(rows) {
     <article class="landing-report-card">
       <div>
         <h3>
-          <a href="/boat-detail.html?boat=${encodeURIComponent(row.boat || "")}">
+          <a href="/boat-detail/?boat=${encodeURIComponent(row.boat || "")}">
             ${safe(row.boat || "Unknown Boat")}
           </a>
         </h3>
@@ -281,7 +281,7 @@ function renderFishCounts(fishCounts) {
       const species = text.replace(/^[\d,]+\s+/, "");
 
       return `
-        <a class="fish-count-pill" href="/species-detail.html?species=${encodeURIComponent(species)}">
+        <a class="fish-count-pill" href="/species-detail/?species=${encodeURIComponent(species)}">
           ${safe(text)}
         </a>
       `;
