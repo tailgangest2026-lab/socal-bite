@@ -202,7 +202,7 @@ function renderPriceComparison() {
   tbody.innerHTML = prices.slice(0, 100).map(row => `
     <tr>
       <td>
-        <a href="/landing-detail.html?landing=${encodeURIComponent(row.landing || "")}">
+        <a href="/landing-detail/?landing=${encodeURIComponent(row.landing || "")}">
           ${safe(row.landing)}
         </a>
       </td>
@@ -249,7 +249,7 @@ function renderLandingCards() {
           <div class="landing-card-top">
             <div>
               <h3>
-                <a href="/landing-detail.html?landing=${encodeURIComponent(landing.landing)}">
+                <a href="/landing-detail/?landing=${encodeURIComponent(landing.landing)}">
                   ${safe(landing.landing)}
                 </a>
               </h3>
@@ -325,7 +325,7 @@ function renderLandingCards() {
           </div>
 
           <div class="landing-actions">
-            <a href="/landing-detail.html?landing=${encodeURIComponent(landing.landing)}">
+            <a href="/landing-detail/?landing=${encodeURIComponent(landing.landing)}">
               Details
             </a>
 
