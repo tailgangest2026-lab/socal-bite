@@ -9,8 +9,8 @@ async function initLandings() {
   try {
     const [dailyRows, prices, types] = await Promise.all([
       loadRecentDailyRows(),
-      fetchJson("trip-prices.json"),
-      fetchJson("landing-trip-types.json")
+      fetchJson("../trip-prices.json"),
+      fetchJson("../landing-trip-types.json")
     ]);
 
     tripPrices = Array.isArray(prices) ? prices : [];
