@@ -1,625 +1,492 @@
 [
   {
     "rank": 1,
-    "region": "Alameda County",
-    "species": "Rockfish",
-    "fish": 2523,
-    "trips_reported": 19
-  },
-  {
-    "rank": 2,
-    "region": "Alameda County",
-    "species": "Lingcod",
-    "fish": 271,
-    "trips_reported": 18
-  },
-  {
-    "rank": 3,
-    "region": "Alameda County",
-    "species": "Halibut",
-    "fish": 103,
-    "trips_reported": 35
-  },
-  {
-    "rank": 1,
     "region": "Central California",
     "species": "Rockfish",
-    "fish": 8454,
-    "trips_reported": 62
+    "fish": 3448,
+    "trips_reported": 24
   },
   {
     "rank": 2,
     "region": "Central California",
     "species": "Red Rockfish",
-    "fish": 1161,
-    "trips_reported": 61
+    "fish": 396,
+    "trips_reported": 24
   },
   {
     "rank": 3,
     "region": "Central California",
     "species": "Lingcod",
-    "fish": 180,
-    "trips_reported": 46
-  },
-  {
-    "rank": 4,
-    "region": "Central California",
-    "species": "Halibut",
-    "fish": 8,
-    "trips_reported": 4
-  },
-  {
-    "rank": 5,
-    "region": "Central California",
-    "species": "Whitefish",
-    "fish": 3,
-    "trips_reported": 3
+    "fish": 71,
+    "trips_reported": 13
   },
   {
     "rank": 1,
     "region": "Los Angeles County",
     "species": "Rockfish",
-    "fish": 26529,
-    "trips_reported": 186
+    "fish": 10835,
+    "trips_reported": 74
   },
   {
     "rank": 2,
     "region": "Los Angeles County",
     "species": "Sculpin",
-    "fish": 16149,
-    "trips_reported": 132
+    "fish": 6677,
+    "trips_reported": 55
   },
   {
     "rank": 3,
     "region": "Los Angeles County",
-    "species": "Whitefish",
-    "fish": 8906,
-    "trips_reported": 173
+    "species": "Calico Bass",
+    "fish": 3355,
+    "trips_reported": 74
   },
   {
     "rank": 4,
     "region": "Los Angeles County",
-    "species": "Calico Bass",
-    "fish": 8530,
-    "trips_reported": 190
+    "species": "Whitefish",
+    "fish": 2375,
+    "trips_reported": 60
   },
   {
     "rank": 5,
     "region": "Los Angeles County",
-    "species": "Calico Bass Released",
-    "fish": 2850,
-    "trips_reported": 41
+    "species": "Bonito",
+    "fish": 1340,
+    "trips_reported": 44
   },
   {
     "rank": 6,
     "region": "Los Angeles County",
-    "species": "Bonito",
-    "fish": 2140,
-    "trips_reported": 104
+    "species": "Barracuda",
+    "fish": 686,
+    "trips_reported": 58
   },
   {
     "rank": 7,
     "region": "Los Angeles County",
     "species": "Sheephead",
-    "fish": 1870,
-    "trips_reported": 155
+    "fish": 627,
+    "trips_reported": 55
   },
   {
     "rank": 8,
     "region": "Los Angeles County",
-    "species": "Yellowtail",
-    "fish": 1135,
-    "trips_reported": 133
+    "species": "Calico Bass Released",
+    "fish": 548,
+    "trips_reported": 9
   },
   {
     "rank": 9,
     "region": "Los Angeles County",
-    "species": "Barracuda",
-    "fish": 994,
-    "trips_reported": 105
+    "species": "Yellowtail",
+    "fish": 475,
+    "trips_reported": 51
   },
   {
     "rank": 10,
     "region": "Los Angeles County",
     "species": "Lingcod",
-    "fish": 272,
-    "trips_reported": 86
+    "fish": 98,
+    "trips_reported": 41
   },
   {
     "rank": 11,
     "region": "Los Angeles County",
     "species": "Sand Bass",
-    "fish": 160,
-    "trips_reported": 30
+    "fish": 74,
+    "trips_reported": 13
   },
   {
     "rank": 12,
     "region": "Los Angeles County",
     "species": "Barracuda Released",
-    "fish": 59,
-    "trips_reported": 5
+    "fish": 23,
+    "trips_reported": 1
   },
   {
     "rank": 13,
     "region": "Los Angeles County",
-    "species": "Red Rockfish",
-    "fish": 52,
+    "species": "Halibut",
+    "fish": 5,
+    "trips_reported": 5
+  },
+  {
+    "rank": 1,
+    "region": "Orange County",
+    "species": "Rockfish",
+    "fish": 5406,
+    "trips_reported": 71
+  },
+  {
+    "rank": 2,
+    "region": "Orange County",
+    "species": "Sculpin",
+    "fish": 4602,
+    "trips_reported": 42
+  },
+  {
+    "rank": 3,
+    "region": "Orange County",
+    "species": "Whitefish",
+    "fish": 3065,
+    "trips_reported": 70
+  },
+  {
+    "rank": 4,
+    "region": "Orange County",
+    "species": "Calico Bass",
+    "fish": 2550,
+    "trips_reported": 96
+  },
+  {
+    "rank": 5,
+    "region": "Orange County",
+    "species": "Calico Bass Released",
+    "fish": 2338,
+    "trips_reported": 38
+  },
+  {
+    "rank": 6,
+    "region": "Orange County",
+    "species": "Yellowtail",
+    "fish": 667,
+    "trips_reported": 53
+  },
+  {
+    "rank": 7,
+    "region": "Orange County",
+    "species": "Bonito",
+    "fish": 404,
+    "trips_reported": 36
+  },
+  {
+    "rank": 8,
+    "region": "Orange County",
+    "species": "Sheephead",
+    "fish": 338,
+    "trips_reported": 60
+  },
+  {
+    "rank": 9,
+    "region": "Orange County",
+    "species": "Barracuda",
+    "fish": 239,
+    "trips_reported": 35
+  },
+  {
+    "rank": 10,
+    "region": "Orange County",
+    "species": "Sand Bass",
+    "fish": 156,
+    "trips_reported": 28
+  },
+  {
+    "rank": 11,
+    "region": "Orange County",
+    "species": "Halibut",
+    "fish": 8,
+    "trips_reported": 6
+  },
+  {
+    "rank": 12,
+    "region": "Orange County",
+    "species": "Lingcod",
+    "fish": 4,
     "trips_reported": 2
   },
   {
+    "rank": 1,
+    "region": "San Diego County",
+    "species": "Calico Bass Released",
+    "fish": 9491,
+    "trips_reported": 98
+  },
+  {
+    "rank": 2,
+    "region": "San Diego County",
+    "species": "Rockfish",
+    "fish": 8311,
+    "trips_reported": 154
+  },
+  {
+    "rank": 3,
+    "region": "San Diego County",
+    "species": "Calico Bass",
+    "fish": 4329,
+    "trips_reported": 144
+  },
+  {
+    "rank": 4,
+    "region": "San Diego County",
+    "species": "Yellowtail",
+    "fish": 2630,
+    "trips_reported": 78
+  },
+  {
+    "rank": 5,
+    "region": "San Diego County",
+    "species": "Red Rockfish",
+    "fish": 1180,
+    "trips_reported": 24
+  },
+  {
+    "rank": 6,
+    "region": "San Diego County",
+    "species": "Whitefish",
+    "fish": 772,
+    "trips_reported": 34
+  },
+  {
+    "rank": 7,
+    "region": "San Diego County",
+    "species": "Sculpin",
+    "fish": 694,
+    "trips_reported": 54
+  },
+  {
+    "rank": 8,
+    "region": "San Diego County",
+    "species": "Bonito",
+    "fish": 616,
+    "trips_reported": 40
+  },
+  {
+    "rank": 9,
+    "region": "San Diego County",
+    "species": "Barracuda Released",
+    "fish": 495,
+    "trips_reported": 6
+  },
+  {
+    "rank": 10,
+    "region": "San Diego County",
+    "species": "Sheephead",
+    "fish": 330,
+    "trips_reported": 82
+  },
+  {
+    "rank": 11,
+    "region": "San Diego County",
+    "species": "Sand Bass",
+    "fish": 260,
+    "trips_reported": 45
+  },
+  {
+    "rank": 12,
+    "region": "San Diego County",
+    "species": "Barracuda",
+    "fish": 232,
+    "trips_reported": 48
+  },
+  {
+    "rank": 13,
+    "region": "San Diego County",
+    "species": "Lingcod",
+    "fish": 94,
+    "trips_reported": 21
+  },
+  {
     "rank": 14,
-    "region": "Los Angeles County",
-    "species": "Bluefin Tuna",
-    "fish": 19,
+    "region": "San Diego County",
+    "species": "Yellowfin Tuna",
+    "fish": 42,
     "trips_reported": 3
   },
   {
     "rank": 15,
-    "region": "Los Angeles County",
+    "region": "San Diego County",
+    "species": "Bluefin Tuna",
+    "fish": 32,
+    "trips_reported": 9
+  },
+  {
+    "rank": 16,
+    "region": "San Diego County",
     "species": "Halibut",
-    "fish": 15,
-    "trips_reported": 15
+    "fish": 31,
+    "trips_reported": 12
   },
   {
     "rank": 1,
-    "region": "Marin County",
-    "species": "Halibut",
-    "fish": 16,
-    "trips_reported": 2
-  },
-  {
-    "rank": 1,
-    "region": "Monterey County",
+    "region": "Santa Barbara County",
     "species": "Rockfish",
-    "fish": 2547,
-    "trips_reported": 18
+    "fish": 5758,
+    "trips_reported": 30
   },
   {
     "rank": 2,
-    "region": "Monterey County",
-    "species": "Lingcod",
-    "fish": 30,
-    "trips_reported": 13
+    "region": "Santa Barbara County",
+    "species": "Whitefish",
+    "fish": 2279,
+    "trips_reported": 21
   },
   {
     "rank": 3,
-    "region": "Monterey County",
+    "region": "Santa Barbara County",
+    "species": "Lingcod",
+    "fish": 123,
+    "trips_reported": 18
+  },
+  {
+    "rank": 4,
+    "region": "Santa Barbara County",
+    "species": "Sheephead",
+    "fish": 119,
+    "trips_reported": 18
+  },
+  {
+    "rank": 5,
+    "region": "Santa Barbara County",
     "species": "Halibut",
+    "fish": 5,
+    "trips_reported": 3
+  },
+  {
+    "rank": 6,
+    "region": "Santa Barbara County",
+    "species": "Sculpin",
     "fish": 2,
     "trips_reported": 2
   },
   {
     "rank": 1,
-    "region": "NorCal",
-    "species": "Rockfish",
-    "fish": 1762,
-    "trips_reported": 12
-  },
-  {
-    "rank": 2,
-    "region": "NorCal",
-    "species": "Lingcod",
-    "fish": 74,
-    "trips_reported": 10
-  },
-  {
-    "rank": 3,
-    "region": "NorCal",
-    "species": "Halibut",
-    "fish": 27,
-    "trips_reported": 5
-  },
-  {
-    "rank": 1,
-    "region": "Orange County",
-    "species": "Sculpin",
-    "fish": 11936,
-    "trips_reported": 117
-  },
-  {
-    "rank": 2,
-    "region": "Orange County",
-    "species": "Rockfish",
-    "fish": 11745,
-    "trips_reported": 156
-  },
-  {
-    "rank": 3,
-    "region": "Orange County",
-    "species": "Calico Bass Released",
-    "fish": 7305,
-    "trips_reported": 103
-  },
-  {
-    "rank": 4,
-    "region": "Orange County",
-    "species": "Whitefish",
-    "fish": 6017,
-    "trips_reported": 158
-  },
-  {
-    "rank": 5,
-    "region": "Orange County",
-    "species": "Calico Bass",
-    "fish": 5384,
-    "trips_reported": 215
-  },
-  {
-    "rank": 6,
-    "region": "Orange County",
-    "species": "Yellowtail",
-    "fish": 1084,
-    "trips_reported": 95
-  },
-  {
-    "rank": 7,
-    "region": "Orange County",
-    "species": "Sheephead",
-    "fish": 925,
-    "trips_reported": 126
-  },
-  {
-    "rank": 8,
-    "region": "Orange County",
-    "species": "Bonito",
-    "fish": 881,
-    "trips_reported": 69
-  },
-  {
-    "rank": 9,
-    "region": "Orange County",
-    "species": "Sand Bass",
-    "fish": 646,
-    "trips_reported": 87
-  },
-  {
-    "rank": 10,
-    "region": "Orange County",
-    "species": "Barracuda",
-    "fish": 638,
-    "trips_reported": 74
-  },
-  {
-    "rank": 11,
-    "region": "Orange County",
-    "species": "Halibut",
-    "fish": 20,
-    "trips_reported": 17
-  },
-  {
-    "rank": 12,
-    "region": "Orange County",
-    "species": "Lingcod",
-    "fish": 12,
-    "trips_reported": 9
-  },
-  {
-    "rank": 1,
-    "region": "San Diego County",
-    "species": "Calico Bass Released",
-    "fish": 18604,
-    "trips_reported": 192
-  },
-  {
-    "rank": 2,
-    "region": "San Diego County",
-    "species": "Rockfish",
-    "fish": 14838,
-    "trips_reported": 302
-  },
-  {
-    "rank": 3,
-    "region": "San Diego County",
-    "species": "Calico Bass",
-    "fish": 10025,
-    "trips_reported": 326
-  },
-  {
-    "rank": 4,
-    "region": "San Diego County",
-    "species": "Yellowtail",
-    "fish": 5950,
-    "trips_reported": 212
-  },
-  {
-    "rank": 5,
-    "region": "San Diego County",
-    "species": "Bonito",
-    "fish": 2242,
-    "trips_reported": 96
-  },
-  {
-    "rank": 6,
-    "region": "San Diego County",
-    "species": "Bluefin Tuna",
-    "fish": 2063,
-    "trips_reported": 51
-  },
-  {
-    "rank": 7,
-    "region": "San Diego County",
-    "species": "Barracuda Released",
-    "fish": 1913,
-    "trips_reported": 30
-  },
-  {
-    "rank": 8,
-    "region": "San Diego County",
-    "species": "Red Rockfish",
-    "fish": 1893,
-    "trips_reported": 43
-  },
-  {
-    "rank": 9,
-    "region": "San Diego County",
-    "species": "Whitefish",
-    "fish": 1589,
-    "trips_reported": 96
-  },
-  {
-    "rank": 10,
-    "region": "San Diego County",
-    "species": "Sculpin",
-    "fish": 1209,
-    "trips_reported": 125
-  },
-  {
-    "rank": 11,
-    "region": "San Diego County",
-    "species": "Barracuda",
-    "fish": 941,
-    "trips_reported": 136
-  },
-  {
-    "rank": 12,
-    "region": "San Diego County",
-    "species": "Sand Bass",
-    "fish": 706,
-    "trips_reported": 117
-  },
-  {
-    "rank": 13,
-    "region": "San Diego County",
-    "species": "Sheephead",
-    "fish": 620,
-    "trips_reported": 179
-  },
-  {
-    "rank": 14,
-    "region": "San Diego County",
-    "species": "Lingcod",
-    "fish": 148,
-    "trips_reported": 42
-  },
-  {
-    "rank": 15,
-    "region": "San Diego County",
-    "species": "Halibut",
-    "fish": 51,
-    "trips_reported": 29
-  },
-  {
-    "rank": 16,
-    "region": "San Diego County",
-    "species": "Yellowfin Tuna",
-    "fish": 43,
-    "trips_reported": 4
-  },
-  {
-    "rank": 1,
-    "region": "San Francisco Bay",
-    "species": "Rockfish",
-    "fish": 1286,
-    "trips_reported": 8
-  },
-  {
-    "rank": 2,
-    "region": "San Francisco Bay",
-    "species": "Lingcod",
-    "fish": 24,
-    "trips_reported": 2
-  },
-  {
-    "rank": 3,
-    "region": "San Francisco Bay",
-    "species": "Halibut",
-    "fish": 8,
-    "trips_reported": 4
-  },
-  {
-    "rank": 1,
-    "region": "San Mateo County",
-    "species": "Rockfish",
-    "fish": 80,
-    "trips_reported": 2
-  },
-  {
-    "rank": 1,
-    "region": "Santa Barbara County",
-    "species": "Rockfish",
-    "fish": 13944,
-    "trips_reported": 65
-  },
-  {
-    "rank": 2,
-    "region": "Santa Barbara County",
-    "species": "Whitefish",
-    "fish": 6981,
-    "trips_reported": 56
-  },
-  {
-    "rank": 3,
-    "region": "Santa Barbara County",
-    "species": "Lingcod",
-    "fish": 409,
-    "trips_reported": 53
-  },
-  {
-    "rank": 4,
-    "region": "Santa Barbara County",
-    "species": "Sheephead",
-    "fish": 310,
-    "trips_reported": 46
-  },
-  {
-    "rank": 5,
-    "region": "Santa Barbara County",
-    "species": "Halibut",
-    "fish": 21,
-    "trips_reported": 10
-  },
-  {
-    "rank": 6,
-    "region": "Santa Barbara County",
-    "species": "Sculpin",
-    "fish": 14,
-    "trips_reported": 7
-  },
-  {
-    "rank": 1,
     "region": "SoCal",
     "species": "Rockfish",
-    "fish": 3781,
-    "trips_reported": 23
-  },
-  {
-    "rank": 2,
-    "region": "SoCal",
-    "species": "Whitefish",
-    "fish": 2253,
-    "trips_reported": 25
-  },
-  {
-    "rank": 3,
-    "region": "SoCal",
-    "species": "Sheephead",
-    "fish": 257,
-    "trips_reported": 16
-  },
-  {
-    "rank": 4,
-    "region": "SoCal",
-    "species": "Barracuda",
-    "fish": 164,
-    "trips_reported": 5
-  },
-  {
-    "rank": 5,
-    "region": "SoCal",
-    "species": "Bonito",
-    "fish": 140,
-    "trips_reported": 4
-  },
-  {
-    "rank": 6,
-    "region": "SoCal",
-    "species": "Calico Bass",
-    "fish": 93,
-    "trips_reported": 9
-  },
-  {
-    "rank": 7,
-    "region": "SoCal",
-    "species": "Halibut",
-    "fish": 77,
-    "trips_reported": 15
-  },
-  {
-    "rank": 8,
-    "region": "SoCal",
-    "species": "Sculpin",
-    "fish": 52,
-    "trips_reported": 9
-  },
-  {
-    "rank": 9,
-    "region": "SoCal",
-    "species": "Lingcod",
-    "fish": 49,
+    "fish": 1828,
     "trips_reported": 11
   },
   {
-    "rank": 10,
+    "rank": 2,
+    "region": "SoCal",
+    "species": "Whitefish",
+    "fish": 1018,
+    "trips_reported": 10
+  },
+  {
+    "rank": 3,
+    "region": "SoCal",
+    "species": "Sheephead",
+    "fish": 94,
+    "trips_reported": 8
+  },
+  {
+    "rank": 4,
+    "region": "SoCal",
+    "species": "Sculpin",
+    "fish": 39,
+    "trips_reported": 5
+  },
+  {
+    "rank": 5,
+    "region": "SoCal",
+    "species": "Halibut",
+    "fish": 30,
+    "trips_reported": 5
+  },
+  {
+    "rank": 6,
+    "region": "SoCal",
+    "species": "Lingcod",
+    "fish": 18,
+    "trips_reported": 5
+  },
+  {
+    "rank": 7,
+    "region": "SoCal",
+    "species": "Calico Bass",
+    "fish": 9,
+    "trips_reported": 3
+  },
+  {
+    "rank": 8,
     "region": "SoCal",
     "species": "Yellowtail",
-    "fish": 14,
-    "trips_reported": 4
+    "fish": 7,
+    "trips_reported": 1
+  },
+  {
+    "rank": 9,
+    "region": "SoCal",
+    "species": "Barracuda",
+    "fish": 2,
+    "trips_reported": 1
   },
   {
     "rank": 1,
     "region": "Ventura County",
     "species": "Rockfish",
-    "fish": 29928,
-    "trips_reported": 225
+    "fish": 13207,
+    "trips_reported": 88
   },
   {
     "rank": 2,
     "region": "Ventura County",
     "species": "Whitefish",
-    "fish": 23285,
-    "trips_reported": 240
+    "fish": 8064,
+    "trips_reported": 101
   },
   {
     "rank": 3,
     "region": "Ventura County",
-    "species": "Calico Bass",
-    "fish": 3022,
-    "trips_reported": 138
+    "species": "Barracuda",
+    "fish": 1045,
+    "trips_reported": 46
   },
   {
     "rank": 4,
     "region": "Ventura County",
-    "species": "Barracuda",
-    "fish": 1992,
-    "trips_reported": 100
+    "species": "Calico Bass",
+    "fish": 969,
+    "trips_reported": 55
   },
   {
     "rank": 5,
     "region": "Ventura County",
-    "species": "Sheephead",
-    "fish": 1579,
-    "trips_reported": 174
+    "species": "Bonito",
+    "fish": 483,
+    "trips_reported": 17
   },
   {
     "rank": 6,
     "region": "Ventura County",
-    "species": "Bonito",
-    "fish": 997,
-    "trips_reported": 48
+    "species": "Sheephead",
+    "fish": 448,
+    "trips_reported": 57
   },
   {
     "rank": 7,
     "region": "Ventura County",
     "species": "Lingcod",
-    "fish": 517,
-    "trips_reported": 101
+    "fish": 179,
+    "trips_reported": 43
   },
   {
     "rank": 8,
     "region": "Ventura County",
-    "species": "Sculpin",
-    "fish": 472,
-    "trips_reported": 85
+    "species": "Halibut",
+    "fish": 128,
+    "trips_reported": 45
   },
   {
     "rank": 9,
     "region": "Ventura County",
-    "species": "Halibut",
-    "fish": 404,
-    "trips_reported": 107
+    "species": "Sculpin",
+    "fish": 128,
+    "trips_reported": 34
   },
   {
     "rank": 10,
     "region": "Ventura County",
     "species": "Yellowtail",
-    "fish": 178,
-    "trips_reported": 63
+    "fish": 63,
+    "trips_reported": 20
   },
   {
     "rank": 11,
     "region": "Ventura County",
     "species": "Sand Bass",
-    "fish": 31,
-    "trips_reported": 9
+    "fish": 7,
+    "trips_reported": 3
   }
 ]
