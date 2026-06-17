@@ -225,10 +225,10 @@
     "trip_type": "3/4 Day",
     "boat": "New Del Mar",
     "landing": "Marina Del Rey Sportfishing",
-    "trips": 10,
-    "anglers": 550,
-    "fish": 3966,
-    "fpa": 7.21
+    "trips": 11,
+    "anglers": 634,
+    "fish": 4441,
+    "fpa": 7
   },
   {
     "rank": 4,
@@ -357,10 +357,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Kahuna",
     "landing": "J&M Sportfishing",
-    "trips": 7,
-    "anglers": 101,
-    "fish": 955,
-    "fpa": 9.46
+    "trips": 8,
+    "anglers": 121,
+    "fish": 1157,
+    "fpa": 9.56
   },
   {
     "rank": 1,
@@ -401,10 +401,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Western Pride",
     "landing": "Davey's Locker",
-    "trips": 18,
-    "anglers": 675,
-    "fish": 4053,
-    "fpa": 6
+    "trips": 19,
+    "anglers": 691,
+    "fish": 4136,
+    "fpa": 5.99
   },
   {
     "rank": 3,
@@ -1083,24 +1083,13 @@
     "trip_type": "Full Day",
     "boat": "Graylight",
     "landing": "Channel Islands Sportfishing",
-    "trips": 31,
-    "anglers": 171,
-    "fish": 908,
-    "fpa": 5.31
+    "trips": 32,
+    "anglers": 177,
+    "fish": 936,
+    "fpa": 5.29
   },
   {
     "rank": 1,
-    "region": "Ventura County",
-    "trip_type": "Overnight",
-    "boat": "Indicator",
-    "landing": "Channel Islands Sportfishing",
-    "trips": 7,
-    "anglers": 118,
-    "fish": 2034,
-    "fpa": 17.24
-  },
-  {
-    "rank": 2,
     "region": "Ventura County",
     "trip_type": "Overnight",
     "boat": "New Hustler",
@@ -1109,6 +1098,17 @@
     "anglers": 161,
     "fish": 2604,
     "fpa": 16.17
+  },
+  {
+    "rank": 2,
+    "region": "Ventura County",
+    "trip_type": "Overnight",
+    "boat": "Indicator",
+    "landing": "Channel Islands Sportfishing",
+    "trips": 8,
+    "anglers": 133,
+    "fish": 2123,
+    "fpa": 15.96
   },
   {
     "rank": 3,
