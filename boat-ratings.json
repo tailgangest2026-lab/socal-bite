@@ -14,23 +14,23 @@
     "rank": 2,
     "region": "Alameda County",
     "trip_type": "1/2 Day AM",
+    "boat": "Pacific Pearl",
+    "landing": "Fish Emeryville",
+    "trips": 9,
+    "anglers": 110,
+    "fish": 40,
+    "fpa": 0.36
+  },
+  {
+    "rank": 3,
+    "region": "Alameda County",
+    "trip_type": "1/2 Day AM",
     "boat": "Oakland Anglers II",
     "landing": "Fish Emeryville",
     "trips": 5,
     "anglers": 83,
     "fish": 14,
     "fpa": 0.17
-  },
-  {
-    "rank": 3,
-    "region": "Alameda County",
-    "trip_type": "1/2 Day AM",
-    "boat": "Pacific Pearl",
-    "landing": "Fish Emeryville",
-    "trips": 8,
-    "anglers": 93,
-    "fish": 10,
-    "fpa": 0.11
   },
   {
     "rank": 1,
@@ -58,6 +58,28 @@
     "rank": 1,
     "region": "Central California",
     "trip_type": "1/2 Day AM",
+    "boat": "Endeavor (MB)",
+    "landing": "Morro Bay Landing",
+    "trips": 5,
+    "anglers": 81,
+    "fish": 791,
+    "fpa": 9.77
+  },
+  {
+    "rank": 2,
+    "region": "Central California",
+    "trip_type": "1/2 Day AM",
+    "boat": "Starfire",
+    "landing": "Morro Bay Landing",
+    "trips": 5,
+    "anglers": 62,
+    "fish": 565,
+    "fpa": 9.11
+  },
+  {
+    "rank": 3,
+    "region": "Central California",
+    "trip_type": "1/2 Day AM",
     "boat": "Avenger",
     "landing": "Morro Bay Landing",
     "trips": 18,
@@ -66,7 +88,7 @@
     "fpa": 8.32
   },
   {
-    "rank": 2,
+    "rank": 4,
     "region": "Central California",
     "trip_type": "1/2 Day AM",
     "boat": "Sunny Day",
@@ -77,7 +99,7 @@
     "fpa": 0.76
   },
   {
-    "rank": 3,
+    "rank": 5,
     "region": "Central California",
     "trip_type": "1/2 Day AM",
     "boat": "Flying Fish",
@@ -88,7 +110,7 @@
     "fpa": 0.12
   },
   {
-    "rank": 4,
+    "rank": 6,
     "region": "Central California",
     "trip_type": "1/2 Day AM",
     "boat": "Patriot (Avila Beach)",
@@ -412,10 +434,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Western Pride",
     "landing": "Davey's Locker",
-    "trips": 21,
-    "anglers": 890,
-    "fish": 4195,
-    "fpa": 4.71
+    "trips": 22,
+    "anglers": 908,
+    "fish": 4287,
+    "fpa": 4.72
   },
   {
     "rank": 4,
@@ -654,10 +676,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Southern Cal",
     "landing": "Oceanside Sea Center",
-    "trips": 21,
-    "anglers": 540,
-    "fish": 3093,
-    "fpa": 5.73
+    "trips": 22,
+    "anglers": 558,
+    "fish": 3168,
+    "fpa": 5.68
   },
   {
     "rank": 3,
@@ -687,10 +709,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Premier",
     "landing": "H&M Landing",
-    "trips": 21,
-    "anglers": 672,
-    "fish": 2571,
-    "fpa": 3.83
+    "trips": 22,
+    "anglers": 704,
+    "fish": 2630,
+    "fpa": 3.74
   },
   {
     "rank": 6,
@@ -698,10 +720,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
-    "trips": 25,
-    "anglers": 859,
-    "fish": 2232,
-    "fpa": 2.6
+    "trips": 26,
+    "anglers": 914,
+    "fish": 2263,
+    "fpa": 2.48
   },
   {
     "rank": 1,
@@ -753,10 +775,10 @@
     "trip_type": "1/2 Day Twilight",
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
-    "trips": 25,
-    "anglers": 786,
-    "fish": 3848,
-    "fpa": 4.9
+    "trips": 26,
+    "anglers": 841,
+    "fish": 3983,
+    "fpa": 4.74
   },
   {
     "rank": 2,
@@ -1127,9 +1149,9 @@
     "trip_type": "Overnight",
     "boat": "New Hustler",
     "landing": "Channel Islands Sportfishing",
-    "trips": 8,
-    "anglers": 176,
-    "fish": 2342,
-    "fpa": 13.31
+    "trips": 9,
+    "anglers": 194,
+    "fish": 2631,
+    "fpa": 13.56
   }
 ]
