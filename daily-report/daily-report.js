@@ -7,7 +7,7 @@ let reportYearCache = {};
 
 async function initReports() {
   try {
-    reportIndex = await fetchJson("daily-report-index.json");
+    reportIndex = await fetchJson("../daily-report-index.json");
 
     if (!Array.isArray(reportIndex) || !reportIndex.length) {
       showDateListMessage("No report dates found.");
@@ -41,7 +41,7 @@ async function fetchJson(path) {
 
 async function getYearRowsForDate(date) {
   const year = String(date).substring(0, 4);
-  const filePath = `reports/reports-${year}.json`;
+  const filePath = `../reports/reports-${year}.json`;
 
   if (!reportYearCache[year]) {
     const rows = await fetchJson(filePath);
@@ -183,13 +183,13 @@ function renderReportRows(rows) {
   tbody.innerHTML = filtered.map(row => `
     <tr>
       <td>
-        <a class="data-link" href="/boat-detail.html?boat=${encodeURIComponent(row.boat || "")}">
+        <a class="data-link" href="/boat-detail/?boat=${encodeURIComponent(row.boat || "")}">
           ${safe(row.boat || "Unknown Boat")}
         </a>
       </td>
 
       <td>
-        <a class="data-link" href="/landing-detail.html?landing=${encodeURIComponent(row.landing || "")}">
+        <a class="data-link" href="/landing-detail/?landing=${encodeURIComponent(row.landing || "")}">
           ${safe(row.landing || "Unknown Landing")}
         </a>
       </td>
@@ -221,7 +221,7 @@ function renderFishCounts(fishCounts) {
       const species = text.replace(/^[\d,]+\s+/, "");
 
       return `
-        <a class="fish-count-pill" href="/species-detail.html?species=${encodeURIComponent(species)}">
+        <a class="fish-count-pill" href="/species-detail/?species=${encodeURIComponent(species)}">
           ${safe(text)}
         </a>
       `;
