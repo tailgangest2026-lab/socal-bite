@@ -861,3 +861,13 @@ main { padding-top: 86px; }
     padding-top: 170px !important;
   }
 }
+.tailgang-banner{
+  margin:2rem 0;
+  text-align:center;
+}
+
+.tailgang-banner img{
+  width:100%;
+  max-width:1200px;
+  border-radius:16px;
+}
