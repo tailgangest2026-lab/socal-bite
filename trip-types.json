@@ -84,10 +84,10 @@
     "rank": 3,
     "region": "Los Angeles County",
     "trip_type": "1.5 Day",
-    "trips": 5,
-    "anglers": 64,
-    "fish": 736,
-    "fpa": 11.5
+    "trips": 6,
+    "anglers": 74,
+    "fish": 834,
+    "fpa": 11.27
   },
   {
     "rank": 4,
@@ -200,6 +200,15 @@
   {
     "rank": 1,
     "region": "Orange County",
+    "trip_type": "2 Day",
+    "trips": 1,
+    "anglers": 22,
+    "fish": 594,
+    "fpa": 27
+  },
+  {
+    "rank": 2,
+    "region": "Orange County",
     "trip_type": "Overnight",
     "trips": 76,
     "anglers": 2051,
@@ -207,7 +216,7 @@
     "fpa": 9.87
   },
   {
-    "rank": 2,
+    "rank": 3,
     "region": "Orange County",
     "trip_type": "Full Day",
     "trips": 28,
@@ -216,25 +225,25 @@
     "fpa": 6.54
   },
   {
-    "rank": 3,
-    "region": "Orange County",
-    "trip_type": "3/4 Day",
-    "trips": 223,
-    "anglers": 7309,
-    "fish": 45794,
-    "fpa": 6.27
-  },
-  {
     "rank": 4,
     "region": "Orange County",
-    "trip_type": "1/2 Day AM",
-    "trips": 197,
-    "anglers": 5459,
-    "fish": 21522,
-    "fpa": 3.94
+    "trip_type": "3/4 Day",
+    "trips": 224,
+    "anglers": 7339,
+    "fish": 45917,
+    "fpa": 6.26
   },
   {
     "rank": 5,
+    "region": "Orange County",
+    "trip_type": "1/2 Day AM",
+    "trips": 199,
+    "anglers": 5507,
+    "fish": 21717,
+    "fpa": 3.94
+  },
+  {
+    "rank": 6,
     "region": "Orange County",
     "trip_type": "1/2 Day Twilight",
     "trips": 52,
@@ -243,12 +252,12 @@
     "fpa": 3.48
   },
   {
-    "rank": 6,
+    "rank": 7,
     "region": "Orange County",
     "trip_type": "1/2 Day PM",
-    "trips": 156,
-    "anglers": 4796,
-    "fish": 13839,
+    "trips": 157,
+    "anglers": 4828,
+    "fish": 13961,
     "fpa": 2.89
   },
   {
@@ -318,10 +327,10 @@
     "rank": 8,
     "region": "San Diego County",
     "trip_type": "1/2 Day PM",
-    "trips": 215,
-    "anglers": 7115,
-    "fish": 23266,
-    "fpa": 3.27
+    "trips": 216,
+    "anglers": 7133,
+    "fish": 23284,
+    "fpa": 3.26
   },
   {
     "rank": 9,
