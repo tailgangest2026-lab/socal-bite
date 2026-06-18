@@ -862,12 +862,14 @@ main { padding-top: 86px; }
   }
 }
 .tailgang-banner{
-  margin:2rem 0;
+  max-width:1200px;
+  margin:2rem auto;
   text-align:center;
 }
 
 .tailgang-banner img{
   width:100%;
-  max-width:1200px;
+  height:auto;
+  display:block;
   border-radius:16px;
 }
