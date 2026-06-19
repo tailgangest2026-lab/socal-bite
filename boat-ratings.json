@@ -245,6 +245,17 @@
     "rank": 3,
     "region": "Los Angeles County",
     "trip_type": "3/4 Day",
+    "boat": "Enterprise",
+    "landing": "Pierpoint Landing",
+    "trips": 6,
+    "anglers": 199,
+    "fish": 1458,
+    "fpa": 7.33
+  },
+  {
+    "rank": 4,
+    "region": "Los Angeles County",
+    "trip_type": "3/4 Day",
     "boat": "New Del Mar",
     "landing": "Marina Del Rey Sportfishing",
     "trips": 12,
@@ -253,7 +264,7 @@
     "fpa": 6.85
   },
   {
-    "rank": 4,
+    "rank": 5,
     "region": "Los Angeles County",
     "trip_type": "3/4 Day",
     "boat": "Betty-O",
@@ -264,7 +275,7 @@
     "fpa": 5.93
   },
   {
-    "rank": 5,
+    "rank": 6,
     "region": "Los Angeles County",
     "trip_type": "3/4 Day",
     "boat": "Triton",
@@ -275,7 +286,7 @@
     "fpa": 5.74
   },
   {
-    "rank": 6,
+    "rank": 7,
     "region": "Los Angeles County",
     "trip_type": "3/4 Day",
     "boat": "Gail Force",
@@ -286,7 +297,7 @@
     "fpa": 5.65
   },
   {
-    "rank": 7,
+    "rank": 8,
     "region": "Los Angeles County",
     "trip_type": "3/4 Day",
     "boat": "Native Sun",
@@ -297,7 +308,7 @@
     "fpa": 5.04
   },
   {
-    "rank": 8,
+    "rank": 9,
     "region": "Los Angeles County",
     "trip_type": "3/4 Day",
     "boat": "Sport King",
@@ -773,23 +784,23 @@
     "rank": 1,
     "region": "San Diego County",
     "trip_type": "1/2 Day PM",
-    "boat": "Daily Double",
-    "landing": "Point Loma Sportfishing",
-    "trips": 5,
-    "anglers": 79,
-    "fish": 477,
-    "fpa": 6.04
-  },
-  {
-    "rank": 2,
-    "region": "San Diego County",
-    "trip_type": "1/2 Day PM",
     "boat": "Premier",
     "landing": "H&M Landing",
     "trips": 18,
     "anglers": 527,
     "fish": 2794,
     "fpa": 5.3
+  },
+  {
+    "rank": 2,
+    "region": "San Diego County",
+    "trip_type": "1/2 Day PM",
+    "boat": "Daily Double",
+    "landing": "Point Loma Sportfishing",
+    "trips": 6,
+    "anglers": 118,
+    "fish": 541,
+    "fpa": 4.58
   },
   {
     "rank": 3,

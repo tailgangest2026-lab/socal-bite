@@ -276,18 +276,6 @@
     "top_species_3": "Calico Bass"
   },
   {
-    "boat": "Enterprise",
-    "landing": "Pierpoint Landing",
-    "region": "Los Angeles County",
-    "trips": 16,
-    "anglers": 435,
-    "fish": 4999,
-    "fpa": 11.49,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Sculpin",
-    "top_species_3": "Whitefish"
-  },
-  {
     "boat": "Victory",
     "landing": "Long Beach Sportfishing",
     "region": "Los Angeles County",
@@ -295,6 +283,18 @@
     "anglers": 1534,
     "fish": 16690,
     "fpa": 10.88,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Sculpin",
+    "top_species_3": "Whitefish"
+  },
+  {
+    "boat": "Enterprise",
+    "landing": "Pierpoint Landing",
+    "region": "Los Angeles County",
+    "trips": 18,
+    "anglers": 505,
+    "fish": 5305,
+    "fpa": 10.5,
     "top_species_1": "Rockfish",
     "top_species_2": "Sculpin",
     "top_species_3": "Whitefish"
@@ -1140,18 +1140,6 @@
     "top_species_3": ""
   },
   {
-    "boat": "Daily Double",
-    "landing": "Point Loma Sportfishing",
-    "region": "San Diego County",
-    "trips": 52,
-    "anglers": 1095,
-    "fish": 4866,
-    "fpa": 4.44,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Calico Bass Released",
-    "top_species_3": "Calico Bass"
-  },
-  {
     "boat": "Point Loma",
     "landing": "Point Loma Sportfishing",
     "region": "San Diego County",
@@ -1162,6 +1150,18 @@
     "top_species_1": "Rockfish",
     "top_species_2": "Whitefish",
     "top_species_3": "Red Rockfish"
+  },
+  {
+    "boat": "Daily Double",
+    "landing": "Point Loma Sportfishing",
+    "region": "San Diego County",
+    "trips": 53,
+    "anglers": 1134,
+    "fish": 4930,
+    "fpa": 4.35,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Calico Bass Released",
+    "top_species_3": "Calico Bass"
   },
   {
     "boat": "Poseidon",
