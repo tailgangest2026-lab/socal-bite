@@ -228,18 +228,6 @@
     "top_species_3": "Calico Bass"
   },
   {
-    "boat": "Eldorado",
-    "landing": "Long Beach Sportfishing",
-    "region": "Los Angeles County",
-    "trips": 34,
-    "anglers": 827,
-    "fish": 10752,
-    "fpa": 13,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Whitefish",
-    "top_species_3": "Sheephead"
-  },
-  {
     "boat": "Freedom",
     "landing": "22nd Street Landing",
     "region": "Los Angeles County",
@@ -250,6 +238,18 @@
     "top_species_1": "Whitefish",
     "top_species_2": "Rockfish",
     "top_species_3": "Calico Bass"
+  },
+  {
+    "boat": "Eldorado",
+    "landing": "Long Beach Sportfishing",
+    "region": "Los Angeles County",
+    "trips": 35,
+    "anglers": 861,
+    "fish": 10864,
+    "fpa": 12.62,
+    "top_species_1": "Whitefish",
+    "top_species_2": "Rockfish",
+    "top_species_3": "Sheephead"
   },
   {
     "boat": "Toronado",
@@ -576,18 +576,6 @@
     "top_species_3": ""
   },
   {
-    "boat": "Pacific Dream",
-    "landing": "Happy Hooker Sportfishing",
-    "region": "NorCal",
-    "trips": 3,
-    "anglers": 72,
-    "fish": 502,
-    "fpa": 6.97,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Lingcod",
-    "top_species_3": ""
-  },
-  {
     "boat": "Golden State Sportfishing",
     "landing": "Golden State Sportfishing",
     "region": "NorCal",
@@ -595,6 +583,18 @@
     "anglers": 22,
     "fish": 144,
     "fpa": 6.55,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Lingcod",
+    "top_species_3": ""
+  },
+  {
+    "boat": "Pacific Dream",
+    "landing": "Happy Hooker Sportfishing",
+    "region": "NorCal",
+    "trips": 4,
+    "anglers": 89,
+    "fish": 515,
+    "fpa": 5.79,
     "top_species_1": "Rockfish",
     "top_species_2": "Lingcod",
     "top_species_3": ""
@@ -1311,10 +1311,10 @@
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
     "region": "San Diego County",
-    "trips": 210,
-    "anglers": 7192,
-    "fish": 19916,
-    "fpa": 2.77,
+    "trips": 211,
+    "anglers": 7247,
+    "fish": 19977,
+    "fpa": 2.76,
     "top_species_1": "Calico Bass Released",
     "top_species_2": "Rockfish",
     "top_species_3": "Calico Bass"
@@ -1572,11 +1572,11 @@
     "top_species_3": ""
   },
   {
-    "boat": "Goldeneye 2000",
-    "landing": "Berkeley Charter Boats",
+    "boat": "Lovely Martha",
+    "landing": "Lovely Martha Sportfishing",
     "region": "San Francisco Bay",
-    "trips": 6,
-    "anglers": 103,
+    "trips": 7,
+    "anglers": 120,
     "fish": 0,
     "fpa": 0,
     "top_species_1": "",
@@ -1584,11 +1584,11 @@
     "top_species_3": ""
   },
   {
-    "boat": "Lovely Martha",
-    "landing": "Lovely Martha Sportfishing",
+    "boat": "Goldeneye 2000",
+    "landing": "Berkeley Charter Boats",
     "region": "San Francisco Bay",
     "trips": 6,
-    "anglers": 107,
+    "anglers": 103,
     "fish": 0,
     "fpa": 0,
     "top_species_1": "",
