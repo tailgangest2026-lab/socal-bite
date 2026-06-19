@@ -1320,18 +1320,6 @@
     "top_species_3": "Whitefish"
   },
   {
-    "boat": "El Gato Dos",
-    "landing": "Seaforth Sportfishing",
-    "region": "San Diego County",
-    "trips": 9,
-    "anglers": 44,
-    "fish": 112,
-    "fpa": 2.55,
-    "top_species_1": "Yellowtail",
-    "top_species_2": "Bonito",
-    "top_species_3": "Rockfish"
-  },
-  {
     "boat": "Pacifica",
     "landing": "Seaforth Sportfishing",
     "region": "San Diego County",
@@ -1366,6 +1354,18 @@
     "top_species_1": "Yellowtail",
     "top_species_2": "Red Rockfish",
     "top_species_3": ""
+  },
+  {
+    "boat": "El Gato Dos",
+    "landing": "Seaforth Sportfishing",
+    "region": "San Diego County",
+    "trips": 10,
+    "anglers": 48,
+    "fish": 119,
+    "fpa": 2.48,
+    "top_species_1": "Yellowtail",
+    "top_species_2": "Bonito",
+    "top_species_3": "Rockfish"
   },
   {
     "boat": "Mission Belle",
@@ -1767,10 +1767,10 @@
     "boat": "New Hustler",
     "landing": "Channel Islands Sportfishing",
     "region": "Ventura County",
-    "trips": 10,
-    "anglers": 212,
-    "fish": 2920,
-    "fpa": 13.77,
+    "trips": 11,
+    "anglers": 235,
+    "fish": 3376,
+    "fpa": 14.37,
     "top_species_1": "Rockfish",
     "top_species_2": "Whitefish",
     "top_species_3": "Barracuda"
@@ -1788,18 +1788,6 @@
     "top_species_3": "Calico Bass"
   },
   {
-    "boat": "Coroloma",
-    "landing": "Hooks Landing",
-    "region": "Ventura County",
-    "trips": 11,
-    "anglers": 288,
-    "fish": 3359,
-    "fpa": 11.66,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Whitefish",
-    "top_species_3": "Calico Bass"
-  },
-  {
     "boat": "Estella",
     "landing": "Hooks Landing",
     "region": "Ventura County",
@@ -1807,6 +1795,30 @@
     "anglers": 462,
     "fish": 5362,
     "fpa": 11.61,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Whitefish",
+    "top_species_3": "Sheephead"
+  },
+  {
+    "boat": "Coroloma",
+    "landing": "Hooks Landing",
+    "region": "Ventura County",
+    "trips": 12,
+    "anglers": 323,
+    "fish": 3720,
+    "fpa": 11.52,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Whitefish",
+    "top_species_3": "Calico Bass"
+  },
+  {
+    "boat": "Estella",
+    "landing": "Channel Islands Sportfishing",
+    "region": "Ventura County",
+    "trips": 7,
+    "anglers": 155,
+    "fish": 1645,
+    "fpa": 10.61,
     "top_species_1": "Rockfish",
     "top_species_2": "Whitefish",
     "top_species_3": "Sheephead"
@@ -1855,18 +1867,6 @@
     "anglers": 1606,
     "fish": 15215,
     "fpa": 9.47,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Whitefish",
-    "top_species_3": "Sheephead"
-  },
-  {
-    "boat": "Estella",
-    "landing": "Channel Islands Sportfishing",
-    "region": "Ventura County",
-    "trips": 6,
-    "anglers": 130,
-    "fish": 1230,
-    "fpa": 9.46,
     "top_species_1": "Rockfish",
     "top_species_2": "Whitefish",
     "top_species_3": "Sheephead"
