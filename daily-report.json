@@ -512,6 +512,36 @@
   {
     "trip_date": "2026-06-18",
     "region": "San Diego County",
+    "landing": "Fisherman's Landing",
+    "boat": "Dolphin",
+    "trip_type": "1/2 Day AM",
+    "anglers": 55,
+    "fish_counts": "2 Calico Bass, 78 Rockfish, 2 Sand Bass, 3 Whitefish",
+    "total_fish": 85
+  },
+  {
+    "trip_date": "2026-06-18",
+    "region": "San Diego County",
+    "landing": "Fisherman's Landing",
+    "boat": "Dolphin",
+    "trip_type": "1/2 Day PM",
+    "anglers": 35,
+    "fish_counts": "2 Calico Bass, 81 Rockfish",
+    "total_fish": 83
+  },
+  {
+    "trip_date": "2026-06-18",
+    "region": "San Diego County",
+    "landing": "Fisherman's Landing",
+    "boat": "Islander",
+    "trip_type": "2.5 Day",
+    "anglers": 25,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-06-18",
+    "region": "San Diego County",
     "landing": "H&M Landing",
     "boat": "Grande",
     "trip_type": "Full Day Coronado Islands",
@@ -598,6 +628,26 @@
     "anglers": 20,
     "fish_counts": "1 Barracuda, 16 Calico Bass, 10 Rockfish, 1 Sheephead",
     "total_fish": 28
+  },
+  {
+    "trip_date": "2026-06-18",
+    "region": "San Diego County",
+    "landing": "Point Loma Sportfishing",
+    "boat": "Mission Belle",
+    "trip_type": "Full Day Coronado Islands",
+    "anglers": 24,
+    "fish_counts": "35 Calico Bass, 5 Yellowtail",
+    "total_fish": 40
+  },
+  {
+    "trip_date": "2026-06-18",
+    "region": "San Diego County",
+    "landing": "Point Loma Sportfishing",
+    "boat": "Point Loma",
+    "trip_type": "Full Day Coronado Islands",
+    "anglers": 14,
+    "fish_counts": "6 Barracuda, 35 Calico Bass, 1 Sheephead, 2 Yellowtail",
+    "total_fish": 44
   },
   {
     "trip_date": "2026-06-18",
@@ -1343,6 +1393,16 @@
     "trip_date": "2026-06-17",
     "region": "Orange County",
     "landing": "Davey's Locker",
+    "boat": "Freelance",
+    "trip_type": "1/2 Day Twilight",
+    "anglers": 54,
+    "fish_counts": "150 Sculpin",
+    "total_fish": 150
+  },
+  {
+    "trip_date": "2026-06-17",
+    "region": "Orange County",
+    "landing": "Davey's Locker",
     "boat": "Western Pride",
     "trip_type": "1/2 Day AM",
     "anglers": 82,
@@ -1438,6 +1498,16 @@
     "anglers": 25,
     "fish_counts": "19 Calico Bass, 50 Calico Bass Released, 3 Rockfish, 1 Sculpin, 3 Sheephead",
     "total_fish": 76
+  },
+  {
+    "trip_date": "2026-06-17",
+    "region": "San Diego County",
+    "landing": "Fisherman's Landing",
+    "boat": "Pacific Dawn",
+    "trip_type": "Overnight",
+    "anglers": 18,
+    "fish_counts": "6 Bluefin Tuna, 1 Yellowtail",
+    "total_fish": 7
   },
   {
     "trip_date": "2026-06-17",
