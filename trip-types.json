@@ -560,15 +560,6 @@
   {
     "rank": 4,
     "region": "Ventura County",
-    "trip_type": "1/2 Day Twilight",
-    "trips": 1,
-    "anglers": 46,
-    "fish": 624,
-    "fpa": 13.57
-  },
-  {
-    "rank": 5,
-    "region": "Ventura County",
     "trip_type": "1/2 Day AM",
     "trips": 107,
     "anglers": 3311,
@@ -576,7 +567,7 @@
     "fpa": 10.54
   },
   {
-    "rank": 6,
+    "rank": 5,
     "region": "Ventura County",
     "trip_type": "3/4 Day",
     "trips": 130,
@@ -585,12 +576,21 @@
     "fpa": 10.03
   },
   {
-    "rank": 7,
+    "rank": 6,
     "region": "Ventura County",
     "trip_type": "Full Day",
     "trips": 222,
     "anglers": 3221,
     "fish": 30301,
     "fpa": 9.41
+  },
+  {
+    "rank": 7,
+    "region": "Ventura County",
+    "trip_type": "1/2 Day Twilight",
+    "trips": 2,
+    "anglers": 87,
+    "fish": 759,
+    "fpa": 8.72
   }
 ]
