@@ -36,6 +36,18 @@
     "top_species_3": "Halibut"
   },
   {
+    "boat": "Scallywag",
+    "landing": "Fish Emeryville",
+    "region": "Alameda County",
+    "trips": 4,
+    "anglers": 22,
+    "fish": 62,
+    "fpa": 2.82,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Lingcod",
+    "top_species_3": "Halibut"
+  },
+  {
     "boat": "C Gull II",
     "landing": "Fish Emeryville",
     "region": "Alameda County",
@@ -51,10 +63,10 @@
     "boat": "Lady K",
     "landing": "Fish Emeryville",
     "region": "Alameda County",
-    "trips": 11,
-    "anglers": 97,
-    "fish": 200,
-    "fpa": 2.06,
+    "trips": 12,
+    "anglers": 107,
+    "fish": 203,
+    "fpa": 1.9,
     "top_species_1": "Rockfish",
     "top_species_2": "Halibut",
     "top_species_3": "Lingcod"
@@ -125,18 +137,6 @@
     "region": "Alameda County",
     "trips": 5,
     "anglers": 70,
-    "fish": 0,
-    "fpa": 0,
-    "top_species_1": "",
-    "top_species_2": "",
-    "top_species_3": ""
-  },
-  {
-    "boat": "Scallywag",
-    "landing": "Fish Emeryville",
-    "region": "Alameda County",
-    "trips": 3,
-    "anglers": 17,
     "fish": 0,
     "fpa": 0,
     "top_species_1": "",
@@ -1215,10 +1215,10 @@
     "boat": "Daily Double",
     "landing": "Point Loma Sportfishing",
     "region": "San Diego County",
-    "trips": 53,
-    "anglers": 1134,
-    "fish": 4930,
-    "fpa": 4.35,
+    "trips": 54,
+    "anglers": 1160,
+    "fish": 5020,
+    "fpa": 4.33,
     "top_species_1": "Rockfish",
     "top_species_2": "Calico Bass Released",
     "top_species_3": "Calico Bass"
@@ -1344,6 +1344,18 @@
     "top_species_3": ""
   },
   {
+    "boat": "Pacifica",
+    "landing": "Seaforth Sportfishing",
+    "region": "San Diego County",
+    "trips": 5,
+    "anglers": 124,
+    "fish": 390,
+    "fpa": 3.15,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Calico Bass",
+    "top_species_3": "Yellowtail"
+  },
+  {
     "boat": "Freeman 34",
     "landing": "Fisherman's Landing",
     "region": "San Diego County",
@@ -1378,18 +1390,6 @@
     "top_species_1": "Yellowtail",
     "top_species_2": "Rockfish",
     "top_species_3": "Whitefish"
-  },
-  {
-    "boat": "Pacifica",
-    "landing": "Seaforth Sportfishing",
-    "region": "San Diego County",
-    "trips": 4,
-    "anglers": 95,
-    "fish": 241,
-    "fpa": 2.54,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Yellowtail",
-    "top_species_3": "Bonito"
   },
   {
     "boat": "Got Bait",
