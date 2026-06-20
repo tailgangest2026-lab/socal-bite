@@ -293,6 +293,16 @@
     "trip_date": "2026-06-19",
     "region": "Los Angeles County",
     "landing": "22nd Street Landing",
+    "boat": "Native Sun",
+    "trip_type": "3/4 Day",
+    "anglers": 30,
+    "fish_counts": "141 Calico Bass, 18 Sheephead, 103 Whitefish",
+    "total_fish": 262
+  },
+  {
+    "trip_date": "2026-06-19",
+    "region": "Los Angeles County",
+    "landing": "22nd Street Landing",
     "boat": "Pursuit",
     "trip_type": "Full Day",
     "anglers": 37,
@@ -363,6 +373,16 @@
     "trip_date": "2026-06-19",
     "region": "Los Angeles County",
     "landing": "Marina Del Rey Sportfishing",
+    "boat": "Betty-O",
+    "trip_type": "3/4 Day",
+    "anglers": 24,
+    "fish_counts": "1 Calico Bass, 15 Rockfish, 2 Sand Bass, 1 Sheephead",
+    "total_fish": 19
+  },
+  {
+    "trip_date": "2026-06-19",
+    "region": "Los Angeles County",
+    "landing": "Marina Del Rey Sportfishing",
     "boat": "New Del Mar",
     "trip_type": "1/2 Day AM",
     "anglers": 65,
@@ -373,11 +393,31 @@
     "trip_date": "2026-06-19",
     "region": "Los Angeles County",
     "landing": "Marina Del Rey Sportfishing",
+    "boat": "New Del Mar",
+    "trip_type": "3/4 Day",
+    "anglers": 125,
+    "fish_counts": "5 Lingcod, 525 Rockfish, 226 Whitefish",
+    "total_fish": 756
+  },
+  {
+    "trip_date": "2026-06-19",
+    "region": "Los Angeles County",
+    "landing": "Marina Del Rey Sportfishing",
     "boat": "Spitfire",
     "trip_type": "3/4 Day",
     "anglers": 21,
     "fish_counts": "29 Calico Bass, 40 Calico Bass Released, 210 Rockfish",
     "total_fish": 279
+  },
+  {
+    "trip_date": "2026-06-19",
+    "region": "Los Angeles County",
+    "landing": "Marina Del Rey Sportfishing",
+    "boat": "Spitfire",
+    "trip_type": "3/4 Day",
+    "anglers": 58,
+    "fish_counts": "1 Lingcod, 348 Rockfish, 425 Whitefish",
+    "total_fish": 774
   },
   {
     "trip_date": "2026-06-19",
@@ -428,6 +468,36 @@
     "anglers": 9,
     "fish_counts": "",
     "total_fish": 0
+  },
+  {
+    "trip_date": "2026-06-19",
+    "region": "Monterey County",
+    "landing": "J&M Sportfishing",
+    "boat": "Kahuna",
+    "trip_type": "1/2 Day AM",
+    "anglers": 10,
+    "fish_counts": "100 Rockfish",
+    "total_fish": 100
+  },
+  {
+    "trip_date": "2026-06-19",
+    "region": "Monterey County",
+    "landing": "J&M Sportfishing",
+    "boat": "New Horizon",
+    "trip_type": "1/2 Day AM",
+    "anglers": 14,
+    "fish_counts": "21 Lingcod, 138 Rockfish",
+    "total_fish": 159
+  },
+  {
+    "trip_date": "2026-06-19",
+    "region": "NorCal",
+    "landing": "Bodega Bay Sportfishing Center",
+    "boat": "Surf Scooter",
+    "trip_type": "Full Day",
+    "anglers": 12,
+    "fish_counts": "120 Rockfish",
+    "total_fish": 120
   },
   {
     "trip_date": "2026-06-19",
@@ -742,6 +812,26 @@
   {
     "trip_date": "2026-06-19",
     "region": "San Diego County",
+    "landing": "Fisherman's Landing",
+    "boat": "Dolphin",
+    "trip_type": "1/2 Day AM",
+    "anglers": 53,
+    "fish_counts": "5 Lingcod, 164 Rockfish, 6 Sheephead",
+    "total_fish": 175
+  },
+  {
+    "trip_date": "2026-06-19",
+    "region": "San Diego County",
+    "landing": "Fisherman's Landing",
+    "boat": "Dolphin",
+    "trip_type": "1/2 Day PM",
+    "anglers": 32,
+    "fish_counts": "3 Calico Bass, 111 Rockfish, 4 Sand Bass, 6 Sculpin, 4 Sheephead",
+    "total_fish": 128
+  },
+  {
+    "trip_date": "2026-06-19",
+    "region": "San Diego County",
     "landing": "H&M Landing",
     "boat": "Grande",
     "trip_type": "Full Day Coronado Islands",
@@ -758,6 +848,16 @@
     "anglers": 55,
     "fish_counts": "1 Calico Bass, 103 Rockfish, 6 Sand Bass, 7 Sculpin",
     "total_fish": 117
+  },
+  {
+    "trip_date": "2026-06-19",
+    "region": "San Diego County",
+    "landing": "H&M Landing",
+    "boat": "Premier",
+    "trip_type": "1/2 Day PM",
+    "anglers": 23,
+    "fish_counts": "1 Calico Bass, 25 Calico Bass Released, 73 Rockfish, 5 Sculpin",
+    "total_fish": 104
   },
   {
     "trip_date": "2026-06-19",
@@ -883,11 +983,31 @@
     "trip_date": "2026-06-19",
     "region": "San Francisco Bay",
     "landing": "California Dawn Sportfishing",
+    "boat": "California Dawn II",
+    "trip_type": "Full Day",
+    "anglers": 23,
+    "fish_counts": "230 Rockfish",
+    "total_fish": 230
+  },
+  {
+    "trip_date": "2026-06-19",
+    "region": "San Francisco Bay",
+    "landing": "California Dawn Sportfishing",
     "boat": "New California Dawn",
     "trip_type": "Full Day",
     "anglers": 11,
     "fish_counts": "1 Lingcod",
     "total_fish": 1
+  },
+  {
+    "trip_date": "2026-06-19",
+    "region": "San Francisco Bay",
+    "landing": "California Dawn Sportfishing",
+    "boat": "New California Dawn",
+    "trip_type": "Full Day",
+    "anglers": 19,
+    "fish_counts": "15 Lingcod, 150 Rockfish",
+    "total_fish": 165
   },
   {
     "trip_date": "2026-06-19",
@@ -928,6 +1048,16 @@
     "anglers": 28,
     "fish_counts": "1 Halibut, 4 Lingcod, 279 Rockfish, 13 Sheephead, 223 Whitefish",
     "total_fish": 520
+  },
+  {
+    "trip_date": "2026-06-19",
+    "region": "Santa Barbara County",
+    "landing": "Santa Barbara Landing",
+    "boat": "Stardust",
+    "trip_type": "3/4 Day",
+    "anglers": 34,
+    "fish_counts": "1 Lingcod, 335 Rockfish, 8 Sheephead, 120 Whitefish",
+    "total_fish": 464
   },
   {
     "trip_date": "2026-06-19",
@@ -1558,6 +1688,16 @@
     "anglers": 13,
     "fish_counts": "4 Lingcod, 130 Rockfish",
     "total_fish": 134
+  },
+  {
+    "trip_date": "2026-06-18",
+    "region": "Monterey County",
+    "landing": "J&M Sportfishing",
+    "boat": "New Horizon",
+    "trip_type": "1/2 Day PM",
+    "anglers": 18,
+    "fish_counts": "85 Rockfish",
+    "total_fish": 85
   },
   {
     "trip_date": "2026-06-18",
