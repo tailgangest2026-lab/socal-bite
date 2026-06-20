@@ -267,10 +267,10 @@
     "boat": "Victory",
     "landing": "Long Beach Sportfishing",
     "region": "Los Angeles County",
-    "trips": 48,
-    "anglers": 1632,
-    "fish": 17788,
-    "fpa": 10.9,
+    "trips": 49,
+    "anglers": 1690,
+    "fish": 18447,
+    "fpa": 10.92,
     "top_species_1": "Rockfish",
     "top_species_2": "Sculpin",
     "top_species_3": "Whitefish"
@@ -435,10 +435,10 @@
     "boat": "El Patron",
     "landing": "Long Beach Sportfishing",
     "region": "Los Angeles County",
-    "trips": 36,
-    "anglers": 716,
-    "fish": 3856,
-    "fpa": 5.39,
+    "trips": 37,
+    "anglers": 737,
+    "fish": 3894,
+    "fpa": 5.28,
     "top_species_1": "Rockfish",
     "top_species_2": "Whitefish",
     "top_species_3": "Calico Bass"
@@ -447,10 +447,10 @@
     "boat": "Pursuit",
     "landing": "22nd Street Landing",
     "region": "Los Angeles County",
-    "trips": 70,
-    "anglers": 2414,
-    "fish": 12646,
-    "fpa": 5.24,
+    "trips": 71,
+    "anglers": 2452,
+    "fish": 12733,
+    "fpa": 5.19,
     "top_species_1": "Calico Bass",
     "top_species_2": "Rockfish",
     "top_species_3": "Whitefish"
@@ -1116,18 +1116,6 @@
     "top_species_3": ""
   },
   {
-    "boat": "Nautilus",
-    "landing": "H&M Landing",
-    "region": "San Diego County",
-    "trips": 12,
-    "anglers": 64,
-    "fish": 296,
-    "fpa": 4.63,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Calico Bass Released",
-    "top_species_3": "Red Rockfish"
-  },
-  {
     "boat": "Southern Cal",
     "landing": "Oceanside Sea Center",
     "region": "San Diego County",
@@ -1138,6 +1126,18 @@
     "top_species_1": "Rockfish",
     "top_species_2": "Sculpin",
     "top_species_3": "Calico Bass Released"
+  },
+  {
+    "boat": "Nautilus",
+    "landing": "H&M Landing",
+    "region": "San Diego County",
+    "trips": 13,
+    "anglers": 70,
+    "fish": 314,
+    "fpa": 4.49,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Calico Bass Released",
+    "top_species_3": "Red Rockfish"
   },
   {
     "boat": "Fortune",
