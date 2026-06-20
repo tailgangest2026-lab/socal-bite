@@ -179,6 +179,17 @@
     "rank": 1,
     "region": "Los Angeles County",
     "trip_type": "1/2 Day AM",
+    "boat": "City of Long Beach",
+    "landing": "Pierpoint Landing",
+    "trips": 5,
+    "anglers": 113,
+    "fish": 971,
+    "fpa": 8.59
+  },
+  {
+    "rank": 2,
+    "region": "Los Angeles County",
+    "trip_type": "1/2 Day AM",
     "boat": "New Del Mar",
     "landing": "Marina Del Rey Sportfishing",
     "trips": 19,
@@ -187,7 +198,7 @@
     "fpa": 7.09
   },
   {
-    "rank": 2,
+    "rank": 3,
     "region": "Los Angeles County",
     "trip_type": "1/2 Day AM",
     "boat": "Redondo Special",
@@ -198,7 +209,7 @@
     "fpa": 5.56
   },
   {
-    "rank": 3,
+    "rank": 4,
     "region": "Los Angeles County",
     "trip_type": "1/2 Day AM",
     "boat": "Monte Carlo",
@@ -962,10 +973,10 @@
     "trip_type": "Full Day Coronado Islands",
     "boat": "San Diego",
     "landing": "Seaforth Sportfishing",
-    "trips": 26,
-    "anglers": 774,
-    "fish": 2489,
-    "fpa": 3.22
+    "trips": 27,
+    "anglers": 810,
+    "fish": 2536,
+    "fpa": 3.13
   },
   {
     "rank": 4,
