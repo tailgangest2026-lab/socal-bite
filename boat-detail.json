@@ -36,6 +36,18 @@
     "top_species_3": "Halibut"
   },
   {
+    "boat": "Scallywag",
+    "landing": "Fish Emeryville",
+    "region": "Alameda County",
+    "trips": 5,
+    "anglers": 27,
+    "fish": 123,
+    "fpa": 4.56,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Lingcod",
+    "top_species_3": "Halibut"
+  },
+  {
     "boat": "KingFish",
     "landing": "Fish Emeryville",
     "region": "Alameda County",
@@ -58,18 +70,6 @@
     "top_species_1": "Rockfish",
     "top_species_2": "Halibut",
     "top_species_3": "Lingcod"
-  },
-  {
-    "boat": "Scallywag",
-    "landing": "Fish Emeryville",
-    "region": "Alameda County",
-    "trips": 4,
-    "anglers": 22,
-    "fish": 62,
-    "fpa": 2.82,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Lingcod",
-    "top_species_3": "Halibut"
   },
   {
     "boat": "Lady K",
@@ -771,10 +771,10 @@
     "boat": "Blackfish",
     "landing": "Davey's Locker",
     "region": "Orange County",
-    "trips": 21,
-    "anglers": 112,
-    "fish": 936,
-    "fpa": 8.36,
+    "trips": 22,
+    "anglers": 114,
+    "fish": 948,
+    "fpa": 8.32,
     "top_species_1": "Rockfish",
     "top_species_2": "Calico Bass",
     "top_species_3": "Sculpin"
@@ -1920,18 +1920,6 @@
     "top_species_3": "Calico Bass"
   },
   {
-    "boat": "Cobra",
-    "landing": "Channel Islands Sportfishing",
-    "region": "Ventura County",
-    "trips": 8,
-    "anglers": 78,
-    "fish": 818,
-    "fpa": 10.49,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Whitefish",
-    "top_species_3": "Lingcod"
-  },
-  {
     "boat": "Speed Twin",
     "landing": "Channel Islands Sportfishing",
     "region": "Ventura County",
@@ -1942,6 +1930,18 @@
     "top_species_1": "Rockfish",
     "top_species_2": "Whitefish",
     "top_species_3": "Barracuda"
+  },
+  {
+    "boat": "Cobra",
+    "landing": "Channel Islands Sportfishing",
+    "region": "Ventura County",
+    "trips": 9,
+    "anglers": 89,
+    "fish": 877,
+    "fpa": 9.85,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Whitefish",
+    "top_species_3": "Lingcod"
   },
   {
     "boat": "Aloha Spirit",
@@ -1959,10 +1959,10 @@
     "boat": "Gentleman",
     "landing": "Channel Islands Sportfishing",
     "region": "Ventura County",
-    "trips": 57,
-    "anglers": 1788,
-    "fish": 16519,
-    "fpa": 9.24,
+    "trips": 58,
+    "anglers": 1814,
+    "fish": 16604,
+    "fpa": 9.15,
     "top_species_1": "Rockfish",
     "top_species_2": "Whitefish",
     "top_species_3": "Sheephead"

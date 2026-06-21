@@ -69,6 +69,17 @@
     "rank": 3,
     "region": "Alameda County",
     "trip_type": "Full Day",
+    "boat": "Scallywag",
+    "landing": "Fish Emeryville",
+    "trips": 5,
+    "anglers": 27,
+    "fish": 123,
+    "fpa": 4.56
+  },
+  {
+    "rank": 4,
+    "region": "Alameda County",
+    "trip_type": "Full Day",
     "boat": "KingFish",
     "landing": "Fish Emeryville",
     "trips": 5,
@@ -742,10 +753,10 @@
     "trip_type": "Full Day",
     "boat": "Blackfish",
     "landing": "Davey's Locker",
-    "trips": 11,
-    "anglers": 58,
-    "fish": 396,
-    "fpa": 6.83
+    "trips": 12,
+    "anglers": 60,
+    "fish": 408,
+    "fpa": 6.8
   },
   {
     "rank": 3,
@@ -1270,10 +1281,10 @@
     "trip_type": "3/4 Day",
     "boat": "Gentleman",
     "landing": "Channel Islands Sportfishing",
-    "trips": 27,
-    "anglers": 912,
-    "fish": 8556,
-    "fpa": 9.38
+    "trips": 28,
+    "anglers": 938,
+    "fish": 8641,
+    "fpa": 9.21
   },
   {
     "rank": 4,
@@ -1303,10 +1314,10 @@
     "trip_type": "Full Day",
     "boat": "Cobra",
     "landing": "Channel Islands Sportfishing",
-    "trips": 7,
-    "anglers": 67,
-    "fish": 678,
-    "fpa": 10.12
+    "trips": 8,
+    "anglers": 78,
+    "fish": 737,
+    "fpa": 9.45
   },
   {
     "rank": 3,
