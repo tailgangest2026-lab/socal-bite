@@ -313,10 +313,10 @@
     "trip_type": "3/4 Day",
     "boat": "Spitfire",
     "landing": "Marina Del Rey Sportfishing",
-    "trips": 34,
-    "anglers": 860,
-    "fish": 7614,
-    "fpa": 8.85
+    "trips": 35,
+    "anglers": 915,
+    "fish": 8119,
+    "fpa": 8.87
   },
   {
     "rank": 3,
@@ -335,13 +335,24 @@
     "trip_type": "3/4 Day",
     "boat": "New Del Mar",
     "landing": "Marina Del Rey Sportfishing",
-    "trips": 14,
-    "anglers": 968,
-    "fish": 6428,
-    "fpa": 6.64
+    "trips": 15,
+    "anglers": 1115,
+    "fish": 7188,
+    "fpa": 6.45
   },
   {
     "rank": 5,
+    "region": "Los Angeles County",
+    "trip_type": "3/4 Day",
+    "boat": "Betty-O",
+    "landing": "Marina Del Rey Sportfishing",
+    "trips": 26,
+    "anglers": 442,
+    "fish": 2540,
+    "fpa": 5.75
+  },
+  {
+    "rank": 6,
     "region": "Los Angeles County",
     "trip_type": "3/4 Day",
     "boat": "Triton",
@@ -350,17 +361,6 @@
     "anglers": 146,
     "fish": 838,
     "fpa": 5.74
-  },
-  {
-    "rank": 6,
-    "region": "Los Angeles County",
-    "trip_type": "3/4 Day",
-    "boat": "Betty-O",
-    "landing": "Marina Del Rey Sportfishing",
-    "trips": 25,
-    "anglers": 400,
-    "fish": 2135,
-    "fpa": 5.34
   },
   {
     "rank": 7,
@@ -443,23 +443,23 @@
     "rank": 1,
     "region": "Los Angeles County",
     "trip_type": "Overnight",
+    "boat": "Freedom",
+    "landing": "22nd Street Landing",
+    "trips": 18,
+    "anglers": 622,
+    "fish": 5413,
+    "fpa": 8.7
+  },
+  {
+    "rank": 2,
+    "region": "Los Angeles County",
+    "trip_type": "Overnight",
     "boat": "Eldorado",
     "landing": "Long Beach Sportfishing",
     "trips": 16,
     "anglers": 457,
     "fish": 3820,
     "fpa": 8.36
-  },
-  {
-    "rank": 2,
-    "region": "Los Angeles County",
-    "trip_type": "Overnight",
-    "boat": "Freedom",
-    "landing": "22nd Street Landing",
-    "trips": 17,
-    "anglers": 586,
-    "fish": 4837,
-    "fpa": 8.25
   },
   {
     "rank": 1,
@@ -566,10 +566,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Western Pride",
     "landing": "Davey's Locker",
-    "trips": 28,
-    "anglers": 1150,
-    "fish": 5967,
-    "fpa": 5.19
+    "trips": 31,
+    "anglers": 1286,
+    "fish": 6211,
+    "fpa": 4.83
   },
   {
     "rank": 4,
@@ -643,10 +643,10 @@
     "trip_type": "1/2 Day PM",
     "boat": "Western Pride",
     "landing": "Davey's Locker",
-    "trips": 36,
-    "anglers": 1304,
-    "fish": 3555,
-    "fpa": 2.73
+    "trips": 39,
+    "anglers": 1432,
+    "fish": 4007,
+    "fpa": 2.8
   },
   {
     "rank": 5,
@@ -731,10 +731,10 @@
     "trip_type": "3/4 Day",
     "boat": "Patriot (Newport)",
     "landing": "Newport Landing",
-    "trips": 21,
-    "anglers": 564,
-    "fish": 1790,
-    "fpa": 3.17
+    "trips": 23,
+    "anglers": 618,
+    "fish": 1933,
+    "fpa": 3.13
   },
   {
     "rank": 6,
@@ -797,10 +797,10 @@
     "trip_type": "Overnight",
     "boat": "Thunderbird",
     "landing": "Newport Landing",
-    "trips": 37,
-    "anglers": 1101,
-    "fish": 7787,
-    "fpa": 7.07
+    "trips": 38,
+    "anglers": 1131,
+    "fish": 8124,
+    "fpa": 7.18
   },
   {
     "rank": 1,
