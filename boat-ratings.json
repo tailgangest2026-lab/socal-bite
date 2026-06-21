@@ -14,6 +14,17 @@
     "rank": 2,
     "region": "Alameda County",
     "trip_type": "1/2 Day AM",
+    "boat": "Oakland Anglers II",
+    "landing": "Fish Emeryville",
+    "trips": 8,
+    "anglers": 127,
+    "fish": 179,
+    "fpa": 1.41
+  },
+  {
+    "rank": 3,
+    "region": "Alameda County",
+    "trip_type": "1/2 Day AM",
     "boat": "Pacific Pearl",
     "landing": "Fish Emeryville",
     "trips": 18,
@@ -22,7 +33,7 @@
     "fpa": 0.36
   },
   {
-    "rank": 3,
+    "rank": 4,
     "region": "Alameda County",
     "trip_type": "1/2 Day AM",
     "boat": "Lady K",
@@ -33,26 +44,15 @@
     "fpa": 0.32
   },
   {
-    "rank": 4,
-    "region": "Alameda County",
-    "trip_type": "1/2 Day AM",
-    "boat": "Oakland Anglers II",
-    "landing": "Fish Emeryville",
-    "trips": 7,
-    "anglers": 107,
-    "fish": 14,
-    "fpa": 0.13
-  },
-  {
     "rank": 1,
     "region": "Alameda County",
     "trip_type": "Full Day",
     "boat": "Sea Wolf",
     "landing": "Fish Emeryville",
-    "trips": 11,
-    "anglers": 244,
-    "fish": 2740,
-    "fpa": 11.23
+    "trips": 12,
+    "anglers": 264,
+    "fish": 2970,
+    "fpa": 11.25
   },
   {
     "rank": 2,
@@ -126,10 +126,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Sunny Day",
     "landing": "Patriot Sportfishing",
-    "trips": 14,
-    "anglers": 44,
-    "fish": 28,
-    "fpa": 0.64
+    "trips": 15,
+    "anglers": 48,
+    "fish": 29,
+    "fpa": 0.6
   },
   {
     "rank": 5,
@@ -137,9 +137,9 @@
     "trip_type": "1/2 Day AM",
     "boat": "Flying Fish",
     "landing": "Patriot Sportfishing",
-    "trips": 27,
-    "anglers": 456,
-    "fish": 69,
+    "trips": 28,
+    "anglers": 479,
+    "fish": 72,
     "fpa": 0.15
   },
   {
@@ -808,10 +808,10 @@
     "trip_type": "1.5 Day",
     "boat": "Old Glory",
     "landing": "H&M Landing",
-    "trips": 5,
-    "anglers": 127,
-    "fish": 855,
-    "fpa": 6.73
+    "trips": 6,
+    "anglers": 156,
+    "fish": 1168,
+    "fpa": 7.49
   },
   {
     "rank": 2,
@@ -885,10 +885,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Premier",
     "landing": "H&M Landing",
-    "trips": 23,
-    "anglers": 820,
-    "fish": 2764,
-    "fpa": 3.37
+    "trips": 24,
+    "anglers": 875,
+    "fish": 2861,
+    "fpa": 3.27
   },
   {
     "rank": 6,
@@ -896,10 +896,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
-    "trips": 27,
-    "anglers": 1026,
-    "fish": 2233,
-    "fpa": 2.18
+    "trips": 28,
+    "anglers": 1075,
+    "fish": 2331,
+    "fpa": 2.17
   },
   {
     "rank": 1,
@@ -962,10 +962,10 @@
     "trip_type": "1/2 Day Twilight",
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
-    "trips": 27,
-    "anglers": 953,
-    "fish": 4118,
-    "fpa": 4.32
+    "trips": 28,
+    "anglers": 1009,
+    "fish": 4303,
+    "fpa": 4.26
   },
   {
     "rank": 1,
@@ -980,6 +980,17 @@
   },
   {
     "rank": 1,
+    "region": "San Diego County",
+    "trip_type": "3 Day",
+    "boat": "Legend",
+    "landing": "H&M Landing",
+    "trips": 5,
+    "anglers": 126,
+    "fish": 1964,
+    "fpa": 15.59
+  },
+  {
+    "rank": 2,
     "region": "San Diego County",
     "trip_type": "3 Day",
     "boat": "Polaris Supreme",
@@ -1435,10 +1446,10 @@
     "trip_type": "Overnight",
     "boat": "New Hustler",
     "landing": "Channel Islands Sportfishing",
-    "trips": 14,
-    "anglers": 294,
-    "fish": 4260,
-    "fpa": 14.49
+    "trips": 15,
+    "anglers": 318,
+    "fish": 4526,
+    "fpa": 14.23
   },
   {
     "rank": 3,
@@ -1457,9 +1468,9 @@
     "trip_type": "Overnight",
     "boat": "Mirage",
     "landing": "Channel Islands Sportfishing",
-    "trips": 33,
-    "anglers": 627,
-    "fish": 8221,
+    "trips": 34,
+    "anglers": 646,
+    "fish": 8471,
     "fpa": 13.11
   }
 ]
