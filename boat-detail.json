@@ -1188,18 +1188,6 @@
     "top_species_3": "Red Rockfish"
   },
   {
-    "boat": "Point Loma",
-    "landing": "Point Loma Sportfishing",
-    "region": "San Diego County",
-    "trips": 20,
-    "anglers": 317,
-    "fish": 1483,
-    "fpa": 4.68,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Calico Bass",
-    "top_species_3": "Red Rockfish"
-  },
-  {
     "boat": "Southern Cal",
     "landing": "Oceanside Sea Center",
     "region": "San Diego County",
@@ -1210,6 +1198,18 @@
     "top_species_1": "Rockfish",
     "top_species_2": "Sculpin",
     "top_species_3": "Calico Bass Released"
+  },
+  {
+    "boat": "Point Loma",
+    "landing": "Point Loma Sportfishing",
+    "region": "San Diego County",
+    "trips": 21,
+    "anglers": 334,
+    "fish": 1515,
+    "fpa": 4.54,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Calico Bass",
+    "top_species_3": "Red Rockfish"
   },
   {
     "boat": "Fortune",
@@ -1873,24 +1873,24 @@
   },
   {
     "boat": "Estella",
+    "landing": "Channel Islands Sportfishing",
+    "region": "Ventura County",
+    "trips": 9,
+    "anglers": 204,
+    "fish": 2525,
+    "fpa": 12.38,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Whitefish",
+    "top_species_3": "Sculpin"
+  },
+  {
+    "boat": "Estella",
     "landing": "Hooks Landing",
     "region": "Ventura County",
     "trips": 16,
     "anglers": 462,
     "fish": 5362,
     "fpa": 11.61,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Whitefish",
-    "top_species_3": "Sheephead"
-  },
-  {
-    "boat": "Estella",
-    "landing": "Channel Islands Sportfishing",
-    "region": "Ventura County",
-    "trips": 8,
-    "anglers": 180,
-    "fish": 2060,
-    "fpa": 11.44,
     "top_species_1": "Rockfish",
     "top_species_2": "Whitefish",
     "top_species_3": "Sheephead"

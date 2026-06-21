@@ -1048,17 +1048,6 @@
     "rank": 2,
     "region": "San Diego County",
     "trip_type": "Full Day Coronado Islands",
-    "boat": "Point Loma",
-    "landing": "Point Loma Sportfishing",
-    "trips": 8,
-    "anglers": 127,
-    "fish": 406,
-    "fpa": 3.2
-  },
-  {
-    "rank": 3,
-    "region": "San Diego County",
-    "trip_type": "Full Day Coronado Islands",
     "boat": "Mission Belle",
     "landing": "Point Loma Sportfishing",
     "trips": 22,
@@ -1067,7 +1056,7 @@
     "fpa": 3.19
   },
   {
-    "rank": 4,
+    "rank": 3,
     "region": "San Diego County",
     "trip_type": "Full Day Coronado Islands",
     "boat": "San Diego",
@@ -1076,6 +1065,17 @@
     "anglers": 810,
     "fish": 2556,
     "fpa": 3.16
+  },
+  {
+    "rank": 4,
+    "region": "San Diego County",
+    "trip_type": "Full Day Coronado Islands",
+    "boat": "Point Loma",
+    "landing": "Point Loma Sportfishing",
+    "trips": 9,
+    "anglers": 144,
+    "fish": 438,
+    "fpa": 3.04
   },
   {
     "rank": 5,
@@ -1225,22 +1225,22 @@
     "region": "Ventura County",
     "trip_type": "1/2 Day AM",
     "boat": "Estella",
-    "landing": "Hooks Landing",
-    "trips": 7,
-    "anglers": 206,
-    "fish": 2475,
-    "fpa": 12.01
+    "landing": "Channel Islands Sportfishing",
+    "trips": 9,
+    "anglers": 204,
+    "fish": 2525,
+    "fpa": 12.38
   },
   {
     "rank": 2,
     "region": "Ventura County",
     "trip_type": "1/2 Day AM",
     "boat": "Estella",
-    "landing": "Channel Islands Sportfishing",
-    "trips": 8,
-    "anglers": 180,
-    "fish": 2060,
-    "fpa": 11.44
+    "landing": "Hooks Landing",
+    "trips": 7,
+    "anglers": 206,
+    "fish": 2475,
+    "fpa": 12.01
   },
   {
     "rank": 3,
