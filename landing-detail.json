@@ -7,11 +7,11 @@
     "address": "",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Fish%20Emeryville",
     "booking_url": "",
-    "trips": 99,
-    "boats": 12,
-    "anglers": 1363,
-    "fish": 5184,
-    "fpa": 3.8
+    "trips": 101,
+    "boats": 13,
+    "anglers": 1391,
+    "fish": 5436,
+    "fpa": 3.91
   },
   {
     "landing": "Morro Bay Landing",
@@ -21,10 +21,10 @@
     "address": "1213 Embarcadero, Morro Bay, CA 93442",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=1213%20Embarcadero%2C%20Morro%20Bay%2C%20CA%2093442",
     "booking_url": "https://www.morrobaylanding.com",
-    "trips": 144,
+    "trips": 146,
     "boats": 3,
-    "anglers": 2815,
-    "fish": 20431,
+    "anglers": 2867,
+    "fish": 20818,
     "fpa": 7.26
   },
   {
@@ -35,10 +35,10 @@
     "address": "1838 Harbor Dr N, Oceanside, CA 92054",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=1838%20Harbor%20Dr%20N%2C%20Oceanside%2C%20CA%2092054",
     "booking_url": "https://patriotsportfishing.com",
-    "trips": 144,
+    "trips": 146,
     "boats": 3,
-    "anglers": 2128,
-    "fish": 308,
+    "anglers": 2160,
+    "fish": 310,
     "fpa": 0.14
   },
   {
@@ -133,11 +133,11 @@
     "address": "",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=New%20Rayann%20Sportfishing",
     "booking_url": "",
-    "trips": 4,
+    "trips": 5,
     "boats": 1,
-    "anglers": 30,
-    "fish": 16,
-    "fpa": 0.53
+    "anglers": 43,
+    "fish": 18,
+    "fpa": 0.42
   },
   {
     "landing": "J&M Sportfishing",
@@ -175,11 +175,11 @@
     "address": "",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Happy%20Hooker%20Sportfishing",
     "booking_url": "",
-    "trips": 16,
+    "trips": 17,
     "boats": 2,
-    "anglers": 337,
+    "anglers": 362,
     "fish": 973,
-    "fpa": 2.89
+    "fpa": 2.69
   },
   {
     "landing": "Stagnaros Charters",
@@ -441,11 +441,11 @@
     "address": "1403 Scott St, San Diego, CA 92106",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=1403%20Scott%20St%2C%20San%20Diego%2C%20CA%2092106",
     "booking_url": "https://www.pointlomasportfishing.com",
-    "trips": 166,
+    "trips": 168,
     "boats": 5,
-    "anglers": 3402,
-    "fish": 11525,
-    "fpa": 3.39
+    "anglers": 3435,
+    "fish": 11556,
+    "fpa": 3.36
   },
   {
     "landing": "California Dawn Sportfishing",
@@ -460,6 +460,20 @@
     "anglers": 583,
     "fish": 2458,
     "fpa": 4.22
+  },
+  {
+    "landing": "Berkeley Charter Boats",
+    "region": "San Francisco Bay",
+    "phone": "",
+    "website": "",
+    "address": "",
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Berkeley%20Charter%20Boats",
+    "booking_url": "",
+    "trips": 7,
+    "boats": 2,
+    "anglers": 123,
+    "fish": 214,
+    "fpa": 1.74
   },
   {
     "landing": "Reel Addiction Sportfishing",
@@ -504,20 +518,6 @@
     "fpa": 0
   },
   {
-    "landing": "Berkeley Charter Boats",
-    "region": "San Francisco Bay",
-    "phone": "",
-    "website": "",
-    "address": "",
-    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Berkeley%20Charter%20Boats",
-    "booking_url": "",
-    "trips": 6,
-    "boats": 1,
-    "anglers": 103,
-    "fish": 0,
-    "fpa": 0
-  },
-  {
     "landing": "Riptide Sportfishing",
     "region": "San Mateo County",
     "phone": "",
@@ -539,11 +539,11 @@
     "address": "301 W Cabrillo Blvd, Santa Barbara, CA 93101",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=301%20W%20Cabrillo%20Blvd%2C%20Santa%20Barbara%2C%20CA%2093101",
     "booking_url": "https://sblanding.com",
-    "trips": 143,
+    "trips": 144,
     "boats": 2,
-    "anglers": 3379,
-    "fish": 46850,
-    "fpa": 13.87
+    "anglers": 3413,
+    "fish": 47218,
+    "fpa": 13.83
   },
   {
     "landing": "Ventura Harbor Sportfishing",
@@ -581,11 +581,11 @@
     "address": "4151 Victoria Ave, Oxnard, CA 93035",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=4151%20Victoria%20Ave%2C%20Oxnard%2C%20CA%2093035",
     "booking_url": "https://www.channelislandssportfishing.com",
-    "trips": 531,
+    "trips": 532,
     "boats": 13,
-    "anglers": 10798,
-    "fish": 118050,
-    "fpa": 10.93
+    "anglers": 10819,
+    "fish": 118314,
+    "fpa": 10.94
   },
   {
     "landing": "Hooks Landing",

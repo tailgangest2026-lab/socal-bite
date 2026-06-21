@@ -60,10 +60,10 @@
     "trip_type": "Full Day",
     "boat": "New Huck Finn",
     "landing": "Fish Emeryville",
-    "trips": 14,
-    "anglers": 223,
-    "fish": 1037,
-    "fpa": 4.65
+    "trips": 15,
+    "anglers": 245,
+    "fish": 1287,
+    "fpa": 5.25
   },
   {
     "rank": 3,
@@ -438,6 +438,17 @@
     "anglers": 586,
     "fish": 4837,
     "fpa": 8.25
+  },
+  {
+    "rank": 1,
+    "region": "Marin County",
+    "trip_type": "Full Day",
+    "boat": "New Rayann",
+    "landing": "New Rayann Sportfishing",
+    "trips": 5,
+    "anglers": 43,
+    "fish": 18,
+    "fpa": 0.42
   },
   {
     "rank": 1,
@@ -1004,23 +1015,23 @@
     "rank": 1,
     "region": "San Diego County",
     "trip_type": "Full Day Coronado Islands",
+    "boat": "Got Bait",
+    "landing": "Point Loma Sportfishing",
+    "trips": 5,
+    "anglers": 24,
+    "fish": 84,
+    "fpa": 3.5
+  },
+  {
+    "rank": 2,
+    "region": "San Diego County",
+    "trip_type": "Full Day Coronado Islands",
     "boat": "Point Loma",
     "landing": "Point Loma Sportfishing",
     "trips": 7,
     "anglers": 110,
     "fish": 379,
     "fpa": 3.45
-  },
-  {
-    "rank": 2,
-    "region": "San Diego County",
-    "trip_type": "Full Day Coronado Islands",
-    "boat": "Mission Belle",
-    "landing": "Point Loma Sportfishing",
-    "trips": 21,
-    "anglers": 501,
-    "fish": 1666,
-    "fpa": 3.33
   },
   {
     "rank": 3,
@@ -1035,6 +1046,17 @@
   },
   {
     "rank": 4,
+    "region": "San Diego County",
+    "trip_type": "Full Day Coronado Islands",
+    "boat": "Mission Belle",
+    "landing": "Point Loma Sportfishing",
+    "trips": 22,
+    "anglers": 530,
+    "fish": 1692,
+    "fpa": 3.19
+  },
+  {
+    "rank": 5,
     "region": "San Diego County",
     "trip_type": "Full Day Coronado Islands",
     "boat": "Grande",
