@@ -373,6 +373,16 @@
     "trip_date": "2026-06-20",
     "region": "Los Angeles County",
     "landing": "22nd Street Landing",
+    "boat": "Freedom",
+    "trip_type": "Overnight",
+    "anglers": 36,
+    "fish_counts": "1 Lingcod, 193 Rockfish, 8 Sculpin, 9 Sheephead, 360 Whitefish, 5 Yellowtail",
+    "total_fish": 576
+  },
+  {
+    "trip_date": "2026-06-20",
+    "region": "Los Angeles County",
+    "landing": "22nd Street Landing",
     "boat": "Monte Carlo",
     "trip_type": "1/2 Day AM",
     "anglers": 80,
@@ -493,6 +503,16 @@
     "trip_date": "2026-06-20",
     "region": "Los Angeles County",
     "landing": "Marina Del Rey Sportfishing",
+    "boat": "Betty-O",
+    "trip_type": "3/4 Day",
+    "anglers": 42,
+    "fish_counts": "3 Lingcod, 360 Rockfish, 2 Sheephead, 40 Whitefish",
+    "total_fish": 405
+  },
+  {
+    "trip_date": "2026-06-20",
+    "region": "Los Angeles County",
+    "landing": "Marina Del Rey Sportfishing",
     "boat": "New Del Mar",
     "trip_type": "3/4 Day",
     "anglers": 125,
@@ -503,11 +523,31 @@
     "trip_date": "2026-06-20",
     "region": "Los Angeles County",
     "landing": "Marina Del Rey Sportfishing",
+    "boat": "New Del Mar",
+    "trip_type": "3/4 Day",
+    "anglers": 147,
+    "fish_counts": "3 Lingcod, 555 Rockfish, 202 Sculpin",
+    "total_fish": 760
+  },
+  {
+    "trip_date": "2026-06-20",
+    "region": "Los Angeles County",
+    "landing": "Marina Del Rey Sportfishing",
     "boat": "Spitfire",
     "trip_type": "3/4 Day",
     "anglers": 58,
     "fish_counts": "1 Lingcod, 348 Rockfish, 425 Whitefish",
     "total_fish": 774
+  },
+  {
+    "trip_date": "2026-06-20",
+    "region": "Los Angeles County",
+    "landing": "Marina Del Rey Sportfishing",
+    "boat": "Spitfire",
+    "trip_type": "3/4 Day",
+    "anglers": 55,
+    "fish_counts": "80 Rockfish, 15 Sheephead, 410 Whitefish",
+    "total_fish": 505
   },
   {
     "trip_date": "2026-06-20",
@@ -588,6 +628,26 @@
     "anglers": 10,
     "fish_counts": "100 Rockfish",
     "total_fish": 100
+  },
+  {
+    "trip_date": "2026-06-20",
+    "region": "Monterey County",
+    "landing": "J&M Sportfishing",
+    "boat": "Kahuna",
+    "trip_type": "1/2 Day AM",
+    "anglers": 11,
+    "fish_counts": "5 Lingcod, 110 Rockfish",
+    "total_fish": 115
+  },
+  {
+    "trip_date": "2026-06-20",
+    "region": "Monterey County",
+    "landing": "J&M Sportfishing",
+    "boat": "Kahuna",
+    "trip_type": "1/2 Day PM",
+    "anglers": 14,
+    "fish_counts": "2 Lingcod, 140 Rockfish",
+    "total_fish": 142
   },
   {
     "trip_date": "2026-06-20",
@@ -858,6 +918,56 @@
     "anglers": 50,
     "fish_counts": "395 Rockfish",
     "total_fish": 395
+  },
+  {
+    "trip_date": "2026-06-20",
+    "region": "Orange County",
+    "landing": "Davey's Locker",
+    "boat": "Western Pride",
+    "trip_type": "1/2 Day AM",
+    "anglers": 48,
+    "fish_counts": "1 Sheephead, 4 Whitefish",
+    "total_fish": 5
+  },
+  {
+    "trip_date": "2026-06-20",
+    "region": "Orange County",
+    "landing": "Davey's Locker",
+    "boat": "Western Pride",
+    "trip_type": "1/2 Day PM",
+    "anglers": 50,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-06-20",
+    "region": "Orange County",
+    "landing": "Newport Landing",
+    "boat": "Aggressor",
+    "trip_type": "1/2 Day AM",
+    "anglers": 32,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-06-20",
+    "region": "Orange County",
+    "landing": "Newport Landing",
+    "boat": "Aggressor",
+    "trip_type": "1/2 Day PM",
+    "anglers": 39,
+    "fish_counts": "10 Whitefish",
+    "total_fish": 10
+  },
+  {
+    "trip_date": "2026-06-20",
+    "region": "Orange County",
+    "landing": "Newport Landing",
+    "boat": "Patriot (Newport)",
+    "trip_type": "3/4 Day",
+    "anglers": 19,
+    "fish_counts": "12 Calico Bass, 96 Whitefish",
+    "total_fish": 108
   },
   {
     "trip_date": "2026-06-20",
@@ -1136,6 +1246,26 @@
     "boat": "Lovely Martha",
     "trip_type": "1/2 Day AM",
     "anglers": 24,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-06-20",
+    "region": "San Francisco Bay",
+    "landing": "Reel Addiction Sportfishing",
+    "boat": "Reel Addiction 1",
+    "trip_type": "Full Day",
+    "anglers": 10,
+    "fish_counts": "1 Lingcod",
+    "total_fish": 1
+  },
+  {
+    "trip_date": "2026-06-20",
+    "region": "San Francisco Bay",
+    "landing": "Reel Addiction Sportfishing",
+    "boat": "Reel Addiction 2",
+    "trip_type": "Full Day",
+    "anglers": 16,
     "fish_counts": "",
     "total_fish": 0
   },
@@ -2402,12 +2532,42 @@
   {
     "trip_date": "2026-06-19",
     "region": "Orange County",
+    "landing": "Davey's Locker",
+    "boat": "Western Pride",
+    "trip_type": "1/2 Day PM",
+    "anglers": 49,
+    "fish_counts": "375 Rockfish",
+    "total_fish": 375
+  },
+  {
+    "trip_date": "2026-06-19",
+    "region": "Orange County",
+    "landing": "Davey's Locker",
+    "boat": "Western Pride",
+    "trip_type": "1/2 Day AM",
+    "anglers": 48,
+    "fish_counts": "38 Rockfish, 1 Whitefish",
+    "total_fish": 39
+  },
+  {
+    "trip_date": "2026-06-19",
+    "region": "Orange County",
     "landing": "Newport Landing",
     "boat": "Aggressor",
     "trip_type": "Overnight",
     "anglers": 15,
     "fish_counts": "2 Barracuda, 51 Calico Bass, 30 Rockfish, 4 Sheephead, 47 Whitefish",
     "total_fish": 134
+  },
+  {
+    "trip_date": "2026-06-19",
+    "region": "Orange County",
+    "landing": "Newport Landing",
+    "boat": "Aggressor",
+    "trip_type": "Overnight",
+    "anglers": 15,
+    "fish_counts": "63 Bonito, 47 Calico Bass, 20 Rockfish, 15 Whitefish",
+    "total_fish": 145
   },
   {
     "trip_date": "2026-06-19",
@@ -2423,11 +2583,31 @@
     "trip_date": "2026-06-19",
     "region": "Orange County",
     "landing": "Newport Landing",
+    "boat": "Patriot (Newport)",
+    "trip_type": "3/4 Day",
+    "anglers": 35,
+    "fish_counts": "6 Bonito, 23 Calico Bass, 6 Yellowtail",
+    "total_fish": 35
+  },
+  {
+    "trip_date": "2026-06-19",
+    "region": "Orange County",
+    "landing": "Newport Landing",
     "boat": "Thunderbird",
     "trip_type": "Overnight",
     "anglers": 26,
     "fish_counts": "1 Barracuda, 52 Calico Bass, 6 Sheephead, 28 Whitefish, 12 Yellowtail",
     "total_fish": 99
+  },
+  {
+    "trip_date": "2026-06-19",
+    "region": "Orange County",
+    "landing": "Newport Landing",
+    "boat": "Thunderbird",
+    "trip_type": "Overnight",
+    "anglers": 30,
+    "fish_counts": "88 Calico Bass, 98 Rockfish, 28 Sheephead, 121 Whitefish, 2 Yellowtail",
+    "total_fish": 337
   },
   {
     "trip_date": "2026-06-19",
@@ -3708,6 +3888,26 @@
     "anglers": 29,
     "fish_counts": "9 Calico Bass, 71 Rockfish, 6 Whitefish",
     "total_fish": 86
+  },
+  {
+    "trip_date": "2026-06-18",
+    "region": "Orange County",
+    "landing": "Davey's Locker",
+    "boat": "Western Pride",
+    "trip_type": "1/2 Day AM",
+    "anglers": 40,
+    "fish_counts": "200 Rockfish",
+    "total_fish": 200
+  },
+  {
+    "trip_date": "2026-06-18",
+    "region": "Orange County",
+    "landing": "Davey's Locker",
+    "boat": "Western Pride",
+    "trip_type": "1/2 Day PM",
+    "anglers": 29,
+    "fish_counts": "71 Rockfish, 6 Whitefish",
+    "total_fish": 77
   },
   {
     "trip_date": "2026-06-18",
