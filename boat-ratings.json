@@ -236,10 +236,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Redondo Special",
     "landing": "Redondo Beach Sportfishing",
-    "trips": 17,
-    "anglers": 553,
-    "fish": 3076,
-    "fpa": 5.56
+    "trips": 18,
+    "anglers": 588,
+    "fish": 3276,
+    "fpa": 5.57
   },
   {
     "rank": 4,
@@ -258,10 +258,10 @@
     "trip_type": "1/2 Day PM",
     "boat": "Redondo Special",
     "landing": "Redondo Beach Sportfishing",
-    "trips": 9,
-    "anglers": 258,
-    "fish": 815,
-    "fpa": 3.16
+    "trips": 10,
+    "anglers": 312,
+    "fish": 1093,
+    "fpa": 3.5
   },
   {
     "rank": 1,
@@ -643,10 +643,10 @@
     "trip_type": "1/2 Day Twilight",
     "boat": "Freelance",
     "landing": "Davey's Locker",
-    "trips": 17,
-    "anglers": 830,
-    "fish": 2950,
-    "fpa": 3.55
+    "trips": 18,
+    "anglers": 885,
+    "fish": 3161,
+    "fpa": 3.57
   },
   {
     "rank": 2,
@@ -654,10 +654,10 @@
     "trip_type": "1/2 Day Twilight",
     "boat": "Western Pride",
     "landing": "Davey's Locker",
-    "trips": 6,
-    "anglers": 247,
-    "fish": 605,
-    "fpa": 2.45
+    "trips": 7,
+    "anglers": 297,
+    "fish": 673,
+    "fpa": 2.27
   },
   {
     "rank": 1,
@@ -687,10 +687,10 @@
     "trip_type": "3/4 Day",
     "boat": "Freelance",
     "landing": "Davey's Locker",
-    "trips": 36,
-    "anglers": 1709,
-    "fish": 7939,
-    "fpa": 4.65
+    "trips": 37,
+    "anglers": 1766,
+    "fish": 8238,
+    "fpa": 4.66
   },
   {
     "rank": 4,
@@ -742,10 +742,10 @@
     "trip_type": "Full Day",
     "boat": "Blackfish",
     "landing": "Davey's Locker",
-    "trips": 10,
-    "anglers": 52,
-    "fish": 364,
-    "fpa": 7
+    "trips": 11,
+    "anglers": 58,
+    "fish": 396,
+    "fpa": 6.83
   },
   {
     "rank": 3,
@@ -1037,23 +1037,23 @@
     "rank": 3,
     "region": "San Diego County",
     "trip_type": "Full Day Coronado Islands",
-    "boat": "San Diego",
-    "landing": "Seaforth Sportfishing",
-    "trips": 26,
-    "anglers": 775,
-    "fish": 2477,
-    "fpa": 3.2
-  },
-  {
-    "rank": 4,
-    "region": "San Diego County",
-    "trip_type": "Full Day Coronado Islands",
     "boat": "Mission Belle",
     "landing": "Point Loma Sportfishing",
     "trips": 22,
     "anglers": 530,
     "fish": 1692,
     "fpa": 3.19
+  },
+  {
+    "rank": 4,
+    "region": "San Diego County",
+    "trip_type": "Full Day Coronado Islands",
+    "boat": "San Diego",
+    "landing": "Seaforth Sportfishing",
+    "trips": 27,
+    "anglers": 810,
+    "fish": 2556,
+    "fpa": 3.16
   },
   {
     "rank": 5,
@@ -1076,6 +1076,17 @@
     "anglers": 126,
     "fish": 341,
     "fpa": 2.71
+  },
+  {
+    "rank": 2,
+    "region": "San Diego County",
+    "trip_type": "Full Day Offshore",
+    "boat": "El Gato Dos",
+    "landing": "Seaforth Sportfishing",
+    "trips": 5,
+    "anglers": 24,
+    "fish": 39,
+    "fpa": 1.63
   },
   {
     "rank": 1,
