@@ -423,10 +423,10 @@
     "boat": "Monte Carlo",
     "landing": "22nd Street Landing",
     "region": "Los Angeles County",
-    "trips": 73,
-    "anglers": 3033,
-    "fish": 16561,
-    "fpa": 5.46,
+    "trips": 74,
+    "anglers": 3099,
+    "fish": 16856,
+    "fpa": 5.44,
     "top_species_1": "Sculpin",
     "top_species_2": "Rockfish",
     "top_species_3": "Whitefish"
@@ -459,10 +459,10 @@
     "boat": "Pursuit",
     "landing": "22nd Street Landing",
     "region": "Los Angeles County",
-    "trips": 72,
-    "anglers": 2496,
-    "fish": 12822,
-    "fpa": 5.14,
+    "trips": 73,
+    "anglers": 2534,
+    "fish": 12913,
+    "fpa": 5.1,
     "top_species_1": "Calico Bass",
     "top_species_2": "Rockfish",
     "top_species_3": "Whitefish"
@@ -888,18 +888,6 @@
     "top_species_3": "Rockfish"
   },
   {
-    "boat": "Dana Pride",
-    "landing": "Dana Wharf Sportfishing",
-    "region": "Orange County",
-    "trips": 22,
-    "anglers": 959,
-    "fish": 3551,
-    "fpa": 3.7,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Calico Bass Released",
-    "top_species_3": "Whitefish"
-  },
-  {
     "boat": "Aggressor",
     "landing": "Newport Landing",
     "region": "Orange County",
@@ -910,6 +898,18 @@
     "top_species_1": "Sculpin",
     "top_species_2": "Whitefish",
     "top_species_3": "Rockfish"
+  },
+  {
+    "boat": "Dana Pride",
+    "landing": "Dana Wharf Sportfishing",
+    "region": "Orange County",
+    "trips": 23,
+    "anglers": 1016,
+    "fish": 3640,
+    "fpa": 3.58,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Calico Bass Released",
+    "top_species_3": "Calico Bass"
   },
   {
     "boat": "Reel Fun",
@@ -1320,18 +1320,6 @@
     "top_species_3": "Bonito"
   },
   {
-    "boat": "Dolphin",
-    "landing": "Fisherman's Landing",
-    "region": "San Diego County",
-    "trips": 141,
-    "anglers": 4623,
-    "fish": 17653,
-    "fpa": 3.82,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Calico Bass Released",
-    "top_species_3": "Calico Bass"
-  },
-  {
     "boat": "Effishency",
     "landing": "Oceanside Sea Center",
     "region": "San Diego County",
@@ -1342,6 +1330,18 @@
     "top_species_1": "Calico Bass Released",
     "top_species_2": "Calico Bass",
     "top_species_3": "Rockfish"
+  },
+  {
+    "boat": "Dolphin",
+    "landing": "Fisherman's Landing",
+    "region": "San Diego County",
+    "trips": 143,
+    "anglers": 4724,
+    "fish": 17846,
+    "fpa": 3.78,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Calico Bass Released",
+    "top_species_3": "Calico Bass"
   },
   {
     "boat": "Pacific Queen",
@@ -1443,13 +1443,25 @@
     "boat": "Mission Belle",
     "landing": "Point Loma Sportfishing",
     "region": "San Diego County",
-    "trips": 68,
-    "anglers": 1688,
-    "fish": 4103,
-    "fpa": 2.43,
+    "trips": 69,
+    "anglers": 1714,
+    "fish": 4186,
+    "fpa": 2.44,
     "top_species_1": "Yellowtail",
     "top_species_2": "Whitefish",
     "top_species_3": "Rockfish"
+  },
+  {
+    "boat": "Liberty",
+    "landing": "Fisherman's Landing",
+    "region": "San Diego County",
+    "trips": 28,
+    "anglers": 798,
+    "fish": 1943,
+    "fpa": 2.43,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Yellowtail",
+    "top_species_3": "Whitefish"
   },
   {
     "boat": "Grande",
@@ -1462,18 +1474,6 @@
     "top_species_1": "Yellowtail",
     "top_species_2": "Rockfish",
     "top_species_3": "Whitefish"
-  },
-  {
-    "boat": "Liberty",
-    "landing": "Fisherman's Landing",
-    "region": "San Diego County",
-    "trips": 27,
-    "anglers": 770,
-    "fish": 1762,
-    "fpa": 2.29,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Yellowtail",
-    "top_species_3": "Bluefin Tuna"
   },
   {
     "boat": "El Gato Dos",
@@ -1527,13 +1527,13 @@
     "boat": "Pegasus",
     "landing": "Fisherman's Landing",
     "region": "San Diego County",
-    "trips": 18,
-    "anglers": 331,
-    "fish": 590,
-    "fpa": 1.78,
+    "trips": 19,
+    "anglers": 348,
+    "fish": 611,
+    "fpa": 1.76,
     "top_species_1": "Bluefin Tuna",
-    "top_species_2": "Bonito",
-    "top_species_3": "Yellowtail"
+    "top_species_2": "Yellowtail",
+    "top_species_3": "Bonito"
   },
   {
     "boat": "Vendetta 2",
@@ -1683,8 +1683,8 @@
     "boat": "Lovely Martha",
     "landing": "Lovely Martha Sportfishing",
     "region": "San Francisco Bay",
-    "trips": 12,
-    "anglers": 215,
+    "trips": 13,
+    "anglers": 238,
     "fish": 0,
     "fpa": 0,
     "top_species_1": "",
@@ -1923,10 +1923,10 @@
     "boat": "Coroloma",
     "landing": "Hooks Landing",
     "region": "Ventura County",
-    "trips": 15,
-    "anglers": 428,
-    "fish": 4731,
-    "fpa": 11.05,
+    "trips": 16,
+    "anglers": 460,
+    "fish": 5244,
+    "fpa": 11.4,
     "top_species_1": "Rockfish",
     "top_species_2": "Whitefish",
     "top_species_3": "Calico Bass"
@@ -1971,10 +1971,10 @@
     "boat": "Aloha Spirit",
     "landing": "Channel Islands Sportfishing",
     "region": "Ventura County",
-    "trips": 78,
-    "anglers": 1846,
-    "fish": 16848,
-    "fpa": 9.13,
+    "trips": 79,
+    "anglers": 1866,
+    "fish": 17009,
+    "fpa": 9.12,
     "top_species_1": "Rockfish",
     "top_species_2": "Whitefish",
     "top_species_3": "Barracuda"
