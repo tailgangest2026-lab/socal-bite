@@ -600,6 +600,18 @@
     "top_species_3": ""
   },
   {
+    "boat": "Sorta Salty",
+    "landing": "North Bay Fishing Charters",
+    "region": "NorCal",
+    "trips": 1,
+    "anglers": 5,
+    "fish": 54,
+    "fpa": 10.8,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Lingcod",
+    "top_species_3": ""
+  },
+  {
     "boat": "Queen of Hearts",
     "landing": "Half Moon Bay Sportfishing",
     "region": "NorCal",
@@ -630,6 +642,18 @@
     "trips": 4,
     "anglers": 44,
     "fish": 440,
+    "fpa": 10,
+    "top_species_1": "Rockfish",
+    "top_species_2": "",
+    "top_species_3": ""
+  },
+  {
+    "boat": "Bigeye",
+    "landing": "North Bay Fishing Charters",
+    "region": "NorCal",
+    "trips": 1,
+    "anglers": 4,
+    "fish": 40,
     "fpa": 10,
     "top_species_1": "Rockfish",
     "top_species_2": "",
@@ -1719,8 +1743,8 @@
     "boat": "Goldeneye 2000",
     "landing": "Berkeley Charter Boats",
     "region": "San Francisco Bay",
-    "trips": 8,
-    "anglers": 123,
+    "trips": 9,
+    "anglers": 141,
     "fish": 0,
     "fpa": 0,
     "top_species_1": "",
