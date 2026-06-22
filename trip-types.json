@@ -210,10 +210,10 @@
     "rank": 1,
     "region": "Orange County",
     "trip_type": "2 Day",
-    "trips": 1,
-    "anglers": 22,
-    "fish": 594,
-    "fpa": 27
+    "trips": 2,
+    "anglers": 47,
+    "fish": 988,
+    "fpa": 21.02
   },
   {
     "rank": 2,
@@ -237,19 +237,19 @@
     "rank": 4,
     "region": "Orange County",
     "trip_type": "3/4 Day",
-    "trips": 247,
-    "anglers": 8087,
-    "fish": 48637,
-    "fpa": 6.01
+    "trips": 248,
+    "anglers": 8117,
+    "fish": 48827,
+    "fpa": 6.02
   },
   {
     "rank": 5,
     "region": "Orange County",
     "trip_type": "1/2 Day AM",
-    "trips": 224,
-    "anglers": 6378,
-    "fish": 25088,
-    "fpa": 3.93
+    "trips": 225,
+    "anglers": 6408,
+    "fish": 25095,
+    "fpa": 3.92
   },
   {
     "rank": 6,
@@ -399,10 +399,10 @@
     "rank": 1,
     "region": "San Francisco Bay",
     "trip_type": "Full Day",
-    "trips": 60,
-    "anglers": 1006,
-    "fish": 3398,
-    "fpa": 3.38
+    "trips": 64,
+    "anglers": 1062,
+    "fish": 3801,
+    "fpa": 3.58
   },
   {
     "rank": 2,
@@ -416,6 +416,15 @@
   {
     "rank": 3,
     "region": "San Francisco Bay",
+    "trip_type": "1/2 Day PM",
+    "trips": 1,
+    "anglers": 6,
+    "fish": 2,
+    "fpa": 0.33
+  },
+  {
+    "rank": 4,
+    "region": "San Francisco Bay",
     "trip_type": "1/2 Day Twilight",
     "trips": 3,
     "anglers": 18,
@@ -423,7 +432,7 @@
     "fpa": 0.28
   },
   {
-    "rank": 4,
+    "rank": 5,
     "region": "San Francisco Bay",
     "trip_type": "3/4 Day",
     "trips": 2,
