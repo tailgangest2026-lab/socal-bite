@@ -5,10 +5,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "C Gull II",
     "landing": "Fish Emeryville",
-    "trips": 13,
-    "anglers": 188,
-    "fish": 947,
-    "fpa": 5.04
+    "trips": 14,
+    "anglers": 206,
+    "fish": 1128,
+    "fpa": 5.48
   },
   {
     "rank": 2,
@@ -71,10 +71,10 @@
     "trip_type": "Full Day",
     "boat": "New Huck Finn",
     "landing": "Fish Emeryville",
-    "trips": 16,
-    "anglers": 267,
-    "fish": 1537,
-    "fpa": 5.76
+    "trips": 17,
+    "anglers": 290,
+    "fish": 1804,
+    "fpa": 6.22
   },
   {
     "rank": 3,
@@ -850,15 +850,26 @@
     "rank": 1,
     "region": "San Diego County",
     "trip_type": "1/2 Day AM",
-    "boat": "Southern Cal",
+    "boat": "Blue Horizon",
     "landing": "Oceanside Sea Center",
-    "trips": 24,
-    "anglers": 625,
-    "fish": 3378,
-    "fpa": 5.4
+    "trips": 5,
+    "anglers": 61,
+    "fish": 636,
+    "fpa": 10.43
   },
   {
     "rank": 2,
+    "region": "San Diego County",
+    "trip_type": "1/2 Day AM",
+    "boat": "Southern Cal",
+    "landing": "Oceanside Sea Center",
+    "trips": 25,
+    "anglers": 668,
+    "fish": 3477,
+    "fpa": 5.21
+  },
+  {
+    "rank": 3,
     "region": "San Diego County",
     "trip_type": "1/2 Day AM",
     "boat": "Effishency",
@@ -869,18 +880,18 @@
     "fpa": 4.53
   },
   {
-    "rank": 3,
+    "rank": 4,
     "region": "San Diego County",
     "trip_type": "1/2 Day AM",
     "boat": "Daily Double",
     "landing": "Point Loma Sportfishing",
-    "trips": 22,
-    "anglers": 480,
-    "fish": 2028,
-    "fpa": 4.22
+    "trips": 23,
+    "anglers": 519,
+    "fish": 2079,
+    "fpa": 4.01
   },
   {
-    "rank": 4,
+    "rank": 5,
     "region": "San Diego County",
     "trip_type": "1/2 Day AM",
     "boat": "Dolphin",
@@ -891,7 +902,7 @@
     "fpa": 3.83
   },
   {
-    "rank": 5,
+    "rank": 6,
     "region": "San Diego County",
     "trip_type": "1/2 Day AM",
     "boat": "Premier",
@@ -902,7 +913,7 @@
     "fpa": 3.27
   },
   {
-    "rank": 6,
+    "rank": 7,
     "region": "San Diego County",
     "trip_type": "1/2 Day AM",
     "boat": "New Seaforth",
@@ -1061,10 +1072,10 @@
     "trip_type": "Full Day Coronado Islands",
     "boat": "Got Bait",
     "landing": "Point Loma Sportfishing",
-    "trips": 5,
-    "anglers": 24,
-    "fish": 84,
-    "fpa": 3.5
+    "trips": 6,
+    "anglers": 29,
+    "fish": 107,
+    "fpa": 3.69
   },
   {
     "rank": 2,
@@ -1072,10 +1083,10 @@
     "trip_type": "Full Day Coronado Islands",
     "boat": "San Diego",
     "landing": "Seaforth Sportfishing",
-    "trips": 26,
-    "anglers": 774,
-    "fish": 2520,
-    "fpa": 3.26
+    "trips": 27,
+    "anglers": 808,
+    "fish": 2629,
+    "fpa": 3.25
   },
   {
     "rank": 3,
@@ -1127,10 +1138,10 @@
     "trip_type": "Full Day Offshore",
     "boat": "El Gato Dos",
     "landing": "Seaforth Sportfishing",
-    "trips": 5,
-    "anglers": 24,
-    "fish": 39,
-    "fpa": 1.63
+    "trips": 6,
+    "anglers": 27,
+    "fish": 45,
+    "fpa": 1.67
   },
   {
     "rank": 1,
