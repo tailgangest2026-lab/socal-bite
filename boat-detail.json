@@ -87,10 +87,10 @@
     "boat": "Oakland Anglers II",
     "landing": "Fish Emeryville",
     "region": "Alameda County",
-    "trips": 11,
-    "anglers": 195,
-    "fish": 362,
-    "fpa": 1.86,
+    "trips": 12,
+    "anglers": 205,
+    "fish": 367,
+    "fpa": 1.79,
     "top_species_1": "Rockfish",
     "top_species_2": "Halibut",
     "top_species_3": "Lingcod"
@@ -576,18 +576,6 @@
     "top_species_3": "Halibut"
   },
   {
-    "boat": "Dragonfly",
-    "landing": "Reel Obsession Sportfishing",
-    "region": "NorCal",
-    "trips": 4,
-    "anglers": 24,
-    "fish": 288,
-    "fpa": 12,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Lingcod",
-    "top_species_3": ""
-  },
-  {
     "boat": "Outer Limits (Sausalito, CA)",
     "landing": "Big Cs Charters",
     "region": "NorCal",
@@ -607,18 +595,6 @@
     "anglers": 236,
     "fish": 2418,
     "fpa": 10.25,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Lingcod",
-    "top_species_3": ""
-  },
-  {
-    "boat": "Velocity",
-    "landing": "Stagnaros Charters",
-    "region": "NorCal",
-    "trips": 2,
-    "anglers": 40,
-    "fish": 406,
-    "fpa": 10.15,
     "top_species_1": "Rockfish",
     "top_species_2": "Lingcod",
     "top_species_3": ""
@@ -645,6 +621,30 @@
     "fpa": 10,
     "top_species_1": "Rockfish",
     "top_species_2": "",
+    "top_species_3": ""
+  },
+  {
+    "boat": "Velocity",
+    "landing": "Stagnaros Charters",
+    "region": "NorCal",
+    "trips": 3,
+    "anglers": 55,
+    "fish": 534,
+    "fpa": 9.71,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Lingcod",
+    "top_species_3": ""
+  },
+  {
+    "boat": "Dragonfly",
+    "landing": "Reel Obsession Sportfishing",
+    "region": "NorCal",
+    "trips": 5,
+    "anglers": 30,
+    "fish": 288,
+    "fpa": 9.6,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Lingcod",
     "top_species_3": ""
   },
   {
