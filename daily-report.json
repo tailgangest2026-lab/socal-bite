@@ -523,6 +523,16 @@
     "trip_date": "2026-06-21",
     "region": "Los Angeles County",
     "landing": "Marina Del Rey Sportfishing",
+    "boat": "Betty-O",
+    "trip_type": "3/4 Day",
+    "anglers": 30,
+    "fish_counts": "4 Lingcod, 50 Rockfish, 80 Whitefish",
+    "total_fish": 134
+  },
+  {
+    "trip_date": "2026-06-21",
+    "region": "Los Angeles County",
+    "landing": "Marina Del Rey Sportfishing",
     "boat": "New Del Mar",
     "trip_type": "3/4 Day",
     "anglers": 147,
@@ -533,11 +543,31 @@
     "trip_date": "2026-06-21",
     "region": "Los Angeles County",
     "landing": "Marina Del Rey Sportfishing",
+    "boat": "New Del Mar",
+    "trip_type": "3/4 Day",
+    "anglers": 127,
+    "fish_counts": "2 Lingcod, 555 Rockfish, 5 Sculpin",
+    "total_fish": 562
+  },
+  {
+    "trip_date": "2026-06-21",
+    "region": "Los Angeles County",
+    "landing": "Marina Del Rey Sportfishing",
     "boat": "Spitfire",
     "trip_type": "3/4 Day",
     "anglers": 55,
     "fish_counts": "80 Rockfish, 15 Sheephead, 410 Whitefish",
     "total_fish": 505
+  },
+  {
+    "trip_date": "2026-06-21",
+    "region": "Los Angeles County",
+    "landing": "Marina Del Rey Sportfishing",
+    "boat": "Spitfire",
+    "trip_type": "3/4 Day",
+    "anglers": 38,
+    "fish_counts": "60 Rockfish, 200 Whitefish",
+    "total_fish": 260
   },
   {
     "trip_date": "2026-06-21",
@@ -628,6 +658,26 @@
     "anglers": 14,
     "fish_counts": "2 Lingcod, 140 Rockfish",
     "total_fish": 142
+  },
+  {
+    "trip_date": "2026-06-21",
+    "region": "Monterey County",
+    "landing": "J&M Sportfishing",
+    "boat": "New Horizon",
+    "trip_type": "1/2 Day AM",
+    "anglers": 19,
+    "fish_counts": "1 Lingcod, 135 Rockfish",
+    "total_fish": 136
+  },
+  {
+    "trip_date": "2026-06-21",
+    "region": "Monterey County",
+    "landing": "J&M Sportfishing",
+    "boat": "New Horizon",
+    "trip_type": "1/2 Day PM",
+    "anglers": 19,
+    "fish_counts": "4 Lingcod, 190 Rockfish",
+    "total_fish": 194
   },
   {
     "trip_date": "2026-06-21",
@@ -2238,6 +2288,26 @@
     "anglers": 13,
     "fish_counts": "2 Halibut",
     "total_fish": 2
+  },
+  {
+    "trip_date": "2026-06-20",
+    "region": "Monterey County",
+    "landing": "J&M Sportfishing",
+    "boat": "Chubasco",
+    "trip_type": "1/2 Day AM",
+    "anglers": 27,
+    "fish_counts": "15 Lingcod, 270 Rockfish",
+    "total_fish": 285
+  },
+  {
+    "trip_date": "2026-06-20",
+    "region": "Monterey County",
+    "landing": "J&M Sportfishing",
+    "boat": "Chubasco",
+    "trip_type": "1/2 Day PM",
+    "anglers": 13,
+    "fish_counts": "3 Lingcod, 115 Rockfish",
+    "total_fish": 118
   },
   {
     "trip_date": "2026-06-20",

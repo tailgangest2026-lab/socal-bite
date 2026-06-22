@@ -335,10 +335,10 @@
     "trip_type": "3/4 Day",
     "boat": "Spitfire",
     "landing": "Marina Del Rey Sportfishing",
-    "trips": 36,
-    "anglers": 970,
-    "fish": 8624,
-    "fpa": 8.89
+    "trips": 37,
+    "anglers": 1008,
+    "fish": 8884,
+    "fpa": 8.81
   },
   {
     "rank": 3,
@@ -357,10 +357,10 @@
     "trip_type": "3/4 Day",
     "boat": "New Del Mar",
     "landing": "Marina Del Rey Sportfishing",
-    "trips": 16,
-    "anglers": 1262,
-    "fish": 7948,
-    "fpa": 6.3
+    "trips": 17,
+    "anglers": 1389,
+    "fish": 8510,
+    "fpa": 6.13
   },
   {
     "rank": 5,
@@ -368,10 +368,10 @@
     "trip_type": "3/4 Day",
     "boat": "Betty-O",
     "landing": "Marina Del Rey Sportfishing",
-    "trips": 27,
-    "anglers": 484,
-    "fish": 2945,
-    "fpa": 6.08
+    "trips": 28,
+    "anglers": 514,
+    "fish": 3079,
+    "fpa": 5.99
   },
   {
     "rank": 6,
@@ -500,10 +500,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "New Horizon",
     "landing": "J&M Sportfishing",
-    "trips": 7,
-    "anglers": 115,
-    "fish": 1204,
-    "fpa": 10.47
+    "trips": 8,
+    "anglers": 134,
+    "fish": 1340,
+    "fpa": 10
   },
   {
     "rank": 2,
@@ -625,6 +625,17 @@
     "anglers": 750,
     "fish": 1885,
     "fpa": 2.51
+  },
+  {
+    "rank": 7,
+    "region": "Orange County",
+    "trip_type": "1/2 Day AM",
+    "boat": "Aggressor",
+    "landing": "Newport Landing",
+    "trips": 5,
+    "anglers": 130,
+    "fish": 141,
+    "fpa": 1.08
   },
   {
     "rank": 1,
@@ -753,10 +764,10 @@
     "trip_type": "3/4 Day",
     "boat": "Patriot (Newport)",
     "landing": "Newport Landing",
-    "trips": 23,
-    "anglers": 602,
-    "fish": 1925,
-    "fpa": 3.2
+    "trips": 24,
+    "anglers": 632,
+    "fish": 2115,
+    "fpa": 3.35
   },
   {
     "rank": 6,
@@ -1204,10 +1215,10 @@
     "trip_type": "Full Day",
     "boat": "Reel Addiction 1",
     "landing": "Reel Addiction Sportfishing",
-    "trips": 5,
-    "anglers": 38,
+    "trips": 6,
+    "anglers": 46,
     "fish": 146,
-    "fpa": 3.84
+    "fpa": 3.17
   },
   {
     "rank": 3,
@@ -1224,6 +1235,17 @@
     "rank": 4,
     "region": "San Francisco Bay",
     "trip_type": "Full Day",
+    "boat": "Reel Addiction 2",
+    "landing": "Reel Addiction Sportfishing",
+    "trips": 6,
+    "anglers": 60,
+    "fish": 3,
+    "fpa": 0.05
+  },
+  {
+    "rank": 5,
+    "region": "San Francisco Bay",
+    "trip_type": "Full Day",
     "boat": "Goldeneye 2000",
     "landing": "Berkeley Charter Boats",
     "trips": 8,
@@ -1232,24 +1254,13 @@
     "fpa": 0
   },
   {
-    "rank": 5,
+    "rank": 6,
     "region": "San Francisco Bay",
     "trip_type": "Full Day",
     "boat": "Lovely Martha",
     "landing": "Lovely Martha Sportfishing",
     "trips": 7,
     "anglers": 108,
-    "fish": 0,
-    "fpa": 0
-  },
-  {
-    "rank": 6,
-    "region": "San Francisco Bay",
-    "trip_type": "Full Day",
-    "boat": "Reel Addiction 2",
-    "landing": "Reel Addiction Sportfishing",
-    "trips": 5,
-    "anglers": 52,
     "fish": 0,
     "fpa": 0
   },
