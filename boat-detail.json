@@ -1152,18 +1152,6 @@
     "top_species_3": "Barracuda"
   },
   {
-    "boat": "Spirit of Adventure",
-    "landing": "H&M Landing",
-    "region": "San Diego County",
-    "trips": 6,
-    "anglers": 146,
-    "fish": 889,
-    "fpa": 6.09,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Bluefin Tuna",
-    "top_species_3": "Yellowtail"
-  },
-  {
     "boat": "Apollo",
     "landing": "Seaforth Sportfishing",
     "region": "San Diego County",
@@ -1210,6 +1198,18 @@
     "top_species_1": "Yellowtail",
     "top_species_2": "Bluefin Tuna",
     "top_species_3": "Rockfish"
+  },
+  {
+    "boat": "Spirit of Adventure",
+    "landing": "H&M Landing",
+    "region": "San Diego County",
+    "trips": 7,
+    "anglers": 166,
+    "fish": 889,
+    "fpa": 5.36,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Bluefin Tuna",
+    "top_species_3": "Yellowtail"
   },
   {
     "boat": "Lucky B Sportfishing",
@@ -1649,6 +1649,18 @@
     "region": "San Diego County",
     "trips": 1,
     "anglers": 18,
+    "fish": 0,
+    "fpa": 0,
+    "top_species_1": "",
+    "top_species_2": "",
+    "top_species_3": ""
+  },
+  {
+    "boat": "Little G",
+    "landing": "H&M Landing",
+    "region": "San Diego County",
+    "trips": 1,
+    "anglers": 3,
     "fish": 0,
     "fpa": 0,
     "top_species_1": "",

@@ -281,15 +281,6 @@
   {
     "rank": 2,
     "region": "San Diego County",
-    "trip_type": "3 Day",
-    "trips": 57,
-    "anglers": 1268,
-    "fish": 9575,
-    "fpa": 7.55
-  },
-  {
-    "rank": 3,
-    "region": "San Diego County",
     "trip_type": "3/4 Day",
     "trips": 96,
     "anglers": 1728,
@@ -297,13 +288,22 @@
     "fpa": 7.47
   },
   {
+    "rank": 3,
+    "region": "San Diego County",
+    "trip_type": "3 Day",
+    "trips": 58,
+    "anglers": 1288,
+    "fish": 9575,
+    "fpa": 7.43
+  },
+  {
     "rank": 4,
     "region": "San Diego County",
     "trip_type": "2.5 Day",
-    "trips": 22,
-    "anglers": 395,
+    "trips": 23,
+    "anglers": 398,
     "fish": 2131,
-    "fpa": 5.39
+    "fpa": 5.35
   },
   {
     "rank": 5,
