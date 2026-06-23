@@ -459,10 +459,10 @@
     "boat": "Pursuit",
     "landing": "22nd Street Landing",
     "region": "Los Angeles County",
-    "trips": 73,
-    "anglers": 2556,
-    "fish": 12951,
-    "fpa": 5.07,
+    "trips": 74,
+    "anglers": 2595,
+    "fish": 13093,
+    "fpa": 5.05,
     "top_species_1": "Calico Bass",
     "top_species_2": "Rockfish",
     "top_species_3": "Whitefish"
@@ -867,10 +867,10 @@
     "boat": "Freelance",
     "landing": "Davey's Locker",
     "region": "Orange County",
-    "trips": 109,
-    "anglers": 4920,
-    "fish": 28074,
-    "fpa": 5.71,
+    "trips": 110,
+    "anglers": 4960,
+    "fish": 28280,
+    "fpa": 5.7,
     "top_species_1": "Sculpin",
     "top_species_2": "Rockfish",
     "top_species_3": "Whitefish"
@@ -900,6 +900,18 @@
     "top_species_3": "Calico Bass"
   },
   {
+    "boat": "Western Pride",
+    "landing": "Davey's Locker",
+    "region": "Orange County",
+    "trips": 151,
+    "anglers": 5768,
+    "fish": 22931,
+    "fpa": 3.98,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Sculpin",
+    "top_species_3": "Whitefish"
+  },
+  {
     "boat": "Patriot (Newport)",
     "landing": "Newport Landing",
     "region": "Orange County",
@@ -910,18 +922,6 @@
     "top_species_1": "Sculpin",
     "top_species_2": "Whitefish",
     "top_species_3": "Rockfish"
-  },
-  {
-    "boat": "Western Pride",
-    "landing": "Davey's Locker",
-    "region": "Orange County",
-    "trips": 149,
-    "anglers": 5673,
-    "fish": 22176,
-    "fpa": 3.91,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Sculpin",
-    "top_species_3": "Whitefish"
   },
   {
     "boat": "Aggressor",
@@ -1107,10 +1107,10 @@
     "boat": "Pacific Voyager",
     "landing": "Seaforth Sportfishing",
     "region": "San Diego County",
-    "trips": 33,
-    "anglers": 549,
-    "fish": 3809,
-    "fpa": 6.94,
+    "trips": 34,
+    "anglers": 566,
+    "fish": 3860,
+    "fpa": 6.82,
     "top_species_1": "Rockfish",
     "top_species_2": "Bluefin Tuna",
     "top_species_3": "Yellowtail"
@@ -1524,6 +1524,18 @@
     "top_species_3": "Rockfish"
   },
   {
+    "boat": "Pegasus",
+    "landing": "Fisherman's Landing",
+    "region": "San Diego County",
+    "trips": 21,
+    "anglers": 382,
+    "fish": 837,
+    "fpa": 2.19,
+    "top_species_1": "Bluefin Tuna",
+    "top_species_2": "Rockfish",
+    "top_species_3": "Yellowtail"
+  },
+  {
     "boat": "Constitution",
     "landing": "Fisherman's Landing",
     "region": "San Diego County",
@@ -1558,18 +1570,6 @@
     "top_species_1": "Bonito",
     "top_species_2": "Yellowtail",
     "top_species_3": "Bluefin Tuna"
-  },
-  {
-    "boat": "Pegasus",
-    "landing": "Fisherman's Landing",
-    "region": "San Diego County",
-    "trips": 20,
-    "anglers": 365,
-    "fish": 642,
-    "fpa": 1.76,
-    "top_species_1": "Bluefin Tuna",
-    "top_species_2": "Yellowtail",
-    "top_species_3": "Bonito"
   },
   {
     "boat": "Vendetta 2",
@@ -1899,10 +1899,10 @@
     "boat": "Indicator",
     "landing": "Channel Islands Sportfishing",
     "region": "Ventura County",
-    "trips": 16,
-    "anglers": 269,
-    "fish": 3848,
-    "fpa": 14.3,
+    "trips": 17,
+    "anglers": 289,
+    "fish": 4175,
+    "fpa": 14.45,
     "top_species_1": "Rockfish",
     "top_species_2": "Whitefish",
     "top_species_3": "Calico Bass"

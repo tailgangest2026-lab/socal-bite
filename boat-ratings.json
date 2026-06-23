@@ -434,10 +434,10 @@
     "trip_type": "Full Day",
     "boat": "Pursuit",
     "landing": "22nd Street Landing",
-    "trips": 37,
-    "anglers": 1380,
-    "fish": 6724,
-    "fpa": 4.87
+    "trips": 38,
+    "anglers": 1419,
+    "fish": 6866,
+    "fpa": 4.84
   },
   {
     "rank": 3,
@@ -621,10 +621,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Western Pride",
     "landing": "Davey's Locker",
-    "trips": 35,
-    "anglers": 1468,
-    "fish": 6966,
-    "fpa": 4.75
+    "trips": 36,
+    "anglers": 1516,
+    "fish": 7321,
+    "fpa": 4.83
   },
   {
     "rank": 4,
@@ -709,10 +709,10 @@
     "trip_type": "1/2 Day PM",
     "boat": "Western Pride",
     "landing": "Davey's Locker",
-    "trips": 41,
-    "anglers": 1564,
-    "fish": 4728,
-    "fpa": 3.02
+    "trips": 42,
+    "anglers": 1611,
+    "fish": 5128,
+    "fpa": 3.18
   },
   {
     "rank": 5,
@@ -775,10 +775,10 @@
     "trip_type": "3/4 Day",
     "boat": "Freelance",
     "landing": "Davey's Locker",
-    "trips": 39,
-    "anglers": 1883,
-    "fish": 8729,
-    "fpa": 4.64
+    "trips": 40,
+    "anglers": 1923,
+    "fish": 8935,
+    "fpa": 4.65
   },
   {
     "rank": 4,
@@ -883,6 +883,17 @@
     "rank": 2,
     "region": "San Diego County",
     "trip_type": "1.5 Day",
+    "boat": "Pegasus",
+    "landing": "Fisherman's Landing",
+    "trips": 5,
+    "anglers": 85,
+    "fish": 326,
+    "fpa": 3.84
+  },
+  {
+    "rank": 3,
+    "region": "San Diego County",
+    "trip_type": "1.5 Day",
     "boat": "Tribute",
     "landing": "Seaforth Sportfishing",
     "trips": 9,
@@ -891,7 +902,7 @@
     "fpa": 1.1
   },
   {
-    "rank": 3,
+    "rank": 4,
     "region": "San Diego County",
     "trip_type": "1.5 Day",
     "boat": "Aztec",
@@ -1050,10 +1061,10 @@
     "trip_type": "2 Day",
     "boat": "Pacific Voyager",
     "landing": "Seaforth Sportfishing",
-    "trips": 12,
-    "anglers": 198,
-    "fish": 1488,
-    "fpa": 7.52
+    "trips": 13,
+    "anglers": 215,
+    "fish": 1539,
+    "fpa": 7.16
   },
   {
     "rank": 1,
@@ -1543,23 +1554,23 @@
     "rank": 3,
     "region": "Ventura County",
     "trip_type": "Overnight",
+    "boat": "Indicator",
+    "landing": "Channel Islands Sportfishing",
+    "trips": 16,
+    "anglers": 270,
+    "fish": 3797,
+    "fpa": 14.06
+  },
+  {
+    "rank": 4,
+    "region": "Ventura County",
+    "trip_type": "Overnight",
     "boat": "New Hustler",
     "landing": "Channel Islands Sportfishing",
     "trips": 16,
     "anglers": 342,
     "fish": 4792,
     "fpa": 14.01
-  },
-  {
-    "rank": 4,
-    "region": "Ventura County",
-    "trip_type": "Overnight",
-    "boat": "Indicator",
-    "landing": "Channel Islands Sportfishing",
-    "trips": 15,
-    "anglers": 250,
-    "fish": 3470,
-    "fpa": 13.88
   },
   {
     "rank": 5,
