@@ -610,10 +610,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Western Pride",
     "landing": "Davey's Locker",
-    "trips": 36,
-    "anglers": 1520,
-    "fish": 7409,
-    "fpa": 4.87
+    "trips": 37,
+    "anglers": 1541,
+    "fish": 7524,
+    "fpa": 4.88
   },
   {
     "rank": 3,
@@ -687,10 +687,10 @@
     "trip_type": "1/2 Day PM",
     "boat": "Western Pride",
     "landing": "Davey's Locker",
-    "trips": 42,
-    "anglers": 1610,
-    "fish": 5438,
-    "fpa": 3.38
+    "trips": 43,
+    "anglers": 1638,
+    "fish": 5499,
+    "fpa": 3.36
   },
   {
     "rank": 4,
@@ -764,10 +764,10 @@
     "trip_type": "3/4 Day",
     "boat": "Freelance",
     "landing": "Davey's Locker",
-    "trips": 40,
-    "anglers": 1907,
-    "fish": 8807,
-    "fpa": 4.62
+    "trips": 41,
+    "anglers": 1971,
+    "fish": 9177,
+    "fpa": 4.66
   },
   {
     "rank": 4,
@@ -1149,13 +1149,24 @@
     "trip_type": "Full Day Coronado Islands",
     "boat": "San Diego",
     "landing": "Seaforth Sportfishing",
-    "trips": 26,
-    "anglers": 771,
-    "fish": 2480,
-    "fpa": 3.22
+    "trips": 27,
+    "anglers": 788,
+    "fish": 2580,
+    "fpa": 3.27
   },
   {
     "rank": 4,
+    "region": "San Diego County",
+    "trip_type": "Full Day Coronado Islands",
+    "boat": "Grande",
+    "landing": "H&M Landing",
+    "trips": 17,
+    "anglers": 522,
+    "fish": 1570,
+    "fpa": 3.01
+  },
+  {
+    "rank": 5,
     "region": "San Diego County",
     "trip_type": "Full Day Coronado Islands",
     "boat": "Point Loma",
@@ -1164,17 +1175,6 @@
     "anglers": 133,
     "fish": 391,
     "fpa": 2.94
-  },
-  {
-    "rank": 5,
-    "region": "San Diego County",
-    "trip_type": "Full Day Coronado Islands",
-    "boat": "Grande",
-    "landing": "H&M Landing",
-    "trips": 16,
-    "anglers": 510,
-    "fish": 1456,
-    "fpa": 2.85
   },
   {
     "rank": 1,
