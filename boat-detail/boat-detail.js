@@ -7,7 +7,29 @@ let reportYearCache = {};
 
 async function initBoatDetail() {
   selectedBoat = getParam("boat");
+// SEO
+if (selectedBoat) {
+  document.title = `${selectedBoat} Fishing Reports, Fish Counts & Trends | The SoCal Bite`;
 
+  let canonical = document.getElementById("canonical-link");
+
+  if (!canonical) {
+    canonical = document.createElement("link");
+    canonical.id = "canonical-link";
+    canonical.rel = "canonical";
+    document.head.appendChild(canonical);
+  }
+
+  canonical.href =
+    `https://thesocalbite.com/boat-detail/?boat=${encodeURIComponent(selectedBoat)}`;
+
+  let description = document.querySelector('meta[name="description"]');
+
+  if (description) {
+    description.content =
+      `${selectedBoat} sportfishing reports, fish counts, trip trends, top species and recent performance from Southern California waters.`;
+  }
+}
   if (!selectedBoat) {
     setText("boatName", "Boat not found");
     setText("boatLanding", "Missing boat name.");
