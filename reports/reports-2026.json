@@ -23,6 +23,16 @@
     "trip_date": "2026-06-24",
     "region": "Alameda County",
     "landing": "Fish Emeryville",
+    "boat": "New Huck Finn",
+    "trip_type": "Full Day",
+    "anglers": 20,
+    "fish_counts": "2 Halibut, 40 Lingcod, 200 Rockfish",
+    "total_fish": 242
+  },
+  {
+    "trip_date": "2026-06-24",
+    "region": "Alameda County",
+    "landing": "Fish Emeryville",
     "boat": "Pacific Pearl",
     "trip_type": "1/2 Day AM",
     "anglers": 13,
@@ -128,6 +138,16 @@
     "anglers": 29,
     "fish_counts": "4 Barracuda, 16 Bonito, 32 Calico Bass, 27 Whitefish, 7 Yellowtail",
     "total_fish": 86
+  },
+  {
+    "trip_date": "2026-06-24",
+    "region": "Los Angeles County",
+    "landing": "22nd Street Landing",
+    "boat": "Native Sun",
+    "trip_type": "3/4 Day",
+    "anglers": 34,
+    "fish_counts": "2 Barracuda, 68 Bonito, 36 Calico Bass, 12 Yellowtail",
+    "total_fish": 118
   },
   {
     "trip_date": "2026-06-24",
@@ -342,6 +362,16 @@
   {
     "trip_date": "2026-06-24",
     "region": "San Diego County",
+    "landing": "Point Loma Sportfishing",
+    "boat": "Point Loma",
+    "trip_type": "1/2 Day AM",
+    "anglers": 20,
+    "fish_counts": "11 Red Rockfish",
+    "total_fish": 11
+  },
+  {
+    "trip_date": "2026-06-24",
+    "region": "San Diego County",
     "landing": "Seaforth Sportfishing",
     "boat": "New Seaforth",
     "trip_type": "1/2 Day AM",
@@ -358,6 +388,16 @@
     "anglers": 30,
     "fish_counts": "36 Calico Bass, 6 Rockfish, 1 Sculpin, 1 Sheephead, 2 Whitefish",
     "total_fish": 46
+  },
+  {
+    "trip_date": "2026-06-24",
+    "region": "San Diego County",
+    "landing": "Seaforth Sportfishing",
+    "boat": "Sea Watch",
+    "trip_type": "3/4 Day",
+    "anglers": 36,
+    "fish_counts": "4 Barracuda, 5 Calico Bass, 20 Calico Bass Released, 87 Sand Bass, 1 Sheephead",
+    "total_fish": 117
   },
   {
     "trip_date": "2026-06-24",
