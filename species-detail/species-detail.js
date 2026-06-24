@@ -5,7 +5,29 @@ let dailyRows = [];
 
 async function initSpeciesDetail() {
   selectedSpecies = getParam("species");
+if (selectedSpecies) {
+  document.title =
+    `${selectedSpecies} Fishing Reports & Trends | The SoCal Bite`;
 
+  let canonical = document.getElementById("canonical-link");
+
+  if (!canonical) {
+    canonical = document.createElement("link");
+    canonical.id = "canonical-link";
+    canonical.rel = "canonical";
+    document.head.appendChild(canonical);
+  }
+
+  canonical.href =
+    `${window.location.origin}/species-detail/?species=${encodeURIComponent(selectedSpecies)}`;
+
+  const description = document.querySelector('meta[name="description"]');
+
+  if (description) {
+    description.content =
+      `${selectedSpecies} fishing reports, fish counts, activity trends, top boats, top regions and recent catches across Southern California.`;
+  }
+}
   if (!selectedSpecies) {
     setText("speciesTitle", "Species not found");
     return;
