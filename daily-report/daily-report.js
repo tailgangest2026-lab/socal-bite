@@ -17,10 +17,46 @@ async function initReports() {
     buildRegionTabs();
     buildDateList();
 
-    loadReport(reportIndex[0]);
+    const urlDate = getParam("date");
+    const selectedReport =
+      reportIndex.find(report => report.date === urlDate) || reportIndex[0];
+
+    loadReport(selectedReport);
   } catch (error) {
     console.error("Daily report load error:", error);
     showDateListMessage("Could not load daily reports.");
+  }
+}
+
+function updateReportSeo(date) {
+  if (!date) return;
+
+  document.title =
+    `Southern California Fishing Report - ${date} | The SoCal Bite`;
+
+  let canonical = document.getElementById("canonical-link");
+
+  if (!canonical) {
+    canonical = document.createElement("link");
+    canonical.id = "canonical-link";
+    canonical.rel = "canonical";
+    document.head.appendChild(canonical);
+  }
+
+  canonical.href =
+    `${window.location.origin}/daily-report/?date=${encodeURIComponent(date)}`;
+
+  const description = document.querySelector('meta[name="description"]');
+
+  if (description) {
+    description.content =
+      `Southern California fishing report for ${date}. Fish counts, boats, landings, anglers, trip types and species caught across Southern California.`;
+  }
+
+  const ogUrl = document.querySelector('meta[property="og:url"]');
+
+  if (ogUrl) {
+    ogUrl.content = canonical.href;
   }
 }
 
@@ -30,7 +66,8 @@ async function fetchJson(path) {
       ? socalBiteDataUrl(path)
       : path;
 
-  const response = await fetch(url + "?v=" + Date.now());
+  const sep = url.includes("?") ? "&" : "?";
+  const response = await fetch(url + sep + "v=" + Date.now());
 
   if (!response.ok) {
     throw new Error("Could not load " + path);
@@ -71,7 +108,6 @@ function buildRegionTabs() {
     "Santa Barbara",
     "Santa Cruz",
     "Ventura County"
-
   ];
 
   tabs.innerHTML = regions.map(region => `
@@ -97,12 +133,16 @@ function buildDateList() {
   const container = document.getElementById("reportDateList");
   if (!container) return;
 
+  const urlDate = getParam("date");
+
   container.innerHTML = reportIndex.map((report, index) => {
     const label = formatDisplayDate(report.date);
+    const isActive =
+      report.date === urlDate || (!urlDate && index === 0);
 
     return `
       <button
-        class="report-date-card ${index === 0 ? "active" : ""}"
+        class="report-date-card ${isActive ? "active" : ""}"
         type="button"
         data-date="${safeAttr(report.date)}"
       >
@@ -128,6 +168,10 @@ function buildDateList() {
       const report = reportIndex.find(item => item.date === date);
 
       if (report) {
+        const newUrl =
+          `${window.location.pathname}?date=${encodeURIComponent(report.date)}`;
+
+        window.history.pushState({}, "", newUrl);
         loadReport(report);
       }
     });
@@ -136,6 +180,8 @@ function buildDateList() {
 
 async function loadReport(report) {
   try {
+    updateReportSeo(report.date);
+
     currentRows = await getYearRowsForDate(report.date);
 
     setText("selectedReportTitle", formatDisplayDate(report.date));
@@ -249,6 +295,10 @@ function formatDisplayDate(dateString) {
     month: "short",
     day: "numeric"
   });
+}
+
+function getParam(name) {
+  return new URLSearchParams(window.location.search).get(name) || "";
 }
 
 function clean(value) {
