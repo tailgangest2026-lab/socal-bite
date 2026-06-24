@@ -8,6 +8,29 @@ let reportYearCache = {};
 
 async function initLandingDetail() {
   selectedLanding = getParam("landing");
+  if (selectedLanding) {
+  document.title =
+    `${selectedLanding} Fishing Reports, Fleet Rankings & Fish Counts | The SoCal Bite`;
+
+  let canonical = document.getElementById("canonical-link");
+
+  if (!canonical) {
+    canonical = document.createElement("link");
+    canonical.id = "canonical-link";
+    canonical.rel = "canonical";
+    document.head.appendChild(canonical);
+  }
+
+  canonical.href =
+    `${window.location.origin}/landing-detail/?landing=${encodeURIComponent(selectedLanding)}`;
+
+  const description = document.querySelector('meta[name="description"]');
+
+  if (description) {
+    description.content =
+      `${selectedLanding} fishing reports, fleet rankings, fish counts, trip pricing and recent catches from Southern California sportfishing boats.`;
+  }
+}
 
   if (!selectedLanding) {
     setText("landingTitle", "Landing not found");
@@ -224,7 +247,7 @@ function renderFleet(rows) {
   }
 
   container.innerHTML = boats.map(boat => `
-    <a class="landing-fleet-card" href="/boat-detail/boat=${encodeURIComponent(boat.boat)}">
+    <a class="landing-fleet-card" href="/boat-detail/?boat=${encodeURIComponent(boat.boat)}">
       <div>
         <h3>⚓ ${safe(boat.boat)}</h3>
         <p>${format(boat.trips)} trips · ${format(boat.fish)} fish</p>
