@@ -353,6 +353,15 @@
   {
     "rank": 10,
     "region": "San Diego County",
+    "trip_type": "3/4 Day Local",
+    "trips": 3,
+    "anglers": 72,
+    "fish": 196,
+    "fpa": 2.72
+  },
+  {
+    "rank": 11,
+    "region": "San Diego County",
     "trip_type": "Full Day Coronado Islands",
     "trips": 218,
     "anglers": 5888,
@@ -360,22 +369,13 @@
     "fpa": 2.66
   },
   {
-    "rank": 11,
+    "rank": 12,
     "region": "San Diego County",
     "trip_type": "Full Day",
     "trips": 58,
     "anglers": 1052,
     "fish": 2667,
     "fpa": 2.54
-  },
-  {
-    "rank": 12,
-    "region": "San Diego County",
-    "trip_type": "3/4 Day Local",
-    "trips": 2,
-    "anglers": 51,
-    "fish": 108,
-    "fpa": 2.12
   },
   {
     "rank": 13,
