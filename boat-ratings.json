@@ -544,10 +544,10 @@
     "trip_type": "Full Day",
     "boat": "Queen of Hearts",
     "landing": "Half Moon Bay Sportfishing",
-    "trips": 15,
-    "anglers": 299,
-    "fish": 2956,
-    "fpa": 9.89
+    "trips": 16,
+    "anglers": 314,
+    "fish": 3112,
+    "fpa": 9.91
   },
   {
     "rank": 2,
@@ -621,8 +621,8 @@
     "trip_type": "Full Day",
     "boat": "Sea Weasel II",
     "landing": "Full Throttle Sportfishing",
-    "trips": 7,
-    "anglers": 46,
+    "trips": 8,
+    "anglers": 52,
     "fish": 0,
     "fpa": 0
   },
@@ -896,10 +896,10 @@
     "trip_type": "1.5 Day",
     "boat": "Tribute",
     "landing": "Seaforth Sportfishing",
-    "trips": 7,
-    "anglers": 161,
-    "fish": 182,
-    "fpa": 1.13
+    "trips": 8,
+    "anglers": 177,
+    "fish": 190,
+    "fpa": 1.07
   },
   {
     "rank": 1,
@@ -962,9 +962,9 @@
     "trip_type": "1/2 Day AM",
     "boat": "Premier",
     "landing": "H&M Landing",
-    "trips": 23,
-    "anglers": 809,
-    "fish": 2623,
+    "trips": 24,
+    "anglers": 837,
+    "fish": 2710,
     "fpa": 3.24
   },
   {
@@ -973,10 +973,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
-    "trips": 28,
-    "anglers": 1095,
-    "fish": 2078,
-    "fpa": 1.9
+    "trips": 29,
+    "anglers": 1150,
+    "fish": 2178,
+    "fpa": 1.89
   },
   {
     "rank": 1,
@@ -1039,10 +1039,10 @@
     "trip_type": "1/2 Day Twilight",
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
-    "trips": 27,
-    "anglers": 973,
-    "fish": 3569,
-    "fpa": 3.67
+    "trips": 28,
+    "anglers": 986,
+    "fish": 3580,
+    "fpa": 3.63
   },
   {
     "rank": 1,
@@ -1068,6 +1068,17 @@
   },
   {
     "rank": 2,
+    "region": "San Diego County",
+    "trip_type": "3 Day",
+    "boat": "Spirit of Adventure",
+    "landing": "H&M Landing",
+    "trips": 5,
+    "anglers": 105,
+    "fish": 552,
+    "fpa": 5.26
+  },
+  {
+    "rank": 3,
     "region": "San Diego County",
     "trip_type": "3 Day",
     "boat": "Polaris Supreme",
