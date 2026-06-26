@@ -1548,18 +1548,6 @@
     "top_species_3": "Bluefin Tuna"
   },
   {
-    "boat": "El Gato Dos",
-    "landing": "Seaforth Sportfishing",
-    "region": "San Diego County",
-    "trips": 12,
-    "anglers": 57,
-    "fish": 125,
-    "fpa": 2.19,
-    "top_species_1": "Yellowtail",
-    "top_species_2": "Bonito",
-    "top_species_3": "Rockfish"
-  },
-  {
     "boat": "Pegasus",
     "landing": "Fisherman's Landing",
     "region": "San Diego County",
@@ -1570,6 +1558,18 @@
     "top_species_1": "Bluefin Tuna",
     "top_species_2": "Rockfish",
     "top_species_3": "Yellowtail"
+  },
+  {
+    "boat": "El Gato Dos",
+    "landing": "Seaforth Sportfishing",
+    "region": "San Diego County",
+    "trips": 13,
+    "anglers": 63,
+    "fish": 132,
+    "fpa": 2.1,
+    "top_species_1": "Yellowtail",
+    "top_species_2": "Bonito",
+    "top_species_3": "Rockfish"
   },
   {
     "boat": "Poseidon",
@@ -1647,10 +1647,10 @@
     "boat": "Tomahawk",
     "landing": "Fisherman's Landing",
     "region": "San Diego County",
-    "trips": 9,
-    "anglers": 204,
+    "trips": 10,
+    "anglers": 229,
     "fish": 187,
-    "fpa": 0.92,
+    "fpa": 0.82,
     "top_species_1": "Bluefin Tuna",
     "top_species_2": "Yellowtail",
     "top_species_3": "Yellowfin Tuna"
@@ -2019,9 +2019,9 @@
     "boat": "Speed Twin",
     "landing": "Channel Islands Sportfishing",
     "region": "Ventura County",
-    "trips": 91,
-    "anglers": 3102,
-    "fish": 32497,
+    "trips": 92,
+    "anglers": 3132,
+    "fish": 32814,
     "fpa": 10.48,
     "top_species_1": "Rockfish",
     "top_species_2": "Whitefish",
