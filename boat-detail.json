@@ -1512,6 +1512,18 @@
     "top_species_3": "Red Rockfish"
   },
   {
+    "boat": "Grande",
+    "landing": "H&M Landing",
+    "region": "San Diego County",
+    "trips": 60,
+    "anglers": 1690,
+    "fish": 4257,
+    "fpa": 2.52,
+    "top_species_1": "Yellowtail",
+    "top_species_2": "Whitefish",
+    "top_species_3": "Rockfish"
+  },
+  {
     "boat": "Mission Belle",
     "landing": "Point Loma Sportfishing",
     "region": "San Diego County",
@@ -1519,18 +1531,6 @@
     "anglers": 1667,
     "fish": 4156,
     "fpa": 2.49,
-    "top_species_1": "Yellowtail",
-    "top_species_2": "Whitefish",
-    "top_species_3": "Rockfish"
-  },
-  {
-    "boat": "Grande",
-    "landing": "H&M Landing",
-    "region": "San Diego County",
-    "trips": 59,
-    "anglers": 1667,
-    "fish": 4107,
-    "fpa": 2.46,
     "top_species_1": "Yellowtail",
     "top_species_2": "Whitefish",
     "top_species_3": "Rockfish"
@@ -2052,18 +2052,6 @@
     "top_species_3": "Lingcod"
   },
   {
-    "boat": "Aloha Spirit",
-    "landing": "Channel Islands Sportfishing",
-    "region": "Ventura County",
-    "trips": 84,
-    "anglers": 1984,
-    "fish": 18244,
-    "fpa": 9.2,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Whitefish",
-    "top_species_3": "Barracuda"
-  },
-  {
     "boat": "Gentleman",
     "landing": "Channel Islands Sportfishing",
     "region": "Ventura County",
@@ -2074,6 +2062,18 @@
     "top_species_1": "Rockfish",
     "top_species_2": "Whitefish",
     "top_species_3": "Sheephead"
+  },
+  {
+    "boat": "Aloha Spirit",
+    "landing": "Channel Islands Sportfishing",
+    "region": "Ventura County",
+    "trips": 85,
+    "anglers": 2004,
+    "fish": 18304,
+    "fpa": 9.13,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Whitefish",
+    "top_species_3": "Barracuda"
   },
   {
     "boat": "Island Tak",

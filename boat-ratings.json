@@ -1158,6 +1158,17 @@
     "rank": 2,
     "region": "San Diego County",
     "trip_type": "Full Day Coronado Islands",
+    "boat": "San Diego",
+    "landing": "Seaforth Sportfishing",
+    "trips": 27,
+    "anglers": 779,
+    "fish": 2604,
+    "fpa": 3.34
+  },
+  {
+    "rank": 3,
+    "region": "San Diego County",
+    "trip_type": "Full Day Coronado Islands",
     "boat": "Mission Belle",
     "landing": "Point Loma Sportfishing",
     "trips": 21,
@@ -1166,18 +1177,18 @@
     "fpa": 3.28
   },
   {
-    "rank": 3,
+    "rank": 4,
     "region": "San Diego County",
     "trip_type": "Full Day Coronado Islands",
-    "boat": "San Diego",
-    "landing": "Seaforth Sportfishing",
-    "trips": 26,
-    "anglers": 755,
-    "fish": 2433,
-    "fpa": 3.22
+    "boat": "Grande",
+    "landing": "H&M Landing",
+    "trips": 17,
+    "anglers": 496,
+    "fish": 1511,
+    "fpa": 3.05
   },
   {
-    "rank": 4,
+    "rank": 5,
     "region": "San Diego County",
     "trip_type": "Full Day Coronado Islands",
     "boat": "Point Loma",
@@ -1186,17 +1197,6 @@
     "anglers": 133,
     "fish": 391,
     "fpa": 2.94
-  },
-  {
-    "rank": 5,
-    "region": "San Diego County",
-    "trip_type": "Full Day Coronado Islands",
-    "boat": "Grande",
-    "landing": "H&M Landing",
-    "trips": 16,
-    "anglers": 473,
-    "fish": 1361,
-    "fpa": 2.88
   },
   {
     "rank": 1,
@@ -1545,10 +1545,10 @@
     "trip_type": "Full Day",
     "boat": "Aloha Spirit",
     "landing": "Channel Islands Sportfishing",
-    "trips": 44,
-    "anglers": 1079,
-    "fish": 7385,
-    "fpa": 6.84
+    "trips": 45,
+    "anglers": 1099,
+    "fish": 7445,
+    "fpa": 6.77
   },
   {
     "rank": 5,
