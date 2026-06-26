@@ -203,11 +203,41 @@
     "trip_date": "2026-06-25",
     "region": "Los Angeles County",
     "landing": "LA Waterfront Cruises and Sportfishing",
+    "boat": "Sport King",
+    "trip_type": "3/4 Day",
+    "anglers": 25,
+    "fish_counts": "17 Bonito, 105 Calico Bass, 65 Calico Bass Released, 5 Yellowtail",
+    "total_fish": 192
+  },
+  {
+    "trip_date": "2026-06-25",
+    "region": "Los Angeles County",
+    "landing": "LA Waterfront Cruises and Sportfishing",
     "boat": "Triton",
     "trip_type": "1/2 Day Twilight",
     "anglers": 10,
     "fish_counts": "2 Rockfish, 4 Yellowtail",
     "total_fish": 6
+  },
+  {
+    "trip_date": "2026-06-25",
+    "region": "Los Angeles County",
+    "landing": "Long Beach Sportfishing",
+    "boat": "El Patron",
+    "trip_type": "Full Day",
+    "anglers": 21,
+    "fish_counts": "2 Barracuda, 4 Bonito, 105 Calico Bass, 15 Yellowtail",
+    "total_fish": 126
+  },
+  {
+    "trip_date": "2026-06-25",
+    "region": "Los Angeles County",
+    "landing": "Long Beach Sportfishing",
+    "boat": "Victory",
+    "trip_type": "3/4 Day",
+    "anglers": 34,
+    "fish_counts": "10 Barracuda, 1 Bonito, 142 Calico Bass, 167 Sculpin, 17 Sheephead, 35 Whitefish, 5 Yellowtail",
+    "total_fish": 377
   },
   {
     "trip_date": "2026-06-25",
@@ -286,6 +316,16 @@
     "boat": "Sea Weasel II",
     "trip_type": "Full Day",
     "anglers": 6,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-06-25",
+    "region": "NorCal",
+    "landing": "Full Throttle Sportfishing",
+    "boat": "Sea Weasel II",
+    "trip_type": "Full Day",
+    "anglers": 11,
     "fish_counts": "",
     "total_fish": 0
   },
@@ -453,11 +493,31 @@
     "trip_date": "2026-06-25",
     "region": "Orange County",
     "landing": "Davey's Locker",
+    "boat": "Blackfish",
+    "trip_type": "Full Day",
+    "anglers": 5,
+    "fish_counts": "13 Calico Bass, 8 Yellowtail",
+    "total_fish": 21
+  },
+  {
+    "trip_date": "2026-06-25",
+    "region": "Orange County",
+    "landing": "Davey's Locker",
     "boat": "Freelance",
     "trip_type": "3/4 Day",
     "anglers": 50,
     "fish_counts": "250 Sculpin",
     "total_fish": 250
+  },
+  {
+    "trip_date": "2026-06-25",
+    "region": "Orange County",
+    "landing": "Davey's Locker",
+    "boat": "Freelance",
+    "trip_type": "3/4 Day",
+    "anglers": 49,
+    "fish_counts": "6 Barracuda, 25 Calico Bass, 1 Yellowtail",
+    "total_fish": 32
   },
   {
     "trip_date": "2026-06-25",
@@ -498,6 +558,16 @@
     "anglers": 28,
     "fish_counts": "34 Calico Bass, 1 Rockfish, 7 Sculpin, 6 Sheephead",
     "total_fish": 48
+  },
+  {
+    "trip_date": "2026-06-25",
+    "region": "Orange County",
+    "landing": "Davey's Locker",
+    "boat": "Western Pride",
+    "trip_type": "1/2 Day PM",
+    "anglers": 37,
+    "fish_counts": "3 Barracuda, 34 Calico Bass, 265 Rockfish, 1 Sand Bass",
+    "total_fish": 303
   },
   {
     "trip_date": "2026-06-25",
@@ -748,6 +818,36 @@
     "anglers": 28,
     "fish_counts": "280 Rockfish",
     "total_fish": 280
+  },
+  {
+    "trip_date": "2026-06-25",
+    "region": "San Francisco Bay",
+    "landing": "California Dawn Sportfishing",
+    "boat": "California Dawn II",
+    "trip_type": "Full Day",
+    "anglers": 20,
+    "fish_counts": "7 Lingcod, 175 Rockfish",
+    "total_fish": 182
+  },
+  {
+    "trip_date": "2026-06-25",
+    "region": "San Francisco Bay",
+    "landing": "California Dawn Sportfishing",
+    "boat": "New California Dawn",
+    "trip_type": "Full Day",
+    "anglers": 21,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-06-25",
+    "region": "San Francisco Bay",
+    "landing": "Right Hook Sportfishing",
+    "boat": "Right Hook",
+    "trip_type": "1/2 Day AM",
+    "anglers": 6,
+    "fish_counts": "3 Halibut",
+    "total_fish": 3
   },
   {
     "trip_date": "2026-06-25",
