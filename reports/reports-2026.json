@@ -241,6 +241,16 @@
   },
   {
     "trip_date": "2026-06-25",
+    "region": "Los Angeles County",
+    "landing": "Redondo Beach Sportfishing",
+    "boat": "Pescador",
+    "trip_type": "Full Day",
+    "anglers": 20,
+    "fish_counts": "30 Yellowtail",
+    "total_fish": 30
+  },
+  {
+    "trip_date": "2026-06-25",
     "region": "Monterey County",
     "landing": "J&M Sportfishing",
     "boat": "Chubasco",
@@ -288,6 +298,16 @@
     "anglers": 2,
     "fish_counts": "",
     "total_fish": 0
+  },
+  {
+    "trip_date": "2026-06-25",
+    "region": "NorCal",
+    "landing": "Bodega Bay Sportfishing Center",
+    "boat": "Surf Scooter",
+    "trip_type": "Full Day",
+    "anglers": 3,
+    "fish_counts": "1 Lingcod",
+    "total_fish": 1
   },
   {
     "trip_date": "2026-06-25",
@@ -851,6 +871,16 @@
   },
   {
     "trip_date": "2026-06-25",
+    "region": "San Francisco Bay",
+    "landing": "Right Hook Sportfishing",
+    "boat": "Right Hook",
+    "trip_type": "1/2 Day AM",
+    "anglers": 6,
+    "fish_counts": "3 Halibut",
+    "total_fish": 3
+  },
+  {
+    "trip_date": "2026-06-25",
     "region": "Santa Barbara County",
     "landing": "Santa Barbara Landing",
     "boat": "Coral Sea",
@@ -1263,6 +1293,16 @@
     "trip_date": "2026-06-24",
     "region": "Los Angeles County",
     "landing": "Marina Del Rey Sportfishing",
+    "boat": "Betty-O",
+    "trip_type": "3/4 Day",
+    "anglers": 22,
+    "fish_counts": "2 Lingcod, 185 Rockfish",
+    "total_fish": 187
+  },
+  {
+    "trip_date": "2026-06-24",
+    "region": "Los Angeles County",
+    "landing": "Marina Del Rey Sportfishing",
     "boat": "New Del Mar",
     "trip_type": "1/2 Day AM",
     "anglers": 58,
@@ -1273,11 +1313,31 @@
     "trip_date": "2026-06-24",
     "region": "Los Angeles County",
     "landing": "Marina Del Rey Sportfishing",
+    "boat": "New Del Mar",
+    "trip_type": "1/2 Day AM",
+    "anglers": 67,
+    "fish_counts": "15 Lingcod, 390 Rockfish, 125 Sculpin, 30 Whitefish",
+    "total_fish": 560
+  },
+  {
+    "trip_date": "2026-06-24",
+    "region": "Los Angeles County",
+    "landing": "Marina Del Rey Sportfishing",
     "boat": "Spitfire",
     "trip_type": "3/4 Day",
     "anglers": 13,
     "fish_counts": "14 Lingcod, 130 Rockfish",
     "total_fish": 144
+  },
+  {
+    "trip_date": "2026-06-24",
+    "region": "Los Angeles County",
+    "landing": "Marina Del Rey Sportfishing",
+    "boat": "Spitfire",
+    "trip_type": "3/4 Day",
+    "anglers": 20,
+    "fish_counts": "1 Barracuda, 42 Calico Bass, 60 Rockfish, 2 Sand Bass, 100 Sculpin, 1 Yellowtail",
+    "total_fish": 206
   },
   {
     "trip_date": "2026-06-24",
