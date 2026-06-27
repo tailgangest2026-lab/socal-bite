@@ -103,11 +103,31 @@
     "trip_date": "2026-06-26",
     "region": "Central California",
     "landing": "Patriot Sportfishing",
+    "boat": "Flying Fish",
+    "trip_type": "1/2 Day AM",
+    "anglers": 19,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-06-26",
+    "region": "Central California",
+    "landing": "Patriot Sportfishing",
     "boat": "Patriot (Avila Beach)",
     "trip_type": "Full Day",
     "anglers": 27,
     "fish_counts": "1 Whitefish",
     "total_fish": 1
+  },
+  {
+    "trip_date": "2026-06-26",
+    "region": "Central California",
+    "landing": "Patriot Sportfishing",
+    "boat": "Patriot (Avila Beach)",
+    "trip_type": "3/4 Day",
+    "anglers": 20,
+    "fish_counts": "1 Halibut, 5 Lingcod",
+    "total_fish": 6
   },
   {
     "trip_date": "2026-06-26",
@@ -248,6 +268,16 @@
     "anglers": 15,
     "fish_counts": "6 Lingcod, 150 Rockfish",
     "total_fish": 156
+  },
+  {
+    "trip_date": "2026-06-26",
+    "region": "NorCal",
+    "landing": "Half Moon Bay Sportfishing",
+    "boat": "Queen of Hearts",
+    "trip_type": "Full Day",
+    "anglers": 15,
+    "fish_counts": "2 Lingcod, 150 Rockfish",
+    "total_fish": 152
   },
   {
     "trip_date": "2026-06-26",
@@ -438,6 +468,16 @@
     "anglers": 33,
     "fish_counts": "1 Lingcod, 66 Red Rockfish, 27 Rockfish, 10 Whitefish",
     "total_fish": 104
+  },
+  {
+    "trip_date": "2026-06-26",
+    "region": "San Diego County",
+    "landing": "Point Loma Sportfishing",
+    "boat": "Mission Belle",
+    "trip_type": "Full Day Coronado Islands",
+    "anglers": 0,
+    "fish_counts": "60 Rockfish, 75 Whitefish, 5 Yellowtail",
+    "total_fish": 140
   },
   {
     "trip_date": "2026-06-26",
@@ -633,6 +673,16 @@
     "trip_date": "2026-06-26",
     "region": "Ventura County",
     "landing": "Channel Islands Sportfishing",
+    "boat": "New Hustler",
+    "trip_type": "Overnight",
+    "anglers": 17,
+    "fish_counts": "10 Barracuda, 170 Rockfish, 5 Whitefish",
+    "total_fish": 185
+  },
+  {
+    "trip_date": "2026-06-26",
+    "region": "Ventura County",
+    "landing": "Channel Islands Sportfishing",
     "boat": "Ranger 85",
     "trip_type": "3 Day",
     "anglers": 30,
@@ -648,6 +698,16 @@
     "anglers": 30,
     "fish_counts": "16 Calico Bass, 5 Lingcod, 163 Rockfish, 4 Sheephead, 129 Whitefish",
     "total_fish": 317
+  },
+  {
+    "trip_date": "2026-06-26",
+    "region": "Ventura County",
+    "landing": "Hooks Landing",
+    "boat": "Coroloma",
+    "trip_type": "3/4 Day",
+    "anglers": 14,
+    "fish_counts": "5 Calico Bass, 30 Rockfish, 1 Sheephead, 110 Whitefish",
+    "total_fish": 146
   },
   {
     "trip_date": "2026-06-25",
