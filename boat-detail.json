@@ -3,10 +3,10 @@
     "boat": "Sea Wolf",
     "landing": "Fish Emeryville",
     "region": "Alameda County",
-    "trips": 21,
-    "anglers": 404,
+    "trips": 22,
+    "anglers": 423,
     "fish": 4542,
-    "fpa": 11.24,
+    "fpa": 10.74,
     "top_species_1": "Rockfish",
     "top_species_2": "Lingcod",
     "top_species_3": "Halibut"
@@ -456,18 +456,6 @@
     "top_species_3": "Whitefish"
   },
   {
-    "boat": "Pescador",
-    "landing": "Redondo Beach Sportfishing",
-    "region": "Los Angeles County",
-    "trips": 18,
-    "anglers": 288,
-    "fish": 1439,
-    "fpa": 5,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Whitefish",
-    "top_species_3": "Yellowtail"
-  },
-  {
     "boat": "Native Sun",
     "landing": "22nd Street Landing",
     "region": "Los Angeles County",
@@ -490,6 +478,18 @@
     "top_species_1": "Calico Bass",
     "top_species_2": "Calico Bass Released",
     "top_species_3": "Rockfish"
+  },
+  {
+    "boat": "Pescador",
+    "landing": "Redondo Beach Sportfishing",
+    "region": "Los Angeles County",
+    "trips": 19,
+    "anglers": 308,
+    "fish": 1511,
+    "fpa": 4.91,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Whitefish",
+    "top_species_3": "Yellowtail"
   },
   {
     "boat": "Gail Force",
@@ -1560,18 +1560,6 @@
     "top_species_3": "Bluefin Tuna"
   },
   {
-    "boat": "Pegasus",
-    "landing": "Fisherman's Landing",
-    "region": "San Diego County",
-    "trips": 21,
-    "anglers": 382,
-    "fish": 837,
-    "fpa": 2.19,
-    "top_species_1": "Bluefin Tuna",
-    "top_species_2": "Rockfish",
-    "top_species_3": "Yellowtail"
-  },
-  {
     "boat": "El Gato Dos",
     "landing": "Seaforth Sportfishing",
     "region": "San Diego County",
@@ -1582,6 +1570,18 @@
     "top_species_1": "Yellowtail",
     "top_species_2": "Bonito",
     "top_species_3": "Rockfish"
+  },
+  {
+    "boat": "Pegasus",
+    "landing": "Fisherman's Landing",
+    "region": "San Diego County",
+    "trips": 22,
+    "anglers": 403,
+    "fish": 841,
+    "fpa": 2.09,
+    "top_species_1": "Bluefin Tuna",
+    "top_species_2": "Rockfish",
+    "top_species_3": "Yellowtail"
   },
   {
     "boat": "Poseidon",
@@ -1623,10 +1623,10 @@
     "boat": "Tribute",
     "landing": "Seaforth Sportfishing",
     "region": "San Diego County",
-    "trips": 22,
-    "anglers": 519,
-    "fish": 778,
-    "fpa": 1.5,
+    "trips": 23,
+    "anglers": 547,
+    "fish": 792,
+    "fpa": 1.45,
     "top_species_1": "Bluefin Tuna",
     "top_species_2": "Bonito",
     "top_species_3": "Yellowtail"
