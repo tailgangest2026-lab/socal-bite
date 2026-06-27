@@ -435,10 +435,10 @@
     "boat": "Monte Carlo",
     "landing": "22nd Street Landing",
     "region": "Los Angeles County",
-    "trips": 80,
-    "anglers": 3350,
-    "fish": 17943,
-    "fpa": 5.36,
+    "trips": 81,
+    "anglers": 3393,
+    "fish": 18163,
+    "fpa": 5.35,
     "top_species_1": "Sculpin",
     "top_species_2": "Rockfish",
     "top_species_3": "Whitefish"
@@ -1332,18 +1332,6 @@
     "top_species_3": "Calico Bass"
   },
   {
-    "boat": "Daily Double",
-    "landing": "Point Loma Sportfishing",
-    "region": "San Diego County",
-    "trips": 60,
-    "anglers": 1286,
-    "fish": 5170,
-    "fpa": 4.02,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Calico Bass Released",
-    "top_species_3": "Calico Bass"
-  },
-  {
     "boat": "New Lo-An",
     "landing": "Point Loma Sportfishing",
     "region": "San Diego County",
@@ -1378,6 +1366,18 @@
     "top_species_1": "Yellowtail",
     "top_species_2": "",
     "top_species_3": ""
+  },
+  {
+    "boat": "Daily Double",
+    "landing": "Point Loma Sportfishing",
+    "region": "San Diego County",
+    "trips": 61,
+    "anglers": 1319,
+    "fish": 5274,
+    "fpa": 4,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Calico Bass Released",
+    "top_species_3": "Calico Bass"
   },
   {
     "boat": "Dolphin",
@@ -1476,6 +1476,18 @@
     "top_species_3": "Bonito"
   },
   {
+    "boat": "San Diego",
+    "landing": "Seaforth Sportfishing",
+    "region": "San Diego County",
+    "trips": 89,
+    "anglers": 2777,
+    "fish": 7538,
+    "fpa": 2.71,
+    "top_species_1": "Yellowtail",
+    "top_species_2": "Rockfish",
+    "top_species_3": "Whitefish"
+  },
+  {
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
     "region": "San Diego County",
@@ -1486,18 +1498,6 @@
     "top_species_1": "Calico Bass Released",
     "top_species_2": "Rockfish",
     "top_species_3": "Calico Bass"
-  },
-  {
-    "boat": "San Diego",
-    "landing": "Seaforth Sportfishing",
-    "region": "San Diego County",
-    "trips": 88,
-    "anglers": 2742,
-    "fish": 7409,
-    "fpa": 2.7,
-    "top_species_1": "Yellowtail",
-    "top_species_2": "Rockfish",
-    "top_species_3": "Whitefish"
   },
   {
     "boat": "Got Bait",
