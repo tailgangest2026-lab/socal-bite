@@ -241,8 +241,8 @@
     "rank": 1,
     "region": "Orange County",
     "species": "Rockfish",
-    "fish": 18168,
-    "trips_reported": 202
+    "fish": 18175,
+    "trips_reported": 203
   },
   {
     "rank": 2,
@@ -255,57 +255,57 @@
     "rank": 3,
     "region": "Orange County",
     "species": "Calico Bass Released",
-    "fish": 12488,
-    "trips_reported": 162
+    "fish": 12788,
+    "trips_reported": 166
   },
   {
     "rank": 4,
     "region": "Orange County",
     "species": "Calico Bass",
-    "fish": 8387,
-    "trips_reported": 347
+    "fish": 8523,
+    "trips_reported": 353
   },
   {
     "rank": 5,
     "region": "Orange County",
     "species": "Whitefish",
-    "fish": 7347,
-    "trips_reported": 229
+    "fish": 7374,
+    "trips_reported": 230
   },
   {
     "rank": 6,
     "region": "Orange County",
     "species": "Sheephead",
-    "fish": 1509,
-    "trips_reported": 192
+    "fish": 1560,
+    "trips_reported": 194
   },
   {
     "rank": 7,
     "region": "Orange County",
     "species": "Yellowtail",
-    "fish": 1271,
-    "trips_reported": 146
+    "fish": 1302,
+    "trips_reported": 149
   },
   {
     "rank": 8,
     "region": "Orange County",
-    "species": "Barracuda",
-    "fish": 931,
-    "trips_reported": 107
+    "species": "Bonito",
+    "fish": 1098,
+    "trips_reported": 83
   },
   {
     "rank": 9,
     "region": "Orange County",
-    "species": "Bonito",
-    "fish": 881,
-    "trips_reported": 79
+    "species": "Barracuda",
+    "fish": 936,
+    "trips_reported": 109
   },
   {
     "rank": 10,
     "region": "Orange County",
     "species": "Sand Bass",
-    "fish": 854,
-    "trips_reported": 133
+    "fish": 868,
+    "trips_reported": 136
   },
   {
     "rank": 11,
@@ -486,29 +486,29 @@
     "rank": 1,
     "region": "Santa Barbara County",
     "species": "Rockfish",
-    "fish": 20266,
-    "trips_reported": 92
+    "fish": 20394,
+    "trips_reported": 93
   },
   {
     "rank": 2,
     "region": "Santa Barbara County",
     "species": "Whitefish",
-    "fish": 10386,
-    "trips_reported": 81
+    "fish": 10398,
+    "trips_reported": 82
   },
   {
     "rank": 3,
     "region": "Santa Barbara County",
     "species": "Lingcod",
-    "fish": 532,
-    "trips_reported": 76
+    "fish": 535,
+    "trips_reported": 77
   },
   {
     "rank": 4,
     "region": "Santa Barbara County",
     "species": "Sheephead",
-    "fish": 463,
-    "trips_reported": 66
+    "fish": 478,
+    "trips_reported": 67
   },
   {
     "rank": 5,
@@ -520,12 +520,26 @@
   {
     "rank": 6,
     "region": "Santa Barbara County",
+    "species": "Bonito",
+    "fish": 21,
+    "trips_reported": 1
+  },
+  {
+    "rank": 7,
+    "region": "Santa Barbara County",
     "species": "Sculpin",
     "fish": 8,
     "trips_reported": 6
   },
   {
-    "rank": 7,
+    "rank": 8,
+    "region": "Santa Barbara County",
+    "species": "Barracuda",
+    "fish": 3,
+    "trips_reported": 1
+  },
+  {
+    "rank": 9,
     "region": "Santa Barbara County",
     "species": "Sand Bass",
     "fish": 2,
