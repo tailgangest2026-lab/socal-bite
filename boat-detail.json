@@ -99,10 +99,10 @@
     "boat": "Oakland Anglers II",
     "landing": "Fish Emeryville",
     "region": "Alameda County",
-    "trips": 15,
-    "anglers": 239,
+    "trips": 16,
+    "anglers": 257,
     "fish": 380,
-    "fpa": 1.59,
+    "fpa": 1.48,
     "top_species_1": "Rockfish",
     "top_species_2": "Halibut",
     "top_species_3": "Lingcod"
@@ -123,10 +123,10 @@
     "boat": "Pacific Pearl",
     "landing": "Fish Emeryville",
     "region": "Alameda County",
-    "trips": 25,
-    "anglers": 317,
+    "trips": 26,
+    "anglers": 330,
     "fish": 87,
-    "fpa": 0.27,
+    "fpa": 0.26,
     "top_species_1": "Rockfish",
     "top_species_2": "Halibut",
     "top_species_3": "Lingcod"
@@ -684,18 +684,6 @@
     "top_species_3": "Sand Bass"
   },
   {
-    "boat": "Pacific Dream",
-    "landing": "Happy Hooker Sportfishing",
-    "region": "NorCal",
-    "trips": 9,
-    "anglers": 206,
-    "fish": 888,
-    "fpa": 4.31,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Lingcod",
-    "top_species_3": ""
-  },
-  {
     "boat": "Barbarossa",
     "landing": "Barbarossa Fishing",
     "region": "NorCal",
@@ -706,6 +694,18 @@
     "top_species_1": "Rockfish",
     "top_species_2": "",
     "top_species_3": ""
+  },
+  {
+    "boat": "Pacific Dream",
+    "landing": "Happy Hooker Sportfishing",
+    "region": "NorCal",
+    "trips": 10,
+    "anglers": 225,
+    "fish": 890,
+    "fpa": 3.96,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Lingcod",
+    "top_species_3": "Halibut"
   },
   {
     "boat": "Sorta Salty",
@@ -1083,10 +1083,10 @@
     "boat": "Malihini",
     "landing": "H&M Landing",
     "region": "San Diego County",
-    "trips": 18,
-    "anglers": 297,
-    "fish": 2795,
-    "fpa": 9.41,
+    "trips": 19,
+    "anglers": 329,
+    "fish": 2905,
+    "fpa": 8.83,
     "top_species_1": "Rockfish",
     "top_species_2": "Calico Bass Released",
     "top_species_3": "Red Rockfish"
@@ -1179,13 +1179,13 @@
     "boat": "Tradition",
     "landing": "Fisherman's Landing",
     "region": "San Diego County",
-    "trips": 5,
-    "anglers": 100,
-    "fish": 630,
-    "fpa": 6.3,
+    "trips": 6,
+    "anglers": 115,
+    "fish": 726,
+    "fpa": 6.31,
     "top_species_1": "Yellowtail",
-    "top_species_2": "Calico Bass",
-    "top_species_3": "Barracuda"
+    "top_species_2": "Rockfish",
+    "top_species_3": "Calico Bass"
   },
   {
     "boat": "Apollo",
@@ -1428,18 +1428,6 @@
     "top_species_3": ""
   },
   {
-    "boat": "Liberty",
-    "landing": "Fisherman's Landing",
-    "region": "San Diego County",
-    "trips": 23,
-    "anglers": 576,
-    "fish": 1912,
-    "fpa": 3.32,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Whitefish",
-    "top_species_3": "Yellowtail"
-  },
-  {
     "boat": "Freeman 34",
     "landing": "Fisherman's Landing",
     "region": "San Diego County",
@@ -1462,6 +1450,18 @@
     "top_species_1": "Bluefin Tuna",
     "top_species_2": "Yellowtail",
     "top_species_3": ""
+  },
+  {
+    "boat": "Liberty",
+    "landing": "Fisherman's Landing",
+    "region": "San Diego County",
+    "trips": 24,
+    "anglers": 605,
+    "fish": 1927,
+    "fpa": 3.19,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Whitefish",
+    "top_species_3": "Yellowtail"
   },
   {
     "boat": "Pacifica",
@@ -1524,18 +1524,6 @@
     "top_species_3": "Rockfish"
   },
   {
-    "boat": "Grande",
-    "landing": "H&M Landing",
-    "region": "San Diego County",
-    "trips": 59,
-    "anglers": 1639,
-    "fish": 4248,
-    "fpa": 2.59,
-    "top_species_1": "Yellowtail",
-    "top_species_2": "Whitefish",
-    "top_species_3": "Rockfish"
-  },
-  {
     "boat": "Got Bait",
     "landing": "Point Loma Sportfishing",
     "region": "San Diego County",
@@ -1546,6 +1534,18 @@
     "top_species_1": "Yellowtail",
     "top_species_2": "Rockfish",
     "top_species_3": "Red Rockfish"
+  },
+  {
+    "boat": "Grande",
+    "landing": "H&M Landing",
+    "region": "San Diego County",
+    "trips": 60,
+    "anglers": 1675,
+    "fish": 4328,
+    "fpa": 2.58,
+    "top_species_1": "Yellowtail",
+    "top_species_2": "Whitefish",
+    "top_species_3": "Rockfish"
   },
   {
     "boat": "Constitution",
