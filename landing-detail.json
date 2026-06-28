@@ -21,11 +21,11 @@
     "address": "1213 Embarcadero, Morro Bay, CA 93442",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=1213%20Embarcadero%2C%20Morro%20Bay%2C%20CA%2093442",
     "booking_url": "https://www.morrobaylanding.com",
-    "trips": 177,
+    "trips": 180,
     "boats": 3,
-    "anglers": 3513,
-    "fish": 26205,
-    "fpa": 7.46
+    "anglers": 3599,
+    "fish": 26804,
+    "fpa": 7.45
   },
   {
     "landing": "Patriot Sportfishing",
@@ -35,10 +35,10 @@
     "address": "1838 Harbor Dr N, Oceanside, CA 92054",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=1838%20Harbor%20Dr%20N%2C%20Oceanside%2C%20CA%2092054",
     "booking_url": "https://patriotsportfishing.com",
-    "trips": 176,
+    "trips": 178,
     "boats": 3,
-    "anglers": 2675,
-    "fish": 380,
+    "anglers": 2710,
+    "fish": 381,
     "fpa": 0.14
   },
   {
@@ -77,11 +77,11 @@
     "address": "555 Pico Ave, Long Beach, CA 90802",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=555%20Pico%20Ave%2C%20Long%20Beach%2C%20CA%2090802",
     "booking_url": "https://www.longbeachsportfishing.org",
-    "trips": 149,
+    "trips": 151,
     "boats": 5,
-    "anglers": 3991,
-    "fish": 38209,
-    "fpa": 9.57
+    "anglers": 4027,
+    "fish": 38377,
+    "fpa": 9.53
   },
   {
     "landing": "Redondo Beach Sportfishing",
@@ -91,11 +91,11 @@
     "address": "140 International Boardwalk, Redondo Beach, CA 90277",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=140%20International%20Boardwalk%2C%20Redondo%20Beach%2C%20CA%2090277",
     "booking_url": "https://www.redondosportfishing.com",
-    "trips": 80,
+    "trips": 82,
     "boats": 2,
-    "anglers": 2234,
-    "fish": 13272,
-    "fpa": 5.94
+    "anglers": 2300,
+    "fish": 13512,
+    "fpa": 5.87
   },
   {
     "landing": "Pierpoint Landing",
@@ -175,11 +175,11 @@
     "address": "",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Happy%20Hooker%20Sportfishing",
     "booking_url": "",
-    "trips": 19,
+    "trips": 20,
     "boats": 2,
-    "anglers": 406,
+    "anglers": 428,
     "fish": 975,
-    "fpa": 2.4
+    "fpa": 2.28
   },
   {
     "landing": "Stagnaros Charters",
@@ -378,6 +378,20 @@
     "fpa": 0
   },
   {
+    "landing": "Salty Lady Sportfishing",
+    "region": "NorCal",
+    "phone": "",
+    "website": "",
+    "address": "",
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Salty%20Lady%20Sportfishing",
+    "booking_url": "",
+    "trips": 3,
+    "boats": 1,
+    "anglers": 50,
+    "fish": 0,
+    "fpa": 0
+  },
+  {
     "landing": "Fort Bragg Fishing",
     "region": "NorCal",
     "phone": "",
@@ -388,20 +402,6 @@
     "trips": 2,
     "boats": 1,
     "anglers": 12,
-    "fish": 0,
-    "fpa": 0
-  },
-  {
-    "landing": "Salty Lady Sportfishing",
-    "region": "NorCal",
-    "phone": "",
-    "website": "",
-    "address": "",
-    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Salty%20Lady%20Sportfishing",
-    "booking_url": "",
-    "trips": 2,
-    "boats": 1,
-    "anglers": 32,
     "fish": 0,
     "fpa": 0
   },
@@ -455,11 +455,11 @@
     "address": "1717 Quivira Rd, San Diego, CA 92109",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=1717%20Quivira%20Rd%2C%20San%20Diego%2C%20CA%2092109",
     "booking_url": "https://www.seaforthlanding.com",
-    "trips": 498,
+    "trips": 500,
     "boats": 13,
-    "anglers": 14533,
-    "fish": 44932,
-    "fpa": 3.09
+    "anglers": 14605,
+    "fish": 44986,
+    "fpa": 3.08
   },
   {
     "landing": "H&M Landing",
@@ -497,11 +497,11 @@
     "address": "315 Harbor Dr S, Oceanside, CA 92054",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=315%20Harbor%20Dr%20S%2C%20Oceanside%2C%20CA%2092054",
     "booking_url": "https://www.oceansideseacenter.com",
-    "trips": 156,
+    "trips": 158,
     "boats": 6,
-    "anglers": 2907,
-    "fish": 18387,
-    "fpa": 6.33
+    "anglers": 2954,
+    "fish": 18715,
+    "fpa": 6.34
   },
   {
     "landing": "Point Loma Sportfishing",
@@ -511,11 +511,11 @@
     "address": "1403 Scott St, San Diego, CA 92106",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=1403%20Scott%20St%2C%20San%20Diego%2C%20CA%2092106",
     "booking_url": "https://www.pointlomasportfishing.com",
-    "trips": 183,
+    "trips": 184,
     "boats": 5,
-    "anglers": 3722,
-    "fish": 12302,
-    "fpa": 3.31
+    "anglers": 3752,
+    "fish": 12336,
+    "fpa": 3.29
   },
   {
     "landing": "California Dawn Sportfishing",
@@ -595,11 +595,11 @@
     "address": "",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Riptide%20Sportfishing",
     "booking_url": "",
-    "trips": 11,
+    "trips": 12,
     "boats": 1,
-    "anglers": 90,
+    "anglers": 108,
     "fish": 726,
-    "fpa": 8.07
+    "fpa": 6.72
   },
   {
     "landing": "Santa Barbara Landing",
@@ -665,10 +665,10 @@
     "address": "204 E 17th St, Costa Mesa, CA 92627",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=204%20E%2017th%20St%2C%20Costa%20Mesa%2C%20CA%2092627",
     "booking_url": "https://hooksupsportfishing.com",
-    "trips": 60,
+    "trips": 61,
     "boats": 3,
-    "anglers": 1479,
-    "fish": 19405,
-    "fpa": 13.12
+    "anglers": 1519,
+    "fish": 20031,
+    "fpa": 13.19
   }
 ]
