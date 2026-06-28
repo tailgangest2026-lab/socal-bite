@@ -456,18 +456,6 @@
     "top_species_3": "Whitefish"
   },
   {
-    "boat": "Native Sun",
-    "landing": "22nd Street Landing",
-    "region": "Los Angeles County",
-    "trips": 49,
-    "anglers": 1430,
-    "fish": 7104,
-    "fpa": 4.97,
-    "top_species_1": "Calico Bass",
-    "top_species_2": "Whitefish",
-    "top_species_3": "Sculpin"
-  },
-  {
     "boat": "Triton",
     "landing": "LA Waterfront Cruises and Sportfishing",
     "region": "Los Angeles County",
@@ -478,6 +466,18 @@
     "top_species_1": "Calico Bass",
     "top_species_2": "Calico Bass Released",
     "top_species_3": "Rockfish"
+  },
+  {
+    "boat": "Native Sun",
+    "landing": "22nd Street Landing",
+    "region": "Los Angeles County",
+    "trips": 50,
+    "anglers": 1457,
+    "fish": 7173,
+    "fpa": 4.92,
+    "top_species_1": "Calico Bass",
+    "top_species_2": "Whitefish",
+    "top_species_3": "Sculpin"
   },
   {
     "boat": "Pescador",
@@ -809,6 +809,18 @@
     "region": "NorCal",
     "trips": 2,
     "anglers": 12,
+    "fish": 0,
+    "fpa": 0,
+    "top_species_1": "",
+    "top_species_2": "",
+    "top_species_3": ""
+  },
+  {
+    "boat": "Hog Heaven",
+    "landing": "Hog Heaven Sportfishing",
+    "region": "NorCal",
+    "trips": 1,
+    "anglers": 21,
     "fish": 0,
     "fpa": 0,
     "top_species_1": "",
@@ -1380,18 +1392,6 @@
     "top_species_3": ""
   },
   {
-    "boat": "Dolphin",
-    "landing": "Fisherman's Landing",
-    "region": "San Diego County",
-    "trips": 143,
-    "anglers": 4734,
-    "fish": 18214,
-    "fpa": 3.85,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Calico Bass Released",
-    "top_species_3": "Calico Bass"
-  },
-  {
     "boat": "Daily Double",
     "landing": "Point Loma Sportfishing",
     "region": "San Diego County",
@@ -1399,6 +1399,18 @@
     "anglers": 1392,
     "fish": 5340,
     "fpa": 3.84,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Calico Bass Released",
+    "top_species_3": "Calico Bass"
+  },
+  {
+    "boat": "Dolphin",
+    "landing": "Fisherman's Landing",
+    "region": "San Diego County",
+    "trips": 145,
+    "anglers": 4824,
+    "fish": 18344,
+    "fpa": 3.8,
     "top_species_1": "Rockfish",
     "top_species_2": "Calico Bass Released",
     "top_species_3": "Calico Bass"
@@ -1767,10 +1779,10 @@
     "boat": "Right Hook",
     "landing": "Right Hook Sportfishing",
     "region": "San Francisco Bay",
-    "trips": 21,
-    "anglers": 111,
-    "fish": 247,
-    "fpa": 2.23,
+    "trips": 22,
+    "anglers": 117,
+    "fish": 249,
+    "fpa": 2.13,
     "top_species_1": "Rockfish",
     "top_species_2": "Lingcod",
     "top_species_3": "Halibut"
