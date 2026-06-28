@@ -255,10 +255,10 @@
     "boat": "Freedom",
     "landing": "22nd Street Landing",
     "region": "Los Angeles County",
-    "trips": 48,
-    "anglers": 1487,
-    "fish": 18894,
-    "fpa": 12.71,
+    "trips": 49,
+    "anglers": 1521,
+    "fish": 18951,
+    "fpa": 12.46,
     "top_species_1": "Whitefish",
     "top_species_2": "Rockfish",
     "top_species_3": "Calico Bass"
@@ -576,18 +576,6 @@
     "top_species_3": "Halibut"
   },
   {
-    "boat": "Outer Limits (Sausalito, CA)",
-    "landing": "Big Cs Charters",
-    "region": "NorCal",
-    "trips": 2,
-    "anglers": 20,
-    "fish": 240,
-    "fpa": 12,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Lingcod",
-    "top_species_3": ""
-  },
-  {
     "boat": "Bigeye",
     "landing": "North Bay Fishing Charters",
     "region": "NorCal",
@@ -667,6 +655,18 @@
     "anglers": 48,
     "fish": 288,
     "fpa": 6,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Lingcod",
+    "top_species_3": ""
+  },
+  {
+    "boat": "Outer Limits (Sausalito, CA)",
+    "landing": "Big Cs Charters",
+    "region": "NorCal",
+    "trips": 3,
+    "anglers": 45,
+    "fish": 240,
+    "fpa": 5.33,
     "top_species_1": "Rockfish",
     "top_species_2": "Lingcod",
     "top_species_3": ""
@@ -1716,18 +1716,6 @@
     "top_species_3": ""
   },
   {
-    "boat": "New Easy Rider",
-    "landing": "Berkeley Charter Boats",
-    "region": "San Francisco Bay",
-    "trips": 1,
-    "anglers": 20,
-    "fish": 214,
-    "fpa": 10.7,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Lingcod",
-    "top_species_3": ""
-  },
-  {
     "boat": "California Dawn",
     "landing": "California Dawn Sportfishing",
     "region": "San Francisco Bay",
@@ -1747,6 +1735,18 @@
     "anglers": 553,
     "fish": 3764,
     "fpa": 6.81,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Lingcod",
+    "top_species_3": ""
+  },
+  {
+    "boat": "New Easy Rider",
+    "landing": "Berkeley Charter Boats",
+    "region": "San Francisco Bay",
+    "trips": 2,
+    "anglers": 48,
+    "fish": 214,
+    "fpa": 4.46,
     "top_species_1": "Rockfish",
     "top_species_2": "Lingcod",
     "top_species_3": ""
@@ -1815,8 +1815,8 @@
     "boat": "Goldeneye 2000",
     "landing": "Berkeley Charter Boats",
     "region": "San Francisco Bay",
-    "trips": 14,
-    "anglers": 217,
+    "trips": 15,
+    "anglers": 237,
     "fish": 0,
     "fpa": 0,
     "top_species_1": "",
