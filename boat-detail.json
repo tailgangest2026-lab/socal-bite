@@ -36,18 +36,6 @@
     "top_species_3": "Halibut"
   },
   {
-    "boat": "KingFish",
-    "landing": "Fish Emeryville",
-    "region": "Alameda County",
-    "trips": 12,
-    "anglers": 194,
-    "fish": 904,
-    "fpa": 4.66,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Lingcod",
-    "top_species_3": "Halibut"
-  },
-  {
     "boat": "C Gull II",
     "landing": "Fish Emeryville",
     "region": "Alameda County",
@@ -55,6 +43,18 @@
     "anglers": 292,
     "fish": 1309,
     "fpa": 4.48,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Lingcod",
+    "top_species_3": "Halibut"
+  },
+  {
+    "boat": "KingFish",
+    "landing": "Fish Emeryville",
+    "region": "Alameda County",
+    "trips": 13,
+    "anglers": 204,
+    "fish": 904,
+    "fpa": 4.43,
     "top_species_1": "Rockfish",
     "top_species_2": "Lingcod",
     "top_species_3": "Halibut"
@@ -399,10 +399,10 @@
     "boat": "Redondo Special",
     "landing": "Redondo Beach Sportfishing",
     "region": "Los Angeles County",
-    "trips": 64,
-    "anglers": 2031,
-    "fish": 12001,
-    "fpa": 5.91,
+    "trips": 65,
+    "anglers": 2071,
+    "fish": 12207,
+    "fpa": 5.89,
     "top_species_1": "Rockfish",
     "top_species_2": "Whitefish",
     "top_species_3": "Sculpin"
@@ -1647,12 +1647,12 @@
     "boat": "Aztec",
     "landing": "Seaforth Sportfishing",
     "region": "San Diego County",
-    "trips": 7,
-    "anglers": 180,
-    "fish": 195,
-    "fpa": 1.08,
-    "top_species_1": "Bluefin Tuna",
-    "top_species_2": "Yellowtail",
+    "trips": 8,
+    "anglers": 201,
+    "fish": 229,
+    "fpa": 1.14,
+    "top_species_1": "Yellowtail",
+    "top_species_2": "Bluefin Tuna",
     "top_species_3": "Bonito"
   },
   {
