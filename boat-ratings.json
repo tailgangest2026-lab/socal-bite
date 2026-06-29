@@ -379,13 +379,24 @@
     "trip_type": "3/4 Day",
     "boat": "Spitfire",
     "landing": "Marina Del Rey Sportfishing",
-    "trips": 41,
-    "anglers": 1034,
-    "fish": 9209,
-    "fpa": 8.91
+    "trips": 42,
+    "anglers": 1062,
+    "fish": 9413,
+    "fpa": 8.86
   },
   {
     "rank": 3,
+    "region": "Los Angeles County",
+    "trip_type": "3/4 Day",
+    "boat": "Betty-O",
+    "landing": "Marina Del Rey Sportfishing",
+    "trips": 34,
+    "anglers": 740,
+    "fish": 4659,
+    "fpa": 6.3
+  },
+  {
+    "rank": 4,
     "region": "Los Angeles County",
     "trip_type": "3/4 Day",
     "boat": "Enterprise",
@@ -396,26 +407,15 @@
     "fpa": 6.23
   },
   {
-    "rank": 4,
-    "region": "Los Angeles County",
-    "trip_type": "3/4 Day",
-    "boat": "Betty-O",
-    "landing": "Marina Del Rey Sportfishing",
-    "trips": 33,
-    "anglers": 703,
-    "fish": 4344,
-    "fpa": 6.18
-  },
-  {
     "rank": 5,
     "region": "Los Angeles County",
     "trip_type": "3/4 Day",
     "boat": "New Del Mar",
     "landing": "Marina Del Rey Sportfishing",
-    "trips": 19,
-    "anglers": 1772,
-    "fish": 10167,
-    "fpa": 5.74
+    "trips": 20,
+    "anglers": 1915,
+    "fish": 10971,
+    "fpa": 5.73
   },
   {
     "rank": 6,
@@ -716,6 +716,17 @@
   },
   {
     "rank": 11,
+    "region": "NorCal",
+    "trip_type": "Full Day",
+    "boat": "Salty Lady",
+    "landing": "Salty Lady Sportfishing",
+    "trips": 5,
+    "anglers": 90,
+    "fish": 0,
+    "fpa": 0
+  },
+  {
+    "rank": 12,
     "region": "NorCal",
     "trip_type": "Full Day",
     "boat": "Argo",
@@ -1149,10 +1160,10 @@
     "trip_type": "1/2 Day PM",
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
-    "trips": 30,
-    "anglers": 1318,
-    "fish": 3822,
-    "fpa": 2.9
+    "trips": 31,
+    "anglers": 1371,
+    "fish": 4002,
+    "fpa": 2.92
   },
   {
     "rank": 4,
@@ -1197,6 +1208,17 @@
     "anglers": 211,
     "fish": 1443,
     "fpa": 6.84
+  },
+  {
+    "rank": 2,
+    "region": "San Diego County",
+    "trip_type": "2 Day",
+    "boat": "Pacific Queen",
+    "landing": "Fisherman's Landing",
+    "trips": 5,
+    "anglers": 132,
+    "fish": 287,
+    "fpa": 2.17
   },
   {
     "rank": 1,
