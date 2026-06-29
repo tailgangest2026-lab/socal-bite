@@ -18,8 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     try {
       const [home, conditions] = await Promise.all([
-        fetchJson("home.json"),
-        fetchJson("conditions.json").catch(() => null)
+        fetchJson("../home.json"),
+        fetchJson("../conditions.json").catch(() => null)
       ]);
 
       removeLoading();
