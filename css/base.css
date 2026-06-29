@@ -218,7 +218,7 @@ main { padding-top: 86px; }
   border-radius: var(--r-2xl);
   background:
     linear-gradient(rgba(3,24,40,0.25), rgba(3,24,40,0.92)),
-    url("/assets/socal-bite-background.png") center / cover no-repeat;
+    url("../assets/socal-bite-background.png") center / cover no-repeat;
   border: 1px solid var(--border-strong);
   box-shadow: var(--shadow-lg), inset 0 1px 0 rgba(255,255,255,0.06);
   position: relative;
@@ -631,7 +631,7 @@ main { padding-top: 86px; }
 .gear-1, .gear-2, .gear-3 {
   background:
     linear-gradient(rgba(3,24,40,0.1), rgba(3,24,40,0.75)),
-    url("assets/socal-bite-background.png") center / cover;
+    url("../assets/socal-bite-background.png") center / cover;
 }
 .gear-card span {
   display: block;
