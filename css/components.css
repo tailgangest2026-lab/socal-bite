@@ -921,3 +921,24 @@ svg.chart,
     gap: 24px;
   }
 }
+.bite-ai-card {
+  background: #071018;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 18px;
+  padding: 18px;
+  margin: 20px 0;
+  color: white;
+}
+
+.bite-ai-card select,
+.bite-ai-card button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.bite-ai-answer {
+  margin-top: 15px;
+  line-height: 1.5;
+}
