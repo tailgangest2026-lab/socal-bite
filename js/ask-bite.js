@@ -18,15 +18,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     try {
       const [home, conditions] = await Promise.all([
-        fetchJson("./data/home.json"),
-        fetchJson("./data/conditions.json").catch(() => null)
+        fetchJson("home.json"),
+        fetchJson("conditions.json").catch(() => null)
       ]);
 
       removeLoading();
+
       const answer = answerBiteQuestion(question, home, conditions);
       addMessage(answer, "bot");
     } catch (error) {
-      console.error(error);
+      console.error("Ask The Bite error:", error);
       removeLoading();
       addMessage("I could not load the latest bite data right now.", "bot");
     }
@@ -47,14 +48,32 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 async function fetchJson(path) {
-  const res = await fetch(path + "?v=" + Date.now());
-  if (!res.ok) throw new Error("Could not load " + path);
+  const cleanPath = String(path).replace(/^\.?\/*data\//, "");
+
+  const url =
+    typeof socalBiteDataUrl === "function"
+      ? socalBiteDataUrl(cleanPath)
+      : cleanPath;
+
+  const separator = url.includes("?") ? "&" : "?";
+  const res = await fetch(url + separator + "v=" + Date.now());
+
+  if (!res.ok) {
+    throw new Error("Could not load " + url);
+  }
+
   return res.json();
 }
 
 function answerBiteQuestion(question, home, conditions) {
   const q = question.toLowerCase();
-  const regions = Array.isArray(home.regions) ? home.regions : [];
+
+  const regions =
+    Array.isArray(home?.regions)
+      ? home.regions
+      : Array.isArray(home)
+        ? home
+        : [];
 
   if (!regions.length) {
     return "I do not see current bite data yet.";
@@ -62,12 +81,16 @@ function answerBiteQuestion(question, home, conditions) {
 
   const ranked = rankRegions(regions, conditions);
 
-  if (q.includes("yellowtail") || q.includes("tail")) {
+  if (q.includes("yellowtail") || q.includes("yellow tail")) {
     return speciesAnswer(ranked, "Yellowtail");
   }
 
   if (q.includes("bluefin") || q.includes("tuna")) {
     return speciesAnswer(ranked, "Bluefin Tuna");
+  }
+
+  if (q.includes("yellowfin")) {
+    return speciesAnswer(ranked, "Yellowfin Tuna");
   }
 
   if (q.includes("rockfish") || q.includes("cod")) {
@@ -82,7 +105,17 @@ function answerBiteQuestion(question, home, conditions) {
     return speciesAnswer(ranked, "Halibut");
   }
 
-  if (q.includes("condition") || q.includes("weather") || q.includes("wind")) {
+  if (q.includes("white seabass") || q.includes("seabass")) {
+    return speciesAnswer(ranked, "White Seabass");
+  }
+
+  if (
+    q.includes("condition") ||
+    q.includes("weather") ||
+    q.includes("wind") ||
+    q.includes("waves") ||
+    q.includes("swell")
+  ) {
     return conditionAnswer(ranked);
   }
 
@@ -106,6 +139,14 @@ function answerBiteQuestion(question, home, conditions) {
     return regionAnswer(ranked, "San Diego County");
   }
 
+  if (q.includes("ventura")) {
+    return regionAnswer(ranked, "Ventura County");
+  }
+
+  if (q.includes("santa barbara")) {
+    return regionAnswer(ranked, "Santa Barbara County");
+  }
+
   if (q.includes("catalina")) {
     return catalinaAnswer(ranked);
   }
@@ -116,13 +157,37 @@ function answerBiteQuestion(question, home, conditions) {
 function rankRegions(regions, conditions) {
   return regions
     .map(region => {
-      const trips = Number(region.trips || 0);
-      const anglers = Number(region.anglers || 0);
-      const fish = Number(region.fish || 0);
+      const regionName =
+        region.region ||
+        region.name ||
+        region.Region ||
+        "Unknown Region";
+
+      const trips = Number(region.trips || region.Trips || 0);
+      const anglers = Number(region.anglers || region.Anglers || 0);
+      const fish = Number(region.fish || region.totalFish || region.Fish || 0);
       const fpa = anglers > 0 ? fish / anglers : 0;
 
-      const condition = findCondition(region.region, conditions);
-      const conditionScore = Number(condition?.score || 0);
+      const topBoat =
+        region.topBoat ||
+        region.top_boat ||
+        region.bestBoat ||
+        "No top boat listed";
+
+      const topLanding =
+        region.topLanding ||
+        region.top_landing ||
+        region.bestLanding ||
+        "No landing listed";
+
+      const topSpecies =
+        region.topSpecies ||
+        region.top_species ||
+        region.bestSpecies ||
+        "Mixed bag";
+
+      const condition = findCondition(regionName, conditions);
+      const conditionScore = Number(condition?.score || condition?.biteScore || 0);
 
       let score = 0;
       score += fpa * 10;
@@ -131,10 +196,10 @@ function rankRegions(regions, conditions) {
       score += fish > 0 ? 10 : 0;
 
       return {
-        name: region.region || "Unknown Region",
-        topBoat: region.topBoat || "No top boat listed",
-        topLanding: region.topLanding || "No landing listed",
-        topSpecies: region.topSpecies || "Mixed bag",
+        name: regionName,
+        topBoat,
+        topLanding,
+        topSpecies,
         trips,
         anglers,
         fish,
@@ -168,7 +233,8 @@ function speciesAnswer(ranked, species) {
   if (!match) {
     return `
       <strong>No clear ${species} leader today.</strong><br>
-      Best overall option is ${ranked[0].name}. Main species showing there: ${ranked[0].topSpecies}.
+      Best overall option is ${ranked[0].name}.<br>
+      Main species showing there: ${ranked[0].topSpecies}.
     `;
   }
 
@@ -206,14 +272,18 @@ function landingAnswer(ranked) {
 
 function conditionAnswer(ranked) {
   const withConditions = ranked
-    .filter(r => r.condition && r.condition.score)
-    .sort((a, b) => Number(b.condition.score) - Number(a.condition.score));
+    .filter(r => r.condition && (r.condition.score || r.condition.biteScore))
+    .sort((a, b) =>
+      Number(b.condition.score || b.condition.biteScore || 0) -
+      Number(a.condition.score || a.condition.biteScore || 0)
+    );
 
   const best = withConditions[0] || ranked[0];
+  const score = best.condition?.score || best.condition?.biteScore || "Not available";
 
   return `
     <strong>Best condition signal: ${best.name}</strong><br>
-    Bite score: ${best.condition?.score || "Not available"}<br>
+    Bite score: ${score}<br>
     Top boat: ${best.topBoat}<br>
     Main species: ${best.topSpecies}
   `;
@@ -262,9 +332,12 @@ function findCondition(regionName, conditions) {
     ? conditions
     : Array.isArray(conditions.rows)
       ? conditions.rows
-      : [];
+      : Array.isArray(conditions.regions)
+        ? conditions.regions
+        : [];
 
-  return rows.find(row =>
-    String(row.region || "").toLowerCase() === String(regionName || "").toLowerCase()
-  );
+  return rows.find(row => {
+    const rowRegion = row.region || row.name || row.Region || "";
+    return String(rowRegion).toLowerCase() === String(regionName).toLowerCase();
+  });
 }
