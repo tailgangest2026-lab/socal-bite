@@ -203,11 +203,11 @@
     "address": "",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Bass%20Tub%20Sportfishing",
     "booking_url": "",
-    "trips": 9,
+    "trips": 10,
     "boats": 1,
-    "anglers": 149,
+    "anglers": 164,
     "fish": 614,
-    "fpa": 4.12
+    "fpa": 3.74
   },
   {
     "landing": "Bodega Bay Sportfishing Center",
@@ -217,11 +217,11 @@
     "address": "",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Bodega%20Bay%20Sportfishing%20Center",
     "booking_url": "",
-    "trips": 6,
+    "trips": 8,
     "boats": 1,
-    "anglers": 50,
+    "anglers": 81,
     "fish": 442,
-    "fpa": 8.84
+    "fpa": 5.46
   },
   {
     "landing": "Golden State Sportfishing",
@@ -231,11 +231,11 @@
     "address": "",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Golden%20State%20Sportfishing",
     "booking_url": "",
-    "trips": 8,
+    "trips": 9,
     "boats": 1,
-    "anglers": 44,
+    "anglers": 48,
     "fish": 288,
-    "fpa": 6.55
+    "fpa": 6
   },
   {
     "landing": "Reel Obsession Sportfishing",
@@ -259,11 +259,11 @@
     "address": "",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Big%20Cs%20Charters",
     "booking_url": "",
-    "trips": 4,
+    "trips": 5,
     "boats": 1,
-    "anglers": 70,
+    "anglers": 85,
     "fish": 240,
-    "fpa": 3.43
+    "fpa": 2.82
   },
   {
     "landing": "North Bay Fishing Charters",
@@ -336,6 +336,20 @@
     "fpa": 0
   },
   {
+    "landing": "Argo Sportfishing",
+    "region": "NorCal",
+    "phone": "",
+    "website": "",
+    "address": "",
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Argo%20Sportfishing",
+    "booking_url": "",
+    "trips": 8,
+    "boats": 1,
+    "anglers": 35,
+    "fish": 0,
+    "fpa": 0
+  },
+  {
     "landing": "Telstar Charters",
     "region": "NorCal",
     "phone": "",
@@ -346,20 +360,6 @@
     "trips": 7,
     "boats": 1,
     "anglers": 93,
-    "fish": 0,
-    "fpa": 0
-  },
-  {
-    "landing": "Argo Sportfishing",
-    "region": "NorCal",
-    "phone": "",
-    "website": "",
-    "address": "",
-    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Argo%20Sportfishing",
-    "booking_url": "",
-    "trips": 7,
-    "boats": 1,
-    "anglers": 29,
     "fish": 0,
     "fpa": 0
   },
@@ -416,6 +416,34 @@
     "trips": 2,
     "boats": 1,
     "anglers": 12,
+    "fish": 0,
+    "fpa": 0
+  },
+  {
+    "landing": "New Captain Pete",
+    "region": "NorCal",
+    "phone": "",
+    "website": "",
+    "address": "",
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=New%20Captain%20Pete",
+    "booking_url": "",
+    "trips": 1,
+    "boats": 1,
+    "anglers": 6,
+    "fish": 0,
+    "fpa": 0
+  },
+  {
+    "landing": "Dragon Sportfishing",
+    "region": "NorCal",
+    "phone": "",
+    "website": "",
+    "address": "",
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Dragon%20Sportfishing",
+    "booking_url": "",
+    "trips": 1,
+    "boats": 1,
+    "anglers": 6,
     "fish": 0,
     "fpa": 0
   },
@@ -567,11 +595,11 @@
     "address": "",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Berkeley%20Charter%20Boats",
     "booking_url": "",
-    "trips": 19,
+    "trips": 20,
     "boats": 2,
-    "anglers": 333,
+    "anglers": 353,
     "fish": 214,
-    "fpa": 0.64
+    "fpa": 0.61
   },
   {
     "landing": "Reel Addiction Sportfishing",
@@ -623,11 +651,11 @@
     "address": "301 W Cabrillo Blvd, Santa Barbara, CA 93101",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=301%20W%20Cabrillo%20Blvd%2C%20Santa%20Barbara%2C%20CA%2093101",
     "booking_url": "https://sblanding.com",
-    "trips": 170,
+    "trips": 172,
     "boats": 2,
-    "anglers": 4075,
-    "fish": 56481,
-    "fpa": 13.86
+    "anglers": 4129,
+    "fish": 56862,
+    "fpa": 13.77
   },
   {
     "landing": "Ventura Harbor Sportfishing",

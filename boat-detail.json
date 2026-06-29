@@ -600,18 +600,6 @@
     "top_species_3": ""
   },
   {
-    "boat": "Surf Scooter",
-    "landing": "Bodega Bay Sportfishing Center",
-    "region": "NorCal",
-    "trips": 6,
-    "anglers": 50,
-    "fish": 442,
-    "fpa": 8.84,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Lingcod",
-    "top_species_3": ""
-  },
-  {
     "boat": "Queen of Hearts",
     "landing": "Half Moon Bay Sportfishing",
     "region": "NorCal",
@@ -619,18 +607,6 @@
     "anglers": 416,
     "fish": 3572,
     "fpa": 8.59,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Lingcod",
-    "top_species_3": ""
-  },
-  {
-    "boat": "Golden State Sportfishing",
-    "landing": "Golden State Sportfishing",
-    "region": "NorCal",
-    "trips": 8,
-    "anglers": 44,
-    "fish": 288,
-    "fpa": 6.55,
     "top_species_1": "Rockfish",
     "top_species_2": "Lingcod",
     "top_species_3": ""
@@ -648,6 +624,18 @@
     "top_species_3": ""
   },
   {
+    "boat": "Golden State Sportfishing",
+    "landing": "Golden State Sportfishing",
+    "region": "NorCal",
+    "trips": 9,
+    "anglers": 48,
+    "fish": 288,
+    "fpa": 6,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Lingcod",
+    "top_species_3": ""
+  },
+  {
     "boat": "Dragonfly",
     "landing": "Reel Obsession Sportfishing",
     "region": "NorCal",
@@ -655,6 +643,18 @@
     "anglers": 48,
     "fish": 288,
     "fpa": 6,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Lingcod",
+    "top_species_3": ""
+  },
+  {
+    "boat": "Surf Scooter",
+    "landing": "Bodega Bay Sportfishing Center",
+    "region": "NorCal",
+    "trips": 8,
+    "anglers": 81,
+    "fish": 442,
+    "fpa": 5.46,
     "top_species_1": "Rockfish",
     "top_species_2": "Lingcod",
     "top_species_3": ""
@@ -672,18 +672,6 @@
     "top_species_3": ""
   },
   {
-    "boat": "Bass-Tub",
-    "landing": "Bass Tub Sportfishing",
-    "region": "NorCal",
-    "trips": 9,
-    "anglers": 149,
-    "fish": 614,
-    "fpa": 4.12,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Lingcod",
-    "top_species_3": "Sand Bass"
-  },
-  {
     "boat": "Barbarossa",
     "landing": "Barbarossa Fishing",
     "region": "NorCal",
@@ -694,6 +682,18 @@
     "top_species_1": "Rockfish",
     "top_species_2": "",
     "top_species_3": ""
+  },
+  {
+    "boat": "Bass-Tub",
+    "landing": "Bass Tub Sportfishing",
+    "region": "NorCal",
+    "trips": 10,
+    "anglers": 164,
+    "fish": 614,
+    "fpa": 3.74,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Lingcod",
+    "top_species_3": "Sand Bass"
   },
   {
     "boat": "Pacific Dream",
@@ -711,10 +711,10 @@
     "boat": "Outer Limits (Sausalito, CA)",
     "landing": "Big Cs Charters",
     "region": "NorCal",
-    "trips": 4,
-    "anglers": 70,
+    "trips": 5,
+    "anglers": 85,
     "fish": 240,
-    "fpa": 3.43,
+    "fpa": 2.82,
     "top_species_1": "Rockfish",
     "top_species_2": "Lingcod",
     "top_species_3": ""
@@ -756,11 +756,11 @@
     "top_species_3": ""
   },
   {
-    "boat": "Telstar",
-    "landing": "Telstar Charters",
+    "boat": "Argo",
+    "landing": "Argo Sportfishing",
     "region": "NorCal",
-    "trips": 7,
-    "anglers": 93,
+    "trips": 8,
+    "anglers": 35,
     "fish": 0,
     "fpa": 0,
     "top_species_1": "",
@@ -768,11 +768,11 @@
     "top_species_3": ""
   },
   {
-    "boat": "Argo",
-    "landing": "Argo Sportfishing",
+    "boat": "Telstar",
+    "landing": "Telstar Charters",
     "region": "NorCal",
     "trips": 7,
-    "anglers": 29,
+    "anglers": 93,
     "fish": 0,
     "fpa": 0,
     "top_species_1": "",
@@ -821,6 +821,30 @@
     "region": "NorCal",
     "trips": 2,
     "anglers": 12,
+    "fish": 0,
+    "fpa": 0,
+    "top_species_1": "",
+    "top_species_2": "",
+    "top_species_3": ""
+  },
+  {
+    "boat": "New Captain Pete",
+    "landing": "New Captain Pete",
+    "region": "NorCal",
+    "trips": 1,
+    "anglers": 6,
+    "fish": 0,
+    "fpa": 0,
+    "top_species_1": "",
+    "top_species_2": "",
+    "top_species_3": ""
+  },
+  {
+    "boat": "Dragon",
+    "landing": "Dragon Sportfishing",
+    "region": "NorCal",
+    "trips": 1,
+    "anglers": 6,
     "fish": 0,
     "fpa": 0,
     "top_species_1": "",
@@ -1764,18 +1788,6 @@
     "top_species_3": "Barracuda"
   },
   {
-    "boat": "New Easy Rider",
-    "landing": "Berkeley Charter Boats",
-    "region": "San Francisco Bay",
-    "trips": 3,
-    "anglers": 76,
-    "fish": 214,
-    "fpa": 2.82,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Lingcod",
-    "top_species_3": ""
-  },
-  {
     "boat": "Reel Addiction 1",
     "landing": "Reel Addiction Sportfishing",
     "region": "San Francisco Bay",
@@ -1783,6 +1795,18 @@
     "anglers": 54,
     "fish": 146,
     "fpa": 2.7,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Lingcod",
+    "top_species_3": ""
+  },
+  {
+    "boat": "New Easy Rider",
+    "landing": "Berkeley Charter Boats",
+    "region": "San Francisco Bay",
+    "trips": 4,
+    "anglers": 96,
+    "fish": 214,
+    "fpa": 2.23,
     "top_species_1": "Rockfish",
     "top_species_2": "Lingcod",
     "top_species_3": ""
@@ -1851,10 +1875,10 @@
     "boat": "Coral Sea",
     "landing": "Santa Barbara Landing",
     "region": "Santa Barbara County",
-    "trips": 82,
-    "anglers": 1917,
-    "fish": 27619,
-    "fpa": 14.41,
+    "trips": 83,
+    "anglers": 1938,
+    "fish": 27799,
+    "fpa": 14.34,
     "top_species_1": "Rockfish",
     "top_species_2": "Whitefish",
     "top_species_3": "Lingcod"
@@ -1863,10 +1887,10 @@
     "boat": "Stardust",
     "landing": "Santa Barbara Landing",
     "region": "Santa Barbara County",
-    "trips": 88,
-    "anglers": 2158,
-    "fish": 28862,
-    "fpa": 13.37,
+    "trips": 89,
+    "anglers": 2191,
+    "fish": 29063,
+    "fpa": 13.26,
     "top_species_1": "Rockfish",
     "top_species_2": "Whitefish",
     "top_species_3": "Lingcod"
