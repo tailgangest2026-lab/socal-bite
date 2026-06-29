@@ -110,15 +110,6 @@
   {
     "rank": 2,
     "region": "NorCal",
-    "landing": "Bodega Bay Sportfishing Center",
-    "trips": 6,
-    "anglers": 50,
-    "fish": 442,
-    "fpa": 8.84
-  },
-  {
-    "rank": 3,
-    "region": "NorCal",
     "landing": "Half Moon Bay Sportfishing",
     "trips": 22,
     "anglers": 416,
@@ -126,16 +117,7 @@
     "fpa": 8.59
   },
   {
-    "rank": 4,
-    "region": "NorCal",
-    "landing": "Golden State Sportfishing",
-    "trips": 8,
-    "anglers": 44,
-    "fish": 288,
-    "fpa": 6.55
-  },
-  {
-    "rank": 5,
+    "rank": 3,
     "region": "NorCal",
     "landing": "Santa Cruz Coastal Fishing Charters",
     "trips": 4,
@@ -144,7 +126,16 @@
     "fpa": 6.14
   },
   {
-    "rank": 6,
+    "rank": 4,
+    "region": "NorCal",
+    "landing": "Golden State Sportfishing",
+    "trips": 9,
+    "anglers": 48,
+    "fish": 288,
+    "fpa": 6
+  },
+  {
+    "rank": 5,
     "region": "NorCal",
     "landing": "Reel Obsession Sportfishing",
     "trips": 8,
@@ -153,7 +144,7 @@
     "fpa": 6
   },
   {
-    "rank": 7,
+    "rank": 6,
     "region": "NorCal",
     "landing": "North Bay Fishing Charters",
     "trips": 7,
@@ -162,16 +153,16 @@
     "fpa": 5.58
   },
   {
-    "rank": 8,
+    "rank": 7,
     "region": "NorCal",
-    "landing": "Bass Tub Sportfishing",
-    "trips": 9,
-    "anglers": 149,
-    "fish": 614,
-    "fpa": 4.12
+    "landing": "Bodega Bay Sportfishing Center",
+    "trips": 8,
+    "anglers": 81,
+    "fish": 442,
+    "fpa": 5.46
   },
   {
-    "rank": 9,
+    "rank": 8,
     "region": "NorCal",
     "landing": "Barbarossa Fishing",
     "trips": 6,
@@ -180,13 +171,22 @@
     "fpa": 4.09
   },
   {
+    "rank": 9,
+    "region": "NorCal",
+    "landing": "Bass Tub Sportfishing",
+    "trips": 10,
+    "anglers": 164,
+    "fish": 614,
+    "fpa": 3.74
+  },
+  {
     "rank": 10,
     "region": "NorCal",
     "landing": "Big Cs Charters",
-    "trips": 4,
-    "anglers": 70,
+    "trips": 5,
+    "anglers": 85,
     "fish": 240,
-    "fpa": 3.43
+    "fpa": 2.82
   },
   {
     "rank": 11,
@@ -218,18 +218,18 @@
   {
     "rank": 14,
     "region": "NorCal",
-    "landing": "Telstar Charters",
-    "trips": 7,
-    "anglers": 93,
+    "landing": "Argo Sportfishing",
+    "trips": 8,
+    "anglers": 35,
     "fish": 0,
     "fpa": 0
   },
   {
     "rank": 15,
     "region": "NorCal",
-    "landing": "Argo Sportfishing",
+    "landing": "Telstar Charters",
     "trips": 7,
-    "anglers": 29,
+    "anglers": 93,
     "fish": 0,
     "fpa": 0
   },
@@ -266,6 +266,15 @@
     "landing": "Fort Bragg Fishing",
     "trips": 2,
     "anglers": 12,
+    "fish": 0,
+    "fpa": 0
+  },
+  {
+    "rank": 20,
+    "region": "NorCal",
+    "landing": "New Captain Pete",
+    "trips": 1,
+    "anglers": 6,
     "fish": 0,
     "fpa": 0
   },
@@ -372,10 +381,10 @@
     "rank": 4,
     "region": "San Francisco Bay",
     "landing": "Berkeley Charter Boats",
-    "trips": 19,
-    "anglers": 333,
+    "trips": 20,
+    "anglers": 353,
     "fish": 214,
-    "fpa": 0.64
+    "fpa": 0.61
   },
   {
     "rank": 5,
@@ -399,10 +408,10 @@
     "rank": 1,
     "region": "Santa Barbara County",
     "landing": "Santa Barbara Landing",
-    "trips": 170,
-    "anglers": 4075,
-    "fish": 56481,
-    "fpa": 13.86
+    "trips": 172,
+    "anglers": 4129,
+    "fish": 56862,
+    "fpa": 13.77
   },
   {
     "rank": 1,

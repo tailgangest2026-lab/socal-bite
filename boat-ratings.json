@@ -619,17 +619,6 @@
     "rank": 2,
     "region": "NorCal",
     "trip_type": "Full Day",
-    "boat": "Surf Scooter",
-    "landing": "Bodega Bay Sportfishing Center",
-    "trips": 6,
-    "anglers": 50,
-    "fish": 442,
-    "fpa": 8.84
-  },
-  {
-    "rank": 3,
-    "region": "NorCal",
-    "trip_type": "Full Day",
     "boat": "Queen of Hearts",
     "landing": "Half Moon Bay Sportfishing",
     "trips": 22,
@@ -638,18 +627,18 @@
     "fpa": 8.59
   },
   {
-    "rank": 4,
+    "rank": 3,
     "region": "NorCal",
     "trip_type": "Full Day",
     "boat": "Golden State Sportfishing",
     "landing": "Golden State Sportfishing",
-    "trips": 8,
-    "anglers": 44,
+    "trips": 9,
+    "anglers": 48,
     "fish": 288,
-    "fpa": 6.55
+    "fpa": 6
   },
   {
-    "rank": 5,
+    "rank": 4,
     "region": "NorCal",
     "trip_type": "Full Day",
     "boat": "Dragonfly",
@@ -658,6 +647,17 @@
     "anglers": 48,
     "fish": 288,
     "fpa": 6
+  },
+  {
+    "rank": 5,
+    "region": "NorCal",
+    "trip_type": "Full Day",
+    "boat": "Surf Scooter",
+    "landing": "Bodega Bay Sportfishing Center",
+    "trips": 8,
+    "anglers": 81,
+    "fish": 442,
+    "fpa": 5.46
   },
   {
     "rank": 6,
@@ -676,10 +676,10 @@
     "trip_type": "Full Day",
     "boat": "Bass-Tub",
     "landing": "Bass Tub Sportfishing",
-    "trips": 9,
-    "anglers": 149,
+    "trips": 10,
+    "anglers": 164,
     "fish": 614,
-    "fpa": 4.12
+    "fpa": 3.74
   },
   {
     "rank": 8,
@@ -696,6 +696,17 @@
     "rank": 9,
     "region": "NorCal",
     "trip_type": "Full Day",
+    "boat": "Outer Limits (Sausalito, CA)",
+    "landing": "Big Cs Charters",
+    "trips": 5,
+    "anglers": 85,
+    "fish": 240,
+    "fpa": 2.82
+  },
+  {
+    "rank": 10,
+    "region": "NorCal",
+    "trip_type": "Full Day",
     "boat": "Happy Hooker",
     "landing": "Happy Hooker Sportfishing",
     "trips": 11,
@@ -704,7 +715,7 @@
     "fpa": 0.38
   },
   {
-    "rank": 10,
+    "rank": 11,
     "region": "NorCal",
     "trip_type": "Full Day",
     "boat": "Sea Weasel II",
@@ -715,24 +726,24 @@
     "fpa": 0
   },
   {
-    "rank": 11,
+    "rank": 12,
+    "region": "NorCal",
+    "trip_type": "Full Day",
+    "boat": "Argo",
+    "landing": "Argo Sportfishing",
+    "trips": 6,
+    "anglers": 23,
+    "fish": 0,
+    "fpa": 0
+  },
+  {
+    "rank": 13,
     "region": "NorCal",
     "trip_type": "Full Day",
     "boat": "Salty Lady",
     "landing": "Salty Lady Sportfishing",
     "trips": 5,
     "anglers": 90,
-    "fish": 0,
-    "fpa": 0
-  },
-  {
-    "rank": 12,
-    "region": "NorCal",
-    "trip_type": "Full Day",
-    "boat": "Argo",
-    "landing": "Argo Sportfishing",
-    "trips": 5,
-    "anglers": 17,
     "fish": 0,
     "fpa": 0
   },
@@ -1523,10 +1534,10 @@
     "trip_type": "3/4 Day",
     "boat": "Coral Sea",
     "landing": "Santa Barbara Landing",
-    "trips": 41,
-    "anglers": 985,
-    "fish": 14347,
-    "fpa": 14.57
+    "trips": 42,
+    "anglers": 1006,
+    "fish": 14527,
+    "fpa": 14.44
   },
   {
     "rank": 2,
@@ -1534,10 +1545,10 @@
     "trip_type": "3/4 Day",
     "boat": "Stardust",
     "landing": "Santa Barbara Landing",
-    "trips": 42,
-    "anglers": 1065,
-    "fish": 15404,
-    "fpa": 14.46
+    "trips": 43,
+    "anglers": 1098,
+    "fish": 15605,
+    "fpa": 14.21
   },
   {
     "rank": 1,
