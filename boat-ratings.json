@@ -148,10 +148,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Avenger",
     "landing": "Morro Bay Landing",
-    "trips": 25,
-    "anglers": 566,
-    "fish": 4623,
-    "fpa": 8.17
+    "trips": 26,
+    "anglers": 602,
+    "fish": 4913,
+    "fpa": 8.16
   },
   {
     "rank": 2,
@@ -159,10 +159,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Starfire",
     "landing": "Morro Bay Landing",
-    "trips": 8,
-    "anglers": 123,
-    "fish": 889,
-    "fpa": 7.23
+    "trips": 9,
+    "anglers": 135,
+    "fish": 983,
+    "fpa": 7.28
   },
   {
     "rank": 3,
@@ -192,8 +192,8 @@
     "trip_type": "1/2 Day AM",
     "boat": "Flying Fish",
     "landing": "Patriot Sportfishing",
-    "trips": 36,
-    "anglers": 614,
+    "trips": 37,
+    "anglers": 628,
     "fish": 89,
     "fpa": 0.14
   },
@@ -619,23 +619,23 @@
     "rank": 2,
     "region": "NorCal",
     "trip_type": "Full Day",
-    "boat": "Queen of Hearts",
-    "landing": "Half Moon Bay Sportfishing",
-    "trips": 21,
-    "anglers": 399,
-    "fish": 3572,
-    "fpa": 8.95
-  },
-  {
-    "rank": 3,
-    "region": "NorCal",
-    "trip_type": "Full Day",
     "boat": "Surf Scooter",
     "landing": "Bodega Bay Sportfishing Center",
     "trips": 6,
     "anglers": 50,
     "fish": 442,
     "fpa": 8.84
+  },
+  {
+    "rank": 3,
+    "region": "NorCal",
+    "trip_type": "Full Day",
+    "boat": "Queen of Hearts",
+    "landing": "Half Moon Bay Sportfishing",
+    "trips": 22,
+    "anglers": 416,
+    "fish": 3572,
+    "fpa": 8.59
   },
   {
     "rank": 4,
