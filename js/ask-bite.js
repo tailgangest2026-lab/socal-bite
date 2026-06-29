@@ -1,0 +1,270 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("askBiteForm");
+  const input = document.getElementById("askBiteInput");
+  const messages = document.getElementById("askBiteMessages");
+
+  if (!form || !input || !messages) return;
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const question = input.value.trim();
+    if (!question) return;
+
+    addMessage(question, "user");
+    input.value = "";
+
+    addMessage("Checking the bite...", "bot loading");
+
+    try {
+      const [home, conditions] = await Promise.all([
+        fetchJson("./data/home.json"),
+        fetchJson("./data/conditions.json").catch(() => null)
+      ]);
+
+      removeLoading();
+      const answer = answerBiteQuestion(question, home, conditions);
+      addMessage(answer, "bot");
+    } catch (error) {
+      console.error(error);
+      removeLoading();
+      addMessage("I could not load the latest bite data right now.", "bot");
+    }
+  });
+
+  function addMessage(text, type) {
+    const div = document.createElement("div");
+    div.className = `bite-message ${type}`;
+    div.innerHTML = text;
+    messages.appendChild(div);
+    messages.scrollTop = messages.scrollHeight;
+  }
+
+  function removeLoading() {
+    const loading = messages.querySelector(".loading");
+    if (loading) loading.remove();
+  }
+});
+
+async function fetchJson(path) {
+  const res = await fetch(path + "?v=" + Date.now());
+  if (!res.ok) throw new Error("Could not load " + path);
+  return res.json();
+}
+
+function answerBiteQuestion(question, home, conditions) {
+  const q = question.toLowerCase();
+  const regions = Array.isArray(home.regions) ? home.regions : [];
+
+  if (!regions.length) {
+    return "I do not see current bite data yet.";
+  }
+
+  const ranked = rankRegions(regions, conditions);
+
+  if (q.includes("yellowtail") || q.includes("tail")) {
+    return speciesAnswer(ranked, "Yellowtail");
+  }
+
+  if (q.includes("bluefin") || q.includes("tuna")) {
+    return speciesAnswer(ranked, "Bluefin Tuna");
+  }
+
+  if (q.includes("rockfish") || q.includes("cod")) {
+    return speciesAnswer(ranked, "Rockfish");
+  }
+
+  if (q.includes("calico") || q.includes("bass")) {
+    return speciesAnswer(ranked, "Calico Bass");
+  }
+
+  if (q.includes("halibut")) {
+    return speciesAnswer(ranked, "Halibut");
+  }
+
+  if (q.includes("condition") || q.includes("weather") || q.includes("wind")) {
+    return conditionAnswer(ranked);
+  }
+
+  if (q.includes("boat")) {
+    return boatAnswer(ranked);
+  }
+
+  if (q.includes("landing") || q.includes("kid") || q.includes("family")) {
+    return landingAnswer(ranked);
+  }
+
+  if (q.includes("la") || q.includes("los angeles")) {
+    return regionAnswer(ranked, "Los Angeles County");
+  }
+
+  if (q.includes("orange") || q.includes("oc")) {
+    return regionAnswer(ranked, "Orange County");
+  }
+
+  if (q.includes("san diego")) {
+    return regionAnswer(ranked, "San Diego County");
+  }
+
+  if (q.includes("catalina")) {
+    return catalinaAnswer(ranked);
+  }
+
+  return bestOverallAnswer(ranked);
+}
+
+function rankRegions(regions, conditions) {
+  return regions
+    .map(region => {
+      const trips = Number(region.trips || 0);
+      const anglers = Number(region.anglers || 0);
+      const fish = Number(region.fish || 0);
+      const fpa = anglers > 0 ? fish / anglers : 0;
+
+      const condition = findCondition(region.region, conditions);
+      const conditionScore = Number(condition?.score || 0);
+
+      let score = 0;
+      score += fpa * 10;
+      score += trips * 2;
+      score += conditionScore;
+      score += fish > 0 ? 10 : 0;
+
+      return {
+        name: region.region || "Unknown Region",
+        topBoat: region.topBoat || "No top boat listed",
+        topLanding: region.topLanding || "No landing listed",
+        topSpecies: region.topSpecies || "Mixed bag",
+        trips,
+        anglers,
+        fish,
+        fpa,
+        score,
+        condition
+      };
+    })
+    .sort((a, b) => b.score - a.score);
+}
+
+function bestOverallAnswer(ranked) {
+  const best = ranked[0];
+  const second = ranked[1];
+
+  return `
+    <strong>Best overall bite: ${best.name}</strong><br>
+    Top boat: ${best.topBoat}<br>
+    Top landing: ${best.topLanding}<br>
+    Main species: ${best.topSpecies}<br>
+    Fish per angler: ${best.fpa.toFixed(2)}<br><br>
+    ${second ? `Backup pick: ${second.name}.` : ""}
+  `;
+}
+
+function speciesAnswer(ranked, species) {
+  const match = ranked.find(r =>
+    String(r.topSpecies).toLowerCase().includes(species.toLowerCase())
+  );
+
+  if (!match) {
+    return `
+      <strong>No clear ${species} leader today.</strong><br>
+      Best overall option is ${ranked[0].name}. Main species showing there: ${ranked[0].topSpecies}.
+    `;
+  }
+
+  return `
+    <strong>Best ${species} shot: ${match.name}</strong><br>
+    Top boat: ${match.topBoat}<br>
+    Top landing: ${match.topLanding}<br>
+    Fish per angler: ${match.fpa.toFixed(2)}
+  `;
+}
+
+function boatAnswer(ranked) {
+  const best = ranked[0];
+
+  return `
+    <strong>Hottest boat signal: ${best.topBoat}</strong><br>
+    Region: ${best.name}<br>
+    Landing: ${best.topLanding}<br>
+    Main species: ${best.topSpecies}<br>
+    Fish per angler: ${best.fpa.toFixed(2)}
+  `;
+}
+
+function landingAnswer(ranked) {
+  const best = ranked[0];
+
+  return `
+    <strong>Best landing to check first: ${best.topLanding}</strong><br>
+    Region: ${best.name}<br>
+    Top boat: ${best.topBoat}<br>
+    Main species: ${best.topSpecies}<br><br>
+    For kids or family trips, look for 1/2 day or 3/4 day options before booking.
+  `;
+}
+
+function conditionAnswer(ranked) {
+  const withConditions = ranked
+    .filter(r => r.condition && r.condition.score)
+    .sort((a, b) => Number(b.condition.score) - Number(a.condition.score));
+
+  const best = withConditions[0] || ranked[0];
+
+  return `
+    <strong>Best condition signal: ${best.name}</strong><br>
+    Bite score: ${best.condition?.score || "Not available"}<br>
+    Top boat: ${best.topBoat}<br>
+    Main species: ${best.topSpecies}
+  `;
+}
+
+function regionAnswer(ranked, regionName) {
+  const match = ranked.find(r =>
+    r.name.toLowerCase() === regionName.toLowerCase()
+  );
+
+  if (!match) {
+    return `I do not see current data for ${regionName}.`;
+  }
+
+  return `
+    <strong>${match.name} bite check</strong><br>
+    Top boat: ${match.topBoat}<br>
+    Top landing: ${match.topLanding}<br>
+    Main species: ${match.topSpecies}<br>
+    Fish per angler: ${match.fpa.toFixed(2)}
+  `;
+}
+
+function catalinaAnswer(ranked) {
+  const la = ranked.find(r => r.name.toLowerCase().includes("los angeles"));
+  const oc = ranked.find(r => r.name.toLowerCase().includes("orange"));
+
+  const best = [la, oc].filter(Boolean).sort((a, b) => b.score - a.score)[0];
+
+  if (!best) {
+    return "I do not see enough Catalina-area data right now.";
+  }
+
+  return `
+    <strong>Catalina-style pick: ${best.name}</strong><br>
+    Check boats from ${best.topLanding}.<br>
+    Top boat signal: ${best.topBoat}<br>
+    Main species: ${best.topSpecies}
+  `;
+}
+
+function findCondition(regionName, conditions) {
+  if (!conditions) return null;
+
+  const rows = Array.isArray(conditions)
+    ? conditions
+    : Array.isArray(conditions.rows)
+      ? conditions.rows
+      : [];
+
+  return rows.find(row =>
+    String(row.region || "").toLowerCase() === String(regionName || "").toLowerCase()
+  );
+}
