@@ -130,51 +130,37 @@ function buildRegionTabs() {
 }
 
 function buildDateList() {
-  const container = document.getElementById("reportDateList");
-  if (!container) return;
+  const select = document.getElementById("reportDateSelect");
+  if (!select) return;
 
   const urlDate = getParam("date");
 
-  container.innerHTML = reportIndex.map((report, index) => {
+  select.innerHTML = reportIndex.map((report, index) => {
     const label = formatDisplayDate(report.date);
-    const isActive =
+    const isSelected =
       report.date === urlDate || (!urlDate && index === 0);
 
     return `
-      <button
-        class="report-date-card ${isActive ? "active" : ""}"
-        type="button"
-        data-date="${safeAttr(report.date)}"
+      <option
+        value="${safeAttr(report.date)}"
+        ${isSelected ? "selected" : ""}
       >
-        <span class="report-date-icon">▣</span>
-        <span>
-          <strong>${safe(label)}</strong>
-          <small>${safe(report.date)}</small>
-        </span>
-        <b>›</b>
-      </button>
+        ${safe(label)} — ${safe(report.date)}
+      </option>
     `;
   }).join("");
 
-  container.querySelectorAll(".report-date-card").forEach(button => {
-    button.addEventListener("click", () => {
-      container
-        .querySelectorAll(".report-date-card")
-        .forEach(btn => btn.classList.remove("active"));
+  select.addEventListener("change", () => {
+    const date = select.value;
+    const report = reportIndex.find(item => item.date === date);
 
-      button.classList.add("active");
+    if (report) {
+      const newUrl =
+        `${window.location.pathname}?date=${encodeURIComponent(report.date)}`;
 
-      const date = button.dataset.date;
-      const report = reportIndex.find(item => item.date === date);
-
-      if (report) {
-        const newUrl =
-          `${window.location.pathname}?date=${encodeURIComponent(report.date)}`;
-
-        window.history.pushState({}, "", newUrl);
-        loadReport(report);
-      }
-    });
+      window.history.pushState({}, "", newUrl);
+      loadReport(report);
+    }
   });
 }
 
