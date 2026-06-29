@@ -36,18 +36,6 @@
     "top_species_3": "Halibut"
   },
   {
-    "boat": "KingFish",
-    "landing": "Fish Emeryville",
-    "region": "Alameda County",
-    "trips": 14,
-    "anglers": 214,
-    "fish": 904,
-    "fpa": 4.22,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Lingcod",
-    "top_species_3": "Halibut"
-  },
-  {
     "boat": "C Gull II",
     "landing": "Fish Emeryville",
     "region": "Alameda County",
@@ -55,6 +43,18 @@
     "anglers": 326,
     "fish": 1309,
     "fpa": 4.02,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Lingcod",
+    "top_species_3": "Halibut"
+  },
+  {
+    "boat": "KingFish",
+    "landing": "Fish Emeryville",
+    "region": "Alameda County",
+    "trips": 15,
+    "anglers": 231,
+    "fish": 904,
+    "fpa": 3.91,
     "top_species_1": "Rockfish",
     "top_species_2": "Lingcod",
     "top_species_3": "Halibut"
@@ -696,18 +696,6 @@
     "top_species_3": ""
   },
   {
-    "boat": "Pacific Dream",
-    "landing": "Happy Hooker Sportfishing",
-    "region": "NorCal",
-    "trips": 11,
-    "anglers": 244,
-    "fish": 892,
-    "fpa": 3.66,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Lingcod",
-    "top_species_3": "Halibut"
-  },
-  {
     "boat": "Bass-Tub",
     "landing": "Bass Tub Sportfishing",
     "region": "NorCal",
@@ -718,6 +706,18 @@
     "top_species_1": "Rockfish",
     "top_species_2": "Lingcod",
     "top_species_3": "Sand Bass"
+  },
+  {
+    "boat": "Pacific Dream",
+    "landing": "Happy Hooker Sportfishing",
+    "region": "NorCal",
+    "trips": 12,
+    "anglers": 267,
+    "fish": 892,
+    "fpa": 3.34,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Lingcod",
+    "top_species_3": "Halibut"
   },
   {
     "boat": "Outer Limits (Sausalito, CA)",
@@ -1347,10 +1347,10 @@
     "boat": "Sea Watch",
     "landing": "Seaforth Sportfishing",
     "region": "San Diego County",
-    "trips": 51,
-    "anglers": 1219,
-    "fish": 5395,
-    "fpa": 4.43,
+    "trips": 52,
+    "anglers": 1238,
+    "fish": 5569,
+    "fpa": 4.5,
     "top_species_1": "Calico Bass Released",
     "top_species_2": "Calico Bass",
     "top_species_3": "Rockfish"
