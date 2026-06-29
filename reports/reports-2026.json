@@ -353,6 +353,16 @@
     "trip_date": "2026-06-28",
     "region": "Los Angeles County",
     "landing": "Long Beach Sportfishing",
+    "boat": "El Patron",
+    "trip_type": "Full Day",
+    "anglers": 21,
+    "fish_counts": "2 Barracuda, 54 Bonito, 105 Calico Bass, 4 Sheephead, 17 Whitefish, 4 Yellowtail",
+    "total_fish": 186
+  },
+  {
+    "trip_date": "2026-06-28",
+    "region": "Los Angeles County",
+    "landing": "Long Beach Sportfishing",
     "boat": "Eldorado",
     "trip_type": "Overnight",
     "anglers": 23,
@@ -546,6 +556,16 @@
     "boat": "New Rayann",
     "trip_type": "Full Day",
     "anglers": 21,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-06-28",
+    "region": "Marin County",
+    "landing": "New Rayann Sportfishing",
+    "boat": "New Rayann",
+    "trip_type": "Full Day",
+    "anglers": 20,
     "fish_counts": "",
     "total_fish": 0
   },
@@ -953,11 +973,31 @@
     "trip_date": "2026-06-28",
     "region": "San Diego County",
     "landing": "Fisherman's Landing",
+    "boat": "Pacific Dawn",
+    "trip_type": "1.5 Day",
+    "anglers": 15,
+    "fish_counts": "1 Bonito",
+    "total_fish": 1
+  },
+  {
+    "trip_date": "2026-06-28",
+    "region": "San Diego County",
+    "landing": "Fisherman's Landing",
     "boat": "Pacific Queen",
     "trip_type": "2 Day",
     "anglers": 17,
     "fish_counts": "3 Bluefin Tuna, 63 Yellowtail",
     "total_fish": 66
+  },
+  {
+    "trip_date": "2026-06-28",
+    "region": "San Diego County",
+    "landing": "Fisherman's Landing",
+    "boat": "Pegasus",
+    "trip_type": "Overnight",
+    "anglers": 20,
+    "fish_counts": "24 Yellowtail",
+    "total_fish": 24
   },
   {
     "trip_date": "2026-06-28",
