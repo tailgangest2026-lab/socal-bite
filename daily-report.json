@@ -1482,6 +1482,26 @@
   {
     "trip_date": "2026-06-29",
     "region": "San Diego County",
+    "landing": "Fisherman's Landing",
+    "boat": "Dolphin",
+    "trip_type": "1/2 Day AM",
+    "anglers": 16,
+    "fish_counts": "2 Calico Bass, 1 Halibut, 49 Rockfish, 7 Sand Bass, 4 Sculpin, 8 Sheephead",
+    "total_fish": 71
+  },
+  {
+    "trip_date": "2026-06-29",
+    "region": "San Diego County",
+    "landing": "Fisherman's Landing",
+    "boat": "Dolphin",
+    "trip_type": "1/2 Day PM",
+    "anglers": 22,
+    "fish_counts": "26 Barracuda, 25 Barracuda Released, 52 Calico Bass, 100 Calico Bass Released, 3 Halibut, 31 Rockfish, 16 Sand Bass, 4 Sculpin, 9 Sheephead",
+    "total_fish": 266
+  },
+  {
+    "trip_date": "2026-06-29",
+    "region": "San Diego County",
     "landing": "H&M Landing",
     "boat": "Grande",
     "trip_type": "Full Day Coronado Islands",
