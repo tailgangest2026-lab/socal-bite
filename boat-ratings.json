@@ -696,23 +696,23 @@
     "rank": 7,
     "region": "NorCal",
     "trip_type": "Full Day",
-    "boat": "Surf Scooter",
-    "landing": "Bodega Bay Sportfishing Center",
-    "trips": 11,
-    "anglers": 131,
-    "fish": 442,
-    "fpa": 3.37
-  },
-  {
-    "rank": 8,
-    "region": "NorCal",
-    "trip_type": "Full Day",
     "boat": "Pacific Dream",
     "landing": "Happy Hooker Sportfishing",
     "trips": 13,
     "anglers": 290,
     "fish": 892,
     "fpa": 3.08
+  },
+  {
+    "rank": 8,
+    "region": "NorCal",
+    "trip_type": "Full Day",
+    "boat": "Surf Scooter",
+    "landing": "Bodega Bay Sportfishing Center",
+    "trips": 12,
+    "anglers": 148,
+    "fish": 444,
+    "fpa": 3
   },
   {
     "rank": 9,
@@ -1424,10 +1424,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Right Hook",
     "landing": "Right Hook Sportfishing",
-    "trips": 14,
-    "anglers": 69,
+    "trips": 15,
+    "anglers": 74,
     "fish": 236,
-    "fpa": 3.42
+    "fpa": 3.19
   },
   {
     "rank": 2,
@@ -1479,10 +1479,10 @@
     "trip_type": "Full Day",
     "boat": "Reel Addiction 1",
     "landing": "Reel Addiction Sportfishing",
-    "trips": 9,
-    "anglers": 68,
+    "trips": 10,
+    "anglers": 74,
     "fish": 146,
-    "fpa": 2.15
+    "fpa": 1.97
   },
   {
     "rank": 4,
@@ -1501,10 +1501,10 @@
     "trip_type": "Full Day",
     "boat": "Reel Addiction 2",
     "landing": "Reel Addiction Sportfishing",
-    "trips": 9,
-    "anglers": 80,
+    "trips": 10,
+    "anglers": 85,
     "fish": 6,
-    "fpa": 0.08
+    "fpa": 0.07
   },
   {
     "rank": 6,
@@ -1798,9 +1798,9 @@
     "trip_type": "Overnight",
     "boat": "Mirage",
     "landing": "Channel Islands Sportfishing",
-    "trips": 36,
-    "anglers": 673,
-    "fish": 8313,
-    "fpa": 12.35
+    "trips": 37,
+    "anglers": 685,
+    "fish": 8466,
+    "fpa": 12.36
   }
 ]
