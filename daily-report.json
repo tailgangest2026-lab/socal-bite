@@ -43,8 +43,28 @@
     "trip_date": "2026-06-30",
     "region": "Alameda County",
     "landing": "Fish Emeryville",
+    "boat": "KingFish",
+    "trip_type": "Full Day",
+    "anglers": 14,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-06-30",
+    "region": "Alameda County",
+    "landing": "Fish Emeryville",
     "boat": "Lady K",
     "trip_type": "Full Day",
+    "anglers": 9,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-06-30",
+    "region": "Alameda County",
+    "landing": "Fish Emeryville",
+    "boat": "Lady K",
+    "trip_type": "1/2 Day AM",
     "anglers": 9,
     "fish_counts": "",
     "total_fish": 0
@@ -83,11 +103,51 @@
     "trip_date": "2026-06-30",
     "region": "Alameda County",
     "landing": "Fish Emeryville",
+    "boat": "Scallywag",
+    "trip_type": "1/2 Day AM",
+    "anglers": 6,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-06-30",
+    "region": "Alameda County",
+    "landing": "Fish Emeryville",
     "boat": "Sea Wolf",
     "trip_type": "Full Day",
     "anglers": 18,
     "fish_counts": "11 Lingcod, 180 Rockfish",
     "total_fish": 191
+  },
+  {
+    "trip_date": "2026-06-30",
+    "region": "Alameda County",
+    "landing": "Fish Emeryville",
+    "boat": "Sea Wolf",
+    "trip_type": "Full Day",
+    "anglers": 12,
+    "fish_counts": "1 Halibut",
+    "total_fish": 1
+  },
+  {
+    "trip_date": "2026-06-30",
+    "region": "Alameda County",
+    "landing": "Fish Emeryville",
+    "boat": "Sea Wolf",
+    "trip_type": "Full Day",
+    "anglers": 12,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-06-30",
+    "region": "Alameda County",
+    "landing": "Fish Emeryville",
+    "boat": "TigerFish",
+    "trip_type": "Full Day",
+    "anglers": 14,
+    "fish_counts": "",
+    "total_fish": 0
   },
   {
     "trip_date": "2026-06-30",
@@ -368,6 +428,76 @@
     "anglers": 29,
     "fish_counts": "1 Barracuda, 85 Sand Bass, 1 Sculpin, 2 Sheephead",
     "total_fish": 89
+  },
+  {
+    "trip_date": "2026-06-30",
+    "region": "San Diego County",
+    "landing": "H&M Landing",
+    "boat": "Excalibur",
+    "trip_type": "2 Day",
+    "anglers": 18,
+    "fish_counts": "50 Red Rockfish, 130 Rockfish, 15 Whitefish, 8 Yellowtail",
+    "total_fish": 203
+  },
+  {
+    "trip_date": "2026-06-30",
+    "region": "San Diego County",
+    "landing": "H&M Landing",
+    "boat": "Legend",
+    "trip_type": "2 Day",
+    "anglers": 29,
+    "fish_counts": "5 Bonito, 83 Red Rockfish, 140 Rockfish, 8 Yellowtail",
+    "total_fish": 236
+  },
+  {
+    "trip_date": "2026-06-30",
+    "region": "San Diego County",
+    "landing": "H&M Landing",
+    "boat": "Premier",
+    "trip_type": "1/2 Day AM",
+    "anglers": 31,
+    "fish_counts": "58 Calico Bass, 70 Calico Bass Released, 3 Rockfish, 21 Sand Bass",
+    "total_fish": 152
+  },
+  {
+    "trip_date": "2026-06-30",
+    "region": "San Diego County",
+    "landing": "Point Loma Sportfishing",
+    "boat": "Daily Double",
+    "trip_type": "1/2 Day AM",
+    "anglers": 17,
+    "fish_counts": "2 Barracuda, 25 Calico Bass, 100 Calico Bass Released",
+    "total_fish": 127
+  },
+  {
+    "trip_date": "2026-06-30",
+    "region": "San Diego County",
+    "landing": "Seaforth Sportfishing",
+    "boat": "New Seaforth",
+    "trip_type": "1/2 Day AM",
+    "anglers": 49,
+    "fish_counts": "1 Bonito, 51 Calico Bass, 150 Calico Bass Released, 3 Rockfish, 2 Sheephead",
+    "total_fish": 207
+  },
+  {
+    "trip_date": "2026-06-30",
+    "region": "San Diego County",
+    "landing": "Seaforth Sportfishing",
+    "boat": "New Seaforth",
+    "trip_type": "1/2 Day Twilight",
+    "anglers": 25,
+    "fish_counts": "14 Calico Bass, 8 Rockfish",
+    "total_fish": 22
+  },
+  {
+    "trip_date": "2026-06-30",
+    "region": "San Diego County",
+    "landing": "Seaforth Sportfishing",
+    "boat": "Voyager",
+    "trip_type": "1.5 Day",
+    "anglers": 11,
+    "fish_counts": "55 Yellowtail",
+    "total_fish": 55
   },
   {
     "trip_date": "2026-06-30",
