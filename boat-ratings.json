@@ -1028,13 +1028,24 @@
     "trip_type": "3/4 Day",
     "boat": "Aggressor",
     "landing": "Newport Landing",
-    "trips": 6,
-    "anglers": 110,
-    "fish": 315,
-    "fpa": 2.86
+    "trips": 7,
+    "anglers": 117,
+    "fish": 377,
+    "fpa": 3.22
   },
   {
     "rank": 6,
+    "region": "Orange County",
+    "trip_type": "3/4 Day",
+    "boat": "Patriot (Newport)",
+    "landing": "Newport Landing",
+    "trips": 27,
+    "anglers": 737,
+    "fish": 2110,
+    "fpa": 2.86
+  },
+  {
+    "rank": 7,
     "region": "Orange County",
     "trip_type": "3/4 Day",
     "boat": "Helena",
@@ -1043,17 +1054,6 @@
     "anglers": 160,
     "fish": 446,
     "fpa": 2.79
-  },
-  {
-    "rank": 7,
-    "region": "Orange County",
-    "trip_type": "3/4 Day",
-    "boat": "Patriot (Newport)",
-    "landing": "Newport Landing",
-    "trips": 26,
-    "anglers": 706,
-    "fish": 1892,
-    "fpa": 2.68
   },
   {
     "rank": 1,
@@ -1116,10 +1116,10 @@
     "trip_type": "Overnight",
     "boat": "Thunderbird",
     "landing": "Newport Landing",
-    "trips": 36,
-    "anglers": 1077,
-    "fish": 7907,
-    "fpa": 7.34
+    "trips": 37,
+    "anglers": 1107,
+    "fish": 7937,
+    "fpa": 7.17
   },
   {
     "rank": 1,
