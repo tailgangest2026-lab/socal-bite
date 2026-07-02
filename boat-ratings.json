@@ -146,6 +146,17 @@
     "rank": 9,
     "region": "Alameda County",
     "trip_type": "Full Day",
+    "boat": "Diamond",
+    "landing": "Fish Emeryville",
+    "trips": 7,
+    "anglers": 44,
+    "fish": 1,
+    "fpa": 0.02
+  },
+  {
+    "rank": 10,
+    "region": "Alameda County",
+    "trip_type": "Full Day",
     "boat": "TigerFish",
     "landing": "Fish Emeryville",
     "trips": 7,
@@ -154,7 +165,7 @@
     "fpa": 0.01
   },
   {
-    "rank": 10,
+    "rank": 11,
     "region": "Alameda County",
     "trip_type": "Full Day",
     "boat": "Pacific Pearl",
@@ -165,24 +176,13 @@
     "fpa": 0.01
   },
   {
-    "rank": 11,
+    "rank": 12,
     "region": "Alameda County",
     "trip_type": "Full Day",
     "boat": "C Gull II",
     "landing": "Fish Emeryville",
     "trips": 11,
     "anglers": 187,
-    "fish": 0,
-    "fpa": 0
-  },
-  {
-    "rank": 12,
-    "region": "Alameda County",
-    "trip_type": "Full Day",
-    "boat": "Diamond",
-    "landing": "Fish Emeryville",
-    "trips": 6,
-    "anglers": 38,
     "fish": 0,
     "fpa": 0
   },
@@ -1424,10 +1424,10 @@
     "trip_type": "Full Day Coronado Islands",
     "boat": "Grande",
     "landing": "H&M Landing",
-    "trips": 18,
-    "anglers": 550,
-    "fish": 1530,
-    "fpa": 2.78
+    "trips": 19,
+    "anglers": 567,
+    "fish": 1603,
+    "fpa": 2.83
   },
   {
     "rank": 1,
