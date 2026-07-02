@@ -66,8 +66,8 @@
     "rank": 1,
     "region": "Los Angeles County",
     "species": "Rockfish",
-    "fish": 35750,
-    "trips_reported": 255
+    "fish": 35881,
+    "trips_reported": 256
   },
   {
     "rank": 2,
@@ -108,8 +108,8 @@
     "rank": 7,
     "region": "Los Angeles County",
     "species": "Sheephead",
-    "fish": 2750,
-    "trips_reported": 253
+    "fish": 2751,
+    "trips_reported": 254
   },
   {
     "rank": 8,
@@ -339,22 +339,22 @@
     "rank": 1,
     "region": "San Diego County",
     "species": "Rockfish",
-    "fish": 18599,
-    "trips_reported": 367
+    "fish": 18710,
+    "trips_reported": 373
   },
   {
     "rank": 2,
     "region": "San Diego County",
     "species": "Calico Bass Released",
-    "fish": 17359,
-    "trips_reported": 189
+    "fish": 17569,
+    "trips_reported": 192
   },
   {
     "rank": 3,
     "region": "San Diego County",
     "species": "Calico Bass",
-    "fish": 11459,
-    "trips_reported": 362
+    "fish": 11674,
+    "trips_reported": 367
   },
   {
     "rank": 4,
@@ -366,16 +366,16 @@
   {
     "rank": 5,
     "region": "San Diego County",
-    "species": "Whitefish",
-    "fish": 2657,
-    "trips_reported": 121
+    "species": "Sand Bass",
+    "fish": 2692,
+    "trips_reported": 174
   },
   {
     "rank": 6,
     "region": "San Diego County",
-    "species": "Sand Bass",
-    "fish": 2644,
-    "trips_reported": 170
+    "species": "Whitefish",
+    "fish": 2657,
+    "trips_reported": 121
   },
   {
     "rank": 7,
@@ -388,22 +388,22 @@
     "rank": 8,
     "region": "San Diego County",
     "species": "Barracuda",
-    "fish": 1120,
-    "trips_reported": 138
+    "fish": 1125,
+    "trips_reported": 140
   },
   {
     "rank": 9,
     "region": "San Diego County",
     "species": "Sculpin",
-    "fish": 1080,
-    "trips_reported": 130
+    "fish": 1082,
+    "trips_reported": 131
   },
   {
     "rank": 10,
     "region": "San Diego County",
     "species": "Barracuda Released",
-    "fish": 840,
-    "trips_reported": 14
+    "fish": 960,
+    "trips_reported": 16
   },
   {
     "rank": 11,
@@ -416,8 +416,8 @@
     "rank": 12,
     "region": "San Diego County",
     "species": "Sheephead",
-    "fish": 752,
-    "trips_reported": 206
+    "fish": 766,
+    "trips_reported": 210
   },
   {
     "rank": 13,
@@ -705,5 +705,12 @@
     "species": "Sand Bass",
     "fish": 120,
     "trips_reported": 18
+  },
+  {
+    "rank": 12,
+    "region": "Ventura County",
+    "species": "Bluefin Tuna",
+    "fish": 7,
+    "trips_reported": 1
   }
 ]
