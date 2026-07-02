@@ -23,10 +23,30 @@
     "trip_date": "2026-07-01",
     "region": "Alameda County",
     "landing": "Fish Emeryville",
+    "boat": "Heisen-sturg",
+    "trip_type": "Full Day",
+    "anglers": 6,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-07-01",
+    "region": "Alameda County",
+    "landing": "Fish Emeryville",
     "boat": "Here We Go",
     "trip_type": "Full Day",
     "anglers": 5,
     "fish_counts": "1 Halibut",
+    "total_fish": 1
+  },
+  {
+    "trip_date": "2026-07-01",
+    "region": "Alameda County",
+    "landing": "Fish Emeryville",
+    "boat": "Here We Go",
+    "trip_type": "Full Day",
+    "anglers": 4,
+    "fish_counts": "1 Lingcod",
     "total_fish": 1
   },
   {
@@ -208,6 +228,16 @@
     "anglers": 5,
     "fish_counts": "25 Calico Bass, 42 Calico Bass Released",
     "total_fish": 67
+  },
+  {
+    "trip_date": "2026-07-01",
+    "region": "Los Angeles County",
+    "landing": "22nd Street Landing",
+    "boat": "Monte Carlo",
+    "trip_type": "1/2 Day AM",
+    "anglers": 33,
+    "fish_counts": "16 Calico Bass, 127 Sculpin, 2 Sheephead",
+    "total_fish": 145
   },
   {
     "trip_date": "2026-07-01",
@@ -596,6 +626,16 @@
     "boat": "New Easy Rider",
     "trip_type": "Full Day",
     "anglers": 23,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-07-01",
+    "region": "San Francisco Bay",
+    "landing": "California Dawn Sportfishing",
+    "boat": "California Dawn II",
+    "trip_type": "Full Day",
+    "anglers": 15,
     "fish_counts": "",
     "total_fish": 0
   },
