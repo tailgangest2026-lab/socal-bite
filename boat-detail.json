@@ -60,18 +60,6 @@
     "top_species_3": "Lingcod"
   },
   {
-    "boat": "Heisen-sturg",
-    "landing": "Fish Emeryville",
-    "region": "Alameda County",
-    "trips": 9,
-    "anglers": 54,
-    "fish": 115,
-    "fpa": 2.13,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Halibut",
-    "top_species_3": "Lingcod"
-  },
-  {
     "boat": "Lady K",
     "landing": "Fish Emeryville",
     "region": "Alameda County",
@@ -82,6 +70,18 @@
     "top_species_1": "Rockfish",
     "top_species_2": "Lingcod",
     "top_species_3": "Halibut"
+  },
+  {
+    "boat": "Heisen-sturg",
+    "landing": "Fish Emeryville",
+    "region": "Alameda County",
+    "trips": 10,
+    "anglers": 60,
+    "fish": 116,
+    "fpa": 1.93,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Halibut",
+    "top_species_3": "Lingcod"
   },
   {
     "boat": "Scallywag",
@@ -2043,10 +2043,10 @@
     "boat": "Mirage",
     "landing": "Channel Islands Sportfishing",
     "region": "Ventura County",
-    "trips": 74,
-    "anglers": 1385,
-    "fish": 20120,
-    "fpa": 14.53,
+    "trips": 75,
+    "anglers": 1401,
+    "fish": 20347,
+    "fpa": 14.52,
     "top_species_1": "Rockfish",
     "top_species_2": "Whitefish",
     "top_species_3": "Lingcod"
