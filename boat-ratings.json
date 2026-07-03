@@ -830,8 +830,19 @@
     "trip_type": "Full Day",
     "boat": "Barbarossa",
     "landing": "Barbarossa Fishing",
-    "trips": 6,
-    "anglers": 18,
+    "trips": 7,
+    "anglers": 22,
+    "fish": 0,
+    "fpa": 0
+  },
+  {
+    "rank": 16,
+    "region": "NorCal",
+    "trip_type": "Full Day",
+    "boat": "Blue Runner",
+    "landing": "Blue Runner Charters",
+    "trips": 5,
+    "anglers": 65,
     "fish": 0,
     "fpa": 0
   },
@@ -1490,10 +1501,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Right Hook",
     "landing": "Right Hook Sportfishing",
-    "trips": 16,
-    "anglers": 79,
-    "fish": 236,
-    "fpa": 2.99
+    "trips": 17,
+    "anglers": 81,
+    "fish": 237,
+    "fpa": 2.93
   },
   {
     "rank": 2,
@@ -1523,10 +1534,10 @@
     "trip_type": "Full Day",
     "boat": "California Dawn II",
     "landing": "California Dawn Sportfishing",
-    "trips": 35,
-    "anglers": 714,
+    "trips": 36,
+    "anglers": 726,
     "fish": 3764,
-    "fpa": 5.27
+    "fpa": 5.18
   },
   {
     "rank": 2,
@@ -1534,10 +1545,10 @@
     "trip_type": "Full Day",
     "boat": "New California Dawn",
     "landing": "California Dawn Sportfishing",
-    "trips": 34,
-    "anglers": 622,
+    "trips": 35,
+    "anglers": 632,
     "fish": 2314,
-    "fpa": 3.72
+    "fpa": 3.66
   },
   {
     "rank": 3,

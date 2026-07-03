@@ -259,11 +259,11 @@
     "address": "",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Big%20Cs%20Charters",
     "booking_url": "",
-    "trips": 18,
+    "trips": 20,
     "boats": 2,
-    "anglers": 248,
+    "anglers": 269,
     "fish": 240,
-    "fpa": 0.97
+    "fpa": 0.89
   },
   {
     "landing": "North Bay Fishing Charters",
@@ -287,11 +287,11 @@
     "address": "",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Barbarossa%20Fishing",
     "booking_url": "",
-    "trips": 8,
+    "trips": 9,
     "boats": 1,
-    "anglers": 30,
+    "anglers": 34,
     "fish": 90,
-    "fpa": 3
+    "fpa": 2.65
   },
   {
     "landing": "Santa Cruz Coastal Fishing Charters",
@@ -329,9 +329,9 @@
     "address": "",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Argo%20Sportfishing",
     "booking_url": "",
-    "trips": 13,
+    "trips": 14,
     "boats": 1,
-    "anglers": 63,
+    "anglers": 68,
     "fish": 0,
     "fpa": 0
   },
@@ -406,6 +406,20 @@
     "fpa": 0
   },
   {
+    "landing": "Blue Runner Charters",
+    "region": "NorCal",
+    "phone": "",
+    "website": "",
+    "address": "",
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Blue%20Runner%20Charters",
+    "booking_url": "",
+    "trips": 5,
+    "boats": 1,
+    "anglers": 65,
+    "fish": 0,
+    "fpa": 0
+  },
+  {
     "landing": "New Captain Pete",
     "region": "NorCal",
     "phone": "",
@@ -416,20 +430,6 @@
     "trips": 4,
     "boats": 1,
     "anglers": 28,
-    "fish": 0,
-    "fpa": 0
-  },
-  {
-    "landing": "Blue Runner Charters",
-    "region": "NorCal",
-    "phone": "",
-    "website": "",
-    "address": "",
-    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Blue%20Runner%20Charters",
-    "booking_url": "",
-    "trips": 4,
-    "boats": 1,
-    "anglers": 48,
     "fish": 0,
     "fpa": 0
   },
@@ -497,11 +497,11 @@
     "address": "34675 Golden Lantern, Dana Point, CA 92629",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=34675%20Golden%20Lantern%2C%20Dana%20Point%2C%20CA%2092629",
     "booking_url": "https://www.danawharf.com",
-    "trips": 499,
+    "trips": 504,
     "boats": 9,
-    "anglers": 13294,
-    "fish": 60165,
-    "fpa": 4.53
+    "anglers": 13485,
+    "fish": 60899,
+    "fpa": 4.52
   },
   {
     "landing": "Newport Landing",
@@ -595,11 +595,11 @@
     "address": "",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=California%20Dawn%20Sportfishing",
     "booking_url": "",
-    "trips": 71,
+    "trips": 73,
     "boats": 3,
-    "anglers": 1392,
+    "anglers": 1414,
     "fish": 6638,
-    "fpa": 4.77
+    "fpa": 4.69
   },
   {
     "landing": "Right Hook Sportfishing",
@@ -609,11 +609,11 @@
     "address": "",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Right%20Hook%20Sportfishing",
     "booking_url": "",
-    "trips": 31,
+    "trips": 33,
     "boats": 1,
-    "anglers": 165,
-    "fish": 251,
-    "fpa": 1.52
+    "anglers": 169,
+    "fish": 253,
+    "fpa": 1.5
   },
   {
     "landing": "Berkeley Charter Boats",
