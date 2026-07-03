@@ -91,17 +91,6 @@
     "rank": 3,
     "region": "Alameda County",
     "trip_type": "Full Day",
-    "boat": "KingFish",
-    "landing": "Fish Emeryville",
-    "trips": 18,
-    "anglers": 282,
-    "fish": 904,
-    "fpa": 3.21
-  },
-  {
-    "rank": 4,
-    "region": "Alameda County",
-    "trip_type": "Full Day",
     "boat": "Lady K",
     "landing": "Fish Emeryville",
     "trips": 17,
@@ -110,15 +99,26 @@
     "fpa": 3.08
   },
   {
+    "rank": 4,
+    "region": "Alameda County",
+    "trip_type": "Full Day",
+    "boat": "KingFish",
+    "landing": "Fish Emeryville",
+    "trips": 19,
+    "anglers": 300,
+    "fish": 904,
+    "fpa": 3.01
+  },
+  {
     "rank": 5,
     "region": "Alameda County",
     "trip_type": "Full Day",
     "boat": "Heisen-sturg",
     "landing": "Fish Emeryville",
-    "trips": 8,
-    "anglers": 48,
-    "fish": 114,
-    "fpa": 2.38
+    "trips": 9,
+    "anglers": 54,
+    "fish": 115,
+    "fpa": 2.13
   },
   {
     "rank": 6,
@@ -225,10 +225,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Endeavor (MB)",
     "landing": "Morro Bay Landing",
-    "trips": 15,
-    "anglers": 340,
-    "fish": 2285,
-    "fpa": 6.72
+    "trips": 16,
+    "anglers": 373,
+    "fish": 2564,
+    "fpa": 6.87
   },
   {
     "rank": 4,
@@ -313,10 +313,10 @@
     "trip_type": "3/4 Day",
     "boat": "Sunny Day",
     "landing": "Patriot Sportfishing",
-    "trips": 7,
-    "anglers": 22,
-    "fish": 25,
-    "fpa": 1.14
+    "trips": 8,
+    "anglers": 26,
+    "fish": 27,
+    "fpa": 1.04
   },
   {
     "rank": 5,
@@ -1237,10 +1237,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Blue Horizon",
     "landing": "Oceanside Sea Center",
-    "trips": 5,
-    "anglers": 75,
-    "fish": 614,
-    "fpa": 8.19
+    "trips": 6,
+    "anglers": 82,
+    "fish": 678,
+    "fpa": 8.27
   },
   {
     "rank": 2,
