@@ -74,6 +74,15 @@
   {
     "rank": 1,
     "region": "Los Angeles County",
+    "trip_type": "3 Day",
+    "trips": 1,
+    "anglers": 24,
+    "fish": 955,
+    "fpa": 39.79
+  },
+  {
+    "rank": 2,
+    "region": "Los Angeles County",
     "trip_type": "2 Day",
     "trips": 15,
     "anglers": 275,
@@ -81,7 +90,7 @@
     "fpa": 17.81
   },
   {
-    "rank": 2,
+    "rank": 3,
     "region": "Los Angeles County",
     "trip_type": "Overnight",
     "trips": 113,
@@ -90,7 +99,7 @@
     "fpa": 10.44
   },
   {
-    "rank": 3,
+    "rank": 4,
     "region": "Los Angeles County",
     "trip_type": "1.5 Day",
     "trips": 10,
@@ -99,7 +108,7 @@
     "fpa": 8.88
   },
   {
-    "rank": 4,
+    "rank": 5,
     "region": "Los Angeles County",
     "trip_type": "3/4 Day",
     "trips": 372,
@@ -108,7 +117,7 @@
     "fpa": 7.36
   },
   {
-    "rank": 5,
+    "rank": 6,
     "region": "Los Angeles County",
     "trip_type": "1/2 Day AM",
     "trips": 180,
@@ -117,7 +126,7 @@
     "fpa": 6.08
   },
   {
-    "rank": 6,
+    "rank": 7,
     "region": "Los Angeles County",
     "trip_type": "1/2 Day Twilight",
     "trips": 49,
@@ -126,7 +135,7 @@
     "fpa": 5.82
   },
   {
-    "rank": 7,
+    "rank": 8,
     "region": "Los Angeles County",
     "trip_type": "1/2 Day PM",
     "trips": 25,
@@ -135,7 +144,7 @@
     "fpa": 5.42
   },
   {
-    "rank": 8,
+    "rank": 9,
     "region": "Los Angeles County",
     "trip_type": "Full Day",
     "trips": 152,
