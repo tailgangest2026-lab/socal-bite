@@ -861,6 +861,17 @@
     "rank": 17,
     "region": "NorCal",
     "trip_type": "Full Day",
+    "boat": "New Captain Pete",
+    "landing": "New Captain Pete",
+    "trips": 5,
+    "anglers": 38,
+    "fish": 0,
+    "fpa": 0
+  },
+  {
+    "rank": 18,
+    "region": "NorCal",
+    "trip_type": "Full Day",
     "boat": "Chasin Crustacean",
     "landing": "Big Cs Charters",
     "trips": 5,
@@ -1622,10 +1633,10 @@
     "trip_type": "Full Day",
     "boat": "New Easy Rider",
     "landing": "Berkeley Charter Boats",
-    "trips": 12,
-    "anglers": 253,
+    "trips": 13,
+    "anglers": 267,
     "fish": 219,
-    "fpa": 0.87
+    "fpa": 0.82
   },
   {
     "rank": 5,
@@ -1699,10 +1710,10 @@
     "trip_type": "3/4 Day",
     "boat": "Stardust",
     "landing": "Santa Barbara Landing",
-    "trips": 46,
-    "anglers": 1161,
-    "fish": 16113,
-    "fpa": 13.88
+    "trips": 47,
+    "anglers": 1194,
+    "fish": 16256,
+    "fpa": 13.61
   },
   {
     "rank": 1,
