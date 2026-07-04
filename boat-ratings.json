@@ -1367,6 +1367,17 @@
     "rank": 2,
     "region": "San Diego County",
     "trip_type": "2 Day",
+    "boat": "Constitution",
+    "landing": "Fisherman's Landing",
+    "trips": 5,
+    "anglers": 89,
+    "fish": 237,
+    "fpa": 2.66
+  },
+  {
+    "rank": 3,
+    "region": "San Diego County",
+    "trip_type": "2 Day",
     "boat": "Pacific Queen",
     "landing": "Fisherman's Landing",
     "trips": 6,
@@ -1424,10 +1435,10 @@
     "trip_type": "3/4 Day",
     "boat": "Malihini",
     "landing": "H&M Landing",
-    "trips": 8,
-    "anglers": 180,
-    "fish": 1647,
-    "fpa": 9.15
+    "trips": 9,
+    "anglers": 198,
+    "fish": 1799,
+    "fpa": 9.09
   },
   {
     "rank": 3,
@@ -1442,6 +1453,17 @@
   },
   {
     "rank": 1,
+    "region": "San Diego County",
+    "trip_type": "Full Day",
+    "boat": "Lucky B Sportfishing",
+    "landing": "Fisherman's Landing",
+    "trips": 5,
+    "anglers": 13,
+    "fish": 52,
+    "fpa": 4
+  },
+  {
+    "rank": 2,
     "region": "San Diego County",
     "trip_type": "Full Day",
     "boat": "Got Bait",
@@ -1864,10 +1886,10 @@
     "trip_type": "Full Day",
     "boat": "Graylight",
     "landing": "Channel Islands Sportfishing",
-    "trips": 53,
-    "anglers": 307,
-    "fish": 1198,
-    "fpa": 3.9
+    "trips": 54,
+    "anglers": 313,
+    "fish": 1241,
+    "fpa": 3.96
   },
   {
     "rank": 1,
