@@ -231,11 +231,11 @@
     "address": "",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Golden%20State%20Sportfishing",
     "booking_url": "",
-    "trips": 14,
+    "trips": 16,
     "boats": 1,
-    "anglers": 74,
+    "anglers": 84,
     "fish": 288,
-    "fpa": 3.89
+    "fpa": 3.43
   },
   {
     "landing": "Reel Obsession Sportfishing",
@@ -385,9 +385,23 @@
     "address": "",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Blue%20Runner%20Charters",
     "booking_url": "",
+    "trips": 10,
+    "boats": 1,
+    "anglers": 100,
+    "fish": 0,
+    "fpa": 0
+  },
+  {
+    "landing": "New Captain Pete",
+    "region": "NorCal",
+    "phone": "",
+    "website": "",
+    "address": "",
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=New%20Captain%20Pete",
+    "booking_url": "",
     "trips": 8,
     "boats": 1,
-    "anglers": 88,
+    "anglers": 68,
     "fish": 0,
     "fpa": 0
   },
@@ -402,20 +416,6 @@
     "trips": 7,
     "boats": 1,
     "anglers": 93,
-    "fish": 0,
-    "fpa": 0
-  },
-  {
-    "landing": "New Captain Pete",
-    "region": "NorCal",
-    "phone": "",
-    "website": "",
-    "address": "",
-    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=New%20Captain%20Pete",
-    "booking_url": "",
-    "trips": 6,
-    "boats": 1,
-    "anglers": 48,
     "fish": 0,
     "fpa": 0
   },
@@ -637,11 +637,11 @@
     "address": "",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Berkeley%20Charter%20Boats",
     "booking_url": "",
-    "trips": 34,
+    "trips": 36,
     "boats": 2,
-    "anglers": 582,
+    "anglers": 624,
     "fish": 219,
-    "fpa": 0.38
+    "fpa": 0.35
   },
   {
     "landing": "Reel Addiction Sportfishing",
@@ -651,11 +651,11 @@
     "address": "",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Reel%20Addiction%20Sportfishing",
     "booking_url": "",
-    "trips": 26,
+    "trips": 30,
     "boats": 2,
-    "anglers": 196,
+    "anglers": 218,
     "fish": 152,
-    "fpa": 0.78
+    "fpa": 0.7
   },
   {
     "landing": "Lovely Martha Sportfishing",
