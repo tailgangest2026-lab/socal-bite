@@ -128,15 +128,6 @@
   {
     "rank": 4,
     "region": "NorCal",
-    "landing": "Golden State Sportfishing",
-    "trips": 14,
-    "anglers": 74,
-    "fish": 288,
-    "fpa": 3.89
-  },
-  {
-    "rank": 5,
-    "region": "NorCal",
     "landing": "Reel Obsession Sportfishing",
     "trips": 13,
     "anglers": 74,
@@ -144,13 +135,22 @@
     "fpa": 3.89
   },
   {
-    "rank": 6,
+    "rank": 5,
     "region": "NorCal",
     "landing": "North Bay Fishing Charters",
     "trips": 10,
     "anglers": 49,
     "fish": 184,
     "fpa": 3.76
+  },
+  {
+    "rank": 6,
+    "region": "NorCal",
+    "landing": "Golden State Sportfishing",
+    "trips": 16,
+    "anglers": 84,
+    "fish": 288,
+    "fpa": 3.43
   },
   {
     "rank": 7,
@@ -245,6 +245,15 @@
   {
     "rank": 17,
     "region": "NorCal",
+    "landing": "New Captain Pete",
+    "trips": 8,
+    "anglers": 68,
+    "fish": 0,
+    "fpa": 0
+  },
+  {
+    "rank": 18,
+    "region": "NorCal",
     "landing": "Blue Runner Charters",
     "trips": 8,
     "anglers": 88,
@@ -252,20 +261,11 @@
     "fpa": 0
   },
   {
-    "rank": 18,
+    "rank": 19,
     "region": "NorCal",
     "landing": "Telstar Charters",
     "trips": 7,
     "anglers": 93,
-    "fish": 0,
-    "fpa": 0
-  },
-  {
-    "rank": 19,
-    "region": "NorCal",
-    "landing": "New Captain Pete",
-    "trips": 6,
-    "anglers": 48,
     "fish": 0,
     "fpa": 0
   },
@@ -408,19 +408,19 @@
     "rank": 3,
     "region": "San Francisco Bay",
     "landing": "Reel Addiction Sportfishing",
-    "trips": 26,
-    "anglers": 196,
+    "trips": 30,
+    "anglers": 218,
     "fish": 152,
-    "fpa": 0.78
+    "fpa": 0.7
   },
   {
     "rank": 4,
     "region": "San Francisco Bay",
     "landing": "Berkeley Charter Boats",
-    "trips": 34,
-    "anglers": 582,
+    "trips": 36,
+    "anglers": 624,
     "fish": 219,
-    "fpa": 0.38
+    "fpa": 0.35
   },
   {
     "rank": 5,
