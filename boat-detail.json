@@ -3,10 +3,10 @@
     "boat": "Sea Wolf",
     "landing": "Fish Emeryville",
     "region": "Alameda County",
-    "trips": 38,
-    "anglers": 720,
-    "fish": 6421,
-    "fpa": 8.92,
+    "trips": 39,
+    "anglers": 738,
+    "fish": 6637,
+    "fpa": 8.99,
     "top_species_1": "Rockfish",
     "top_species_2": "Lingcod",
     "top_species_3": "Halibut"
@@ -72,18 +72,6 @@
     "top_species_3": "Halibut"
   },
   {
-    "boat": "Heisen-sturg",
-    "landing": "Fish Emeryville",
-    "region": "Alameda County",
-    "trips": 13,
-    "anglers": 78,
-    "fish": 117,
-    "fpa": 1.5,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Halibut",
-    "top_species_3": "Lingcod"
-  },
-  {
     "boat": "Scallywag",
     "landing": "Fish Emeryville",
     "region": "Alameda County",
@@ -93,6 +81,18 @@
     "fpa": 1.48,
     "top_species_1": "Rockfish",
     "top_species_2": "Bluefin Tuna",
+    "top_species_3": "Lingcod"
+  },
+  {
+    "boat": "Heisen-sturg",
+    "landing": "Fish Emeryville",
+    "region": "Alameda County",
+    "trips": 14,
+    "anglers": 84,
+    "fish": 117,
+    "fpa": 1.39,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Halibut",
     "top_species_3": "Lingcod"
   },
   {
@@ -207,10 +207,10 @@
     "boat": "Sunny Day",
     "landing": "Patriot Sportfishing",
     "region": "Central California",
-    "trips": 47,
-    "anglers": 146,
-    "fish": 92,
-    "fpa": 0.63,
+    "trips": 48,
+    "anglers": 148,
+    "fish": 95,
+    "fpa": 0.64,
     "top_species_1": "Lingcod",
     "top_species_2": "Halibut",
     "top_species_3": "Bonito"
@@ -231,9 +231,9 @@
     "boat": "Flying Fish",
     "landing": "Patriot Sportfishing",
     "region": "Central California",
-    "trips": 81,
-    "anglers": 1345,
-    "fish": 131,
+    "trips": 82,
+    "anglers": 1365,
+    "fish": 132,
     "fpa": 0.1,
     "top_species_1": "Lingcod",
     "top_species_2": "Whitefish",
@@ -768,11 +768,11 @@
     "top_species_3": ""
   },
   {
-    "boat": "Hog Heaven",
-    "landing": "Hog Heaven Sportfishing",
+    "boat": "Sea Weasel II",
+    "landing": "Full Throttle Sportfishing",
     "region": "NorCal",
     "trips": 14,
-    "anglers": 214,
+    "anglers": 96,
     "fish": 0,
     "fpa": 0,
     "top_species_1": "",
@@ -780,11 +780,11 @@
     "top_species_3": ""
   },
   {
-    "boat": "Sea Weasel II",
-    "landing": "Full Throttle Sportfishing",
+    "boat": "Hog Heaven",
+    "landing": "Hog Heaven Sportfishing",
     "region": "NorCal",
-    "trips": 13,
-    "anglers": 92,
+    "trips": 14,
+    "anglers": 214,
     "fish": 0,
     "fpa": 0,
     "top_species_1": "",
@@ -852,11 +852,11 @@
     "top_species_3": ""
   },
   {
-    "boat": "Kyndall Lynn",
-    "landing": "Fort Bragg Fishing",
+    "boat": "Sara Bella",
+    "landing": "Fish On Sportfishing",
     "region": "NorCal",
-    "trips": 4,
-    "anglers": 24,
+    "trips": 5,
+    "anglers": 14,
     "fish": 0,
     "fpa": 0,
     "top_species_1": "",
@@ -864,11 +864,11 @@
     "top_species_3": ""
   },
   {
-    "boat": "Sara Bella",
-    "landing": "Fish On Sportfishing",
+    "boat": "Kyndall Lynn",
+    "landing": "Fort Bragg Fishing",
     "region": "NorCal",
     "trips": 4,
-    "anglers": 10,
+    "anglers": 24,
     "fish": 0,
     "fpa": 0,
     "top_species_1": "",
@@ -1284,18 +1284,6 @@
     "top_species_3": "Red Rockfish"
   },
   {
-    "boat": "Spirit of Adventure",
-    "landing": "H&M Landing",
-    "region": "San Diego County",
-    "trips": 10,
-    "anglers": 227,
-    "fish": 1241,
-    "fpa": 5.47,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Bluefin Tuna",
-    "top_species_3": "Yellowtail"
-  },
-  {
     "boat": "Fortune",
     "landing": "Fisherman's Landing",
     "region": "San Diego County",
@@ -1354,6 +1342,18 @@
     "top_species_1": "Whitefish",
     "top_species_2": "Calico Bass Released",
     "top_species_3": "Rockfish"
+  },
+  {
+    "boat": "Spirit of Adventure",
+    "landing": "H&M Landing",
+    "region": "San Diego County",
+    "trips": 11,
+    "anglers": 254,
+    "fish": 1241,
+    "fpa": 4.89,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Bluefin Tuna",
+    "top_species_3": "Yellowtail"
   },
   {
     "boat": "Southern Cal",
@@ -1563,13 +1563,25 @@
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
     "region": "San Diego County",
-    "trips": 227,
-    "anglers": 8217,
-    "fish": 23657,
-    "fpa": 2.88,
+    "trips": 229,
+    "anglers": 8315,
+    "fish": 24148,
+    "fpa": 2.9,
     "top_species_1": "Calico Bass Released",
     "top_species_2": "Calico Bass",
     "top_species_3": "Rockfish"
+  },
+  {
+    "boat": "El Gato Dos",
+    "landing": "Seaforth Sportfishing",
+    "region": "San Diego County",
+    "trips": 16,
+    "anglers": 76,
+    "fish": 213,
+    "fpa": 2.8,
+    "top_species_1": "Yellowtail",
+    "top_species_2": "Rockfish",
+    "top_species_3": "Calico Bass Released"
   },
   {
     "boat": "Highliner",
@@ -1630,18 +1642,6 @@
     "top_species_1": "Yellowtail",
     "top_species_2": "Rockfish",
     "top_species_3": "Red Rockfish"
-  },
-  {
-    "boat": "El Gato Dos",
-    "landing": "Seaforth Sportfishing",
-    "region": "San Diego County",
-    "trips": 15,
-    "anglers": 73,
-    "fish": 155,
-    "fpa": 2.12,
-    "top_species_1": "Yellowtail",
-    "top_species_2": "Rockfish",
-    "top_species_3": "Bonito"
   },
   {
     "boat": "Pegasus",
@@ -1755,10 +1755,10 @@
     "boat": "Ocean Odyssey",
     "landing": "H&M Landing",
     "region": "San Diego County",
-    "trips": 1,
-    "anglers": 23,
+    "trips": 2,
+    "anglers": 44,
     "fish": 13,
-    "fpa": 0.57,
+    "fpa": 0.3,
     "top_species_1": "Yellowtail",
     "top_species_2": "",
     "top_species_3": ""
@@ -2079,13 +2079,13 @@
     "boat": "Orion",
     "landing": "Channel Islands Sportfishing",
     "region": "Ventura County",
-    "trips": 36,
-    "anglers": 452,
-    "fish": 6177,
-    "fpa": 13.67,
+    "trips": 37,
+    "anglers": 454,
+    "fish": 6215,
+    "fpa": 13.69,
     "top_species_1": "Rockfish",
     "top_species_2": "Whitefish",
-    "top_species_3": "Calico Bass"
+    "top_species_3": "Sculpin"
   },
   {
     "boat": "Coroloma",
