@@ -111,9 +111,9 @@
     "rank": 5,
     "region": "Los Angeles County",
     "trip_type": "3/4 Day",
-    "trips": 371,
-    "anglers": 11680,
-    "fish": 85753,
+    "trips": 374,
+    "anglers": 11840,
+    "fish": 86881,
     "fpa": 7.34
   },
   {
@@ -164,6 +164,15 @@
   {
     "rank": 1,
     "region": "Monterey County",
+    "trip_type": "1/2 Day Twilight",
+    "trips": 1,
+    "anglers": 17,
+    "fish": 179,
+    "fpa": 10.53
+  },
+  {
+    "rank": 2,
+    "region": "Monterey County",
     "trip_type": "1/2 Day AM",
     "trips": 45,
     "anglers": 773,
@@ -171,7 +180,7 @@
     "fpa": 9.85
   },
   {
-    "rank": 2,
+    "rank": 3,
     "region": "Monterey County",
     "trip_type": "1/2 Day PM",
     "trips": 18,
@@ -180,7 +189,7 @@
     "fpa": 8.04
   },
   {
-    "rank": 3,
+    "rank": 4,
     "region": "Monterey County",
     "trip_type": "Full Day",
     "trips": 6,
@@ -192,10 +201,10 @@
     "rank": 1,
     "region": "NorCal",
     "trip_type": "Full Day",
-    "trips": 252,
-    "anglers": 3116,
+    "trips": 254,
+    "anglers": 3132,
     "fish": 7626,
-    "fpa": 2.45
+    "fpa": 2.43
   },
   {
     "rank": 2,
@@ -228,10 +237,10 @@
     "rank": 2,
     "region": "Orange County",
     "trip_type": "Overnight",
-    "trips": 111,
-    "anglers": 2949,
-    "fish": 26883,
-    "fpa": 9.12
+    "trips": 112,
+    "anglers": 2979,
+    "fish": 27261,
+    "fpa": 9.15
   },
   {
     "rank": 3,
@@ -255,28 +264,28 @@
     "rank": 5,
     "region": "Orange County",
     "trip_type": "3/4 Day",
-    "trips": 305,
-    "anglers": 10510,
-    "fish": 53261,
+    "trips": 306,
+    "anglers": 10553,
+    "fish": 53458,
     "fpa": 5.07
   },
   {
     "rank": 6,
     "region": "Orange County",
     "trip_type": "1/2 Day AM",
-    "trips": 285,
-    "anglers": 8103,
+    "trips": 286,
+    "anglers": 8147,
     "fish": 32554,
-    "fpa": 4.02
+    "fpa": 4
   },
   {
     "rank": 7,
     "region": "Orange County",
     "trip_type": "1/2 Day PM",
-    "trips": 211,
-    "anglers": 6748,
-    "fish": 21849,
-    "fpa": 3.24
+    "trips": 212,
+    "anglers": 6772,
+    "fish": 21895,
+    "fpa": 3.23
   },
   {
     "rank": 8,
@@ -417,10 +426,10 @@
     "rank": 1,
     "region": "San Francisco Bay",
     "trip_type": "Full Day",
-    "trips": 159,
-    "anglers": 2686,
+    "trips": 162,
+    "anglers": 2740,
     "fish": 7529,
-    "fpa": 2.8
+    "fpa": 2.75
   },
   {
     "rank": 2,
