@@ -128,15 +128,6 @@
   {
     "rank": 4,
     "region": "NorCal",
-    "landing": "North Bay Fishing Charters",
-    "trips": 8,
-    "anglers": 37,
-    "fish": 184,
-    "fpa": 4.97
-  },
-  {
-    "rank": 5,
-    "region": "NorCal",
     "landing": "Golden State Sportfishing",
     "trips": 14,
     "anglers": 74,
@@ -144,13 +135,22 @@
     "fpa": 3.89
   },
   {
-    "rank": 6,
+    "rank": 5,
     "region": "NorCal",
     "landing": "Reel Obsession Sportfishing",
     "trips": 13,
     "anglers": 74,
     "fish": 288,
     "fpa": 3.89
+  },
+  {
+    "rank": 6,
+    "region": "NorCal",
+    "landing": "North Bay Fishing Charters",
+    "trips": 10,
+    "anglers": 49,
+    "fish": 184,
+    "fpa": 3.76
   },
   {
     "rank": 7,
@@ -209,18 +209,18 @@
   {
     "rank": 13,
     "region": "NorCal",
-    "landing": "Salty Lady Sportfishing",
-    "trips": 16,
-    "anglers": 256,
+    "landing": "Argo Sportfishing",
+    "trips": 17,
+    "anglers": 85,
     "fish": 0,
     "fpa": 0
   },
   {
     "rank": 14,
     "region": "NorCal",
-    "landing": "Argo Sportfishing",
-    "trips": 15,
-    "anglers": 73,
+    "landing": "Salty Lady Sportfishing",
+    "trips": 16,
+    "anglers": 256,
     "fish": 0,
     "fpa": 0
   },
@@ -417,10 +417,10 @@
     "rank": 4,
     "region": "San Francisco Bay",
     "landing": "Berkeley Charter Boats",
-    "trips": 32,
-    "anglers": 566,
+    "trips": 34,
+    "anglers": 582,
     "fish": 219,
-    "fpa": 0.39
+    "fpa": 0.38
   },
   {
     "rank": 5,

@@ -648,18 +648,6 @@
     "top_species_3": ""
   },
   {
-    "boat": "Sorta Salty",
-    "landing": "North Bay Fishing Charters",
-    "region": "NorCal",
-    "trips": 6,
-    "anglers": 29,
-    "fish": 104,
-    "fpa": 3.59,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Lingcod",
-    "top_species_3": ""
-  },
-  {
     "boat": "Bass-Tub",
     "landing": "Bass Tub Sportfishing",
     "region": "NorCal",
@@ -670,6 +658,18 @@
     "top_species_1": "Rockfish",
     "top_species_2": "Lingcod",
     "top_species_3": "Sand Bass"
+  },
+  {
+    "boat": "Sorta Salty",
+    "landing": "North Bay Fishing Charters",
+    "region": "NorCal",
+    "trips": 8,
+    "anglers": 41,
+    "fish": 104,
+    "fpa": 2.54,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Lingcod",
+    "top_species_3": ""
   },
   {
     "boat": "Barbarossa",
@@ -744,11 +744,11 @@
     "top_species_3": "Lingcod"
   },
   {
-    "boat": "Salty Lady",
-    "landing": "Salty Lady Sportfishing",
+    "boat": "Argo",
+    "landing": "Argo Sportfishing",
     "region": "NorCal",
-    "trips": 16,
-    "anglers": 256,
+    "trips": 17,
+    "anglers": 85,
     "fish": 0,
     "fpa": 0,
     "top_species_1": "",
@@ -756,11 +756,11 @@
     "top_species_3": ""
   },
   {
-    "boat": "Argo",
-    "landing": "Argo Sportfishing",
+    "boat": "Salty Lady",
+    "landing": "Salty Lady Sportfishing",
     "region": "NorCal",
-    "trips": 15,
-    "anglers": 73,
+    "trips": 16,
+    "anglers": 256,
     "fish": 0,
     "fpa": 0,
     "top_species_1": "",
@@ -1899,8 +1899,8 @@
     "boat": "Goldeneye 2000",
     "landing": "Berkeley Charter Boats",
     "region": "San Francisco Bay",
-    "trips": 18,
-    "anglers": 285,
+    "trips": 20,
+    "anglers": 301,
     "fish": 0,
     "fpa": 0,
     "top_species_1": "",

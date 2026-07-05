@@ -740,23 +740,23 @@
     "rank": 5,
     "region": "NorCal",
     "trip_type": "Full Day",
-    "boat": "Sorta Salty",
-    "landing": "North Bay Fishing Charters",
-    "trips": 6,
-    "anglers": 29,
-    "fish": 104,
-    "fpa": 3.59
-  },
-  {
-    "rank": 6,
-    "region": "NorCal",
-    "trip_type": "Full Day",
     "boat": "Bass-Tub",
     "landing": "Bass Tub Sportfishing",
     "trips": 13,
     "anglers": 209,
     "fish": 614,
     "fpa": 2.94
+  },
+  {
+    "rank": 6,
+    "region": "NorCal",
+    "trip_type": "Full Day",
+    "boat": "Sorta Salty",
+    "landing": "North Bay Fishing Charters",
+    "trips": 8,
+    "anglers": 41,
+    "fish": 104,
+    "fpa": 2.54
   },
   {
     "rank": 7,
@@ -806,6 +806,17 @@
     "rank": 11,
     "region": "NorCal",
     "trip_type": "Full Day",
+    "boat": "Argo",
+    "landing": "Argo Sportfishing",
+    "trips": 15,
+    "anglers": 73,
+    "fish": 0,
+    "fpa": 0
+  },
+  {
+    "rank": 12,
+    "region": "NorCal",
+    "trip_type": "Full Day",
     "boat": "Salty Lady",
     "landing": "Salty Lady Sportfishing",
     "trips": 14,
@@ -814,7 +825,7 @@
     "fpa": 0
   },
   {
-    "rank": 12,
+    "rank": 13,
     "region": "NorCal",
     "trip_type": "Full Day",
     "boat": "Hog Heaven",
@@ -825,24 +836,13 @@
     "fpa": 0
   },
   {
-    "rank": 13,
+    "rank": 14,
     "region": "NorCal",
     "trip_type": "Full Day",
     "boat": "Sea Weasel II",
     "landing": "Full Throttle Sportfishing",
     "trips": 13,
     "anglers": 92,
-    "fish": 0,
-    "fpa": 0
-  },
-  {
-    "rank": 14,
-    "region": "NorCal",
-    "trip_type": "Full Day",
-    "boat": "Argo",
-    "landing": "Argo Sportfishing",
-    "trips": 13,
-    "anglers": 61,
     "fish": 0,
     "fpa": 0
   },
@@ -1688,8 +1688,8 @@
     "trip_type": "Full Day",
     "boat": "Goldeneye 2000",
     "landing": "Berkeley Charter Boats",
-    "trips": 18,
-    "anglers": 285,
+    "trips": 20,
+    "anglers": 301,
     "fish": 0,
     "fpa": 0
   },
