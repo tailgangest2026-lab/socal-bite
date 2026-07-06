@@ -36,18 +36,6 @@
     "top_species_3": "Halibut"
   },
   {
-    "boat": "KingFish",
-    "landing": "Fish Emeryville",
-    "region": "Alameda County",
-    "trips": 24,
-    "anglers": 346,
-    "fish": 910,
-    "fpa": 2.63,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Lingcod",
-    "top_species_3": "Halibut"
-  },
-  {
     "boat": "C Gull II",
     "landing": "Fish Emeryville",
     "region": "Alameda County",
@@ -58,6 +46,18 @@
     "top_species_1": "Rockfish",
     "top_species_2": "Halibut",
     "top_species_3": "Lingcod"
+  },
+  {
+    "boat": "KingFish",
+    "landing": "Fish Emeryville",
+    "region": "Alameda County",
+    "trips": 25,
+    "anglers": 365,
+    "fish": 911,
+    "fpa": 2.5,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Lingcod",
+    "top_species_3": "Halibut"
   },
   {
     "boat": "Lady K",
@@ -1707,9 +1707,9 @@
     "boat": "Tribute",
     "landing": "Seaforth Sportfishing",
     "region": "San Diego County",
-    "trips": 26,
-    "anglers": 634,
-    "fish": 859,
+    "trips": 27,
+    "anglers": 651,
+    "fish": 876,
     "fpa": 1.35,
     "top_species_1": "Bluefin Tuna",
     "top_species_2": "Yellowtail",
