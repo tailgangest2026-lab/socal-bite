@@ -1,5 +1,650 @@
-{
-  "error": "File not found",
-  "file": "trip-types.json",
-  "message": "Error: File not found: trip-types.json"
-}
+[
+  {
+    "rank": 1,
+    "region": "Alameda County",
+    "trip_type": "Full Day",
+    "trips": 258,
+    "anglers": 3430,
+    "fish": 11913,
+    "fpa": 3.47
+  },
+  {
+    "rank": 2,
+    "region": "Alameda County",
+    "trip_type": "1/2 Day AM",
+    "trips": 88,
+    "anglers": 1084,
+    "fish": 2095,
+    "fpa": 1.93
+  },
+  {
+    "rank": 3,
+    "region": "Alameda County",
+    "trip_type": "1/2 Day Twilight",
+    "trips": 3,
+    "anglers": 42,
+    "fish": 1,
+    "fpa": 0.02
+  },
+  {
+    "rank": 1,
+    "region": "Central California",
+    "trip_type": "Full Day",
+    "trips": 49,
+    "anglers": 1020,
+    "fish": 6184,
+    "fpa": 6.06
+  },
+  {
+    "rank": 2,
+    "region": "Central California",
+    "trip_type": "1/2 Day PM",
+    "trips": 19,
+    "anglers": 337,
+    "fish": 2031,
+    "fpa": 6.03
+  },
+  {
+    "rank": 3,
+    "region": "Central California",
+    "trip_type": "3/4 Day",
+    "trips": 109,
+    "anglers": 1796,
+    "fish": 9283,
+    "fpa": 5.17
+  },
+  {
+    "rank": 4,
+    "region": "Central California",
+    "trip_type": "1/2 Day Twilight",
+    "trips": 6,
+    "anglers": 86,
+    "fish": 357,
+    "fpa": 4.15
+  },
+  {
+    "rank": 5,
+    "region": "Central California",
+    "trip_type": "1/2 Day AM",
+    "trips": 213,
+    "anglers": 3798,
+    "fish": 13580,
+    "fpa": 3.58
+  },
+  {
+    "rank": 1,
+    "region": "Los Angeles County",
+    "trip_type": "3 Day",
+    "trips": 2,
+    "anglers": 48,
+    "fish": 1910,
+    "fpa": 39.79
+  },
+  {
+    "rank": 2,
+    "region": "Los Angeles County",
+    "trip_type": "2 Day",
+    "trips": 17,
+    "anglers": 303,
+    "fish": 5420,
+    "fpa": 17.89
+  },
+  {
+    "rank": 3,
+    "region": "Los Angeles County",
+    "trip_type": "Overnight",
+    "trips": 113,
+    "anglers": 2977,
+    "fish": 29144,
+    "fpa": 9.79
+  },
+  {
+    "rank": 4,
+    "region": "Los Angeles County",
+    "trip_type": "1.5 Day",
+    "trips": 10,
+    "anglers": 151,
+    "fish": 1341,
+    "fpa": 8.88
+  },
+  {
+    "rank": 5,
+    "region": "Los Angeles County",
+    "trip_type": "3/4 Day",
+    "trips": 387,
+    "anglers": 12331,
+    "fish": 90446,
+    "fpa": 7.33
+  },
+  {
+    "rank": 6,
+    "region": "Los Angeles County",
+    "trip_type": "1/2 Day AM",
+    "trips": 186,
+    "anglers": 7958,
+    "fish": 47883,
+    "fpa": 6.02
+  },
+  {
+    "rank": 7,
+    "region": "Los Angeles County",
+    "trip_type": "1/2 Day Twilight",
+    "trips": 47,
+    "anglers": 2416,
+    "fish": 13955,
+    "fpa": 5.78
+  },
+  {
+    "rank": 8,
+    "region": "Los Angeles County",
+    "trip_type": "Full Day",
+    "trips": 147,
+    "anglers": 3901,
+    "fish": 19409,
+    "fpa": 4.98
+  },
+  {
+    "rank": 9,
+    "region": "Los Angeles County",
+    "trip_type": "1/2 Day PM",
+    "trips": 27,
+    "anglers": 1022,
+    "fish": 4944,
+    "fpa": 4.84
+  },
+  {
+    "rank": 1,
+    "region": "Marin County",
+    "trip_type": "Full Day",
+    "trips": 25,
+    "anglers": 453,
+    "fish": 356,
+    "fpa": 0.79
+  },
+  {
+    "rank": 1,
+    "region": "Monterey County",
+    "trip_type": "1/2 Day Twilight",
+    "trips": 2,
+    "anglers": 34,
+    "fish": 358,
+    "fpa": 10.53
+  },
+  {
+    "rank": 2,
+    "region": "Monterey County",
+    "trip_type": "1/2 Day AM",
+    "trips": 48,
+    "anglers": 814,
+    "fish": 8065,
+    "fpa": 9.91
+  },
+  {
+    "rank": 3,
+    "region": "Monterey County",
+    "trip_type": "1/2 Day PM",
+    "trips": 19,
+    "anglers": 285,
+    "fish": 2328,
+    "fpa": 8.17
+  },
+  {
+    "rank": 4,
+    "region": "Monterey County",
+    "trip_type": "Full Day",
+    "trips": 6,
+    "anglers": 72,
+    "fish": 576,
+    "fpa": 8
+  },
+  {
+    "rank": 1,
+    "region": "NorCal",
+    "trip_type": "Full Day",
+    "trips": 295,
+    "anglers": 3567,
+    "fish": 7635,
+    "fpa": 2.14
+  },
+  {
+    "rank": 2,
+    "region": "NorCal",
+    "trip_type": "1/2 Day AM",
+    "trips": 12,
+    "anglers": 98,
+    "fish": 90,
+    "fpa": 0.92
+  },
+  {
+    "rank": 3,
+    "region": "NorCal",
+    "trip_type": "1/2 Day PM",
+    "trips": 4,
+    "anglers": 42,
+    "fish": 0,
+    "fpa": 0
+  },
+  {
+    "rank": 1,
+    "region": "Orange County",
+    "trip_type": "2 Day",
+    "trips": 3,
+    "anglers": 72,
+    "fish": 1382,
+    "fpa": 19.19
+  },
+  {
+    "rank": 2,
+    "region": "Orange County",
+    "trip_type": "Overnight",
+    "trips": 113,
+    "anglers": 3009,
+    "fish": 27511,
+    "fpa": 9.14
+  },
+  {
+    "rank": 3,
+    "region": "Orange County",
+    "trip_type": "1.5 Day",
+    "trips": 3,
+    "anglers": 92,
+    "fish": 747,
+    "fpa": 8.12
+  },
+  {
+    "rank": 4,
+    "region": "Orange County",
+    "trip_type": "3/4 Day",
+    "trips": 308,
+    "anglers": 10635,
+    "fish": 53278,
+    "fpa": 5.01
+  },
+  {
+    "rank": 5,
+    "region": "Orange County",
+    "trip_type": "Full Day",
+    "trips": 52,
+    "anglers": 807,
+    "fish": 3876,
+    "fpa": 4.8
+  },
+  {
+    "rank": 6,
+    "region": "Orange County",
+    "trip_type": "1/2 Day AM",
+    "trips": 293,
+    "anglers": 8331,
+    "fish": 33205,
+    "fpa": 3.99
+  },
+  {
+    "rank": 7,
+    "region": "Orange County",
+    "trip_type": "1/2 Day PM",
+    "trips": 215,
+    "anglers": 6901,
+    "fish": 22500,
+    "fpa": 3.26
+  },
+  {
+    "rank": 8,
+    "region": "Orange County",
+    "trip_type": "1/2 Day Twilight",
+    "trips": 60,
+    "anglers": 2465,
+    "fish": 7934,
+    "fpa": 3.22
+  },
+  {
+    "rank": 1,
+    "region": "San Diego County",
+    "trip_type": "3/4 Day",
+    "trips": 114,
+    "anglers": 2146,
+    "fish": 15938,
+    "fpa": 7.43
+  },
+  {
+    "rank": 2,
+    "region": "San Diego County",
+    "trip_type": "3 Day",
+    "trips": 65,
+    "anglers": 1418,
+    "fish": 10514,
+    "fpa": 7.41
+  },
+  {
+    "rank": 3,
+    "region": "San Diego County",
+    "trip_type": "2.5 Day",
+    "trips": 25,
+    "anglers": 419,
+    "fish": 2145,
+    "fpa": 5.12
+  },
+  {
+    "rank": 4,
+    "region": "San Diego County",
+    "trip_type": "Full Day Local",
+    "trips": 3,
+    "anglers": 34,
+    "fish": 164,
+    "fpa": 4.82
+  },
+  {
+    "rank": 5,
+    "region": "San Diego County",
+    "trip_type": "1/2 Day Twilight",
+    "trips": 96,
+    "anglers": 2579,
+    "fish": 11376,
+    "fpa": 4.41
+  },
+  {
+    "rank": 6,
+    "region": "San Diego County",
+    "trip_type": "2 Day",
+    "trips": 116,
+    "anglers": 2346,
+    "fish": 9118,
+    "fpa": 3.89
+  },
+  {
+    "rank": 7,
+    "region": "San Diego County",
+    "trip_type": "1/2 Day AM",
+    "trips": 381,
+    "anglers": 10607,
+    "fish": 39589,
+    "fpa": 3.73
+  },
+  {
+    "rank": 8,
+    "region": "San Diego County",
+    "trip_type": "Full Day",
+    "trips": 51,
+    "anglers": 655,
+    "fish": 2316,
+    "fpa": 3.54
+  },
+  {
+    "rank": 9,
+    "region": "San Diego County",
+    "trip_type": "1/2 Day PM",
+    "trips": 235,
+    "anglers": 7957,
+    "fish": 27215,
+    "fpa": 3.42
+  },
+  {
+    "rank": 10,
+    "region": "San Diego County",
+    "trip_type": "Full Day Coronado Islands",
+    "trips": 217,
+    "anglers": 5761,
+    "fish": 17298,
+    "fpa": 3
+  },
+  {
+    "rank": 11,
+    "region": "San Diego County",
+    "trip_type": "3/4 Day Local",
+    "trips": 3,
+    "anglers": 72,
+    "fish": 196,
+    "fpa": 2.72
+  },
+  {
+    "rank": 12,
+    "region": "San Diego County",
+    "trip_type": "1.5 Day",
+    "trips": 93,
+    "anglers": 1965,
+    "fish": 4793,
+    "fpa": 2.44
+  },
+  {
+    "rank": 13,
+    "region": "San Diego County",
+    "trip_type": "Overnight",
+    "trips": 66,
+    "anglers": 1270,
+    "fish": 2301,
+    "fpa": 1.81
+  },
+  {
+    "rank": 14,
+    "region": "San Diego County",
+    "trip_type": "Full Day Offshore",
+    "trips": 19,
+    "anglers": 285,
+    "fish": 475,
+    "fpa": 1.67
+  },
+  {
+    "rank": 1,
+    "region": "San Francisco Bay",
+    "trip_type": "Full Day",
+    "trips": 182,
+    "anglers": 2952,
+    "fish": 7529,
+    "fpa": 2.55
+  },
+  {
+    "rank": 2,
+    "region": "San Francisco Bay",
+    "trip_type": "1/2 Day AM",
+    "trips": 29,
+    "anglers": 276,
+    "fish": 238,
+    "fpa": 0.86
+  },
+  {
+    "rank": 3,
+    "region": "San Francisco Bay",
+    "trip_type": "1/2 Day PM",
+    "trips": 2,
+    "anglers": 12,
+    "fish": 4,
+    "fpa": 0.33
+  },
+  {
+    "rank": 4,
+    "region": "San Francisco Bay",
+    "trip_type": "1/2 Day Twilight",
+    "trips": 4,
+    "anglers": 20,
+    "fish": 6,
+    "fpa": 0.3
+  },
+  {
+    "rank": 5,
+    "region": "San Francisco Bay",
+    "trip_type": "3/4 Day",
+    "trips": 12,
+    "anglers": 68,
+    "fish": 6,
+    "fpa": 0.09
+  },
+  {
+    "rank": 1,
+    "region": "San Mateo County",
+    "trip_type": "Full Day",
+    "trips": 15,
+    "anglers": 134,
+    "fish": 726,
+    "fpa": 5.42
+  },
+  {
+    "rank": 1,
+    "region": "Santa Barbara County",
+    "trip_type": "2 Day",
+    "trips": 1,
+    "anglers": 15,
+    "fish": 437,
+    "fpa": 29.13
+  },
+  {
+    "rank": 2,
+    "region": "Santa Barbara County",
+    "trip_type": "Overnight",
+    "trips": 7,
+    "anglers": 134,
+    "fish": 1931,
+    "fpa": 14.41
+  },
+  {
+    "rank": 3,
+    "region": "Santa Barbara County",
+    "trip_type": "3/4 Day",
+    "trips": 165,
+    "anglers": 4019,
+    "fish": 55050,
+    "fpa": 13.7
+  },
+  {
+    "rank": 4,
+    "region": "Santa Barbara County",
+    "trip_type": "1/2 Day Twilight",
+    "trips": 2,
+    "anglers": 30,
+    "fish": 376,
+    "fpa": 12.53
+  },
+  {
+    "rank": 5,
+    "region": "Santa Barbara County",
+    "trip_type": "1/2 Day AM",
+    "trips": 10,
+    "anglers": 216,
+    "fish": 1756,
+    "fpa": 8.13
+  },
+  {
+    "rank": 1,
+    "region": "SoCal",
+    "trip_type": "2.5 Day",
+    "trips": 2,
+    "anglers": 38,
+    "fish": 1282,
+    "fpa": 33.74
+  },
+  {
+    "rank": 2,
+    "region": "SoCal",
+    "trip_type": "2 Day",
+    "trips": 18,
+    "anglers": 303,
+    "fish": 7383,
+    "fpa": 24.37
+  },
+  {
+    "rank": 3,
+    "region": "SoCal",
+    "trip_type": "Overnight",
+    "trips": 21,
+    "anglers": 347,
+    "fish": 4977,
+    "fpa": 14.34
+  },
+  {
+    "rank": 4,
+    "region": "SoCal",
+    "trip_type": "1/2 Day Twilight",
+    "trips": 12,
+    "anglers": 318,
+    "fish": 3296,
+    "fpa": 10.36
+  },
+  {
+    "rank": 5,
+    "region": "SoCal",
+    "trip_type": "Full Day",
+    "trips": 29,
+    "anglers": 670,
+    "fish": 6491,
+    "fpa": 9.69
+  },
+  {
+    "rank": 6,
+    "region": "SoCal",
+    "trip_type": "1/2 Day AM",
+    "trips": 10,
+    "anglers": 215,
+    "fish": 1929,
+    "fpa": 8.97
+  },
+  {
+    "rank": 7,
+    "region": "SoCal",
+    "trip_type": "3/4 Day",
+    "trips": 10,
+    "anglers": 285,
+    "fish": 1225,
+    "fpa": 4.3
+  },
+  {
+    "rank": 1,
+    "region": "Ventura County",
+    "trip_type": "2 Day",
+    "trips": 13,
+    "anglers": 266,
+    "fish": 7099,
+    "fpa": 26.69
+  },
+  {
+    "rank": 2,
+    "region": "Ventura County",
+    "trip_type": "3 Day",
+    "trips": 10,
+    "anglers": 263,
+    "fish": 4646,
+    "fpa": 17.67
+  },
+  {
+    "rank": 3,
+    "region": "Ventura County",
+    "trip_type": "Overnight",
+    "trips": 151,
+    "anglers": 2918,
+    "fish": 43259,
+    "fpa": 14.82
+  },
+  {
+    "rank": 4,
+    "region": "Ventura County",
+    "trip_type": "3/4 Day",
+    "trips": 183,
+    "anglers": 4269,
+    "fish": 44883,
+    "fpa": 10.51
+  },
+  {
+    "rank": 5,
+    "region": "Ventura County",
+    "trip_type": "1/2 Day AM",
+    "trips": 136,
+    "anglers": 4376,
+    "fish": 45851,
+    "fpa": 10.48
+  },
+  {
+    "rank": 6,
+    "region": "Ventura County",
+    "trip_type": "Full Day",
+    "trips": 332,
+    "anglers": 4692,
+    "fish": 41713,
+    "fpa": 8.89
+  },
+  {
+    "rank": 7,
+    "region": "Ventura County",
+    "trip_type": "1/2 Day Twilight",
+    "trips": 7,
+    "anglers": 274,
+    "fish": 2248,
+    "fpa": 8.2
+  }
+]
