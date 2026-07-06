@@ -808,13 +808,24 @@
     "trip_type": "Full Day",
     "boat": "Argo",
     "landing": "Argo Sportfishing",
-    "trips": 15,
-    "anglers": 73,
+    "trips": 16,
+    "anglers": 79,
     "fish": 0,
     "fpa": 0
   },
   {
     "rank": 12,
+    "region": "NorCal",
+    "trip_type": "Full Day",
+    "boat": "Hog Heaven",
+    "landing": "Hog Heaven Sportfishing",
+    "trips": 15,
+    "anglers": 222,
+    "fish": 0,
+    "fpa": 0
+  },
+  {
+    "rank": 13,
     "region": "NorCal",
     "trip_type": "Full Day",
     "boat": "Salty Lady",
@@ -825,24 +836,13 @@
     "fpa": 0
   },
   {
-    "rank": 13,
+    "rank": 14,
     "region": "NorCal",
     "trip_type": "Full Day",
     "boat": "Sea Weasel II",
     "landing": "Full Throttle Sportfishing",
     "trips": 14,
     "anglers": 96,
-    "fish": 0,
-    "fpa": 0
-  },
-  {
-    "rank": 14,
-    "region": "NorCal",
-    "trip_type": "Full Day",
-    "boat": "Hog Heaven",
-    "landing": "Hog Heaven Sportfishing",
-    "trips": 14,
-    "anglers": 214,
     "fish": 0,
     "fpa": 0
   },
@@ -1358,10 +1358,10 @@
     "trip_type": "1/2 Day PM",
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
-    "trips": 32,
-    "anglers": 1438,
-    "fish": 4240,
-    "fpa": 2.95
+    "trips": 33,
+    "anglers": 1495,
+    "fish": 4442,
+    "fpa": 2.97
   },
   {
     "rank": 1,
@@ -1633,10 +1633,10 @@
     "trip_type": "Full Day",
     "boat": "California Dawn II",
     "landing": "California Dawn Sportfishing",
-    "trips": 41,
-    "anglers": 830,
+    "trips": 42,
+    "anglers": 838,
     "fish": 4284,
-    "fpa": 5.16
+    "fpa": 5.11
   },
   {
     "rank": 2,
@@ -1644,10 +1644,10 @@
     "trip_type": "Full Day",
     "boat": "New California Dawn",
     "landing": "California Dawn Sportfishing",
-    "trips": 40,
-    "anglers": 690,
+    "trips": 41,
+    "anglers": 697,
     "fish": 2314,
-    "fpa": 3.35
+    "fpa": 3.32
   },
   {
     "rank": 3,
