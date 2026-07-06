@@ -381,6 +381,16 @@
   },
   {
     "trip_date": "2026-07-05",
+    "region": "Monterey County",
+    "landing": "J&M Sportfishing",
+    "boat": "New Horizon",
+    "trip_type": "1/2 Day AM",
+    "anglers": 12,
+    "fish_counts": "15 Lingcod, 120 Rockfish",
+    "total_fish": 135
+  },
+  {
+    "trip_date": "2026-07-05",
     "region": "NorCal",
     "landing": "Argo Sportfishing",
     "boat": "Argo",
@@ -663,11 +673,31 @@
     "trip_date": "2026-07-05",
     "region": "San Diego County",
     "landing": "Fisherman's Landing",
+    "boat": "Fortune",
+    "trip_type": "2 Day",
+    "anglers": 12,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-07-05",
+    "region": "San Diego County",
+    "landing": "Fisherman's Landing",
     "boat": "Liberty",
     "trip_type": "Full Day",
     "anglers": 26,
     "fish_counts": "2 Bonito, 74 Calico Bass, 1 Lingcod, 12 Rockfish, 20 Sculpin, 5 Sheephead, 68 Whitefish, 1 Yellowtail",
     "total_fish": 183
+  },
+  {
+    "trip_date": "2026-07-05",
+    "region": "San Diego County",
+    "landing": "Fisherman's Landing",
+    "boat": "Pegasus",
+    "trip_type": "2 Day",
+    "anglers": 14,
+    "fish_counts": "32 Bluefin Tuna",
+    "total_fish": 32
   },
   {
     "trip_date": "2026-07-05",
@@ -1748,6 +1778,26 @@
     "anglers": 17,
     "fish_counts": "9 Lingcod, 170 Rockfish",
     "total_fish": 179
+  },
+  {
+    "trip_date": "2026-07-04",
+    "region": "Monterey County",
+    "landing": "J&M Sportfishing",
+    "boat": "New Horizon",
+    "trip_type": "1/2 Day AM",
+    "anglers": 17,
+    "fish_counts": "9 Lingcod, 170 Rockfish",
+    "total_fish": 179
+  },
+  {
+    "trip_date": "2026-07-04",
+    "region": "Monterey County",
+    "landing": "J&M Sportfishing",
+    "boat": "New Horizon",
+    "trip_type": "1/2 Day PM",
+    "anglers": 16,
+    "fish_counts": "5 Lingcod, 160 Rockfish",
+    "total_fish": 165
   },
   {
     "trip_date": "2026-07-04",
