@@ -303,10 +303,10 @@
     "boat": "Enterprise",
     "landing": "Pierpoint Landing",
     "region": "Los Angeles County",
-    "trips": 23,
-    "anglers": 735,
-    "fish": 6914,
-    "fpa": 9.41,
+    "trips": 24,
+    "anglers": 767,
+    "fish": 7272,
+    "fpa": 9.48,
     "top_species_1": "Sculpin",
     "top_species_2": "Rockfish",
     "top_species_3": "Whitefish"
@@ -435,13 +435,13 @@
     "boat": "Sport King",
     "landing": "LA Waterfront Cruises and Sportfishing",
     "region": "Los Angeles County",
-    "trips": 20,
-    "anglers": 544,
-    "fish": 2755,
-    "fpa": 5.06,
+    "trips": 23,
+    "anglers": 625,
+    "fish": 3145,
+    "fpa": 5.03,
     "top_species_1": "Calico Bass",
     "top_species_2": "Calico Bass Released",
-    "top_species_3": "Rockfish"
+    "top_species_3": "Bonito"
   },
   {
     "boat": "Pursuit",
@@ -480,18 +480,6 @@
     "top_species_3": "Rockfish"
   },
   {
-    "boat": "Gail Force",
-    "landing": "LA Waterfront Cruises and Sportfishing",
-    "region": "Los Angeles County",
-    "trips": 25,
-    "anglers": 476,
-    "fish": 2180,
-    "fpa": 4.58,
-    "top_species_1": "Calico Bass",
-    "top_species_2": "Calico Bass Released",
-    "top_species_3": "Whitefish"
-  },
-  {
     "boat": "Triton",
     "landing": "LA Waterfront Cruises and Sportfishing",
     "region": "Los Angeles County",
@@ -502,6 +490,18 @@
     "top_species_1": "Calico Bass",
     "top_species_2": "Calico Bass Released",
     "top_species_3": "Rockfish"
+  },
+  {
+    "boat": "Gail Force",
+    "landing": "LA Waterfront Cruises and Sportfishing",
+    "region": "Los Angeles County",
+    "trips": 26,
+    "anglers": 496,
+    "fish": 2228,
+    "fpa": 4.49,
+    "top_species_1": "Calico Bass",
+    "top_species_2": "Calico Bass Released",
+    "top_species_3": "Whitefish"
   },
   {
     "boat": "Ahra-Ahn",
@@ -660,18 +660,6 @@
     "top_species_3": "Sand Bass"
   },
   {
-    "boat": "Sorta Salty",
-    "landing": "North Bay Fishing Charters",
-    "region": "NorCal",
-    "trips": 8,
-    "anglers": 41,
-    "fish": 104,
-    "fpa": 2.54,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Lingcod",
-    "top_species_3": ""
-  },
-  {
     "boat": "Barbarossa",
     "landing": "Barbarossa Fishing",
     "region": "NorCal",
@@ -681,6 +669,18 @@
     "fpa": 2.37,
     "top_species_1": "Rockfish",
     "top_species_2": "",
+    "top_species_3": ""
+  },
+  {
+    "boat": "Sorta Salty",
+    "landing": "North Bay Fishing Charters",
+    "region": "NorCal",
+    "trips": 9,
+    "anglers": 46,
+    "fish": 104,
+    "fpa": 2.26,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Lingcod",
     "top_species_3": ""
   },
   {
@@ -1056,18 +1056,6 @@
     "top_species_3": "Rockfish"
   },
   {
-    "boat": "Dana Pride",
-    "landing": "Dana Wharf Sportfishing",
-    "region": "Orange County",
-    "trips": 41,
-    "anglers": 1921,
-    "fish": 5590,
-    "fpa": 2.91,
-    "top_species_1": "Calico Bass Released",
-    "top_species_2": "Rockfish",
-    "top_species_3": "Calico Bass"
-  },
-  {
     "boat": "Helena",
     "landing": "Dana Wharf Sportfishing",
     "region": "Orange County",
@@ -1078,6 +1066,18 @@
     "top_species_1": "Calico Bass Released",
     "top_species_2": "Calico Bass",
     "top_species_3": "Sand Bass"
+  },
+  {
+    "boat": "Dana Pride",
+    "landing": "Dana Wharf Sportfishing",
+    "region": "Orange County",
+    "trips": 42,
+    "anglers": 1969,
+    "fish": 5716,
+    "fpa": 2.9,
+    "top_species_1": "Calico Bass Released",
+    "top_species_2": "Rockfish",
+    "top_species_3": "Calico Bass"
   },
   {
     "boat": "Aggressor",
@@ -1836,18 +1836,6 @@
     "top_species_3": "Barracuda"
   },
   {
-    "boat": "Reel Addiction 1",
-    "landing": "Reel Addiction Sportfishing",
-    "region": "San Francisco Bay",
-    "trips": 15,
-    "anglers": 104,
-    "fish": 146,
-    "fpa": 1.4,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Lingcod",
-    "top_species_3": ""
-  },
-  {
     "boat": "Right Hook",
     "landing": "Right Hook Sportfishing",
     "region": "San Francisco Bay",
@@ -1858,6 +1846,18 @@
     "top_species_1": "Rockfish",
     "top_species_2": "Lingcod",
     "top_species_3": "Halibut"
+  },
+  {
+    "boat": "Reel Addiction 1",
+    "landing": "Reel Addiction Sportfishing",
+    "region": "San Francisco Bay",
+    "trips": 16,
+    "anglers": 110,
+    "fish": 146,
+    "fpa": 1.33,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Lingcod",
+    "top_species_3": ""
   },
   {
     "boat": "New Easy Rider",
@@ -1899,8 +1899,8 @@
     "boat": "Goldeneye 2000",
     "landing": "Berkeley Charter Boats",
     "region": "San Francisco Bay",
-    "trips": 20,
-    "anglers": 301,
+    "trips": 21,
+    "anglers": 316,
     "fish": 0,
     "fpa": 0,
     "top_species_1": "",
