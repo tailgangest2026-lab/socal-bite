@@ -531,10 +531,10 @@
     "boat": "New Rayann",
     "landing": "New Rayann Sportfishing",
     "region": "Marin County",
-    "trips": 27,
-    "anglers": 475,
+    "trips": 28,
+    "anglers": 496,
     "fish": 356,
-    "fpa": 0.75,
+    "fpa": 0.72,
     "top_species_1": "Rockfish",
     "top_species_2": "Lingcod",
     "top_species_3": "Halibut"
@@ -1320,6 +1320,18 @@
     "top_species_3": "Rockfish"
   },
   {
+    "boat": "Sea Watch",
+    "landing": "Seaforth Sportfishing",
+    "region": "San Diego County",
+    "trips": 57,
+    "anglers": 1326,
+    "fish": 6656,
+    "fpa": 5.02,
+    "top_species_1": "Calico Bass Released",
+    "top_species_2": "Calico Bass",
+    "top_species_3": "Rockfish"
+  },
+  {
     "boat": "Spirit of Adventure",
     "landing": "H&M Landing",
     "region": "San Diego County",
@@ -1330,18 +1342,6 @@
     "top_species_1": "Rockfish",
     "top_species_2": "Bluefin Tuna",
     "top_species_3": "Yellowtail"
-  },
-  {
-    "boat": "Sea Watch",
-    "landing": "Seaforth Sportfishing",
-    "region": "San Diego County",
-    "trips": 56,
-    "anglers": 1307,
-    "fish": 6324,
-    "fpa": 4.84,
-    "top_species_1": "Calico Bass Released",
-    "top_species_2": "Calico Bass",
-    "top_species_3": "Rockfish"
   },
   {
     "boat": "Southern Cal",
@@ -2103,10 +2103,10 @@
     "boat": "Coroloma",
     "landing": "Hooks Landing",
     "region": "Ventura County",
-    "trips": 26,
-    "anglers": 690,
-    "fish": 9025,
-    "fpa": 13.08,
+    "trips": 27,
+    "anglers": 716,
+    "fish": 9178,
+    "fpa": 12.82,
     "top_species_1": "Rockfish",
     "top_species_2": "Whitefish",
     "top_species_3": "Calico Bass"
