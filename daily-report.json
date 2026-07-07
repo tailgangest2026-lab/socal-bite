@@ -43,6 +43,16 @@
     "trip_date": "2026-07-07",
     "region": "Alameda County",
     "landing": "Fish Emeryville",
+    "boat": "Lady K",
+    "trip_type": "Full Day",
+    "anglers": 6,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-07-07",
+    "region": "Alameda County",
+    "landing": "Fish Emeryville",
     "boat": "New Huck Finn",
     "trip_type": "Full Day",
     "anglers": 19,
@@ -83,11 +93,31 @@
     "trip_date": "2026-07-07",
     "region": "Alameda County",
     "landing": "Fish Emeryville",
+    "boat": "Scallywag",
+    "trip_type": "Full Day",
+    "anglers": 4,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-07-07",
+    "region": "Alameda County",
+    "landing": "Fish Emeryville",
     "boat": "Sea Wolf",
     "trip_type": "Full Day",
     "anglers": 23,
     "fish_counts": "46 Lingcod, 230 Rockfish",
     "total_fish": 276
+  },
+  {
+    "trip_date": "2026-07-07",
+    "region": "Central California",
+    "landing": "Morro Bay Landing",
+    "boat": "Endeavor (MB)",
+    "trip_type": "3/4 Day",
+    "anglers": 24,
+    "fish_counts": "5 Lingcod, 48 Red Rockfish, 135 Rockfish",
+    "total_fish": 188
   },
   {
     "trip_date": "2026-07-07",
@@ -408,6 +438,26 @@
     "anglers": 30,
     "fish_counts": "9 Barracuda, 26 Calico Bass, 25 Rockfish, 50 Yellowtail",
     "total_fish": 110
+  },
+  {
+    "trip_date": "2026-07-07",
+    "region": "San Diego County",
+    "landing": "H&M Landing",
+    "boat": "Legend",
+    "trip_type": "3 Day",
+    "anglers": 24,
+    "fish_counts": "43 Bluefin Tuna, 5 Yellowtail",
+    "total_fish": 48
+  },
+  {
+    "trip_date": "2026-07-07",
+    "region": "San Diego County",
+    "landing": "H&M Landing",
+    "boat": "Premier",
+    "trip_type": "1/2 Day AM",
+    "anglers": 29,
+    "fish_counts": "1 Barracuda, 44 Bonito, 28 Calico Bass, 74 Calico Bass Released, 4 Sheephead",
+    "total_fish": 151
   },
   {
     "trip_date": "2026-07-07",
