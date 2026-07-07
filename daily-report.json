@@ -292,6 +292,26 @@
   {
     "trip_date": "2026-07-06",
     "region": "Los Angeles County",
+    "landing": "Marina Del Rey Sportfishing",
+    "boat": "New Del Mar",
+    "trip_type": "3/4 Day",
+    "anglers": 53,
+    "fish_counts": "20 Calico Bass, 1 Lingcod, 125 Rockfish, 5 Sand Bass, 200 Sculpin, 100 Whitefish",
+    "total_fish": 451
+  },
+  {
+    "trip_date": "2026-07-06",
+    "region": "Los Angeles County",
+    "landing": "Marina Del Rey Sportfishing",
+    "boat": "Spitfire",
+    "trip_type": "3/4 Day",
+    "anglers": 15,
+    "fish_counts": "11 Bonito, 32 Calico Bass, 30 Rockfish, 25 Whitefish",
+    "total_fish": 98
+  },
+  {
+    "trip_date": "2026-07-06",
+    "region": "Los Angeles County",
     "landing": "Pierpoint Landing",
     "boat": "Enterprise",
     "trip_type": "3/4 Day",
@@ -348,6 +368,16 @@
     "anglers": 11,
     "fish_counts": "",
     "total_fish": 0
+  },
+  {
+    "trip_date": "2026-07-06",
+    "region": "Monterey County",
+    "landing": "J&M Sportfishing",
+    "boat": "Kahuna",
+    "trip_type": "1/2 Day AM",
+    "anglers": 15,
+    "fish_counts": "6 Lingcod, 150 Rockfish",
+    "total_fish": 156
   },
   {
     "trip_date": "2026-07-06",
@@ -963,11 +993,31 @@
     "trip_date": "2026-07-06",
     "region": "Santa Barbara County",
     "landing": "Santa Barbara Landing",
+    "boat": "Coral Sea",
+    "trip_type": "3/4 Day",
+    "anglers": 24,
+    "fish_counts": "169 Rockfish, 2 Sand Bass, 15 Sheephead, 48 Whitefish",
+    "total_fish": 234
+  },
+  {
+    "trip_date": "2026-07-06",
+    "region": "Santa Barbara County",
+    "landing": "Santa Barbara Landing",
     "boat": "Stardust",
     "trip_type": "3/4 Day",
     "anglers": 23,
     "fish_counts": "16 Lingcod, 163 Rockfish, 230 Whitefish",
     "total_fish": 409
+  },
+  {
+    "trip_date": "2026-07-06",
+    "region": "Santa Barbara County",
+    "landing": "Santa Barbara Landing",
+    "boat": "Stardust",
+    "trip_type": "3/4 Day",
+    "anglers": 15,
+    "fish_counts": "125 Rockfish, 1 Sand Bass, 29 Whitefish",
+    "total_fish": 155
   },
   {
     "trip_date": "2026-07-06",
@@ -1607,6 +1657,16 @@
     "trip_type": "1/2 Day AM",
     "anglers": 12,
     "fish_counts": "15 Lingcod, 120 Rockfish",
+    "total_fish": 135
+  },
+  {
+    "trip_date": "2026-07-05",
+    "region": "Monterey County",
+    "landing": "J&M Sportfishing",
+    "boat": "New Horizon",
+    "trip_type": "1/2 Day PM",
+    "anglers": 13,
+    "fish_counts": "5 Lingcod, 130 Rockfish",
     "total_fish": 135
   },
   {
