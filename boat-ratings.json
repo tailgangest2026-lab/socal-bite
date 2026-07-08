@@ -729,23 +729,23 @@
     "rank": 4,
     "region": "NorCal",
     "trip_type": "Full Day",
-    "boat": "Bass-Tub",
-    "landing": "Bass Tub Sportfishing",
-    "trips": 13,
-    "anglers": 209,
-    "fish": 614,
-    "fpa": 2.94
-  },
-  {
-    "rank": 5,
-    "region": "NorCal",
-    "trip_type": "Full Day",
     "boat": "Golden State Sportfishing",
     "landing": "Golden State Sportfishing",
     "trips": 20,
     "anglers": 102,
     "fish": 288,
     "fpa": 2.82
+  },
+  {
+    "rank": 5,
+    "region": "NorCal",
+    "trip_type": "Full Day",
+    "boat": "Bass-Tub",
+    "landing": "Bass Tub Sportfishing",
+    "trips": 14,
+    "anglers": 227,
+    "fish": 614,
+    "fpa": 2.7
   },
   {
     "rank": 6,
@@ -786,10 +786,10 @@
     "trip_type": "Full Day",
     "boat": "Outer Limits (Sausalito, CA)",
     "landing": "Big Cs Charters",
-    "trips": 21,
-    "anglers": 324,
+    "trips": 22,
+    "anglers": 338,
     "fish": 240,
-    "fpa": 0.74
+    "fpa": 0.71
   },
   {
     "rank": 10,
@@ -1334,23 +1334,23 @@
     "rank": 3,
     "region": "San Diego County",
     "trip_type": "1/2 Day PM",
+    "boat": "Daily Double",
+    "landing": "Point Loma Sportfishing",
+    "trips": 14,
+    "anglers": 313,
+    "fish": 1086,
+    "fpa": 3.47
+  },
+  {
+    "rank": 4,
+    "region": "San Diego County",
+    "trip_type": "1/2 Day PM",
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
     "trips": 33,
     "anglers": 1490,
     "fish": 4864,
     "fpa": 3.26
-  },
-  {
-    "rank": 4,
-    "region": "San Diego County",
-    "trip_type": "1/2 Day PM",
-    "boat": "Daily Double",
-    "landing": "Point Loma Sportfishing",
-    "trips": 13,
-    "anglers": 291,
-    "fish": 943,
-    "fpa": 3.24
   },
   {
     "rank": 1,
@@ -1655,10 +1655,10 @@
     "trip_type": "Full Day",
     "boat": "New Easy Rider",
     "landing": "Berkeley Charter Boats",
-    "trips": 18,
-    "anglers": 361,
+    "trips": 19,
+    "anglers": 379,
     "fish": 219,
-    "fpa": 0.61
+    "fpa": 0.58
   },
   {
     "rank": 5,
@@ -1688,8 +1688,8 @@
     "trip_type": "Full Day",
     "boat": "Goldeneye 2000",
     "landing": "Berkeley Charter Boats",
-    "trips": 22,
-    "anglers": 331,
+    "trips": 23,
+    "anglers": 339,
     "fish": 0,
     "fpa": 0
   },
