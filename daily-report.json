@@ -3,6 +3,16 @@
     "trip_date": "2026-07-07",
     "region": "Alameda County",
     "landing": "Fish Emeryville",
+    "boat": "C Gull II",
+    "trip_type": "Full Day",
+    "anglers": 18,
+    "fish_counts": "8 Bonito",
+    "total_fish": 8
+  },
+  {
+    "trip_date": "2026-07-07",
+    "region": "Alameda County",
+    "landing": "Fish Emeryville",
     "boat": "Heisen-sturg",
     "trip_type": "Full Day",
     "anglers": 5,
@@ -652,6 +662,16 @@
   {
     "trip_date": "2026-07-07",
     "region": "San Diego County",
+    "landing": "Point Loma Sportfishing",
+    "boat": "Daily Double",
+    "trip_type": "1/2 Day AM",
+    "anglers": 23,
+    "fish_counts": "8 Barracuda, 20 Bonito, 20 Calico Bass, 65 Calico Bass Released",
+    "total_fish": 113
+  },
+  {
+    "trip_date": "2026-07-07",
+    "region": "San Diego County",
     "landing": "Seaforth Sportfishing",
     "boat": "New Seaforth",
     "trip_type": "1/2 Day Twilight",
@@ -736,6 +756,16 @@
     "boat": "Lovely Martha",
     "trip_type": "Full Day",
     "anglers": 18,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-07-07",
+    "region": "San Francisco Bay",
+    "landing": "Lovely Martha Sportfishing",
+    "boat": "Lovely Martha",
+    "trip_type": "Full Day",
+    "anglers": 21,
     "fish_counts": "",
     "total_fish": 0
   },
