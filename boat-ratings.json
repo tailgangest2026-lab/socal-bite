@@ -148,10 +148,10 @@
     "trip_type": "Full Day",
     "boat": "Oakland Anglers II",
     "landing": "Fish Emeryville",
-    "trips": 13,
-    "anglers": 216,
-    "fish": 72,
-    "fpa": 0.33
+    "trips": 14,
+    "anglers": 230,
+    "fish": 217,
+    "fpa": 0.94
   },
   {
     "rank": 9,
@@ -423,10 +423,10 @@
     "trip_type": "1/2 Day PM",
     "boat": "Redondo Special",
     "landing": "Redondo Beach Sportfishing",
-    "trips": 14,
-    "anglers": 508,
-    "fish": 1878,
-    "fpa": 3.7
+    "trips": 15,
+    "anglers": 545,
+    "fish": 1968,
+    "fpa": 3.61
   },
   {
     "rank": 1,
@@ -544,10 +544,10 @@
     "trip_type": "Full Day",
     "boat": "El Patron",
     "landing": "Long Beach Sportfishing",
-    "trips": 29,
-    "anglers": 592,
-    "fish": 3417,
-    "fpa": 5.77
+    "trips": 30,
+    "anglers": 613,
+    "fish": 3530,
+    "fpa": 5.76
   },
   {
     "rank": 2,
@@ -806,6 +806,17 @@
     "rank": 11,
     "region": "NorCal",
     "trip_type": "Full Day",
+    "boat": "Salty Lady",
+    "landing": "Salty Lady Sportfishing",
+    "trips": 17,
+    "anglers": 280,
+    "fish": 0,
+    "fpa": 0
+  },
+  {
+    "rank": 12,
+    "region": "NorCal",
+    "trip_type": "Full Day",
     "boat": "Sea Weasel II",
     "landing": "Full Throttle Sportfishing",
     "trips": 17,
@@ -814,24 +825,13 @@
     "fpa": 0
   },
   {
-    "rank": 12,
+    "rank": 13,
     "region": "NorCal",
     "trip_type": "Full Day",
     "boat": "Argo",
     "landing": "Argo Sportfishing",
     "trips": 17,
     "anglers": 85,
-    "fish": 0,
-    "fpa": 0
-  },
-  {
-    "rank": 13,
-    "region": "NorCal",
-    "trip_type": "Full Day",
-    "boat": "Salty Lady",
-    "landing": "Salty Lady Sportfishing",
-    "trips": 16,
-    "anglers": 264,
     "fish": 0,
     "fpa": 0
   },
@@ -929,10 +929,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Clemente",
     "landing": "Dana Wharf Sportfishing",
-    "trips": 16,
-    "anglers": 484,
-    "fish": 2126,
-    "fpa": 4.39
+    "trips": 17,
+    "anglers": 502,
+    "fish": 2242,
+    "fpa": 4.47
   },
   {
     "rank": 4,
@@ -1006,10 +1006,10 @@
     "trip_type": "1/2 Day PM",
     "boat": "Clemente",
     "landing": "Dana Wharf Sportfishing",
-    "trips": 12,
-    "anglers": 442,
-    "fish": 1844,
-    "fpa": 4.17
+    "trips": 13,
+    "anglers": 473,
+    "fish": 1968,
+    "fpa": 4.16
   },
   {
     "rank": 3,
@@ -1105,10 +1105,10 @@
     "trip_type": "3/4 Day",
     "boat": "Sum Fun",
     "landing": "Dana Wharf Sportfishing",
-    "trips": 26,
-    "anglers": 850,
-    "fish": 3338,
-    "fpa": 3.93
+    "trips": 27,
+    "anglers": 883,
+    "fish": 3497,
+    "fpa": 3.96
   },
   {
     "rank": 4,
@@ -1523,10 +1523,10 @@
     "trip_type": "Full Day Coronado Islands",
     "boat": "San Diego",
     "landing": "Seaforth Sportfishing",
-    "trips": 31,
-    "anglers": 953,
-    "fish": 3447,
-    "fpa": 3.62
+    "trips": 32,
+    "anglers": 975,
+    "fish": 3564,
+    "fpa": 3.66
   },
   {
     "rank": 3,
