@@ -1,5 +1,488 @@
-{
-  "error": "File not found",
-  "file": "landings.json",
-  "message": "Error: File not found: landings.json"
-}
+[
+  {
+    "rank": 1,
+    "region": "Alameda County",
+    "landing": "Fish Emeryville",
+    "trips": 381,
+    "anglers": 4933,
+    "fish": 15939,
+    "fpa": 3.23
+  },
+  {
+    "rank": 1,
+    "region": "Central California",
+    "landing": "Morro Bay Landing",
+    "trips": 203,
+    "anglers": 4192,
+    "fish": 31839,
+    "fpa": 7.6
+  },
+  {
+    "rank": 2,
+    "region": "Central California",
+    "landing": "Patriot Sportfishing",
+    "trips": 203,
+    "anglers": 3049,
+    "fish": 454,
+    "fpa": 0.15
+  },
+  {
+    "rank": 1,
+    "region": "Los Angeles County",
+    "landing": "Long Beach Sportfishing",
+    "trips": 169,
+    "anglers": 4519,
+    "fish": 41869,
+    "fpa": 9.27
+  },
+  {
+    "rank": 2,
+    "region": "Los Angeles County",
+    "landing": "Pierpoint Landing",
+    "trips": 54,
+    "anglers": 1623,
+    "fish": 13414,
+    "fpa": 8.26
+  },
+  {
+    "rank": 3,
+    "region": "Los Angeles County",
+    "landing": "Marina Del Rey Sportfishing",
+    "trips": 264,
+    "anglers": 11239,
+    "fish": 76011,
+    "fpa": 6.76
+  },
+  {
+    "rank": 4,
+    "region": "Los Angeles County",
+    "landing": "22nd Street Landing",
+    "trips": 289,
+    "anglers": 9690,
+    "fish": 62462,
+    "fpa": 6.45
+  },
+  {
+    "rank": 5,
+    "region": "Los Angeles County",
+    "landing": "Redondo Beach Sportfishing",
+    "trips": 98,
+    "anglers": 2808,
+    "fish": 14593,
+    "fpa": 5.2
+  },
+  {
+    "rank": 6,
+    "region": "Los Angeles County",
+    "landing": "LA Waterfront Cruises and Sportfishing",
+    "trips": 81,
+    "anglers": 1779,
+    "fish": 8580,
+    "fpa": 4.82
+  },
+  {
+    "rank": 1,
+    "region": "Marin County",
+    "landing": "New Rayann Sportfishing",
+    "trips": 29,
+    "anglers": 517,
+    "fish": 356,
+    "fpa": 0.69
+  },
+  {
+    "rank": 1,
+    "region": "Monterey County",
+    "landing": "J&M Sportfishing",
+    "trips": 80,
+    "anglers": 1272,
+    "fish": 12016,
+    "fpa": 9.45
+  },
+  {
+    "rank": 1,
+    "region": "NorCal",
+    "landing": "Stagnaros Charters",
+    "trips": 8,
+    "anglers": 91,
+    "fish": 904,
+    "fpa": 9.93
+  },
+  {
+    "rank": 2,
+    "region": "NorCal",
+    "landing": "Half Moon Bay Sportfishing",
+    "trips": 34,
+    "anglers": 616,
+    "fish": 3828,
+    "fpa": 6.21
+  },
+  {
+    "rank": 3,
+    "region": "NorCal",
+    "landing": "Santa Cruz Coastal Fishing Charters",
+    "trips": 4,
+    "anglers": 14,
+    "fish": 86,
+    "fpa": 6.14
+  },
+  {
+    "rank": 4,
+    "region": "NorCal",
+    "landing": "North Bay Fishing Charters",
+    "trips": 12,
+    "anglers": 59,
+    "fish": 184,
+    "fpa": 3.12
+  },
+  {
+    "rank": 5,
+    "region": "NorCal",
+    "landing": "Golden State Sportfishing",
+    "trips": 20,
+    "anglers": 102,
+    "fish": 288,
+    "fpa": 2.82
+  },
+  {
+    "rank": 6,
+    "region": "NorCal",
+    "landing": "Reel Obsession Sportfishing",
+    "trips": 18,
+    "anglers": 104,
+    "fish": 288,
+    "fpa": 2.77
+  },
+  {
+    "rank": 7,
+    "region": "NorCal",
+    "landing": "Bass Tub Sportfishing",
+    "trips": 15,
+    "anglers": 245,
+    "fish": 614,
+    "fpa": 2.51
+  },
+  {
+    "rank": 8,
+    "region": "NorCal",
+    "landing": "Barbarossa Fishing",
+    "trips": 11,
+    "anglers": 43,
+    "fish": 90,
+    "fpa": 2.09
+  },
+  {
+    "rank": 9,
+    "region": "NorCal",
+    "landing": "Bodega Bay Sportfishing Center",
+    "trips": 24,
+    "anglers": 371,
+    "fish": 470,
+    "fpa": 1.27
+  },
+  {
+    "rank": 10,
+    "region": "NorCal",
+    "landing": "Happy Hooker Sportfishing",
+    "trips": 41,
+    "anglers": 875,
+    "fish": 983,
+    "fpa": 1.12
+  },
+  {
+    "rank": 11,
+    "region": "NorCal",
+    "landing": "Big Cs Charters",
+    "trips": 28,
+    "anglers": 382,
+    "fish": 240,
+    "fpa": 0.63
+  },
+  {
+    "rank": 12,
+    "region": "NorCal",
+    "landing": "Humboldt Charter Company",
+    "trips": 2,
+    "anglers": 8,
+    "fish": 2,
+    "fpa": 0.25
+  },
+  {
+    "rank": 13,
+    "region": "NorCal",
+    "landing": "Argo Sportfishing",
+    "trips": 21,
+    "anglers": 103,
+    "fish": 0,
+    "fpa": 0
+  },
+  {
+    "rank": 14,
+    "region": "NorCal",
+    "landing": "Salty Lady Sportfishing",
+    "trips": 20,
+    "anglers": 330,
+    "fish": 0,
+    "fpa": 0
+  },
+  {
+    "rank": 15,
+    "region": "NorCal",
+    "landing": "Full Throttle Sportfishing",
+    "trips": 18,
+    "anglers": 118,
+    "fish": 0,
+    "fpa": 0
+  },
+  {
+    "rank": 16,
+    "region": "NorCal",
+    "landing": "Hog Heaven Sportfishing",
+    "trips": 16,
+    "anglers": 230,
+    "fish": 0,
+    "fpa": 0
+  },
+  {
+    "rank": 17,
+    "region": "NorCal",
+    "landing": "Blue Runner Charters",
+    "trips": 12,
+    "anglers": 126,
+    "fish": 0,
+    "fpa": 0
+  },
+  {
+    "rank": 18,
+    "region": "NorCal",
+    "landing": "New Captain Pete",
+    "trips": 8,
+    "anglers": 68,
+    "fish": 0,
+    "fpa": 0
+  },
+  {
+    "rank": 19,
+    "region": "NorCal",
+    "landing": "Fish On Sportfishing",
+    "trips": 8,
+    "anglers": 26,
+    "fish": 0,
+    "fpa": 0
+  },
+  {
+    "rank": 20,
+    "region": "NorCal",
+    "landing": "Telstar Charters",
+    "trips": 7,
+    "anglers": 93,
+    "fish": 0,
+    "fpa": 0
+  },
+  {
+    "rank": 21,
+    "region": "NorCal",
+    "landing": "Reel Steel Sportfishing",
+    "trips": 5,
+    "anglers": 19,
+    "fish": 0,
+    "fpa": 0
+  },
+  {
+    "rank": 22,
+    "region": "NorCal",
+    "landing": "Sonoma Coast Adventures",
+    "trips": 5,
+    "anglers": 28,
+    "fish": 0,
+    "fpa": 0
+  },
+  {
+    "rank": 23,
+    "region": "NorCal",
+    "landing": "Fort Bragg Fishing",
+    "trips": 4,
+    "anglers": 24,
+    "fish": 0,
+    "fpa": 0
+  },
+  {
+    "rank": 24,
+    "region": "NorCal",
+    "landing": "Dragon Sportfishing",
+    "trips": 2,
+    "anglers": 12,
+    "fish": 0,
+    "fpa": 0
+  },
+  {
+    "rank": 1,
+    "region": "Orange County",
+    "landing": "Newport Landing",
+    "trips": 183,
+    "anglers": 5030,
+    "fish": 26136,
+    "fpa": 5.2
+  },
+  {
+    "rank": 2,
+    "region": "Orange County",
+    "landing": "Davey's Locker",
+    "trips": 362,
+    "anglers": 13708,
+    "fish": 63386,
+    "fpa": 4.62
+  },
+  {
+    "rank": 3,
+    "region": "Orange County",
+    "landing": "Dana Wharf Sportfishing",
+    "trips": 530,
+    "anglers": 14262,
+    "fish": 65051,
+    "fpa": 4.56
+  },
+  {
+    "rank": 1,
+    "region": "San Diego County",
+    "landing": "Oceanside Sea Center",
+    "trips": 163,
+    "anglers": 3003,
+    "fish": 19756,
+    "fpa": 6.58
+  },
+  {
+    "rank": 2,
+    "region": "San Diego County",
+    "landing": "H&M Landing",
+    "trips": 333,
+    "anglers": 8297,
+    "fish": 36947,
+    "fpa": 4.45
+  },
+  {
+    "rank": 3,
+    "region": "San Diego County",
+    "landing": "Fisherman's Landing",
+    "trips": 281,
+    "anglers": 7397,
+    "fish": 26946,
+    "fpa": 3.64
+  },
+  {
+    "rank": 4,
+    "region": "San Diego County",
+    "landing": "Point Loma Sportfishing",
+    "trips": 195,
+    "anglers": 3853,
+    "fish": 13022,
+    "fpa": 3.38
+  },
+  {
+    "rank": 5,
+    "region": "San Diego County",
+    "landing": "Seaforth Sportfishing",
+    "trips": 537,
+    "anglers": 15416,
+    "fish": 51952,
+    "fpa": 3.37
+  },
+  {
+    "rank": 1,
+    "region": "San Francisco Bay",
+    "landing": "California Dawn Sportfishing",
+    "trips": 95,
+    "anglers": 1750,
+    "fish": 8066,
+    "fpa": 4.61
+  },
+  {
+    "rank": 2,
+    "region": "San Francisco Bay",
+    "landing": "Right Hook Sportfishing",
+    "trips": 41,
+    "anglers": 213,
+    "fish": 254,
+    "fpa": 1.19
+  },
+  {
+    "rank": 3,
+    "region": "San Francisco Bay",
+    "landing": "Reel Addiction Sportfishing",
+    "trips": 35,
+    "anglers": 248,
+    "fish": 152,
+    "fpa": 0.61
+  },
+  {
+    "rank": 4,
+    "region": "San Francisco Bay",
+    "landing": "Berkeley Charter Boats",
+    "trips": 44,
+    "anglers": 744,
+    "fish": 219,
+    "fpa": 0.29
+  },
+  {
+    "rank": 5,
+    "region": "San Francisco Bay",
+    "landing": "Lovely Martha Sportfishing",
+    "trips": 38,
+    "anglers": 737,
+    "fish": 0,
+    "fpa": 0
+  },
+  {
+    "rank": 1,
+    "region": "San Mateo County",
+    "landing": "Riptide Sportfishing",
+    "trips": 15,
+    "anglers": 134,
+    "fish": 726,
+    "fpa": 5.42
+  },
+  {
+    "rank": 1,
+    "region": "Santa Barbara County",
+    "landing": "Santa Barbara Landing",
+    "trips": 191,
+    "anglers": 4527,
+    "fish": 60944,
+    "fpa": 13.46
+  },
+  {
+    "rank": 1,
+    "region": "SoCal",
+    "landing": "Ventura Harbor Sportfishing",
+    "trips": 95,
+    "anglers": 2049,
+    "fish": 26096,
+    "fpa": 12.74
+  },
+  {
+    "rank": 2,
+    "region": "SoCal",
+    "landing": "Virg's Landing",
+    "trips": 5,
+    "anglers": 81,
+    "fish": 61,
+    "fpa": 0.75
+  },
+  {
+    "rank": 1,
+    "region": "Ventura County",
+    "landing": "Hooks Landing",
+    "trips": 62,
+    "anglers": 1577,
+    "fish": 20717,
+    "fpa": 13.14
+  },
+  {
+    "rank": 2,
+    "region": "Ventura County",
+    "landing": "Channel Islands Sportfishing",
+    "trips": 784,
+    "anglers": 15737,
+    "fish": 169968,
+    "fpa": 10.8
+  }
+]
