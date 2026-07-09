@@ -252,6 +252,26 @@
   {
     "trip_date": "2026-07-08",
     "region": "Los Angeles County",
+    "landing": "Long Beach Sportfishing",
+    "boat": "El Patron",
+    "trip_type": "Full Day",
+    "anglers": 10,
+    "fish_counts": "70 Bonito, 24 Calico Bass, 5 Yellowtail",
+    "total_fish": 99
+  },
+  {
+    "trip_date": "2026-07-08",
+    "region": "Los Angeles County",
+    "landing": "Long Beach Sportfishing",
+    "boat": "Victory",
+    "trip_type": "3/4 Day",
+    "anglers": 30,
+    "fish_counts": "1 Barracuda, 56 Calico Bass, 1 Sculpin, 27 Sheephead, 18 Whitefish",
+    "total_fish": 103
+  },
+  {
+    "trip_date": "2026-07-08",
+    "region": "Los Angeles County",
     "landing": "Marina Del Rey Sportfishing",
     "boat": "Betty-O",
     "trip_type": "3/4 Day",
@@ -318,6 +338,16 @@
     "anglers": 13,
     "fish_counts": "3 Barracuda, 65 Calico Bass, 80 Calico Bass Released, 1 Halibut",
     "total_fish": 149
+  },
+  {
+    "trip_date": "2026-07-08",
+    "region": "Los Angeles County",
+    "landing": "Redondo Beach Sportfishing",
+    "boat": "Navegante",
+    "trip_type": "Full Day",
+    "anglers": 16,
+    "fish_counts": "5 Barracuda, 15 Calico Bass, 10 Yellowtail",
+    "total_fish": 30
   },
   {
     "trip_date": "2026-07-08",
@@ -486,6 +516,16 @@
     "boat": "Salty Lady",
     "trip_type": "Full Day",
     "anglers": 16,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-07-08",
+    "region": "NorCal",
+    "landing": "Salty Lady Sportfishing",
+    "boat": "Salty Lady",
+    "trip_type": "1/2 Day AM",
+    "anglers": 14,
     "fish_counts": "",
     "total_fish": 0
   },
