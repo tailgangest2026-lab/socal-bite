@@ -408,6 +408,18 @@
     "top_species_3": "Whitefish"
   },
   {
+    "boat": "Sport King",
+    "landing": "LA Waterfront Cruises and Sportfishing",
+    "region": "Los Angeles County",
+    "trips": 32,
+    "anglers": 826,
+    "fish": 4529,
+    "fpa": 5.48,
+    "top_species_1": "Calico Bass Released",
+    "top_species_2": "Calico Bass",
+    "top_species_3": "Bonito"
+  },
+  {
     "boat": "Redondo Special",
     "landing": "Redondo Beach Sportfishing",
     "region": "Los Angeles County",
@@ -418,18 +430,6 @@
     "top_species_1": "Rockfish",
     "top_species_2": "Whitefish",
     "top_species_3": "Calico Bass"
-  },
-  {
-    "boat": "Sport King",
-    "landing": "LA Waterfront Cruises and Sportfishing",
-    "region": "Los Angeles County",
-    "trips": 31,
-    "anglers": 802,
-    "fish": 4346,
-    "fpa": 5.42,
-    "top_species_1": "Calico Bass",
-    "top_species_2": "Calico Bass Released",
-    "top_species_3": "Bonito"
   },
   {
     "boat": "Monte Carlo",
@@ -747,8 +747,8 @@
     "boat": "Happy Hooker",
     "landing": "Happy Hooker Sportfishing",
     "region": "NorCal",
-    "trips": 21,
-    "anglers": 425,
+    "trips": 22,
+    "anglers": 434,
     "fish": 91,
     "fpa": 0.21,
     "top_species_1": "Halibut",
