@@ -381,9 +381,9 @@
     "rank": 10,
     "region": "San Diego County",
     "trip_type": "1/2 Day PM",
-    "trips": 244,
-    "anglers": 8147,
-    "fish": 30527,
+    "trips": 245,
+    "anglers": 8181,
+    "fish": 30673,
     "fpa": 3.75
   },
   {
@@ -426,10 +426,10 @@
     "rank": 1,
     "region": "San Francisco Bay",
     "trip_type": "Full Day",
-    "trips": 227,
-    "anglers": 3692,
+    "trips": 231,
+    "anglers": 3742,
     "fish": 8437,
-    "fpa": 2.29
+    "fpa": 2.25
   },
   {
     "rank": 2,
@@ -614,6 +614,15 @@
   {
     "rank": 4,
     "region": "Ventura County",
+    "trip_type": "3/4 Day",
+    "trips": 196,
+    "anglers": 4554,
+    "fish": 47011,
+    "fpa": 10.32
+  },
+  {
+    "rank": 5,
+    "region": "Ventura County",
     "trip_type": "1/2 Day AM",
     "trips": 142,
     "anglers": 4479,
@@ -621,21 +630,12 @@
     "fpa": 10.31
   },
   {
-    "rank": 5,
-    "region": "Ventura County",
-    "trip_type": "3/4 Day",
-    "trips": 195,
-    "anglers": 4525,
-    "fish": 46566,
-    "fpa": 10.29
-  },
-  {
     "rank": 6,
     "region": "Ventura County",
     "trip_type": "Full Day",
-    "trips": 347,
-    "anglers": 4910,
-    "fish": 43203,
+    "trips": 348,
+    "anglers": 4936,
+    "fish": 43420,
     "fpa": 8.8
   },
   {
