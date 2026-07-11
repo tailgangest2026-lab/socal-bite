@@ -323,6 +323,16 @@
     "trip_date": "2026-07-10",
     "region": "Los Angeles County",
     "landing": "Marina Del Rey Sportfishing",
+    "boat": "Betty-O",
+    "trip_type": "3/4 Day",
+    "anglers": 7,
+    "fish_counts": "7 Barracuda, 33 Calico Bass, 1 Lingcod, 2 Sand Bass, 2 Sheephead",
+    "total_fish": 45
+  },
+  {
+    "trip_date": "2026-07-10",
+    "region": "Los Angeles County",
+    "landing": "Marina Del Rey Sportfishing",
     "boat": "New Del Mar",
     "trip_type": "1/2 Day AM",
     "anglers": 40,
@@ -333,11 +343,31 @@
     "trip_date": "2026-07-10",
     "region": "Los Angeles County",
     "landing": "Marina Del Rey Sportfishing",
+    "boat": "New Del Mar",
+    "trip_type": "1/2 Day AM",
+    "anglers": 55,
+    "fish_counts": "25 Bonito, 55 Calico Bass, 1 Halibut, 155 Rockfish, 12 Sand Bass, 3 Sheephead, 41 Whitefish",
+    "total_fish": 292
+  },
+  {
+    "trip_date": "2026-07-10",
+    "region": "Los Angeles County",
+    "landing": "Marina Del Rey Sportfishing",
     "boat": "Spitfire",
     "trip_type": "3/4 Day",
     "anglers": 12,
     "fish_counts": "1 Barracuda, 15 Bonito, 20 Calico Bass, 20 Calico Bass Released, 40 Sand Bass",
     "total_fish": 96
+  },
+  {
+    "trip_date": "2026-07-10",
+    "region": "Los Angeles County",
+    "landing": "Marina Del Rey Sportfishing",
+    "boat": "Spitfire",
+    "trip_type": "3/4 Day",
+    "anglers": 35,
+    "fish_counts": "15 Bonito, 38 Calico Bass, 44 Rockfish, 43 Sand Bass, 1 Sheephead",
+    "total_fish": 141
   },
   {
     "trip_date": "2026-07-10",
@@ -466,6 +496,16 @@
     "boat": "Surf Scooter",
     "trip_type": "Full Day",
     "anglers": 20,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-07-10",
+    "region": "NorCal",
+    "landing": "Bodega Bay Sportfishing Center",
+    "boat": "Surf Scooter",
+    "trip_type": "Full Day",
+    "anglers": 16,
     "fish_counts": "",
     "total_fish": 0
   },
@@ -648,6 +688,16 @@
     "anglers": 44,
     "fish_counts": "205 Rockfish, 25 Whitefish",
     "total_fish": 230
+  },
+  {
+    "trip_date": "2026-07-10",
+    "region": "Orange County",
+    "landing": "Davey's Locker",
+    "boat": "Western Pride",
+    "trip_type": "1/2 Day AM",
+    "anglers": 17,
+    "fish_counts": "2 Barracuda, 25 Calico Bass, 85 Sculpin, 1 Sheephead, 25 Whitefish",
+    "total_fish": 138
   },
   {
     "trip_date": "2026-07-10",
@@ -1618,6 +1668,16 @@
     "anglers": 26,
     "fish_counts": "3 Barracuda, 2 Bonito, 67 Calico Bass, 1 Sculpin, 13 Sheephead, 5 Whitefish, 1 Yellowtail",
     "total_fish": 92
+  },
+  {
+    "trip_date": "2026-07-09",
+    "region": "Los Angeles County",
+    "landing": "Pierpoint Landing",
+    "boat": "Toronado",
+    "trip_type": "1.5 Day",
+    "anglers": 21,
+    "fish_counts": "3 Barracuda, 5 Bonito, 82 Calico Bass, 35 Rockfish, 17 Sheephead, 85 Whitefish, 10 Yellowtail",
+    "total_fish": 237
   },
   {
     "trip_date": "2026-07-09",
