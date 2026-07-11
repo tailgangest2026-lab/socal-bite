@@ -1692,18 +1692,6 @@
     "top_species_3": "Bluefin Tuna"
   },
   {
-    "boat": "Vendetta 2",
-    "landing": "H&M Landing",
-    "region": "San Diego County",
-    "trips": 6,
-    "anglers": 90,
-    "fish": 128,
-    "fpa": 1.42,
-    "top_species_1": "Yellowtail",
-    "top_species_2": "Bluefin Tuna",
-    "top_species_3": "Bonito"
-  },
-  {
     "boat": "Tribute",
     "landing": "Seaforth Sportfishing",
     "region": "San Diego County",
@@ -1713,6 +1701,18 @@
     "fpa": 1.35,
     "top_species_1": "Bluefin Tuna",
     "top_species_2": "Yellowtail",
+    "top_species_3": "Bonito"
+  },
+  {
+    "boat": "Vendetta 2",
+    "landing": "H&M Landing",
+    "region": "San Diego County",
+    "trips": 7,
+    "anglers": 111,
+    "fish": 128,
+    "fpa": 1.15,
+    "top_species_1": "Yellowtail",
+    "top_species_2": "Bluefin Tuna",
     "top_species_3": "Bonito"
   },
   {
@@ -1791,8 +1791,8 @@
     "boat": "Little G",
     "landing": "H&M Landing",
     "region": "San Diego County",
-    "trips": 1,
-    "anglers": 3,
+    "trips": 2,
+    "anglers": 9,
     "fish": 0,
     "fpa": 0,
     "top_species_1": "",
