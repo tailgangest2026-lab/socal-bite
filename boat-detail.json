@@ -1248,6 +1248,18 @@
     "top_species_3": "Yellowtail"
   },
   {
+    "boat": "Tradition",
+    "landing": "Fisherman's Landing",
+    "region": "San Diego County",
+    "trips": 8,
+    "anglers": 157,
+    "fish": 913,
+    "fpa": 5.82,
+    "top_species_1": "Calico Bass",
+    "top_species_2": "Yellowtail",
+    "top_species_3": "Rockfish"
+  },
+  {
     "boat": "Voyager",
     "landing": "Seaforth Sportfishing",
     "region": "San Diego County",
@@ -1296,30 +1308,6 @@
     "top_species_3": "Red Rockfish"
   },
   {
-    "boat": "Lucky B Sportfishing",
-    "landing": "Fisherman's Landing",
-    "region": "San Diego County",
-    "trips": 7,
-    "anglers": 20,
-    "fish": 104,
-    "fpa": 5.2,
-    "top_species_1": "Yellowtail",
-    "top_species_2": "Barracuda",
-    "top_species_3": "Calico Bass"
-  },
-  {
-    "boat": "Tradition",
-    "landing": "Fisherman's Landing",
-    "region": "San Diego County",
-    "trips": 7,
-    "anglers": 140,
-    "fish": 726,
-    "fpa": 5.19,
-    "top_species_1": "Yellowtail",
-    "top_species_2": "Rockfish",
-    "top_species_3": "Calico Bass"
-  },
-  {
     "boat": "Polaris Supreme",
     "landing": "Seaforth Sportfishing",
     "region": "San Diego County",
@@ -1330,6 +1318,18 @@
     "top_species_1": "Bluefin Tuna",
     "top_species_2": "Yellowtail",
     "top_species_3": "Rockfish"
+  },
+  {
+    "boat": "Lucky B Sportfishing",
+    "landing": "Fisherman's Landing",
+    "region": "San Diego County",
+    "trips": 8,
+    "anglers": 23,
+    "fish": 119,
+    "fpa": 5.17,
+    "top_species_1": "Yellowtail",
+    "top_species_2": "Barracuda",
+    "top_species_3": "Calico Bass"
   },
   {
     "boat": "Nautilus",
@@ -1455,9 +1455,9 @@
     "boat": "Dolphin",
     "landing": "Fisherman's Landing",
     "region": "San Diego County",
-    "trips": 151,
-    "anglers": 4977,
-    "fish": 20688,
+    "trips": 152,
+    "anglers": 5023,
+    "fish": 20899,
     "fpa": 4.16,
     "top_species_1": "Rockfish",
     "top_species_2": "Calico Bass Released",
@@ -1512,18 +1512,6 @@
     "top_species_3": "Rockfish"
   },
   {
-    "boat": "Pacific Queen",
-    "landing": "Fisherman's Landing",
-    "region": "San Diego County",
-    "trips": 24,
-    "anglers": 580,
-    "fish": 1882,
-    "fpa": 3.24,
-    "top_species_1": "Yellowtail",
-    "top_species_2": "Bluefin Tuna",
-    "top_species_3": ""
-  },
-  {
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
     "region": "San Diego County",
@@ -1546,6 +1534,18 @@
     "top_species_1": "Yellowtail",
     "top_species_2": "Rockfish",
     "top_species_3": "Whitefish"
+  },
+  {
+    "boat": "Pacific Queen",
+    "landing": "Fisherman's Landing",
+    "region": "San Diego County",
+    "trips": 25,
+    "anglers": 609,
+    "fish": 1891,
+    "fpa": 3.11,
+    "top_species_1": "Bluefin Tuna",
+    "top_species_2": "Yellowtail",
+    "top_species_3": ""
   },
   {
     "boat": "El Gato Dos",
@@ -1611,10 +1611,10 @@
     "boat": "Highliner",
     "landing": "Seaforth Sportfishing",
     "region": "San Diego County",
-    "trips": 15,
-    "anglers": 276,
-    "fish": 764,
-    "fpa": 2.77,
+    "trips": 16,
+    "anglers": 301,
+    "fish": 772,
+    "fpa": 2.56,
     "top_species_1": "Rockfish",
     "top_species_2": "Yellowtail",
     "top_species_3": "Bonito"
@@ -1731,10 +1731,10 @@
     "boat": "Pacific Dawn",
     "landing": "Fisherman's Landing",
     "region": "San Diego County",
-    "trips": 12,
-    "anglers": 136,
-    "fish": 132,
-    "fpa": 0.97,
+    "trips": 13,
+    "anglers": 153,
+    "fish": 137,
+    "fpa": 0.9,
     "top_species_1": "Bluefin Tuna",
     "top_species_2": "Yellowtail",
     "top_species_3": "Bonito"
@@ -2067,10 +2067,10 @@
     "boat": "Indicator",
     "landing": "Channel Islands Sportfishing",
     "region": "Ventura County",
-    "trips": 31,
-    "anglers": 519,
-    "fish": 7304,
-    "fpa": 14.07,
+    "trips": 32,
+    "anglers": 538,
+    "fish": 7601,
+    "fpa": 14.13,
     "top_species_1": "Rockfish",
     "top_species_2": "Whitefish",
     "top_species_3": "Calico Bass"
