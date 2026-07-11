@@ -1246,23 +1246,23 @@
     "rank": 1,
     "region": "San Diego County",
     "trip_type": "1/2 Day AM",
+    "boat": "Dolphin",
+    "landing": "Fisherman's Landing",
+    "trips": 32,
+    "anglers": 1170,
+    "fish": 4611,
+    "fpa": 3.94
+  },
+  {
+    "rank": 2,
+    "region": "San Diego County",
+    "trip_type": "1/2 Day AM",
     "boat": "Southern Cal",
     "landing": "Oceanside Sea Center",
     "trips": 22,
     "anglers": 606,
     "fish": 2378,
     "fpa": 3.92
-  },
-  {
-    "rank": 2,
-    "region": "San Diego County",
-    "trip_type": "1/2 Day AM",
-    "boat": "Dolphin",
-    "landing": "Fisherman's Landing",
-    "trips": 31,
-    "anglers": 1144,
-    "fish": 4449,
-    "fpa": 3.89
   },
   {
     "rank": 3,
@@ -1523,10 +1523,10 @@
     "trip_type": "Full Day Coronado Islands",
     "boat": "Grande",
     "landing": "H&M Landing",
-    "trips": 23,
-    "anglers": 709,
-    "fish": 2248,
-    "fpa": 3.17
+    "trips": 24,
+    "anglers": 747,
+    "fish": 2317,
+    "fpa": 3.1
   },
   {
     "rank": 5,
