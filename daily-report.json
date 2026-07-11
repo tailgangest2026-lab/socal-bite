@@ -933,6 +933,26 @@
     "trip_date": "2026-07-10",
     "region": "San Diego County",
     "landing": "Point Loma Sportfishing",
+    "boat": "Daily Double",
+    "trip_type": "1/2 Day AM",
+    "anglers": 38,
+    "fish_counts": "1 Barracuda, 115 Bonito, 31 Calico Bass, 8 Rockfish, 2 Sculpin, 1 Yellowtail",
+    "total_fish": 158
+  },
+  {
+    "trip_date": "2026-07-10",
+    "region": "San Diego County",
+    "landing": "Point Loma Sportfishing",
+    "boat": "Mission Belle",
+    "trip_type": "Full Day Coronado Islands",
+    "anglers": 18,
+    "fish_counts": "6 Calico Bass, 2 Lingcod, 6 Rockfish, 29 Yellowtail",
+    "total_fish": 43
+  },
+  {
+    "trip_date": "2026-07-10",
+    "region": "San Diego County",
+    "landing": "Point Loma Sportfishing",
     "boat": "New Lo-An",
     "trip_type": "2 Day",
     "anglers": 24,
@@ -1112,6 +1132,16 @@
   {
     "trip_date": "2026-07-10",
     "region": "San Francisco Bay",
+    "landing": "Lovely Martha Sportfishing",
+    "boat": "Lovely Martha",
+    "trip_type": "Full Day",
+    "anglers": 20,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-07-10",
+    "region": "San Francisco Bay",
     "landing": "Reel Addiction Sportfishing",
     "boat": "Reel Addiction 1",
     "trip_type": "Full Day",
@@ -1173,11 +1203,31 @@
     "trip_date": "2026-07-10",
     "region": "Santa Barbara County",
     "landing": "Santa Barbara Landing",
+    "boat": "Coral Sea",
+    "trip_type": "3/4 Day",
+    "anglers": 25,
+    "fish_counts": "12 Lingcod, 169 Rockfish, 1 Sheephead, 49 Whitefish",
+    "total_fish": 231
+  },
+  {
+    "trip_date": "2026-07-10",
+    "region": "Santa Barbara County",
+    "landing": "Santa Barbara Landing",
     "boat": "Stardust",
     "trip_type": "3/4 Day",
     "anglers": 7,
     "fish_counts": "8 Lingcod, 65 Rockfish, 1 Sheephead, 7 Whitefish",
     "total_fish": 81
+  },
+  {
+    "trip_date": "2026-07-10",
+    "region": "Santa Barbara County",
+    "landing": "Santa Barbara Landing",
+    "boat": "Stardust",
+    "trip_type": "3/4 Day",
+    "anglers": 27,
+    "fish_counts": "3 Lingcod, 201 Rockfish, 2 Whitefish",
+    "total_fish": 206
   },
   {
     "trip_date": "2026-07-10",
