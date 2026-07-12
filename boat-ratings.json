@@ -696,23 +696,23 @@
     "rank": 3,
     "region": "NorCal",
     "trip_type": "Full Day",
-    "boat": "Dragonfly",
-    "landing": "Reel Obsession Sportfishing",
-    "trips": 16,
-    "anglers": 92,
-    "fish": 288,
-    "fpa": 3.13
-  },
-  {
-    "rank": 4,
-    "region": "NorCal",
-    "trip_type": "Full Day",
     "boat": "Golden State Sportfishing",
     "landing": "Golden State Sportfishing",
     "trips": 20,
     "anglers": 102,
     "fish": 288,
     "fpa": 2.82
+  },
+  {
+    "rank": 4,
+    "region": "NorCal",
+    "trip_type": "Full Day",
+    "boat": "Dragonfly",
+    "landing": "Reel Obsession Sportfishing",
+    "trips": 18,
+    "anglers": 104,
+    "fish": 288,
+    "fpa": 2.77
   },
   {
     "rank": 5,
@@ -1028,10 +1028,10 @@
     "trip_type": "1/2 Day PM",
     "boat": "Dana Pride",
     "landing": "Dana Wharf Sportfishing",
-    "trips": 8,
-    "anglers": 556,
-    "fish": 842,
-    "fpa": 1.51
+    "trips": 9,
+    "anglers": 606,
+    "fish": 936,
+    "fpa": 1.54
   },
   {
     "rank": 1,
@@ -1114,6 +1114,17 @@
     "rank": 5,
     "region": "Orange County",
     "trip_type": "3/4 Day",
+    "boat": "Reel Fun",
+    "landing": "Dana Wharf Sportfishing",
+    "trips": 5,
+    "anglers": 106,
+    "fish": 342,
+    "fpa": 3.23
+  },
+  {
+    "rank": 6,
+    "region": "Orange County",
+    "trip_type": "3/4 Day",
     "boat": "Dana Pride",
     "landing": "Dana Wharf Sportfishing",
     "trips": 24,
@@ -1122,7 +1133,7 @@
     "fpa": 3.19
   },
   {
-    "rank": 6,
+    "rank": 7,
     "region": "Orange County",
     "trip_type": "3/4 Day",
     "boat": "Patriot (Newport)",
@@ -1133,7 +1144,7 @@
     "fpa": 2.91
   },
   {
-    "rank": 7,
+    "rank": 8,
     "region": "Orange County",
     "trip_type": "3/4 Day",
     "boat": "Aggressor",
