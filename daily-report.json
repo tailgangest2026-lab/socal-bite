@@ -13,6 +13,16 @@
     "trip_date": "2026-07-11",
     "region": "Alameda County",
     "landing": "Fish Emeryville",
+    "boat": "C Gull II",
+    "trip_type": "Full Day",
+    "anglers": 16,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-07-11",
+    "region": "Alameda County",
+    "landing": "Fish Emeryville",
     "boat": "Diamond",
     "trip_type": "1/2 Day AM",
     "anglers": 5,
@@ -63,9 +73,29 @@
     "trip_date": "2026-07-11",
     "region": "Alameda County",
     "landing": "Fish Emeryville",
+    "boat": "New Huck Finn",
+    "trip_type": "Full Day",
+    "anglers": 17,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-07-11",
+    "region": "Alameda County",
+    "landing": "Fish Emeryville",
     "boat": "Oakland Anglers II",
     "trip_type": "Full Day",
     "anglers": 12,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-07-11",
+    "region": "Alameda County",
+    "landing": "Fish Emeryville",
+    "boat": "Oakland Anglers II",
+    "trip_type": "Full Day",
+    "anglers": 16,
     "fish_counts": "",
     "total_fish": 0
   },
@@ -103,6 +133,16 @@
     "trip_date": "2026-07-11",
     "region": "Alameda County",
     "landing": "Fish Emeryville",
+    "boat": "Scallywag",
+    "trip_type": "Full Day",
+    "anglers": 6,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-07-11",
+    "region": "Alameda County",
+    "landing": "Fish Emeryville",
     "boat": "Sea Wolf",
     "trip_type": "Full Day",
     "anglers": 9,
@@ -116,6 +156,16 @@
     "boat": "Sea Wolf",
     "trip_type": "Full Day",
     "anglers": 17,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-07-11",
+    "region": "Alameda County",
+    "landing": "Fish Emeryville",
+    "boat": "TigerFish",
+    "trip_type": "Full Day",
+    "anglers": 16,
     "fish_counts": "",
     "total_fish": 0
   },
@@ -158,6 +208,16 @@
     "anglers": 28,
     "fish_counts": "1 Lingcod, 12 Red Rockfish, 148 Rockfish",
     "total_fish": 161
+  },
+  {
+    "trip_date": "2026-07-11",
+    "region": "Central California",
+    "landing": "Morro Bay Landing",
+    "boat": "Starfire",
+    "trip_type": "3/4 Day",
+    "anglers": 26,
+    "fish_counts": "28 Red Rockfish, 184 Rockfish",
+    "total_fish": 212
   },
   {
     "trip_date": "2026-07-11",
@@ -348,6 +408,26 @@
     "anglers": 27,
     "fish_counts": "4 Barracuda, 8 Bonito, 46 Calico Bass, 3 Sand Bass, 4 Sheephead",
     "total_fish": 65
+  },
+  {
+    "trip_date": "2026-07-11",
+    "region": "Los Angeles County",
+    "landing": "Redondo Beach Sportfishing",
+    "boat": "Redondo Special",
+    "trip_type": "1/2 Day AM",
+    "anglers": 37,
+    "fish_counts": "2 Lingcod, 200 Rockfish, 1 Whitefish",
+    "total_fish": 203
+  },
+  {
+    "trip_date": "2026-07-11",
+    "region": "Los Angeles County",
+    "landing": "Redondo Beach Sportfishing",
+    "boat": "Redondo Special",
+    "trip_type": "1/2 Day PM",
+    "anglers": 56,
+    "fish_counts": "1 Barracuda, 9 Bonito, 67 Calico Bass, 12 Rockfish, 4 Sand Bass, 4 Sculpin, 6 Sheephead, 13 Whitefish, 2 Yellowtail",
+    "total_fish": 118
   },
   {
     "trip_date": "2026-07-11",
@@ -563,6 +643,26 @@
     "trip_date": "2026-07-11",
     "region": "San Diego County",
     "landing": "H&M Landing",
+    "boat": "Grande",
+    "trip_type": "Full Day Offshore",
+    "anglers": 30,
+    "fish_counts": "1 Yellowfin Tuna, 36 Yellowtail",
+    "total_fish": 37
+  },
+  {
+    "trip_date": "2026-07-11",
+    "region": "San Diego County",
+    "landing": "H&M Landing",
+    "boat": "Malihini",
+    "trip_type": "Full Day",
+    "anglers": 34,
+    "fish_counts": "150 Barracuda, 60 Bonito, 11 Calico Bass, 18 Red Rockfish, 36 Rockfish, 5 Sand Bass, 4 Sculpin, 15 Sheephead, 17 Whitefish",
+    "total_fish": 316
+  },
+  {
+    "trip_date": "2026-07-11",
+    "region": "San Diego County",
+    "landing": "H&M Landing",
     "boat": "Nautilus",
     "trip_type": "1.5 Day",
     "anglers": 5,
@@ -612,6 +712,16 @@
   {
     "trip_date": "2026-07-11",
     "region": "San Diego County",
+    "landing": "Oceanside Sea Center",
+    "boat": "Chubasco II",
+    "trip_type": "3/4 Day",
+    "anglers": 28,
+    "fish_counts": "80 Bonito, 10 Calico Bass, 30 Calico Bass Released, 200 Rockfish, 1 Sheephead",
+    "total_fish": 321
+  },
+  {
+    "trip_date": "2026-07-11",
+    "region": "San Diego County",
     "landing": "Point Loma Sportfishing",
     "boat": "Daily Double",
     "trip_type": "1/2 Day AM",
@@ -633,6 +743,16 @@
     "trip_date": "2026-07-11",
     "region": "San Diego County",
     "landing": "Seaforth Sportfishing",
+    "boat": "El Gato Dos",
+    "trip_type": "Full Day Offshore",
+    "anglers": 6,
+    "fish_counts": "17 Yellowtail",
+    "total_fish": 17
+  },
+  {
+    "trip_date": "2026-07-11",
+    "region": "San Diego County",
+    "landing": "Seaforth Sportfishing",
     "boat": "New Seaforth",
     "trip_type": "1/2 Day Twilight",
     "anglers": 44,
@@ -643,11 +763,31 @@
     "trip_date": "2026-07-11",
     "region": "San Diego County",
     "landing": "Seaforth Sportfishing",
+    "boat": "New Seaforth",
+    "trip_type": "Full Day Local",
+    "anglers": 31,
+    "fish_counts": "200 Barracuda, 53 Bonito, 47 Calico Bass, 150 Calico Bass Released, 3 Sand Bass, 2 Yellowtail",
+    "total_fish": 455
+  },
+  {
+    "trip_date": "2026-07-11",
+    "region": "San Diego County",
+    "landing": "Seaforth Sportfishing",
     "boat": "Pacific Voyager",
     "trip_type": "3 Day",
     "anglers": 16,
     "fish_counts": "69 Bluefin Tuna, 1 Yellowfin Tuna, 32 Yellowtail",
     "total_fish": 102
+  },
+  {
+    "trip_date": "2026-07-11",
+    "region": "San Diego County",
+    "landing": "Seaforth Sportfishing",
+    "boat": "San Diego",
+    "trip_type": "Full Day Coronado Islands",
+    "anglers": 22,
+    "fish_counts": "52 Yellowtail",
+    "total_fish": 52
   },
   {
     "trip_date": "2026-07-11",
@@ -724,6 +864,16 @@
     "region": "San Francisco Bay",
     "landing": "Reel Addiction Sportfishing",
     "boat": "Reel Addiction 2",
+    "trip_type": "Full Day",
+    "anglers": 10,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-07-11",
+    "region": "San Mateo County",
+    "landing": "Riptide Sportfishing",
+    "boat": "Riptide",
     "trip_type": "Full Day",
     "anglers": 10,
     "fish_counts": "",
