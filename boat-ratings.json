@@ -401,13 +401,24 @@
     "trip_type": "1/2 Day AM",
     "boat": "Monte Carlo",
     "landing": "22nd Street Landing",
-    "trips": 54,
-    "anglers": 2224,
-    "fish": 10145,
-    "fpa": 4.56
+    "trips": 55,
+    "anglers": 2298,
+    "fish": 10422,
+    "fpa": 4.54
   },
   {
     "rank": 1,
+    "region": "Los Angeles County",
+    "trip_type": "1/2 Day PM",
+    "boat": "Monte Carlo",
+    "landing": "22nd Street Landing",
+    "trips": 5,
+    "anglers": 263,
+    "fish": 998,
+    "fpa": 3.79
+  },
+  {
+    "rank": 2,
     "region": "Los Angeles County",
     "trip_type": "1/2 Day PM",
     "boat": "Redondo Special",
@@ -566,10 +577,10 @@
     "trip_type": "Overnight",
     "boat": "Freedom",
     "landing": "22nd Street Landing",
-    "trips": 28,
-    "anglers": 900,
-    "fish": 8104,
-    "fpa": 9
+    "trips": 29,
+    "anglers": 925,
+    "fish": 8474,
+    "fpa": 9.16
   },
   {
     "rank": 2,
