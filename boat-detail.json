@@ -267,10 +267,10 @@
     "boat": "Freedom",
     "landing": "22nd Street Landing",
     "region": "Los Angeles County",
-    "trips": 59,
-    "anglers": 1795,
-    "fish": 20731,
-    "fpa": 11.55,
+    "trips": 60,
+    "anglers": 1820,
+    "fish": 21101,
+    "fpa": 11.59,
     "top_species_1": "Whitefish",
     "top_species_2": "Rockfish",
     "top_species_3": "Calico Bass"
@@ -435,10 +435,10 @@
     "boat": "Monte Carlo",
     "landing": "22nd Street Landing",
     "region": "Los Angeles County",
-    "trips": 94,
-    "anglers": 3865,
-    "fish": 19426,
-    "fpa": 5.03,
+    "trips": 96,
+    "anglers": 3964,
+    "fish": 19781,
+    "fpa": 4.99,
     "top_species_1": "Sculpin",
     "top_species_2": "Rockfish",
     "top_species_3": "Whitefish"
@@ -492,18 +492,6 @@
     "top_species_3": "Yellowtail"
   },
   {
-    "boat": "Ahra-Ahn",
-    "landing": "Long Beach Sportfishing",
-    "region": "Los Angeles County",
-    "trips": 11,
-    "anglers": 227,
-    "fish": 944,
-    "fpa": 4.16,
-    "top_species_1": "Sculpin",
-    "top_species_2": "Calico Bass",
-    "top_species_3": "Rockfish"
-  },
-  {
     "boat": "Gail Force",
     "landing": "LA Waterfront Cruises and Sportfishing",
     "region": "Los Angeles County",
@@ -514,6 +502,18 @@
     "top_species_1": "Calico Bass",
     "top_species_2": "Calico Bass Released",
     "top_species_3": "Bonito"
+  },
+  {
+    "boat": "Ahra-Ahn",
+    "landing": "Long Beach Sportfishing",
+    "region": "Los Angeles County",
+    "trips": 12,
+    "anglers": 252,
+    "fish": 1019,
+    "fpa": 4.04,
+    "top_species_1": "Sculpin",
+    "top_species_2": "Calico Bass",
+    "top_species_3": "Rockfish"
   },
   {
     "boat": "Pescador",
