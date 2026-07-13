@@ -7,11 +7,11 @@
     "address": "",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Fish%20Emeryville",
     "booking_url": "",
-    "trips": 447,
+    "trips": 457,
     "boats": 14,
-    "anglers": 5727,
-    "fish": 17261,
-    "fpa": 3.01
+    "anglers": 5878,
+    "fish": 18015,
+    "fpa": 3.06
   },
   {
     "landing": "Morro Bay Landing",
@@ -21,11 +21,11 @@
     "address": "1213 Embarcadero, Morro Bay, CA 93442",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=1213%20Embarcadero%2C%20Morro%20Bay%2C%20CA%2093442",
     "booking_url": "https://www.morrobaylanding.com",
-    "trips": 218,
+    "trips": 219,
     "boats": 3,
-    "anglers": 4449,
-    "fish": 33792,
-    "fpa": 7.6
+    "anglers": 4479,
+    "fish": 34005,
+    "fpa": 7.59
   },
   {
     "landing": "Patriot Sportfishing",
@@ -35,11 +35,11 @@
     "address": "1838 Harbor Dr N, Oceanside, CA 92054",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=1838%20Harbor%20Dr%20N%2C%20Oceanside%2C%20CA%2092054",
     "booking_url": "https://patriotsportfishing.com",
-    "trips": 212,
+    "trips": 214,
     "boats": 3,
-    "anglers": 3247,
+    "anglers": 3284,
     "fish": 475,
-    "fpa": 0.15
+    "fpa": 0.14
   },
   {
     "landing": "Marina Del Rey Sportfishing",
@@ -49,11 +49,11 @@
     "address": "13759 Fiji Way, Marina Del Rey, CA 90292",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=13759%20Fiji%20Way%2C%20Marina%20Del%20Rey%2C%20CA%2090292",
     "booking_url": "https://mdrsf.com",
-    "trips": 282,
+    "trips": 283,
     "boats": 3,
-    "anglers": 11939,
-    "fish": 79204,
-    "fpa": 6.63
+    "anglers": 12047,
+    "fish": 79983,
+    "fpa": 6.64
   },
   {
     "landing": "22nd Street Landing",
@@ -63,11 +63,11 @@
     "address": "141 W 22nd St, San Pedro, CA 90731",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=141%20W%2022nd%20St%2C%20San%20Pedro%2C%20CA%2090731",
     "booking_url": "https://www.22ndstreet.com",
-    "trips": 307,
+    "trips": 309,
     "boats": 8,
-    "anglers": 10121,
-    "fish": 63949,
-    "fpa": 6.32
+    "anglers": 10170,
+    "fish": 64145,
+    "fpa": 6.31
   },
   {
     "landing": "Long Beach Sportfishing",
@@ -77,11 +77,11 @@
     "address": "555 Pico Ave, Long Beach, CA 90802",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=555%20Pico%20Ave%2C%20Long%20Beach%2C%20CA%2090802",
     "booking_url": "https://www.longbeachsportfishing.org",
-    "trips": 177,
+    "trips": 179,
     "boats": 5,
-    "anglers": 4693,
-    "fish": 41771,
-    "fpa": 8.9
+    "anglers": 4732,
+    "fish": 42038,
+    "fpa": 8.88
   },
   {
     "landing": "Redondo Beach Sportfishing",
@@ -91,11 +91,11 @@
     "address": "140 International Boardwalk, Redondo Beach, CA 90277",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=140%20International%20Boardwalk%2C%20Redondo%20Beach%2C%20CA%2090277",
     "booking_url": "https://www.redondosportfishing.com",
-    "trips": 118,
+    "trips": 121,
     "boats": 3,
-    "anglers": 3433,
-    "fish": 16187,
-    "fpa": 4.72
+    "anglers": 3557,
+    "fish": 16623,
+    "fpa": 4.67
   },
   {
     "landing": "Pierpoint Landing",
@@ -175,11 +175,25 @@
     "address": "",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Happy%20Hooker%20Sportfishing",
     "booking_url": "",
-    "trips": 47,
+    "trips": 48,
     "boats": 2,
-    "anglers": 946,
-    "fish": 1114,
-    "fpa": 1.18
+    "anglers": 957,
+    "fish": 1245,
+    "fpa": 1.3
+  },
+  {
+    "landing": "Bass Tub Sportfishing",
+    "region": "NorCal",
+    "phone": "",
+    "website": "",
+    "address": "",
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Bass%20Tub%20Sportfishing",
+    "booking_url": "",
+    "trips": 19,
+    "boats": 1,
+    "anglers": 305,
+    "fish": 908,
+    "fpa": 2.98
   },
   {
     "landing": "Stagnaros Charters",
@@ -196,20 +210,6 @@
     "fpa": 9.93
   },
   {
-    "landing": "Bass Tub Sportfishing",
-    "region": "NorCal",
-    "phone": "",
-    "website": "",
-    "address": "",
-    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Bass%20Tub%20Sportfishing",
-    "booking_url": "",
-    "trips": 18,
-    "boats": 1,
-    "anglers": 282,
-    "fish": 761,
-    "fpa": 2.7
-  },
-  {
     "landing": "Bodega Bay Sportfishing Center",
     "region": "NorCal",
     "phone": "",
@@ -217,11 +217,11 @@
     "address": "",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Bodega%20Bay%20Sportfishing%20Center",
     "booking_url": "",
-    "trips": 33,
+    "trips": 34,
     "boats": 1,
-    "anglers": 536,
-    "fish": 660,
-    "fpa": 1.23
+    "anglers": 555,
+    "fish": 850,
+    "fpa": 1.53
   },
   {
     "landing": "Reel Obsession Sportfishing",
@@ -259,11 +259,11 @@
     "address": "",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Big%20Cs%20Charters",
     "booking_url": "",
-    "trips": 38,
+    "trips": 40,
     "boats": 2,
-    "anglers": 472,
+    "anglers": 484,
     "fish": 240,
-    "fpa": 0.51
+    "fpa": 0.5
   },
   {
     "landing": "North Bay Fishing Charters",
@@ -329,9 +329,9 @@
     "address": "",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Argo%20Sportfishing",
     "booking_url": "",
-    "trips": 28,
+    "trips": 29,
     "boats": 1,
-    "anglers": 145,
+    "anglers": 151,
     "fish": 0,
     "fpa": 0
   },
@@ -357,9 +357,9 @@
     "address": "",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Hog%20Heaven%20Sportfishing",
     "booking_url": "",
-    "trips": 23,
+    "trips": 24,
     "boats": 1,
-    "anglers": 332,
+    "anglers": 350,
     "fish": 0,
     "fpa": 0
   },
@@ -385,9 +385,9 @@
     "address": "",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Blue%20Runner%20Charters",
     "booking_url": "",
-    "trips": 15,
+    "trips": 16,
     "boats": 1,
-    "anglers": 167,
+    "anglers": 176,
     "fish": 0,
     "fpa": 0
   },
@@ -399,9 +399,9 @@
     "address": "",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=New%20Captain%20Pete",
     "booking_url": "",
-    "trips": 9,
+    "trips": 10,
     "boats": 1,
-    "anglers": 75,
+    "anglers": 82,
     "fish": 0,
     "fpa": 0
   },
@@ -497,11 +497,11 @@
     "address": "34675 Golden Lantern, Dana Point, CA 92629",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=34675%20Golden%20Lantern%2C%20Dana%20Point%2C%20CA%2092629",
     "booking_url": "https://www.danawharf.com",
-    "trips": 563,
+    "trips": 565,
     "boats": 9,
-    "anglers": 15354,
-    "fish": 67900,
-    "fpa": 4.42
+    "anglers": 15460,
+    "fish": 68432,
+    "fpa": 4.43
   },
   {
     "landing": "Davey's Locker",
@@ -511,11 +511,11 @@
     "address": "400 Main St, Newport Beach, CA 92661",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=400%20Main%20St%2C%20Newport%20Beach%2C%20CA%2092661",
     "booking_url": "https://www.daveyslocker.com",
-    "trips": 394,
+    "trips": 397,
     "boats": 4,
-    "anglers": 14881,
-    "fish": 66731,
-    "fpa": 4.48
+    "anglers": 15022,
+    "fish": 67187,
+    "fpa": 4.47
   },
   {
     "landing": "Newport Landing",
@@ -539,11 +539,11 @@
     "address": "1717 Quivira Rd, San Diego, CA 92109",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=1717%20Quivira%20Rd%2C%20San%20Diego%2C%20CA%2092109",
     "booking_url": "https://www.seaforthlanding.com",
-    "trips": 554,
+    "trips": 550,
     "boats": 13,
-    "anglers": 15834,
-    "fish": 56811,
-    "fpa": 3.59
+    "anglers": 15751,
+    "fish": 56328,
+    "fpa": 3.58
   },
   {
     "landing": "H&M Landing",
@@ -595,11 +595,11 @@
     "address": "1403 Scott St, San Diego, CA 92106",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=1403%20Scott%20St%2C%20San%20Diego%2C%20CA%2092106",
     "booking_url": "https://www.pointlomasportfishing.com",
-    "trips": 205,
+    "trips": 203,
     "boats": 5,
-    "anglers": 4049,
-    "fish": 13260,
-    "fpa": 3.27
+    "anglers": 4021,
+    "fish": 13095,
+    "fpa": 3.26
   },
   {
     "landing": "California Dawn Sportfishing",
@@ -609,11 +609,11 @@
     "address": "",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=California%20Dawn%20Sportfishing",
     "booking_url": "",
-    "trips": 110,
+    "trips": 111,
     "boats": 3,
-    "anglers": 2030,
+    "anglers": 2038,
     "fish": 8406,
-    "fpa": 4.14
+    "fpa": 4.12
   },
   {
     "landing": "Right Hook Sportfishing",
@@ -623,11 +623,11 @@
     "address": "",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Right%20Hook%20Sportfishing",
     "booking_url": "",
-    "trips": 47,
+    "trips": 48,
     "boats": 1,
-    "anglers": 242,
+    "anglers": 247,
     "fish": 254,
-    "fpa": 1.05
+    "fpa": 1.03
   },
   {
     "landing": "Berkeley Charter Boats",
@@ -651,11 +651,11 @@
     "address": "",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Reel%20Addiction%20Sportfishing",
     "booking_url": "",
-    "trips": 45,
+    "trips": 47,
     "boats": 2,
-    "anglers": 301,
+    "anglers": 312,
     "fish": 152,
-    "fpa": 0.5
+    "fpa": 0.49
   },
   {
     "landing": "Lovely Martha Sportfishing",
@@ -679,11 +679,11 @@
     "address": "",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Riptide%20Sportfishing",
     "booking_url": "",
-    "trips": 18,
+    "trips": 19,
     "boats": 1,
-    "anglers": 160,
-    "fish": 779,
-    "fpa": 4.87
+    "anglers": 166,
+    "fish": 832,
+    "fpa": 5.01
   },
   {
     "landing": "Santa Barbara Landing",
@@ -693,11 +693,11 @@
     "address": "301 W Cabrillo Blvd, Santa Barbara, CA 93101",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=301%20W%20Cabrillo%20Blvd%2C%20Santa%20Barbara%2C%20CA%2093101",
     "booking_url": "https://sblanding.com",
-    "trips": 199,
+    "trips": 201,
     "boats": 2,
-    "anglers": 4718,
-    "fish": 62385,
-    "fpa": 13.22
+    "anglers": 4767,
+    "fish": 63337,
+    "fpa": 13.29
   },
   {
     "landing": "Ventura Harbor Sportfishing",
@@ -707,11 +707,11 @@
     "address": "1449 Spinnaker Dr, Ventura, CA 93001",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=1449%20Spinnaker%20Dr%2C%20Ventura%2C%20CA%2093001",
     "booking_url": "https://www.venturasportfishing.com",
-    "trips": 110,
+    "trips": 112,
     "boats": 4,
-    "anglers": 2390,
-    "fish": 30040,
-    "fpa": 12.57
+    "anglers": 2430,
+    "fish": 30411,
+    "fpa": 12.51
   },
   {
     "landing": "Virg's Landing",
@@ -735,11 +735,11 @@
     "address": "4151 Victoria Ave, Oxnard, CA 93035",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=4151%20Victoria%20Ave%2C%20Oxnard%2C%20CA%2093035",
     "booking_url": "https://www.channelislandssportfishing.com",
-    "trips": 838,
+    "trips": 847,
     "boats": 13,
-    "anglers": 16742,
-    "fish": 175731,
-    "fpa": 10.5
+    "anglers": 16915,
+    "fish": 177256,
+    "fpa": 10.48
   },
   {
     "landing": "Hooks Landing",
@@ -749,10 +749,10 @@
     "address": "204 E 17th St, Costa Mesa, CA 92627",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=204%20E%2017th%20St%2C%20Costa%20Mesa%2C%20CA%2092627",
     "booking_url": "https://hooksupsportfishing.com",
-    "trips": 64,
+    "trips": 65,
     "boats": 3,
-    "anglers": 1649,
-    "fish": 21463,
-    "fpa": 13.02
+    "anglers": 1665,
+    "fish": 21594,
+    "fpa": 12.97
   }
 ]
