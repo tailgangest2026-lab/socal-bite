@@ -170,8 +170,8 @@
     "trip_type": "Full Day",
     "boat": "C Gull II",
     "landing": "Fish Emeryville",
-    "trips": 30,
-    "anglers": 466,
+    "trips": 31,
+    "anglers": 480,
     "fish": 18,
     "fpa": 0.04
   },
@@ -434,10 +434,10 @@
     "trip_type": "3/4 Day",
     "boat": "Victory",
     "landing": "Long Beach Sportfishing",
-    "trips": 40,
-    "anglers": 1594,
-    "fish": 14614,
-    "fpa": 9.17
+    "trips": 41,
+    "anglers": 1612,
+    "fish": 14773,
+    "fpa": 9.16
   },
   {
     "rank": 2,
@@ -533,10 +533,10 @@
     "trip_type": "Full Day",
     "boat": "El Patron",
     "landing": "Long Beach Sportfishing",
-    "trips": 32,
-    "anglers": 638,
-    "fish": 3678,
-    "fpa": 5.76
+    "trips": 33,
+    "anglers": 659,
+    "fish": 3786,
+    "fpa": 5.75
   },
   {
     "rank": 2,
@@ -1499,23 +1499,23 @@
     "rank": 1,
     "region": "San Diego County",
     "trip_type": "Full Day Coronado Islands",
+    "boat": "San Diego",
+    "landing": "Seaforth Sportfishing",
+    "trips": 29,
+    "anglers": 888,
+    "fish": 3305,
+    "fpa": 3.72
+  },
+  {
+    "rank": 2,
+    "region": "San Diego County",
+    "trip_type": "Full Day Coronado Islands",
     "boat": "Got Bait",
     "landing": "Point Loma Sportfishing",
     "trips": 6,
     "anglers": 29,
     "fish": 107,
     "fpa": 3.69
-  },
-  {
-    "rank": 2,
-    "region": "San Diego County",
-    "trip_type": "Full Day Coronado Islands",
-    "boat": "San Diego",
-    "landing": "Seaforth Sportfishing",
-    "trips": 28,
-    "anglers": 853,
-    "fish": 3132,
-    "fpa": 3.67
   },
   {
     "rank": 3,
@@ -1985,9 +1985,9 @@
     "trip_type": "Overnight",
     "boat": "Mirage",
     "landing": "Channel Islands Sportfishing",
-    "trips": 39,
-    "anglers": 697,
-    "fish": 7935,
-    "fpa": 11.38
+    "trips": 40,
+    "anglers": 713,
+    "fish": 7995,
+    "fpa": 11.21
   }
 ]
