@@ -113,23 +113,23 @@
     "rank": 5,
     "region": "Alameda County",
     "trip_type": "Full Day",
-    "boat": "Scallywag",
-    "landing": "Fish Emeryville",
-    "trips": 37,
-    "anglers": 203,
-    "fish": 234,
-    "fpa": 1.15
-  },
-  {
-    "rank": 6,
-    "region": "Alameda County",
-    "trip_type": "Full Day",
     "boat": "Oakland Anglers II",
     "landing": "Fish Emeryville",
     "trips": 20,
     "anglers": 316,
     "fish": 362,
     "fpa": 1.15
+  },
+  {
+    "rank": 6,
+    "region": "Alameda County",
+    "trip_type": "Full Day",
+    "boat": "Scallywag",
+    "landing": "Fish Emeryville",
+    "trips": 38,
+    "anglers": 209,
+    "fish": 234,
+    "fpa": 1.12
   },
   {
     "rank": 7,
@@ -390,10 +390,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Redondo Special",
     "landing": "Redondo Beach Sportfishing",
-    "trips": 30,
-    "anglers": 1000,
-    "fish": 5272,
-    "fpa": 5.27
+    "trips": 31,
+    "anglers": 1052,
+    "fish": 5499,
+    "fpa": 5.23
   },
   {
     "rank": 4,
@@ -423,10 +423,10 @@
     "trip_type": "1/2 Day PM",
     "boat": "Redondo Special",
     "landing": "Redondo Beach Sportfishing",
-    "trips": 24,
-    "anglers": 904,
-    "fish": 2970,
-    "fpa": 3.29
+    "trips": 25,
+    "anglers": 960,
+    "fish": 3077,
+    "fpa": 3.21
   },
   {
     "rank": 1,
@@ -566,10 +566,10 @@
     "trip_type": "Full Day",
     "boat": "Pescador",
     "landing": "Redondo Beach Sportfishing",
-    "trips": 26,
-    "anglers": 446,
-    "fish": 824,
-    "fpa": 1.85
+    "trips": 27,
+    "anglers": 462,
+    "fish": 926,
+    "fpa": 2
   },
   {
     "rank": 1,
@@ -1496,6 +1496,17 @@
     "fpa": 5.21
   },
   {
+    "rank": 2,
+    "region": "San Diego County",
+    "trip_type": "Full Day",
+    "boat": "Got Bait",
+    "landing": "Point Loma Sportfishing",
+    "trips": 5,
+    "anglers": 23,
+    "fish": 35,
+    "fpa": 1.52
+  },
+  {
     "rank": 1,
     "region": "San Diego County",
     "trip_type": "Full Day Coronado Islands",
@@ -1521,23 +1532,23 @@
     "rank": 3,
     "region": "San Diego County",
     "trip_type": "Full Day Coronado Islands",
+    "boat": "Grande",
+    "landing": "H&M Landing",
+    "trips": 24,
+    "anglers": 751,
+    "fish": 2419,
+    "fpa": 3.22
+  },
+  {
+    "rank": 4,
+    "region": "San Diego County",
+    "trip_type": "Full Day Coronado Islands",
     "boat": "Point Loma",
     "landing": "Point Loma Sportfishing",
     "trips": 9,
     "anglers": 148,
     "fish": 473,
     "fpa": 3.2
-  },
-  {
-    "rank": 4,
-    "region": "San Diego County",
-    "trip_type": "Full Day Coronado Islands",
-    "boat": "Grande",
-    "landing": "H&M Landing",
-    "trips": 23,
-    "anglers": 711,
-    "fish": 2188,
-    "fpa": 3.08
   },
   {
     "rank": 5,
@@ -1919,10 +1930,10 @@
     "trip_type": "Full Day",
     "boat": "Island Fox",
     "landing": "Channel Islands Sportfishing",
-    "trips": 31,
-    "anglers": 550,
-    "fish": 5489,
-    "fpa": 9.98
+    "trips": 32,
+    "anglers": 567,
+    "fish": 5639,
+    "fpa": 9.95
   },
   {
     "rank": 3,
