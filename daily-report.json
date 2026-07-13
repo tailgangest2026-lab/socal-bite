@@ -13,6 +13,16 @@
     "trip_date": "2026-07-13",
     "region": "Alameda County",
     "landing": "Fish Emeryville",
+    "boat": "Diamond",
+    "trip_type": "Full Day",
+    "anglers": 6,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-07-13",
+    "region": "Alameda County",
+    "landing": "Fish Emeryville",
     "boat": "Heisen-sturg",
     "trip_type": "Full Day",
     "anglers": 6,
@@ -132,6 +142,26 @@
   {
     "trip_date": "2026-07-13",
     "region": "Central California",
+    "landing": "Morro Bay Landing",
+    "boat": "Endeavor (MB)",
+    "trip_type": "1/2 Day AM",
+    "anglers": 21,
+    "fish_counts": "1 Red Rockfish, 208 Rockfish",
+    "total_fish": 209
+  },
+  {
+    "trip_date": "2026-07-13",
+    "region": "Central California",
+    "landing": "Morro Bay Landing",
+    "boat": "Starfire",
+    "trip_type": "1/2 Day AM",
+    "anglers": 24,
+    "fish_counts": "12 Red Rockfish, 174 Rockfish",
+    "total_fish": 186
+  },
+  {
+    "trip_date": "2026-07-13",
+    "region": "Central California",
     "landing": "Patriot Sportfishing",
     "boat": "Flying Fish",
     "trip_type": "1/2 Day AM",
@@ -198,6 +228,16 @@
     "anglers": 21,
     "fish_counts": "1 Barracuda, 105 Calico Bass, 1 Sheephead, 1 Yellowtail",
     "total_fish": 108
+  },
+  {
+    "trip_date": "2026-07-13",
+    "region": "Los Angeles County",
+    "landing": "Long Beach Sportfishing",
+    "boat": "El Patron",
+    "trip_type": "Full Day",
+    "anglers": 21,
+    "fish_counts": "60 Bonito, 51 Calico Bass",
+    "total_fish": 111
   },
   {
     "trip_date": "2026-07-13",
