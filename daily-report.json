@@ -443,6 +443,16 @@
     "trip_date": "2026-07-12",
     "region": "Los Angeles County",
     "landing": "Marina Del Rey Sportfishing",
+    "boat": "Betty-O",
+    "trip_type": "3/4 Day",
+    "anglers": 16,
+    "fish_counts": "6 Lingcod, 120 Rockfish",
+    "total_fish": 126
+  },
+  {
+    "trip_date": "2026-07-12",
+    "region": "Los Angeles County",
+    "landing": "Marina Del Rey Sportfishing",
     "boat": "New Del Mar",
     "trip_type": "1/2 Day AM",
     "anglers": 112,
@@ -453,11 +463,31 @@
     "trip_date": "2026-07-12",
     "region": "Los Angeles County",
     "landing": "Marina Del Rey Sportfishing",
+    "boat": "New Del Mar",
+    "trip_type": "3/4 Day",
+    "anglers": 116,
+    "fish_counts": "75 Calico Bass, 30 Sand Bass, 300 Sculpin, 3 Sheephead, 12 Whitefish",
+    "total_fish": 420
+  },
+  {
+    "trip_date": "2026-07-12",
+    "region": "Los Angeles County",
+    "landing": "Marina Del Rey Sportfishing",
     "boat": "Spitfire",
     "trip_type": "3/4 Day",
     "anglers": 38,
     "fish_counts": "1 Barracuda, 35 Calico Bass, 16 Sheephead, 280 Whitefish",
     "total_fish": 332
+  },
+  {
+    "trip_date": "2026-07-12",
+    "region": "Los Angeles County",
+    "landing": "Marina Del Rey Sportfishing",
+    "boat": "Spitfire",
+    "trip_type": "3/4 Day",
+    "anglers": 51,
+    "fish_counts": "7 Bonito, 63 Calico Bass, 18 Rockfish, 10 Sculpin, 17 Sheephead, 480 Whitefish",
+    "total_fish": 595
   },
   {
     "trip_date": "2026-07-12",
@@ -562,10 +592,50 @@
   {
     "trip_date": "2026-07-12",
     "region": "NorCal",
+    "landing": "Bass Tub Sportfishing",
+    "boat": "Bass-Tub",
+    "trip_type": "Full Day",
+    "anglers": 23,
+    "fish_counts": "17 Lingcod, 130 Rockfish",
+    "total_fish": 147
+  },
+  {
+    "trip_date": "2026-07-12",
+    "region": "NorCal",
     "landing": "Big Cs Charters",
     "boat": "Chasin Crustacean",
     "trip_type": "Full Day",
     "anglers": 6,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-07-12",
+    "region": "NorCal",
+    "landing": "Big Cs Charters",
+    "boat": "Chasin Crustacean",
+    "trip_type": "Full Day",
+    "anglers": 6,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-07-12",
+    "region": "NorCal",
+    "landing": "Big Cs Charters",
+    "boat": "Outer Limits (Sausalito, CA)",
+    "trip_type": "Full Day",
+    "anglers": 6,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-07-12",
+    "region": "NorCal",
+    "landing": "Blue Runner Charters",
+    "boat": "Blue Runner",
+    "trip_type": "Full Day",
+    "anglers": 9,
     "fish_counts": "",
     "total_fish": 0
   },
@@ -606,6 +676,16 @@
     "boat": "Hog Heaven",
     "trip_type": "Full Day",
     "anglers": 18,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-07-12",
+    "region": "NorCal",
+    "landing": "New Captain Pete",
+    "boat": "New Captain Pete",
+    "trip_type": "Full Day",
+    "anglers": 7,
     "fish_counts": "",
     "total_fish": 0
   },
@@ -1186,6 +1266,26 @@
     "boat": "Lovely Martha",
     "trip_type": "Full Day",
     "anglers": 22,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-07-12",
+    "region": "San Francisco Bay",
+    "landing": "Reel Addiction Sportfishing",
+    "boat": "Reel Addiction 1",
+    "trip_type": "Full Day",
+    "anglers": 5,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-07-12",
+    "region": "San Francisco Bay",
+    "landing": "Reel Addiction Sportfishing",
+    "boat": "Reel Addiction 2",
+    "trip_type": "Full Day",
+    "anglers": 6,
     "fish_counts": "",
     "total_fish": 0
   },
@@ -2353,6 +2453,16 @@
     "trip_date": "2026-07-11",
     "region": "Orange County",
     "landing": "Davey's Locker",
+    "boat": "Freelance",
+    "trip_type": "3/4 Day",
+    "anglers": 63,
+    "fish_counts": "2 Bonito, 10 Calico Bass, 71 Whitefish, 1 Yellowtail",
+    "total_fish": 84
+  },
+  {
+    "trip_date": "2026-07-11",
+    "region": "Orange County",
+    "landing": "Davey's Locker",
     "boat": "Western Pride",
     "trip_type": "1/2 Day AM",
     "anglers": 17,
@@ -2388,6 +2498,26 @@
     "anglers": 39,
     "fish_counts": "165 Sculpin",
     "total_fish": 165
+  },
+  {
+    "trip_date": "2026-07-11",
+    "region": "Orange County",
+    "landing": "Davey's Locker",
+    "boat": "Western Pride",
+    "trip_type": "1/2 Day AM",
+    "anglers": 46,
+    "fish_counts": "13 Whitefish",
+    "total_fish": 13
+  },
+  {
+    "trip_date": "2026-07-11",
+    "region": "Orange County",
+    "landing": "Davey's Locker",
+    "boat": "Western Pride",
+    "trip_type": "1/2 Day PM",
+    "anglers": 39,
+    "fish_counts": "",
+    "total_fish": 0
   },
   {
     "trip_date": "2026-07-11",
