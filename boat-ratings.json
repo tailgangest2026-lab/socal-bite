@@ -1336,13 +1336,24 @@
     "trip_type": "1/2 Day PM",
     "boat": "Premier",
     "landing": "H&M Landing",
-    "trips": 23,
-    "anglers": 758,
-    "fish": 3179,
-    "fpa": 4.19
+    "trips": 24,
+    "anglers": 773,
+    "fish": 3308,
+    "fpa": 4.28
   },
   {
     "rank": 3,
+    "region": "San Diego County",
+    "trip_type": "1/2 Day PM",
+    "boat": "New Seaforth",
+    "landing": "Seaforth Sportfishing",
+    "trips": 32,
+    "anglers": 1532,
+    "fish": 5028,
+    "fpa": 3.28
+  },
+  {
+    "rank": 4,
     "region": "San Diego County",
     "trip_type": "1/2 Day PM",
     "boat": "Daily Double",
@@ -1351,17 +1362,6 @@
     "anglers": 275,
     "fish": 872,
     "fpa": 3.17
-  },
-  {
-    "rank": 4,
-    "region": "San Diego County",
-    "trip_type": "1/2 Day PM",
-    "boat": "New Seaforth",
-    "landing": "Seaforth Sportfishing",
-    "trips": 31,
-    "anglers": 1474,
-    "fish": 4609,
-    "fpa": 3.13
   },
   {
     "rank": 1,
@@ -1952,10 +1952,10 @@
     "trip_type": "Full Day",
     "boat": "Aloha Spirit",
     "landing": "Channel Islands Sportfishing",
-    "trips": 57,
-    "anglers": 1487,
-    "fish": 11101,
-    "fpa": 7.47
+    "trips": 58,
+    "anglers": 1505,
+    "fish": 11176,
+    "fpa": 7.43
   },
   {
     "rank": 5,
