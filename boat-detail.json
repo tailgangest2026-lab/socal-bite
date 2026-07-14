@@ -51,10 +51,10 @@
     "boat": "C Gull II",
     "landing": "Fish Emeryville",
     "region": "Alameda County",
-    "trips": 49,
-    "anglers": 752,
+    "trips": 50,
+    "anglers": 763,
     "fish": 1333,
-    "fpa": 1.77,
+    "fpa": 1.75,
     "top_species_1": "Rockfish",
     "top_species_2": "Lingcod",
     "top_species_3": "Halibut"
@@ -1224,6 +1224,18 @@
     "top_species_3": "Yellowtail"
   },
   {
+    "boat": "Sea Watch",
+    "landing": "Seaforth Sportfishing",
+    "region": "San Diego County",
+    "trips": 65,
+    "anglers": 1553,
+    "fish": 9186,
+    "fpa": 5.92,
+    "top_species_1": "Calico Bass Released",
+    "top_species_2": "Calico Bass",
+    "top_species_3": "Barracuda"
+  },
+  {
     "boat": "Apollo",
     "landing": "Seaforth Sportfishing",
     "region": "San Diego County",
@@ -1234,18 +1246,6 @@
     "top_species_1": "Rockfish",
     "top_species_2": "Whitefish",
     "top_species_3": "Bonito"
-  },
-  {
-    "boat": "Sea Watch",
-    "landing": "Seaforth Sportfishing",
-    "region": "San Diego County",
-    "trips": 64,
-    "anglers": 1523,
-    "fish": 8981,
-    "fpa": 5.9,
-    "top_species_1": "Calico Bass Released",
-    "top_species_2": "Calico Bass",
-    "top_species_3": "Barracuda"
   },
   {
     "boat": "Pacific Voyager",
@@ -2079,10 +2079,10 @@
     "boat": "Estella",
     "landing": "Channel Islands Sportfishing",
     "region": "Ventura County",
-    "trips": 32,
-    "anglers": 716,
-    "fish": 10024,
-    "fpa": 14,
+    "trips": 33,
+    "anglers": 735,
+    "fish": 10364,
+    "fpa": 14.1,
     "top_species_1": "Rockfish",
     "top_species_2": "Whitefish",
     "top_species_3": "Sculpin"
