@@ -66,15 +66,26 @@
     "fpa": 0.01
   },
   {
+    "rank": 7,
+    "region": "Alameda County",
+    "trip_type": "1/2 Day AM",
+    "boat": "KingFish",
+    "landing": "Fish Emeryville",
+    "trips": 5,
+    "anglers": 42,
+    "fish": 0,
+    "fpa": 0
+  },
+  {
     "rank": 1,
     "region": "Alameda County",
     "trip_type": "Full Day",
     "boat": "Sea Wolf",
     "landing": "Fish Emeryville",
-    "trips": 48,
-    "anglers": 911,
-    "fish": 8299,
-    "fpa": 9.11
+    "trips": 49,
+    "anglers": 926,
+    "fish": 8479,
+    "fpa": 9.16
   },
   {
     "rank": 2,
@@ -159,10 +170,10 @@
     "trip_type": "Full Day",
     "boat": "Here We Go",
     "landing": "Fish Emeryville",
-    "trips": 12,
-    "anglers": 50,
+    "trips": 13,
+    "anglers": 54,
     "fish": 12,
-    "fpa": 0.24
+    "fpa": 0.22
   },
   {
     "rank": 10,
@@ -1259,10 +1270,10 @@
     "trip_type": "1.5 Day",
     "boat": "Highliner",
     "landing": "Seaforth Sportfishing",
-    "trips": 5,
-    "anglers": 105,
-    "fish": 168,
-    "fpa": 1.6
+    "trips": 6,
+    "anglers": 129,
+    "fish": 264,
+    "fpa": 2.05
   },
   {
     "rank": 2,
@@ -1303,13 +1314,24 @@
     "trip_type": "1/2 Day AM",
     "boat": "Premier",
     "landing": "H&M Landing",
-    "trips": 27,
-    "anglers": 954,
-    "fish": 3173,
+    "trips": 28,
+    "anglers": 992,
+    "fish": 3303,
     "fpa": 3.33
   },
   {
     "rank": 4,
+    "region": "San Diego County",
+    "trip_type": "1/2 Day AM",
+    "boat": "New Seaforth",
+    "landing": "Seaforth Sportfishing",
+    "trips": 28,
+    "anglers": 1390,
+    "fish": 4181,
+    "fpa": 3.01
+  },
+  {
+    "rank": 5,
     "region": "San Diego County",
     "trip_type": "1/2 Day AM",
     "boat": "Daily Double",
@@ -1318,17 +1340,6 @@
     "anglers": 646,
     "fish": 1886,
     "fpa": 2.92
-  },
-  {
-    "rank": 5,
-    "region": "San Diego County",
-    "trip_type": "1/2 Day AM",
-    "boat": "New Seaforth",
-    "landing": "Seaforth Sportfishing",
-    "trips": 27,
-    "anglers": 1335,
-    "fish": 3889,
-    "fpa": 2.91
   },
   {
     "rank": 6,
@@ -1391,10 +1402,10 @@
     "trip_type": "1/2 Day Twilight",
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
-    "trips": 29,
-    "anglers": 1100,
-    "fish": 4500,
-    "fpa": 4.09
+    "trips": 30,
+    "anglers": 1131,
+    "fish": 4730,
+    "fpa": 4.18
   },
   {
     "rank": 2,
@@ -1600,10 +1611,10 @@
     "trip_type": "Overnight",
     "boat": "Producer",
     "landing": "H&M Landing",
-    "trips": 14,
-    "anglers": 302,
-    "fish": 332,
-    "fpa": 1.1
+    "trips": 15,
+    "anglers": 331,
+    "fish": 348,
+    "fpa": 1.05
   },
   {
     "rank": 1,
@@ -1831,10 +1842,10 @@
     "trip_type": "Overnight",
     "boat": "Endeavor (Ventura)",
     "landing": "Ventura Harbor Sportfishing",
-    "trips": 9,
-    "anglers": 166,
-    "fish": 2773,
-    "fpa": 16.7
+    "trips": 10,
+    "anglers": 182,
+    "fish": 3322,
+    "fpa": 18.25
   },
   {
     "rank": 1,
