@@ -478,10 +478,10 @@
     "trip_type": "3/4 Day",
     "boat": "Spitfire",
     "landing": "Marina Del Rey Sportfishing",
-    "trips": 49,
-    "anglers": 1351,
-    "fish": 12041,
-    "fpa": 8.91
+    "trips": 50,
+    "anglers": 1382,
+    "fish": 12255,
+    "fpa": 8.87
   },
   {
     "rank": 3,
@@ -500,10 +500,10 @@
     "trip_type": "3/4 Day",
     "boat": "Betty-O",
     "landing": "Marina Del Rey Sportfishing",
-    "trips": 39,
-    "anglers": 952,
-    "fish": 5371,
-    "fpa": 5.64
+    "trips": 40,
+    "anglers": 990,
+    "fish": 5391,
+    "fpa": 5.45
   },
   {
     "rank": 5,
@@ -511,10 +511,10 @@
     "trip_type": "3/4 Day",
     "boat": "New Del Mar",
     "landing": "Marina Del Rey Sportfishing",
-    "trips": 33,
-    "anglers": 3169,
-    "fish": 17147,
-    "fpa": 5.41
+    "trips": 34,
+    "anglers": 3241,
+    "fish": 17376,
+    "fpa": 5.36
   },
   {
     "rank": 6,
@@ -665,9 +665,9 @@
     "trip_type": "1/2 Day AM",
     "boat": "Kahuna",
     "landing": "J&M Sportfishing",
-    "trips": 25,
-    "anglers": 375,
-    "fish": 3807,
+    "trips": 26,
+    "anglers": 393,
+    "fish": 3987,
     "fpa": 10.15
   },
   {
@@ -971,23 +971,23 @@
     "rank": 4,
     "region": "Orange County",
     "trip_type": "1/2 Day AM",
+    "boat": "Reel Fun",
+    "landing": "Dana Wharf Sportfishing",
+    "trips": 33,
+    "anglers": 803,
+    "fish": 2400,
+    "fpa": 2.99
+  },
+  {
+    "rank": 5,
+    "region": "Orange County",
+    "trip_type": "1/2 Day AM",
     "boat": "Sum Fun",
     "landing": "Dana Wharf Sportfishing",
     "trips": 18,
     "anglers": 536,
     "fish": 1596,
     "fpa": 2.98
-  },
-  {
-    "rank": 5,
-    "region": "Orange County",
-    "trip_type": "1/2 Day AM",
-    "boat": "Reel Fun",
-    "landing": "Dana Wharf Sportfishing",
-    "trips": 32,
-    "anglers": 794,
-    "fish": 2332,
-    "fpa": 2.94
   },
   {
     "rank": 6,
@@ -1050,10 +1050,10 @@
     "trip_type": "1/2 Day PM",
     "boat": "Reel Fun",
     "landing": "Dana Wharf Sportfishing",
-    "trips": 26,
-    "anglers": 592,
-    "fish": 2368,
-    "fpa": 4
+    "trips": 27,
+    "anglers": 627,
+    "fish": 2527,
+    "fpa": 4.03
   },
   {
     "rank": 4,
@@ -1116,10 +1116,10 @@
     "trip_type": "3/4 Day",
     "boat": "Clemente",
     "landing": "Dana Wharf Sportfishing",
-    "trips": 22,
-    "anglers": 740,
-    "fish": 3528,
-    "fpa": 4.77
+    "trips": 23,
+    "anglers": 772,
+    "fish": 3608,
+    "fpa": 4.67
   },
   {
     "rank": 2,
@@ -1138,13 +1138,24 @@
     "trip_type": "3/4 Day",
     "boat": "Sum Fun",
     "landing": "Dana Wharf Sportfishing",
-    "trips": 31,
-    "anglers": 972,
-    "fish": 3677,
-    "fpa": 3.78
+    "trips": 32,
+    "anglers": 997,
+    "fish": 3853,
+    "fpa": 3.86
   },
   {
     "rank": 4,
+    "region": "Orange County",
+    "trip_type": "3/4 Day",
+    "boat": "Helena",
+    "landing": "Dana Wharf Sportfishing",
+    "trips": 11,
+    "anglers": 188,
+    "fish": 687,
+    "fpa": 3.65
+  },
+  {
+    "rank": 5,
     "region": "Orange County",
     "trip_type": "3/4 Day",
     "boat": "Reel Fun",
@@ -1153,17 +1164,6 @@
     "anglers": 132,
     "fish": 478,
     "fpa": 3.62
-  },
-  {
-    "rank": 5,
-    "region": "Orange County",
-    "trip_type": "3/4 Day",
-    "boat": "Helena",
-    "landing": "Dana Wharf Sportfishing",
-    "trips": 10,
-    "anglers": 176,
-    "fish": 598,
-    "fpa": 3.4
   },
   {
     "rank": 6,
@@ -1248,10 +1248,10 @@
     "trip_type": "Overnight",
     "boat": "Fury",
     "landing": "Dana Wharf Sportfishing",
-    "trips": 27,
-    "anglers": 650,
-    "fish": 6834,
-    "fpa": 10.51
+    "trips": 28,
+    "anglers": 670,
+    "fish": 6953,
+    "fpa": 10.38
   },
   {
     "rank": 2,
@@ -1259,10 +1259,10 @@
     "trip_type": "Overnight",
     "boat": "Thunderbird",
     "landing": "Newport Landing",
-    "trips": 34,
-    "anglers": 1013,
-    "fish": 7183,
-    "fpa": 7.09
+    "trips": 35,
+    "anglers": 1043,
+    "fish": 7347,
+    "fpa": 7.04
   },
   {
     "rank": 1,
