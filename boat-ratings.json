@@ -192,8 +192,8 @@
     "trip_type": "Full Day",
     "boat": "Diamond",
     "landing": "Fish Emeryville",
-    "trips": 14,
-    "anglers": 84,
+    "trips": 15,
+    "anglers": 90,
     "fish": 2,
     "fpa": 0.02
   },
@@ -247,10 +247,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Sunny Day",
     "landing": "Patriot Sportfishing",
-    "trips": 13,
-    "anglers": 46,
+    "trips": 14,
+    "anglers": 49,
     "fish": 33,
-    "fpa": 0.72
+    "fpa": 0.67
   },
   {
     "rank": 5,
@@ -1268,6 +1268,17 @@
     "rank": 1,
     "region": "San Diego County",
     "trip_type": "1/2 Day AM",
+    "boat": "Pronto",
+    "landing": "Oceanside Sea Center",
+    "trips": 5,
+    "anglers": 37,
+    "fish": 336,
+    "fpa": 9.08
+  },
+  {
+    "rank": 2,
+    "region": "San Diego County",
+    "trip_type": "1/2 Day AM",
     "boat": "Dolphin",
     "landing": "Fisherman's Landing",
     "trips": 30,
@@ -1276,7 +1287,7 @@
     "fpa": 3.72
   },
   {
-    "rank": 2,
+    "rank": 3,
     "region": "San Diego County",
     "trip_type": "1/2 Day AM",
     "boat": "Southern Cal",
@@ -1287,7 +1298,7 @@
     "fpa": 3.51
   },
   {
-    "rank": 3,
+    "rank": 4,
     "region": "San Diego County",
     "trip_type": "1/2 Day AM",
     "boat": "Premier",
@@ -1298,7 +1309,7 @@
     "fpa": 3.48
   },
   {
-    "rank": 4,
+    "rank": 5,
     "region": "San Diego County",
     "trip_type": "1/2 Day AM",
     "boat": "New Seaforth",
@@ -1309,7 +1320,7 @@
     "fpa": 2.9
   },
   {
-    "rank": 5,
+    "rank": 6,
     "region": "San Diego County",
     "trip_type": "1/2 Day AM",
     "boat": "Daily Double",
@@ -1320,7 +1331,7 @@
     "fpa": 2.85
   },
   {
-    "rank": 6,
+    "rank": 7,
     "region": "San Diego County",
     "trip_type": "1/2 Day AM",
     "boat": "Point Loma",
