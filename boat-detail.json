@@ -663,10 +663,10 @@
     "boat": "Pacific Dream",
     "landing": "Happy Hooker Sportfishing",
     "region": "NorCal",
-    "trips": 27,
-    "anglers": 532,
-    "fish": 1182,
-    "fpa": 2.22,
+    "trips": 28,
+    "anglers": 543,
+    "fish": 1257,
+    "fpa": 2.31,
     "top_species_1": "Rockfish",
     "top_species_2": "Lingcod",
     "top_species_3": "Halibut"
@@ -1404,18 +1404,6 @@
     "top_species_3": "Calico Bass"
   },
   {
-    "boat": "Dolphin",
-    "landing": "Fisherman's Landing",
-    "region": "San Diego County",
-    "trips": 158,
-    "anglers": 5221,
-    "fish": 21459,
-    "fpa": 4.11,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Calico Bass Released",
-    "top_species_3": "Calico Bass"
-  },
-  {
     "boat": "Old Glory",
     "landing": "H&M Landing",
     "region": "San Diego County",
@@ -1426,6 +1414,18 @@
     "top_species_1": "Rockfish",
     "top_species_2": "Bluefin Tuna",
     "top_species_3": "Bonito"
+  },
+  {
+    "boat": "Dolphin",
+    "landing": "Fisherman's Landing",
+    "region": "San Diego County",
+    "trips": 159,
+    "anglers": 5250,
+    "fish": 21549,
+    "fpa": 4.1,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Calico Bass Released",
+    "top_species_3": "Calico Bass"
   },
   {
     "boat": "Fortune",
@@ -1899,8 +1899,8 @@
     "boat": "Lovely Martha",
     "landing": "Lovely Martha Sportfishing",
     "region": "San Francisco Bay",
-    "trips": 50,
-    "anglers": 959,
+    "trips": 51,
+    "anglers": 980,
     "fish": 0,
     "fpa": 0,
     "top_species_1": "",

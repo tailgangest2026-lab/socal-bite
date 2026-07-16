@@ -352,6 +352,16 @@
   {
     "trip_date": "2026-07-15",
     "region": "NorCal",
+    "landing": "Happy Hooker Sportfishing",
+    "boat": "Pacific Dream",
+    "trip_type": "Full Day",
+    "anglers": 11,
+    "fish_counts": "25 Lingcod, 50 Rockfish",
+    "total_fish": 75
+  },
+  {
+    "trip_date": "2026-07-15",
+    "region": "NorCal",
     "landing": "Hog Heaven Sportfishing",
     "boat": "Hog Heaven",
     "trip_type": "Full Day",
@@ -613,6 +623,16 @@
     "trip_date": "2026-07-15",
     "region": "San Diego County",
     "landing": "Fisherman's Landing",
+    "boat": "Dolphin",
+    "trip_type": "1/2 Day PM",
+    "anglers": 29,
+    "fish_counts": "15 Bonito, 9 Calico Bass, 23 Rockfish, 16 Sand Bass, 27 Yellowtail",
+    "total_fish": 90
+  },
+  {
+    "trip_date": "2026-07-15",
+    "region": "San Diego County",
+    "landing": "Fisherman's Landing",
     "boat": "Pacific Queen",
     "trip_type": "3 Day",
     "anglers": 26,
@@ -866,6 +886,16 @@
     "boat": "Lovely Martha",
     "trip_type": "Full Day",
     "anglers": 9,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-07-15",
+    "region": "San Francisco Bay",
+    "landing": "Lovely Martha Sportfishing",
+    "boat": "Lovely Martha",
+    "trip_type": "Full Day",
+    "anglers": 21,
     "fish_counts": "",
     "total_fish": 0
   },
