@@ -99,10 +99,10 @@
     "boat": "Scallywag",
     "landing": "Fish Emeryville",
     "region": "Alameda County",
-    "trips": 48,
-    "anglers": 260,
+    "trips": 49,
+    "anglers": 266,
     "fish": 234,
-    "fpa": 0.9,
+    "fpa": 0.88,
     "top_species_1": "Rockfish",
     "top_species_2": "Bluefin Tuna",
     "top_species_3": "Lingcod"
@@ -1236,18 +1236,6 @@
     "top_species_3": "Bonito"
   },
   {
-    "boat": "Sea Watch",
-    "landing": "Seaforth Sportfishing",
-    "region": "San Diego County",
-    "trips": 67,
-    "anglers": 1623,
-    "fish": 9503,
-    "fpa": 5.86,
-    "top_species_1": "Calico Bass Released",
-    "top_species_2": "Calico Bass",
-    "top_species_3": "Barracuda"
-  },
-  {
     "boat": "Pacific Voyager",
     "landing": "Seaforth Sportfishing",
     "region": "San Diego County",
@@ -1258,6 +1246,18 @@
     "top_species_1": "Rockfish",
     "top_species_2": "Bluefin Tuna",
     "top_species_3": "Yellowtail"
+  },
+  {
+    "boat": "Sea Watch",
+    "landing": "Seaforth Sportfishing",
+    "region": "San Diego County",
+    "trips": 68,
+    "anglers": 1657,
+    "fish": 9637,
+    "fpa": 5.82,
+    "top_species_1": "Calico Bass Released",
+    "top_species_2": "Calico Bass",
+    "top_species_3": "Barracuda"
   },
   {
     "boat": "Cortez",
