@@ -1213,6 +1213,17 @@
     "rank": 1,
     "region": "San Diego County",
     "trip_type": "1.5 Day",
+    "boat": "Pegasus",
+    "landing": "Fisherman's Landing",
+    "trips": 5,
+    "anglers": 87,
+    "fish": 275,
+    "fpa": 3.16
+  },
+  {
+    "rank": 2,
+    "region": "San Diego County",
+    "trip_type": "1.5 Day",
     "boat": "Highliner",
     "landing": "Seaforth Sportfishing",
     "trips": 6,
@@ -1221,7 +1232,7 @@
     "fpa": 2.05
   },
   {
-    "rank": 2,
+    "rank": 3,
     "region": "San Diego County",
     "trip_type": "1.5 Day",
     "boat": "Tribute",
@@ -1424,10 +1435,10 @@
     "trip_type": "2 Day",
     "boat": "Constitution",
     "landing": "Fisherman's Landing",
-    "trips": 5,
-    "anglers": 90,
+    "trips": 6,
+    "anglers": 111,
     "fish": 153,
-    "fpa": 1.7
+    "fpa": 1.38
   },
   {
     "rank": 1,
@@ -1831,10 +1842,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Speed Twin",
     "landing": "Channel Islands Sportfishing",
-    "trips": 58,
-    "anglers": 2111,
-    "fish": 18093,
-    "fpa": 8.57
+    "trips": 59,
+    "anglers": 2142,
+    "fish": 18425,
+    "fpa": 8.6
   },
   {
     "rank": 1,
