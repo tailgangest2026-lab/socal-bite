@@ -1257,6 +1257,17 @@
     "rank": 2,
     "region": "San Diego County",
     "trip_type": "1/2 Day AM",
+    "boat": "Blue Horizon",
+    "landing": "Oceanside Sea Center",
+    "trips": 5,
+    "anglers": 69,
+    "fish": 567,
+    "fpa": 8.22
+  },
+  {
+    "rank": 3,
+    "region": "San Diego County",
+    "trip_type": "1/2 Day AM",
     "boat": "Sea Star",
     "landing": "Oceanside Sea Center",
     "trips": 6,
@@ -1265,7 +1276,7 @@
     "fpa": 5.15
   },
   {
-    "rank": 3,
+    "rank": 4,
     "region": "San Diego County",
     "trip_type": "1/2 Day AM",
     "boat": "Dolphin",
@@ -1276,7 +1287,7 @@
     "fpa": 3.68
   },
   {
-    "rank": 4,
+    "rank": 5,
     "region": "San Diego County",
     "trip_type": "1/2 Day AM",
     "boat": "Southern Cal",
@@ -1287,7 +1298,7 @@
     "fpa": 3.61
   },
   {
-    "rank": 5,
+    "rank": 6,
     "region": "San Diego County",
     "trip_type": "1/2 Day AM",
     "boat": "Premier",
@@ -1298,7 +1309,7 @@
     "fpa": 3.39
   },
   {
-    "rank": 6,
+    "rank": 7,
     "region": "San Diego County",
     "trip_type": "1/2 Day AM",
     "boat": "New Seaforth",
@@ -1309,7 +1320,7 @@
     "fpa": 2.92
   },
   {
-    "rank": 7,
+    "rank": 8,
     "region": "San Diego County",
     "trip_type": "1/2 Day AM",
     "boat": "Daily Double",
@@ -1320,7 +1331,7 @@
     "fpa": 2.81
   },
   {
-    "rank": 8,
+    "rank": 9,
     "region": "San Diego County",
     "trip_type": "1/2 Day AM",
     "boat": "Point Loma",
@@ -1710,8 +1721,8 @@
     "trip_type": "Full Day",
     "boat": "Goldeneye 2000",
     "landing": "Berkeley Charter Boats",
-    "trips": 23,
-    "anglers": 296,
+    "trips": 24,
+    "anglers": 311,
     "fish": 0,
     "fpa": 0
   },
@@ -1919,10 +1930,10 @@
     "trip_type": "3/4 Day",
     "boat": "Gentleman",
     "landing": "Channel Islands Sportfishing",
-    "trips": 43,
-    "anglers": 1256,
-    "fish": 8907,
-    "fpa": 7.09
+    "trips": 44,
+    "anglers": 1306,
+    "fish": 9066,
+    "fpa": 6.94
   },
   {
     "rank": 1,
@@ -1963,10 +1974,10 @@
     "trip_type": "Full Day",
     "boat": "Aloha Spirit",
     "landing": "Channel Islands Sportfishing",
-    "trips": 57,
-    "anglers": 1438,
-    "fish": 10122,
-    "fpa": 7.04
+    "trips": 58,
+    "anglers": 1466,
+    "fish": 10241,
+    "fpa": 6.99
   },
   {
     "rank": 5,
