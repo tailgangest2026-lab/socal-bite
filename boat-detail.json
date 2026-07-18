@@ -231,8 +231,8 @@
     "boat": "Flying Fish",
     "landing": "Patriot Sportfishing",
     "region": "Central California",
-    "trips": 90,
-    "anglers": 1539,
+    "trips": 91,
+    "anglers": 1554,
     "fish": 125,
     "fpa": 0.08,
     "top_species_1": "Lingcod",
@@ -615,10 +615,10 @@
     "boat": "Queen of Hearts",
     "landing": "Half Moon Bay Sportfishing",
     "region": "NorCal",
-    "trips": 47,
-    "anglers": 813,
+    "trips": 48,
+    "anglers": 822,
     "fish": 5454,
-    "fpa": 6.71,
+    "fpa": 6.64,
     "top_species_1": "Rockfish",
     "top_species_2": "Lingcod",
     "top_species_3": "Halibut"
@@ -1668,18 +1668,6 @@
     "top_species_3": "Red Rockfish"
   },
   {
-    "boat": "Vendetta 2",
-    "landing": "H&M Landing",
-    "region": "San Diego County",
-    "trips": 8,
-    "anglers": 145,
-    "fish": 301,
-    "fpa": 2.08,
-    "top_species_1": "Yellowtail",
-    "top_species_2": "Rockfish",
-    "top_species_3": "Calico Bass"
-  },
-  {
     "boat": "Constitution",
     "landing": "Fisherman's Landing",
     "region": "San Diego County",
@@ -1714,6 +1702,18 @@
     "top_species_1": "Bluefin Tuna",
     "top_species_2": "Yellowtail",
     "top_species_3": "Bonito"
+  },
+  {
+    "boat": "Vendetta 2",
+    "landing": "H&M Landing",
+    "region": "San Diego County",
+    "trips": 9,
+    "anglers": 170,
+    "fish": 301,
+    "fpa": 1.77,
+    "top_species_1": "Yellowtail",
+    "top_species_2": "Rockfish",
+    "top_species_3": "Calico Bass"
   },
   {
     "boat": "Producer",
@@ -2139,10 +2139,10 @@
     "boat": "Cobra",
     "landing": "Channel Islands Sportfishing",
     "region": "Ventura County",
-    "trips": 30,
-    "anglers": 306,
-    "fish": 3094,
-    "fpa": 10.11,
+    "trips": 31,
+    "anglers": 317,
+    "fish": 3302,
+    "fpa": 10.42,
     "top_species_1": "Rockfish",
     "top_species_2": "Whitefish",
     "top_species_3": "Lingcod"
