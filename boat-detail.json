@@ -1452,18 +1452,6 @@
     "top_species_3": "Red Rockfish"
   },
   {
-    "boat": "Patriot (SD)",
-    "landing": "H&M Landing",
-    "region": "San Diego County",
-    "trips": 5,
-    "anglers": 41,
-    "fish": 154,
-    "fpa": 3.76,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Bluefin Tuna",
-    "top_species_3": "Yellowfin Tuna"
-  },
-  {
     "boat": "Point Loma",
     "landing": "Point Loma Sportfishing",
     "region": "San Diego County",
@@ -1546,6 +1534,18 @@
     "top_species_1": "Yellowtail",
     "top_species_2": "Whitefish",
     "top_species_3": "Rockfish"
+  },
+  {
+    "boat": "Patriot (SD)",
+    "landing": "H&M Landing",
+    "region": "San Diego County",
+    "trips": 6,
+    "anglers": 50,
+    "fish": 155,
+    "fpa": 3.1,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Bluefin Tuna",
+    "top_species_3": "Yellowfin Tuna"
   },
   {
     "boat": "Pacific Queen",
@@ -1899,8 +1899,8 @@
     "boat": "Lovely Martha",
     "landing": "Lovely Martha Sportfishing",
     "region": "San Francisco Bay",
-    "trips": 54,
-    "anglers": 1045,
+    "trips": 55,
+    "anglers": 1066,
     "fish": 0,
     "fpa": 0,
     "top_species_1": "",
