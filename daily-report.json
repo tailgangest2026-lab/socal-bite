@@ -1002,6 +1002,36 @@
   {
     "trip_date": "2026-07-17",
     "region": "San Diego County",
+    "landing": "Fisherman's Landing",
+    "boat": "Fortune",
+    "trip_type": "2.5 Day",
+    "anglers": 10,
+    "fish_counts": "1 Yellowfin Tuna",
+    "total_fish": 1
+  },
+  {
+    "trip_date": "2026-07-17",
+    "region": "San Diego County",
+    "landing": "Fisherman's Landing",
+    "boat": "Pacific Queen",
+    "trip_type": "2 Day",
+    "anglers": 28,
+    "fish_counts": "1 Yellowfin Tuna, 2 Yellowtail",
+    "total_fish": 3
+  },
+  {
+    "trip_date": "2026-07-17",
+    "region": "San Diego County",
+    "landing": "Fisherman's Landing",
+    "boat": "Tomahawk",
+    "trip_type": "2 Day",
+    "anglers": 28,
+    "fish_counts": "112 Bluefin Tuna, 49 Yellowtail",
+    "total_fish": 161
+  },
+  {
+    "trip_date": "2026-07-17",
+    "region": "San Diego County",
     "landing": "H&M Landing",
     "boat": "Grande",
     "trip_type": "2 Day",

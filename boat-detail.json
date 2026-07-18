@@ -1416,18 +1416,6 @@
     "top_species_3": "Calico Bass"
   },
   {
-    "boat": "Fortune",
-    "landing": "Fisherman's Landing",
-    "region": "San Diego County",
-    "trips": 8,
-    "anglers": 107,
-    "fish": 434,
-    "fpa": 4.06,
-    "top_species_1": "Bluefin Tuna",
-    "top_species_2": "Yellowtail",
-    "top_species_3": "Rockfish"
-  },
-  {
     "boat": "Reel Champion",
     "landing": "H&M Landing",
     "region": "San Diego County",
@@ -1450,6 +1438,18 @@
     "top_species_1": "Rockfish",
     "top_species_2": "Yellowtail",
     "top_species_3": "Red Rockfish"
+  },
+  {
+    "boat": "Fortune",
+    "landing": "Fisherman's Landing",
+    "region": "San Diego County",
+    "trips": 9,
+    "anglers": 117,
+    "fish": 435,
+    "fpa": 3.72,
+    "top_species_1": "Bluefin Tuna",
+    "top_species_2": "Yellowtail",
+    "top_species_3": "Rockfish"
   },
   {
     "boat": "Point Loma",
@@ -1536,18 +1536,6 @@
     "top_species_3": "Yellowfin Tuna"
   },
   {
-    "boat": "Pacific Queen",
-    "landing": "Fisherman's Landing",
-    "region": "San Diego County",
-    "trips": 26,
-    "anglers": 637,
-    "fish": 1893,
-    "fpa": 2.97,
-    "top_species_1": "Yellowtail",
-    "top_species_2": "Bluefin Tuna",
-    "top_species_3": "Yellowfin Tuna"
-  },
-  {
     "boat": "Islander",
     "landing": "Fisherman's Landing",
     "region": "San Diego County",
@@ -1582,6 +1570,18 @@
     "top_species_1": "Yellowtail",
     "top_species_2": "Rockfish",
     "top_species_3": "Calico Bass Released"
+  },
+  {
+    "boat": "Pacific Queen",
+    "landing": "Fisherman's Landing",
+    "region": "San Diego County",
+    "trips": 27,
+    "anglers": 665,
+    "fish": 1896,
+    "fpa": 2.85,
+    "top_species_1": "Yellowtail",
+    "top_species_2": "Bluefin Tuna",
+    "top_species_3": "Yellowfin Tuna"
   },
   {
     "boat": "Mission Belle",
@@ -1755,10 +1755,10 @@
     "boat": "Tomahawk",
     "landing": "Fisherman's Landing",
     "region": "San Diego County",
-    "trips": 13,
-    "anglers": 300,
-    "fish": 228,
-    "fpa": 0.76,
+    "trips": 14,
+    "anglers": 328,
+    "fish": 389,
+    "fpa": 1.19,
     "top_species_1": "Bluefin Tuna",
     "top_species_2": "Yellowtail",
     "top_species_3": "Yellowfin Tuna"
