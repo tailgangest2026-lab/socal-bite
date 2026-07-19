@@ -71,10 +71,10 @@
     "trip_type": "Full Day",
     "boat": "Sea Wolf",
     "landing": "Fish Emeryville",
-    "trips": 51,
-    "anglers": 954,
-    "fish": 8811,
-    "fpa": 9.24
+    "trips": 52,
+    "anglers": 976,
+    "fish": 9075,
+    "fpa": 9.3
   },
   {
     "rank": 2,
@@ -82,10 +82,10 @@
     "trip_type": "Full Day",
     "boat": "New Huck Finn",
     "landing": "Fish Emeryville",
-    "trips": 55,
-    "anglers": 1013,
-    "fish": 5681,
-    "fpa": 5.61
+    "trips": 56,
+    "anglers": 1043,
+    "fish": 6041,
+    "fpa": 5.79
   },
   {
     "rank": 3,
@@ -93,10 +93,10 @@
     "trip_type": "Full Day",
     "boat": "KingFish",
     "landing": "Fish Emeryville",
-    "trips": 28,
-    "anglers": 454,
+    "trips": 29,
+    "anglers": 464,
     "fish": 1346,
-    "fpa": 2.96
+    "fpa": 2.9
   },
   {
     "rank": 4,
@@ -104,10 +104,10 @@
     "trip_type": "Full Day",
     "boat": "TigerFish",
     "landing": "Fish Emeryville",
-    "trips": 19,
-    "anglers": 309,
-    "fish": 551,
-    "fpa": 1.78
+    "trips": 20,
+    "anglers": 322,
+    "fish": 681,
+    "fpa": 2.11
   },
   {
     "rank": 5,
@@ -126,10 +126,10 @@
     "trip_type": "Full Day",
     "boat": "Scallywag",
     "landing": "Fish Emeryville",
-    "trips": 47,
-    "anglers": 255,
+    "trips": 48,
+    "anglers": 261,
     "fish": 234,
-    "fpa": 0.92
+    "fpa": 0.9
   },
   {
     "rank": 7,
@@ -203,10 +203,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Avenger",
     "landing": "Morro Bay Landing",
-    "trips": 25,
-    "anglers": 672,
-    "fish": 5220,
-    "fpa": 7.77
+    "trips": 26,
+    "anglers": 692,
+    "fish": 5407,
+    "fpa": 7.81
   },
   {
     "rank": 2,
@@ -225,10 +225,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Endeavor (MB)",
     "landing": "Morro Bay Landing",
-    "trips": 18,
-    "anglers": 470,
-    "fish": 3408,
-    "fpa": 7.25
+    "trips": 19,
+    "anglers": 496,
+    "fish": 3646,
+    "fpa": 7.35
   },
   {
     "rank": 4,
@@ -1358,10 +1358,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Premier",
     "landing": "H&M Landing",
-    "trips": 28,
-    "anglers": 1033,
-    "fish": 3561,
-    "fpa": 3.45
+    "trips": 29,
+    "anglers": 1087,
+    "fish": 3712,
+    "fpa": 3.41
   },
   {
     "rank": 7,
@@ -1369,10 +1369,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
-    "trips": 27,
-    "anglers": 1341,
-    "fish": 4183,
-    "fpa": 3.12
+    "trips": 28,
+    "anglers": 1394,
+    "fish": 4262,
+    "fpa": 3.06
   },
   {
     "rank": 8,
@@ -1446,10 +1446,10 @@
     "trip_type": "1/2 Day Twilight",
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
-    "trips": 28,
-    "anglers": 1055,
-    "fish": 4453,
-    "fpa": 4.22
+    "trips": 29,
+    "anglers": 1110,
+    "fish": 4767,
+    "fpa": 4.29
   },
   {
     "rank": 2,
@@ -1488,6 +1488,17 @@
     "rank": 2,
     "region": "San Diego County",
     "trip_type": "2 Day",
+    "boat": "Aztec",
+    "landing": "Seaforth Sportfishing",
+    "trips": 5,
+    "anglers": 101,
+    "fish": 250,
+    "fpa": 2.48
+  },
+  {
+    "rank": 3,
+    "region": "San Diego County",
+    "trip_type": "2 Day",
     "boat": "Pacific Queen",
     "landing": "Fisherman's Landing",
     "trips": 8,
@@ -1496,7 +1507,7 @@
     "fpa": 1.7
   },
   {
-    "rank": 3,
+    "rank": 4,
     "region": "San Diego County",
     "trip_type": "2 Day",
     "boat": "Constitution",
@@ -1507,7 +1518,7 @@
     "fpa": 1.38
   },
   {
-    "rank": 4,
+    "rank": 5,
     "region": "San Diego County",
     "trip_type": "2 Day",
     "boat": "Tomahawk",
@@ -1523,10 +1534,10 @@
     "trip_type": "3 Day",
     "boat": "Legend",
     "landing": "H&M Landing",
-    "trips": 5,
-    "anglers": 124,
-    "fish": 1207,
-    "fpa": 9.73
+    "trips": 6,
+    "anglers": 148,
+    "fish": 1371,
+    "fpa": 9.26
   },
   {
     "rank": 2,
@@ -1798,10 +1809,10 @@
     "trip_type": "Full Day",
     "boat": "Riptide",
     "landing": "Riptide Sportfishing",
-    "trips": 12,
-    "anglers": 130,
+    "trips": 13,
+    "anglers": 135,
     "fish": 652,
-    "fpa": 5.02
+    "fpa": 4.83
   },
   {
     "rank": 1,
