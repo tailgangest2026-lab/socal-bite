@@ -126,10 +126,10 @@
     "trip_type": "Full Day",
     "boat": "Scallywag",
     "landing": "Fish Emeryville",
-    "trips": 45,
-    "anglers": 243,
+    "trips": 46,
+    "anglers": 249,
     "fish": 234,
-    "fpa": 0.96
+    "fpa": 0.94
   },
   {
     "rank": 7,
@@ -346,10 +346,10 @@
     "trip_type": "Full Day",
     "boat": "Endeavor (MB)",
     "landing": "Morro Bay Landing",
-    "trips": 13,
-    "anglers": 294,
-    "fish": 2146,
-    "fpa": 7.3
+    "trips": 14,
+    "anglers": 324,
+    "fish": 2381,
+    "fpa": 7.35
   },
   {
     "rank": 3,
@@ -432,23 +432,23 @@
     "rank": 1,
     "region": "Los Angeles County",
     "trip_type": "3/4 Day",
+    "boat": "Victory",
+    "landing": "Long Beach Sportfishing",
+    "trips": 46,
+    "anglers": 1756,
+    "fish": 15488,
+    "fpa": 8.82
+  },
+  {
+    "rank": 2,
+    "region": "Los Angeles County",
+    "trip_type": "3/4 Day",
     "boat": "Spitfire",
     "landing": "Marina Del Rey Sportfishing",
     "trips": 49,
     "anglers": 1354,
     "fish": 11909,
     "fpa": 8.8
-  },
-  {
-    "rank": 2,
-    "region": "Los Angeles County",
-    "trip_type": "3/4 Day",
-    "boat": "Victory",
-    "landing": "Long Beach Sportfishing",
-    "trips": 45,
-    "anglers": 1735,
-    "fish": 15221,
-    "fpa": 8.77
   },
   {
     "rank": 3,
@@ -1411,23 +1411,23 @@
     "rank": 2,
     "region": "San Diego County",
     "trip_type": "1/2 Day Twilight",
-    "boat": "Chubasco II",
-    "landing": "Oceanside Sea Center",
-    "trips": 5,
-    "anglers": 157,
-    "fish": 468,
-    "fpa": 2.98
-  },
-  {
-    "rank": 3,
-    "region": "San Diego County",
-    "trip_type": "1/2 Day Twilight",
     "boat": "Dolphin",
     "landing": "Fisherman's Landing",
     "trips": 7,
     "anglers": 146,
     "fish": 422,
     "fpa": 2.89
+  },
+  {
+    "rank": 3,
+    "region": "San Diego County",
+    "trip_type": "1/2 Day Twilight",
+    "boat": "Chubasco II",
+    "landing": "Oceanside Sea Center",
+    "trips": 6,
+    "anglers": 189,
+    "fish": 529,
+    "fpa": 2.8
   },
   {
     "rank": 1,
@@ -1523,10 +1523,10 @@
     "trip_type": "3/4 Day",
     "boat": "Malihini",
     "landing": "H&M Landing",
-    "trips": 7,
-    "anglers": 151,
-    "fish": 1541,
-    "fpa": 10.21
+    "trips": 8,
+    "anglers": 185,
+    "fish": 1798,
+    "fpa": 9.72
   },
   {
     "rank": 3,
@@ -2018,10 +2018,10 @@
     "trip_type": "Overnight",
     "boat": "Indicator",
     "landing": "Channel Islands Sportfishing",
-    "trips": 25,
-    "anglers": 438,
-    "fish": 6298,
-    "fpa": 14.38
+    "trips": 26,
+    "anglers": 458,
+    "fish": 6412,
+    "fpa": 14
   },
   {
     "rank": 3,
