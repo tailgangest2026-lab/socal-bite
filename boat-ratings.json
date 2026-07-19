@@ -36,6 +36,17 @@
     "rank": 4,
     "region": "Alameda County",
     "trip_type": "1/2 Day AM",
+    "boat": "TigerFish",
+    "landing": "Fish Emeryville",
+    "trips": 11,
+    "anglers": 163,
+    "fish": 168,
+    "fpa": 1.03
+  },
+  {
+    "rank": 5,
+    "region": "Alameda County",
+    "trip_type": "1/2 Day AM",
     "boat": "Pacific Pearl",
     "landing": "Fish Emeryville",
     "trips": 15,
@@ -44,7 +55,7 @@
     "fpa": 0.24
   },
   {
-    "rank": 5,
+    "rank": 6,
     "region": "Alameda County",
     "trip_type": "1/2 Day AM",
     "boat": "Lady K",
@@ -53,17 +64,6 @@
     "anglers": 79,
     "fish": 18,
     "fpa": 0.23
-  },
-  {
-    "rank": 6,
-    "region": "Alameda County",
-    "trip_type": "1/2 Day AM",
-    "boat": "TigerFish",
-    "landing": "Fish Emeryville",
-    "trips": 10,
-    "anglers": 146,
-    "fish": 2,
-    "fpa": 0.01
   },
   {
     "rank": 1,
@@ -1532,6 +1532,17 @@
     "rank": 3,
     "region": "San Diego County",
     "trip_type": "3/4 Day",
+    "boat": "Blue Horizon",
+    "landing": "Oceanside Sea Center",
+    "trips": 5,
+    "anglers": 80,
+    "fish": 524,
+    "fpa": 6.55
+  },
+  {
+    "rank": 4,
+    "region": "San Diego County",
+    "trip_type": "3/4 Day",
     "boat": "Sea Watch",
     "landing": "Seaforth Sportfishing",
     "trips": 26,
@@ -1622,10 +1633,10 @@
     "trip_type": "Overnight",
     "boat": "Producer",
     "landing": "H&M Landing",
-    "trips": 17,
-    "anglers": 391,
-    "fish": 418,
-    "fpa": 1.07
+    "trips": 18,
+    "anglers": 420,
+    "fish": 423,
+    "fpa": 1.01
   },
   {
     "rank": 1,
@@ -1721,8 +1732,8 @@
     "trip_type": "Full Day",
     "boat": "Lovely Martha",
     "landing": "Lovely Martha Sportfishing",
-    "trips": 44,
-    "anglers": 858,
+    "trips": 45,
+    "anglers": 880,
     "fish": 0,
     "fpa": 0
   },
@@ -1941,10 +1952,10 @@
     "trip_type": "3/4 Day",
     "boat": "Gentleman",
     "landing": "Channel Islands Sportfishing",
-    "trips": 44,
-    "anglers": 1332,
-    "fish": 8963,
-    "fpa": 6.73
+    "trips": 45,
+    "anglers": 1383,
+    "fish": 9256,
+    "fpa": 6.69
   },
   {
     "rank": 1,
