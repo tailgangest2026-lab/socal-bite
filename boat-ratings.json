@@ -115,10 +115,10 @@
     "trip_type": "Full Day",
     "boat": "Oakland Anglers II",
     "landing": "Fish Emeryville",
-    "trips": 21,
-    "anglers": 318,
+    "trips": 22,
+    "anglers": 333,
     "fish": 346,
-    "fpa": 1.09
+    "fpa": 1.04
   },
   {
     "rank": 6,
@@ -159,9 +159,9 @@
     "trip_type": "Full Day",
     "boat": "Here We Go",
     "landing": "Fish Emeryville",
-    "trips": 20,
-    "anglers": 82,
-    "fish": 12,
+    "trips": 21,
+    "anglers": 86,
+    "fish": 13,
     "fpa": 0.15
   },
   {
@@ -170,8 +170,8 @@
     "trip_type": "Full Day",
     "boat": "C Gull II",
     "landing": "Fish Emeryville",
-    "trips": 42,
-    "anglers": 640,
+    "trips": 43,
+    "anglers": 655,
     "fish": 24,
     "fpa": 0.04
   },
@@ -401,10 +401,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Redondo Special",
     "landing": "Redondo Beach Sportfishing",
-    "trips": 30,
-    "anglers": 1098,
-    "fish": 5348,
-    "fpa": 4.87
+    "trips": 31,
+    "anglers": 1138,
+    "fish": 5523,
+    "fpa": 4.85
   },
   {
     "rank": 4,
@@ -434,10 +434,10 @@
     "trip_type": "1/2 Day PM",
     "boat": "Redondo Special",
     "landing": "Redondo Beach Sportfishing",
-    "trips": 33,
-    "anglers": 1326,
-    "fish": 3904,
-    "fpa": 2.94
+    "trips": 34,
+    "anglers": 1373,
+    "fish": 3947,
+    "fpa": 2.87
   },
   {
     "rank": 1,
@@ -775,10 +775,10 @@
     "trip_type": "Full Day",
     "boat": "Pacific Dream",
     "landing": "Happy Hooker Sportfishing",
-    "trips": 27,
-    "anglers": 507,
+    "trips": 28,
+    "anglers": 531,
     "fish": 817,
-    "fpa": 1.61
+    "fpa": 1.54
   },
   {
     "rank": 9,
@@ -786,8 +786,8 @@
     "trip_type": "Full Day",
     "boat": "Happy Hooker",
     "landing": "Happy Hooker Sportfishing",
-    "trips": 23,
-    "anglers": 425,
+    "trips": 24,
+    "anglers": 439,
     "fish": 39,
     "fpa": 0.09
   },
@@ -1587,23 +1587,23 @@
     "rank": 3,
     "region": "San Diego County",
     "trip_type": "3/4 Day",
+    "boat": "Blue Horizon",
+    "landing": "Oceanside Sea Center",
+    "trips": 6,
+    "anglers": 90,
+    "fish": 623,
+    "fpa": 6.92
+  },
+  {
+    "rank": 4,
+    "region": "San Diego County",
+    "trip_type": "3/4 Day",
     "boat": "Sea Watch",
     "landing": "Seaforth Sportfishing",
     "trips": 25,
     "anglers": 681,
     "fish": 4521,
     "fpa": 6.64
-  },
-  {
-    "rank": 4,
-    "region": "San Diego County",
-    "trip_type": "3/4 Day",
-    "boat": "Blue Horizon",
-    "landing": "Oceanside Sea Center",
-    "trips": 5,
-    "anglers": 80,
-    "fish": 524,
-    "fpa": 6.55
   },
   {
     "rank": 1,
@@ -1633,9 +1633,9 @@
     "trip_type": "Full Day Coronado Islands",
     "boat": "San Diego",
     "landing": "Seaforth Sportfishing",
-    "trips": 27,
-    "anglers": 817,
-    "fish": 3488,
+    "trips": 28,
+    "anglers": 851,
+    "fish": 3638,
     "fpa": 4.27
   },
   {
@@ -1644,10 +1644,10 @@
     "trip_type": "Full Day Coronado Islands",
     "boat": "Grande",
     "landing": "H&M Landing",
-    "trips": 18,
-    "anglers": 541,
-    "fish": 1984,
-    "fpa": 3.67
+    "trips": 19,
+    "anglers": 581,
+    "fish": 2019,
+    "fpa": 3.48
   },
   {
     "rank": 3,
@@ -1886,10 +1886,10 @@
     "trip_type": "Full Day",
     "boat": "Pacific Eagle",
     "landing": "Ventura Harbor Sportfishing",
-    "trips": 20,
-    "anglers": 390,
-    "fish": 4240,
-    "fpa": 10.87
+    "trips": 21,
+    "anglers": 405,
+    "fish": 4448,
+    "fpa": 10.98
   },
   {
     "rank": 2,
@@ -1974,10 +1974,10 @@
     "trip_type": "3/4 Day",
     "boat": "Coroloma",
     "landing": "Hooks Landing",
-    "trips": 29,
-    "anglers": 783,
-    "fish": 10205,
-    "fpa": 13.03
+    "trips": 30,
+    "anglers": 795,
+    "fish": 10329,
+    "fpa": 12.99
   },
   {
     "rank": 3,
