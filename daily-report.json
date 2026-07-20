@@ -873,6 +873,26 @@
     "trip_date": "2026-07-19",
     "region": "Orange County",
     "landing": "Davey's Locker",
+    "boat": "Blackfish",
+    "trip_type": "Full Day",
+    "anglers": 6,
+    "fish_counts": "31 Yellowtail",
+    "total_fish": 31
+  },
+  {
+    "trip_date": "2026-07-19",
+    "region": "Orange County",
+    "landing": "Davey's Locker",
+    "boat": "Freelance",
+    "trip_type": "3/4 Day",
+    "anglers": 53,
+    "fish_counts": "7 Barracuda, 5 Bonito, 13 Calico Bass, 183 Sculpin, 10 Whitefish, 2 Yellowtail",
+    "total_fish": 220
+  },
+  {
+    "trip_date": "2026-07-19",
+    "region": "Orange County",
+    "landing": "Davey's Locker",
     "boat": "Western Pride",
     "trip_type": "1/2 Day AM",
     "anglers": 18,
@@ -1153,6 +1173,16 @@
     "trip_date": "2026-07-19",
     "region": "San Diego County",
     "landing": "Point Loma Sportfishing",
+    "boat": "Daily Double",
+    "trip_type": "1/2 Day PM",
+    "anglers": 20,
+    "fish_counts": "79 Calico Bass, 12 Rockfish, 1 Yellowtail",
+    "total_fish": 92
+  },
+  {
+    "trip_date": "2026-07-19",
+    "region": "San Diego County",
+    "landing": "Point Loma Sportfishing",
     "boat": "Mission Belle",
     "trip_type": "Full Day Coronado Islands",
     "anglers": 15,
@@ -1262,6 +1292,16 @@
   {
     "trip_date": "2026-07-19",
     "region": "San Francisco Bay",
+    "landing": "Berkeley Charter Boats",
+    "boat": "New Easy Rider",
+    "trip_type": "Full Day",
+    "anglers": 16,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-07-19",
+    "region": "San Francisco Bay",
     "landing": "California Dawn Sportfishing",
     "boat": "California Dawn II",
     "trip_type": "Full Day",
@@ -1296,6 +1336,16 @@
     "boat": "Lovely Martha",
     "trip_type": "Full Day",
     "anglers": 22,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-07-19",
+    "region": "San Francisco Bay",
+    "landing": "Lovely Martha Sportfishing",
+    "boat": "Lovely Martha",
+    "trip_type": "Full Day",
+    "anglers": 20,
     "fish_counts": "",
     "total_fish": 0
   },
