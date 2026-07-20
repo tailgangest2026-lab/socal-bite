@@ -333,6 +333,16 @@
     "trip_date": "2026-07-19",
     "region": "Los Angeles County",
     "landing": "22nd Street Landing",
+    "boat": "Apollo",
+    "trip_type": "2.5 Day",
+    "anglers": 19,
+    "fish_counts": "42 Bluefin Tuna, 4 Yellowfin Tuna, 1 Yellowtail",
+    "total_fish": 47
+  },
+  {
+    "trip_date": "2026-07-19",
+    "region": "Los Angeles County",
+    "landing": "22nd Street Landing",
     "boat": "Freedom",
     "trip_type": "Overnight",
     "anglers": 35,
@@ -596,6 +606,16 @@
     "boat": "Happy Hooker",
     "trip_type": "Full Day",
     "anglers": 19,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-07-19",
+    "region": "NorCal",
+    "landing": "Happy Hooker Sportfishing",
+    "boat": "Happy Hooker",
+    "trip_type": "Full Day",
+    "anglers": 14,
     "fish_counts": "",
     "total_fish": 0
   },

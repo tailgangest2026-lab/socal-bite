@@ -468,18 +468,6 @@
     "top_species_3": "Rockfish"
   },
   {
-    "boat": "Apollo",
-    "landing": "22nd Street Landing",
-    "region": "Los Angeles County",
-    "trips": 7,
-    "anglers": 111,
-    "fish": 494,
-    "fpa": 4.45,
-    "top_species_1": "Calico Bass",
-    "top_species_2": "Bluefin Tuna",
-    "top_species_3": "Yellowtail"
-  },
-  {
     "boat": "Redondo Special",
     "landing": "Redondo Beach Sportfishing",
     "region": "Los Angeles County",
@@ -502,6 +490,18 @@
     "top_species_1": "Calico Bass",
     "top_species_2": "Calico Bass Released",
     "top_species_3": "Whitefish"
+  },
+  {
+    "boat": "Apollo",
+    "landing": "22nd Street Landing",
+    "region": "Los Angeles County",
+    "trips": 8,
+    "anglers": 130,
+    "fish": 541,
+    "fpa": 4.16,
+    "top_species_1": "Calico Bass",
+    "top_species_2": "Bluefin Tuna",
+    "top_species_3": "Yellowtail"
   },
   {
     "boat": "Ahra-Ahn",
@@ -747,10 +747,10 @@
     "boat": "Happy Hooker",
     "landing": "Happy Hooker Sportfishing",
     "region": "NorCal",
-    "trips": 29,
-    "anglers": 541,
+    "trips": 30,
+    "anglers": 555,
     "fish": 91,
-    "fpa": 0.17,
+    "fpa": 0.16,
     "top_species_1": "Halibut",
     "top_species_2": "Rockfish",
     "top_species_3": "Lingcod"
