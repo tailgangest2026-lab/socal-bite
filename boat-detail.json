@@ -27,10 +27,10 @@
     "boat": "New Huck Finn",
     "landing": "Fish Emeryville",
     "region": "Alameda County",
-    "trips": 68,
-    "anglers": 1237,
-    "fish": 6772,
-    "fpa": 5.47,
+    "trips": 69,
+    "anglers": 1245,
+    "fish": 6868,
+    "fpa": 5.52,
     "top_species_1": "Rockfish",
     "top_species_2": "Lingcod",
     "top_species_3": "Halibut"
@@ -120,18 +120,6 @@
     "top_species_3": "Lingcod"
   },
   {
-    "boat": "Here We Go",
-    "landing": "Fish Emeryville",
-    "region": "Alameda County",
-    "trips": 23,
-    "anglers": 92,
-    "fish": 15,
-    "fpa": 0.16,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Halibut",
-    "top_species_3": "Lingcod"
-  },
-  {
     "boat": "Oakland Anglers",
     "landing": "Fish Emeryville",
     "region": "Alameda County",
@@ -142,6 +130,18 @@
     "top_species_1": "Halibut",
     "top_species_2": "",
     "top_species_3": ""
+  },
+  {
+    "boat": "Here We Go",
+    "landing": "Fish Emeryville",
+    "region": "Alameda County",
+    "trips": 25,
+    "anglers": 100,
+    "fish": 15,
+    "fpa": 0.15,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Halibut",
+    "top_species_3": "Lingcod"
   },
   {
     "boat": "Pacific Pearl",
@@ -1479,10 +1479,10 @@
     "boat": "Daily Double",
     "landing": "Point Loma Sportfishing",
     "region": "San Diego County",
-    "trips": 84,
-    "anglers": 1868,
-    "fish": 6462,
-    "fpa": 3.46,
+    "trips": 85,
+    "anglers": 1883,
+    "fish": 6529,
+    "fpa": 3.47,
     "top_species_1": "Calico Bass",
     "top_species_2": "Calico Bass Released",
     "top_species_3": "Rockfish"
