@@ -740,6 +740,17 @@
     "rank": 4,
     "region": "NorCal",
     "trip_type": "Full Day",
+    "boat": "Dragonfly",
+    "landing": "Reel Obsession Sportfishing",
+    "trips": 26,
+    "anglers": 151,
+    "fish": 360,
+    "fpa": 2.38
+  },
+  {
+    "rank": 5,
+    "region": "NorCal",
+    "trip_type": "Full Day",
     "boat": "Surf Scooter",
     "landing": "Bodega Bay Sportfishing Center",
     "trips": 39,
@@ -748,7 +759,7 @@
     "fpa": 2.29
   },
   {
-    "rank": 5,
+    "rank": 6,
     "region": "NorCal",
     "trip_type": "Full Day",
     "boat": "Golden State Sportfishing",
@@ -759,7 +770,7 @@
     "fpa": 2.24
   },
   {
-    "rank": 6,
+    "rank": 7,
     "region": "NorCal",
     "trip_type": "Full Day",
     "boat": "Sorta Salty",
@@ -768,17 +779,6 @@
     "anglers": 51,
     "fish": 104,
     "fpa": 2.04
-  },
-  {
-    "rank": 7,
-    "region": "NorCal",
-    "trip_type": "Full Day",
-    "boat": "Dragonfly",
-    "landing": "Reel Obsession Sportfishing",
-    "trips": 25,
-    "anglers": 145,
-    "fish": 288,
-    "fpa": 1.99
   },
   {
     "rank": 8,
@@ -819,8 +819,8 @@
     "trip_type": "Full Day",
     "boat": "Outer Limits (Sausalito, CA)",
     "landing": "Big Cs Charters",
-    "trips": 38,
-    "anglers": 567,
+    "trips": 39,
+    "anglers": 582,
     "fish": 0,
     "fpa": 0
   },
