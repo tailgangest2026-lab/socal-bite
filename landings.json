@@ -128,6 +128,15 @@
   {
     "rank": 4,
     "region": "NorCal",
+    "landing": "Golden State Sportfishing",
+    "trips": 21,
+    "anglers": 107,
+    "fish": 334,
+    "fpa": 3.12
+  },
+  {
+    "rank": 5,
+    "region": "NorCal",
     "landing": "North Bay Fishing Charters",
     "trips": 12,
     "anglers": 59,
@@ -135,7 +144,7 @@
     "fpa": 3.12
   },
   {
-    "rank": 5,
+    "rank": 6,
     "region": "NorCal",
     "landing": "Bass Tub Sportfishing",
     "trips": 19,
@@ -144,22 +153,13 @@
     "fpa": 2.98
   },
   {
-    "rank": 6,
-    "region": "NorCal",
-    "landing": "Golden State Sportfishing",
-    "trips": 20,
-    "anglers": 102,
-    "fish": 288,
-    "fpa": 2.82
-  },
-  {
     "rank": 7,
     "region": "NorCal",
     "landing": "Bodega Bay Sportfishing Center",
-    "trips": 39,
-    "anglers": 608,
-    "fish": 1356,
-    "fpa": 2.23
+    "trips": 40,
+    "anglers": 625,
+    "fish": 1526,
+    "fpa": 2.44
   },
   {
     "rank": 8,
@@ -210,10 +210,10 @@
     "rank": 13,
     "region": "NorCal",
     "landing": "Argo Sportfishing",
-    "trips": 39,
-    "anglers": 201,
-    "fish": 0,
-    "fpa": 0
+    "trips": 40,
+    "anglers": 203,
+    "fish": 15,
+    "fpa": 0.07
   },
   {
     "rank": 14,
@@ -315,6 +315,15 @@
     "fpa": 0
   },
   {
+    "rank": 25,
+    "region": "NorCal",
+    "landing": "Anchor Charter Boats",
+    "trips": 1,
+    "anglers": 10,
+    "fish": 0,
+    "fpa": 0
+  },
+  {
     "rank": 1,
     "region": "Orange County",
     "landing": "Newport Landing",
@@ -408,10 +417,10 @@
     "rank": 3,
     "region": "San Francisco Bay",
     "landing": "Reel Addiction Sportfishing",
-    "trips": 59,
-    "anglers": 384,
+    "trips": 60,
+    "anglers": 390,
     "fish": 152,
-    "fpa": 0.4
+    "fpa": 0.39
   },
   {
     "rank": 4,

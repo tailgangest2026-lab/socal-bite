@@ -552,12 +552,32 @@
   {
     "trip_date": "2026-07-20",
     "region": "NorCal",
+    "landing": "Anchor Charter Boats",
+    "boat": "Kraken",
+    "trip_type": "Full Day",
+    "anglers": 10,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-07-20",
+    "region": "NorCal",
     "landing": "Argo Sportfishing",
     "boat": "Argo",
     "trip_type": "Full Day",
     "anglers": 6,
     "fish_counts": "",
     "total_fish": 0
+  },
+  {
+    "trip_date": "2026-07-20",
+    "region": "NorCal",
+    "landing": "Argo Sportfishing",
+    "boat": "Argo",
+    "trip_type": "Full Day",
+    "anglers": 2,
+    "fish_counts": "15 Rockfish",
+    "total_fish": 15
   },
   {
     "trip_date": "2026-07-20",
@@ -582,12 +602,32 @@
   {
     "trip_date": "2026-07-20",
     "region": "NorCal",
+    "landing": "Bodega Bay Sportfishing Center",
+    "boat": "Surf Scooter",
+    "trip_type": "Full Day",
+    "anglers": 17,
+    "fish_counts": "170 Rockfish",
+    "total_fish": 170
+  },
+  {
+    "trip_date": "2026-07-20",
+    "region": "NorCal",
     "landing": "Full Throttle Sportfishing",
     "boat": "Sea Weasel II",
     "trip_type": "Full Day",
     "anglers": 6,
     "fish_counts": "",
     "total_fish": 0
+  },
+  {
+    "trip_date": "2026-07-20",
+    "region": "NorCal",
+    "landing": "Golden State Sportfishing",
+    "boat": "Golden State Sportfishing",
+    "trip_type": "Full Day",
+    "anglers": 5,
+    "fish_counts": "6 Lingcod, 40 Rockfish",
+    "total_fish": 46
   },
   {
     "trip_date": "2026-07-20",
@@ -1066,6 +1106,16 @@
     "boat": "Lovely Martha",
     "trip_type": "Full Day",
     "anglers": 13,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-07-20",
+    "region": "San Francisco Bay",
+    "landing": "Reel Addiction Sportfishing",
+    "boat": "Reel Addiction 2",
+    "trip_type": "Full Day",
+    "anglers": 6,
     "fish_counts": "",
     "total_fish": 0
   },

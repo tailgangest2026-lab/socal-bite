@@ -742,13 +742,24 @@
     "trip_type": "Full Day",
     "boat": "Surf Scooter",
     "landing": "Bodega Bay Sportfishing Center",
-    "trips": 38,
-    "anglers": 596,
-    "fish": 1236,
-    "fpa": 2.07
+    "trips": 39,
+    "anglers": 613,
+    "fish": 1406,
+    "fpa": 2.29
   },
   {
     "rank": 5,
+    "region": "NorCal",
+    "trip_type": "Full Day",
+    "boat": "Golden State Sportfishing",
+    "landing": "Golden State Sportfishing",
+    "trips": 17,
+    "anglers": 85,
+    "fish": 190,
+    "fpa": 2.24
+  },
+  {
+    "rank": 6,
     "region": "NorCal",
     "trip_type": "Full Day",
     "boat": "Sorta Salty",
@@ -759,7 +770,7 @@
     "fpa": 2.04
   },
   {
-    "rank": 6,
+    "rank": 7,
     "region": "NorCal",
     "trip_type": "Full Day",
     "boat": "Dragonfly",
@@ -768,17 +779,6 @@
     "anglers": 145,
     "fish": 288,
     "fpa": 1.99
-  },
-  {
-    "rank": 7,
-    "region": "NorCal",
-    "trip_type": "Full Day",
-    "boat": "Golden State Sportfishing",
-    "landing": "Golden State Sportfishing",
-    "trips": 16,
-    "anglers": 80,
-    "fish": 144,
-    "fpa": 1.8
   },
   {
     "rank": 8,
@@ -795,6 +795,17 @@
     "rank": 9,
     "region": "NorCal",
     "trip_type": "Full Day",
+    "boat": "Argo",
+    "landing": "Argo Sportfishing",
+    "trips": 38,
+    "anglers": 191,
+    "fish": 15,
+    "fpa": 0.08
+  },
+  {
+    "rank": 10,
+    "region": "NorCal",
+    "trip_type": "Full Day",
     "boat": "Happy Hooker",
     "landing": "Happy Hooker Sportfishing",
     "trips": 23,
@@ -803,24 +814,13 @@
     "fpa": 0.02
   },
   {
-    "rank": 10,
+    "rank": 11,
     "region": "NorCal",
     "trip_type": "Full Day",
     "boat": "Outer Limits (Sausalito, CA)",
     "landing": "Big Cs Charters",
     "trips": 38,
     "anglers": 567,
-    "fish": 0,
-    "fpa": 0
-  },
-  {
-    "rank": 11,
-    "region": "NorCal",
-    "trip_type": "Full Day",
-    "boat": "Argo",
-    "landing": "Argo Sportfishing",
-    "trips": 37,
-    "anglers": 189,
     "fish": 0,
     "fpa": 0
   },
@@ -1754,8 +1754,8 @@
     "trip_type": "Full Day",
     "boat": "Reel Addiction 2",
     "landing": "Reel Addiction Sportfishing",
-    "trips": 27,
-    "anglers": 192,
+    "trips": 28,
+    "anglers": 198,
     "fish": 6,
     "fpa": 0.03
   },
