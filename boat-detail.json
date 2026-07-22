@@ -423,9 +423,9 @@
     "boat": "Monte Carlo",
     "landing": "22nd Street Landing",
     "region": "Los Angeles County",
-    "trips": 112,
-    "anglers": 4750,
-    "fish": 22030,
+    "trips": 113,
+    "anglers": 4772,
+    "fish": 22156,
     "fpa": 4.64,
     "top_species_1": "Sculpin",
     "top_species_2": "Whitefish",
@@ -1320,18 +1320,6 @@
     "top_species_3": "Calico Bass Released"
   },
   {
-    "boat": "Liberty",
-    "landing": "Fisherman's Landing",
-    "region": "San Diego County",
-    "trips": 15,
-    "anglers": 330,
-    "fish": 1584,
-    "fpa": 4.8,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Whitefish",
-    "top_species_3": "Bluefin Tuna"
-  },
-  {
     "boat": "Cortez",
     "landing": "Seaforth Sportfishing",
     "region": "San Diego County",
@@ -1354,6 +1342,18 @@
     "top_species_1": "Bluefin Tuna",
     "top_species_2": "Yellowtail",
     "top_species_3": "Rockfish"
+  },
+  {
+    "boat": "Liberty",
+    "landing": "Fisherman's Landing",
+    "region": "San Diego County",
+    "trips": 16,
+    "anglers": 350,
+    "fish": 1605,
+    "fpa": 4.59,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Whitefish",
+    "top_species_3": "Bluefin Tuna"
   },
   {
     "boat": "Southern Cal",
@@ -1419,10 +1419,10 @@
     "boat": "Dolphin",
     "landing": "Fisherman's Landing",
     "region": "San Diego County",
-    "trips": 163,
-    "anglers": 5540,
-    "fish": 22295,
-    "fpa": 4.02,
+    "trips": 165,
+    "anglers": 5585,
+    "fish": 22864,
+    "fpa": 4.09,
     "top_species_1": "Rockfish",
     "top_species_2": "Calico Bass Released",
     "top_species_3": "Calico Bass"
