@@ -452,10 +452,30 @@
   {
     "trip_date": "2026-07-21",
     "region": "NorCal",
+    "landing": "Golden State Sportfishing",
+    "boat": "Golden State Sportfishing",
+    "trip_type": "Full Day",
+    "anglers": 4,
+    "fish_counts": "8 Lingcod, 40 Rockfish",
+    "total_fish": 48
+  },
+  {
+    "trip_date": "2026-07-21",
+    "region": "NorCal",
     "landing": "Half Moon Bay Sportfishing",
     "boat": "Queen of Hearts",
     "trip_type": "Full Day",
     "anglers": 14,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-07-21",
+    "region": "NorCal",
+    "landing": "Hog Heaven Sportfishing",
+    "boat": "Hog Heaven",
+    "trip_type": "Full Day",
+    "anglers": 12,
     "fish_counts": "",
     "total_fish": 0
   },
@@ -772,12 +792,42 @@
   {
     "trip_date": "2026-07-21",
     "region": "San Francisco Bay",
+    "landing": "Berkeley Charter Boats",
+    "boat": "New Easy Rider",
+    "trip_type": "Full Day",
+    "anglers": 23,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-07-21",
+    "region": "San Francisco Bay",
     "landing": "California Dawn Sportfishing",
     "boat": "California Dawn II",
     "trip_type": "Full Day",
     "anglers": 15,
     "fish_counts": "",
     "total_fish": 0
+  },
+  {
+    "trip_date": "2026-07-21",
+    "region": "San Francisco Bay",
+    "landing": "California Dawn Sportfishing",
+    "boat": "California Dawn II",
+    "trip_type": "Full Day",
+    "anglers": 22,
+    "fish_counts": "220 Rockfish",
+    "total_fish": 220
+  },
+  {
+    "trip_date": "2026-07-21",
+    "region": "San Francisco Bay",
+    "landing": "California Dawn Sportfishing",
+    "boat": "New California Dawn",
+    "trip_type": "Full Day",
+    "anglers": 18,
+    "fish_counts": "180 Rockfish",
+    "total_fish": 180
   },
   {
     "trip_date": "2026-07-21",
