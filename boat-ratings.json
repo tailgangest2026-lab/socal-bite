@@ -1259,10 +1259,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Dolphin",
     "landing": "Fisherman's Landing",
-    "trips": 30,
-    "anglers": 1106,
-    "fish": 4572,
-    "fpa": 4.13
+    "trips": 31,
+    "anglers": 1144,
+    "fish": 4703,
+    "fpa": 4.11
   },
   {
     "rank": 5,
@@ -1325,10 +1325,10 @@
     "trip_type": "1/2 Day PM",
     "boat": "Dolphin",
     "landing": "Fisherman's Landing",
-    "trips": 30,
-    "anglers": 976,
-    "fish": 4954,
-    "fpa": 5.08
+    "trips": 31,
+    "anglers": 1010,
+    "fish": 5138,
+    "fpa": 5.09
   },
   {
     "rank": 2,
@@ -1347,10 +1347,10 @@
     "trip_type": "1/2 Day PM",
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
-    "trips": 30,
-    "anglers": 1473,
-    "fish": 5304,
-    "fpa": 3.6
+    "trips": 31,
+    "anglers": 1512,
+    "fish": 5372,
+    "fpa": 3.55
   },
   {
     "rank": 4,
@@ -1483,6 +1483,17 @@
     "anglers": 100,
     "fish": 463,
     "fpa": 4.63
+  },
+  {
+    "rank": 4,
+    "region": "San Diego County",
+    "trip_type": "3 Day",
+    "boat": "Pacific Queen",
+    "landing": "Fisherman's Landing",
+    "trips": 5,
+    "anglers": 121,
+    "fish": 507,
+    "fpa": 4.19
   },
   {
     "rank": 1,
