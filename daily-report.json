@@ -953,11 +953,31 @@
     "trip_date": "2026-07-22",
     "region": "San Diego County",
     "landing": "Fisherman's Landing",
+    "boat": "Pacific Dawn",
+    "trip_type": "1.5 Day",
+    "anglers": 13,
+    "fish_counts": "25 Yellowfin Tuna, 15 Yellowtail",
+    "total_fish": 40
+  },
+  {
+    "trip_date": "2026-07-22",
+    "region": "San Diego County",
+    "landing": "Fisherman's Landing",
     "boat": "Pacific Queen",
     "trip_type": "3 Day",
     "anglers": 24,
     "fish_counts": "132 Bluefin Tuna, 58 Yellowtail",
     "total_fish": 190
+  },
+  {
+    "trip_date": "2026-07-22",
+    "region": "San Diego County",
+    "landing": "Fisherman's Landing",
+    "boat": "Tomahawk",
+    "trip_type": "2.5 Day",
+    "anglers": 23,
+    "fish_counts": "66 Yellowtail",
+    "total_fish": 66
   },
   {
     "trip_date": "2026-07-22",
@@ -1026,6 +1046,16 @@
     "boat": "Poseidon",
     "trip_type": "2 Day",
     "anglers": 0,
+    "fish_counts": "30 Bluefin Tuna, 58 Yellowtail",
+    "total_fish": 88
+  },
+  {
+    "trip_date": "2026-07-22",
+    "region": "San Diego County",
+    "landing": "H&M Landing",
+    "boat": "Poseidon",
+    "trip_type": "2 Day",
+    "anglers": 25,
     "fish_counts": "30 Bluefin Tuna, 58 Yellowtail",
     "total_fish": 88
   },
