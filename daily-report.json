@@ -133,11 +133,31 @@
     "trip_date": "2026-07-24",
     "region": "Los Angeles County",
     "landing": "Long Beach Sportfishing",
+    "boat": "MarDiosa",
+    "trip_type": "1/2 Day AM",
+    "anglers": 6,
+    "fish_counts": "2 Barracuda, 2 Bonito, 20 Calico Bass, 10 Sand Bass, 2 Yellowtail",
+    "total_fish": 36
+  },
+  {
+    "trip_date": "2026-07-24",
+    "region": "Los Angeles County",
+    "landing": "Long Beach Sportfishing",
     "boat": "Victory",
     "trip_type": "3/4 Day",
     "anglers": 60,
     "fish_counts": "106 Barracuda, 15 Bonito, 49 Calico Bass, 38 Sand Bass, 255 Sculpin, 3 Sheephead, 25 Whitefish",
     "total_fish": 491
+  },
+  {
+    "trip_date": "2026-07-24",
+    "region": "Los Angeles County",
+    "landing": "Long Beach Sportfishing",
+    "boat": "Victory",
+    "trip_type": "3/4 Day",
+    "anglers": 34,
+    "fish_counts": "62 Barracuda, 42 Bonito, 31 Calico Bass, 73 Sand Bass, 146 Sculpin, 1 Yellowtail",
+    "total_fish": 355
   },
   {
     "trip_date": "2026-07-24",
@@ -478,6 +498,16 @@
     "anglers": 16,
     "fish_counts": "20 Calico Bass, 17 Halibut, 64 Lingcod",
     "total_fish": 101
+  },
+  {
+    "trip_date": "2026-07-24",
+    "region": "Ventura County",
+    "landing": "Channel Islands Sportfishing",
+    "boat": "Cobra",
+    "trip_type": "Full Day",
+    "anglers": 10,
+    "fish_counts": "33 Rockfish, 10 Whitefish",
+    "total_fish": 43
   },
   {
     "trip_date": "2026-07-23",

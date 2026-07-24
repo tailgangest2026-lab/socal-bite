@@ -267,10 +267,10 @@
     "boat": "Victory",
     "landing": "Long Beach Sportfishing",
     "region": "Los Angeles County",
-    "trips": 83,
-    "anglers": 2961,
-    "fish": 29464,
-    "fpa": 9.95,
+    "trips": 84,
+    "anglers": 2995,
+    "fish": 29819,
+    "fpa": 9.96,
     "top_species_1": "Sculpin",
     "top_species_2": "Rockfish",
     "top_species_3": "Calico Bass"
@@ -336,18 +336,6 @@
     "top_species_3": "Bonito"
   },
   {
-    "boat": "MarDiosa",
-    "landing": "Long Beach Sportfishing",
-    "region": "Los Angeles County",
-    "trips": 7,
-    "anglers": 42,
-    "fish": 309,
-    "fpa": 7.36,
-    "top_species_1": "Whitefish",
-    "top_species_2": "Calico Bass",
-    "top_species_3": "Rockfish"
-  },
-  {
     "boat": "City of Long Beach",
     "landing": "Pierpoint Landing",
     "region": "Los Angeles County",
@@ -357,6 +345,18 @@
     "fpa": 7.34,
     "top_species_1": "Sculpin",
     "top_species_2": "Whitefish",
+    "top_species_3": "Rockfish"
+  },
+  {
+    "boat": "MarDiosa",
+    "landing": "Long Beach Sportfishing",
+    "region": "Los Angeles County",
+    "trips": 8,
+    "anglers": 48,
+    "fish": 345,
+    "fpa": 7.19,
+    "top_species_1": "Whitefish",
+    "top_species_2": "Calico Bass",
     "top_species_3": "Rockfish"
   },
   {
@@ -2139,10 +2139,10 @@
     "boat": "Cobra",
     "landing": "Channel Islands Sportfishing",
     "region": "Ventura County",
-    "trips": 33,
-    "anglers": 339,
-    "fish": 3690,
-    "fpa": 10.88,
+    "trips": 34,
+    "anglers": 349,
+    "fish": 3733,
+    "fpa": 10.7,
     "top_species_1": "Rockfish",
     "top_species_2": "Whitefish",
     "top_species_3": "Lingcod"
