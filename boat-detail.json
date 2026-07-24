@@ -60,6 +60,18 @@
     "top_species_3": "Halibut"
   },
   {
+    "boat": "Oakland Anglers II",
+    "landing": "Fish Emeryville",
+    "region": "Alameda County",
+    "trips": 46,
+    "anglers": 725,
+    "fish": 1140,
+    "fpa": 1.57,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Halibut",
+    "top_species_3": "Lingcod"
+  },
+  {
     "boat": "C Gull II",
     "landing": "Fish Emeryville",
     "region": "Alameda County",
@@ -70,18 +82,6 @@
     "top_species_1": "Rockfish",
     "top_species_2": "Lingcod",
     "top_species_3": "Halibut"
-  },
-  {
-    "boat": "Oakland Anglers II",
-    "landing": "Fish Emeryville",
-    "region": "Alameda County",
-    "trips": 45,
-    "anglers": 710,
-    "fish": 1016,
-    "fpa": 1.43,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Halibut",
-    "top_species_3": "Lingcod"
   },
   {
     "boat": "Scallywag",
@@ -231,8 +231,8 @@
     "boat": "Flying Fish",
     "landing": "Patriot Sportfishing",
     "region": "Central California",
-    "trips": 102,
-    "anglers": 1767,
+    "trips": 103,
+    "anglers": 1789,
     "fish": 127,
     "fpa": 0.07,
     "top_species_1": "Lingcod",
@@ -1599,10 +1599,10 @@
     "boat": "El Gato Dos",
     "landing": "Seaforth Sportfishing",
     "region": "San Diego County",
-    "trips": 22,
-    "anglers": 106,
-    "fish": 288,
-    "fpa": 2.72,
+    "trips": 23,
+    "anglers": 110,
+    "fish": 302,
+    "fpa": 2.75,
     "top_species_1": "Yellowtail",
     "top_species_2": "Rockfish",
     "top_species_3": "Calico Bass Released"
