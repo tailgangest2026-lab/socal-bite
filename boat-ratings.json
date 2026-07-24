@@ -49,10 +49,10 @@
     "trip_type": "Full Day",
     "boat": "New Huck Finn",
     "landing": "Fish Emeryville",
-    "trips": 55,
-    "anglers": 997,
-    "fish": 5516,
-    "fpa": 5.53
+    "trips": 56,
+    "anglers": 1022,
+    "fish": 5768,
+    "fpa": 5.64
   },
   {
     "rank": 3,
@@ -531,6 +531,17 @@
     "rank": 1,
     "region": "Los Angeles County",
     "trip_type": "Overnight",
+    "boat": "Pride",
+    "landing": "22nd Street Landing",
+    "trips": 5,
+    "anglers": 80,
+    "fish": 761,
+    "fpa": 9.51
+  },
+  {
+    "rank": 2,
+    "region": "Los Angeles County",
+    "trip_type": "Overnight",
     "boat": "Toronado",
     "landing": "Pierpoint Landing",
     "trips": 14,
@@ -539,7 +550,7 @@
     "fpa": 6.13
   },
   {
-    "rank": 2,
+    "rank": 3,
     "region": "Los Angeles County",
     "trip_type": "Overnight",
     "boat": "Freedom",
@@ -550,7 +561,7 @@
     "fpa": 5.98
   },
   {
-    "rank": 3,
+    "rank": 4,
     "region": "Los Angeles County",
     "trip_type": "Overnight",
     "boat": "Amigo",
@@ -561,7 +572,7 @@
     "fpa": 5.83
   },
   {
-    "rank": 4,
+    "rank": 5,
     "region": "Los Angeles County",
     "trip_type": "Overnight",
     "boat": "Eldorado",
@@ -652,23 +663,23 @@
     "rank": 3,
     "region": "NorCal",
     "trip_type": "Full Day",
+    "boat": "Surf Scooter",
+    "landing": "Bodega Bay Sportfishing Center",
+    "trips": 44,
+    "anglers": 699,
+    "fish": 1586,
+    "fpa": 2.27
+  },
+  {
+    "rank": 4,
+    "region": "NorCal",
+    "trip_type": "Full Day",
     "boat": "Golden State Sportfishing",
     "landing": "Golden State Sportfishing",
     "trips": 18,
     "anglers": 86,
     "fish": 188,
     "fpa": 2.19
-  },
-  {
-    "rank": 4,
-    "region": "NorCal",
-    "trip_type": "Full Day",
-    "boat": "Surf Scooter",
-    "landing": "Bodega Bay Sportfishing Center",
-    "trips": 43,
-    "anglers": 686,
-    "fish": 1456,
-    "fpa": 2.12
   },
   {
     "rank": 5,
