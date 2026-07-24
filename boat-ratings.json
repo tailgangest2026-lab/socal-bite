@@ -918,10 +918,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Dana Pride",
     "landing": "Dana Wharf Sportfishing",
-    "trips": 8,
-    "anglers": 290,
-    "fish": 474,
-    "fpa": 1.63
+    "trips": 9,
+    "anglers": 329,
+    "fish": 559,
+    "fpa": 1.7
   },
   {
     "rank": 1,
@@ -940,13 +940,24 @@
     "trip_type": "1/2 Day PM",
     "boat": "Reel Fun",
     "landing": "Dana Wharf Sportfishing",
-    "trips": 25,
-    "anglers": 578,
-    "fish": 2672,
-    "fpa": 4.62
+    "trips": 26,
+    "anglers": 602,
+    "fish": 2803,
+    "fpa": 4.66
   },
   {
     "rank": 3,
+    "region": "Orange County",
+    "trip_type": "1/2 Day PM",
+    "boat": "Sum Fun",
+    "landing": "Dana Wharf Sportfishing",
+    "trips": 9,
+    "anglers": 296,
+    "fish": 1294,
+    "fpa": 4.37
+  },
+  {
+    "rank": 4,
     "region": "Orange County",
     "trip_type": "1/2 Day PM",
     "boat": "Clemente",
@@ -955,17 +966,6 @@
     "anglers": 626,
     "fish": 2490,
     "fpa": 3.98
-  },
-  {
-    "rank": 4,
-    "region": "Orange County",
-    "trip_type": "1/2 Day PM",
-    "boat": "Sum Fun",
-    "landing": "Dana Wharf Sportfishing",
-    "trips": 8,
-    "anglers": 272,
-    "fish": 1080,
-    "fpa": 3.97
   },
   {
     "rank": 5,
@@ -1039,10 +1039,10 @@
     "trip_type": "3/4 Day",
     "boat": "Clemente",
     "landing": "Dana Wharf Sportfishing",
-    "trips": 19,
-    "anglers": 644,
-    "fish": 2875,
-    "fpa": 4.46
+    "trips": 20,
+    "anglers": 688,
+    "fish": 3056,
+    "fpa": 4.44
   },
   {
     "rank": 3,
@@ -1050,10 +1050,10 @@
     "trip_type": "3/4 Day",
     "boat": "Sum Fun",
     "landing": "Dana Wharf Sportfishing",
-    "trips": 21,
-    "anglers": 658,
-    "fish": 2396,
-    "fpa": 3.64
+    "trips": 22,
+    "anglers": 666,
+    "fish": 2530,
+    "fpa": 3.8
   },
   {
     "rank": 4,
