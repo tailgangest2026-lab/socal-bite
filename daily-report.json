@@ -373,11 +373,41 @@
     "trip_date": "2026-07-23",
     "region": "Orange County",
     "landing": "Davey's Locker",
+    "boat": "Freelance",
+    "trip_type": "3/4 Day",
+    "anglers": 55,
+    "fish_counts": "8 Barracuda, 8 Bonito, 45 Calico Bass",
+    "total_fish": 61
+  },
+  {
+    "trip_date": "2026-07-23",
+    "region": "Orange County",
+    "landing": "Davey's Locker",
     "boat": "Western Pride",
     "trip_type": "1/2 Day AM",
     "anglers": 46,
     "fish_counts": "215 Sculpin, 3 Whitefish",
     "total_fish": 218
+  },
+  {
+    "trip_date": "2026-07-23",
+    "region": "Orange County",
+    "landing": "Davey's Locker",
+    "boat": "Western Pride",
+    "trip_type": "1/2 Day AM",
+    "anglers": 47,
+    "fish_counts": "170 Sculpin, 1 Sheephead, 3 Whitefish",
+    "total_fish": 174
+  },
+  {
+    "trip_date": "2026-07-23",
+    "region": "Orange County",
+    "landing": "Davey's Locker",
+    "boat": "Western Pride",
+    "trip_type": "1/2 Day PM",
+    "anglers": 44,
+    "fish_counts": "1 Barracuda, 16 Bonito, 42 Calico Bass, 12 Sand Bass, 1 Sheephead, 2 Yellowtail",
+    "total_fish": 74
   },
   {
     "trip_date": "2026-07-23",
@@ -488,6 +518,26 @@
     "anglers": 25,
     "fish_counts": "2 Barracuda, 110 Calico Bass, 3 Rockfish, 13 Sand Bass, 17 Sculpin",
     "total_fish": 145
+  },
+  {
+    "trip_date": "2026-07-23",
+    "region": "San Diego County",
+    "landing": "H&M Landing",
+    "boat": "Premier",
+    "trip_type": "1/2 Day AM",
+    "anglers": 25,
+    "fish_counts": "2 Barracuda, 110 Calico Bass, 1 Halibut, 3 Rockfish, 13 Sand Bass, 17 Sculpin",
+    "total_fish": 146
+  },
+  {
+    "trip_date": "2026-07-23",
+    "region": "San Diego County",
+    "landing": "H&M Landing",
+    "boat": "Premier",
+    "trip_type": "1/2 Day PM",
+    "anglers": 40,
+    "fish_counts": "137 Calico Bass, 2 Halibut, 23 Rockfish, 18 Sand Bass, 5 Sculpin, 3 Sheephead",
+    "total_fish": 188
   },
   {
     "trip_date": "2026-07-23",
