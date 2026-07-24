@@ -435,10 +435,10 @@
     "boat": "Monte Carlo",
     "landing": "22nd Street Landing",
     "region": "Los Angeles County",
-    "trips": 117,
-    "anglers": 4986,
-    "fish": 22348,
-    "fpa": 4.48,
+    "trips": 118,
+    "anglers": 5050,
+    "fish": 22453,
+    "fpa": 4.45,
     "top_species_1": "Sculpin",
     "top_species_2": "Whitefish",
     "top_species_3": "Rockfish"
@@ -1644,18 +1644,6 @@
     "top_species_3": "Rockfish"
   },
   {
-    "boat": "Pacifica",
-    "landing": "Seaforth Sportfishing",
-    "region": "San Diego County",
-    "trips": 10,
-    "anglers": 221,
-    "fish": 469,
-    "fpa": 2.12,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Yellowtail",
-    "top_species_3": "Calico Bass"
-  },
-  {
     "boat": "Constitution",
     "landing": "Fisherman's Landing",
     "region": "San Diego County",
@@ -1714,6 +1702,18 @@
     "top_species_1": "Bluefin Tuna",
     "top_species_2": "Bonito",
     "top_species_3": "Yellowfin Tuna"
+  },
+  {
+    "boat": "Pacifica",
+    "landing": "Seaforth Sportfishing",
+    "region": "San Diego County",
+    "trips": 11,
+    "anglers": 249,
+    "fish": 475,
+    "fpa": 1.91,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Yellowtail",
+    "top_species_3": "Calico Bass"
   },
   {
     "boat": "Aztec",
