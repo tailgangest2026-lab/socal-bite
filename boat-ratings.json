@@ -126,8 +126,8 @@
     "trip_type": "Full Day",
     "boat": "Heisen-sturg",
     "landing": "Fish Emeryville",
-    "trips": 25,
-    "anglers": 142,
+    "trips": 26,
+    "anglers": 147,
     "fish": 9,
     "fpa": 0.06
   },
@@ -1334,6 +1334,17 @@
     "rank": 1,
     "region": "San Diego County",
     "trip_type": "2 Day",
+    "boat": "Voyager",
+    "landing": "Seaforth Sportfishing",
+    "trips": 5,
+    "anglers": 51,
+    "fish": 298,
+    "fpa": 5.84
+  },
+  {
+    "rank": 2,
+    "region": "San Diego County",
+    "trip_type": "2 Day",
     "boat": "Pacific Voyager",
     "landing": "Seaforth Sportfishing",
     "trips": 5,
@@ -1342,7 +1353,7 @@
     "fpa": 4.29
   },
   {
-    "rank": 2,
+    "rank": 3,
     "region": "San Diego County",
     "trip_type": "2 Day",
     "boat": "Pacific Queen",
@@ -1353,7 +1364,7 @@
     "fpa": 1.52
   },
   {
-    "rank": 3,
+    "rank": 4,
     "region": "San Diego County",
     "trip_type": "2 Day",
     "boat": "Constitution",
