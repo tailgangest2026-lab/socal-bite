@@ -21,11 +21,11 @@
     "address": "1213 Embarcadero, Morro Bay, CA 93442",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=1213%20Embarcadero%2C%20Morro%20Bay%2C%20CA%2093442",
     "booking_url": "https://www.morrobaylanding.com",
-    "trips": 248,
+    "trips": 250,
     "boats": 3,
-    "anglers": 5173,
-    "fish": 39460,
-    "fpa": 7.63
+    "anglers": 5221,
+    "fish": 39558,
+    "fpa": 7.58
   },
   {
     "landing": "Patriot Sportfishing",
@@ -77,11 +77,11 @@
     "address": "555 Pico Ave, Long Beach, CA 90802",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=555%20Pico%20Ave%2C%20Long%20Beach%2C%20CA%2090802",
     "booking_url": "https://www.longbeachsportfishing.org",
-    "trips": 204,
+    "trips": 205,
     "boats": 5,
-    "anglers": 5516,
-    "fish": 46402,
-    "fpa": 8.41
+    "anglers": 5537,
+    "fish": 46473,
+    "fpa": 8.39
   },
   {
     "landing": "Redondo Beach Sportfishing",
@@ -294,6 +294,20 @@
     "fpa": 0.64
   },
   {
+    "landing": "Salty Lady Sportfishing",
+    "region": "NorCal",
+    "phone": "",
+    "website": "",
+    "address": "",
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Salty%20Lady%20Sportfishing",
+    "booking_url": "",
+    "trips": 33,
+    "boats": 1,
+    "anglers": 565,
+    "fish": 140,
+    "fpa": 0.25
+  },
+  {
     "landing": "Barbarossa Fishing",
     "region": "NorCal",
     "phone": "",
@@ -346,20 +360,6 @@
     "trips": 38,
     "boats": 1,
     "anglers": 532,
-    "fish": 0,
-    "fpa": 0
-  },
-  {
-    "landing": "Salty Lady Sportfishing",
-    "region": "NorCal",
-    "phone": "",
-    "website": "",
-    "address": "",
-    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Salty%20Lady%20Sportfishing",
-    "booking_url": "",
-    "trips": 30,
-    "boats": 1,
-    "anglers": 516,
     "fish": 0,
     "fpa": 0
   },
@@ -525,11 +525,11 @@
     "address": "400 Main St, Newport Beach, CA 92661",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=400%20Main%20St%2C%20Newport%20Beach%2C%20CA%2092661",
     "booking_url": "https://www.daveyslocker.com",
-    "trips": 463,
+    "trips": 467,
     "boats": 4,
-    "anglers": 17429,
-    "fish": 71831,
-    "fpa": 4.12
+    "anglers": 17619,
+    "fish": 72708,
+    "fpa": 4.13
   },
   {
     "landing": "Newport Landing",
@@ -553,10 +553,10 @@
     "address": "1717 Quivira Rd, San Diego, CA 92109",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=1717%20Quivira%20Rd%2C%20San%20Diego%2C%20CA%2092109",
     "booking_url": "https://www.seaforthlanding.com",
-    "trips": 594,
+    "trips": 595,
     "boats": 13,
-    "anglers": 17223,
-    "fish": 63260,
+    "anglers": 17263,
+    "fish": 63346,
     "fpa": 3.67
   },
   {
@@ -581,11 +581,11 @@
     "address": "2838 Garrison St, San Diego, CA 92106",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=2838%20Garrison%20St%2C%20San%20Diego%2C%20CA%2092106",
     "booking_url": "https://www.fishermanslanding.com",
-    "trips": 341,
+    "trips": 344,
     "boats": 12,
-    "anglers": 8978,
-    "fish": 32270,
-    "fpa": 3.59
+    "anglers": 9094,
+    "fish": 32799,
+    "fpa": 3.61
   },
   {
     "landing": "Oceanside Sea Center",
@@ -721,11 +721,11 @@
     "address": "1449 Spinnaker Dr, Ventura, CA 93001",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=1449%20Spinnaker%20Dr%2C%20Ventura%2C%20CA%2093001",
     "booking_url": "https://www.venturasportfishing.com",
-    "trips": 128,
+    "trips": 129,
     "boats": 4,
-    "anglers": 2681,
-    "fish": 33179,
-    "fpa": 12.38
+    "anglers": 2701,
+    "fish": 33321,
+    "fpa": 12.34
   },
   {
     "landing": "Virg's Landing",
