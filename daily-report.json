@@ -152,6 +152,26 @@
   {
     "trip_date": "2026-07-24",
     "region": "Los Angeles County",
+    "landing": "22nd Street Landing",
+    "boat": "Pursuit",
+    "trip_type": "Full Day",
+    "anglers": 38,
+    "fish_counts": "6 Barracuda, 21 Bonito, 48 Calico Bass, 11 Sheephead, 4 Yellowtail",
+    "total_fish": 90
+  },
+  {
+    "trip_date": "2026-07-24",
+    "region": "Los Angeles County",
+    "landing": "LA Waterfront Cruises and Sportfishing",
+    "boat": "Gail Force",
+    "trip_type": "3/4 Day",
+    "anglers": 16,
+    "fish_counts": "40 Bonito, 10 Calico Bass",
+    "total_fish": 50
+  },
+  {
+    "trip_date": "2026-07-24",
+    "region": "Los Angeles County",
     "landing": "Long Beach Sportfishing",
     "boat": "MarDiosa",
     "trip_type": "1/2 Day AM",
@@ -238,6 +258,26 @@
     "anglers": 21,
     "fish_counts": "186 Rockfish, 13 Whitefish",
     "total_fish": 199
+  },
+  {
+    "trip_date": "2026-07-24",
+    "region": "Los Angeles County",
+    "landing": "Redondo Beach Sportfishing",
+    "boat": "Redondo Special",
+    "trip_type": "1/2 Day AM",
+    "anglers": 42,
+    "fish_counts": "10 Bonito, 1 Calico Bass, 179 Rockfish, 1 Sand Bass, 2 Sheephead, 18 Whitefish",
+    "total_fish": 211
+  },
+  {
+    "trip_date": "2026-07-24",
+    "region": "Los Angeles County",
+    "landing": "Redondo Beach Sportfishing",
+    "boat": "Redondo Special",
+    "trip_type": "1/2 Day PM",
+    "anglers": 43,
+    "fish_counts": "6 Barracuda, 22 Bonito, 135 Calico Bass, 1 Sand Bass, 4 Sheephead",
+    "total_fish": 168
   },
   {
     "trip_date": "2026-07-24",
@@ -413,11 +453,31 @@
     "trip_date": "2026-07-24",
     "region": "San Diego County",
     "landing": "H&M Landing",
+    "boat": "Grande",
+    "trip_type": "Full Day Coronado Islands",
+    "anglers": 40,
+    "fish_counts": "10 Barracuda, 4 Bonito, 2 Rockfish, 1 Sculpin, 2 Sheephead, 18 Whitefish, 33 Yellowtail",
+    "total_fish": 70
+  },
+  {
+    "trip_date": "2026-07-24",
+    "region": "San Diego County",
+    "landing": "H&M Landing",
     "boat": "Malihini",
     "trip_type": "3/4 Day",
     "anglers": 34,
     "fish_counts": "1 Barracuda, 20 Barracuda Released, 75 Bonito, 100 Calico Bass Released, 3 Sand Bass, 1 Sculpin, 10 Sheephead",
     "total_fish": 210
+  },
+  {
+    "trip_date": "2026-07-24",
+    "region": "San Diego County",
+    "landing": "H&M Landing",
+    "boat": "Patriot (SD)",
+    "trip_type": "Full Day",
+    "anglers": 11,
+    "fish_counts": "4 Yellowfin Tuna",
+    "total_fish": 4
   },
   {
     "trip_date": "2026-07-24",
@@ -468,6 +528,16 @@
     "anglers": 40,
     "fish_counts": "20 Bonito, 11 Calico Bass, 50 Calico Bass Released, 1 Rockfish, 1 Yellowtail",
     "total_fish": 83
+  },
+  {
+    "trip_date": "2026-07-24",
+    "region": "San Diego County",
+    "landing": "Point Loma Sportfishing",
+    "boat": "Mission Belle",
+    "trip_type": "Full Day Coronado Islands",
+    "anglers": 22,
+    "fish_counts": "16 Yellowtail",
+    "total_fish": 16
   },
   {
     "trip_date": "2026-07-24",
@@ -543,6 +613,16 @@
     "trip_date": "2026-07-24",
     "region": "San Diego County",
     "landing": "Seaforth Sportfishing",
+    "boat": "San Diego",
+    "trip_type": "Full Day Coronado Islands",
+    "anglers": 34,
+    "fish_counts": "1 Barracuda, 9 Bonito, 6 Calico Bass, 1 Halibut, 13 Rockfish, 4 Sheephead, 54 Whitefish, 9 Yellowtail",
+    "total_fish": 97
+  },
+  {
+    "trip_date": "2026-07-24",
+    "region": "San Diego County",
+    "landing": "Seaforth Sportfishing",
     "boat": "Sea Watch",
     "trip_type": "Full Day Coronado Islands",
     "anglers": 12,
@@ -603,11 +683,81 @@
     "trip_date": "2026-07-24",
     "region": "Ventura County",
     "landing": "Channel Islands Sportfishing",
+    "boat": "Aloha Spirit",
+    "trip_type": "Full Day",
+    "anglers": 30,
+    "fish_counts": "1 Barracuda, 55 Bonito, 150 Calico Bass, 1 Lingcod, 101 Rockfish, 8 Sheephead, 18 Whitefish",
+    "total_fish": 334
+  },
+  {
+    "trip_date": "2026-07-24",
+    "region": "Ventura County",
+    "landing": "Channel Islands Sportfishing",
     "boat": "Cobra",
     "trip_type": "Full Day",
     "anglers": 10,
     "fish_counts": "33 Rockfish, 10 Whitefish",
     "total_fish": 43
+  },
+  {
+    "trip_date": "2026-07-24",
+    "region": "Ventura County",
+    "landing": "Channel Islands Sportfishing",
+    "boat": "Gentleman",
+    "trip_type": "3/4 Day",
+    "anglers": 30,
+    "fish_counts": "60 Calico Bass, 2 Sculpin, 5 Sheephead, 140 Whitefish, 5 Yellowtail",
+    "total_fish": 212
+  },
+  {
+    "trip_date": "2026-07-24",
+    "region": "Ventura County",
+    "landing": "Channel Islands Sportfishing",
+    "boat": "Graylight",
+    "trip_type": "Full Day",
+    "anglers": 6,
+    "fish_counts": "6 Bonito, 30 Calico Bass, 30 Rockfish, 12 Sheephead, 2 Whitefish",
+    "total_fish": 80
+  },
+  {
+    "trip_date": "2026-07-24",
+    "region": "Ventura County",
+    "landing": "Channel Islands Sportfishing",
+    "boat": "Island Fox",
+    "trip_type": "Full Day",
+    "anglers": 20,
+    "fish_counts": "1 Barracuda, 53 Calico Bass, 10 Sheephead, 131 Whitefish",
+    "total_fish": 195
+  },
+  {
+    "trip_date": "2026-07-24",
+    "region": "Ventura County",
+    "landing": "Channel Islands Sportfishing",
+    "boat": "Island Tak",
+    "trip_type": "Full Day",
+    "anglers": 6,
+    "fish_counts": "3 Bonito, 30 Calico Bass, 1 Rockfish, 1 Sheephead, 8 Whitefish, 1 Yellowtail",
+    "total_fish": 44
+  },
+  {
+    "trip_date": "2026-07-24",
+    "region": "Ventura County",
+    "landing": "Hooks Landing",
+    "boat": "Coroloma",
+    "trip_type": "3/4 Day",
+    "anglers": 33,
+    "fish_counts": "3 Calico Bass, 1 Lingcod, 15 Sculpin, 7 Sheephead, 50 Whitefish",
+    "total_fish": 76
+  },
+  {
+    "trip_date": "2026-07-24",
+    "region": "Ventura County",
+    "landing": "Hooks Landing",
+    "boat": "Coroloma",
+    "trip_type": "3/4 Day",
+    "anglers": 33,
+    "fish_counts": "3 Calico Bass, 1 Lingcod, 290 Rockfish, 15 Sculpin, 7 Sheephead, 50 Whitefish",
+    "total_fish": 366
   },
   {
     "trip_date": "2026-07-23",
