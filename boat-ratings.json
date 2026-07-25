@@ -5,13 +5,24 @@
     "trip_type": "1/2 Day AM",
     "boat": "Playn Hooky",
     "landing": "Fish Emeryville",
-    "trips": 6,
-    "anglers": 34,
-    "fish": 304,
-    "fpa": 8.94
+    "trips": 7,
+    "anglers": 40,
+    "fish": 364,
+    "fpa": 9.1
   },
   {
     "rank": 2,
+    "region": "Alameda County",
+    "trip_type": "1/2 Day AM",
+    "boat": "TigerFish",
+    "landing": "Fish Emeryville",
+    "trips": 8,
+    "anglers": 121,
+    "fish": 545,
+    "fpa": 4.5
+  },
+  {
+    "rank": 3,
     "region": "Alameda County",
     "trip_type": "1/2 Day AM",
     "boat": "Oakland Anglers II",
@@ -22,26 +33,15 @@
     "fpa": 4.02
   },
   {
-    "rank": 3,
-    "region": "Alameda County",
-    "trip_type": "1/2 Day AM",
-    "boat": "TigerFish",
-    "landing": "Fish Emeryville",
-    "trips": 7,
-    "anglers": 100,
-    "fish": 334,
-    "fpa": 3.34
-  },
-  {
     "rank": 1,
     "region": "Alameda County",
     "trip_type": "Full Day",
     "boat": "Sea Wolf",
     "landing": "Fish Emeryville",
-    "trips": 45,
-    "anglers": 839,
-    "fish": 7591,
-    "fpa": 9.05
+    "trips": 46,
+    "anglers": 859,
+    "fish": 7799,
+    "fpa": 9.08
   },
   {
     "rank": 2,
@@ -71,10 +71,10 @@
     "trip_type": "Full Day",
     "boat": "KingFish",
     "landing": "Fish Emeryville",
-    "trips": 24,
-    "anglers": 358,
-    "fish": 446,
-    "fpa": 1.25
+    "trips": 25,
+    "anglers": 373,
+    "fish": 598,
+    "fpa": 1.6
   },
   {
     "rank": 5,
@@ -91,23 +91,23 @@
     "rank": 6,
     "region": "Alameda County",
     "trip_type": "Full Day",
+    "boat": "Lady K",
+    "landing": "Fish Emeryville",
+    "trips": 48,
+    "anglers": 420,
+    "fish": 256,
+    "fpa": 0.61
+  },
+  {
+    "rank": 7,
+    "region": "Alameda County",
+    "trip_type": "Full Day",
     "boat": "Scallywag",
     "landing": "Fish Emeryville",
     "trips": 45,
     "anglers": 250,
     "fish": 119,
     "fpa": 0.48
-  },
-  {
-    "rank": 7,
-    "region": "Alameda County",
-    "trip_type": "Full Day",
-    "boat": "Lady K",
-    "landing": "Fish Emeryville",
-    "trips": 47,
-    "anglers": 410,
-    "fish": 154,
-    "fpa": 0.38
   },
   {
     "rank": 8,
@@ -236,8 +236,8 @@
     "trip_type": "1/2 Day AM",
     "boat": "Flying Fish",
     "landing": "Patriot Sportfishing",
-    "trips": 50,
-    "anglers": 920,
+    "trips": 51,
+    "anglers": 931,
     "fish": 24,
     "fpa": 0.03
   },
@@ -654,10 +654,10 @@
     "trip_type": "Full Day",
     "boat": "Queen of Hearts",
     "landing": "Half Moon Bay Sportfishing",
-    "trips": 46,
-    "anglers": 744,
-    "fish": 3971,
-    "fpa": 5.34
+    "trips": 47,
+    "anglers": 763,
+    "fish": 4161,
+    "fpa": 5.45
   },
   {
     "rank": 3,
@@ -1248,10 +1248,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
-    "trips": 27,
-    "anglers": 1359,
-    "fish": 4100,
-    "fpa": 3.02
+    "trips": 28,
+    "anglers": 1389,
+    "fish": 4154,
+    "fpa": 2.99
   },
   {
     "rank": 1,
@@ -1303,10 +1303,10 @@
     "trip_type": "1/2 Day Twilight",
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
-    "trips": 28,
-    "anglers": 1031,
-    "fish": 4855,
-    "fpa": 4.71
+    "trips": 29,
+    "anglers": 1086,
+    "fish": 4895,
+    "fpa": 4.51
   },
   {
     "rank": 2,
