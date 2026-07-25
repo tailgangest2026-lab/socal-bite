@@ -1155,10 +1155,10 @@
     "boat": "Malihini",
     "landing": "H&M Landing",
     "region": "San Diego County",
-    "trips": 25,
-    "anglers": 521,
-    "fish": 4663,
-    "fpa": 8.95,
+    "trips": 26,
+    "anglers": 555,
+    "fish": 4873,
+    "fpa": 8.78,
     "top_species_1": "Calico Bass Released",
     "top_species_2": "Rockfish",
     "top_species_3": "Calico Bass"
@@ -1251,10 +1251,10 @@
     "boat": "Pacific Voyager",
     "landing": "Seaforth Sportfishing",
     "region": "San Diego County",
-    "trips": 38,
-    "anglers": 630,
-    "fish": 3659,
-    "fpa": 5.81,
+    "trips": 39,
+    "anglers": 646,
+    "fish": 3720,
+    "fpa": 5.76,
     "top_species_1": "Rockfish",
     "top_species_2": "Bluefin Tuna",
     "top_species_3": "Yellowtail"
@@ -1404,18 +1404,6 @@
     "top_species_3": "Rockfish"
   },
   {
-    "boat": "Premier",
-    "landing": "H&M Landing",
-    "region": "San Diego County",
-    "trips": 136,
-    "anglers": 4426,
-    "fish": 18195,
-    "fpa": 4.11,
-    "top_species_1": "Calico Bass Released",
-    "top_species_2": "Rockfish",
-    "top_species_3": "Calico Bass"
-  },
-  {
     "boat": "Dolphin",
     "landing": "Fisherman's Landing",
     "region": "San Diego County",
@@ -1425,6 +1413,18 @@
     "fpa": 4.07,
     "top_species_1": "Rockfish",
     "top_species_2": "Calico Bass Released",
+    "top_species_3": "Calico Bass"
+  },
+  {
+    "boat": "Premier",
+    "landing": "H&M Landing",
+    "region": "San Diego County",
+    "trips": 137,
+    "anglers": 4478,
+    "fish": 18195,
+    "fpa": 4.06,
+    "top_species_1": "Calico Bass Released",
+    "top_species_2": "Rockfish",
     "top_species_3": "Calico Bass"
   },
   {
