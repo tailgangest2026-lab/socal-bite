@@ -729,23 +729,23 @@
     "rank": 9,
     "region": "NorCal",
     "trip_type": "Full Day",
+    "boat": "Happy Hooker",
+    "landing": "Happy Hooker Sportfishing",
+    "trips": 25,
+    "anglers": 436,
+    "fish": 480,
+    "fpa": 1.1
+  },
+  {
+    "rank": 10,
+    "region": "NorCal",
+    "trip_type": "Full Day",
     "boat": "Argo",
     "landing": "Argo Sportfishing",
     "trips": 40,
     "anglers": 206,
     "fish": 150,
     "fpa": 0.73
-  },
-  {
-    "rank": 10,
-    "region": "NorCal",
-    "trip_type": "Full Day",
-    "boat": "Happy Hooker",
-    "landing": "Happy Hooker Sportfishing",
-    "trips": 24,
-    "anglers": 410,
-    "fish": 220,
-    "fpa": 0.54
   },
   {
     "rank": 11,
@@ -1512,10 +1512,10 @@
     "trip_type": "Full Day Offshore",
     "boat": "El Gato Dos",
     "landing": "Seaforth Sportfishing",
-    "trips": 8,
-    "anglers": 42,
-    "fish": 81,
-    "fpa": 1.93
+    "trips": 9,
+    "anglers": 48,
+    "fish": 85,
+    "fpa": 1.77
   },
   {
     "rank": 1,

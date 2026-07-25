@@ -183,9 +183,9 @@
     "boat": "Endeavor (MB)",
     "landing": "Morro Bay Landing",
     "region": "Central California",
-    "trips": 84,
-    "anglers": 1760,
-    "fish": 12873,
+    "trips": 85,
+    "anglers": 1787,
+    "fish": 13057,
     "fpa": 7.31,
     "top_species_1": "Rockfish",
     "top_species_2": "Red Rockfish",
@@ -267,10 +267,10 @@
     "boat": "Victory",
     "landing": "Long Beach Sportfishing",
     "region": "Los Angeles County",
-    "trips": 85,
-    "anglers": 3029,
-    "fish": 30174,
-    "fpa": 9.96,
+    "trips": 86,
+    "anglers": 3067,
+    "fish": 30699,
+    "fpa": 10.01,
     "top_species_1": "Sculpin",
     "top_species_2": "Rockfish",
     "top_species_3": "Calico Bass"
@@ -684,6 +684,18 @@
     "top_species_3": ""
   },
   {
+    "boat": "Pacific Dream",
+    "landing": "Happy Hooker Sportfishing",
+    "region": "NorCal",
+    "trips": 34,
+    "anglers": 669,
+    "fish": 1582,
+    "fpa": 2.36,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Lingcod",
+    "top_species_3": "Halibut"
+  },
+  {
     "boat": "Barbarossa",
     "landing": "Barbarossa Fishing",
     "region": "NorCal",
@@ -694,18 +706,6 @@
     "top_species_1": "Rockfish",
     "top_species_2": "",
     "top_species_3": ""
-  },
-  {
-    "boat": "Pacific Dream",
-    "landing": "Happy Hooker Sportfishing",
-    "region": "NorCal",
-    "trips": 33,
-    "anglers": 644,
-    "fish": 1332,
-    "fpa": 2.07,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Lingcod",
-    "top_species_3": "Halibut"
   },
   {
     "boat": "Sorta Salty",
@@ -720,6 +720,18 @@
     "top_species_3": ""
   },
   {
+    "boat": "Happy Hooker",
+    "landing": "Happy Hooker Sportfishing",
+    "region": "NorCal",
+    "trips": 34,
+    "anglers": 617,
+    "fish": 565,
+    "fpa": 0.92,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Halibut",
+    "top_species_3": "Lingcod"
+  },
+  {
     "boat": "Argo",
     "landing": "Argo Sportfishing",
     "region": "NorCal",
@@ -730,18 +742,6 @@
     "top_species_1": "Rockfish",
     "top_species_2": "",
     "top_species_3": ""
-  },
-  {
-    "boat": "Happy Hooker",
-    "landing": "Happy Hooker Sportfishing",
-    "region": "NorCal",
-    "trips": 33,
-    "anglers": 591,
-    "fish": 305,
-    "fpa": 0.52,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Halibut",
-    "top_species_3": "Lingcod"
   },
   {
     "boat": "Outer Limits (Sausalito, CA)",
@@ -1491,10 +1491,10 @@
     "boat": "Daily Double",
     "landing": "Point Loma Sportfishing",
     "region": "San Diego County",
-    "trips": 87,
-    "anglers": 1934,
-    "fish": 6792,
-    "fpa": 3.51,
+    "trips": 88,
+    "anglers": 1968,
+    "fish": 6851,
+    "fpa": 3.48,
     "top_species_1": "Calico Bass",
     "top_species_2": "Calico Bass Released",
     "top_species_3": "Rockfish"
@@ -1608,18 +1608,6 @@
     "top_species_3": "Rockfish"
   },
   {
-    "boat": "El Gato Dos",
-    "landing": "Seaforth Sportfishing",
-    "region": "San Diego County",
-    "trips": 23,
-    "anglers": 110,
-    "fish": 302,
-    "fpa": 2.75,
-    "top_species_1": "Yellowtail",
-    "top_species_2": "Rockfish",
-    "top_species_3": "Calico Bass Released"
-  },
-  {
     "boat": "Pacific Queen",
     "landing": "Fisherman's Landing",
     "region": "San Diego County",
@@ -1630,6 +1618,18 @@
     "top_species_1": "Bluefin Tuna",
     "top_species_2": "Yellowtail",
     "top_species_3": "Yellowfin Tuna"
+  },
+  {
+    "boat": "El Gato Dos",
+    "landing": "Seaforth Sportfishing",
+    "region": "San Diego County",
+    "trips": 24,
+    "anglers": 116,
+    "fish": 306,
+    "fpa": 2.64,
+    "top_species_1": "Yellowtail",
+    "top_species_2": "Rockfish",
+    "top_species_3": "Calico Bass Released"
   },
   {
     "boat": "Top Gun 80",
