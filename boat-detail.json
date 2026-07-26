@@ -1632,6 +1632,18 @@
     "top_species_3": "Yellowfin Tuna"
   },
   {
+    "boat": "Vendetta 2",
+    "landing": "H&M Landing",
+    "region": "San Diego County",
+    "trips": 11,
+    "anglers": 210,
+    "fish": 524,
+    "fpa": 2.5,
+    "top_species_1": "Yellowtail",
+    "top_species_2": "Barracuda",
+    "top_species_3": "Bonito"
+  },
+  {
     "boat": "Pegasus",
     "landing": "Fisherman's Landing",
     "region": "San Diego County",
@@ -1726,18 +1738,6 @@
     "top_species_1": "Bluefin Tuna",
     "top_species_2": "Yellowtail",
     "top_species_3": "Bonito"
-  },
-  {
-    "boat": "Vendetta 2",
-    "landing": "H&M Landing",
-    "region": "San Diego County",
-    "trips": 10,
-    "anglers": 185,
-    "fish": 301,
-    "fpa": 1.63,
-    "top_species_1": "Yellowtail",
-    "top_species_2": "Rockfish",
-    "top_species_3": "Calico Bass"
   },
   {
     "boat": "Tribute",
@@ -2103,10 +2103,10 @@
     "boat": "Estella",
     "landing": "Channel Islands Sportfishing",
     "region": "Ventura County",
-    "trips": 46,
-    "anglers": 1000,
-    "fish": 13040,
-    "fpa": 13.04,
+    "trips": 47,
+    "anglers": 1012,
+    "fish": 13222,
+    "fpa": 13.07,
     "top_species_1": "Rockfish",
     "top_species_2": "Whitefish",
     "top_species_3": "Sculpin"
