@@ -1392,18 +1392,6 @@
     "top_species_3": "Red Rockfish"
   },
   {
-    "boat": "Tradition",
-    "landing": "Fisherman's Landing",
-    "region": "San Diego County",
-    "trips": 12,
-    "anglers": 245,
-    "fish": 1016,
-    "fpa": 4.15,
-    "top_species_1": "Calico Bass",
-    "top_species_2": "Yellowtail",
-    "top_species_3": "Rockfish"
-  },
-  {
     "boat": "Islander",
     "landing": "Fisherman's Landing",
     "region": "San Diego County",
@@ -1462,6 +1450,18 @@
     "top_species_1": "Rockfish",
     "top_species_2": "Red Rockfish",
     "top_species_3": ""
+  },
+  {
+    "boat": "Tradition",
+    "landing": "Fisherman's Landing",
+    "region": "San Diego County",
+    "trips": 13,
+    "anglers": 264,
+    "fish": 1016,
+    "fpa": 3.85,
+    "top_species_1": "Calico Bass",
+    "top_species_2": "Yellowtail",
+    "top_species_3": "Rockfish"
   },
   {
     "boat": "Point Loma",
@@ -2067,10 +2067,10 @@
     "boat": "Mirage",
     "landing": "Channel Islands Sportfishing",
     "region": "Ventura County",
-    "trips": 88,
-    "anglers": 1572,
-    "fish": 22308,
-    "fpa": 14.19,
+    "trips": 89,
+    "anglers": 1591,
+    "fish": 22656,
+    "fpa": 14.24,
     "top_species_1": "Rockfish",
     "top_species_2": "Whitefish",
     "top_species_3": "Sheephead"
