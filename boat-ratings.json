@@ -113,6 +113,17 @@
     "rank": 8,
     "region": "Alameda County",
     "trip_type": "Full Day",
+    "boat": "Pacific Pearl",
+    "landing": "Fish Emeryville",
+    "trips": 48,
+    "anglers": 629,
+    "fish": 174,
+    "fpa": 0.28
+  },
+  {
+    "rank": 9,
+    "region": "Alameda County",
+    "trip_type": "Full Day",
     "boat": "Here We Go",
     "landing": "Fish Emeryville",
     "trips": 27,
@@ -121,7 +132,7 @@
     "fpa": 0.13
   },
   {
-    "rank": 9,
+    "rank": 10,
     "region": "Alameda County",
     "trip_type": "Full Day",
     "boat": "Heisen-sturg",
@@ -132,7 +143,7 @@
     "fpa": 0.06
   },
   {
-    "rank": 10,
+    "rank": 11,
     "region": "Alameda County",
     "trip_type": "Full Day",
     "boat": "C Gull II",
@@ -141,17 +152,6 @@
     "anglers": 652,
     "fish": 24,
     "fpa": 0.04
-  },
-  {
-    "rank": 11,
-    "region": "Alameda County",
-    "trip_type": "Full Day",
-    "boat": "Pacific Pearl",
-    "landing": "Fish Emeryville",
-    "trips": 47,
-    "anglers": 613,
-    "fish": 12,
-    "fpa": 0.02
   },
   {
     "rank": 12,
@@ -258,10 +258,10 @@
     "trip_type": "3/4 Day",
     "boat": "Avenger",
     "landing": "Morro Bay Landing",
-    "trips": 13,
-    "anglers": 190,
-    "fish": 1751,
-    "fpa": 9.22
+    "trips": 14,
+    "anglers": 219,
+    "fish": 1981,
+    "fpa": 9.05
   },
   {
     "rank": 2,
@@ -454,23 +454,23 @@
     "rank": 7,
     "region": "Los Angeles County",
     "trip_type": "3/4 Day",
+    "boat": "Native Sun",
+    "landing": "22nd Street Landing",
+    "trips": 16,
+    "anglers": 578,
+    "fish": 2121,
+    "fpa": 3.67
+  },
+  {
+    "rank": 8,
+    "region": "Los Angeles County",
+    "trip_type": "3/4 Day",
     "boat": "Gail Force",
     "landing": "LA Waterfront Cruises and Sportfishing",
     "trips": 17,
     "anglers": 306,
     "fish": 1103,
     "fpa": 3.6
-  },
-  {
-    "rank": 8,
-    "region": "Los Angeles County",
-    "trip_type": "3/4 Day",
-    "boat": "Native Sun",
-    "landing": "22nd Street Landing",
-    "trips": 15,
-    "anglers": 540,
-    "fish": 1916,
-    "fpa": 3.55
   },
   {
     "rank": 1,
@@ -1226,10 +1226,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Southern Cal",
     "landing": "Oceanside Sea Center",
-    "trips": 25,
-    "anglers": 768,
-    "fish": 2625,
-    "fpa": 3.42
+    "trips": 26,
+    "anglers": 813,
+    "fish": 2681,
+    "fpa": 3.3
   },
   {
     "rank": 6,
@@ -1435,10 +1435,10 @@
     "trip_type": "3/4 Day",
     "boat": "Sea Watch",
     "landing": "Seaforth Sportfishing",
-    "trips": 23,
-    "anglers": 614,
-    "fish": 4531,
-    "fpa": 7.38
+    "trips": 24,
+    "anglers": 632,
+    "fish": 4583,
+    "fpa": 7.25
   },
   {
     "rank": 4,
@@ -1501,10 +1501,10 @@
     "trip_type": "Full Day Coronado Islands",
     "boat": "Mission Belle",
     "landing": "Point Loma Sportfishing",
-    "trips": 21,
-    "anglers": 441,
-    "fish": 1276,
-    "fpa": 2.89
+    "trips": 22,
+    "anglers": 466,
+    "fish": 1331,
+    "fpa": 2.86
   },
   {
     "rank": 1,

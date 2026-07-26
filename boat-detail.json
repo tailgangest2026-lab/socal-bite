@@ -120,6 +120,18 @@
     "top_species_3": "Lingcod"
   },
   {
+    "boat": "Pacific Pearl",
+    "landing": "Fish Emeryville",
+    "region": "Alameda County",
+    "trips": 72,
+    "anglers": 933,
+    "fish": 261,
+    "fpa": 0.28,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Halibut",
+    "top_species_3": "Lingcod"
+  },
+  {
     "boat": "Oakland Anglers",
     "landing": "Fish Emeryville",
     "region": "Alameda County",
@@ -139,18 +151,6 @@
     "anglers": 112,
     "fish": 15,
     "fpa": 0.13,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Halibut",
-    "top_species_3": "Lingcod"
-  },
-  {
-    "boat": "Pacific Pearl",
-    "landing": "Fish Emeryville",
-    "region": "Alameda County",
-    "trips": 71,
-    "anglers": 917,
-    "fish": 99,
-    "fpa": 0.11,
     "top_species_1": "Rockfish",
     "top_species_2": "Halibut",
     "top_species_3": "Lingcod"
@@ -1524,18 +1524,6 @@
     "top_species_3": "Rockfish"
   },
   {
-    "boat": "Daiwa Pacific",
-    "landing": "H&M Landing",
-    "region": "San Diego County",
-    "trips": 9,
-    "anglers": 127,
-    "fish": 407,
-    "fpa": 3.2,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Calico Bass Released",
-    "top_species_3": "Yellowtail"
-  },
-  {
     "boat": "Effishency",
     "landing": "Oceanside Sea Center",
     "region": "San Diego County",
@@ -1606,6 +1594,18 @@
     "top_species_1": "Whitefish",
     "top_species_2": "Yellowtail",
     "top_species_3": "Rockfish"
+  },
+  {
+    "boat": "Daiwa Pacific",
+    "landing": "H&M Landing",
+    "region": "San Diego County",
+    "trips": 10,
+    "anglers": 146,
+    "fish": 407,
+    "fpa": 2.79,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Calico Bass Released",
+    "top_species_3": "Yellowtail"
   },
   {
     "boat": "Pacific Queen",
