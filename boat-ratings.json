@@ -1180,6 +1180,17 @@
     "rank": 1,
     "region": "San Diego County",
     "trip_type": "1/2 Day AM",
+    "boat": "Blue Horizon",
+    "landing": "Oceanside Sea Center",
+    "trips": 5,
+    "anglers": 53,
+    "fish": 528,
+    "fpa": 9.96
+  },
+  {
+    "rank": 2,
+    "region": "San Diego County",
+    "trip_type": "1/2 Day AM",
     "boat": "Pronto",
     "landing": "Oceanside Sea Center",
     "trips": 6,
@@ -1188,7 +1199,7 @@
     "fpa": 8.71
   },
   {
-    "rank": 2,
+    "rank": 3,
     "region": "San Diego County",
     "trip_type": "1/2 Day AM",
     "boat": "Sea Star",
@@ -1199,7 +1210,7 @@
     "fpa": 5.53
   },
   {
-    "rank": 3,
+    "rank": 4,
     "region": "San Diego County",
     "trip_type": "1/2 Day AM",
     "boat": "Premier",
@@ -1210,7 +1221,7 @@
     "fpa": 3.99
   },
   {
-    "rank": 4,
+    "rank": 5,
     "region": "San Diego County",
     "trip_type": "1/2 Day AM",
     "boat": "Dolphin",
@@ -1221,7 +1232,7 @@
     "fpa": 3.99
   },
   {
-    "rank": 5,
+    "rank": 6,
     "region": "San Diego County",
     "trip_type": "1/2 Day AM",
     "boat": "Southern Cal",
@@ -1232,7 +1243,7 @@
     "fpa": 3.3
   },
   {
-    "rank": 6,
+    "rank": 7,
     "region": "San Diego County",
     "trip_type": "1/2 Day AM",
     "boat": "New Seaforth",
@@ -1243,7 +1254,7 @@
     "fpa": 2.99
   },
   {
-    "rank": 7,
+    "rank": 8,
     "region": "San Diego County",
     "trip_type": "1/2 Day AM",
     "boat": "Daily Double",
@@ -1479,10 +1490,10 @@
     "trip_type": "Full Day Coronado Islands",
     "boat": "San Diego",
     "landing": "Seaforth Sportfishing",
-    "trips": 26,
-    "anglers": 778,
-    "fish": 3494,
-    "fpa": 4.49
+    "trips": 27,
+    "anglers": 812,
+    "fish": 3518,
+    "fpa": 4.33
   },
   {
     "rank": 2,
