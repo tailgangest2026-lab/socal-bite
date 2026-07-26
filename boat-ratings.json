@@ -1147,17 +1147,6 @@
     "rank": 1,
     "region": "San Diego County",
     "trip_type": "1.5 Day",
-    "boat": "Horizon",
-    "landing": "H&M Landing",
-    "trips": 5,
-    "anglers": 115,
-    "fish": 93,
-    "fpa": 0.81
-  },
-  {
-    "rank": 2,
-    "region": "San Diego County",
-    "trip_type": "1.5 Day",
     "boat": "Tribute",
     "landing": "Seaforth Sportfishing",
     "trips": 10,
@@ -1166,7 +1155,7 @@
     "fpa": 0.73
   },
   {
-    "rank": 3,
+    "rank": 2,
     "region": "San Diego County",
     "trip_type": "1.5 Day",
     "boat": "Ocean Odyssey",
@@ -1175,6 +1164,17 @@
     "anglers": 128,
     "fish": 93,
     "fpa": 0.73
+  },
+  {
+    "rank": 3,
+    "region": "San Diego County",
+    "trip_type": "1.5 Day",
+    "boat": "Horizon",
+    "landing": "H&M Landing",
+    "trips": 6,
+    "anglers": 140,
+    "fish": 93,
+    "fpa": 0.66
   },
   {
     "rank": 1,
@@ -1501,10 +1501,10 @@
     "trip_type": "Full Day Coronado Islands",
     "boat": "Grande",
     "landing": "H&M Landing",
-    "trips": 20,
-    "anglers": 640,
-    "fish": 1966,
-    "fpa": 3.07
+    "trips": 21,
+    "anglers": 684,
+    "fish": 2153,
+    "fpa": 3.15
   },
   {
     "rank": 3,
@@ -1538,6 +1538,17 @@
     "anglers": 505,
     "fish": 414,
     "fpa": 0.82
+  },
+  {
+    "rank": 2,
+    "region": "San Diego County",
+    "trip_type": "Overnight",
+    "boat": "Daiwa Pacific",
+    "landing": "H&M Landing",
+    "trips": 5,
+    "anglers": 98,
+    "fish": 38,
+    "fpa": 0.39
   },
   {
     "rank": 1,
