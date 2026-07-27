@@ -531,34 +531,34 @@
     "rank": 2,
     "region": "Los Angeles County",
     "trip_type": "Overnight",
-    "boat": "Toronado",
-    "landing": "Pierpoint Landing",
-    "trips": 16,
-    "anglers": 404,
-    "fish": 2454,
-    "fpa": 6.07
-  },
-  {
-    "rank": 3,
-    "region": "Los Angeles County",
-    "trip_type": "Overnight",
-    "boat": "Amigo",
-    "landing": "22nd Street Landing",
-    "trips": 16,
-    "anglers": 232,
-    "fish": 1388,
-    "fpa": 5.98
-  },
-  {
-    "rank": 4,
-    "region": "Los Angeles County",
-    "trip_type": "Overnight",
     "boat": "Freedom",
     "landing": "22nd Street Landing",
     "trips": 46,
     "anglers": 1516,
     "fish": 8989,
     "fpa": 5.93
+  },
+  {
+    "rank": 3,
+    "region": "Los Angeles County",
+    "trip_type": "Overnight",
+    "boat": "Toronado",
+    "landing": "Pierpoint Landing",
+    "trips": 17,
+    "anglers": 435,
+    "fish": 2572,
+    "fpa": 5.91
+  },
+  {
+    "rank": 4,
+    "region": "Los Angeles County",
+    "trip_type": "Overnight",
+    "boat": "Amigo",
+    "landing": "22nd Street Landing",
+    "trips": 17,
+    "anglers": 246,
+    "fish": 1421,
+    "fpa": 5.78
   },
   {
     "rank": 5,
@@ -1193,13 +1193,24 @@
     "trip_type": "1.5 Day",
     "boat": "Ocean Odyssey",
     "landing": "H&M Landing",
-    "trips": 5,
-    "anglers": 128,
-    "fish": 93,
-    "fpa": 0.73
+    "trips": 6,
+    "anglers": 157,
+    "fish": 110,
+    "fpa": 0.7
   },
   {
     "rank": 3,
+    "region": "San Diego County",
+    "trip_type": "1.5 Day",
+    "boat": "Nautilus",
+    "landing": "H&M Landing",
+    "trips": 5,
+    "anglers": 21,
+    "fish": 14,
+    "fpa": 0.67
+  },
+  {
+    "rank": 4,
     "region": "San Diego County",
     "trip_type": "1.5 Day",
     "boat": "Horizon",
