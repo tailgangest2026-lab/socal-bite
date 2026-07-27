@@ -262,6 +262,16 @@
   {
     "trip_date": "2026-07-26",
     "region": "Los Angeles County",
+    "landing": "22nd Street Landing",
+    "boat": "Pursuit",
+    "trip_type": "Full Day",
+    "anglers": 37,
+    "fish_counts": "4 Barracuda, 37 Bonito, 40 Calico Bass, 9 Sheephead, 3 Yellowtail",
+    "total_fish": 93
+  },
+  {
+    "trip_date": "2026-07-26",
+    "region": "Los Angeles County",
     "landing": "Long Beach Sportfishing",
     "boat": "El Patron",
     "trip_type": "Full Day",
@@ -391,6 +401,26 @@
   },
   {
     "trip_date": "2026-07-26",
+    "region": "Los Angeles County",
+    "landing": "Redondo Beach Sportfishing",
+    "boat": "Redondo Special",
+    "trip_type": "1/2 Day AM",
+    "anglers": 45,
+    "fish_counts": "154 Rockfish, 1 Sand Bass, 1 Sheephead, 14 Whitefish",
+    "total_fish": 170
+  },
+  {
+    "trip_date": "2026-07-26",
+    "region": "Los Angeles County",
+    "landing": "Redondo Beach Sportfishing",
+    "boat": "Redondo Special",
+    "trip_type": "1/2 Day PM",
+    "anglers": 56,
+    "fish_counts": "12 Bonito, 8 Calico Bass, 1 Rockfish, 6 Sand Bass, 1 Sculpin, 3 Sheephead, 163 Whitefish, 1 Yellowtail",
+    "total_fish": 195
+  },
+  {
+    "trip_date": "2026-07-26",
     "region": "Monterey County",
     "landing": "J&M Sportfishing",
     "boat": "Chubasco",
@@ -483,11 +513,31 @@
     "trip_date": "2026-07-26",
     "region": "Orange County",
     "landing": "Dana Wharf Sportfishing",
+    "boat": "Clemente",
+    "trip_type": "Full Day",
+    "anglers": 24,
+    "fish_counts": "1 Bonito, 22 Calico Bass, 130 Calico Bass Released, 1 Yellowtail",
+    "total_fish": 154
+  },
+  {
+    "trip_date": "2026-07-26",
+    "region": "Orange County",
+    "landing": "Dana Wharf Sportfishing",
     "boat": "Dana Pride",
     "trip_type": "3/4 Day",
     "anglers": 34,
     "fish_counts": "17 Calico Bass, 50 Calico Bass Released, 19 Sand Bass, 8 Whitefish, 1 Yellowtail",
     "total_fish": 95
+  },
+  {
+    "trip_date": "2026-07-26",
+    "region": "Orange County",
+    "landing": "Dana Wharf Sportfishing",
+    "boat": "Fury",
+    "trip_type": "Overnight",
+    "anglers": 20,
+    "fish_counts": "1 Barracuda, 8 Bonito, 88 Calico Bass, 110 Calico Bass Released, 1 Halibut, 4 Rockfish, 1 Sculpin, 11 Sheephead, 69 Whitefish, 13 Yellowtail",
+    "total_fish": 306
   },
   {
     "trip_date": "2026-07-26",
