@@ -324,18 +324,6 @@
     "top_species_3": "Calico Bass"
   },
   {
-    "boat": "Amigo",
-    "landing": "22nd Street Landing",
-    "region": "Los Angeles County",
-    "trips": 29,
-    "anglers": 418,
-    "fish": 3181,
-    "fpa": 7.61,
-    "top_species_1": "Yellowtail",
-    "top_species_2": "Calico Bass",
-    "top_species_3": "Bonito"
-  },
-  {
     "boat": "MarDiosa",
     "landing": "Long Beach Sportfishing",
     "region": "Los Angeles County",
@@ -346,6 +334,18 @@
     "top_species_1": "Whitefish",
     "top_species_2": "Calico Bass",
     "top_species_3": "Sand Bass"
+  },
+  {
+    "boat": "Amigo",
+    "landing": "22nd Street Landing",
+    "region": "Los Angeles County",
+    "trips": 30,
+    "anglers": 432,
+    "fish": 3214,
+    "fpa": 7.44,
+    "top_species_1": "Yellowtail",
+    "top_species_2": "Calico Bass",
+    "top_species_3": "Bonito"
   },
   {
     "boat": "City of Long Beach",
@@ -363,10 +363,10 @@
     "boat": "Toronado",
     "landing": "Pierpoint Landing",
     "region": "Los Angeles County",
-    "trips": 34,
-    "anglers": 860,
-    "fish": 5662,
-    "fpa": 6.58,
+    "trips": 35,
+    "anglers": 891,
+    "fish": 5780,
+    "fpa": 6.49,
     "top_species_1": "Whitefish",
     "top_species_2": "Calico Bass",
     "top_species_3": "Rockfish"
@@ -1440,18 +1440,6 @@
     "top_species_3": "Calico Bass"
   },
   {
-    "boat": "Nautilus",
-    "landing": "H&M Landing",
-    "region": "San Diego County",
-    "trips": 20,
-    "anglers": 105,
-    "fish": 418,
-    "fpa": 3.98,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Calico Bass Released",
-    "top_species_3": "Red Rockfish"
-  },
-  {
     "boat": "Tradition",
     "landing": "Fisherman's Landing",
     "region": "San Diego County",
@@ -1462,6 +1450,18 @@
     "top_species_1": "Calico Bass",
     "top_species_2": "Yellowtail",
     "top_species_3": "Rockfish"
+  },
+  {
+    "boat": "Nautilus",
+    "landing": "H&M Landing",
+    "region": "San Diego County",
+    "trips": 22,
+    "anglers": 112,
+    "fish": 425,
+    "fpa": 3.79,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Calico Bass Released",
+    "top_species_3": "Red Rockfish"
   },
   {
     "boat": "Point Loma",
@@ -1779,10 +1779,10 @@
     "boat": "Ocean Odyssey",
     "landing": "H&M Landing",
     "region": "San Diego County",
-    "trips": 6,
-    "anglers": 153,
-    "fish": 200,
-    "fpa": 1.31,
+    "trips": 7,
+    "anglers": 182,
+    "fish": 217,
+    "fpa": 1.19,
     "top_species_1": "Bluefin Tuna",
     "top_species_2": "Yellowtail",
     "top_species_3": "Yellowfin Tuna"
@@ -1971,10 +1971,10 @@
     "boat": "Endeavor (Ventura)",
     "landing": "Ventura Harbor Sportfishing",
     "region": "SoCal",
-    "trips": 45,
-    "anglers": 756,
-    "fish": 14243,
-    "fpa": 18.84,
+    "trips": 46,
+    "anglers": 774,
+    "fish": 14673,
+    "fpa": 18.96,
     "top_species_1": "Rockfish",
     "top_species_2": "Whitefish",
     "top_species_3": "Sheephead"
