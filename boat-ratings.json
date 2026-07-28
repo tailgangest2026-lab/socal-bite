@@ -639,6 +639,17 @@
   },
   {
     "rank": 1,
+    "region": "Monterey County",
+    "trip_type": "Full Day",
+    "boat": "Kahuna",
+    "landing": "J&M Sportfishing",
+    "trips": 5,
+    "anglers": 75,
+    "fish": 762,
+    "fpa": 10.16
+  },
+  {
+    "rank": 1,
     "region": "NorCal",
     "trip_type": "1/2 Day AM",
     "boat": "Salty Lady",
@@ -883,23 +894,23 @@
     "rank": 2,
     "region": "Orange County",
     "trip_type": "1/2 Day AM",
-    "boat": "Western Pride",
-    "landing": "Davey's Locker",
-    "trips": 78,
-    "anglers": 2862,
-    "fish": 12983,
-    "fpa": 4.54
-  },
-  {
-    "rank": 3,
-    "region": "Orange County",
-    "trip_type": "1/2 Day AM",
     "boat": "Clemente",
     "landing": "Dana Wharf Sportfishing",
     "trips": 20,
     "anglers": 596,
     "fish": 2688,
     "fpa": 4.51
+  },
+  {
+    "rank": 3,
+    "region": "Orange County",
+    "trip_type": "1/2 Day AM",
+    "boat": "Western Pride",
+    "landing": "Davey's Locker",
+    "trips": 79,
+    "anglers": 2905,
+    "fish": 13087,
+    "fpa": 4.5
   },
   {
     "rank": 4,
@@ -984,9 +995,9 @@
     "trip_type": "1/2 Day PM",
     "boat": "Western Pride",
     "landing": "Davey's Locker",
-    "trips": 73,
-    "anglers": 2813,
-    "fish": 8660,
+    "trips": 74,
+    "anglers": 2863,
+    "fish": 8820,
     "fpa": 3.08
   },
   {
@@ -1081,6 +1092,17 @@
     "rank": 4,
     "region": "Orange County",
     "trip_type": "3/4 Day",
+    "boat": "Freelance",
+    "landing": "Davey's Locker",
+    "trips": 52,
+    "anglers": 2626,
+    "fish": 9220,
+    "fpa": 3.51
+  },
+  {
+    "rank": 5,
+    "region": "Orange County",
+    "trip_type": "3/4 Day",
     "boat": "Dana Pride",
     "landing": "Dana Wharf Sportfishing",
     "trips": 21,
@@ -1089,26 +1111,15 @@
     "fpa": 3.49
   },
   {
-    "rank": 5,
-    "region": "Orange County",
-    "trip_type": "3/4 Day",
-    "boat": "Freelance",
-    "landing": "Davey's Locker",
-    "trips": 51,
-    "anglers": 2571,
-    "fish": 8628,
-    "fpa": 3.36
-  },
-  {
     "rank": 6,
     "region": "Orange County",
     "trip_type": "3/4 Day",
     "boat": "Aggressor",
     "landing": "Newport Landing",
-    "trips": 19,
-    "anglers": 364,
-    "fish": 1220,
-    "fpa": 3.35
+    "trips": 20,
+    "anglers": 396,
+    "fish": 1332,
+    "fpa": 3.36
   },
   {
     "rank": 7,
@@ -1116,10 +1127,10 @@
     "trip_type": "3/4 Day",
     "boat": "Patriot (Newport)",
     "landing": "Newport Landing",
-    "trips": 30,
-    "anglers": 1025,
-    "fish": 3288,
-    "fpa": 3.21
+    "trips": 31,
+    "anglers": 1071,
+    "fish": 3478,
+    "fpa": 3.25
   },
   {
     "rank": 1,
@@ -1171,10 +1182,10 @@
     "trip_type": "Overnight",
     "boat": "Thunderbird",
     "landing": "Newport Landing",
-    "trips": 37,
-    "anglers": 1101,
-    "fish": 6691,
-    "fpa": 6.08
+    "trips": 38,
+    "anglers": 1131,
+    "fish": 6906,
+    "fpa": 6.11
   },
   {
     "rank": 1,
@@ -1270,10 +1281,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Dolphin",
     "landing": "Fisherman's Landing",
-    "trips": 30,
-    "anglers": 1178,
-    "fish": 4730,
-    "fpa": 4.02
+    "trips": 31,
+    "anglers": 1211,
+    "fish": 4817,
+    "fpa": 3.98
   },
   {
     "rank": 6,
@@ -1314,10 +1325,10 @@
     "trip_type": "1/2 Day PM",
     "boat": "Dolphin",
     "landing": "Fisherman's Landing",
-    "trips": 30,
-    "anglers": 1051,
-    "fish": 5263,
-    "fpa": 5.01
+    "trips": 31,
+    "anglers": 1086,
+    "fish": 5340,
+    "fpa": 4.92
   },
   {
     "rank": 2,
@@ -1347,10 +1358,10 @@
     "trip_type": "1/2 Day PM",
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
-    "trips": 29,
-    "anglers": 1447,
-    "fish": 4956,
-    "fpa": 3.43
+    "trips": 30,
+    "anglers": 1476,
+    "fish": 5018,
+    "fpa": 3.4
   },
   {
     "rank": 1,
@@ -1930,10 +1941,10 @@
     "trip_type": "Full Day",
     "boat": "Aloha Spirit",
     "landing": "Channel Islands Sportfishing",
-    "trips": 57,
-    "anglers": 1504,
-    "fish": 11895,
-    "fpa": 7.91
+    "trips": 58,
+    "anglers": 1524,
+    "fish": 12034,
+    "fpa": 7.9
   },
   {
     "rank": 4,
