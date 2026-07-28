@@ -243,11 +243,31 @@
     "trip_date": "2026-07-27",
     "region": "Los Angeles County",
     "landing": "Marina Del Rey Sportfishing",
+    "boat": "New Del Mar",
+    "trip_type": "1/2 Day AM",
+    "anglers": 69,
+    "fish_counts": "12 Barracuda, 135 Rockfish, 15 Sculpin, 4 Sheephead, 165 Whitefish, 15 Yellowtail",
+    "total_fish": 346
+  },
+  {
+    "trip_date": "2026-07-27",
+    "region": "Los Angeles County",
+    "landing": "Marina Del Rey Sportfishing",
     "boat": "Spitfire",
     "trip_type": "3/4 Day",
     "anglers": 53,
     "fish_counts": "15 Barracuda, 10 Bonito, 215 Calico Bass, 12 Sheephead, 35 Whitefish, 5 Yellowtail",
     "total_fish": 292
+  },
+  {
+    "trip_date": "2026-07-27",
+    "region": "Los Angeles County",
+    "landing": "Marina Del Rey Sportfishing",
+    "boat": "Spitfire",
+    "trip_type": "3/4 Day",
+    "anglers": 14,
+    "fish_counts": "5 Bonito, 35 Calico Bass, 8 Sheephead, 12 Whitefish, 5 Yellowtail",
+    "total_fish": 65
   },
   {
     "trip_date": "2026-07-27",
@@ -368,6 +388,16 @@
     "anglers": 5,
     "fish_counts": "50 Rockfish",
     "total_fish": 50
+  },
+  {
+    "trip_date": "2026-07-27",
+    "region": "NorCal",
+    "landing": "Reel Steel Sportfishing",
+    "boat": "Reel Steel",
+    "trip_type": "Full Day",
+    "anglers": 4,
+    "fish_counts": "",
+    "total_fish": 0
   },
   {
     "trip_date": "2026-07-27",
@@ -553,11 +583,41 @@
     "trip_date": "2026-07-27",
     "region": "Orange County",
     "landing": "Newport Landing",
+    "boat": "Aggressor",
+    "trip_type": "Overnight",
+    "anglers": 15,
+    "fish_counts": "20 Bonito, 35 Calico Bass, 4 Lingcod, 17 Rockfish, 15 Whitefish, 8 Yellowtail",
+    "total_fish": 99
+  },
+  {
+    "trip_date": "2026-07-27",
+    "region": "Orange County",
+    "landing": "Newport Landing",
+    "boat": "Patriot (Newport)",
+    "trip_type": "3/4 Day",
+    "anglers": 26,
+    "fish_counts": "181 Barracuda, 7 Bonito, 9 Calico Bass, 3 Rockfish, 4 Sculpin",
+    "total_fish": 204
+  },
+  {
+    "trip_date": "2026-07-27",
+    "region": "Orange County",
+    "landing": "Newport Landing",
     "boat": "Thunderbird",
     "trip_type": "Overnight",
     "anglers": 30,
     "fish_counts": "13 Bonito, 115 Whitefish, 27 Yellowtail",
     "total_fish": 155
+  },
+  {
+    "trip_date": "2026-07-27",
+    "region": "Orange County",
+    "landing": "Newport Landing",
+    "boat": "Thunderbird",
+    "trip_type": "Overnight",
+    "anglers": 29,
+    "fish_counts": "7 Bonito, 31 Calico Bass, 17 Rockfish, 54 Whitefish, 29 Yellowtail",
+    "total_fish": 138
   },
   {
     "trip_date": "2026-07-27",
