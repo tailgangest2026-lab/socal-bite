@@ -1,12 +1,32 @@
 [
   {
     "trip_date": "2026-07-28",
+    "region": "Alameda County",
+    "landing": "Fish Emeryville",
+    "boat": "Sea Wolf",
+    "trip_type": "Full Day",
+    "anglers": 10,
+    "fish_counts": "2 Lingcod, 100 Rockfish",
+    "total_fish": 102
+  },
+  {
+    "trip_date": "2026-07-28",
     "region": "Central California",
     "landing": "Morro Bay Landing",
     "boat": "Endeavor (MB)",
     "trip_type": "1/2 Day AM",
     "anglers": 18,
     "fish_counts": "1 Red Rockfish, 125 Rockfish",
+    "total_fish": 126
+  },
+  {
+    "trip_date": "2026-07-28",
+    "region": "Central California",
+    "landing": "Morro Bay Landing",
+    "boat": "Endeavor (MB)",
+    "trip_type": "3/4 Day",
+    "anglers": 13,
+    "fish_counts": "9 Lingcod, 2 Red Rockfish, 115 Rockfish",
     "total_fish": 126
   },
   {
@@ -58,6 +78,16 @@
     "anglers": 37,
     "fish_counts": "187 Barracuda, 18 Bonito, 15 Calico Bass, 70 Sand Bass, 1 Yellowtail",
     "total_fish": 291
+  },
+  {
+    "trip_date": "2026-07-28",
+    "region": "Los Angeles County",
+    "landing": "22nd Street Landing",
+    "boat": "Pride",
+    "trip_type": "2 Day",
+    "anglers": 15,
+    "fish_counts": "11 Bonito, 37 Calico Bass, 105 Calico Bass Released, 12 Sheephead, 13 Whitefish, 58 Yellowtail",
+    "total_fish": 236
   },
   {
     "trip_date": "2026-07-28",
@@ -218,6 +248,56 @@
     "anglers": 29,
     "fish_counts": "7 Bonito, 31 Calico Bass, 17 Rockfish, 54 Whitefish, 29 Yellowtail",
     "total_fish": 138
+  },
+  {
+    "trip_date": "2026-07-28",
+    "region": "San Diego County",
+    "landing": "H&M Landing",
+    "boat": "Horizon",
+    "trip_type": "2 Day",
+    "anglers": 25,
+    "fish_counts": "134 Yellowfin Tuna, 130 Yellowtail",
+    "total_fish": 264
+  },
+  {
+    "trip_date": "2026-07-28",
+    "region": "San Diego County",
+    "landing": "H&M Landing",
+    "boat": "Premier",
+    "trip_type": "1/2 Day AM",
+    "anglers": 24,
+    "fish_counts": "21 Calico Bass, 58 Calico Bass Released, 20 Rockfish, 1 Sculpin, 3 Sheephead",
+    "total_fish": 103
+  },
+  {
+    "trip_date": "2026-07-28",
+    "region": "San Diego County",
+    "landing": "H&M Landing",
+    "boat": "Producer",
+    "trip_type": "Overnight",
+    "anglers": 27,
+    "fish_counts": "10 Bonito, 20 Yellowfin Tuna, 2 Yellowtail",
+    "total_fish": 32
+  },
+  {
+    "trip_date": "2026-07-28",
+    "region": "San Diego County",
+    "landing": "H&M Landing",
+    "boat": "Top Gun 80",
+    "trip_type": "2 Day",
+    "anglers": 25,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-07-28",
+    "region": "San Diego County",
+    "landing": "Oceanside Sea Center",
+    "boat": "Chubasco II",
+    "trip_type": "3/4 Day",
+    "anglers": 15,
+    "fish_counts": "64 Bonito, 3 Calico Bass, 30 Calico Bass Released, 1 Sand Bass",
+    "total_fish": 98
   },
   {
     "trip_date": "2026-07-28",
