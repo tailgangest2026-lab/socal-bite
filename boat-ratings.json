@@ -192,10 +192,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Endeavor (MB)",
     "landing": "Morro Bay Landing",
-    "trips": 21,
-    "anglers": 480,
-    "fish": 3514,
-    "fpa": 7.32
+    "trips": 22,
+    "anglers": 512,
+    "fish": 3796,
+    "fpa": 7.41
   },
   {
     "rank": 3,
@@ -1204,10 +1204,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Pronto",
     "landing": "Oceanside Sea Center",
-    "trips": 6,
-    "anglers": 49,
-    "fish": 427,
-    "fpa": 8.71
+    "trips": 7,
+    "anglers": 57,
+    "fish": 476,
+    "fpa": 8.35
   },
   {
     "rank": 3,
@@ -1226,10 +1226,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Premier",
     "landing": "H&M Landing",
-    "trips": 29,
-    "anglers": 1041,
-    "fish": 4475,
-    "fpa": 4.3
+    "trips": 30,
+    "anglers": 1067,
+    "fish": 4639,
+    "fpa": 4.35
   },
   {
     "rank": 5,
@@ -1246,23 +1246,23 @@
     "rank": 6,
     "region": "San Diego County",
     "trip_type": "1/2 Day AM",
-    "boat": "Daily Double",
-    "landing": "Point Loma Sportfishing",
-    "trips": 27,
-    "anglers": 670,
-    "fish": 2060,
-    "fpa": 3.07
+    "boat": "New Seaforth",
+    "landing": "Seaforth Sportfishing",
+    "trips": 29,
+    "anglers": 1410,
+    "fish": 4255,
+    "fpa": 3.02
   },
   {
     "rank": 7,
     "region": "San Diego County",
     "trip_type": "1/2 Day AM",
-    "boat": "New Seaforth",
-    "landing": "Seaforth Sportfishing",
+    "boat": "Daily Double",
+    "landing": "Point Loma Sportfishing",
     "trips": 28,
-    "anglers": 1358,
-    "fish": 4128,
-    "fpa": 3.04
+    "anglers": 699,
+    "fish": 2091,
+    "fpa": 2.99
   },
   {
     "rank": 8,
@@ -1325,10 +1325,10 @@
     "trip_type": "1/2 Day Twilight",
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
-    "trips": 29,
-    "anglers": 1126,
-    "fish": 4843,
-    "fpa": 4.3
+    "trips": 30,
+    "anglers": 1162,
+    "fish": 4918,
+    "fpa": 4.23
   },
   {
     "rank": 2,
@@ -1356,6 +1356,17 @@
     "rank": 2,
     "region": "San Diego County",
     "trip_type": "2 Day",
+    "boat": "Pacific Voyager",
+    "landing": "Seaforth Sportfishing",
+    "trips": 5,
+    "anglers": 83,
+    "fish": 395,
+    "fpa": 4.76
+  },
+  {
+    "rank": 3,
+    "region": "San Diego County",
+    "trip_type": "2 Day",
     "boat": "Tomahawk",
     "landing": "Fisherman's Landing",
     "trips": 5,
@@ -1364,7 +1375,7 @@
     "fpa": 1.54
   },
   {
-    "rank": 3,
+    "rank": 4,
     "region": "San Diego County",
     "trip_type": "2 Day",
     "boat": "Pacific Queen",
@@ -1375,7 +1386,7 @@
     "fpa": 1.36
   },
   {
-    "rank": 4,
+    "rank": 5,
     "region": "San Diego County",
     "trip_type": "2 Day",
     "boat": "Constitution",
@@ -1398,6 +1409,17 @@
   },
   {
     "rank": 2,
+    "region": "San Diego County",
+    "trip_type": "3 Day",
+    "boat": "Spirit of Adventure",
+    "landing": "H&M Landing",
+    "trips": 5,
+    "anglers": 121,
+    "fish": 548,
+    "fpa": 4.53
+  },
+  {
+    "rank": 3,
     "region": "San Diego County",
     "trip_type": "3 Day",
     "boat": "Legend",
@@ -1644,10 +1666,10 @@
     "trip_type": "Full Day",
     "boat": "Riptide",
     "landing": "Riptide Sportfishing",
-    "trips": 10,
-    "anglers": 88,
-    "fish": 488,
-    "fpa": 5.55
+    "trips": 11,
+    "anglers": 104,
+    "fish": 648,
+    "fpa": 6.23
   },
   {
     "rank": 1,
@@ -1842,10 +1864,10 @@
     "trip_type": "3/4 Day",
     "boat": "Gentleman",
     "landing": "Channel Islands Sportfishing",
-    "trips": 46,
-    "anglers": 1414,
-    "fish": 9027,
-    "fpa": 6.38
+    "trips": 47,
+    "anglers": 1417,
+    "fish": 9065,
+    "fpa": 6.4
   },
   {
     "rank": 1,
@@ -1930,9 +1952,9 @@
     "trip_type": "Overnight",
     "boat": "Mirage",
     "landing": "Channel Islands Sportfishing",
-    "trips": 33,
-    "anglers": 571,
-    "fish": 6870,
-    "fpa": 12.03
+    "trips": 34,
+    "anglers": 587,
+    "fish": 6954,
+    "fpa": 11.85
   }
 ]
