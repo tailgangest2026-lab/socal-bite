@@ -113,6 +113,16 @@
     "trip_date": "2026-07-28",
     "region": "Los Angeles County",
     "landing": "22nd Street Landing",
+    "boat": "Monte Carlo",
+    "trip_type": "1/2 Day AM",
+    "anglers": 56,
+    "fish_counts": "219 Barracuda, 4 Bonito, 3 Sand Bass, 1 Yellowtail",
+    "total_fish": 227
+  },
+  {
+    "trip_date": "2026-07-28",
+    "region": "Los Angeles County",
+    "landing": "22nd Street Landing",
     "boat": "Native Sun",
     "trip_type": "3/4 Day",
     "anglers": 37,
@@ -178,6 +188,26 @@
     "anglers": 10,
     "fish_counts": "3 Bonito, 50 Calico Bass, 29 Calico Bass Released",
     "total_fish": 82
+  },
+  {
+    "trip_date": "2026-07-28",
+    "region": "Los Angeles County",
+    "landing": "LA Waterfront Cruises and Sportfishing",
+    "boat": "Sport King",
+    "trip_type": "3/4 Day",
+    "anglers": 20,
+    "fish_counts": "20 Calico Bass, 70 Calico Bass Released",
+    "total_fish": 90
+  },
+  {
+    "trip_date": "2026-07-28",
+    "region": "Los Angeles County",
+    "landing": "LA Waterfront Cruises and Sportfishing",
+    "boat": "Triton",
+    "trip_type": "3/4 Day",
+    "anglers": 16,
+    "fish_counts": "1 Yellowtail",
+    "total_fish": 1
   },
   {
     "trip_date": "2026-07-28",
@@ -303,6 +333,16 @@
     "trip_date": "2026-07-28",
     "region": "Orange County",
     "landing": "Davey's Locker",
+    "boat": "Freelance",
+    "trip_type": "3/4 Day",
+    "anglers": 70,
+    "fish_counts": "278 Barracuda, 3 Bonito, 2 Calico Bass, 1 Sand Bass, 47 Sculpin, 1 Yellowtail",
+    "total_fish": 332
+  },
+  {
+    "trip_date": "2026-07-28",
+    "region": "Orange County",
+    "landing": "Davey's Locker",
     "boat": "Western Pride",
     "trip_type": "1/2 Day AM",
     "anglers": 43,
@@ -328,6 +368,16 @@
     "anglers": 45,
     "fish_counts": "208 Barracuda, 21 Bonito, 5 Calico Bass, 5 Sand Bass",
     "total_fish": 239
+  },
+  {
+    "trip_date": "2026-07-28",
+    "region": "Orange County",
+    "landing": "Davey's Locker",
+    "boat": "Western Pride",
+    "trip_type": "1/2 Day PM",
+    "anglers": 49,
+    "fish_counts": "185 Barracuda, 4 Bonito, 12 Calico Bass, 12 Sand Bass, 1 Sheephead",
+    "total_fish": 214
   },
   {
     "trip_date": "2026-07-28",
@@ -358,6 +408,86 @@
     "anglers": 29,
     "fish_counts": "7 Bonito, 31 Calico Bass, 17 Rockfish, 54 Whitefish, 29 Yellowtail",
     "total_fish": 138
+  },
+  {
+    "trip_date": "2026-07-28",
+    "region": "San Diego County",
+    "landing": "Fisherman's Landing",
+    "boat": "Dolphin",
+    "trip_type": "1/2 Day AM",
+    "anglers": 19,
+    "fish_counts": "3 Bonito, 45 Calico Bass, 40 Rockfish, 10 Sheephead, 1 Yellowtail",
+    "total_fish": 99
+  },
+  {
+    "trip_date": "2026-07-28",
+    "region": "San Diego County",
+    "landing": "Fisherman's Landing",
+    "boat": "Dolphin",
+    "trip_type": "1/2 Day PM",
+    "anglers": 29,
+    "fish_counts": "4 Barracuda, 1 Bonito, 18 Calico Bass, 25 Rockfish, 4 Sand Bass, 6 Sheephead",
+    "total_fish": 58
+  },
+  {
+    "trip_date": "2026-07-28",
+    "region": "San Diego County",
+    "landing": "Fisherman's Landing",
+    "boat": "Fortune",
+    "trip_type": "2 Day",
+    "anglers": 9,
+    "fish_counts": "4 Bluefin Tuna, 1 Yellowfin Tuna",
+    "total_fish": 5
+  },
+  {
+    "trip_date": "2026-07-28",
+    "region": "San Diego County",
+    "landing": "Fisherman's Landing",
+    "boat": "Islander",
+    "trip_type": "2 Day",
+    "anglers": 28,
+    "fish_counts": "11 Bluefin Tuna, 4 Yellowfin Tuna, 2 Yellowtail",
+    "total_fish": 17
+  },
+  {
+    "trip_date": "2026-07-28",
+    "region": "San Diego County",
+    "landing": "Fisherman's Landing",
+    "boat": "Pacific Dawn",
+    "trip_type": "1.5 Day",
+    "anglers": 16,
+    "fish_counts": "4 Bluefin Tuna, 4 Yellowfin Tuna",
+    "total_fish": 8
+  },
+  {
+    "trip_date": "2026-07-28",
+    "region": "San Diego County",
+    "landing": "Fisherman's Landing",
+    "boat": "Pacific Queen",
+    "trip_type": "1.5 Day",
+    "anglers": 29,
+    "fish_counts": "33 Yellowfin Tuna, 25 Yellowtail",
+    "total_fish": 58
+  },
+  {
+    "trip_date": "2026-07-28",
+    "region": "San Diego County",
+    "landing": "Fisherman's Landing",
+    "boat": "Pegasus",
+    "trip_type": "2 Day",
+    "anglers": 19,
+    "fish_counts": "16 Bluefin Tuna, 2 Yellowfin Tuna, 1 Yellowtail",
+    "total_fish": 19
+  },
+  {
+    "trip_date": "2026-07-28",
+    "region": "San Diego County",
+    "landing": "Fisherman's Landing",
+    "boat": "Tomahawk",
+    "trip_type": "2 Day",
+    "anglers": 28,
+    "fish_counts": "2 Yellowfin Tuna, 21 Yellowtail",
+    "total_fish": 23
   },
   {
     "trip_date": "2026-07-28",
@@ -583,6 +713,26 @@
     "trip_date": "2026-07-28",
     "region": "Ventura County",
     "landing": "Channel Islands Sportfishing",
+    "boat": "Aloha Spirit",
+    "trip_type": "Full Day",
+    "anglers": 25,
+    "fish_counts": "64 Bonito, 38 Calico Bass, 7 Lingcod, 47 Rockfish, 6 Sculpin, 19 Whitefish, 3 Yellowtail",
+    "total_fish": 184
+  },
+  {
+    "trip_date": "2026-07-28",
+    "region": "Ventura County",
+    "landing": "Channel Islands Sportfishing",
+    "boat": "Cobra",
+    "trip_type": "Full Day",
+    "anglers": 11,
+    "fish_counts": "1 Lingcod, 41 Rockfish, 5 Sculpin, 110 Whitefish",
+    "total_fish": 157
+  },
+  {
+    "trip_date": "2026-07-28",
+    "region": "Ventura County",
+    "landing": "Channel Islands Sportfishing",
     "boat": "Gentleman",
     "trip_type": "3/4 Day",
     "anglers": 24,
@@ -658,6 +808,16 @@
     "anglers": 27,
     "fish_counts": "94 Calico Bass, 26 Rockfish, 14 Sculpin, 2 Sheephead, 151 Whitefish, 11 Yellowtail",
     "total_fish": 298
+  },
+  {
+    "trip_date": "2026-07-28",
+    "region": "Ventura County",
+    "landing": "Channel Islands Sportfishing",
+    "boat": "Speed Twin",
+    "trip_type": "1/2 Day AM",
+    "anglers": 35,
+    "fish_counts": "12 Calico Bass, 1 Lingcod, 31 Rockfish, 16 Sculpin, 2 Sheephead, 109 Whitefish",
+    "total_fish": 171
   },
   {
     "trip_date": "2026-07-28",
