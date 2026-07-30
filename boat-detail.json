@@ -1416,18 +1416,6 @@
     "top_species_3": "Sculpin"
   },
   {
-    "boat": "Reel Champion",
-    "landing": "H&M Landing",
-    "region": "San Diego County",
-    "trips": 2,
-    "anglers": 10,
-    "fish": 40,
-    "fpa": 4,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Red Rockfish",
-    "top_species_3": ""
-  },
-  {
     "boat": "Dolphin",
     "landing": "Fisherman's Landing",
     "region": "San Diego County",
@@ -1582,6 +1570,18 @@
     "top_species_1": "Yellowtail",
     "top_species_2": "Whitefish",
     "top_species_3": "Rockfish"
+  },
+  {
+    "boat": "Reel Champion",
+    "landing": "H&M Landing",
+    "region": "San Diego County",
+    "trips": 3,
+    "anglers": 14,
+    "fish": 40,
+    "fpa": 2.86,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Red Rockfish",
+    "top_species_3": ""
   },
   {
     "boat": "Poseidon",
@@ -2115,9 +2115,9 @@
     "boat": "Estella",
     "landing": "Channel Islands Sportfishing",
     "region": "Ventura County",
-    "trips": 48,
-    "anglers": 1024,
-    "fish": 13404,
+    "trips": 49,
+    "anglers": 1059,
+    "fish": 13862,
     "fpa": 13.09,
     "top_species_1": "Rockfish",
     "top_species_2": "Whitefish",
