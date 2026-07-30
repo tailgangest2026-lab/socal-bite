@@ -852,6 +852,36 @@
   {
     "trip_date": "2026-07-29",
     "region": "San Diego County",
+    "landing": "Fisherman's Landing",
+    "boat": "Constitution",
+    "trip_type": "3 Day",
+    "anglers": 21,
+    "fish_counts": "7 Yellowfin Tuna, 2 Yellowtail",
+    "total_fish": 9
+  },
+  {
+    "trip_date": "2026-07-29",
+    "region": "San Diego County",
+    "landing": "Fisherman's Landing",
+    "boat": "Dolphin",
+    "trip_type": "1/2 Day AM",
+    "anglers": 32,
+    "fish_counts": "1 Barracuda, 29 Bonito, 15 Calico Bass, 78 Rockfish, 10 Sheephead, 7 Whitefish, 1 Yellowtail",
+    "total_fish": 141
+  },
+  {
+    "trip_date": "2026-07-29",
+    "region": "San Diego County",
+    "landing": "Fisherman's Landing",
+    "boat": "Dolphin",
+    "trip_type": "1/2 Day PM",
+    "anglers": 16,
+    "fish_counts": "2 Barracuda, 17 Calico Bass, 50 Calico Bass Released, 28 Rockfish, 1 Sheephead",
+    "total_fish": 98
+  },
+  {
+    "trip_date": "2026-07-29",
+    "region": "San Diego County",
     "landing": "H&M Landing",
     "boat": "Grande",
     "trip_type": "Full Day Offshore",
