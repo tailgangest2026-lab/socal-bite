@@ -519,13 +519,13 @@
     "boat": "Pescador",
     "landing": "Redondo Beach Sportfishing",
     "region": "Los Angeles County",
-    "trips": 35,
-    "anglers": 596,
-    "fish": 1661,
-    "fpa": 2.79,
+    "trips": 36,
+    "anglers": 609,
+    "fish": 1828,
+    "fpa": 3,
     "top_species_1": "Calico Bass",
     "top_species_2": "Bonito",
-    "top_species_3": "Yellowtail"
+    "top_species_3": "Barracuda"
   },
   {
     "boat": "Navegante",
@@ -1215,13 +1215,13 @@
     "boat": "Chubasco II",
     "landing": "Oceanside Sea Center",
     "region": "San Diego County",
-    "trips": 71,
-    "anglers": 1456,
-    "fish": 10304,
-    "fpa": 7.08,
+    "trips": 72,
+    "anglers": 1476,
+    "fish": 10441,
+    "fpa": 7.07,
     "top_species_1": "Rockfish",
     "top_species_2": "Calico Bass Released",
-    "top_species_3": "Calico Bass"
+    "top_species_3": "Bonito"
   },
   {
     "boat": "Horizon",
@@ -1392,18 +1392,6 @@
     "top_species_3": "Calico Bass"
   },
   {
-    "boat": "Southern Cal",
-    "landing": "Oceanside Sea Center",
-    "region": "San Diego County",
-    "trips": 61,
-    "anglers": 1804,
-    "fish": 7285,
-    "fpa": 4.04,
-    "top_species_1": "Calico Bass Released",
-    "top_species_2": "Rockfish",
-    "top_species_3": "Sculpin"
-  },
-  {
     "boat": "Sea Adventure 80",
     "landing": "H&M Landing",
     "region": "San Diego County",
@@ -1414,6 +1402,18 @@
     "top_species_1": "Rockfish",
     "top_species_2": "Red Rockfish",
     "top_species_3": "Yellowtail"
+  },
+  {
+    "boat": "Southern Cal",
+    "landing": "Oceanside Sea Center",
+    "region": "San Diego County",
+    "trips": 62,
+    "anglers": 1846,
+    "fish": 7400,
+    "fpa": 4.01,
+    "top_species_1": "Calico Bass Released",
+    "top_species_2": "Rockfish",
+    "top_species_3": "Sculpin"
   },
   {
     "boat": "Reel Champion",
@@ -1560,6 +1560,18 @@
     "top_species_3": "Rockfish"
   },
   {
+    "boat": "Effishency",
+    "landing": "Oceanside Sea Center",
+    "region": "San Diego County",
+    "trips": 18,
+    "anglers": 80,
+    "fish": 256,
+    "fpa": 3.2,
+    "top_species_1": "Calico Bass Released",
+    "top_species_2": "Calico Bass",
+    "top_species_3": "Yellowtail"
+  },
+  {
     "boat": "Mission Belle",
     "landing": "Point Loma Sportfishing",
     "region": "San Diego County",
@@ -1569,18 +1581,6 @@
     "fpa": 2.9,
     "top_species_1": "Yellowtail",
     "top_species_2": "Whitefish",
-    "top_species_3": "Rockfish"
-  },
-  {
-    "boat": "Grande",
-    "landing": "H&M Landing",
-    "region": "San Diego County",
-    "trips": 64,
-    "anglers": 1959,
-    "fish": 5509,
-    "fpa": 2.81,
-    "top_species_1": "Whitefish",
-    "top_species_2": "Yellowtail",
     "top_species_3": "Rockfish"
   },
   {
@@ -1596,16 +1596,16 @@
     "top_species_3": "Yellowtail"
   },
   {
-    "boat": "Effishency",
-    "landing": "Oceanside Sea Center",
+    "boat": "Grande",
+    "landing": "H&M Landing",
     "region": "San Diego County",
-    "trips": 17,
-    "anglers": 75,
-    "fish": 209,
-    "fpa": 2.79,
-    "top_species_1": "Calico Bass",
-    "top_species_2": "Calico Bass Released",
-    "top_species_3": "Yellowtail"
+    "trips": 65,
+    "anglers": 1999,
+    "fish": 5558,
+    "fpa": 2.78,
+    "top_species_1": "Whitefish",
+    "top_species_2": "Yellowtail",
+    "top_species_3": "Rockfish"
   },
   {
     "boat": "El Gato Dos",
@@ -1659,10 +1659,10 @@
     "boat": "Vendetta 2",
     "landing": "H&M Landing",
     "region": "San Diego County",
-    "trips": 12,
-    "anglers": 232,
-    "fish": 524,
-    "fpa": 2.26,
+    "trips": 13,
+    "anglers": 244,
+    "fish": 546,
+    "fpa": 2.24,
     "top_species_1": "Yellowtail",
     "top_species_2": "Barracuda",
     "top_species_3": "Bonito"
@@ -1767,10 +1767,10 @@
     "boat": "Tribute",
     "landing": "Seaforth Sportfishing",
     "region": "San Diego County",
-    "trips": 30,
-    "anglers": 743,
-    "fish": 1148,
-    "fpa": 1.55,
+    "trips": 31,
+    "anglers": 775,
+    "fish": 1162,
+    "fpa": 1.5,
     "top_species_1": "Bluefin Tuna",
     "top_species_2": "Rockfish",
     "top_species_3": "Yellowtail"
@@ -1779,9 +1779,9 @@
     "boat": "Producer",
     "landing": "H&M Landing",
     "region": "San Diego County",
-    "trips": 41,
-    "anglers": 957,
-    "fish": 1320,
+    "trips": 42,
+    "anglers": 976,
+    "fish": 1351,
     "fpa": 1.38,
     "top_species_1": "Yellowtail",
     "top_species_2": "Bonito",
@@ -2163,10 +2163,10 @@
     "boat": "Island Fox",
     "landing": "Channel Islands Sportfishing",
     "region": "Ventura County",
-    "trips": 116,
-    "anglers": 2055,
-    "fish": 18580,
-    "fpa": 9.04,
+    "trips": 117,
+    "anglers": 2065,
+    "fish": 18640,
+    "fpa": 9.03,
     "top_species_1": "Whitefish",
     "top_species_2": "Calico Bass",
     "top_species_3": "Rockfish"
@@ -2187,10 +2187,10 @@
     "boat": "Aloha Spirit",
     "landing": "Channel Islands Sportfishing",
     "region": "Ventura County",
-    "trips": 129,
-    "anglers": 3210,
-    "fish": 25944,
-    "fpa": 8.08,
+    "trips": 130,
+    "anglers": 3240,
+    "fish": 26302,
+    "fpa": 8.12,
     "top_species_1": "Rockfish",
     "top_species_2": "Whitefish",
     "top_species_3": "Calico Bass"
