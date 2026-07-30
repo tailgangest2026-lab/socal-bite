@@ -489,10 +489,10 @@
     "trip_type": "Full Day",
     "boat": "Pescador",
     "landing": "Redondo Beach Sportfishing",
-    "trips": 16,
-    "anglers": 282,
-    "fish": 932,
-    "fpa": 3.3
+    "trips": 17,
+    "anglers": 295,
+    "fish": 1099,
+    "fpa": 3.73
   },
   {
     "rank": 3,
@@ -1540,15 +1540,26 @@
     "fpa": 1.97
   },
   {
+    "rank": 2,
+    "region": "San Diego County",
+    "trip_type": "Full Day Offshore",
+    "boat": "Grande",
+    "landing": "H&M Landing",
+    "trips": 5,
+    "anglers": 159,
+    "fish": 172,
+    "fpa": 1.08
+  },
+  {
     "rank": 1,
     "region": "San Diego County",
     "trip_type": "Overnight",
     "boat": "Producer",
     "landing": "H&M Landing",
-    "trips": 19,
-    "anglers": 507,
-    "fish": 404,
-    "fpa": 0.8
+    "trips": 20,
+    "anglers": 526,
+    "fish": 435,
+    "fpa": 0.83
   },
   {
     "rank": 2,
