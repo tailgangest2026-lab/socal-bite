@@ -82,10 +82,10 @@
     "trip_type": "Full Day",
     "boat": "Oakland Anglers II",
     "landing": "Fish Emeryville",
-    "trips": 24,
-    "anglers": 371,
-    "fish": 722,
-    "fpa": 1.95
+    "trips": 25,
+    "anglers": 397,
+    "fish": 984,
+    "fpa": 2.48
   },
   {
     "rank": 6,
@@ -1490,10 +1490,10 @@
     "trip_type": "Full Day",
     "boat": "Vendetta 2",
     "landing": "H&M Landing",
-    "trips": 5,
-    "anglers": 107,
-    "fish": 71,
-    "fpa": 0.66
+    "trips": 6,
+    "anglers": 127,
+    "fish": 170,
+    "fpa": 1.34
   },
   {
     "rank": 4,
@@ -1565,6 +1565,17 @@
     "rank": 1,
     "region": "San Diego County",
     "trip_type": "Overnight",
+    "boat": "Old Glory",
+    "landing": "H&M Landing",
+    "trips": 5,
+    "anglers": 115,
+    "fish": 193,
+    "fpa": 1.68
+  },
+  {
+    "rank": 2,
+    "region": "San Diego County",
+    "trip_type": "Overnight",
     "boat": "Producer",
     "landing": "H&M Landing",
     "trips": 22,
@@ -1573,7 +1584,7 @@
     "fpa": 0.93
   },
   {
-    "rank": 2,
+    "rank": 3,
     "region": "San Diego County",
     "trip_type": "Overnight",
     "boat": "Daiwa Pacific",
