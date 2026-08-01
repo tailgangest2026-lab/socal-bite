@@ -1347,10 +1347,10 @@
     "boat": "Liberty",
     "landing": "Fisherman's Landing",
     "region": "San Diego County",
-    "trips": 17,
-    "anglers": 359,
-    "fish": 1619,
-    "fpa": 4.51,
+    "trips": 18,
+    "anglers": 380,
+    "fish": 1684,
+    "fpa": 4.43,
     "top_species_1": "Rockfish",
     "top_species_2": "Whitefish",
     "top_species_3": "Bluefin Tuna"
@@ -1404,18 +1404,6 @@
     "top_species_3": "Yellowtail"
   },
   {
-    "boat": "Dolphin",
-    "landing": "Fisherman's Landing",
-    "region": "San Diego County",
-    "trips": 172,
-    "anglers": 6071,
-    "fish": 23863,
-    "fpa": 3.93,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Calico Bass Released",
-    "top_species_3": "Calico Bass"
-  },
-  {
     "boat": "Southern Cal",
     "landing": "Oceanside Sea Center",
     "region": "San Diego County",
@@ -1426,6 +1414,18 @@
     "top_species_1": "Calico Bass Released",
     "top_species_2": "Rockfish",
     "top_species_3": "Sculpin"
+  },
+  {
+    "boat": "Dolphin",
+    "landing": "Fisherman's Landing",
+    "region": "San Diego County",
+    "trips": 174,
+    "anglers": 6137,
+    "fish": 24094,
+    "fpa": 3.93,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Calico Bass Released",
+    "top_species_3": "Calico Bass"
   },
   {
     "boat": "Nautilus",
@@ -2187,9 +2187,9 @@
     "boat": "Aloha Spirit",
     "landing": "Channel Islands Sportfishing",
     "region": "Ventura County",
-    "trips": 133,
-    "anglers": 3592,
-    "fish": 26985,
+    "trips": 134,
+    "anglers": 3622,
+    "fish": 27216,
     "fpa": 7.51,
     "top_species_1": "Rockfish",
     "top_species_2": "Whitefish",

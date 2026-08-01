@@ -532,6 +532,36 @@
   {
     "trip_date": "2026-07-31",
     "region": "San Diego County",
+    "landing": "Fisherman's Landing",
+    "boat": "Dolphin",
+    "trip_type": "1/2 Day AM",
+    "anglers": 38,
+    "fish_counts": "46 Barracuda, 20 Barracuda Released, 31 Calico Bass, 31 Rockfish, 2 Sculpin, 12 Sheephead, 7 Whitefish, 1 Yellowtail",
+    "total_fish": 150
+  },
+  {
+    "trip_date": "2026-07-31",
+    "region": "San Diego County",
+    "landing": "Fisherman's Landing",
+    "boat": "Dolphin",
+    "trip_type": "1/2 Day PM",
+    "anglers": 28,
+    "fish_counts": "6 Barracuda, 48 Calico Bass, 23 Rockfish, 1 Sculpin, 3 Sheephead",
+    "total_fish": 81
+  },
+  {
+    "trip_date": "2026-07-31",
+    "region": "San Diego County",
+    "landing": "Fisherman's Landing",
+    "boat": "Liberty",
+    "trip_type": "2 Day",
+    "anglers": 21,
+    "fish_counts": "7 Bluefin Tuna, 50 Yellowfin Tuna, 8 Yellowtail",
+    "total_fish": 65
+  },
+  {
+    "trip_date": "2026-07-31",
+    "region": "San Diego County",
     "landing": "H&M Landing",
     "boat": "Daiwa Pacific",
     "trip_type": "Full Day",
@@ -886,6 +916,16 @@
     "boat": "Aloha Spirit",
     "trip_type": "Full Day",
     "anglers": 302,
+    "fish_counts": "3 Barracuda, 22 Bonito, 40 Calico Bass, 1 Lingcod, 105 Rockfish, 3 Sheephead, 52 Whitefish, 5 Yellowtail",
+    "total_fish": 231
+  },
+  {
+    "trip_date": "2026-07-31",
+    "region": "Ventura County",
+    "landing": "Channel Islands Sportfishing",
+    "boat": "Aloha Spirit",
+    "trip_type": "Full Day",
+    "anglers": 30,
     "fish_counts": "3 Barracuda, 22 Bonito, 40 Calico Bass, 1 Lingcod, 105 Rockfish, 3 Sheephead, 52 Whitefish, 5 Yellowtail",
     "total_fish": 231
   },
