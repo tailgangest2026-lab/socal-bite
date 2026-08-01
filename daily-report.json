@@ -13,6 +13,16 @@
     "trip_date": "2026-08-01",
     "region": "Alameda County",
     "landing": "Fish Emeryville",
+    "boat": "Here We Go",
+    "trip_type": "Full Day",
+    "anglers": 4,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-08-01",
+    "region": "Alameda County",
+    "landing": "Fish Emeryville",
     "boat": "KingFish",
     "trip_type": "Full Day",
     "anglers": 13,
@@ -413,6 +423,16 @@
     "trip_date": "2026-08-01",
     "region": "San Diego County",
     "landing": "H&M Landing",
+    "boat": "Old Glory",
+    "trip_type": "Overnight",
+    "anglers": 33,
+    "fish_counts": "123 Yellowfin Tuna",
+    "total_fish": 123
+  },
+  {
+    "trip_date": "2026-08-01",
+    "region": "San Diego County",
+    "landing": "H&M Landing",
     "boat": "Premier",
     "trip_type": "1/2 Day AM",
     "anglers": 55,
@@ -428,6 +448,16 @@
     "anglers": 29,
     "fish_counts": "66 Yellowfin Tuna",
     "total_fish": 66
+  },
+  {
+    "trip_date": "2026-08-01",
+    "region": "San Diego County",
+    "landing": "Oceanside Sea Center",
+    "boat": "Pronto",
+    "trip_type": "1/2 Day AM",
+    "anglers": 6,
+    "fish_counts": "15 Bonito, 30 Calico Bass, 25 Calico Bass Released",
+    "total_fish": 70
   },
   {
     "trip_date": "2026-08-01",
