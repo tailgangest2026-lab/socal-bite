@@ -1227,13 +1227,13 @@
     "boat": "Chubasco II",
     "landing": "Oceanside Sea Center",
     "region": "San Diego County",
-    "trips": 72,
-    "anglers": 1491,
-    "fish": 10401,
-    "fpa": 6.98,
+    "trips": 73,
+    "anglers": 1520,
+    "fish": 10478,
+    "fpa": 6.89,
     "top_species_1": "Rockfish",
     "top_species_2": "Calico Bass Released",
-    "top_species_3": "Bonito"
+    "top_species_3": "Calico Bass"
   },
   {
     "boat": "Horizon",
@@ -1404,18 +1404,6 @@
     "top_species_3": "Yellowtail"
   },
   {
-    "boat": "Southern Cal",
-    "landing": "Oceanside Sea Center",
-    "region": "San Diego County",
-    "trips": 63,
-    "anglers": 1886,
-    "fish": 7488,
-    "fpa": 3.97,
-    "top_species_1": "Calico Bass Released",
-    "top_species_2": "Rockfish",
-    "top_species_3": "Sculpin"
-  },
-  {
     "boat": "Dolphin",
     "landing": "Fisherman's Landing",
     "region": "San Diego County",
@@ -1426,6 +1414,18 @@
     "top_species_1": "Rockfish",
     "top_species_2": "Calico Bass Released",
     "top_species_3": "Calico Bass"
+  },
+  {
+    "boat": "Southern Cal",
+    "landing": "Oceanside Sea Center",
+    "region": "San Diego County",
+    "trips": 64,
+    "anglers": 1929,
+    "fish": 7578,
+    "fpa": 3.93,
+    "top_species_1": "Calico Bass Released",
+    "top_species_2": "Rockfish",
+    "top_species_3": "Sculpin"
   },
   {
     "boat": "Nautilus",
@@ -1728,18 +1728,6 @@
     "top_species_3": "Rockfish"
   },
   {
-    "boat": "Pacifica",
-    "landing": "Seaforth Sportfishing",
-    "region": "San Diego County",
-    "trips": 12,
-    "anglers": 277,
-    "fish": 539,
-    "fpa": 1.95,
-    "top_species_1": "Yellowtail",
-    "top_species_2": "Rockfish",
-    "top_species_3": "Calico Bass"
-  },
-  {
     "boat": "Aztec",
     "landing": "Seaforth Sportfishing",
     "region": "San Diego County",
@@ -1750,6 +1738,18 @@
     "top_species_1": "Bluefin Tuna",
     "top_species_2": "Yellowtail",
     "top_species_3": "Yellowfin Tuna"
+  },
+  {
+    "boat": "Pacifica",
+    "landing": "Seaforth Sportfishing",
+    "region": "San Diego County",
+    "trips": 13,
+    "anglers": 305,
+    "fish": 539,
+    "fpa": 1.77,
+    "top_species_1": "Yellowtail",
+    "top_species_2": "Rockfish",
+    "top_species_3": "Calico Bass"
   },
   {
     "boat": "Ocean Odyssey",
