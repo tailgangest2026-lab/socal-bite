@@ -1433,6 +1433,17 @@
     "rank": 1,
     "region": "San Diego County",
     "trip_type": "3/4 Day",
+    "boat": "Sea Star",
+    "landing": "Oceanside Sea Center",
+    "trips": 5,
+    "anglers": 76,
+    "fish": 806,
+    "fpa": 10.61
+  },
+  {
+    "rank": 2,
+    "region": "San Diego County",
+    "trip_type": "3/4 Day",
     "boat": "Malihini",
     "landing": "H&M Landing",
     "trips": 9,
@@ -1441,7 +1452,7 @@
     "fpa": 9.55
   },
   {
-    "rank": 2,
+    "rank": 3,
     "region": "San Diego County",
     "trip_type": "3/4 Day",
     "boat": "Chubasco II",
@@ -1452,7 +1463,7 @@
     "fpa": 8.14
   },
   {
-    "rank": 3,
+    "rank": 4,
     "region": "San Diego County",
     "trip_type": "3/4 Day",
     "boat": "Sea Watch",
@@ -1463,7 +1474,7 @@
     "fpa": 6.83
   },
   {
-    "rank": 4,
+    "rank": 5,
     "region": "San Diego County",
     "trip_type": "3/4 Day",
     "boat": "Blue Horizon",
@@ -1523,10 +1534,10 @@
     "trip_type": "Full Day Coronado Islands",
     "boat": "San Diego",
     "landing": "Seaforth Sportfishing",
-    "trips": 27,
-    "anglers": 819,
-    "fish": 3406,
-    "fpa": 4.16
+    "trips": 28,
+    "anglers": 837,
+    "fish": 3436,
+    "fpa": 4.11
   },
   {
     "rank": 2,
@@ -1776,10 +1787,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Island Spirit",
     "landing": "Ventura Harbor Sportfishing",
-    "trips": 14,
-    "anglers": 392,
-    "fish": 3112,
-    "fpa": 7.94
+    "trips": 15,
+    "anglers": 404,
+    "fish": 3225,
+    "fpa": 7.98
   },
   {
     "rank": 1,
@@ -1842,10 +1853,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Speed Twin",
     "landing": "Channel Islands Sportfishing",
-    "trips": 56,
-    "anglers": 1924,
-    "fish": 15086,
-    "fpa": 7.84
+    "trips": 57,
+    "anglers": 1954,
+    "fish": 15389,
+    "fpa": 7.88
   },
   {
     "rank": 1,
@@ -1897,10 +1908,10 @@
     "trip_type": "3/4 Day",
     "boat": "Island Fox",
     "landing": "Channel Islands Sportfishing",
-    "trips": 26,
-    "anglers": 478,
-    "fish": 3738,
-    "fpa": 7.82
+    "trips": 27,
+    "anglers": 486,
+    "fish": 3898,
+    "fpa": 8.02
   },
   {
     "rank": 3,
@@ -1908,10 +1919,10 @@
     "trip_type": "3/4 Day",
     "boat": "Gentleman",
     "landing": "Channel Islands Sportfishing",
-    "trips": 48,
-    "anglers": 1398,
-    "fish": 8756,
-    "fpa": 6.26
+    "trips": 49,
+    "anglers": 1445,
+    "fish": 9148,
+    "fpa": 6.33
   },
   {
     "rank": 1,
@@ -1941,10 +1952,10 @@
     "trip_type": "Full Day",
     "boat": "Graylight",
     "landing": "Channel Islands Sportfishing",
-    "trips": 56,
-    "anglers": 313,
-    "fish": 2470,
-    "fpa": 7.89
+    "trips": 57,
+    "anglers": 319,
+    "fish": 2541,
+    "fpa": 7.97
   },
   {
     "rank": 4,
@@ -1996,9 +2007,9 @@
     "trip_type": "Overnight",
     "boat": "Mirage",
     "landing": "Channel Islands Sportfishing",
-    "trips": 35,
-    "anglers": 612,
-    "fish": 6741,
-    "fpa": 11.01
+    "trips": 36,
+    "anglers": 624,
+    "fish": 6859,
+    "fpa": 10.99
   }
 ]
