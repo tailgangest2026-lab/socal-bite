@@ -753,10 +753,10 @@
     "trip_type": "Full Day",
     "boat": "Argo",
     "landing": "Argo Sportfishing",
-    "trips": 35,
-    "anglers": 178,
+    "trips": 36,
+    "anglers": 181,
     "fish": 150,
-    "fpa": 0.84
+    "fpa": 0.83
   },
   {
     "rank": 11,
@@ -863,10 +863,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Helena",
     "landing": "Dana Wharf Sportfishing",
-    "trips": 6,
-    "anglers": 108,
-    "fish": 820,
-    "fpa": 7.59
+    "trips": 7,
+    "anglers": 129,
+    "fish": 944,
+    "fpa": 7.32
   },
   {
     "rank": 2,
@@ -907,10 +907,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Western Pride",
     "landing": "Davey's Locker",
-    "trips": 76,
-    "anglers": 2901,
-    "fish": 12128,
-    "fpa": 4.18
+    "trips": 77,
+    "anglers": 2951,
+    "fish": 12253,
+    "fpa": 4.15
   },
   {
     "rank": 6,
@@ -918,10 +918,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Dana Pride",
     "landing": "Dana Wharf Sportfishing",
-    "trips": 8,
-    "anglers": 282,
-    "fish": 770,
-    "fpa": 2.73
+    "trips": 9,
+    "anglers": 354,
+    "fish": 933,
+    "fpa": 2.64
   },
   {
     "rank": 1,
@@ -973,10 +973,21 @@
     "trip_type": "1/2 Day PM",
     "boat": "Western Pride",
     "landing": "Davey's Locker",
-    "trips": 71,
-    "anglers": 2863,
-    "fish": 8171,
-    "fpa": 2.85
+    "trips": 72,
+    "anglers": 2912,
+    "fish": 8273,
+    "fpa": 2.84
+  },
+  {
+    "rank": 6,
+    "region": "Orange County",
+    "trip_type": "1/2 Day PM",
+    "boat": "Dana Pride",
+    "landing": "Dana Wharf Sportfishing",
+    "trips": 5,
+    "anglers": 308,
+    "fish": 702,
+    "fpa": 2.28
   },
   {
     "rank": 1,
@@ -1002,6 +1013,17 @@
   },
   {
     "rank": 1,
+    "region": "Orange County",
+    "trip_type": "2 Day",
+    "boat": "Fury",
+    "landing": "Dana Wharf Sportfishing",
+    "trips": 5,
+    "anglers": 91,
+    "fish": 1411,
+    "fpa": 15.51
+  },
+  {
+    "rank": 2,
     "region": "Orange County",
     "trip_type": "2 Day",
     "boat": "Thunderbird",
@@ -1039,10 +1061,10 @@
     "trip_type": "3/4 Day",
     "boat": "Sum Fun",
     "landing": "Dana Wharf Sportfishing",
-    "trips": 25,
-    "anglers": 791,
-    "fish": 3445,
-    "fpa": 4.36
+    "trips": 26,
+    "anglers": 827,
+    "fish": 3646,
+    "fpa": 4.41
   },
   {
     "rank": 4,
@@ -1059,23 +1081,23 @@
     "rank": 5,
     "region": "Orange County",
     "trip_type": "3/4 Day",
+    "boat": "Patriot (Newport)",
+    "landing": "Newport Landing",
+    "trips": 33,
+    "anglers": 1151,
+    "fish": 4227,
+    "fpa": 3.67
+  },
+  {
+    "rank": 6,
+    "region": "Orange County",
+    "trip_type": "3/4 Day",
     "boat": "Dana Pride",
     "landing": "Dana Wharf Sportfishing",
     "trips": 17,
     "anglers": 760,
     "fish": 2772,
     "fpa": 3.65
-  },
-  {
-    "rank": 6,
-    "region": "Orange County",
-    "trip_type": "3/4 Day",
-    "boat": "Patriot (Newport)",
-    "landing": "Newport Landing",
-    "trips": 32,
-    "anglers": 1112,
-    "fish": 4017,
-    "fpa": 3.61
   },
   {
     "rank": 7,
@@ -1094,13 +1116,24 @@
     "trip_type": "Full Day",
     "boat": "New San Mateo",
     "landing": "Dana Wharf Sportfishing",
-    "trips": 10,
-    "anglers": 132,
-    "fish": 924,
-    "fpa": 7
+    "trips": 11,
+    "anglers": 146,
+    "fish": 968,
+    "fpa": 6.63
   },
   {
     "rank": 2,
+    "region": "Orange County",
+    "trip_type": "Full Day",
+    "boat": "Current",
+    "landing": "Dana Wharf Sportfishing",
+    "trips": 5,
+    "anglers": 30,
+    "fish": 184,
+    "fpa": 6.13
+  },
+  {
+    "rank": 3,
     "region": "Orange County",
     "trip_type": "Full Day",
     "boat": "Blackfish",
@@ -1666,10 +1699,10 @@
     "trip_type": "Full Day",
     "boat": "California Dawn II",
     "landing": "California Dawn Sportfishing",
-    "trips": 44,
-    "anglers": 881,
+    "trips": 45,
+    "anglers": 895,
     "fish": 4720,
-    "fpa": 5.36
+    "fpa": 5.27
   },
   {
     "rank": 2,
@@ -1688,8 +1721,8 @@
     "trip_type": "Full Day",
     "boat": "New Easy Rider",
     "landing": "Berkeley Charter Boats",
-    "trips": 33,
-    "anglers": 597,
+    "trips": 34,
+    "anglers": 617,
     "fish": 4,
     "fpa": 0.01
   },

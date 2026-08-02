@@ -413,11 +413,31 @@
     "trip_date": "2026-08-01",
     "region": "Monterey County",
     "landing": "J&M Sportfishing",
+    "boat": "Chubasco",
+    "trip_type": "1/2 Day AM",
+    "anglers": 18,
+    "fish_counts": "5 Lingcod, 180 Rockfish",
+    "total_fish": 185
+  },
+  {
+    "trip_date": "2026-08-01",
+    "region": "Monterey County",
+    "landing": "J&M Sportfishing",
     "boat": "Kahuna",
     "trip_type": "1/2 Day AM",
     "anglers": 20,
     "fish_counts": "1 Lingcod, 200 Rockfish",
     "total_fish": 201
+  },
+  {
+    "trip_date": "2026-08-01",
+    "region": "Monterey County",
+    "landing": "J&M Sportfishing",
+    "boat": "Kahuna",
+    "trip_type": "1/2 Day AM",
+    "anglers": 20,
+    "fish_counts": "3 Lingcod, 200 Rockfish",
+    "total_fish": 203
   },
   {
     "trip_date": "2026-08-01",
@@ -1773,6 +1793,16 @@
     "trip_date": "2026-07-31",
     "region": "Orange County",
     "landing": "Newport Landing",
+    "boat": "Aggressor",
+    "trip_type": "Overnight",
+    "anglers": 15,
+    "fish_counts": "1 Yellowfin Tuna",
+    "total_fish": 1
+  },
+  {
+    "trip_date": "2026-07-31",
+    "region": "Orange County",
+    "landing": "Newport Landing",
     "boat": "Patriot (Newport)",
     "trip_type": "3/4 Day",
     "anglers": 37,
@@ -1788,6 +1818,16 @@
     "anglers": 30,
     "fish_counts": "6 Bonito, 21 Calico Bass, 68 Rockfish, 81 Whitefish, 10 Yellowtail",
     "total_fish": 186
+  },
+  {
+    "trip_date": "2026-07-31",
+    "region": "Orange County",
+    "landing": "Newport Landing",
+    "boat": "Thunderbird",
+    "trip_type": "Overnight",
+    "anglers": 30,
+    "fish_counts": "",
+    "total_fish": 0
   },
   {
     "trip_date": "2026-07-31",
