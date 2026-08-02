@@ -283,11 +283,41 @@
     "trip_date": "2026-08-01",
     "region": "Los Angeles County",
     "landing": "22nd Street Landing",
+    "boat": "Monte Carlo",
+    "trip_type": "1/2 Day PM",
+    "anglers": 70,
+    "fish_counts": "103 Barracuda, 2 Calico Bass, 16 Sand Bass, 1 Sculpin, 1 Yellowtail",
+    "total_fish": 123
+  },
+  {
+    "trip_date": "2026-08-01",
+    "region": "Los Angeles County",
+    "landing": "22nd Street Landing",
+    "boat": "Monte Carlo",
+    "trip_type": "1/2 Day AM",
+    "anglers": 76,
+    "fish_counts": "76 Barracuda, 2 Yellowtail",
+    "total_fish": 78
+  },
+  {
+    "trip_date": "2026-08-01",
+    "region": "Los Angeles County",
+    "landing": "22nd Street Landing",
     "boat": "Native Sun",
     "trip_type": "3/4 Day",
     "anglers": 38,
     "fish_counts": "179 Barracuda, 12 Bonito, 48 Calico Bass, 13 Sand Bass, 2 Yellowtail",
     "total_fish": 254
+  },
+  {
+    "trip_date": "2026-08-01",
+    "region": "Los Angeles County",
+    "landing": "22nd Street Landing",
+    "boat": "Native Sun",
+    "trip_type": "3/4 Day",
+    "anglers": 33,
+    "fish_counts": "293 Barracuda, 11 Bonito, 15 Calico Bass, 31 Sand Bass, 3 Yellowtail",
+    "total_fish": 353
   },
   {
     "trip_date": "2026-08-01",
@@ -1008,6 +1038,16 @@
     "anglers": 17,
     "fish_counts": "41 Bonito, 51 Calico Bass, 1 Sheephead, 3 Yellowtail",
     "total_fish": 96
+  },
+  {
+    "trip_date": "2026-08-01",
+    "region": "Ventura County",
+    "landing": "Channel Islands Sportfishing",
+    "boat": "Island Fox",
+    "trip_type": "Full Day",
+    "anglers": 17,
+    "fish_counts": "41 Bonito, 51 Calico Bass, 6 Halibut, 1 Sheephead, 3 Yellowtail",
+    "total_fish": 102
   },
   {
     "trip_date": "2026-08-01",

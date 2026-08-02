@@ -368,13 +368,24 @@
     "trip_type": "1/2 Day AM",
     "boat": "Monte Carlo",
     "landing": "22nd Street Landing",
-    "trips": 58,
-    "anglers": 2821,
-    "fish": 9864,
-    "fpa": 3.5
+    "trips": 59,
+    "anglers": 2897,
+    "fish": 9942,
+    "fpa": 3.43
   },
   {
     "rank": 1,
+    "region": "Los Angeles County",
+    "trip_type": "1/2 Day PM",
+    "boat": "Monte Carlo",
+    "landing": "22nd Street Landing",
+    "trips": 5,
+    "anglers": 280,
+    "fish": 843,
+    "fpa": 3.01
+  },
+  {
+    "rank": 2,
     "region": "Los Angeles County",
     "trip_type": "1/2 Day PM",
     "boat": "Redondo Special",
@@ -423,10 +434,10 @@
     "trip_type": "3/4 Day",
     "boat": "Native Sun",
     "landing": "22nd Street Landing",
-    "trips": 24,
-    "anglers": 884,
-    "fish": 4968,
-    "fpa": 5.62
+    "trips": 25,
+    "anglers": 917,
+    "fish": 5321,
+    "fpa": 5.8
   },
   {
     "rank": 5,
@@ -588,10 +599,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Kahuna",
     "landing": "J&M Sportfishing",
-    "trips": 22,
-    "anglers": 390,
-    "fish": 3776,
-    "fpa": 9.68
+    "trips": 23,
+    "anglers": 410,
+    "fish": 3979,
+    "fpa": 9.7
   },
   {
     "rank": 3,
@@ -599,10 +610,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Chubasco",
     "landing": "J&M Sportfishing",
-    "trips": 5,
-    "anglers": 113,
-    "fish": 876,
-    "fpa": 7.75
+    "trips": 6,
+    "anglers": 131,
+    "fish": 1061,
+    "fpa": 8.1
   },
   {
     "rank": 1,
@@ -1116,10 +1127,10 @@
     "trip_type": "Overnight",
     "boat": "Aggressor",
     "landing": "Newport Landing",
-    "trips": 10,
-    "anglers": 141,
-    "fish": 1038,
-    "fpa": 7.36
+    "trips": 11,
+    "anglers": 156,
+    "fish": 1039,
+    "fpa": 6.66
   },
   {
     "rank": 3,
@@ -1127,10 +1138,10 @@
     "trip_type": "Overnight",
     "boat": "Thunderbird",
     "landing": "Newport Landing",
-    "trips": 40,
-    "anglers": 1184,
+    "trips": 41,
+    "anglers": 1214,
     "fish": 6919,
-    "fpa": 5.84
+    "fpa": 5.7
   },
   {
     "rank": 1,
@@ -1941,10 +1952,10 @@
     "trip_type": "Full Day",
     "boat": "Island Fox",
     "landing": "Channel Islands Sportfishing",
-    "trips": 28,
-    "anglers": 473,
-    "fish": 3985,
-    "fpa": 8.42
+    "trips": 29,
+    "anglers": 490,
+    "fish": 4087,
+    "fpa": 8.34
   },
   {
     "rank": 3,
