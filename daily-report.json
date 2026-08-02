@@ -203,6 +203,26 @@
     "trip_date": "2026-08-02",
     "region": "Central California",
     "landing": "Patriot Sportfishing",
+    "boat": "Flying Fish",
+    "trip_type": "1/2 Day AM",
+    "anglers": 20,
+    "fish_counts": "1 Lingcod",
+    "total_fish": 1
+  },
+  {
+    "trip_date": "2026-08-02",
+    "region": "Central California",
+    "landing": "Patriot Sportfishing",
+    "boat": "Flying Fish",
+    "trip_type": "1/2 Day AM",
+    "anglers": 20,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-08-02",
+    "region": "Central California",
+    "landing": "Patriot Sportfishing",
     "boat": "Patriot (Avila Beach)",
     "trip_type": "1/2 Day AM",
     "anglers": 15,
@@ -218,6 +238,16 @@
     "anglers": 15,
     "fish_counts": "3 Barracuda, 17 Bonito, 75 Calico Bass, 16 Yellowtail",
     "total_fish": 111
+  },
+  {
+    "trip_date": "2026-08-02",
+    "region": "Los Angeles County",
+    "landing": "22nd Street Landing",
+    "boat": "Apollo",
+    "trip_type": "Overnight",
+    "anglers": 21,
+    "fish_counts": "95 Yellowfin Tuna, 7 Yellowtail",
+    "total_fish": 102
   },
   {
     "trip_date": "2026-08-02",
@@ -258,6 +288,16 @@
     "anglers": 50,
     "fish_counts": "125 Barracuda, 25 Calico Bass, 7 Sand Bass, 3 Yellowtail",
     "total_fish": 160
+  },
+  {
+    "trip_date": "2026-08-02",
+    "region": "Los Angeles County",
+    "landing": "22nd Street Landing",
+    "boat": "Pride",
+    "trip_type": "Overnight",
+    "anglers": 11,
+    "fish_counts": "1 Barracuda, 16 Bonito, 24 Calico Bass, 50 Sculpin, 6 Sheephead, 55 Whitefish, 3 Yellowtail",
+    "total_fish": 155
   },
   {
     "trip_date": "2026-08-02",
@@ -416,6 +456,16 @@
     "boat": "Pacific Dream",
     "trip_type": "Full Day",
     "anglers": 16,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-08-02",
+    "region": "NorCal",
+    "landing": "Reel Obsession Sportfishing",
+    "boat": "Dragonfly",
+    "trip_type": "Full Day",
+    "anglers": 4,
     "fish_counts": "",
     "total_fish": 0
   },
@@ -663,6 +713,16 @@
     "trip_date": "2026-08-02",
     "region": "San Diego County",
     "landing": "H&M Landing",
+    "boat": "Old Glory",
+    "trip_type": "Overnight",
+    "anglers": 21,
+    "fish_counts": "86 Yellowfin Tuna",
+    "total_fish": 86
+  },
+  {
+    "trip_date": "2026-08-02",
+    "region": "San Diego County",
+    "landing": "H&M Landing",
     "boat": "Premier",
     "trip_type": "1/2 Day AM",
     "anglers": 49,
@@ -702,12 +762,62 @@
   {
     "trip_date": "2026-08-02",
     "region": "San Diego County",
+    "landing": "H&M Landing",
+    "boat": "Sea Adventure 80",
+    "trip_type": "Full Day",
+    "anglers": 20,
+    "fish_counts": "54 Yellowfin Tuna",
+    "total_fish": 54
+  },
+  {
+    "trip_date": "2026-08-02",
+    "region": "San Diego County",
+    "landing": "Oceanside Sea Center",
+    "boat": "Southern Cal",
+    "trip_type": "1/2 Day AM",
+    "anglers": 27,
+    "fish_counts": "10 Calico Bass, 40 Calico Bass Released, 15 Sand Bass, 7 Yellowtail",
+    "total_fish": 72
+  },
+  {
+    "trip_date": "2026-08-02",
+    "region": "San Diego County",
+    "landing": "Point Loma Sportfishing",
+    "boat": "Daily Double",
+    "trip_type": "1/2 Day AM",
+    "anglers": 40,
+    "fish_counts": "63 Barracuda, 4 Whitefish",
+    "total_fish": 67
+  },
+  {
+    "trip_date": "2026-08-02",
+    "region": "San Diego County",
     "landing": "Point Loma Sportfishing",
     "boat": "New Lo-An",
     "trip_type": "2.5 Day",
     "anglers": 25,
     "fish_counts": "1 Yellowfin Tuna, 14 Yellowtail",
     "total_fish": 15
+  },
+  {
+    "trip_date": "2026-08-02",
+    "region": "San Diego County",
+    "landing": "Point Loma Sportfishing",
+    "boat": "Point Loma",
+    "trip_type": "Full Day",
+    "anglers": 20,
+    "fish_counts": "87 Yellowfin Tuna",
+    "total_fish": 87
+  },
+  {
+    "trip_date": "2026-08-02",
+    "region": "San Diego County",
+    "landing": "Seaforth Sportfishing",
+    "boat": "Aztec",
+    "trip_type": "2 Day",
+    "anglers": 26,
+    "fish_counts": "8 Bluefin Tuna, 7 Yellowfin Tuna, 16 Yellowtail",
+    "total_fish": 31
   },
   {
     "trip_date": "2026-08-02",
@@ -738,6 +848,16 @@
     "anglers": 23,
     "fish_counts": "39 Yellowfin Tuna, 2 Yellowtail",
     "total_fish": 41
+  },
+  {
+    "trip_date": "2026-08-02",
+    "region": "San Diego County",
+    "landing": "Seaforth Sportfishing",
+    "boat": "Sea Watch",
+    "trip_type": "3/4 Day",
+    "anglers": 29,
+    "fish_counts": "100 Barracuda, 12 Bonito, 47 Sand Bass, 2 Sculpin, 1 Yellowtail",
+    "total_fish": 162
   },
   {
     "trip_date": "2026-08-02",
@@ -786,6 +906,16 @@
     "boat": "Reel Addiction 2",
     "trip_type": "1/2 Day AM",
     "anglers": 7,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-08-02",
+    "region": "San Francisco Bay",
+    "landing": "Right Hook Sportfishing",
+    "boat": "Right Hook",
+    "trip_type": "1/2 Day AM",
+    "anglers": 5,
     "fish_counts": "",
     "total_fish": 0
   },
