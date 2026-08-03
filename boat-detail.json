@@ -99,10 +99,10 @@
     "boat": "Scallywag",
     "landing": "Fish Emeryville",
     "region": "Alameda County",
-    "trips": 63,
-    "anglers": 346,
+    "trips": 64,
+    "anglers": 352,
     "fish": 344,
-    "fpa": 0.99,
+    "fpa": 0.98,
     "top_species_1": "Rockfish",
     "top_species_2": "Lingcod",
     "top_species_3": "Bluefin Tuna"
@@ -1464,18 +1464,6 @@
     "top_species_3": "Red Rockfish"
   },
   {
-    "boat": "Point Loma",
-    "landing": "Point Loma Sportfishing",
-    "region": "San Diego County",
-    "trips": 28,
-    "anglers": 452,
-    "fish": 1627,
-    "fpa": 3.6,
-    "top_species_1": "Calico Bass",
-    "top_species_2": "Yellowtail",
-    "top_species_3": "Calico Bass Released"
-  },
-  {
     "boat": "Islander",
     "landing": "Fisherman's Landing",
     "region": "San Diego County",
@@ -1486,6 +1474,18 @@
     "top_species_1": "Bluefin Tuna",
     "top_species_2": "Yellowtail",
     "top_species_3": "Yellowfin Tuna"
+  },
+  {
+    "boat": "Point Loma",
+    "landing": "Point Loma Sportfishing",
+    "region": "San Diego County",
+    "trips": 29,
+    "anglers": 472,
+    "fish": 1680,
+    "fpa": 3.56,
+    "top_species_1": "Calico Bass",
+    "top_species_2": "Yellowtail",
+    "top_species_3": "Calico Bass Released"
   },
   {
     "boat": "New Seaforth",
