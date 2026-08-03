@@ -894,26 +894,37 @@
     "rank": 1,
     "region": "Orange County",
     "trip_type": "1/2 Day AM",
-    "boat": "Helena",
+    "boat": "Current",
     "landing": "Dana Wharf Sportfishing",
-    "trips": 8,
-    "anglers": 150,
-    "fish": 1068,
-    "fpa": 7.12
+    "trips": 5,
+    "anglers": 26,
+    "fish": 197,
+    "fpa": 7.58
   },
   {
     "rank": 2,
     "region": "Orange County",
     "trip_type": "1/2 Day AM",
-    "boat": "Reel Fun",
+    "boat": "Helena",
     "landing": "Dana Wharf Sportfishing",
-    "trips": 23,
-    "anglers": 508,
-    "fish": 2708,
-    "fpa": 5.33
+    "trips": 9,
+    "anglers": 175,
+    "fish": 1226,
+    "fpa": 7.01
   },
   {
     "rank": 3,
+    "region": "Orange County",
+    "trip_type": "1/2 Day AM",
+    "boat": "Reel Fun",
+    "landing": "Dana Wharf Sportfishing",
+    "trips": 24,
+    "anglers": 540,
+    "fish": 2848,
+    "fpa": 5.27
+  },
+  {
+    "rank": 4,
     "region": "Orange County",
     "trip_type": "1/2 Day AM",
     "boat": "Clemente",
@@ -924,7 +935,7 @@
     "fpa": 4.6
   },
   {
-    "rank": 4,
+    "rank": 5,
     "region": "Orange County",
     "trip_type": "1/2 Day AM",
     "boat": "Sum Fun",
@@ -935,7 +946,7 @@
     "fpa": 4.57
   },
   {
-    "rank": 5,
+    "rank": 6,
     "region": "Orange County",
     "trip_type": "1/2 Day AM",
     "boat": "Western Pride",
@@ -946,7 +957,7 @@
     "fpa": 4
   },
   {
-    "rank": 6,
+    "rank": 7,
     "region": "Orange County",
     "trip_type": "1/2 Day AM",
     "boat": "Dana Pride",
@@ -962,10 +973,10 @@
     "trip_type": "1/2 Day PM",
     "boat": "Helena",
     "landing": "Dana Wharf Sportfishing",
-    "trips": 6,
-    "anglers": 84,
-    "fish": 854,
-    "fpa": 10.17
+    "trips": 7,
+    "anglers": 97,
+    "fish": 1015,
+    "fpa": 10.46
   },
   {
     "rank": 2,
@@ -984,10 +995,10 @@
     "trip_type": "1/2 Day PM",
     "boat": "Reel Fun",
     "landing": "Dana Wharf Sportfishing",
-    "trips": 18,
-    "anglers": 454,
-    "fish": 2448,
-    "fpa": 5.39
+    "trips": 19,
+    "anglers": 486,
+    "fish": 2592,
+    "fpa": 5.33
   },
   {
     "rank": 4,
@@ -1083,10 +1094,10 @@
     "trip_type": "3/4 Day",
     "boat": "Clemente",
     "landing": "Dana Wharf Sportfishing",
-    "trips": 10,
-    "anglers": 362,
-    "fish": 1896,
-    "fpa": 5.24
+    "trips": 11,
+    "anglers": 392,
+    "fish": 2218,
+    "fpa": 5.66
   },
   {
     "rank": 3,
@@ -1094,24 +1105,13 @@
     "trip_type": "3/4 Day",
     "boat": "Sum Fun",
     "landing": "Dana Wharf Sportfishing",
-    "trips": 26,
-    "anglers": 836,
-    "fish": 3736,
-    "fpa": 4.47
+    "trips": 27,
+    "anglers": 863,
+    "fish": 4050,
+    "fpa": 4.69
   },
   {
     "rank": 4,
-    "region": "Orange County",
-    "trip_type": "3/4 Day",
-    "boat": "Dana Pride",
-    "landing": "Dana Wharf Sportfishing",
-    "trips": 15,
-    "anglers": 637,
-    "fish": 2433,
-    "fpa": 3.82
-  },
-  {
-    "rank": 5,
     "region": "Orange County",
     "trip_type": "3/4 Day",
     "boat": "Freelance",
@@ -1120,6 +1120,17 @@
     "anglers": 2579,
     "fish": 9766,
     "fpa": 3.79
+  },
+  {
+    "rank": 5,
+    "region": "Orange County",
+    "trip_type": "3/4 Day",
+    "boat": "Dana Pride",
+    "landing": "Dana Wharf Sportfishing",
+    "trips": 16,
+    "anglers": 700,
+    "fish": 2635,
+    "fpa": 3.76
   },
   {
     "rank": 6,
@@ -1149,10 +1160,10 @@
     "trip_type": "Full Day",
     "boat": "New San Mateo",
     "landing": "Dana Wharf Sportfishing",
-    "trips": 12,
-    "anglers": 160,
-    "fish": 1012,
-    "fpa": 6.33
+    "trips": 13,
+    "anglers": 174,
+    "fish": 1041,
+    "fpa": 5.98
   },
   {
     "rank": 2,
@@ -2040,10 +2051,10 @@
     "trip_type": "Full Day",
     "boat": "Cobra",
     "landing": "Channel Islands Sportfishing",
-    "trips": 29,
-    "anglers": 303,
-    "fish": 3520,
-    "fpa": 11.62
+    "trips": 30,
+    "anglers": 310,
+    "fish": 3564,
+    "fpa": 11.5
   },
   {
     "rank": 2,
@@ -2051,10 +2062,10 @@
     "trip_type": "Full Day",
     "boat": "Island Fox",
     "landing": "Channel Islands Sportfishing",
-    "trips": 30,
-    "anglers": 507,
-    "fish": 4189,
-    "fpa": 8.26
+    "trips": 31,
+    "anglers": 524,
+    "fish": 4361,
+    "fpa": 8.32
   },
   {
     "rank": 3,
@@ -2106,10 +2117,10 @@
     "trip_type": "Overnight",
     "boat": "Indicator",
     "landing": "Channel Islands Sportfishing",
-    "trips": 24,
-    "anglers": 427,
-    "fish": 5325,
-    "fpa": 12.47
+    "trips": 25,
+    "anglers": 442,
+    "fish": 5576,
+    "fpa": 12.62
   },
   {
     "rank": 3,
