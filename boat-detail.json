@@ -495,13 +495,13 @@
     "boat": "Pursuit",
     "landing": "22nd Street Landing",
     "region": "Los Angeles County",
-    "trips": 78,
-    "anglers": 2823,
-    "fish": 11795,
-    "fpa": 4.18,
+    "trips": 79,
+    "anglers": 2861,
+    "fish": 11926,
+    "fpa": 4.17,
     "top_species_1": "Calico Bass",
     "top_species_2": "Bonito",
-    "top_species_3": "Calico Bass Released"
+    "top_species_3": "Whitefish"
   },
   {
     "boat": "Monte Carlo",
@@ -963,10 +963,10 @@
     "boat": "Current",
     "landing": "Dana Wharf Sportfishing",
     "region": "Orange County",
-    "trips": 35,
-    "anglers": 170,
-    "fish": 1355,
-    "fpa": 7.97,
+    "trips": 37,
+    "anglers": 182,
+    "fish": 1496,
+    "fpa": 8.22,
     "top_species_1": "Calico Bass Released",
     "top_species_2": "Calico Bass",
     "top_species_3": "Rockfish"
@@ -975,10 +975,10 @@
     "boat": "Fury",
     "landing": "Dana Wharf Sportfishing",
     "region": "Orange County",
-    "trips": 79,
-    "anglers": 1984,
-    "fish": 14945,
-    "fpa": 7.53,
+    "trips": 80,
+    "anglers": 2006,
+    "fish": 15039,
+    "fpa": 7.5,
     "top_species_1": "Calico Bass",
     "top_species_2": "Whitefish",
     "top_species_3": "Calico Bass Released"
@@ -1008,18 +1008,6 @@
     "top_species_3": "Calico Bass"
   },
   {
-    "boat": "New San Mateo",
-    "landing": "Dana Wharf Sportfishing",
-    "region": "Orange County",
-    "trips": 30,
-    "anglers": 358,
-    "fish": 2241,
-    "fpa": 6.26,
-    "top_species_1": "Calico Bass Released",
-    "top_species_2": "Calico Bass",
-    "top_species_3": "Bonito"
-  },
-  {
     "boat": "Blackfish",
     "landing": "Davey's Locker",
     "region": "Orange County",
@@ -1032,13 +1020,25 @@
     "top_species_3": "Yellowtail"
   },
   {
+    "boat": "New San Mateo",
+    "landing": "Dana Wharf Sportfishing",
+    "region": "Orange County",
+    "trips": 31,
+    "anglers": 372,
+    "fish": 2270,
+    "fpa": 6.1,
+    "top_species_1": "Calico Bass Released",
+    "top_species_2": "Calico Bass",
+    "top_species_3": "Bonito"
+  },
+  {
     "boat": "Helena",
     "landing": "Dana Wharf Sportfishing",
     "region": "Orange County",
-    "trips": 41,
-    "anglers": 761,
-    "fish": 4051,
-    "fpa": 5.32,
+    "trips": 43,
+    "anglers": 799,
+    "fish": 4370,
+    "fpa": 5.47,
     "top_species_1": "Calico Bass Released",
     "top_species_2": "Calico Bass",
     "top_species_3": "Sand Bass"
@@ -1395,10 +1395,10 @@
     "boat": "Dolphin",
     "landing": "Fisherman's Landing",
     "region": "San Diego County",
-    "trips": 174,
-    "anglers": 6026,
-    "fish": 23927,
-    "fpa": 3.97,
+    "trips": 175,
+    "anglers": 6084,
+    "fish": 24261,
+    "fpa": 3.99,
     "top_species_1": "Calico Bass Released",
     "top_species_2": "Rockfish",
     "top_species_3": "Calico Bass"
@@ -1488,18 +1488,6 @@
     "top_species_3": "Yellowfin Tuna"
   },
   {
-    "boat": "San Diego",
-    "landing": "Seaforth Sportfishing",
-    "region": "San Diego County",
-    "trips": 89,
-    "anglers": 2635,
-    "fish": 8940,
-    "fpa": 3.39,
-    "top_species_1": "Yellowtail",
-    "top_species_2": "Rockfish",
-    "top_species_3": "Whitefish"
-  },
-  {
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
     "region": "San Diego County",
@@ -1510,6 +1498,18 @@
     "top_species_1": "Calico Bass Released",
     "top_species_2": "Calico Bass",
     "top_species_3": "Barracuda"
+  },
+  {
+    "boat": "San Diego",
+    "landing": "Seaforth Sportfishing",
+    "region": "San Diego County",
+    "trips": 90,
+    "anglers": 2669,
+    "fish": 8984,
+    "fpa": 3.37,
+    "top_species_1": "Yellowtail",
+    "top_species_2": "Rockfish",
+    "top_species_3": "Whitefish"
   },
   {
     "boat": "Highliner",
@@ -1887,10 +1887,10 @@
     "boat": "Lovely Martha",
     "landing": "Lovely Martha Sportfishing",
     "region": "San Francisco Bay",
-    "trips": 70,
-    "anglers": 1349,
+    "trips": 71,
+    "anglers": 1371,
     "fish": 786,
-    "fpa": 0.58,
+    "fpa": 0.57,
     "top_species_1": "Rockfish",
     "top_species_2": "Lingcod",
     "top_species_3": ""
