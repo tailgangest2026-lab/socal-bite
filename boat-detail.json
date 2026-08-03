@@ -711,10 +711,10 @@
     "boat": "Pacific Dream",
     "landing": "Happy Hooker Sportfishing",
     "region": "NorCal",
-    "trips": 37,
-    "anglers": 726,
+    "trips": 38,
+    "anglers": 741,
     "fish": 1832,
-    "fpa": 2.52,
+    "fpa": 2.47,
     "top_species_1": "Rockfish",
     "top_species_2": "Lingcod",
     "top_species_3": "Halibut"
@@ -1203,13 +1203,13 @@
     "boat": "Blue Horizon",
     "landing": "Oceanside Sea Center",
     "region": "San Diego County",
-    "trips": 37,
-    "anglers": 491,
-    "fish": 3612,
-    "fpa": 7.36,
+    "trips": 38,
+    "anglers": 519,
+    "fish": 3678,
+    "fpa": 7.09,
     "top_species_1": "Calico Bass Released",
     "top_species_2": "Bonito",
-    "top_species_3": "Rockfish"
+    "top_species_3": "Calico Bass"
   },
   {
     "boat": "Legend",
@@ -1632,18 +1632,6 @@
     "top_species_3": "Yellowfin Tuna"
   },
   {
-    "boat": "El Gato Dos",
-    "landing": "Seaforth Sportfishing",
-    "region": "San Diego County",
-    "trips": 26,
-    "anglers": 126,
-    "fish": 325,
-    "fpa": 2.58,
-    "top_species_1": "Yellowtail",
-    "top_species_2": "Rockfish",
-    "top_species_3": "Calico Bass Released"
-  },
-  {
     "boat": "Vendetta 2",
     "landing": "H&M Landing",
     "region": "San Diego County",
@@ -1654,6 +1642,18 @@
     "top_species_1": "Yellowtail",
     "top_species_2": "Barracuda",
     "top_species_3": "Bonito"
+  },
+  {
+    "boat": "El Gato Dos",
+    "landing": "Seaforth Sportfishing",
+    "region": "San Diego County",
+    "trips": 27,
+    "anglers": 132,
+    "fish": 330,
+    "fpa": 2.5,
+    "top_species_1": "Yellowtail",
+    "top_species_2": "Rockfish",
+    "top_species_3": "Calico Bass Released"
   },
   {
     "boat": "Pegasus",
@@ -2127,10 +2127,10 @@
     "boat": "Coroloma",
     "landing": "Hooks Landing",
     "region": "Ventura County",
-    "trips": 55,
-    "anglers": 1420,
-    "fish": 16929,
-    "fpa": 11.92,
+    "trips": 56,
+    "anglers": 1458,
+    "fish": 17400,
+    "fpa": 11.93,
     "top_species_1": "Rockfish",
     "top_species_2": "Whitefish",
     "top_species_3": "Sand Bass"
