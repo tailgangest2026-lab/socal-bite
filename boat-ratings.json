@@ -192,10 +192,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Endeavor (MB)",
     "landing": "Morro Bay Landing",
-    "trips": 21,
-    "anglers": 524,
-    "fish": 4164,
-    "fpa": 7.95
+    "trips": 22,
+    "anglers": 551,
+    "fish": 4434,
+    "fpa": 8.05
   },
   {
     "rank": 2,
@@ -225,10 +225,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Sunny Day",
     "landing": "Patriot Sportfishing",
-    "trips": 12,
-    "anglers": 42,
+    "trips": 13,
+    "anglers": 46,
     "fish": 24,
-    "fpa": 0.57
+    "fpa": 0.52
   },
   {
     "rank": 5,
@@ -291,10 +291,10 @@
     "trip_type": "3/4 Day",
     "boat": "Starfire",
     "landing": "Morro Bay Landing",
-    "trips": 8,
-    "anglers": 210,
-    "fish": 1554,
-    "fpa": 7.4
+    "trips": 9,
+    "anglers": 243,
+    "fish": 1840,
+    "fpa": 7.57
   },
   {
     "rank": 4,
@@ -575,23 +575,23 @@
     "rank": 3,
     "region": "Los Angeles County",
     "trip_type": "Overnight",
+    "boat": "Amigo",
+    "landing": "22nd Street Landing",
+    "trips": 23,
+    "anglers": 337,
+    "fish": 2055,
+    "fpa": 6.1
+  },
+  {
+    "rank": 4,
+    "region": "Los Angeles County",
+    "trip_type": "Overnight",
     "boat": "Freedom",
     "landing": "22nd Street Landing",
     "trips": 51,
     "anglers": 1697,
     "fish": 10132,
     "fpa": 5.97
-  },
-  {
-    "rank": 4,
-    "region": "Los Angeles County",
-    "trip_type": "Overnight",
-    "boat": "Amigo",
-    "landing": "22nd Street Landing",
-    "trips": 22,
-    "anglers": 324,
-    "fish": 1874,
-    "fpa": 5.78
   },
   {
     "rank": 1,
@@ -786,8 +786,8 @@
     "trip_type": "Full Day",
     "boat": "Hog Heaven",
     "landing": "Hog Heaven Sportfishing",
-    "trips": 29,
-    "anglers": 382,
+    "trips": 30,
+    "anglers": 399,
     "fish": 0,
     "fpa": 0
   },
@@ -1556,10 +1556,10 @@
     "trip_type": "3/4 Day",
     "boat": "Chubasco II",
     "landing": "Oceanside Sea Center",
-    "trips": 18,
-    "anglers": 427,
-    "fish": 3360,
-    "fpa": 7.87
+    "trips": 19,
+    "anglers": 459,
+    "fish": 3591,
+    "fpa": 7.82
   },
   {
     "rank": 4,
@@ -1584,15 +1584,26 @@
     "fpa": 5.83
   },
   {
+    "rank": 6,
+    "region": "San Diego County",
+    "trip_type": "3/4 Day",
+    "boat": "Effishency",
+    "landing": "Oceanside Sea Center",
+    "trips": 5,
+    "anglers": 21,
+    "fish": 26,
+    "fpa": 1.24
+  },
+  {
     "rank": 1,
     "region": "San Diego County",
     "trip_type": "Full Day",
     "boat": "Malihini",
     "landing": "H&M Landing",
-    "trips": 5,
-    "anglers": 116,
-    "fish": 896,
-    "fpa": 7.72
+    "trips": 6,
+    "anglers": 136,
+    "fish": 1016,
+    "fpa": 7.47
   },
   {
     "rank": 2,
@@ -1644,10 +1655,10 @@
     "trip_type": "Full Day Coronado Islands",
     "boat": "Grande",
     "landing": "H&M Landing",
-    "trips": 18,
-    "anglers": 644,
-    "fish": 1843,
-    "fpa": 2.86
+    "trips": 19,
+    "anglers": 684,
+    "fish": 1904,
+    "fpa": 2.78
   },
   {
     "rank": 3,
@@ -1741,23 +1752,23 @@
     "rank": 1,
     "region": "San Francisco Bay",
     "trip_type": "Full Day",
-    "boat": "New California Dawn",
+    "boat": "California Dawn II",
     "landing": "California Dawn Sportfishing",
-    "trips": 35,
-    "anglers": 484,
-    "fish": 2598,
-    "fpa": 5.37
+    "trips": 45,
+    "anglers": 897,
+    "fish": 4720,
+    "fpa": 5.26
   },
   {
     "rank": 2,
     "region": "San Francisco Bay",
     "trip_type": "Full Day",
-    "boat": "California Dawn II",
+    "boat": "New California Dawn",
     "landing": "California Dawn Sportfishing",
-    "trips": 44,
-    "anglers": 882,
-    "fish": 4720,
-    "fpa": 5.35
+    "trips": 36,
+    "anglers": 496,
+    "fish": 2598,
+    "fpa": 5.24
   },
   {
     "rank": 3,
@@ -1908,10 +1919,10 @@
     "trip_type": "Overnight",
     "boat": "Endeavor (Ventura)",
     "landing": "Ventura Harbor Sportfishing",
-    "trips": 17,
-    "anglers": 319,
-    "fish": 3572,
-    "fpa": 11.2
+    "trips": 18,
+    "anglers": 334,
+    "fish": 3654,
+    "fpa": 10.94
   },
   {
     "rank": 1,
