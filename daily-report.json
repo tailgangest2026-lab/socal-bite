@@ -493,6 +493,16 @@
     "trip_date": "2026-08-02",
     "region": "Los Angeles County",
     "landing": "Redondo Beach Sportfishing",
+    "boat": "Pescador",
+    "trip_type": "Full Day",
+    "anglers": 20,
+    "fish_counts": "30 Barracuda, 4 Bonito, 1 Sand Bass, 3 Yellowtail",
+    "total_fish": 38
+  },
+  {
+    "trip_date": "2026-08-02",
+    "region": "Los Angeles County",
+    "landing": "Redondo Beach Sportfishing",
     "boat": "Redondo Special",
     "trip_type": "1/2 Day AM",
     "anglers": 60,
@@ -551,6 +561,26 @@
   },
   {
     "trip_date": "2026-08-02",
+    "region": "Monterey County",
+    "landing": "J&M Sportfishing",
+    "boat": "Kahuna",
+    "trip_type": "Full Day",
+    "anglers": 20,
+    "fish_counts": "3 Lingcod, 200 Rockfish",
+    "total_fish": 203
+  },
+  {
+    "trip_date": "2026-08-02",
+    "region": "Monterey County",
+    "landing": "J&M Sportfishing",
+    "boat": "New Horizon",
+    "trip_type": "1/2 Day AM",
+    "anglers": 19,
+    "fish_counts": "1 Lingcod, 190 Rockfish",
+    "total_fish": 191
+  },
+  {
+    "trip_date": "2026-08-02",
     "region": "NorCal",
     "landing": "Argo Sportfishing",
     "boat": "Argo",
@@ -562,10 +592,30 @@
   {
     "trip_date": "2026-08-02",
     "region": "NorCal",
+    "landing": "Argo Sportfishing",
+    "boat": "Argo",
+    "trip_type": "Full Day",
+    "anglers": 4,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-08-02",
+    "region": "NorCal",
     "landing": "Big Cs Charters",
     "boat": "Outer Limits (Sausalito, CA)",
     "trip_type": "Full Day",
     "anglers": 13,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-08-02",
+    "region": "NorCal",
+    "landing": "Big Cs Charters",
+    "boat": "Outer Limits (Sausalito, CA)",
+    "trip_type": "Full Day",
+    "anglers": 15,
     "fish_counts": "",
     "total_fish": 0
   },
@@ -993,6 +1043,16 @@
     "trip_date": "2026-08-02",
     "region": "San Diego County",
     "landing": "H&M Landing",
+    "boat": "Daiwa Pacific",
+    "trip_type": "Full Day",
+    "anglers": 25,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-08-02",
+    "region": "San Diego County",
+    "landing": "H&M Landing",
     "boat": "Excalibur",
     "trip_type": "3 Day",
     "anglers": 24,
@@ -1333,9 +1393,29 @@
     "trip_date": "2026-08-02",
     "region": "San Francisco Bay",
     "landing": "Reel Addiction Sportfishing",
+    "boat": "Reel Addiction 1",
+    "trip_type": "Full Day",
+    "anglers": 6,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-08-02",
+    "region": "San Francisco Bay",
+    "landing": "Reel Addiction Sportfishing",
     "boat": "Reel Addiction 2",
     "trip_type": "1/2 Day AM",
     "anglers": 7,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-08-02",
+    "region": "San Francisco Bay",
+    "landing": "Reel Addiction Sportfishing",
+    "boat": "Reel Addiction 2",
+    "trip_type": "Full Day",
+    "anglers": 5,
     "fish_counts": "",
     "total_fish": 0
   },
@@ -2322,6 +2402,16 @@
   {
     "trip_date": "2026-08-01",
     "region": "NorCal",
+    "landing": "Monterey Bay Charters",
+    "boat": "Mega-bite",
+    "trip_type": "Full Day",
+    "anglers": 6,
+    "fish_counts": "60 Rockfish",
+    "total_fish": 60
+  },
+  {
+    "trip_date": "2026-08-01",
+    "region": "NorCal",
     "landing": "Reel Steel Sportfishing",
     "boat": "Reel Steel",
     "trip_type": "Full Day",
@@ -2508,6 +2598,26 @@
     "anglers": 41,
     "fish_counts": "28 Barracuda, 19 Sand Bass, 7 Sculpin",
     "total_fish": 54
+  },
+  {
+    "trip_date": "2026-08-01",
+    "region": "Orange County",
+    "landing": "Newport Landing",
+    "boat": "Patriot (Newport)",
+    "trip_type": "3/4 Day",
+    "anglers": 25,
+    "fish_counts": "150 Barracuda, 6 Sand Bass, 23 Sculpin, 2 Yellowtail",
+    "total_fish": 181
+  },
+  {
+    "trip_date": "2026-08-01",
+    "region": "Orange County",
+    "landing": "Newport Landing",
+    "boat": "Thunderbird",
+    "trip_type": "Overnight",
+    "anglers": 21,
+    "fish_counts": "21 Bonito, 38 Calico Bass, 1 Lingcod, 81 Rockfish, 12 Sheephead, 102 Whitefish, 15 Yellowtail",
+    "total_fish": 270
   },
   {
     "trip_date": "2026-08-01",
