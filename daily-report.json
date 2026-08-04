@@ -223,11 +223,41 @@
     "trip_date": "2026-08-03",
     "region": "Central California",
     "landing": "Patriot Sportfishing",
+    "boat": "Flying Fish",
+    "trip_type": "1/2 Day AM",
+    "anglers": 24,
+    "fish_counts": "1 Lingcod",
+    "total_fish": 1
+  },
+  {
+    "trip_date": "2026-08-03",
+    "region": "Central California",
+    "landing": "Patriot Sportfishing",
+    "boat": "Flying Fish",
+    "trip_type": "1/2 Day AM",
+    "anglers": 24,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-08-03",
+    "region": "Central California",
+    "landing": "Patriot Sportfishing",
     "boat": "Patriot (Avila Beach)",
     "trip_type": "Full Day",
     "anglers": 25,
     "fish_counts": "3 Lingcod",
     "total_fish": 3
+  },
+  {
+    "trip_date": "2026-08-03",
+    "region": "Central California",
+    "landing": "Patriot Sportfishing",
+    "boat": "Patriot (Avila Beach)",
+    "trip_type": "Full Day",
+    "anglers": 9,
+    "fish_counts": "",
+    "total_fish": 0
   },
   {
     "trip_date": "2026-08-03",
@@ -293,6 +323,16 @@
     "trip_date": "2026-08-03",
     "region": "Los Angeles County",
     "landing": "22nd Street Landing",
+    "boat": "Native Sun",
+    "trip_type": "3/4 Day",
+    "anglers": 42,
+    "fish_counts": "89 Barracuda, 7 Bonito, 32 Calico Bass, 8 Sand Bass, 34 Yellowtail",
+    "total_fish": 170
+  },
+  {
+    "trip_date": "2026-08-03",
+    "region": "Los Angeles County",
+    "landing": "22nd Street Landing",
     "boat": "Pride",
     "trip_type": "Overnight",
     "anglers": 11,
@@ -308,6 +348,16 @@
     "anglers": 38,
     "fish_counts": "26 Bonito, 51 Calico Bass, 44 Whitefish, 10 Yellowtail",
     "total_fish": 131
+  },
+  {
+    "trip_date": "2026-08-03",
+    "region": "Los Angeles County",
+    "landing": "Long Beach Sportfishing",
+    "boat": "Victory",
+    "trip_type": "3/4 Day",
+    "anglers": 34,
+    "fish_counts": "1 Bonito, 51 Halibut, 21 Sand Bass, 10 Sculpin, 10 Sheephead, 12 Whitefish, 3 Yellowtail",
+    "total_fish": 108
   },
   {
     "trip_date": "2026-08-03",
@@ -648,6 +698,16 @@
     "anglers": 30,
     "fish_counts": "30 Barracuda, 32 Bonito, 31 Sand Bass, 1 Sculpin, 20 Yellowtail",
     "total_fish": 114
+  },
+  {
+    "trip_date": "2026-08-03",
+    "region": "San Diego County",
+    "landing": "Seaforth Sportfishing",
+    "boat": "Sea Watch",
+    "trip_type": "3/4 Day",
+    "anglers": 30,
+    "fish_counts": "30 Barracuda, 32 Bonito, 31 Sand Bass, 1 Sculpin, 1 Yellowtail",
+    "total_fish": 95
   },
   {
     "trip_date": "2026-08-03",
