@@ -102,6 +102,17 @@
     "rank": 7,
     "region": "Alameda County",
     "trip_type": "Full Day",
+    "boat": "Diamond",
+    "landing": "Fish Emeryville",
+    "trips": 16,
+    "anglers": 82,
+    "fish": 60,
+    "fpa": 0.73
+  },
+  {
+    "rank": 8,
+    "region": "Alameda County",
+    "trip_type": "Full Day",
     "boat": "Lady K",
     "landing": "Fish Emeryville",
     "trips": 39,
@@ -110,7 +121,7 @@
     "fpa": 0.6
   },
   {
-    "rank": 8,
+    "rank": 9,
     "region": "Alameda County",
     "trip_type": "Full Day",
     "boat": "Scallywag",
@@ -121,7 +132,7 @@
     "fpa": 0.59
   },
   {
-    "rank": 9,
+    "rank": 10,
     "region": "Alameda County",
     "trip_type": "Full Day",
     "boat": "C Gull II",
@@ -132,7 +143,7 @@
     "fpa": 0.06
   },
   {
-    "rank": 10,
+    "rank": 11,
     "region": "Alameda County",
     "trip_type": "Full Day",
     "boat": "Here We Go",
@@ -143,7 +154,7 @@
     "fpa": 0.03
   },
   {
-    "rank": 11,
+    "rank": 12,
     "region": "Alameda County",
     "trip_type": "Full Day",
     "boat": "Heisen-sturg",
@@ -152,17 +163,6 @@
     "anglers": 102,
     "fish": 2,
     "fpa": 0.02
-  },
-  {
-    "rank": 12,
-    "region": "Alameda County",
-    "trip_type": "Full Day",
-    "boat": "Diamond",
-    "landing": "Fish Emeryville",
-    "trips": 15,
-    "anglers": 76,
-    "fish": 0,
-    "fpa": 0
   },
   {
     "rank": 13,
@@ -192,10 +192,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Starfire",
     "landing": "Morro Bay Landing",
-    "trips": 11,
-    "anglers": 240,
-    "fish": 1803,
-    "fpa": 7.51
+    "trips": 12,
+    "anglers": 259,
+    "fish": 1969,
+    "fpa": 7.6
   },
   {
     "rank": 3,
@@ -236,8 +236,8 @@
     "trip_type": "1/2 Day AM",
     "boat": "Flying Fish",
     "landing": "Patriot Sportfishing",
-    "trips": 54,
-    "anglers": 984,
+    "trips": 55,
+    "anglers": 1005,
     "fish": 26,
     "fpa": 0.03
   },
@@ -269,10 +269,10 @@
     "trip_type": "3/4 Day",
     "boat": "Endeavor (MB)",
     "landing": "Morro Bay Landing",
-    "trips": 16,
-    "anglers": 268,
-    "fish": 2230,
-    "fpa": 8.32
+    "trips": 17,
+    "anglers": 298,
+    "fish": 2514,
+    "fpa": 8.44
   },
   {
     "rank": 3,
@@ -1226,10 +1226,10 @@
     "trip_type": "1.5 Day",
     "boat": "Tribute",
     "landing": "Seaforth Sportfishing",
-    "trips": 8,
-    "anglers": 217,
-    "fish": 188,
-    "fpa": 0.87
+    "trips": 9,
+    "anglers": 246,
+    "fish": 210,
+    "fpa": 0.85
   },
   {
     "rank": 4,
@@ -1292,9 +1292,9 @@
     "trip_type": "1/2 Day AM",
     "boat": "Premier",
     "landing": "H&M Landing",
-    "trips": 29,
-    "anglers": 1108,
-    "fish": 4610,
+    "trips": 30,
+    "anglers": 1126,
+    "fish": 4679,
     "fpa": 4.16
   },
   {
@@ -1303,10 +1303,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
-    "trips": 27,
-    "anglers": 1329,
-    "fish": 3729,
-    "fpa": 2.81
+    "trips": 28,
+    "anglers": 1360,
+    "fish": 3806,
+    "fpa": 2.8
   },
   {
     "rank": 6,
@@ -1380,10 +1380,10 @@
     "trip_type": "1/2 Day Twilight",
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
-    "trips": 29,
-    "anglers": 1183,
-    "fish": 4490,
-    "fpa": 3.8
+    "trips": 30,
+    "anglers": 1239,
+    "fish": 4533,
+    "fpa": 3.66
   },
   {
     "rank": 2,
@@ -1435,10 +1435,10 @@
     "trip_type": "2 Day",
     "boat": "Pegasus",
     "landing": "Fisherman's Landing",
-    "trips": 5,
-    "anglers": 88,
-    "fish": 224,
-    "fpa": 2.55
+    "trips": 6,
+    "anglers": 106,
+    "fish": 372,
+    "fpa": 3.51
   },
   {
     "rank": 4,
@@ -1677,10 +1677,10 @@
     "trip_type": "Overnight",
     "boat": "Old Glory",
     "landing": "H&M Landing",
-    "trips": 9,
-    "anglers": 225,
-    "fish": 504,
-    "fpa": 2.24
+    "trips": 10,
+    "anglers": 257,
+    "fish": 550,
+    "fpa": 2.14
   },
   {
     "rank": 2,
