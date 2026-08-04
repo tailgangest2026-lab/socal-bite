@@ -87,10 +87,10 @@
     "boat": "Lady K",
     "landing": "Fish Emeryville",
     "region": "Alameda County",
-    "trips": 71,
-    "anglers": 627,
+    "trips": 72,
+    "anglers": 637,
     "fish": 710,
-    "fpa": 1.13,
+    "fpa": 1.11,
     "top_species_1": "Rockfish",
     "top_species_2": "Lingcod",
     "top_species_3": "Halibut"
@@ -111,10 +111,10 @@
     "boat": "Pacific Pearl",
     "landing": "Fish Emeryville",
     "region": "Alameda County",
-    "trips": 79,
-    "anglers": 1029,
+    "trips": 80,
+    "anglers": 1043,
     "fish": 947,
-    "fpa": 0.92,
+    "fpa": 0.91,
     "top_species_1": "Rockfish",
     "top_species_2": "Halibut",
     "top_species_3": "Lingcod"
@@ -1275,10 +1275,10 @@
     "boat": "Sea Watch",
     "landing": "Seaforth Sportfishing",
     "region": "San Diego County",
-    "trips": 80,
-    "anglers": 2047,
-    "fish": 11348,
-    "fpa": 5.54,
+    "trips": 81,
+    "anglers": 2077,
+    "fish": 11462,
+    "fpa": 5.52,
     "top_species_1": "Calico Bass Released",
     "top_species_2": "Calico Bass",
     "top_species_3": "Barracuda"
@@ -1524,18 +1524,6 @@
     "top_species_3": "Rockfish"
   },
   {
-    "boat": "Daily Double",
-    "landing": "Point Loma Sportfishing",
-    "region": "San Diego County",
-    "trips": 101,
-    "anglers": 2374,
-    "fish": 7627,
-    "fpa": 3.21,
-    "top_species_1": "Calico Bass",
-    "top_species_2": "Calico Bass Released",
-    "top_species_3": "Rockfish"
-  },
-  {
     "boat": "New Lo-An",
     "landing": "Point Loma Sportfishing",
     "region": "San Diego County",
@@ -1558,6 +1546,18 @@
     "top_species_1": "Calico Bass Released",
     "top_species_2": "Calico Bass",
     "top_species_3": "Yellowtail"
+  },
+  {
+    "boat": "Daily Double",
+    "landing": "Point Loma Sportfishing",
+    "region": "San Diego County",
+    "trips": 102,
+    "anglers": 2395,
+    "fish": 7632,
+    "fpa": 3.19,
+    "top_species_1": "Calico Bass",
+    "top_species_2": "Calico Bass Released",
+    "top_species_3": "Rockfish"
   },
   {
     "boat": "Top Gun 80",
