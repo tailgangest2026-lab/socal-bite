@@ -170,8 +170,8 @@
     "trip_type": "Full Day",
     "boat": "Playn Hooky",
     "landing": "Fish Emeryville",
-    "trips": 5,
-    "anglers": 30,
+    "trips": 6,
+    "anglers": 34,
     "fish": 0,
     "fpa": 0
   },
@@ -214,10 +214,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Sunny Day",
     "landing": "Patriot Sportfishing",
-    "trips": 13,
-    "anglers": 47,
-    "fish": 21,
-    "fpa": 0.45
+    "trips": 14,
+    "anglers": 51,
+    "fish": 22,
+    "fpa": 0.43
   },
   {
     "rank": 5,
@@ -786,8 +786,8 @@
     "trip_type": "Full Day",
     "boat": "Outer Limits (Sausalito, CA)",
     "landing": "Big Cs Charters",
-    "trips": 31,
-    "anglers": 453,
+    "trips": 32,
+    "anglers": 468,
     "fish": 0,
     "fpa": 0
   },
@@ -1301,23 +1301,23 @@
     "rank": 5,
     "region": "San Diego County",
     "trip_type": "1/2 Day AM",
+    "boat": "Southern Cal",
+    "landing": "Oceanside Sea Center",
+    "trips": 29,
+    "anglers": 952,
+    "fish": 2713,
+    "fpa": 2.85
+  },
+  {
+    "rank": 6,
+    "region": "San Diego County",
+    "trip_type": "1/2 Day AM",
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
     "trips": 28,
     "anglers": 1360,
     "fish": 3806,
     "fpa": 2.8
-  },
-  {
-    "rank": 6,
-    "region": "San Diego County",
-    "trip_type": "1/2 Day AM",
-    "boat": "Southern Cal",
-    "landing": "Oceanside Sea Center",
-    "trips": 28,
-    "anglers": 941,
-    "fish": 2613,
-    "fpa": 2.78
   },
   {
     "rank": 7,
@@ -1545,10 +1545,10 @@
     "trip_type": "3/4 Day",
     "boat": "Sea Watch",
     "landing": "Seaforth Sportfishing",
-    "trips": 27,
-    "anglers": 775,
-    "fish": 5033,
-    "fpa": 6.49
+    "trips": 28,
+    "anglers": 786,
+    "fish": 5115,
+    "fpa": 6.51
   },
   {
     "rank": 5,
@@ -1985,10 +1985,10 @@
     "trip_type": "3/4 Day",
     "boat": "Gentleman",
     "landing": "Channel Islands Sportfishing",
-    "trips": 44,
-    "anglers": 1408,
-    "fish": 9038,
-    "fpa": 6.42
+    "trips": 45,
+    "anglers": 1433,
+    "fish": 9293,
+    "fpa": 6.48
   },
   {
     "rank": 1,
@@ -2073,9 +2073,9 @@
     "trip_type": "Overnight",
     "boat": "Mirage",
     "landing": "Channel Islands Sportfishing",
-    "trips": 36,
-    "anglers": 640,
-    "fish": 7124,
-    "fpa": 11.13
+    "trips": 37,
+    "anglers": 661,
+    "fish": 7544,
+    "fpa": 11.41
   }
 ]
