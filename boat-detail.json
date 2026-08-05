@@ -1344,18 +1344,6 @@
     "top_species_3": "Yellowtail"
   },
   {
-    "boat": "Old Glory",
-    "landing": "H&M Landing",
-    "region": "San Diego County",
-    "trips": 26,
-    "anglers": 602,
-    "fish": 2482,
-    "fpa": 4.12,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Yellowfin Tuna",
-    "top_species_3": "Yellowtail"
-  },
-  {
     "boat": "Premier",
     "landing": "H&M Landing",
     "region": "San Diego County",
@@ -1377,6 +1365,18 @@
     "fpa": 4.02,
     "top_species_1": "Bluefin Tuna",
     "top_species_2": "Rockfish",
+    "top_species_3": "Yellowtail"
+  },
+  {
+    "boat": "Old Glory",
+    "landing": "H&M Landing",
+    "region": "San Diego County",
+    "trips": 27,
+    "anglers": 634,
+    "fish": 2545,
+    "fpa": 4.01,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Yellowfin Tuna",
     "top_species_3": "Yellowtail"
   },
   {
@@ -1644,18 +1644,6 @@
     "top_species_3": "Yellowfin Tuna"
   },
   {
-    "boat": "El Gato Dos",
-    "landing": "Seaforth Sportfishing",
-    "region": "San Diego County",
-    "trips": 28,
-    "anglers": 136,
-    "fish": 335,
-    "fpa": 2.46,
-    "top_species_1": "Yellowtail",
-    "top_species_2": "Rockfish",
-    "top_species_3": "Calico Bass Released"
-  },
-  {
     "boat": "Vendetta 2",
     "landing": "H&M Landing",
     "region": "San Diego County",
@@ -1666,6 +1654,18 @@
     "top_species_1": "Yellowtail",
     "top_species_2": "Barracuda",
     "top_species_3": "Bonito"
+  },
+  {
+    "boat": "El Gato Dos",
+    "landing": "Seaforth Sportfishing",
+    "region": "San Diego County",
+    "trips": 29,
+    "anglers": 142,
+    "fish": 341,
+    "fpa": 2.4,
+    "top_species_1": "Yellowtail",
+    "top_species_2": "Rockfish",
+    "top_species_3": "Calico Bass Released"
   },
   {
     "boat": "Got Bait",
@@ -2199,10 +2199,10 @@
     "boat": "Island Tak",
     "landing": "Channel Islands Sportfishing",
     "region": "Ventura County",
-    "trips": 95,
-    "anglers": 898,
-    "fish": 6686,
-    "fpa": 7.45,
+    "trips": 96,
+    "anglers": 905,
+    "fish": 6689,
+    "fpa": 7.39,
     "top_species_1": "Calico Bass",
     "top_species_2": "Whitefish",
     "top_species_3": "Rockfish"
@@ -2235,10 +2235,10 @@
     "boat": "Graylight",
     "landing": "Channel Islands Sportfishing",
     "region": "Ventura County",
-    "trips": 133,
-    "anglers": 752,
-    "fish": 4743,
-    "fpa": 6.31,
+    "trips": 134,
+    "anglers": 758,
+    "fish": 4774,
+    "fpa": 6.3,
     "top_species_1": "Calico Bass",
     "top_species_2": "Rockfish",
     "top_species_3": "Whitefish"
