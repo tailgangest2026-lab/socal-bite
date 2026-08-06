@@ -199,22 +199,22 @@
     "rank": 1,
     "region": "NorCal",
     "species": "Rockfish",
-    "fish": 12051,
-    "trips_reported": 101
+    "fish": 12321,
+    "trips_reported": 102
   },
   {
     "rank": 2,
     "region": "NorCal",
     "species": "Lingcod",
-    "fish": 395,
-    "trips_reported": 51
+    "fish": 397,
+    "trips_reported": 52
   },
   {
     "rank": 3,
     "region": "NorCal",
     "species": "Halibut",
-    "fish": 38,
-    "trips_reported": 10
+    "fish": 39,
+    "trips_reported": 11
   },
   {
     "rank": 1,
@@ -325,8 +325,8 @@
     "rank": 2,
     "region": "San Diego County",
     "species": "Calico Bass",
-    "fish": 11892,
-    "trips_reported": 426
+    "fish": 11896,
+    "trips_reported": 427
   },
   {
     "rank": 3,
@@ -339,8 +339,8 @@
     "rank": 4,
     "region": "San Diego County",
     "species": "Yellowtail",
-    "fish": 8562,
-    "trips_reported": 501
+    "fish": 8563,
+    "trips_reported": 502
   },
   {
     "rank": 5,
@@ -367,15 +367,15 @@
     "rank": 8,
     "region": "San Diego County",
     "species": "Yellowfin Tuna",
-    "fish": 6042,
-    "trips_reported": 203
+    "fish": 6044,
+    "trips_reported": 204
   },
   {
     "rank": 9,
     "region": "San Diego County",
     "species": "Sand Bass",
-    "fish": 3824,
-    "trips_reported": 227
+    "fish": 3909,
+    "trips_reported": 228
   },
   {
     "rank": 10,
@@ -402,8 +402,8 @@
     "rank": 13,
     "region": "San Diego County",
     "species": "Sculpin",
-    "fish": 464,
-    "trips_reported": 126
+    "fish": 468,
+    "trips_reported": 127
   },
   {
     "rank": 14,
@@ -465,8 +465,8 @@
     "rank": 2,
     "region": "Santa Barbara County",
     "species": "Whitefish",
-    "fish": 8121,
-    "trips_reported": 87
+    "fish": 8124,
+    "trips_reported": 88
   },
   {
     "rank": 3,
@@ -485,26 +485,33 @@
   {
     "rank": 5,
     "region": "Santa Barbara County",
+    "species": "Bonito",
+    "fish": 170,
+    "trips_reported": 1
+  },
+  {
+    "rank": 6,
+    "region": "Santa Barbara County",
     "species": "Barracuda",
     "fish": 80,
     "trips_reported": 12
   },
   {
-    "rank": 6,
-    "region": "Santa Barbara County",
-    "species": "Halibut",
-    "fish": 62,
-    "trips_reported": 28
-  },
-  {
     "rank": 7,
     "region": "Santa Barbara County",
-    "species": "Sand Bass",
-    "fish": 8,
-    "trips_reported": 6
+    "species": "Halibut",
+    "fish": 63,
+    "trips_reported": 29
   },
   {
     "rank": 8,
+    "region": "Santa Barbara County",
+    "species": "Sand Bass",
+    "fish": 9,
+    "trips_reported": 7
+  },
+  {
+    "rank": 9,
     "region": "Santa Barbara County",
     "species": "Yellowtail",
     "fish": 2,
@@ -591,22 +598,22 @@
     "rank": 1,
     "region": "Ventura County",
     "species": "Whitefish",
-    "fish": 33588,
-    "trips_reported": 452
+    "fish": 33730,
+    "trips_reported": 453
   },
   {
     "rank": 2,
     "region": "Ventura County",
     "species": "Rockfish",
-    "fish": 31513,
-    "trips_reported": 328
+    "fish": 31575,
+    "trips_reported": 329
   },
   {
     "rank": 3,
     "region": "Ventura County",
     "species": "Calico Bass",
-    "fish": 14685,
-    "trips_reported": 437
+    "fish": 14742,
+    "trips_reported": 438
   },
   {
     "rank": 4,
@@ -632,16 +639,16 @@
   {
     "rank": 7,
     "region": "Ventura County",
-    "species": "Bonito",
+    "species": "Barracuda",
     "fish": 1514,
-    "trips_reported": 119
+    "trips_reported": 180
   },
   {
     "rank": 8,
     "region": "Ventura County",
-    "species": "Barracuda",
-    "fish": 1498,
-    "trips_reported": 179
+    "species": "Bonito",
+    "fish": 1514,
+    "trips_reported": 119
   },
   {
     "rank": 9,
