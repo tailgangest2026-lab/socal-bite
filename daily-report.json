@@ -283,6 +283,16 @@
     "trip_date": "2026-08-05",
     "region": "Los Angeles County",
     "landing": "22nd Street Landing",
+    "boat": "Freedom",
+    "trip_type": "Overnight",
+    "anglers": 35,
+    "fish_counts": "34 Bonito, 78 Calico Bass, 17 Yellowtail",
+    "total_fish": 129
+  },
+  {
+    "trip_date": "2026-08-05",
+    "region": "Los Angeles County",
+    "landing": "22nd Street Landing",
     "boat": "Monte Carlo",
     "trip_type": "1/2 Day AM",
     "anglers": 50,
@@ -946,6 +956,16 @@
     "boat": "Lovely Martha",
     "trip_type": "Full Day",
     "anglers": 14,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-08-05",
+    "region": "San Francisco Bay",
+    "landing": "Lovely Martha Sportfishing",
+    "boat": "Lovely Martha",
+    "trip_type": "Full Day",
+    "anglers": 18,
     "fish_counts": "",
     "total_fish": 0
   },
