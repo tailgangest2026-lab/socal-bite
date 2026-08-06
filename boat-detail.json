@@ -348,18 +348,6 @@
     "top_species_3": "Sand Bass"
   },
   {
-    "boat": "Toronado",
-    "landing": "Pierpoint Landing",
-    "region": "Los Angeles County",
-    "trips": 40,
-    "anglers": 980,
-    "fish": 6870,
-    "fpa": 7.01,
-    "top_species_1": "Whitefish",
-    "top_species_2": "Calico Bass",
-    "top_species_3": "Rockfish"
-  },
-  {
     "boat": "Amigo",
     "landing": "22nd Street Landing",
     "region": "Los Angeles County",
@@ -382,6 +370,18 @@
     "top_species_1": "Sculpin",
     "top_species_2": "Barracuda",
     "top_species_3": "Whitefish"
+  },
+  {
+    "boat": "Toronado",
+    "landing": "Pierpoint Landing",
+    "region": "Los Angeles County",
+    "trips": 41,
+    "anglers": 1007,
+    "fish": 6924,
+    "fpa": 6.88,
+    "top_species_1": "Whitefish",
+    "top_species_2": "Calico Bass",
+    "top_species_3": "Rockfish"
   },
   {
     "boat": "El Patron",
@@ -855,8 +855,8 @@
     "boat": "Chasin Crustacean",
     "landing": "Big Cs Charters",
     "region": "NorCal",
-    "trips": 13,
-    "anglers": 78,
+    "trips": 14,
+    "anglers": 84,
     "fish": 0,
     "fpa": 0,
     "top_species_1": "",
@@ -1923,10 +1923,10 @@
     "boat": "New Easy Rider",
     "landing": "Berkeley Charter Boats",
     "region": "San Francisco Bay",
-    "trips": 49,
-    "anglers": 922,
+    "trips": 50,
+    "anglers": 939,
     "fish": 219,
-    "fpa": 0.24,
+    "fpa": 0.23,
     "top_species_1": "Rockfish",
     "top_species_2": "Lingcod",
     "top_species_3": "Bonito"
