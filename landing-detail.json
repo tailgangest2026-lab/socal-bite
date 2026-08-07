@@ -56,6 +56,20 @@
     "fpa": 0
   },
   {
+    "landing": "22nd Street Landing",
+    "region": "Los Angeles County",
+    "phone": "(310) 832-8304",
+    "website": "https://www.22ndstreet.com",
+    "address": "141 W 22nd St, San Pedro, CA 90731",
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=141%20W%2022nd%20St%2C%20San%20Pedro%2C%20CA%2090731",
+    "booking_url": "https://www.22ndstreet.com",
+    "trips": 491,
+    "boats": 8,
+    "anglers": 16955,
+    "fish": 89011,
+    "fpa": 5.25
+  },
+  {
     "landing": "Marina Del Rey Sportfishing",
     "region": "Los Angeles County",
     "phone": "(310) 822-3625",
@@ -68,20 +82,6 @@
     "anglers": 15769,
     "fish": 88907,
     "fpa": 5.64
-  },
-  {
-    "landing": "22nd Street Landing",
-    "region": "Los Angeles County",
-    "phone": "(310) 832-8304",
-    "website": "https://www.22ndstreet.com",
-    "address": "141 W 22nd St, San Pedro, CA 90731",
-    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=141%20W%2022nd%20St%2C%20San%20Pedro%2C%20CA%2090731",
-    "booking_url": "https://www.22ndstreet.com",
-    "trips": 490,
-    "boats": 8,
-    "anglers": 16944,
-    "fish": 88898,
-    "fpa": 5.25
   },
   {
     "landing": "Long Beach Sportfishing",
@@ -329,11 +329,11 @@
     "address": "",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Argo%20Sportfishing",
     "booking_url": "",
-    "trips": 53,
+    "trips": 54,
     "boats": 1,
-    "anglers": 259,
-    "fish": 150,
-    "fpa": 0.58
+    "anglers": 264,
+    "fish": 175,
+    "fpa": 0.66
   },
   {
     "landing": "Salty Lady Sportfishing",
@@ -462,6 +462,20 @@
     "fpa": 0
   },
   {
+    "landing": "Telstar Charters",
+    "region": "NorCal",
+    "phone": "",
+    "website": "",
+    "address": "",
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Telstar%20Charters",
+    "booking_url": "",
+    "trips": 9,
+    "boats": 1,
+    "anglers": 116,
+    "fish": 0,
+    "fpa": 0
+  },
+  {
     "landing": "Sonoma Coast Adventures",
     "region": "NorCal",
     "phone": "",
@@ -472,20 +486,6 @@
     "trips": 9,
     "boats": 1,
     "anglers": 52,
-    "fish": 0,
-    "fpa": 0
-  },
-  {
-    "landing": "Telstar Charters",
-    "region": "NorCal",
-    "phone": "",
-    "website": "",
-    "address": "",
-    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Telstar%20Charters",
-    "booking_url": "",
-    "trips": 8,
-    "boats": 1,
-    "anglers": 101,
     "fish": 0,
     "fpa": 0
   },
@@ -581,11 +581,11 @@
     "address": "1717 Quivira Rd, San Diego, CA 92109",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=1717%20Quivira%20Rd%2C%20San%20Diego%2C%20CA%2092109",
     "booking_url": "https://www.seaforthlanding.com",
-    "trips": 646,
+    "trips": 647,
     "boats": 13,
-    "anglers": 19094,
-    "fish": 68164,
-    "fpa": 3.57
+    "anglers": 19124,
+    "fish": 68168,
+    "fpa": 3.56
   },
   {
     "landing": "H&M Landing",
@@ -595,10 +595,10 @@
     "address": "2803 Emerson St, San Diego, CA 92106",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=2803%20Emerson%20St%2C%20San%20Diego%2C%20CA%2092106",
     "booking_url": "https://www.hmlanding.com",
-    "trips": 516,
+    "trips": 517,
     "boats": 21,
-    "anglers": 13241,
-    "fish": 53865,
+    "anglers": 13266,
+    "fish": 53927,
     "fpa": 4.07
   },
   {

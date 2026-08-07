@@ -409,6 +409,17 @@
   {
     "rank": 1,
     "region": "Los Angeles County",
+    "trip_type": "2 Day",
+    "boat": "Amigo",
+    "landing": "22nd Street Landing",
+    "trips": 5,
+    "anglers": 71,
+    "fish": 901,
+    "fpa": 12.69
+  },
+  {
+    "rank": 1,
+    "region": "Los Angeles County",
     "trip_type": "3/4 Day",
     "boat": "Victory",
     "landing": "Long Beach Sportfishing",
@@ -1457,10 +1468,10 @@
     "trip_type": "3/4 Day",
     "boat": "Malihini",
     "landing": "H&M Landing",
-    "trips": 7,
-    "anglers": 204,
-    "fish": 2050,
-    "fpa": 10.05
+    "trips": 8,
+    "anglers": 229,
+    "fish": 2112,
+    "fpa": 9.22
   },
   {
     "rank": 3,
