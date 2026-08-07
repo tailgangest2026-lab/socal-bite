@@ -56,6 +56,20 @@
     "fpa": 0
   },
   {
+    "landing": "Marina Del Rey Sportfishing",
+    "region": "Los Angeles County",
+    "phone": "(310) 822-3625",
+    "website": "https://mdrsf.com",
+    "address": "13759 Fiji Way, Marina Del Rey, CA 90292",
+    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=13759%20Fiji%20Way%2C%20Marina%20Del%20Rey%2C%20CA%2090292",
+    "booking_url": "https://mdrsf.com",
+    "trips": 346,
+    "boats": 3,
+    "anglers": 15769,
+    "fish": 88907,
+    "fpa": 5.64
+  },
+  {
     "landing": "22nd Street Landing",
     "region": "Los Angeles County",
     "phone": "(310) 832-8304",
@@ -68,20 +82,6 @@
     "anglers": 16944,
     "fish": 88898,
     "fpa": 5.25
-  },
-  {
-    "landing": "Marina Del Rey Sportfishing",
-    "region": "Los Angeles County",
-    "phone": "(310) 822-3625",
-    "website": "https://mdrsf.com",
-    "address": "13759 Fiji Way, Marina Del Rey, CA 90292",
-    "google_maps_link": "https://www.google.com/maps/search/?api=1&query=13759%20Fiji%20Way%2C%20Marina%20Del%20Rey%2C%20CA%2090292",
-    "booking_url": "https://mdrsf.com",
-    "trips": 343,
-    "boats": 3,
-    "anglers": 15612,
-    "fish": 88451,
-    "fpa": 5.67
   },
   {
     "landing": "Long Beach Sportfishing",
@@ -203,11 +203,11 @@
     "address": "",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Bodega%20Bay%20Sportfishing%20Center",
     "booking_url": "",
-    "trips": 57,
+    "trips": 58,
     "boats": 1,
-    "anglers": 864,
+    "anglers": 881,
     "fish": 2636,
-    "fpa": 3.05
+    "fpa": 2.99
   },
   {
     "landing": "Stagnaros Charters",
@@ -595,11 +595,11 @@
     "address": "2803 Emerson St, San Diego, CA 92106",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=2803%20Emerson%20St%2C%20San%20Diego%2C%20CA%2092106",
     "booking_url": "https://www.hmlanding.com",
-    "trips": 514,
+    "trips": 516,
     "boats": 21,
-    "anglers": 13171,
-    "fish": 53857,
-    "fpa": 4.09
+    "anglers": 13241,
+    "fish": 53865,
+    "fpa": 4.07
   },
   {
     "landing": "Fisherman's Landing",
@@ -609,11 +609,11 @@
     "address": "2838 Garrison St, San Diego, CA 92106",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=2838%20Garrison%20St%2C%20San%20Diego%2C%20CA%2092106",
     "booking_url": "https://www.fishermanslanding.com",
-    "trips": 382,
+    "trips": 384,
     "boats": 12,
-    "anglers": 10062,
-    "fish": 35298,
-    "fpa": 3.51
+    "anglers": 10146,
+    "fish": 35443,
+    "fpa": 3.49
   },
   {
     "landing": "Oceanside Sea Center",
@@ -665,11 +665,11 @@
     "address": "",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Lovely%20Martha%20Sportfishing",
     "booking_url": "",
-    "trips": 78,
+    "trips": 79,
     "boats": 1,
-    "anglers": 1483,
+    "anglers": 1505,
     "fish": 786,
-    "fpa": 0.53
+    "fpa": 0.52
   },
   {
     "landing": "Right Hook Sportfishing",
@@ -693,9 +693,9 @@
     "address": "",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=Berkeley%20Charter%20Boats",
     "booking_url": "",
-    "trips": 93,
+    "trips": 94,
     "boats": 3,
-    "anglers": 1558,
+    "anglers": 1576,
     "fish": 230,
     "fpa": 0.15
   },
@@ -735,10 +735,10 @@
     "address": "301 W Cabrillo Blvd, Santa Barbara, CA 93101",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=301%20W%20Cabrillo%20Blvd%2C%20Santa%20Barbara%2C%20CA%2093101",
     "booking_url": "https://sblanding.com",
-    "trips": 238,
+    "trips": 240,
     "boats": 2,
-    "anglers": 5679,
-    "fish": 74299,
+    "anglers": 5720,
+    "fish": 74804,
     "fpa": 13.08
   },
   {
@@ -777,11 +777,11 @@
     "address": "4151 Victoria Ave, Oxnard, CA 93035",
     "google_maps_link": "https://www.google.com/maps/search/?api=1&query=4151%20Victoria%20Ave%2C%20Oxnard%2C%20CA%2093035",
     "booking_url": "https://www.channelislandssportfishing.com",
-    "trips": 1127,
+    "trips": 1132,
     "boats": 13,
-    "anglers": 22999,
-    "fish": 219382,
-    "fpa": 9.54
+    "anglers": 23113,
+    "fish": 220140,
+    "fpa": 9.52
   },
   {
     "landing": "Hooks Landing",
