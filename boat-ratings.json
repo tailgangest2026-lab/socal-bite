@@ -104,10 +104,10 @@
     "trip_type": "Full Day",
     "boat": "Lady K",
     "landing": "Fish Emeryville",
-    "trips": 35,
-    "anglers": 316,
+    "trips": 36,
+    "anglers": 326,
     "fish": 208,
-    "fpa": 0.66
+    "fpa": 0.64
   },
   {
     "rank": 9,
@@ -2027,22 +2027,22 @@
     "rank": 2,
     "region": "Ventura County",
     "trip_type": "Overnight",
+    "boat": "Mirage",
+    "landing": "Channel Islands Sportfishing",
+    "trips": 39,
+    "anglers": 702,
+    "fish": 8363,
+    "fpa": 11.91
+  },
+  {
+    "rank": 3,
+    "region": "Ventura County",
+    "trip_type": "Overnight",
     "boat": "Indicator",
     "landing": "Channel Islands Sportfishing",
     "trips": 27,
     "anglers": 496,
     "fish": 5800,
     "fpa": 11.69
-  },
-  {
-    "rank": 3,
-    "region": "Ventura County",
-    "trip_type": "Overnight",
-    "boat": "Mirage",
-    "landing": "Channel Islands Sportfishing",
-    "trips": 38,
-    "anglers": 682,
-    "fish": 7964,
-    "fpa": 11.68
   }
 ]
