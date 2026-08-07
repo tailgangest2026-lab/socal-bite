@@ -853,11 +853,31 @@
     "trip_date": "2026-08-06",
     "region": "San Diego County",
     "landing": "H&M Landing",
+    "boat": "Producer",
+    "trip_type": "Overnight",
+    "anglers": 29,
+    "fish_counts": "27 Yellowfin Tuna",
+    "total_fish": 27
+  },
+  {
+    "trip_date": "2026-08-06",
+    "region": "San Diego County",
+    "landing": "H&M Landing",
     "boat": "Sea Adventure 80",
     "trip_type": "1.5 Day",
     "anglers": 18,
     "fish_counts": "80 Yellowfin Tuna",
     "total_fish": 80
+  },
+  {
+    "trip_date": "2026-08-06",
+    "region": "San Diego County",
+    "landing": "H&M Landing",
+    "boat": "Vendetta 2",
+    "trip_type": "Full Day Coronado Islands",
+    "anglers": 25,
+    "fish_counts": "",
+    "total_fish": 0
   },
   {
     "trip_date": "2026-08-06",
@@ -1188,6 +1208,16 @@
     "anglers": 20,
     "fish_counts": "18 Bonito, 6 Calico Bass, 3 Halibut, 12 Rockfish, 128 Whitefish, 1 Yellowtail",
     "total_fish": 168
+  },
+  {
+    "trip_date": "2026-08-06",
+    "region": "Ventura County",
+    "landing": "Channel Islands Sportfishing",
+    "boat": "Indicator",
+    "trip_type": "Overnight",
+    "anglers": 20,
+    "fish_counts": "6 Barracuda, 18 Bonito, 5 Calico Bass, 3 Halibut, 12 Rockfish, 128 Whitefish, 1 Yellowtail",
+    "total_fish": 173
   },
   {
     "trip_date": "2026-08-06",
