@@ -1237,10 +1237,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Dolphin",
     "landing": "Fisherman's Landing",
-    "trips": 29,
-    "anglers": 1152,
-    "fish": 4618,
-    "fpa": 4.01
+    "trips": 30,
+    "anglers": 1179,
+    "fish": 4649,
+    "fpa": 3.94
   },
   {
     "rank": 5,
@@ -1292,10 +1292,10 @@
     "trip_type": "1/2 Day PM",
     "boat": "Dolphin",
     "landing": "Fisherman's Landing",
-    "trips": 28,
-    "anglers": 1065,
-    "fish": 4003,
-    "fpa": 3.76
+    "trips": 29,
+    "anglers": 1122,
+    "fish": 4117,
+    "fpa": 3.67
   },
   {
     "rank": 3,
@@ -1565,17 +1565,6 @@
     "rank": 1,
     "region": "San Diego County",
     "trip_type": "Full Day Offshore",
-    "boat": "Grande",
-    "landing": "H&M Landing",
-    "trips": 9,
-    "anglers": 318,
-    "fish": 558,
-    "fpa": 1.75
-  },
-  {
-    "rank": 2,
-    "region": "San Diego County",
-    "trip_type": "Full Day Offshore",
     "boat": "El Gato Dos",
     "landing": "Seaforth Sportfishing",
     "trips": 13,
@@ -1584,7 +1573,7 @@
     "fpa": 1.7
   },
   {
-    "rank": 3,
+    "rank": 2,
     "region": "San Diego County",
     "trip_type": "Full Day Offshore",
     "boat": "San Diego",
@@ -1593,6 +1582,17 @@
     "anglers": 206,
     "fish": 349,
     "fpa": 1.69
+  },
+  {
+    "rank": 3,
+    "region": "San Diego County",
+    "trip_type": "Full Day Offshore",
+    "boat": "Grande",
+    "landing": "H&M Landing",
+    "trips": 10,
+    "anglers": 359,
+    "fish": 566,
+    "fpa": 1.58
   },
   {
     "rank": 1,
@@ -1864,10 +1864,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Speed Twin",
     "landing": "Channel Islands Sportfishing",
-    "trips": 52,
-    "anglers": 1800,
-    "fish": 13574,
-    "fpa": 7.54
+    "trips": 53,
+    "anglers": 1848,
+    "fish": 14053,
+    "fpa": 7.6
   },
   {
     "rank": 1,
@@ -1952,10 +1952,10 @@
     "trip_type": "Full Day",
     "boat": "Island Fox",
     "landing": "Channel Islands Sportfishing",
-    "trips": 27,
-    "anglers": 459,
-    "fish": 3630,
-    "fpa": 7.91
+    "trips": 28,
+    "anglers": 478,
+    "fish": 3735,
+    "fpa": 7.81
   },
   {
     "rank": 3,
@@ -1972,23 +1972,23 @@
     "rank": 4,
     "region": "Ventura County",
     "trip_type": "Full Day",
-    "boat": "Island Tak",
+    "boat": "Aloha Spirit",
     "landing": "Channel Islands Sportfishing",
-    "trips": 42,
-    "anglers": 387,
-    "fish": 2537,
-    "fpa": 6.56
+    "trips": 59,
+    "anglers": 1780,
+    "fish": 11433,
+    "fpa": 6.42
   },
   {
     "rank": 5,
     "region": "Ventura County",
     "trip_type": "Full Day",
-    "boat": "Aloha Spirit",
+    "boat": "Island Tak",
     "landing": "Channel Islands Sportfishing",
-    "trips": 58,
-    "anglers": 1760,
-    "fish": 11366,
-    "fpa": 6.46
+    "trips": 43,
+    "anglers": 397,
+    "fish": 2538,
+    "fpa": 6.39
   },
   {
     "rank": 1,
