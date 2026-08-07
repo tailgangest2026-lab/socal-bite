@@ -572,6 +572,16 @@
   {
     "trip_date": "2026-08-06",
     "region": "NorCal",
+    "landing": "Hog Heaven Sportfishing",
+    "boat": "Hog Heaven",
+    "trip_type": "Full Day",
+    "anglers": 11,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-08-06",
+    "region": "NorCal",
     "landing": "Reel Obsession Sportfishing",
     "boat": "Dragonfly",
     "trip_type": "Full Day",
@@ -638,6 +648,26 @@
     "anglers": 44,
     "fish_counts": "52 Calico Bass, 2 Sand Bass, 2 Sculpin, 8 Sheephead, 15 Whitefish",
     "total_fish": 79
+  },
+  {
+    "trip_date": "2026-08-06",
+    "region": "Orange County",
+    "landing": "Davey's Locker",
+    "boat": "Western Pride",
+    "trip_type": "1/2 Day AM",
+    "anglers": 48,
+    "fish_counts": "8 Barracuda, 91 Calico Bass, 7 Sand Bass",
+    "total_fish": 106
+  },
+  {
+    "trip_date": "2026-08-06",
+    "region": "Orange County",
+    "landing": "Davey's Locker",
+    "boat": "Western Pride",
+    "trip_type": "1/2 Day PM",
+    "anglers": 47,
+    "fish_counts": "88 Calico Bass, 14 Sand Bass, 1 Sculpin, 10 Whitefish",
+    "total_fish": 113
   },
   {
     "trip_date": "2026-08-06",
@@ -933,11 +963,31 @@
     "trip_date": "2026-08-06",
     "region": "San Francisco Bay",
     "landing": "California Dawn Sportfishing",
+    "boat": "California Dawn II",
+    "trip_type": "Full Day",
+    "anglers": 24,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-08-06",
+    "region": "San Francisco Bay",
+    "landing": "California Dawn Sportfishing",
     "boat": "New California Dawn",
     "trip_type": "Full Day",
     "anglers": 10,
     "fish_counts": "8 Lingcod, 100 Rockfish",
     "total_fish": 108
+  },
+  {
+    "trip_date": "2026-08-06",
+    "region": "San Francisco Bay",
+    "landing": "California Dawn Sportfishing",
+    "boat": "New California Dawn",
+    "trip_type": "Full Day",
+    "anglers": 12,
+    "fish_counts": "4 Lingcod, 120 Rockfish",
+    "total_fish": 124
   },
   {
     "trip_date": "2026-08-06",
@@ -976,6 +1026,16 @@
     "boat": "Right Hook",
     "trip_type": "3/4 Day",
     "anglers": 6,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-08-06",
+    "region": "San Francisco Bay",
+    "landing": "Right Hook Sportfishing",
+    "boat": "Right Hook",
+    "trip_type": "1/2 Day AM",
+    "anglers": 4,
     "fish_counts": "",
     "total_fish": 0
   },
