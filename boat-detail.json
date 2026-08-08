@@ -468,6 +468,18 @@
     "top_species_3": "Bonito"
   },
   {
+    "boat": "Pursuit",
+    "landing": "22nd Street Landing",
+    "region": "Los Angeles County",
+    "trips": 86,
+    "anglers": 3151,
+    "fish": 13493,
+    "fpa": 4.28,
+    "top_species_1": "Calico Bass",
+    "top_species_2": "Bonito",
+    "top_species_3": "Whitefish"
+  },
+  {
     "boat": "Triton",
     "landing": "LA Waterfront Cruises and Sportfishing",
     "region": "Los Angeles County",
@@ -490,18 +502,6 @@
     "top_species_1": "Sculpin",
     "top_species_2": "Barracuda",
     "top_species_3": "Calico Bass"
-  },
-  {
-    "boat": "Pursuit",
-    "landing": "22nd Street Landing",
-    "region": "Los Angeles County",
-    "trips": 85,
-    "anglers": 3113,
-    "fish": 12860,
-    "fpa": 4.13,
-    "top_species_1": "Calico Bass",
-    "top_species_2": "Bonito",
-    "top_species_3": "Whitefish"
   },
   {
     "boat": "Redondo Special",
@@ -2127,10 +2127,10 @@
     "boat": "Indicator",
     "landing": "Channel Islands Sportfishing",
     "region": "Ventura County",
-    "trips": 62,
-    "anglers": 1087,
-    "fish": 13888,
-    "fpa": 12.78,
+    "trips": 63,
+    "anglers": 1107,
+    "fish": 14106,
+    "fpa": 12.74,
     "top_species_1": "Rockfish",
     "top_species_2": "Whitefish",
     "top_species_3": "Calico Bass"
