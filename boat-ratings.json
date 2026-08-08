@@ -137,8 +137,8 @@
     "trip_type": "Full Day",
     "boat": "C Gull II",
     "landing": "Fish Emeryville",
-    "trips": 30,
-    "anglers": 425,
+    "trips": 31,
+    "anglers": 441,
     "fish": 14,
     "fpa": 0.03
   },
@@ -300,6 +300,17 @@
     "rank": 1,
     "region": "Central California",
     "trip_type": "Full Day",
+    "boat": "Avenger",
+    "landing": "Morro Bay Landing",
+    "trips": 5,
+    "anglers": 86,
+    "fish": 868,
+    "fpa": 10.09
+  },
+  {
+    "rank": 2,
+    "region": "Central California",
+    "trip_type": "Full Day",
     "boat": "Endeavor (MB)",
     "landing": "Morro Bay Landing",
     "trips": 12,
@@ -308,7 +319,7 @@
     "fpa": 7.77
   },
   {
-    "rank": 2,
+    "rank": 3,
     "region": "Central California",
     "trip_type": "Full Day",
     "boat": "Patriot (Avila Beach)",
@@ -1468,10 +1479,10 @@
     "trip_type": "3/4 Day",
     "boat": "Sea Star",
     "landing": "Oceanside Sea Center",
-    "trips": 5,
-    "anglers": 76,
-    "fish": 806,
-    "fpa": 10.61
+    "trips": 6,
+    "anglers": 86,
+    "fish": 954,
+    "fpa": 11.09
   },
   {
     "rank": 2,
@@ -1490,10 +1501,10 @@
     "trip_type": "3/4 Day",
     "boat": "Chubasco II",
     "landing": "Oceanside Sea Center",
-    "trips": 17,
-    "anglers": 429,
-    "fish": 2859,
-    "fpa": 6.66
+    "trips": 18,
+    "anglers": 441,
+    "fish": 2950,
+    "fpa": 6.69
   },
   {
     "rank": 4,
@@ -1589,10 +1600,10 @@
     "trip_type": "Full Day Offshore",
     "boat": "El Gato Dos",
     "landing": "Seaforth Sportfishing",
-    "trips": 13,
-    "anglers": 70,
-    "fish": 119,
-    "fpa": 1.7
+    "trips": 14,
+    "anglers": 74,
+    "fish": 134,
+    "fpa": 1.81
   },
   {
     "rank": 2,
