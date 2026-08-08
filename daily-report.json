@@ -243,6 +243,26 @@
     "trip_date": "2026-08-07",
     "region": "Los Angeles County",
     "landing": "22nd Street Landing",
+    "boat": "Amigo",
+    "trip_type": "Overnight",
+    "anglers": 16,
+    "fish_counts": "1 Barracuda, 29 Bonito, 36 Calico Bass, 8 Whitefish, 44 Yellowtail",
+    "total_fish": 118
+  },
+  {
+    "trip_date": "2026-08-07",
+    "region": "Los Angeles County",
+    "landing": "22nd Street Landing",
+    "boat": "Freedom",
+    "trip_type": "Overnight",
+    "anglers": 36,
+    "fish_counts": "104 Bonito, 111 Calico Bass, 47 Yellowtail",
+    "total_fish": 262
+  },
+  {
+    "trip_date": "2026-08-07",
+    "region": "Los Angeles County",
+    "landing": "22nd Street Landing",
     "boat": "Monte Carlo",
     "trip_type": "1/2 Day AM",
     "anglers": 70,
@@ -451,6 +471,26 @@
   },
   {
     "trip_date": "2026-08-07",
+    "region": "Monterey County",
+    "landing": "J&M Sportfishing",
+    "boat": "Kahuna",
+    "trip_type": "1/2 Day AM",
+    "anglers": 14,
+    "fish_counts": "3 Lingcod, 130 Rockfish",
+    "total_fish": 133
+  },
+  {
+    "trip_date": "2026-08-07",
+    "region": "Monterey County",
+    "landing": "J&M Sportfishing",
+    "boat": "Kahuna",
+    "trip_type": "1/2 Day PM",
+    "anglers": 9,
+    "fish_counts": "90 Rockfish",
+    "total_fish": 90
+  },
+  {
+    "trip_date": "2026-08-07",
     "region": "NorCal",
     "landing": "Argo Sportfishing",
     "boat": "Argo",
@@ -536,6 +576,16 @@
     "boat": "Hog Heaven",
     "trip_type": "Full Day",
     "anglers": 11,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-08-07",
+    "region": "NorCal",
+    "landing": "Hog Heaven Sportfishing",
+    "boat": "Hog Heaven",
+    "trip_type": "Full Day",
+    "anglers": 17,
     "fish_counts": "",
     "total_fish": 0
   },
@@ -698,6 +748,26 @@
     "anglers": 41,
     "fish_counts": "115 Bonito, 36 Calico Bass, 9 Sand Bass, 2 Sheephead, 6 Whitefish",
     "total_fish": 168
+  },
+  {
+    "trip_date": "2026-08-07",
+    "region": "Orange County",
+    "landing": "Newport Landing",
+    "boat": "Patriot (Newport)",
+    "trip_type": "3/4 Day",
+    "anglers": 41,
+    "fish_counts": "1 Barracuda, 51 Calico Bass, 2 Rockfish, 12 Sand Bass, 7 Sculpin, 14 Sheephead",
+    "total_fish": 87
+  },
+  {
+    "trip_date": "2026-08-07",
+    "region": "Orange County",
+    "landing": "Newport Landing",
+    "boat": "Thunderbird",
+    "trip_type": "Overnight",
+    "anglers": 23,
+    "fish_counts": "28 Bluefin Tuna",
+    "total_fish": 28
   },
   {
     "trip_date": "2026-08-07",
@@ -1128,6 +1198,16 @@
     "anglers": 4,
     "fish_counts": "",
     "total_fish": 0
+  },
+  {
+    "trip_date": "2026-08-07",
+    "region": "San Francisco Bay",
+    "landing": "Right Hook Sportfishing",
+    "boat": "Right Hook",
+    "trip_type": "1/2 Day AM",
+    "anglers": 6,
+    "fish_counts": "12 Lingcod, 60 Rockfish",
+    "total_fish": 72
   },
   {
     "trip_date": "2026-08-07",
