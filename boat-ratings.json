@@ -852,10 +852,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Helena",
     "landing": "Dana Wharf Sportfishing",
-    "trips": 10,
-    "anglers": 200,
-    "fish": 1384,
-    "fpa": 6.92
+    "trips": 11,
+    "anglers": 225,
+    "fish": 1503,
+    "fpa": 6.68
   },
   {
     "rank": 3,
@@ -907,10 +907,10 @@
     "trip_type": "1/2 Day PM",
     "boat": "Helena",
     "landing": "Dana Wharf Sportfishing",
-    "trips": 10,
-    "anglers": 136,
-    "fish": 1442,
-    "fpa": 10.6
+    "trips": 11,
+    "anglers": 161,
+    "fish": 1513,
+    "fpa": 9.4
   },
   {
     "rank": 2,
@@ -1015,6 +1015,17 @@
     "rank": 1,
     "region": "Orange County",
     "trip_type": "3/4 Day",
+    "boat": "Reel Fun",
+    "landing": "Dana Wharf Sportfishing",
+    "trips": 5,
+    "anglers": 138,
+    "fish": 973,
+    "fpa": 7.05
+  },
+  {
+    "rank": 2,
+    "region": "Orange County",
+    "trip_type": "3/4 Day",
     "boat": "Helena",
     "landing": "Dana Wharf Sportfishing",
     "trips": 7,
@@ -1023,7 +1034,7 @@
     "fpa": 6.57
   },
   {
-    "rank": 2,
+    "rank": 3,
     "region": "Orange County",
     "trip_type": "3/4 Day",
     "boat": "Clemente",
@@ -1034,7 +1045,7 @@
     "fpa": 6.29
   },
   {
-    "rank": 3,
+    "rank": 4,
     "region": "Orange County",
     "trip_type": "3/4 Day",
     "boat": "Sum Fun",
@@ -1045,7 +1056,7 @@
     "fpa": 5.15
   },
   {
-    "rank": 4,
+    "rank": 5,
     "region": "Orange County",
     "trip_type": "3/4 Day",
     "boat": "Dana Pride",
@@ -1056,7 +1067,7 @@
     "fpa": 4.39
   },
   {
-    "rank": 5,
+    "rank": 6,
     "region": "Orange County",
     "trip_type": "3/4 Day",
     "boat": "Patriot (Newport)",
@@ -1067,7 +1078,7 @@
     "fpa": 3.6
   },
   {
-    "rank": 6,
+    "rank": 7,
     "region": "Orange County",
     "trip_type": "3/4 Day",
     "boat": "Freelance",
@@ -1078,7 +1089,7 @@
     "fpa": 3.59
   },
   {
-    "rank": 7,
+    "rank": 8,
     "region": "Orange County",
     "trip_type": "3/4 Day",
     "boat": "Aggressor",
@@ -1092,26 +1103,37 @@
     "rank": 1,
     "region": "Orange County",
     "trip_type": "Full Day",
-    "boat": "New San Mateo",
+    "boat": "Clemente",
     "landing": "Dana Wharf Sportfishing",
-    "trips": 14,
-    "anglers": 188,
-    "fish": 1070,
-    "fpa": 5.69
+    "trips": 5,
+    "anglers": 110,
+    "fish": 676,
+    "fpa": 6.15
   },
   {
     "rank": 2,
     "region": "Orange County",
     "trip_type": "Full Day",
-    "boat": "Current",
+    "boat": "New San Mateo",
     "landing": "Dana Wharf Sportfishing",
-    "trips": 6,
-    "anglers": 36,
-    "fish": 204,
-    "fpa": 5.67
+    "trips": 15,
+    "anglers": 194,
+    "fish": 1102,
+    "fpa": 5.68
   },
   {
     "rank": 3,
+    "region": "Orange County",
+    "trip_type": "Full Day",
+    "boat": "Current",
+    "landing": "Dana Wharf Sportfishing",
+    "trips": 7,
+    "anglers": 41,
+    "fish": 223,
+    "fpa": 5.44
+  },
+  {
+    "rank": 4,
     "region": "Orange County",
     "trip_type": "Full Day",
     "boat": "Blackfish",
@@ -1127,10 +1149,10 @@
     "trip_type": "Overnight",
     "boat": "Fury",
     "landing": "Dana Wharf Sportfishing",
-    "trips": 16,
-    "anglers": 340,
-    "fish": 3030,
-    "fpa": 8.91
+    "trips": 17,
+    "anglers": 367,
+    "fish": 3163,
+    "fpa": 8.62
   },
   {
     "rank": 2,
