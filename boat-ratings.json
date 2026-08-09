@@ -5,10 +5,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Playn Hooky",
     "landing": "Fish Emeryville",
-    "trips": 12,
-    "anglers": 72,
-    "fish": 524,
-    "fpa": 7.28
+    "trips": 13,
+    "anglers": 78,
+    "fish": 587,
+    "fpa": 7.53
   },
   {
     "rank": 2,
@@ -27,10 +27,10 @@
     "trip_type": "Full Day",
     "boat": "Sea Wolf",
     "landing": "Fish Emeryville",
-    "trips": 39,
-    "anglers": 740,
-    "fish": 7194,
-    "fpa": 9.72
+    "trips": 40,
+    "anglers": 760,
+    "fish": 7434,
+    "fpa": 9.78
   },
   {
     "rank": 2,
@@ -115,10 +115,10 @@
     "trip_type": "Full Day",
     "boat": "Scallywag",
     "landing": "Fish Emeryville",
-    "trips": 34,
-    "anglers": 192,
+    "trips": 35,
+    "anglers": 198,
     "fish": 112,
-    "fpa": 0.58
+    "fpa": 0.57
   },
   {
     "rank": 10,
@@ -203,10 +203,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Sunny Day",
     "landing": "Patriot Sportfishing",
-    "trips": 18,
-    "anglers": 64,
-    "fish": 22,
-    "fpa": 0.34
+    "trips": 19,
+    "anglers": 68,
+    "fish": 24,
+    "fpa": 0.35
   },
   {
     "rank": 5,
@@ -225,8 +225,8 @@
     "trip_type": "1/2 Day AM",
     "boat": "Flying Fish",
     "landing": "Patriot Sportfishing",
-    "trips": 49,
-    "anglers": 892,
+    "trips": 50,
+    "anglers": 907,
     "fish": 24,
     "fpa": 0.03
   },
@@ -412,10 +412,10 @@
     "trip_type": "1/2 Day Twilight",
     "boat": "Native Sun",
     "landing": "22nd Street Landing",
-    "trips": 7,
-    "anglers": 344,
-    "fish": 1024,
-    "fpa": 2.98
+    "trips": 8,
+    "anglers": 394,
+    "fish": 1081,
+    "fpa": 2.74
   },
   {
     "rank": 1,
@@ -423,10 +423,10 @@
     "trip_type": "2 Day",
     "boat": "Amigo",
     "landing": "22nd Street Landing",
-    "trips": 6,
-    "anglers": 82,
-    "fish": 1014,
-    "fpa": 12.37
+    "trips": 7,
+    "anglers": 97,
+    "fish": 1180,
+    "fpa": 12.16
   },
   {
     "rank": 1,
@@ -885,10 +885,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Western Pride",
     "landing": "Davey's Locker",
-    "trips": 75,
-    "anglers": 3009,
-    "fish": 10108,
-    "fpa": 3.36
+    "trips": 76,
+    "anglers": 3055,
+    "fish": 10183,
+    "fpa": 3.33
   },
   {
     "rank": 6,
@@ -1180,6 +1180,17 @@
     "rank": 2,
     "region": "San Diego County",
     "trip_type": "1.5 Day",
+    "boat": "Pacifica",
+    "landing": "Seaforth Sportfishing",
+    "trips": 5,
+    "anglers": 111,
+    "fish": 287,
+    "fpa": 2.59
+  },
+  {
+    "rank": 3,
+    "region": "San Diego County",
+    "trip_type": "1.5 Day",
     "boat": "Ocean Odyssey",
     "landing": "H&M Landing",
     "trips": 5,
@@ -1188,7 +1199,18 @@
     "fpa": 1.7
   },
   {
-    "rank": 3,
+    "rank": 4,
+    "region": "San Diego County",
+    "trip_type": "1.5 Day",
+    "boat": "Tribute",
+    "landing": "Seaforth Sportfishing",
+    "trips": 10,
+    "anglers": 287,
+    "fish": 276,
+    "fpa": 0.96
+  },
+  {
+    "rank": 5,
     "region": "San Diego County",
     "trip_type": "1.5 Day",
     "boat": "Nautilus",
@@ -1199,18 +1221,7 @@
     "fpa": 0.9
   },
   {
-    "rank": 4,
-    "region": "San Diego County",
-    "trip_type": "1.5 Day",
-    "boat": "Tribute",
-    "landing": "Seaforth Sportfishing",
-    "trips": 9,
-    "anglers": 261,
-    "fish": 220,
-    "fpa": 0.84
-  },
-  {
-    "rank": 5,
+    "rank": 6,
     "region": "San Diego County",
     "trip_type": "1.5 Day",
     "boat": "Horizon",
@@ -1248,10 +1259,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Premier",
     "landing": "H&M Landing",
-    "trips": 30,
-    "anglers": 1190,
-    "fish": 4520,
-    "fpa": 3.8
+    "trips": 31,
+    "anglers": 1243,
+    "fish": 4599,
+    "fpa": 3.7
   },
   {
     "rank": 4,
@@ -1281,10 +1292,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
-    "trips": 28,
-    "anglers": 1391,
-    "fish": 3122,
-    "fpa": 2.24
+    "trips": 29,
+    "anglers": 1446,
+    "fish": 3191,
+    "fpa": 2.21
   },
   {
     "rank": 7,
@@ -1358,10 +1369,10 @@
     "trip_type": "1/2 Day Twilight",
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
-    "trips": 29,
-    "anglers": 1276,
-    "fish": 3804,
-    "fpa": 2.98
+    "trips": 30,
+    "anglers": 1326,
+    "fish": 4005,
+    "fpa": 3.02
   },
   {
     "rank": 2,
@@ -1411,6 +1422,17 @@
     "rank": 3,
     "region": "San Diego County",
     "trip_type": "2 Day",
+    "boat": "Fortune",
+    "landing": "Fisherman's Landing",
+    "trips": 5,
+    "anglers": 68,
+    "fish": 374,
+    "fpa": 5.5
+  },
+  {
+    "rank": 4,
+    "region": "San Diego County",
+    "trip_type": "2 Day",
     "boat": "Pegasus",
     "landing": "Fisherman's Landing",
     "trips": 6,
@@ -1419,7 +1441,18 @@
     "fpa": 3.12
   },
   {
-    "rank": 4,
+    "rank": 5,
+    "region": "San Diego County",
+    "trip_type": "2 Day",
+    "boat": "Liberty",
+    "landing": "Fisherman's Landing",
+    "trips": 5,
+    "anglers": 103,
+    "fish": 308,
+    "fpa": 2.99
+  },
+  {
+    "rank": 6,
     "region": "San Diego County",
     "trip_type": "2 Day",
     "boat": "Aztec",
@@ -1430,7 +1463,7 @@
     "fpa": 2.05
   },
   {
-    "rank": 5,
+    "rank": 7,
     "region": "San Diego County",
     "trip_type": "2 Day",
     "boat": "Tomahawk",
@@ -1441,18 +1474,18 @@
     "fpa": 1.53
   },
   {
-    "rank": 6,
+    "rank": 8,
     "region": "San Diego County",
     "trip_type": "2 Day",
     "boat": "Constitution",
     "landing": "Fisherman's Landing",
-    "trips": 5,
-    "anglers": 99,
-    "fish": 131,
-    "fpa": 1.32
+    "trips": 6,
+    "anglers": 121,
+    "fish": 133,
+    "fpa": 1.1
   },
   {
-    "rank": 7,
+    "rank": 9,
     "region": "San Diego County",
     "trip_type": "2 Day",
     "boat": "Pacific Queen",
@@ -1479,10 +1512,10 @@
     "trip_type": "3 Day",
     "boat": "Legend",
     "landing": "H&M Landing",
-    "trips": 5,
-    "anglers": 133,
-    "fish": 543,
-    "fpa": 4.08
+    "trips": 6,
+    "anglers": 161,
+    "fish": 739,
+    "fpa": 4.59
   },
   {
     "rank": 1,
@@ -1886,10 +1919,10 @@
     "trip_type": "1.5 Day",
     "boat": "Ranger 85",
     "landing": "Channel Islands Sportfishing",
-    "trips": 5,
-    "anglers": 114,
-    "fish": 352,
-    "fpa": 3.09
+    "trips": 6,
+    "anglers": 144,
+    "fish": 373,
+    "fpa": 2.59
   },
   {
     "rank": 1,
@@ -2040,10 +2073,10 @@
     "trip_type": "Overnight",
     "boat": "New Hustler",
     "landing": "Channel Islands Sportfishing",
-    "trips": 22,
-    "anglers": 434,
-    "fish": 6806,
-    "fpa": 15.68
+    "trips": 23,
+    "anglers": 458,
+    "fish": 7217,
+    "fpa": 15.76
   },
   {
     "rank": 2,
