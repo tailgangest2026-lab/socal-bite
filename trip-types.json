@@ -29,15 +29,6 @@
   {
     "rank": 1,
     "region": "Central California",
-    "trip_type": "1/2 Day PM",
-    "trips": 27,
-    "anglers": 549,
-    "fish": 3332,
-    "fpa": 6.07
-  },
-  {
-    "rank": 2,
-    "region": "Central California",
     "trip_type": "Full Day",
     "trips": 60,
     "anglers": 1257,
@@ -45,13 +36,22 @@
     "fpa": 6
   },
   {
+    "rank": 2,
+    "region": "Central California",
+    "trip_type": "1/2 Day PM",
+    "trips": 28,
+    "anglers": 577,
+    "fish": 3459,
+    "fpa": 5.99
+  },
+  {
     "rank": 3,
     "region": "Central California",
     "trip_type": "3/4 Day",
-    "trips": 158,
-    "anglers": 2568,
-    "fish": 14207,
-    "fpa": 5.53
+    "trips": 159,
+    "anglers": 2572,
+    "fish": 14210,
+    "fpa": 5.52
   },
   {
     "rank": 4,
@@ -219,8 +219,8 @@
     "rank": 1,
     "region": "NorCal",
     "trip_type": "Full Day",
-    "trips": 647,
-    "anglers": 7723,
+    "trips": 648,
+    "anglers": 7725,
     "fish": 21161,
     "fpa": 2.74
   },
@@ -453,10 +453,10 @@
     "rank": 1,
     "region": "San Francisco Bay",
     "trip_type": "Full Day",
-    "trips": 407,
-    "anglers": 6522,
-    "fish": 15590,
-    "fpa": 2.39
+    "trips": 410,
+    "anglers": 6587,
+    "fish": 16062,
+    "fpa": 2.44
   },
   {
     "rank": 2,
@@ -633,10 +633,10 @@
     "rank": 3,
     "region": "Ventura County",
     "trip_type": "Overnight",
-    "trips": 218,
-    "anglers": 4133,
-    "fish": 56403,
-    "fpa": 13.65
+    "trips": 219,
+    "anglers": 4153,
+    "fish": 56778,
+    "fpa": 13.67
   },
   {
     "rank": 4,

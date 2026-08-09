@@ -236,10 +236,10 @@
     "trip_type": "1/2 Day PM",
     "boat": "Avenger",
     "landing": "Morro Bay Landing",
-    "trips": 8,
-    "anglers": 216,
-    "fish": 1398,
-    "fpa": 6.47
+    "trips": 9,
+    "anglers": 244,
+    "fish": 1525,
+    "fpa": 6.25
   },
   {
     "rank": 1,
@@ -280,10 +280,10 @@
     "trip_type": "3/4 Day",
     "boat": "Sunny Day",
     "landing": "Patriot Sportfishing",
-    "trips": 12,
-    "anglers": 31,
-    "fish": 12,
-    "fpa": 0.39
+    "trips": 13,
+    "anglers": 35,
+    "fish": 15,
+    "fpa": 0.43
   },
   {
     "rank": 5,
@@ -775,10 +775,10 @@
     "trip_type": "Full Day",
     "boat": "Argo",
     "landing": "Argo Sportfishing",
-    "trips": 31,
-    "anglers": 150,
+    "trips": 32,
+    "anglers": 152,
     "fish": 150,
-    "fpa": 1
+    "fpa": 0.99
   },
   {
     "rank": 10,
@@ -1721,13 +1721,24 @@
     "trip_type": "Full Day",
     "boat": "California Dawn II",
     "landing": "California Dawn Sportfishing",
-    "trips": 45,
-    "anglers": 880,
-    "fish": 3292,
-    "fpa": 3.74
+    "trips": 46,
+    "anglers": 903,
+    "fish": 3522,
+    "fpa": 3.9
   },
   {
     "rank": 3,
+    "region": "San Francisco Bay",
+    "trip_type": "Full Day",
+    "boat": "Lovely Martha",
+    "landing": "Lovely Martha Sportfishing",
+    "trips": 40,
+    "anglers": 752,
+    "fish": 242,
+    "fpa": 0.32
+  },
+  {
+    "rank": 4,
     "region": "San Francisco Bay",
     "trip_type": "Full Day",
     "boat": "Goldeneye 2000",
@@ -1738,24 +1749,13 @@
     "fpa": 0.05
   },
   {
-    "rank": 4,
-    "region": "San Francisco Bay",
-    "trip_type": "Full Day",
-    "boat": "Lovely Martha",
-    "landing": "Lovely Martha Sportfishing",
-    "trips": 39,
-    "anglers": 730,
-    "fish": 0,
-    "fpa": 0
-  },
-  {
     "rank": 5,
     "region": "San Francisco Bay",
     "trip_type": "Full Day",
     "boat": "New Easy Rider",
     "landing": "Berkeley Charter Boats",
-    "trips": 32,
-    "anglers": 574,
+    "trips": 33,
+    "anglers": 594,
     "fish": 0,
     "fpa": 0
   },
@@ -2073,9 +2073,9 @@
     "trip_type": "Overnight",
     "boat": "Indicator",
     "landing": "Channel Islands Sportfishing",
-    "trips": 30,
-    "anglers": 556,
-    "fish": 6411,
-    "fpa": 11.53
+    "trips": 31,
+    "anglers": 576,
+    "fish": 6786,
+    "fpa": 11.78
   }
 ]
