@@ -219,9 +219,9 @@
     "boat": "Patriot (Avila Beach)",
     "landing": "Patriot Sportfishing",
     "region": "Central California",
-    "trips": 90,
-    "anglers": 1918,
-    "fish": 244,
+    "trips": 91,
+    "anglers": 1931,
+    "fish": 248,
     "fpa": 0.13,
     "top_species_1": "Lingcod",
     "top_species_2": "Whitefish",
@@ -231,9 +231,9 @@
     "boat": "Flying Fish",
     "landing": "Patriot Sportfishing",
     "region": "Central California",
-    "trips": 127,
-    "anglers": 2186,
-    "fish": 137,
+    "trips": 128,
+    "anglers": 2202,
+    "fish": 139,
     "fpa": 0.06,
     "top_species_1": "Lingcod",
     "top_species_2": "Whitefish",
@@ -708,18 +708,6 @@
     "top_species_3": "Sand Bass"
   },
   {
-    "boat": "Dragonfly",
-    "landing": "Reel Obsession Sportfishing",
-    "region": "NorCal",
-    "trips": 41,
-    "anglers": 227,
-    "fish": 552,
-    "fpa": 2.43,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Lingcod",
-    "top_species_3": ""
-  },
-  {
     "boat": "Pacific Dream",
     "landing": "Happy Hooker Sportfishing",
     "region": "NorCal",
@@ -730,6 +718,18 @@
     "top_species_1": "Rockfish",
     "top_species_2": "Lingcod",
     "top_species_3": "Halibut"
+  },
+  {
+    "boat": "Dragonfly",
+    "landing": "Reel Obsession Sportfishing",
+    "region": "NorCal",
+    "trips": 42,
+    "anglers": 233,
+    "fish": 552,
+    "fpa": 2.37,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Lingcod",
+    "top_species_3": ""
   },
   {
     "boat": "Happy Hooker",
@@ -1429,18 +1429,6 @@
   },
   {
     "boat": "Tradition",
-    "landing": "Fisherman's Landing",
-    "region": "San Diego County",
-    "trips": 14,
-    "anglers": 289,
-    "fish": 1138,
-    "fpa": 3.94,
-    "top_species_1": "Yellowtail",
-    "top_species_2": "Calico Bass",
-    "top_species_3": "Rockfish"
-  },
-  {
-    "boat": "Tradition",
     "landing": "H&M Landing",
     "region": "San Diego County",
     "trips": 2,
@@ -1474,6 +1462,18 @@
     "top_species_1": "Rockfish",
     "top_species_2": "Yellowfin Tuna",
     "top_species_3": "Yellowtail"
+  },
+  {
+    "boat": "Tradition",
+    "landing": "Fisherman's Landing",
+    "region": "San Diego County",
+    "trips": 15,
+    "anglers": 307,
+    "fish": 1169,
+    "fpa": 3.81,
+    "top_species_1": "Yellowtail",
+    "top_species_2": "Calico Bass",
+    "top_species_3": "Rockfish"
   },
   {
     "boat": "Southern Cal",
@@ -1692,6 +1692,18 @@
     "top_species_3": "Calico Bass Released"
   },
   {
+    "boat": "Little G",
+    "landing": "H&M Landing",
+    "region": "San Diego County",
+    "trips": 5,
+    "anglers": 26,
+    "fish": 61,
+    "fpa": 2.35,
+    "top_species_1": "Bluefin Tuna",
+    "top_species_2": "Sheephead",
+    "top_species_3": "Yellowtail"
+  },
+  {
     "boat": "Bight 28 (SD)",
     "landing": "Fisherman's Landing",
     "region": "San Diego County",
@@ -1803,10 +1815,10 @@
     "boat": "Producer",
     "landing": "H&M Landing",
     "region": "San Diego County",
-    "trips": 51,
-    "anglers": 1217,
-    "fish": 1955,
-    "fpa": 1.61,
+    "trips": 52,
+    "anglers": 1246,
+    "fish": 1987,
+    "fpa": 1.59,
     "top_species_1": "Yellowfin Tuna",
     "top_species_2": "Yellowtail",
     "top_species_3": "Bonito"
@@ -1834,18 +1846,6 @@
     "top_species_1": "Yellowtail",
     "top_species_2": "Bluefin Tuna",
     "top_species_3": "Yellowfin Tuna"
-  },
-  {
-    "boat": "Little G",
-    "landing": "H&M Landing",
-    "region": "San Diego County",
-    "trips": 4,
-    "anglers": 21,
-    "fish": 28,
-    "fpa": 1.33,
-    "top_species_1": "Bluefin Tuna",
-    "top_species_2": "Yellowfin Tuna",
-    "top_species_3": "Yellowtail"
   },
   {
     "boat": "Relentless",
