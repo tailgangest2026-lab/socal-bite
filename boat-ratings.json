@@ -740,17 +740,6 @@
     "rank": 4,
     "region": "NorCal",
     "trip_type": "Full Day",
-    "boat": "Reel Steel",
-    "landing": "Reel Steel Sportfishing",
-    "trips": 8,
-    "anglers": 35,
-    "fish": 208,
-    "fpa": 5.94
-  },
-  {
-    "rank": 5,
-    "region": "NorCal",
-    "trip_type": "Full Day",
     "boat": "Surf Scooter",
     "landing": "Bodega Bay Sportfishing Center",
     "trips": 35,
@@ -759,7 +748,7 @@
     "fpa": 5.83
   },
   {
-    "rank": 6,
+    "rank": 5,
     "region": "NorCal",
     "trip_type": "Full Day",
     "boat": "Happy Hooker",
@@ -768,6 +757,17 @@
     "anglers": 276,
     "fish": 1594,
     "fpa": 5.78
+  },
+  {
+    "rank": 6,
+    "region": "NorCal",
+    "trip_type": "Full Day",
+    "boat": "Reel Steel",
+    "landing": "Reel Steel Sportfishing",
+    "trips": 10,
+    "anglers": 44,
+    "fish": 208,
+    "fpa": 4.73
   },
   {
     "rank": 7,
