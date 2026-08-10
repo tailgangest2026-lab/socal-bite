@@ -18723,6 +18723,16 @@
     "year": 2026,
     "week": 33,
     "region": "San Diego County",
+    "species": "Bluefin Tuna",
+    "trips": 1,
+    "anglers": 5,
+    "fish": 20,
+    "fpa": 4
+  },
+  {
+    "year": 2026,
+    "week": 33,
+    "region": "San Diego County",
     "species": "Bonito",
     "trips": 3,
     "anglers": 130,
@@ -18794,10 +18804,10 @@
     "week": 33,
     "region": "San Diego County",
     "species": "Sheephead",
-    "trips": 2,
-    "anglers": 80,
-    "fish": 13,
-    "fpa": 0.16
+    "trips": 3,
+    "anglers": 85,
+    "fish": 22,
+    "fpa": 0.26
   },
   {
     "year": 2026,
@@ -18813,11 +18823,21 @@
     "year": 2026,
     "week": 33,
     "region": "San Diego County",
+    "species": "Yellowfin Tuna",
+    "trips": 1,
+    "anglers": 18,
+    "fish": 31,
+    "fpa": 1.72
+  },
+  {
+    "year": 2026,
+    "week": 33,
+    "region": "San Diego County",
     "species": "Yellowtail",
-    "trips": 2,
-    "anglers": 80,
-    "fish": 4,
-    "fpa": 0.05
+    "trips": 3,
+    "anglers": 85,
+    "fish": 8,
+    "fpa": 0.09
   },
   {
     "year": 2026,
