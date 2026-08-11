@@ -71,10 +71,10 @@
     "trip_type": "Full Day",
     "boat": "Oakland Anglers II",
     "landing": "Fish Emeryville",
-    "trips": 25,
-    "anglers": 414,
-    "fish": 906,
-    "fpa": 2.19
+    "trips": 26,
+    "anglers": 432,
+    "fish": 1076,
+    "fpa": 2.49
   },
   {
     "rank": 6,
@@ -115,10 +115,10 @@
     "trip_type": "Full Day",
     "boat": "Scallywag",
     "landing": "Fish Emeryville",
-    "trips": 34,
-    "anglers": 192,
+    "trips": 35,
+    "anglers": 198,
     "fish": 112,
-    "fpa": 0.58
+    "fpa": 0.57
   },
   {
     "rank": 10,
@@ -225,8 +225,8 @@
     "trip_type": "1/2 Day AM",
     "boat": "Flying Fish",
     "landing": "Patriot Sportfishing",
-    "trips": 48,
-    "anglers": 853,
+    "trips": 49,
+    "anglers": 870,
     "fish": 24,
     "fpa": 0.03
   },
@@ -256,22 +256,22 @@
     "rank": 2,
     "region": "Central California",
     "trip_type": "3/4 Day",
-    "boat": "Endeavor (MB)",
+    "boat": "Avenger",
     "landing": "Morro Bay Landing",
-    "trips": 12,
-    "anglers": 210,
-    "fish": 1800,
+    "trips": 10,
+    "anglers": 158,
+    "fish": 1354,
     "fpa": 8.57
   },
   {
     "rank": 3,
     "region": "Central California",
     "trip_type": "3/4 Day",
-    "boat": "Avenger",
+    "boat": "Endeavor (MB)",
     "landing": "Morro Bay Landing",
-    "trips": 10,
-    "anglers": 158,
-    "fish": 1354,
+    "trips": 13,
+    "anglers": 223,
+    "fish": 1911,
     "fpa": 8.57
   },
   {
@@ -740,23 +740,23 @@
     "rank": 4,
     "region": "NorCal",
     "trip_type": "Full Day",
-    "boat": "Surf Scooter",
-    "landing": "Bodega Bay Sportfishing Center",
-    "trips": 35,
-    "anglers": 525,
-    "fish": 3056,
-    "fpa": 5.82
-  },
-  {
-    "rank": 5,
-    "region": "NorCal",
-    "trip_type": "Full Day",
     "boat": "Happy Hooker",
     "landing": "Happy Hooker Sportfishing",
     "trips": 20,
     "anglers": 276,
     "fish": 1594,
     "fpa": 5.78
+  },
+  {
+    "rank": 5,
+    "region": "NorCal",
+    "trip_type": "Full Day",
+    "boat": "Surf Scooter",
+    "landing": "Bodega Bay Sportfishing Center",
+    "trips": 36,
+    "anglers": 537,
+    "fish": 3056,
+    "fpa": 5.69
   },
   {
     "rank": 6,
@@ -1224,6 +1224,17 @@
     "rank": 3,
     "region": "San Diego County",
     "trip_type": "1.5 Day",
+    "boat": "Fortune",
+    "landing": "Fisherman's Landing",
+    "trips": 5,
+    "anglers": 74,
+    "fish": 159,
+    "fpa": 2.15
+  },
+  {
+    "rank": 4,
+    "region": "San Diego County",
+    "trip_type": "1.5 Day",
     "boat": "Ocean Odyssey",
     "landing": "H&M Landing",
     "trips": 5,
@@ -1232,7 +1243,18 @@
     "fpa": 1.7
   },
   {
-    "rank": 4,
+    "rank": 5,
+    "region": "San Diego County",
+    "trip_type": "1.5 Day",
+    "boat": "Tribute",
+    "landing": "Seaforth Sportfishing",
+    "trips": 10,
+    "anglers": 284,
+    "fish": 462,
+    "fpa": 1.63
+  },
+  {
+    "rank": 6,
     "region": "San Diego County",
     "trip_type": "1.5 Day",
     "boat": "Nautilus",
@@ -1243,18 +1265,7 @@
     "fpa": 1.08
   },
   {
-    "rank": 5,
-    "region": "San Diego County",
-    "trip_type": "1.5 Day",
-    "boat": "Tribute",
-    "landing": "Seaforth Sportfishing",
-    "trips": 9,
-    "anglers": 257,
-    "fish": 274,
-    "fpa": 1.07
-  },
-  {
-    "rank": 6,
+    "rank": 7,
     "region": "San Diego County",
     "trip_type": "1.5 Day",
     "boat": "Horizon",
@@ -1292,10 +1303,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Premier",
     "landing": "H&M Landing",
-    "trips": 30,
-    "anglers": 1180,
-    "fish": 4261,
-    "fpa": 3.61
+    "trips": 31,
+    "anglers": 1192,
+    "fish": 4335,
+    "fpa": 3.64
   },
   {
     "rank": 4,
@@ -1325,10 +1336,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
-    "trips": 29,
-    "anglers": 1451,
-    "fish": 3126,
-    "fpa": 2.15
+    "trips": 30,
+    "anglers": 1503,
+    "fish": 3182,
+    "fpa": 2.12
   },
   {
     "rank": 7,
@@ -1402,10 +1413,10 @@
     "trip_type": "1/2 Day Twilight",
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
-    "trips": 29,
-    "anglers": 1290,
-    "fish": 3545,
-    "fpa": 2.75
+    "trips": 30,
+    "anglers": 1325,
+    "fish": 3572,
+    "fpa": 2.7
   },
   {
     "rank": 2,
@@ -1490,10 +1501,10 @@
     "trip_type": "2 Day",
     "boat": "Liberty",
     "landing": "Fisherman's Landing",
-    "trips": 5,
-    "anglers": 103,
+    "trips": 6,
+    "anglers": 128,
     "fish": 308,
-    "fpa": 2.99
+    "fpa": 2.41
   },
   {
     "rank": 7,
@@ -1532,6 +1543,17 @@
     "rank": 1,
     "region": "San Diego County",
     "trip_type": "3 Day",
+    "boat": "Polaris Supreme",
+    "landing": "Seaforth Sportfishing",
+    "trips": 5,
+    "anglers": 104,
+    "fish": 765,
+    "fpa": 7.36
+  },
+  {
+    "rank": 2,
+    "region": "San Diego County",
+    "trip_type": "3 Day",
     "boat": "Pacific Voyager",
     "landing": "Seaforth Sportfishing",
     "trips": 6,
@@ -1540,7 +1562,7 @@
     "fpa": 6.84
   },
   {
-    "rank": 2,
+    "rank": 3,
     "region": "San Diego County",
     "trip_type": "3 Day",
     "boat": "Legend",
@@ -1732,10 +1754,10 @@
     "trip_type": "Overnight",
     "boat": "Producer",
     "landing": "H&M Landing",
-    "trips": 30,
-    "anglers": 818,
-    "fish": 959,
-    "fpa": 1.17
+    "trips": 31,
+    "anglers": 845,
+    "fish": 1049,
+    "fpa": 1.24
   },
   {
     "rank": 3,
