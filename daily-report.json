@@ -173,6 +173,16 @@
     "trip_date": "2026-08-10",
     "region": "Los Angeles County",
     "landing": "22nd Street Landing",
+    "boat": "Freedom",
+    "trip_type": "Overnight",
+    "anglers": 35,
+    "fish_counts": "9 Bluefin Tuna, 1 Yellowfin Tuna",
+    "total_fish": 10
+  },
+  {
+    "trip_date": "2026-08-10",
+    "region": "Los Angeles County",
+    "landing": "22nd Street Landing",
     "boat": "Monte Carlo",
     "trip_type": "1/2 Day AM",
     "anglers": 76,
@@ -1133,11 +1143,41 @@
     "trip_date": "2026-08-10",
     "region": "Santa Barbara County",
     "landing": "Santa Barbara Landing",
+    "boat": "Coral Sea",
+    "trip_type": "3/4 Day",
+    "anglers": 23,
+    "fish_counts": "6 Halibut, 27 Lingcod, 229 Rockfish, 21 Whitefish",
+    "total_fish": 283
+  },
+  {
+    "trip_date": "2026-08-10",
+    "region": "Santa Barbara County",
+    "landing": "Santa Barbara Landing",
+    "boat": "Coral Sea",
+    "trip_type": "3/4 Day",
+    "anglers": 23,
+    "fish_counts": "6 Halibut, 27 Lingcod, 229 Rockfish, 2 Sheephead, 21 Whitefish",
+    "total_fish": 285
+  },
+  {
+    "trip_date": "2026-08-10",
+    "region": "Santa Barbara County",
+    "landing": "Santa Barbara Landing",
     "boat": "Stardust",
     "trip_type": "3/4 Day",
     "anglers": 24,
     "fish_counts": "48 Lingcod, 125 Rockfish, 12 Sheephead, 143 Whitefish",
     "total_fish": 328
+  },
+  {
+    "trip_date": "2026-08-10",
+    "region": "Santa Barbara County",
+    "landing": "Santa Barbara Landing",
+    "boat": "Stardust",
+    "trip_type": "3/4 Day",
+    "anglers": 23,
+    "fish_counts": "46 Lingcod, 117 Rockfish, 201 Whitefish",
+    "total_fish": 364
   },
   {
     "trip_date": "2026-08-10",
