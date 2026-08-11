@@ -93,6 +93,16 @@
     "trip_date": "2026-08-10",
     "region": "Alameda County",
     "landing": "Fish Emeryville",
+    "boat": "Scallywag",
+    "trip_type": "1/2 Day PM",
+    "anglers": 6,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-08-10",
+    "region": "Alameda County",
+    "landing": "Fish Emeryville",
     "boat": "Sea Wolf",
     "trip_type": "Full Day",
     "anglers": 20,
@@ -492,6 +502,16 @@
   {
     "trip_date": "2026-08-10",
     "region": "NorCal",
+    "landing": "Bodega Bay Sportfishing Center",
+    "boat": "Surf Scooter",
+    "trip_type": "Full Day",
+    "anglers": 18,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-08-10",
+    "region": "NorCal",
     "landing": "Half Moon Bay Sportfishing",
     "boat": "Queen of Hearts",
     "trip_type": "Full Day",
@@ -506,6 +526,16 @@
     "boat": "Hog Heaven",
     "trip_type": "Full Day",
     "anglers": 15,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-08-10",
+    "region": "NorCal",
+    "landing": "Hog Heaven Sportfishing",
+    "boat": "Hog Heaven",
+    "trip_type": "Full Day",
+    "anglers": 7,
     "fish_counts": "",
     "total_fish": 0
   },
@@ -1093,11 +1123,31 @@
     "trip_date": "2026-08-10",
     "region": "San Francisco Bay",
     "landing": "California Dawn Sportfishing",
+    "boat": "California Dawn II",
+    "trip_type": "Full Day",
+    "anglers": 15,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-08-10",
+    "region": "San Francisco Bay",
+    "landing": "California Dawn Sportfishing",
     "boat": "New California Dawn",
     "trip_type": "Full Day",
     "anglers": 9,
     "fish_counts": "6 Lingcod, 90 Rockfish",
     "total_fish": 96
+  },
+  {
+    "trip_date": "2026-08-10",
+    "region": "San Francisco Bay",
+    "landing": "California Dawn Sportfishing",
+    "boat": "New California Dawn",
+    "trip_type": "Full Day",
+    "anglers": 10,
+    "fish_counts": "2 Lingcod, 80 Rockfish",
+    "total_fish": 82
   },
   {
     "trip_date": "2026-08-10",
@@ -1198,6 +1248,16 @@
     "anglers": 23,
     "fish_counts": "46 Lingcod, 117 Rockfish, 201 Whitefish",
     "total_fish": 364
+  },
+  {
+    "trip_date": "2026-08-10",
+    "region": "SoCal",
+    "landing": "Ventura Harbor Sportfishing",
+    "boat": "Endeavor (Ventura)",
+    "trip_type": "Overnight",
+    "anglers": 22,
+    "fish_counts": "40 Bluefin Tuna, 180 Calico Bass, 230 Rockfish, 76 Sheephead, 2 Yellowtail",
+    "total_fish": 528
   },
   {
     "trip_date": "2026-08-10",
