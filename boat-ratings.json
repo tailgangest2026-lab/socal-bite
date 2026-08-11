@@ -82,10 +82,10 @@
     "trip_type": "Full Day",
     "boat": "Pacific Pearl",
     "landing": "Fish Emeryville",
-    "trips": 31,
-    "anglers": 388,
+    "trips": 32,
+    "anglers": 399,
     "fish": 510,
-    "fpa": 1.31
+    "fpa": 1.28
   },
   {
     "rank": 7,
@@ -1708,23 +1708,23 @@
     "rank": 1,
     "region": "San Diego County",
     "trip_type": "Full Day Offshore",
+    "boat": "San Diego",
+    "landing": "Seaforth Sportfishing",
+    "trips": 7,
+    "anglers": 225,
+    "fish": 405,
+    "fpa": 1.8
+  },
+  {
+    "rank": 2,
+    "region": "San Diego County",
+    "trip_type": "Full Day Offshore",
     "boat": "Grande",
     "landing": "H&M Landing",
     "trips": 10,
     "anglers": 370,
     "fish": 637,
     "fpa": 1.72
-  },
-  {
-    "rank": 2,
-    "region": "San Diego County",
-    "trip_type": "Full Day Offshore",
-    "boat": "San Diego",
-    "landing": "Seaforth Sportfishing",
-    "trips": 6,
-    "anglers": 191,
-    "fish": 322,
-    "fpa": 1.69
   },
   {
     "rank": 3,
@@ -2128,10 +2128,10 @@
     "trip_type": "Overnight",
     "boat": "Mirage",
     "landing": "Channel Islands Sportfishing",
-    "trips": 41,
-    "anglers": 757,
-    "fish": 9708,
-    "fpa": 12.82
+    "trips": 42,
+    "anglers": 778,
+    "fish": 10127,
+    "fpa": 13.02
   },
   {
     "rank": 3,
