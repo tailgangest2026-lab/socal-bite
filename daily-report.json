@@ -13,11 +13,31 @@
     "trip_date": "2026-08-10",
     "region": "Alameda County",
     "landing": "Fish Emeryville",
+    "boat": "C Gull II",
+    "trip_type": "Full Day",
+    "anglers": 7,
+    "fish_counts": "1 Bonito",
+    "total_fish": 1
+  },
+  {
+    "trip_date": "2026-08-10",
+    "region": "Alameda County",
+    "landing": "Fish Emeryville",
     "boat": "Lady K",
     "trip_type": "Full Day",
     "anglers": 9,
     "fish_counts": "",
     "total_fish": 0
+  },
+  {
+    "trip_date": "2026-08-10",
+    "region": "Alameda County",
+    "landing": "Fish Emeryville",
+    "boat": "Lady K",
+    "trip_type": "Full Day",
+    "anglers": 7,
+    "fish_counts": "1 Bonito",
+    "total_fish": 1
   },
   {
     "trip_date": "2026-08-10",
@@ -198,6 +218,16 @@
     "anglers": 40,
     "fish_counts": "2 Barracuda, 53 Bonito, 31 Calico Bass, 63 Calico Bass Released, 7 Sand Bass, 25 Yellowtail",
     "total_fish": 181
+  },
+  {
+    "trip_date": "2026-08-10",
+    "region": "Los Angeles County",
+    "landing": "22nd Street Landing",
+    "boat": "Native Sun",
+    "trip_type": "3/4 Day",
+    "anglers": 42,
+    "fish_counts": "31 Bonito, 24 Calico Bass, 79 Yellowtail",
+    "total_fish": 134
   },
   {
     "trip_date": "2026-08-10",
@@ -583,11 +613,31 @@
     "trip_date": "2026-08-10",
     "region": "San Diego County",
     "landing": "Fisherman's Landing",
+    "boat": "Tomahawk",
+    "trip_type": "2.5 Day",
+    "anglers": 22,
+    "fish_counts": "88 Bluefin Tuna, 1 Halibut, 3 Yellowfin Tuna, 4 Yellowtail",
+    "total_fish": 96
+  },
+  {
+    "trip_date": "2026-08-10",
+    "region": "San Diego County",
+    "landing": "Fisherman's Landing",
     "boat": "Tradition",
     "trip_type": "Full Day",
     "anglers": 18,
     "fish_counts": "31 Yellowfin Tuna",
     "total_fish": 31
+  },
+  {
+    "trip_date": "2026-08-10",
+    "region": "San Diego County",
+    "landing": "H&M Landing",
+    "boat": "Grande",
+    "trip_type": "Full Day Offshore",
+    "anglers": 41,
+    "fish_counts": "108 Yellowfin Tuna",
+    "total_fish": 108
   },
   {
     "trip_date": "2026-08-10",
@@ -623,11 +673,41 @@
     "trip_date": "2026-08-10",
     "region": "San Diego County",
     "landing": "Oceanside Sea Center",
+    "boat": "Blue Horizon",
+    "trip_type": "3/4 Day",
+    "anglers": 13,
+    "fish_counts": "15 Bonito, 130 Rockfish, 2 Sculpin, 56 Whitefish",
+    "total_fish": 203
+  },
+  {
+    "trip_date": "2026-08-10",
+    "region": "San Diego County",
+    "landing": "Oceanside Sea Center",
+    "boat": "Effishency",
+    "trip_type": "Full Day",
+    "anglers": 3,
+    "fish_counts": "10 Yellowtail",
+    "total_fish": 10
+  },
+  {
+    "trip_date": "2026-08-10",
+    "region": "San Diego County",
+    "landing": "Oceanside Sea Center",
     "boat": "Southern Cal",
     "trip_type": "1/2 Day AM",
     "anglers": 36,
     "fish_counts": "19 Calico Bass, 10 Calico Bass Released, 12 Yellowtail",
     "total_fish": 41
+  },
+  {
+    "trip_date": "2026-08-10",
+    "region": "San Diego County",
+    "landing": "Point Loma Sportfishing",
+    "boat": "Mission Belle",
+    "trip_type": "Full Day Coronado Islands",
+    "anglers": 25,
+    "fish_counts": "17 Calico Bass, 50 Whitefish, 14 Yellowtail",
+    "total_fish": 81
   },
   {
     "trip_date": "2026-08-10",
@@ -648,6 +728,26 @@
     "anglers": 56,
     "fish_counts": "70 Bonito, 11 Calico Bass, 2 Rockfish, 6 Sheephead, 2 Whitefish, 3 Yellowtail",
     "total_fish": 94
+  },
+  {
+    "trip_date": "2026-08-10",
+    "region": "San Diego County",
+    "landing": "Seaforth Sportfishing",
+    "boat": "San Diego",
+    "trip_type": "Full Day Coronado Islands",
+    "anglers": 24,
+    "fish_counts": "55 Whitefish, 14 Yellowtail",
+    "total_fish": 69
+  },
+  {
+    "trip_date": "2026-08-10",
+    "region": "San Diego County",
+    "landing": "Seaforth Sportfishing",
+    "boat": "Sea Watch",
+    "trip_type": "3/4 Day",
+    "anglers": 35,
+    "fish_counts": "84 Bonito, 7 Calico Bass, 6 Sheephead, 5 Whitefish",
+    "total_fish": 102
   },
   {
     "trip_date": "2026-08-10",
