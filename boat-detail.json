@@ -99,13 +99,13 @@
     "boat": "Pacific Pearl",
     "landing": "Fish Emeryville",
     "region": "Alameda County",
-    "trips": 87,
-    "anglers": 1129,
-    "fish": 947,
+    "trips": 88,
+    "anglers": 1143,
+    "fish": 957,
     "fpa": 0.84,
     "top_species_1": "Rockfish",
     "top_species_2": "Halibut",
-    "top_species_3": "Lingcod"
+    "top_species_3": "Bonito"
   },
   {
     "boat": "Scallywag",
@@ -1776,18 +1776,6 @@
     "top_species_3": "Rockfish"
   },
   {
-    "boat": "Pacifica",
-    "landing": "Seaforth Sportfishing",
-    "region": "San Diego County",
-    "trips": 18,
-    "anglers": 412,
-    "fish": 803,
-    "fpa": 1.95,
-    "top_species_1": "Yellowfin Tuna",
-    "top_species_2": "Yellowtail",
-    "top_species_3": "Rockfish"
-  },
-  {
     "boat": "Daiwa Pacific",
     "landing": "H&M Landing",
     "region": "San Diego County",
@@ -1810,6 +1798,18 @@
     "top_species_1": "Bluefin Tuna",
     "top_species_2": "Yellowfin Tuna",
     "top_species_3": "Yellowtail"
+  },
+  {
+    "boat": "Pacifica",
+    "landing": "Seaforth Sportfishing",
+    "region": "San Diego County",
+    "trips": 19,
+    "anglers": 439,
+    "fish": 836,
+    "fpa": 1.9,
+    "top_species_1": "Yellowfin Tuna",
+    "top_species_2": "Yellowtail",
+    "top_species_3": "Rockfish"
   },
   {
     "boat": "Tribute",
@@ -2103,10 +2103,10 @@
     "boat": "Mirage",
     "landing": "Channel Islands Sportfishing",
     "region": "Ventura County",
-    "trips": 113,
-    "anglers": 2052,
-    "fish": 29173,
-    "fpa": 14.22,
+    "trips": 114,
+    "anglers": 2068,
+    "fish": 29487,
+    "fpa": 14.26,
     "top_species_1": "Rockfish",
     "top_species_2": "Whitefish",
     "top_species_3": "Sheephead"
@@ -2199,10 +2199,10 @@
     "boat": "Island Fox",
     "landing": "Channel Islands Sportfishing",
     "region": "Ventura County",
-    "trips": 137,
-    "anglers": 2396,
-    "fish": 20860,
-    "fpa": 8.71,
+    "trips": 138,
+    "anglers": 2407,
+    "fish": 20949,
+    "fpa": 8.7,
     "top_species_1": "Whitefish",
     "top_species_2": "Calico Bass",
     "top_species_3": "Rockfish"
@@ -2235,9 +2235,9 @@
     "boat": "Aloha Spirit",
     "landing": "Channel Islands Sportfishing",
     "region": "Ventura County",
-    "trips": 145,
-    "anglers": 3913,
-    "fish": 27086,
+    "trips": 146,
+    "anglers": 3942,
+    "fish": 27264,
     "fpa": 6.92,
     "top_species_1": "Rockfish",
     "top_species_2": "Calico Bass",
