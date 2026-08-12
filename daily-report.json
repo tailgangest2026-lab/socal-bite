@@ -163,11 +163,31 @@
     "trip_date": "2026-08-11",
     "region": "Los Angeles County",
     "landing": "22nd Street Landing",
+    "boat": "Monte Carlo",
+    "trip_type": "1/2 Day AM",
+    "anglers": 31,
+    "fish_counts": "4 Calico Bass, 10 Rockfish, 8 Sand Bass, 6 Sculpin, 18 Whitefish, 10 Yellowtail",
+    "total_fish": 56
+  },
+  {
+    "trip_date": "2026-08-11",
+    "region": "Los Angeles County",
+    "landing": "22nd Street Landing",
     "boat": "Native Sun",
     "trip_type": "3/4 Day",
     "anglers": 42,
     "fish_counts": "31 Bonito, 24 Calico Bass, 79 Yellowtail",
     "total_fish": 134
+  },
+  {
+    "trip_date": "2026-08-11",
+    "region": "Los Angeles County",
+    "landing": "22nd Street Landing",
+    "boat": "Pursuit",
+    "trip_type": "Full Day",
+    "anglers": 39,
+    "fish_counts": "8 Barracuda, 61 Bonito, 53 Calico Bass, 5 Yellowtail",
+    "total_fish": 127
   },
   {
     "trip_date": "2026-08-11",
@@ -346,6 +366,16 @@
     "boat": "Salty Lady",
     "trip_type": "Full Day",
     "anglers": 20,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-08-11",
+    "region": "NorCal",
+    "landing": "Salty Lady Sportfishing",
+    "boat": "Salty Lady",
+    "trip_type": "Full Day",
+    "anglers": 16,
     "fish_counts": "",
     "total_fish": 0
   },
