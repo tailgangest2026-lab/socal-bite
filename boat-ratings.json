@@ -137,9 +137,9 @@
     "trip_type": "Full Day",
     "boat": "C Gull II",
     "landing": "Fish Emeryville",
-    "trips": 30,
-    "anglers": 427,
-    "fish": 13,
+    "trips": 31,
+    "anglers": 439,
+    "fish": 14,
     "fpa": 0.03
   },
   {
@@ -533,10 +533,10 @@
     "trip_type": "Full Day",
     "boat": "El Patron",
     "landing": "Long Beach Sportfishing",
-    "trips": 20,
-    "anglers": 398,
-    "fish": 2632,
-    "fpa": 6.61
+    "trips": 21,
+    "anglers": 418,
+    "fish": 2688,
+    "fpa": 6.43
   },
   {
     "rank": 2,
@@ -918,9 +918,9 @@
     "trip_type": "1/2 Day AM",
     "boat": "Western Pride",
     "landing": "Davey's Locker",
-    "trips": 73,
-    "anglers": 3011,
-    "fish": 9419,
+    "trips": 74,
+    "anglers": 3035,
+    "fish": 9494,
     "fpa": 3.13
   },
   {
@@ -984,10 +984,10 @@
     "trip_type": "1/2 Day PM",
     "boat": "Western Pride",
     "landing": "Davey's Locker",
-    "trips": 65,
-    "anglers": 2846,
-    "fish": 6680,
-    "fpa": 2.35
+    "trips": 66,
+    "anglers": 2864,
+    "fish": 6806,
+    "fpa": 2.38
   },
   {
     "rank": 6,
@@ -1103,22 +1103,22 @@
     "rank": 6,
     "region": "Orange County",
     "trip_type": "3/4 Day",
-    "boat": "Freelance",
-    "landing": "Davey's Locker",
-    "trips": 45,
-    "anglers": 2343,
-    "fish": 8367,
-    "fpa": 3.57
-  },
-  {
-    "rank": 7,
-    "region": "Orange County",
-    "trip_type": "3/4 Day",
     "boat": "Patriot (Newport)",
     "landing": "Newport Landing",
     "trips": 33,
     "anglers": 1215,
     "fish": 4314,
+    "fpa": 3.55
+  },
+  {
+    "rank": 7,
+    "region": "Orange County",
+    "trip_type": "3/4 Day",
+    "boat": "Freelance",
+    "landing": "Davey's Locker",
+    "trips": 46,
+    "anglers": 2397,
+    "fish": 8506,
     "fpa": 3.55
   },
   {
@@ -1171,10 +1171,10 @@
     "trip_type": "Full Day",
     "boat": "Blackfish",
     "landing": "Davey's Locker",
-    "trips": 21,
-    "anglers": 112,
-    "fish": 462,
-    "fpa": 4.13
+    "trips": 22,
+    "anglers": 118,
+    "fish": 490,
+    "fpa": 4.15
   },
   {
     "rank": 1,
@@ -1402,10 +1402,10 @@
     "trip_type": "1/2 Day PM",
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
-    "trips": 29,
-    "anglers": 1413,
-    "fish": 3795,
-    "fpa": 2.69
+    "trips": 30,
+    "anglers": 1444,
+    "fish": 3837,
+    "fpa": 2.66
   },
   {
     "rank": 5,
@@ -1699,10 +1699,10 @@
     "trip_type": "Full Day Coronado Islands",
     "boat": "Mission Belle",
     "landing": "Point Loma Sportfishing",
-    "trips": 26,
-    "anglers": 648,
-    "fish": 1650,
-    "fpa": 2.55
+    "trips": 27,
+    "anglers": 667,
+    "fish": 1718,
+    "fpa": 2.58
   },
   {
     "rank": 3,
@@ -1996,10 +1996,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Speed Twin",
     "landing": "Channel Islands Sportfishing",
-    "trips": 54,
-    "anglers": 1943,
-    "fish": 14908,
-    "fpa": 7.67
+    "trips": 55,
+    "anglers": 1990,
+    "fish": 15198,
+    "fpa": 7.64
   },
   {
     "rank": 1,
@@ -2051,10 +2051,10 @@
     "trip_type": "3/4 Day",
     "boat": "Island Fox",
     "landing": "Channel Islands Sportfishing",
-    "trips": 26,
-    "anglers": 452,
-    "fish": 3554,
-    "fpa": 7.86
+    "trips": 27,
+    "anglers": 470,
+    "fish": 3848,
+    "fpa": 8.19
   },
   {
     "rank": 3,
@@ -2082,6 +2082,17 @@
     "rank": 2,
     "region": "Ventura County",
     "trip_type": "Full Day",
+    "boat": "Indicator",
+    "landing": "Channel Islands Sportfishing",
+    "trips": 5,
+    "anglers": 89,
+    "fish": 872,
+    "fpa": 9.8
+  },
+  {
+    "rank": 3,
+    "region": "Ventura County",
+    "trip_type": "Full Day",
     "boat": "Graylight",
     "landing": "Channel Islands Sportfishing",
     "trips": 55,
@@ -2090,7 +2101,7 @@
     "fpa": 7.37
   },
   {
-    "rank": 3,
+    "rank": 4,
     "region": "Ventura County",
     "trip_type": "Full Day",
     "boat": "Island Fox",
@@ -2101,18 +2112,18 @@
     "fpa": 7.21
   },
   {
-    "rank": 4,
+    "rank": 5,
     "region": "Ventura County",
     "trip_type": "Full Day",
     "boat": "Island Tak",
     "landing": "Channel Islands Sportfishing",
-    "trips": 49,
-    "anglers": 460,
-    "fish": 2981,
-    "fpa": 6.48
+    "trips": 50,
+    "anglers": 469,
+    "fish": 3030,
+    "fpa": 6.46
   },
   {
-    "rank": 5,
+    "rank": 6,
     "region": "Ventura County",
     "trip_type": "Full Day",
     "boat": "Aloha Spirit",
