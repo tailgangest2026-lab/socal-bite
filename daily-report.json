@@ -402,6 +402,16 @@
   {
     "trip_date": "2026-08-12",
     "region": "NorCal",
+    "landing": "Bodega Bay Sportfishing Center",
+    "boat": "Surf Scooter",
+    "trip_type": "Full Day",
+    "anglers": 17,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-08-12",
+    "region": "NorCal",
     "landing": "Salty Lady Sportfishing",
     "boat": "Salty Lady",
     "trip_type": "Full Day",
@@ -732,6 +742,26 @@
   {
     "trip_date": "2026-08-12",
     "region": "San Diego County",
+    "landing": "Fisherman's Landing",
+    "boat": "Tradition",
+    "trip_type": "Full Day Offshore",
+    "anglers": 25,
+    "fish_counts": "9 Yellowfin Tuna",
+    "total_fish": 9
+  },
+  {
+    "trip_date": "2026-08-12",
+    "region": "San Diego County",
+    "landing": "H&M Landing",
+    "boat": "Daiwa Pacific",
+    "trip_type": "Overnight",
+    "anglers": 18,
+    "fish_counts": "38 Yellowfin Tuna",
+    "total_fish": 38
+  },
+  {
+    "trip_date": "2026-08-12",
+    "region": "San Diego County",
     "landing": "H&M Landing",
     "boat": "Excalibur",
     "trip_type": "2.5 Day",
@@ -818,6 +848,16 @@
     "anglers": 27,
     "fish_counts": "",
     "total_fish": 0
+  },
+  {
+    "trip_date": "2026-08-12",
+    "region": "San Diego County",
+    "landing": "H&M Landing",
+    "boat": "Producer",
+    "trip_type": "Overnight",
+    "anglers": 27,
+    "fish_counts": "25 Yellowfin Tuna",
+    "total_fish": 25
   },
   {
     "trip_date": "2026-08-12",
@@ -1033,11 +1073,31 @@
     "trip_date": "2026-08-12",
     "region": "Santa Barbara County",
     "landing": "Santa Barbara Landing",
+    "boat": "Coral Sea",
+    "trip_type": "3/4 Day",
+    "anglers": 24,
+    "fish_counts": "3 Halibut, 12 Lingcod, 239 Rockfish, 4 Sheephead, 110 Whitefish",
+    "total_fish": 368
+  },
+  {
+    "trip_date": "2026-08-12",
+    "region": "Santa Barbara County",
+    "landing": "Santa Barbara Landing",
     "boat": "Stardust",
     "trip_type": "1/2 Day AM",
     "anglers": 29,
     "fish_counts": "92 Bonito, 1 Lingcod, 117 Rockfish, 2 Sheephead, 46 Whitefish",
     "total_fish": 258
+  },
+  {
+    "trip_date": "2026-08-12",
+    "region": "Santa Barbara County",
+    "landing": "Santa Barbara Landing",
+    "boat": "Stardust",
+    "trip_type": "3/4 Day",
+    "anglers": 30,
+    "fish_counts": "24 Lingcod, 241 Rockfish, 300 Whitefish",
+    "total_fish": 565
   },
   {
     "trip_date": "2026-08-12",
