@@ -392,6 +392,16 @@
   {
     "trip_date": "2026-08-12",
     "region": "NorCal",
+    "landing": "Big Cs Charters",
+    "boat": "Outer Limits (Sausalito, CA)",
+    "trip_type": "Full Day",
+    "anglers": 18,
+    "fish_counts": "6 Bonito",
+    "total_fish": 6
+  },
+  {
+    "trip_date": "2026-08-12",
+    "region": "NorCal",
     "landing": "Bodega Bay Sportfishing Center",
     "boat": "Surf Scooter",
     "trip_type": "Full Day",
@@ -678,6 +688,26 @@
     "anglers": 47,
     "fish_counts": "1 Bonito, 15 Sand Bass, 2 Sculpin, 2 Sheephead, 2 Yellowtail",
     "total_fish": 22
+  },
+  {
+    "trip_date": "2026-08-12",
+    "region": "Orange County",
+    "landing": "Newport Landing",
+    "boat": "Aggressor",
+    "trip_type": "Overnight",
+    "anglers": 15,
+    "fish_counts": "12 Bonito, 27 Calico Bass, 5 Sheephead, 37 Whitefish, 18 Yellowtail",
+    "total_fish": 99
+  },
+  {
+    "trip_date": "2026-08-12",
+    "region": "Orange County",
+    "landing": "Newport Landing",
+    "boat": "Patriot (Newport)",
+    "trip_type": "3/4 Day",
+    "anglers": 34,
+    "fish_counts": "3 Halibut, 20 Yellowtail",
+    "total_fish": 23
   },
   {
     "trip_date": "2026-08-12",
@@ -1012,10 +1042,30 @@
   {
     "trip_date": "2026-08-12",
     "region": "San Francisco Bay",
+    "landing": "Berkeley Charter Boats",
+    "boat": "New Easy Rider",
+    "trip_type": "Full Day",
+    "anglers": 15,
+    "fish_counts": "15 Bonito",
+    "total_fish": 15
+  },
+  {
+    "trip_date": "2026-08-12",
+    "region": "San Francisco Bay",
     "landing": "California Dawn Sportfishing",
     "boat": "California Dawn II",
     "trip_type": "Full Day",
     "anglers": 8,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-08-12",
+    "region": "San Francisco Bay",
+    "landing": "California Dawn Sportfishing",
+    "boat": "California Dawn II",
+    "trip_type": "Full Day",
+    "anglers": 20,
     "fish_counts": "",
     "total_fish": 0
   },
