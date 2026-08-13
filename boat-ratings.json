@@ -333,6 +333,17 @@
     "rank": 1,
     "region": "Los Angeles County",
     "trip_type": "1.5 Day",
+    "boat": "Pride",
+    "landing": "22nd Street Landing",
+    "trips": 5,
+    "anglers": 76,
+    "fish": 693,
+    "fpa": 9.12
+  },
+  {
+    "rank": 2,
+    "region": "Los Angeles County",
+    "trip_type": "1.5 Day",
     "boat": "Amigo",
     "landing": "22nd Street Landing",
     "trips": 5,
@@ -1534,10 +1545,10 @@
     "trip_type": "3/4 Day",
     "boat": "Malihini",
     "landing": "H&M Landing",
-    "trips": 8,
-    "anglers": 229,
-    "fish": 2112,
-    "fpa": 9.22
+    "trips": 9,
+    "anglers": 239,
+    "fish": 2292,
+    "fpa": 9.59
   },
   {
     "rank": 3,
