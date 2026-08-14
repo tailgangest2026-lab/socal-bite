@@ -324,9 +324,9 @@
     "trip_type": "Full Day",
     "boat": "Patriot (Avila Beach)",
     "landing": "Patriot Sportfishing",
-    "trips": 9,
-    "anglers": 185,
-    "fish": 15,
+    "trips": 10,
+    "anglers": 201,
+    "fish": 17,
     "fpa": 0.08
   },
   {
@@ -412,10 +412,10 @@
     "trip_type": "1/2 Day PM",
     "boat": "Redondo Special",
     "landing": "Redondo Beach Sportfishing",
-    "trips": 39,
-    "anglers": 1662,
-    "fish": 3516,
-    "fpa": 2.12
+    "trips": 40,
+    "anglers": 1700,
+    "fish": 3684,
+    "fpa": 2.17
   },
   {
     "rank": 1,
@@ -731,10 +731,10 @@
     "trip_type": "Full Day",
     "boat": "Queen of Hearts",
     "landing": "Half Moon Bay Sportfishing",
-    "trips": 42,
-    "anglers": 649,
-    "fish": 5555,
-    "fpa": 8.56
+    "trips": 43,
+    "anglers": 662,
+    "fish": 5686,
+    "fpa": 8.59
   },
   {
     "rank": 4,
@@ -1664,17 +1664,6 @@
     "rank": 1,
     "region": "San Diego County",
     "trip_type": "Full Day Offshore",
-    "boat": "San Diego",
-    "landing": "Seaforth Sportfishing",
-    "trips": 9,
-    "anglers": 294,
-    "fish": 509,
-    "fpa": 1.73
-  },
-  {
-    "rank": 2,
-    "region": "San Diego County",
-    "trip_type": "Full Day Offshore",
     "boat": "Grande",
     "landing": "H&M Landing",
     "trips": 12,
@@ -1683,15 +1672,26 @@
     "fpa": 1.57
   },
   {
+    "rank": 2,
+    "region": "San Diego County",
+    "trip_type": "Full Day Offshore",
+    "boat": "San Diego",
+    "landing": "Seaforth Sportfishing",
+    "trips": 11,
+    "anglers": 368,
+    "fish": 565,
+    "fpa": 1.54
+  },
+  {
     "rank": 3,
     "region": "San Diego County",
     "trip_type": "Full Day Offshore",
     "boat": "El Gato Dos",
     "landing": "Seaforth Sportfishing",
-    "trips": 16,
-    "anglers": 80,
+    "trips": 17,
+    "anglers": 85,
     "fish": 114,
-    "fpa": 1.43
+    "fpa": 1.34
   },
   {
     "rank": 1,
