@@ -814,6 +814,17 @@
     "fpa": 0
   },
   {
+    "rank": 13,
+    "region": "NorCal",
+    "trip_type": "Full Day",
+    "boat": "Chasin Crustacean",
+    "landing": "Big Cs Charters",
+    "trips": 5,
+    "anglers": 30,
+    "fish": 0,
+    "fpa": 0
+  },
+  {
     "rank": 1,
     "region": "Orange County",
     "trip_type": "1/2 Day AM",
@@ -1798,10 +1809,10 @@
     "trip_type": "Full Day",
     "boat": "New California Dawn",
     "landing": "California Dawn Sportfishing",
-    "trips": 31,
-    "anglers": 456,
-    "fish": 4168,
-    "fpa": 9.14
+    "trips": 32,
+    "anglers": 478,
+    "fish": 4413,
+    "fpa": 9.23
   },
   {
     "rank": 2,
@@ -1809,10 +1820,10 @@
     "trip_type": "Full Day",
     "boat": "California Dawn II",
     "landing": "California Dawn Sportfishing",
-    "trips": 51,
-    "anglers": 960,
+    "trips": 52,
+    "anglers": 978,
     "fish": 3752,
-    "fpa": 3.91
+    "fpa": 3.84
   },
   {
     "rank": 3,
@@ -1829,23 +1840,23 @@
     "rank": 4,
     "region": "San Francisco Bay",
     "trip_type": "Full Day",
+    "boat": "New Easy Rider",
+    "landing": "Berkeley Charter Boats",
+    "trips": 34,
+    "anglers": 582,
+    "fish": 38,
+    "fpa": 0.07
+  },
+  {
+    "rank": 5,
+    "region": "San Francisco Bay",
+    "trip_type": "Full Day",
     "boat": "Goldeneye 2000",
     "landing": "Berkeley Charter Boats",
     "trips": 12,
     "anglers": 174,
     "fish": 11,
     "fpa": 0.06
-  },
-  {
-    "rank": 5,
-    "region": "San Francisco Bay",
-    "trip_type": "Full Day",
-    "boat": "New Easy Rider",
-    "landing": "Berkeley Charter Boats",
-    "trips": 33,
-    "anglers": 564,
-    "fish": 30,
-    "fpa": 0.05
   },
   {
     "rank": 6,
