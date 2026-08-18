@@ -1774,6 +1774,17 @@
     "rank": 1,
     "region": "San Francisco Bay",
     "trip_type": "1/2 Day AM",
+    "boat": "Lovely Martha",
+    "landing": "Lovely Martha Sportfishing",
+    "trips": 5,
+    "anglers": 98,
+    "fish": 987,
+    "fpa": 10.07
+  },
+  {
+    "rank": 2,
+    "region": "San Francisco Bay",
+    "trip_type": "1/2 Day AM",
     "boat": "Right Hook",
     "landing": "Right Hook Sportfishing",
     "trips": 27,
@@ -1820,10 +1831,10 @@
     "trip_type": "Full Day",
     "boat": "Lovely Martha",
     "landing": "Lovely Martha Sportfishing",
-    "trips": 33,
-    "anglers": 608,
-    "fish": 484,
-    "fpa": 0.8
+    "trips": 35,
+    "anglers": 644,
+    "fish": 486,
+    "fpa": 0.75
   },
   {
     "rank": 5,
