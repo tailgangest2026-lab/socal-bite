@@ -1257,17 +1257,6 @@
     "rank": 2,
     "region": "San Diego County",
     "trip_type": "1.5 Day",
-    "boat": "Fortune",
-    "landing": "Fisherman's Landing",
-    "trips": 5,
-    "anglers": 78,
-    "fish": 235,
-    "fpa": 3.01
-  },
-  {
-    "rank": 3,
-    "region": "San Diego County",
-    "trip_type": "1.5 Day",
     "boat": "Tribute",
     "landing": "Seaforth Sportfishing",
     "trips": 10,
@@ -1276,7 +1265,7 @@
     "fpa": 2.89
   },
   {
-    "rank": 4,
+    "rank": 3,
     "region": "San Diego County",
     "trip_type": "1.5 Day",
     "boat": "Pacifica",
@@ -1285,6 +1274,17 @@
     "anglers": 167,
     "fish": 455,
     "fpa": 2.72
+  },
+  {
+    "rank": 4,
+    "region": "San Diego County",
+    "trip_type": "1.5 Day",
+    "boat": "Fortune",
+    "landing": "Fisherman's Landing",
+    "trips": 6,
+    "anglers": 96,
+    "fish": 260,
+    "fpa": 2.71
   },
   {
     "rank": 5,
@@ -1314,10 +1314,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Premier",
     "landing": "H&M Landing",
-    "trips": 29,
-    "anglers": 1056,
-    "fish": 4056,
-    "fpa": 3.84
+    "trips": 30,
+    "anglers": 1090,
+    "fish": 4261,
+    "fpa": 3.91
   },
   {
     "rank": 3,
@@ -1358,10 +1358,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
-    "trips": 30,
-    "anglers": 1367,
-    "fish": 2259,
-    "fpa": 1.65
+    "trips": 31,
+    "anglers": 1400,
+    "fish": 2398,
+    "fpa": 1.71
   },
   {
     "rank": 1,
@@ -1435,9 +1435,9 @@
     "trip_type": "1/2 Day Twilight",
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
-    "trips": 31,
-    "anglers": 1266,
-    "fish": 2885,
+    "trips": 32,
+    "anglers": 1284,
+    "fish": 2924,
     "fpa": 2.28
   },
   {
@@ -1498,6 +1498,17 @@
   {
     "rank": 1,
     "region": "San Diego County",
+    "trip_type": "2.5 Day",
+    "boat": "Pacific Dawn",
+    "landing": "Fisherman's Landing",
+    "trips": 5,
+    "anglers": 74,
+    "fish": 417,
+    "fpa": 5.64
+  },
+  {
+    "rank": 1,
+    "region": "San Diego County",
     "trip_type": "3 Day",
     "boat": "Pacific Voyager",
     "landing": "Seaforth Sportfishing",
@@ -1508,6 +1519,17 @@
   },
   {
     "rank": 2,
+    "region": "San Diego County",
+    "trip_type": "3 Day",
+    "boat": "Pacific Queen",
+    "landing": "Fisherman's Landing",
+    "trips": 5,
+    "anglers": 127,
+    "fish": 897,
+    "fpa": 7.06
+  },
+  {
+    "rank": 3,
     "region": "San Diego County",
     "trip_type": "3 Day",
     "boat": "Polaris Supreme",
