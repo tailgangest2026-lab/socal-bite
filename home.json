@@ -1,5 +1,119 @@
-{
-  "error": "File not found",
-  "file": "home.json",
-  "message": "Error: File not found: home.json"
-}
+[
+  {
+    "region": "Alameda County",
+    "total_trips_today": 6,
+    "total_anglers_today": 61,
+    "total_fish_today": 260,
+    "top_boat_today": "New Huck Finn",
+    "top_landing_today": "Fish Emeryville",
+    "top_species_today": "Rockfish",
+    "best_boat_last_30_days": "New Huck Finn",
+    "best_boat_last_90_days": "Sea Wolf",
+    "most_caught_species_last_30_days": "Rockfish",
+    "most_caught_species_last_90_days": "Rockfish"
+  },
+  {
+    "region": "Central California",
+    "total_trips_today": 2,
+    "total_anglers_today": 31,
+    "total_fish_today": 147,
+    "top_boat_today": "Avenger",
+    "top_landing_today": "Morro Bay Landing",
+    "top_species_today": "Rockfish",
+    "best_boat_last_30_days": "Starfire",
+    "best_boat_last_90_days": "Avenger",
+    "most_caught_species_last_30_days": "Rockfish",
+    "most_caught_species_last_90_days": "Rockfish"
+  },
+  {
+    "region": "Los Angeles County",
+    "total_trips_today": 17,
+    "total_anglers_today": 540,
+    "total_fish_today": 1737,
+    "top_boat_today": "New Del Mar",
+    "top_landing_today": "Marina Del Rey Sportfishing",
+    "top_species_today": "Calico Bass",
+    "best_boat_last_30_days": "Eldorado",
+    "best_boat_last_90_days": "Pride",
+    "most_caught_species_last_30_days": "Calico Bass",
+    "most_caught_species_last_90_days": "Rockfish"
+  },
+  {
+    "region": "NorCal",
+    "total_trips_today": 5,
+    "total_anglers_today": 88,
+    "total_fish_today": 482,
+    "top_boat_today": "Check Mate",
+    "top_landing_today": "Chris' Fishing Trips",
+    "top_species_today": "Rockfish",
+    "best_boat_last_30_days": "Check Mate",
+    "best_boat_last_90_days": "Check Mate",
+    "most_caught_species_last_30_days": "Rockfish",
+    "most_caught_species_last_90_days": "Rockfish"
+  },
+  {
+    "region": "Orange County",
+    "total_trips_today": 12,
+    "total_anglers_today": 218,
+    "total_fish_today": 1281,
+    "top_boat_today": "Clemente",
+    "top_landing_today": "Dana Wharf Sportfishing",
+    "top_species_today": "Calico Bass Released",
+    "best_boat_last_30_days": "Fury",
+    "best_boat_last_90_days": "Fury",
+    "most_caught_species_last_30_days": "Calico Bass Released",
+    "most_caught_species_last_90_days": "Calico Bass Released"
+  },
+  {
+    "region": "San Diego County",
+    "total_trips_today": 23,
+    "total_anglers_today": 491,
+    "total_fish_today": 1050,
+    "top_boat_today": "Polaris Supreme",
+    "top_landing_today": "Seaforth Sportfishing",
+    "top_species_today": "Yellowtail",
+    "best_boat_last_30_days": "Sea Star",
+    "best_boat_last_90_days": "Pronto",
+    "most_caught_species_last_30_days": "Calico Bass Released",
+    "most_caught_species_last_90_days": "Calico Bass Released"
+  },
+  {
+    "region": "San Francisco Bay",
+    "total_trips_today": 4,
+    "total_anglers_today": 63,
+    "total_fish_today": 10,
+    "top_boat_today": "New Easy Rider",
+    "top_landing_today": "Berkeley Charter Boats",
+    "top_species_today": "Bonito",
+    "best_boat_last_30_days": "New California Dawn",
+    "best_boat_last_90_days": "New California Dawn",
+    "most_caught_species_last_30_days": "Rockfish",
+    "most_caught_species_last_90_days": "Rockfish"
+  },
+  {
+    "region": "Santa Barbara County",
+    "total_trips_today": 3,
+    "total_anglers_today": 69,
+    "total_fish_today": 399,
+    "top_boat_today": "Stardust",
+    "top_landing_today": "Santa Barbara Landing",
+    "top_species_today": "Bonito",
+    "best_boat_last_30_days": "Coral Sea",
+    "best_boat_last_90_days": "Coral Sea",
+    "most_caught_species_last_30_days": "Rockfish",
+    "most_caught_species_last_90_days": "Rockfish"
+  },
+  {
+    "region": "Ventura County",
+    "total_trips_today": 10,
+    "total_anglers_today": 165,
+    "total_fish_today": 1364,
+    "top_boat_today": "Speed Twin",
+    "top_landing_today": "Channel Islands Sportfishing",
+    "top_species_today": "Rockfish",
+    "best_boat_last_30_days": "Mirage",
+    "best_boat_last_90_days": "Ranger 85",
+    "most_caught_species_last_30_days": "Whitefish",
+    "most_caught_species_last_90_days": "Rockfish"
+  }
+]
