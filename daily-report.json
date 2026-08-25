@@ -41,6 +41,16 @@
   },
   {
     "trip_date": "2026-08-25",
+    "region": "Alameda County",
+    "landing": "Fish Emeryville",
+    "boat": "Sea Wolf",
+    "trip_type": "Full Day",
+    "anglers": 24,
+    "fish_counts": "48 Lingcod, 240 Rockfish",
+    "total_fish": 288
+  },
+  {
+    "trip_date": "2026-08-25",
     "region": "Los Angeles County",
     "landing": "22nd Street Landing",
     "boat": "Amigo",
@@ -486,6 +496,16 @@
     "boat": "Sea Wolf",
     "trip_type": "Full Day",
     "anglers": 20,
+    "fish_counts": "48 Lingcod, 240 Rockfish",
+    "total_fish": 288
+  },
+  {
+    "trip_date": "2026-08-24",
+    "region": "Alameda County",
+    "landing": "Fish Emeryville",
+    "boat": "Sea Wolf",
+    "trip_type": "Full Day",
+    "anglers": 24,
     "fish_counts": "48 Lingcod, 240 Rockfish",
     "total_fish": 288
   },
