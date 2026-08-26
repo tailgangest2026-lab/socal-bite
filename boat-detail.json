@@ -348,18 +348,6 @@
     "top_species_3": "Whitefish"
   },
   {
-    "boat": "Toronado",
-    "landing": "Pierpoint Landing",
-    "region": "Los Angeles County",
-    "trips": 54,
-    "anglers": 1374,
-    "fish": 8527,
-    "fpa": 6.21,
-    "top_species_1": "Whitefish",
-    "top_species_2": "Calico Bass",
-    "top_species_3": "Rockfish"
-  },
-  {
     "boat": "Spitfire",
     "landing": "Marina Del Rey Sportfishing",
     "region": "Los Angeles County",
@@ -370,6 +358,18 @@
     "top_species_1": "Whitefish",
     "top_species_2": "Rockfish",
     "top_species_3": "Calico Bass"
+  },
+  {
+    "boat": "Toronado",
+    "landing": "Pierpoint Landing",
+    "region": "Los Angeles County",
+    "trips": 56,
+    "anglers": 1430,
+    "fish": 8747,
+    "fpa": 6.12,
+    "top_species_1": "Whitefish",
+    "top_species_2": "Calico Bass",
+    "top_species_3": "Rockfish"
   },
   {
     "boat": "El Patron",
@@ -1479,10 +1479,10 @@
     "boat": "Pegasus",
     "landing": "Fisherman's Landing",
     "region": "San Diego County",
-    "trips": 32,
-    "anglers": 537,
-    "fish": 1913,
-    "fpa": 3.56,
+    "trips": 33,
+    "anglers": 554,
+    "fish": 1991,
+    "fpa": 3.59,
     "top_species_1": "Bluefin Tuna",
     "top_species_2": "Yellowfin Tuna",
     "top_species_3": "Yellowtail"
