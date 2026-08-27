@@ -92,6 +92,16 @@
   {
     "trip_date": "2026-08-26",
     "region": "Los Angeles County",
+    "landing": "22nd Street Landing",
+    "boat": "Monte Carlo",
+    "trip_type": "1/2 Day AM",
+    "anglers": 18,
+    "fish_counts": "24 Bonito, 31 Calico Bass, 5 Sheephead, 1 Whitefish",
+    "total_fish": 61
+  },
+  {
+    "trip_date": "2026-08-26",
+    "region": "Los Angeles County",
     "landing": "Long Beach Sportfishing",
     "boat": "Eldorado",
     "trip_type": "2 Day",
@@ -187,6 +197,26 @@
     "trip_type": "1/2 Day PM",
     "anglers": 13,
     "fish_counts": "7 Bonito, 4 Sand Bass, 2 Sheephead, 4 Whitefish",
+    "total_fish": 17
+  },
+  {
+    "trip_date": "2026-08-26",
+    "region": "Orange County",
+    "landing": "Dana Wharf Sportfishing",
+    "boat": "Clemente",
+    "trip_type": "3/4 Day",
+    "anglers": 29,
+    "fish_counts": "1 Bonito, 10 Calico Bass, 90 Calico Bass Released, 40 Rockfish, 5 Sculpin, 40 Whitefish",
+    "total_fish": 186
+  },
+  {
+    "trip_date": "2026-08-26",
+    "region": "Orange County",
+    "landing": "Dana Wharf Sportfishing",
+    "boat": "Current",
+    "trip_type": "1/2 Day AM",
+    "anglers": 3,
+    "fish_counts": "15 Bonito, 2 Yellowtail",
     "total_fish": 17
   },
   {
@@ -473,11 +503,31 @@
     "trip_date": "2026-08-26",
     "region": "Ventura County",
     "landing": "Channel Islands Sportfishing",
+    "boat": "Island Fox",
+    "trip_type": "3/4 Day",
+    "anglers": 20,
+    "fish_counts": "100 Calico Bass",
+    "total_fish": 100
+  },
+  {
+    "trip_date": "2026-08-26",
+    "region": "Ventura County",
+    "landing": "Channel Islands Sportfishing",
     "boat": "Island Tak",
     "trip_type": "Full Day",
     "anglers": 8,
     "fish_counts": "2 Bluefin Tuna, 40 Calico Bass, 8 Rockfish",
     "total_fish": 50
+  },
+  {
+    "trip_date": "2026-08-26",
+    "region": "Ventura County",
+    "landing": "Channel Islands Sportfishing",
+    "boat": "Mirage",
+    "trip_type": "Overnight",
+    "anglers": 17,
+    "fish_counts": "2 Halibut, 2 Lingcod, 170 Rockfish, 3 Sheephead, 163 Whitefish",
+    "total_fish": 340
   },
   {
     "trip_date": "2026-08-26",
