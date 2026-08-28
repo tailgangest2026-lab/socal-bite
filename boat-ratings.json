@@ -302,10 +302,10 @@
     "trip_type": "Full Day",
     "boat": "Avenger",
     "landing": "Morro Bay Landing",
-    "trips": 6,
-    "anglers": 100,
-    "fish": 1016,
-    "fpa": 10.16
+    "trips": 7,
+    "anglers": 114,
+    "fish": 1155,
+    "fpa": 10.13
   },
   {
     "rank": 2,
@@ -1391,10 +1391,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Daily Double",
     "landing": "Point Loma Sportfishing",
-    "trips": 24,
-    "anglers": 612,
-    "fish": 1432,
-    "fpa": 2.34
+    "trips": 25,
+    "anglers": 650,
+    "fish": 1485,
+    "fpa": 2.28
   },
   {
     "rank": 5,
@@ -1653,6 +1653,17 @@
     "rank": 1,
     "region": "San Diego County",
     "trip_type": "Full Day",
+    "boat": "Lucky B Sportfishing",
+    "landing": "Fisherman's Landing",
+    "trips": 5,
+    "anglers": 18,
+    "fish": 112,
+    "fpa": 6.22
+  },
+  {
+    "rank": 2,
+    "region": "San Diego County",
+    "trip_type": "Full Day",
     "boat": "Malihini",
     "landing": "H&M Landing",
     "trips": 5,
@@ -1661,7 +1672,7 @@
     "fpa": 5.81
   },
   {
-    "rank": 2,
+    "rank": 3,
     "region": "San Diego County",
     "trip_type": "Full Day",
     "boat": "Point Loma",
@@ -1672,7 +1683,7 @@
     "fpa": 2.21
   },
   {
-    "rank": 3,
+    "rank": 4,
     "region": "San Diego County",
     "trip_type": "Full Day",
     "boat": "Daiwa Pacific",
@@ -1683,7 +1694,7 @@
     "fpa": 2.09
   },
   {
-    "rank": 4,
+    "rank": 5,
     "region": "San Diego County",
     "trip_type": "Full Day",
     "boat": "Vendetta 2",
@@ -1694,7 +1705,7 @@
     "fpa": 2.04
   },
   {
-    "rank": 5,
+    "rank": 6,
     "region": "San Diego County",
     "trip_type": "Full Day",
     "boat": "Blue Horizon",
@@ -1818,23 +1829,23 @@
     "rank": 4,
     "region": "San Diego County",
     "trip_type": "Overnight",
+    "boat": "Old Glory",
+    "landing": "H&M Landing",
+    "trips": 26,
+    "anglers": 717,
+    "fish": 1447,
+    "fpa": 2.02
+  },
+  {
+    "rank": 5,
+    "region": "San Diego County",
+    "trip_type": "Overnight",
     "boat": "Liberty",
     "landing": "Fisherman's Landing",
     "trips": 5,
     "anglers": 133,
     "fish": 264,
     "fpa": 1.98
-  },
-  {
-    "rank": 5,
-    "region": "San Diego County",
-    "trip_type": "Overnight",
-    "boat": "Old Glory",
-    "landing": "H&M Landing",
-    "trips": 25,
-    "anglers": 693,
-    "fish": 1349,
-    "fpa": 1.95
   },
   {
     "rank": 6,
