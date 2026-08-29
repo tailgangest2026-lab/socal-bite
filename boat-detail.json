@@ -375,10 +375,10 @@
     "boat": "Spitfire",
     "landing": "Marina Del Rey Sportfishing",
     "region": "Los Angeles County",
-    "trips": 147,
-    "anglers": 4411,
-    "fish": 26489,
-    "fpa": 6.01,
+    "trips": 148,
+    "anglers": 4442,
+    "fish": 26596,
+    "fpa": 5.99,
     "top_species_1": "Whitefish",
     "top_species_2": "Rockfish",
     "top_species_3": "Calico Bass"
@@ -423,10 +423,10 @@
     "boat": "Betty-O",
     "landing": "Marina Del Rey Sportfishing",
     "region": "Los Angeles County",
-    "trips": 114,
-    "anglers": 2679,
-    "fish": 12646,
-    "fpa": 4.72,
+    "trips": 115,
+    "anglers": 2692,
+    "fish": 12681,
+    "fpa": 4.71,
     "top_species_1": "Rockfish",
     "top_species_2": "Whitefish",
     "top_species_3": "Calico Bass"
@@ -471,10 +471,10 @@
     "boat": "New Del Mar",
     "landing": "Marina Del Rey Sportfishing",
     "region": "Los Angeles County",
-    "trips": 154,
-    "anglers": 12852,
-    "fish": 56532,
-    "fpa": 4.4,
+    "trips": 155,
+    "anglers": 12936,
+    "fish": 56770,
+    "fpa": 4.39,
     "top_species_1": "Rockfish",
     "top_species_2": "Sculpin",
     "top_species_3": "Whitefish"
@@ -1236,18 +1236,6 @@
     "top_species_3": "Calico Bass"
   },
   {
-    "boat": "Malihini",
-    "landing": "H&M Landing",
-    "region": "San Diego County",
-    "trips": 38,
-    "anglers": 854,
-    "fish": 6545,
-    "fpa": 7.66,
-    "top_species_1": "Calico Bass Released",
-    "top_species_2": "Rockfish",
-    "top_species_3": "Calico Bass"
-  },
-  {
     "boat": "Patriot (SD)",
     "landing": "H&M Landing",
     "region": "San Diego County",
@@ -1258,6 +1246,18 @@
     "top_species_1": "Rockfish",
     "top_species_2": "Calico Bass Released",
     "top_species_3": "Yellowfin Tuna"
+  },
+  {
+    "boat": "Malihini",
+    "landing": "H&M Landing",
+    "region": "San Diego County",
+    "trips": 39,
+    "anglers": 886,
+    "fish": 6545,
+    "fpa": 7.39,
+    "top_species_1": "Calico Bass Released",
+    "top_species_2": "Rockfish",
+    "top_species_3": "Calico Bass"
   },
   {
     "boat": "Legend",
