@@ -567,10 +567,10 @@
     "boat": "New Horizon",
     "landing": "J&M Sportfishing",
     "region": "Monterey County",
-    "trips": 64,
-    "anglers": 993,
-    "fish": 9514,
-    "fpa": 9.58,
+    "trips": 65,
+    "anglers": 1005,
+    "fish": 9634,
+    "fpa": 9.59,
     "top_species_1": "Rockfish",
     "top_species_2": "Lingcod",
     "top_species_3": "Halibut"
@@ -615,10 +615,10 @@
     "boat": "Caroline",
     "landing": "Chris' Fishing Trips",
     "region": "NorCal",
-    "trips": 18,
-    "anglers": 244,
-    "fish": 2526,
-    "fpa": 10.35,
+    "trips": 19,
+    "anglers": 250,
+    "fish": 2593,
+    "fpa": 10.37,
     "top_species_1": "Rockfish",
     "top_species_2": "Lingcod",
     "top_species_3": "Bonito"
@@ -1335,13 +1335,13 @@
     "boat": "Blue Horizon",
     "landing": "Oceanside Sea Center",
     "region": "San Diego County",
-    "trips": 50,
-    "anglers": 708,
-    "fish": 3826,
-    "fpa": 5.4,
+    "trips": 51,
+    "anglers": 716,
+    "fish": 3891,
+    "fpa": 5.43,
     "top_species_1": "Calico Bass Released",
-    "top_species_2": "Calico Bass",
-    "top_species_3": "Rockfish"
+    "top_species_2": "Bonito",
+    "top_species_3": "Calico Bass"
   },
   {
     "boat": "Polaris Supreme",
@@ -1668,18 +1668,6 @@
     "top_species_3": "Bluefin Tuna"
   },
   {
-    "boat": "Daily Double",
-    "landing": "Point Loma Sportfishing",
-    "region": "San Diego County",
-    "trips": 120,
-    "anglers": 2923,
-    "fish": 8066,
-    "fpa": 2.76,
-    "top_species_1": "Calico Bass",
-    "top_species_2": "Calico Bass Released",
-    "top_species_3": "Rockfish"
-  },
-  {
     "boat": "Islander",
     "landing": "Fisherman's Landing",
     "region": "San Diego County",
@@ -1690,6 +1678,18 @@
     "top_species_1": "Bluefin Tuna",
     "top_species_2": "Yellowtail",
     "top_species_3": "Yellowfin Tuna"
+  },
+  {
+    "boat": "Daily Double",
+    "landing": "Point Loma Sportfishing",
+    "region": "San Diego County",
+    "trips": 121,
+    "anglers": 2948,
+    "fish": 8090,
+    "fpa": 2.74,
+    "top_species_1": "Calico Bass",
+    "top_species_2": "Calico Bass Released",
+    "top_species_3": "Bonito"
   },
   {
     "boat": "Got Bait",
