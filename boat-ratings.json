@@ -1686,6 +1686,17 @@
     "rank": 3,
     "region": "San Diego County",
     "trip_type": "Full Day",
+    "boat": "Dolphin",
+    "landing": "Fisherman's Landing",
+    "trips": 5,
+    "anglers": 154,
+    "fish": 471,
+    "fpa": 3.06
+  },
+  {
+    "rank": 4,
+    "region": "San Diego County",
+    "trip_type": "Full Day",
     "boat": "Point Loma",
     "landing": "Point Loma Sportfishing",
     "trips": 9,
@@ -1694,7 +1705,7 @@
     "fpa": 2.21
   },
   {
-    "rank": 4,
+    "rank": 5,
     "region": "San Diego County",
     "trip_type": "Full Day",
     "boat": "Vendetta 2",
@@ -1705,7 +1716,7 @@
     "fpa": 2.04
   },
   {
-    "rank": 5,
+    "rank": 6,
     "region": "San Diego County",
     "trip_type": "Full Day",
     "boat": "Daiwa Pacific",
@@ -1716,7 +1727,7 @@
     "fpa": 1.93
   },
   {
-    "rank": 6,
+    "rank": 7,
     "region": "San Diego County",
     "trip_type": "Full Day",
     "boat": "Blue Horizon",
@@ -1853,10 +1864,10 @@
     "trip_type": "Overnight",
     "boat": "Old Glory",
     "landing": "H&M Landing",
-    "trips": 26,
-    "anglers": 717,
-    "fish": 1447,
-    "fpa": 2.02
+    "trips": 27,
+    "anglers": 741,
+    "fish": 1551,
+    "fpa": 2.09
   },
   {
     "rank": 5,
@@ -2040,10 +2051,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Island Spirit",
     "landing": "Ventura Harbor Sportfishing",
-    "trips": 22,
-    "anglers": 720,
-    "fish": 7026,
-    "fpa": 9.76
+    "trips": 23,
+    "anglers": 741,
+    "fish": 7236,
+    "fpa": 9.77
   },
   {
     "rank": 1,
