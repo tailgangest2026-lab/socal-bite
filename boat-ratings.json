@@ -236,8 +236,8 @@
     "trip_type": "1/2 Day AM",
     "boat": "Flying Fish",
     "landing": "Patriot Sportfishing",
-    "trips": 52,
-    "anglers": 847,
+    "trips": 53,
+    "anglers": 867,
     "fish": 29,
     "fpa": 0.03
   },
@@ -313,10 +313,10 @@
     "trip_type": "Full Day",
     "boat": "Endeavor (MB)",
     "landing": "Morro Bay Landing",
-    "trips": 14,
-    "anglers": 320,
-    "fish": 2476,
-    "fpa": 7.74
+    "trips": 15,
+    "anglers": 342,
+    "fish": 2656,
+    "fpa": 7.77
   },
   {
     "rank": 3,
@@ -1741,23 +1741,23 @@
     "rank": 2,
     "region": "San Diego County",
     "trip_type": "Full Day Coronado Islands",
-    "boat": "San Diego",
-    "landing": "Seaforth Sportfishing",
-    "trips": 14,
-    "anglers": 403,
-    "fish": 1252,
-    "fpa": 3.11
-  },
-  {
-    "rank": 3,
-    "region": "San Diego County",
-    "trip_type": "Full Day Coronado Islands",
     "boat": "Point Loma",
     "landing": "Point Loma Sportfishing",
     "trips": 10,
     "anglers": 185,
     "fish": 574,
     "fpa": 3.1
+  },
+  {
+    "rank": 3,
+    "region": "San Diego County",
+    "trip_type": "Full Day Coronado Islands",
+    "boat": "San Diego",
+    "landing": "Seaforth Sportfishing",
+    "trips": 15,
+    "anglers": 437,
+    "fish": 1329,
+    "fpa": 3.04
   },
   {
     "rank": 4,
