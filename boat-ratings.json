@@ -1334,6 +1334,17 @@
     "rank": 1,
     "region": "San Diego County",
     "trip_type": "1/2 Day AM",
+    "boat": "Sea Star",
+    "landing": "Oceanside Sea Center",
+    "trips": 5,
+    "anglers": 36,
+    "fish": 301,
+    "fpa": 8.36
+  },
+  {
+    "rank": 2,
+    "region": "San Diego County",
+    "trip_type": "1/2 Day AM",
     "boat": "Dolphin",
     "landing": "Fisherman's Landing",
     "trips": 25,
@@ -1342,7 +1353,7 @@
     "fpa": 3.34
   },
   {
-    "rank": 2,
+    "rank": 3,
     "region": "San Diego County",
     "trip_type": "1/2 Day AM",
     "boat": "Premier",
@@ -1353,7 +1364,7 @@
     "fpa": 3.26
   },
   {
-    "rank": 3,
+    "rank": 4,
     "region": "San Diego County",
     "trip_type": "1/2 Day AM",
     "boat": "Daily Double",
@@ -1364,7 +1375,7 @@
     "fpa": 2.26
   },
   {
-    "rank": 4,
+    "rank": 5,
     "region": "San Diego County",
     "trip_type": "1/2 Day AM",
     "boat": "Southern Cal",
@@ -1375,7 +1386,7 @@
     "fpa": 1.92
   },
   {
-    "rank": 5,
+    "rank": 6,
     "region": "San Diego County",
     "trip_type": "1/2 Day AM",
     "boat": "New Seaforth",
@@ -1807,23 +1818,23 @@
     "rank": 4,
     "region": "San Diego County",
     "trip_type": "Overnight",
+    "boat": "Old Glory",
+    "landing": "H&M Landing",
+    "trips": 28,
+    "anglers": 789,
+    "fish": 1577,
+    "fpa": 2
+  },
+  {
+    "rank": 5,
+    "region": "San Diego County",
+    "trip_type": "Overnight",
     "boat": "Liberty",
     "landing": "Fisherman's Landing",
     "trips": 5,
     "anglers": 133,
     "fish": 264,
     "fpa": 1.98
-  },
-  {
-    "rank": 5,
-    "region": "San Diego County",
-    "trip_type": "Overnight",
-    "boat": "Old Glory",
-    "landing": "H&M Landing",
-    "trips": 27,
-    "anglers": 759,
-    "fish": 1496,
-    "fpa": 1.97
   },
   {
     "rank": 6,
