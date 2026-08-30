@@ -456,18 +456,6 @@
     "top_species_3": "Bonito"
   },
   {
-    "boat": "Native Sun",
-    "landing": "22nd Street Landing",
-    "region": "Los Angeles County",
-    "trips": 111,
-    "anglers": 4096,
-    "fish": 17951,
-    "fpa": 4.38,
-    "top_species_1": "Barracuda",
-    "top_species_2": "Calico Bass",
-    "top_species_3": "Bonito"
-  },
-  {
     "boat": "New Del Mar",
     "landing": "Marina Del Rey Sportfishing",
     "region": "Los Angeles County",
@@ -478,6 +466,18 @@
     "top_species_1": "Rockfish",
     "top_species_2": "Sculpin",
     "top_species_3": "Whitefish"
+  },
+  {
+    "boat": "Native Sun",
+    "landing": "22nd Street Landing",
+    "region": "Los Angeles County",
+    "trips": 112,
+    "anglers": 4138,
+    "fish": 18023,
+    "fpa": 4.36,
+    "top_species_1": "Barracuda",
+    "top_species_2": "Calico Bass",
+    "top_species_3": "Bonito"
   },
   {
     "boat": "Pursuit",
@@ -1455,10 +1455,10 @@
     "boat": "Dolphin",
     "landing": "Fisherman's Landing",
     "region": "San Diego County",
-    "trips": 189,
-    "anglers": 6508,
-    "fish": 24740,
-    "fpa": 3.8,
+    "trips": 191,
+    "anglers": 6610,
+    "fish": 24819,
+    "fpa": 3.75,
     "top_species_1": "Calico Bass Released",
     "top_species_2": "Rockfish",
     "top_species_3": "Calico Bass"
@@ -1611,10 +1611,10 @@
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
     "region": "San Diego County",
-    "trips": 263,
-    "anglers": 11039,
-    "fish": 31945,
-    "fpa": 2.89,
+    "trips": 264,
+    "anglers": 11093,
+    "fish": 32001,
+    "fpa": 2.88,
     "top_species_1": "Calico Bass Released",
     "top_species_2": "Calico Bass",
     "top_species_3": "Barracuda"
