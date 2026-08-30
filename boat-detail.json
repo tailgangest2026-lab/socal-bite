@@ -279,10 +279,10 @@
     "boat": "Victory",
     "landing": "Long Beach Sportfishing",
     "region": "Los Angeles County",
-    "trips": 112,
-    "anglers": 4611,
-    "fish": 37311,
-    "fpa": 8.09,
+    "trips": 113,
+    "anglers": 4666,
+    "fish": 37389,
+    "fpa": 8.01,
     "top_species_1": "Sculpin",
     "top_species_2": "Calico Bass",
     "top_species_3": "Barracuda"
@@ -327,10 +327,10 @@
     "boat": "Freedom",
     "landing": "22nd Street Landing",
     "region": "Los Angeles County",
-    "trips": 112,
-    "anglers": 3705,
-    "fish": 27287,
-    "fpa": 7.36,
+    "trips": 113,
+    "anglers": 3740,
+    "fish": 27460,
+    "fpa": 7.34,
     "top_species_1": "Whitefish",
     "top_species_2": "Calico Bass",
     "top_species_3": "Rockfish"
@@ -543,10 +543,10 @@
     "boat": "Pescador",
     "landing": "Redondo Beach Sportfishing",
     "region": "Los Angeles County",
-    "trips": 59,
-    "anglers": 990,
-    "fish": 2680,
-    "fpa": 2.71,
+    "trips": 60,
+    "anglers": 1010,
+    "fish": 2766,
+    "fpa": 2.74,
     "top_species_1": "Calico Bass",
     "top_species_2": "Bonito",
     "top_species_3": "Barracuda"
@@ -1824,18 +1824,6 @@
     "top_species_3": "Rockfish"
   },
   {
-    "boat": "Daiwa Pacific",
-    "landing": "H&M Landing",
-    "region": "San Diego County",
-    "trips": 28,
-    "anglers": 506,
-    "fish": 864,
-    "fpa": 1.71,
-    "top_species_1": "Calico Bass Released",
-    "top_species_2": "Yellowfin Tuna",
-    "top_species_3": "Rockfish"
-  },
-  {
     "boat": "Producer",
     "landing": "H&M Landing",
     "region": "San Diego County",
@@ -1846,6 +1834,18 @@
     "top_species_1": "Yellowfin Tuna",
     "top_species_2": "Yellowtail",
     "top_species_3": "Bluefin Tuna"
+  },
+  {
+    "boat": "Daiwa Pacific",
+    "landing": "H&M Landing",
+    "region": "San Diego County",
+    "trips": 29,
+    "anglers": 524,
+    "fish": 874,
+    "fpa": 1.67,
+    "top_species_1": "Yellowfin Tuna",
+    "top_species_2": "Calico Bass Released",
+    "top_species_3": "Rockfish"
   },
   {
     "boat": "Ocean Odyssey",
