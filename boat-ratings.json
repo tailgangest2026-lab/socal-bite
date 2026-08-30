@@ -456,10 +456,10 @@
     "trip_type": "2 Day",
     "boat": "Apollo",
     "landing": "22nd Street Landing",
-    "trips": 6,
-    "anglers": 104,
-    "fish": 327,
-    "fpa": 3.14
+    "trips": 7,
+    "anglers": 122,
+    "fish": 399,
+    "fpa": 3.27
   },
   {
     "rank": 1,
@@ -1083,10 +1083,10 @@
     "trip_type": "2 Day",
     "boat": "Thunderbird",
     "landing": "Newport Landing",
-    "trips": 6,
-    "anglers": 145,
-    "fish": 1701,
-    "fpa": 11.73
+    "trips": 7,
+    "anglers": 167,
+    "fish": 1869,
+    "fpa": 11.19
   },
   {
     "rank": 1,
@@ -1281,10 +1281,10 @@
     "trip_type": "Overnight",
     "boat": "Aggressor",
     "landing": "Newport Landing",
-    "trips": 24,
-    "anglers": 347,
-    "fish": 2307,
-    "fpa": 6.65
+    "trips": 25,
+    "anglers": 362,
+    "fish": 2402,
+    "fpa": 6.64
   },
   {
     "rank": 3,
@@ -1391,10 +1391,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Daily Double",
     "landing": "Point Loma Sportfishing",
-    "trips": 24,
-    "anglers": 621,
-    "fish": 1454,
-    "fpa": 2.34
+    "trips": 25,
+    "anglers": 662,
+    "fish": 1482,
+    "fpa": 2.24
   },
   {
     "rank": 5,
@@ -1851,23 +1851,23 @@
     "rank": 3,
     "region": "San Diego County",
     "trip_type": "Overnight",
-    "boat": "Old Glory",
-    "landing": "H&M Landing",
-    "trips": 27,
-    "anglers": 741,
-    "fish": 1551,
-    "fpa": 2.09
-  },
-  {
-    "rank": 4,
-    "region": "San Diego County",
-    "trip_type": "Overnight",
     "boat": "Producer",
     "landing": "H&M Landing",
     "trips": 24,
     "anglers": 630,
     "fish": 1297,
     "fpa": 2.06
+  },
+  {
+    "rank": 4,
+    "region": "San Diego County",
+    "trip_type": "Overnight",
+    "boat": "Old Glory",
+    "landing": "H&M Landing",
+    "trips": 28,
+    "anglers": 773,
+    "fish": 1551,
+    "fpa": 2.01
   },
   {
     "rank": 5,
