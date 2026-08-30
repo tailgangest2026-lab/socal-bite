@@ -25,23 +25,23 @@
     "rank": 3,
     "region": "Alameda County",
     "trip_type": "1/2 Day AM",
-    "boat": "Lady K",
-    "landing": "Fish Emeryville",
-    "trips": 8,
-    "anglers": 64,
-    "fish": 558,
-    "fpa": 8.72
-  },
-  {
-    "rank": 4,
-    "region": "Alameda County",
-    "trip_type": "1/2 Day AM",
     "boat": "Playn Hooky",
     "landing": "Fish Emeryville",
     "trips": 14,
     "anglers": 82,
     "fish": 680,
     "fpa": 8.29
+  },
+  {
+    "rank": 4,
+    "region": "Alameda County",
+    "trip_type": "1/2 Day AM",
+    "boat": "Lady K",
+    "landing": "Fish Emeryville",
+    "trips": 9,
+    "anglers": 74,
+    "fish": 559,
+    "fpa": 7.55
   },
   {
     "rank": 1,
@@ -80,23 +80,23 @@
     "rank": 4,
     "region": "Alameda County",
     "trip_type": "Full Day",
+    "boat": "Pacific Pearl",
+    "landing": "Fish Emeryville",
+    "trips": 23,
+    "anglers": 281,
+    "fish": 636,
+    "fpa": 2.26
+  },
+  {
+    "rank": 5,
+    "region": "Alameda County",
+    "trip_type": "Full Day",
     "boat": "Diamond",
     "landing": "Fish Emeryville",
     "trips": 22,
     "anglers": 128,
     "fish": 246,
     "fpa": 1.92
-  },
-  {
-    "rank": 5,
-    "region": "Alameda County",
-    "trip_type": "Full Day",
-    "boat": "Pacific Pearl",
-    "landing": "Fish Emeryville",
-    "trips": 22,
-    "anglers": 262,
-    "fish": 446,
-    "fpa": 1.7
   },
   {
     "rank": 6,
@@ -124,23 +124,23 @@
     "rank": 8,
     "region": "Alameda County",
     "trip_type": "Full Day",
+    "boat": "KingFish",
+    "landing": "Fish Emeryville",
+    "trips": 15,
+    "anglers": 202,
+    "fish": 117,
+    "fpa": 0.58
+  },
+  {
+    "rank": 9,
+    "region": "Alameda County",
+    "trip_type": "Full Day",
     "boat": "Scallywag",
     "landing": "Fish Emeryville",
     "trips": 34,
     "anglers": 204,
     "fish": 48,
     "fpa": 0.24
-  },
-  {
-    "rank": 9,
-    "region": "Alameda County",
-    "trip_type": "Full Day",
-    "boat": "KingFish",
-    "landing": "Fish Emeryville",
-    "trips": 14,
-    "anglers": 192,
-    "fish": 14,
-    "fpa": 0.07
   },
   {
     "rank": 10,
@@ -401,10 +401,10 @@
     "trip_type": "1/2 Day Twilight",
     "boat": "Native Sun",
     "landing": "22nd Street Landing",
-    "trips": 6,
-    "anglers": 297,
-    "fish": 602,
-    "fpa": 2.03
+    "trips": 7,
+    "anglers": 347,
+    "fish": 848,
+    "fpa": 2.44
   },
   {
     "rank": 1,
@@ -465,23 +465,23 @@
     "rank": 2,
     "region": "Los Angeles County",
     "trip_type": "3/4 Day",
-    "boat": "Victory",
-    "landing": "Long Beach Sportfishing",
-    "trips": 35,
-    "anglers": 1649,
-    "fish": 7990,
-    "fpa": 4.85
-  },
-  {
-    "rank": 3,
-    "region": "Los Angeles County",
-    "trip_type": "3/4 Day",
     "boat": "Enterprise",
     "landing": "Pierpoint Landing",
     "trips": 6,
     "anglers": 262,
     "fish": 1250,
     "fpa": 4.77
+  },
+  {
+    "rank": 3,
+    "region": "Los Angeles County",
+    "trip_type": "3/4 Day",
+    "boat": "Victory",
+    "landing": "Long Beach Sportfishing",
+    "trips": 36,
+    "anglers": 1685,
+    "fish": 8016,
+    "fpa": 4.76
   },
   {
     "rank": 4,
@@ -720,10 +720,10 @@
     "trip_type": "Full Day",
     "boat": "Queen of Hearts",
     "landing": "Half Moon Bay Sportfishing",
-    "trips": 36,
-    "anglers": 608,
-    "fish": 5749,
-    "fpa": 9.46
+    "trips": 37,
+    "anglers": 626,
+    "fish": 5936,
+    "fpa": 9.48
   },
   {
     "rank": 6,
@@ -951,10 +951,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Western Pride",
     "landing": "Davey's Locker",
-    "trips": 68,
-    "anglers": 2948,
-    "fish": 6395,
-    "fpa": 2.17
+    "trips": 69,
+    "anglers": 3002,
+    "fish": 6532,
+    "fpa": 2.18
   },
   {
     "rank": 8,
@@ -1312,17 +1312,6 @@
     "rank": 3,
     "region": "San Diego County",
     "trip_type": "1.5 Day",
-    "boat": "Pacifica",
-    "landing": "Seaforth Sportfishing",
-    "trips": 7,
-    "anglers": 157,
-    "fish": 434,
-    "fpa": 2.76
-  },
-  {
-    "rank": 4,
-    "region": "San Diego County",
-    "trip_type": "1.5 Day",
     "boat": "Fortune",
     "landing": "Fisherman's Landing",
     "trips": 6,
@@ -1331,18 +1320,18 @@
     "fpa": 2.71
   },
   {
-    "rank": 1,
+    "rank": 4,
     "region": "San Diego County",
-    "trip_type": "1/2 Day AM",
-    "boat": "Premier",
-    "landing": "H&M Landing",
-    "trips": 24,
-    "anglers": 806,
-    "fish": 2721,
-    "fpa": 3.38
+    "trip_type": "1.5 Day",
+    "boat": "Pacifica",
+    "landing": "Seaforth Sportfishing",
+    "trips": 8,
+    "anglers": 179,
+    "fish": 455,
+    "fpa": 2.54
   },
   {
-    "rank": 2,
+    "rank": 1,
     "region": "San Diego County",
     "trip_type": "1/2 Day AM",
     "boat": "Dolphin",
@@ -1353,15 +1342,26 @@
     "fpa": 3.34
   },
   {
+    "rank": 2,
+    "region": "San Diego County",
+    "trip_type": "1/2 Day AM",
+    "boat": "Premier",
+    "landing": "H&M Landing",
+    "trips": 25,
+    "anglers": 860,
+    "fish": 2805,
+    "fpa": 3.26
+  },
+  {
     "rank": 3,
     "region": "San Diego County",
     "trip_type": "1/2 Day AM",
     "boat": "Daily Double",
     "landing": "Point Loma Sportfishing",
-    "trips": 24,
-    "anglers": 632,
-    "fish": 1461,
-    "fpa": 2.31
+    "trips": 25,
+    "anglers": 671,
+    "fish": 1519,
+    "fpa": 2.26
   },
   {
     "rank": 4,
@@ -1380,10 +1380,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
-    "trips": 28,
-    "anglers": 1186,
-    "fish": 2016,
-    "fpa": 1.7
+    "trips": 29,
+    "anglers": 1241,
+    "fish": 2098,
+    "fpa": 1.69
   },
   {
     "rank": 1,
@@ -1446,10 +1446,10 @@
     "trip_type": "1/2 Day Twilight",
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
-    "trips": 28,
-    "anglers": 1054,
-    "fish": 2477,
-    "fpa": 2.35
+    "trips": 29,
+    "anglers": 1107,
+    "fish": 2521,
+    "fpa": 2.28
   },
   {
     "rank": 1,
