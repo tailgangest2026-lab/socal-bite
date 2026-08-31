@@ -360,18 +360,6 @@
     "top_species_3": "Whitefish"
   },
   {
-    "boat": "Toronado",
-    "landing": "Pierpoint Landing",
-    "region": "Los Angeles County",
-    "trips": 57,
-    "anglers": 1457,
-    "fish": 8885,
-    "fpa": 6.1,
-    "top_species_1": "Whitefish",
-    "top_species_2": "Calico Bass",
-    "top_species_3": "Rockfish"
-  },
-  {
     "boat": "El Patron",
     "landing": "Long Beach Sportfishing",
     "region": "Los Angeles County",
@@ -382,6 +370,18 @@
     "top_species_1": "Calico Bass",
     "top_species_2": "Bonito",
     "top_species_3": "Barracuda"
+  },
+  {
+    "boat": "Toronado",
+    "landing": "Pierpoint Landing",
+    "region": "Los Angeles County",
+    "trips": 59,
+    "anglers": 1511,
+    "fish": 8969,
+    "fpa": 5.94,
+    "top_species_1": "Whitefish",
+    "top_species_2": "Calico Bass",
+    "top_species_3": "Rockfish"
   },
   {
     "boat": "Spitfire",
@@ -2043,9 +2043,9 @@
     "boat": "Stardust",
     "landing": "Santa Barbara Landing",
     "region": "Santa Barbara County",
-    "trips": 149,
-    "anglers": 3751,
-    "fish": 44392,
+    "trips": 150,
+    "anglers": 3776,
+    "fish": 44659,
     "fpa": 11.83,
     "top_species_1": "Rockfish",
     "top_species_2": "Whitefish",
