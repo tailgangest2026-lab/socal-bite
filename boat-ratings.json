@@ -995,10 +995,10 @@
     "trip_type": "1/2 Day PM",
     "boat": "Reel Fun",
     "landing": "Dana Wharf Sportfishing",
-    "trips": 28,
-    "anglers": 768,
-    "fish": 2932,
-    "fpa": 3.82
+    "trips": 29,
+    "anglers": 800,
+    "fish": 3048,
+    "fpa": 3.81
   },
   {
     "rank": 4,
@@ -1006,10 +1006,10 @@
     "trip_type": "1/2 Day PM",
     "boat": "Western Pride",
     "landing": "Davey's Locker",
-    "trips": 60,
-    "anglers": 2510,
-    "fish": 5222,
-    "fpa": 2.08
+    "trips": 61,
+    "anglers": 2560,
+    "fish": 5276,
+    "fpa": 2.06
   },
   {
     "rank": 5,
@@ -1050,10 +1050,10 @@
     "trip_type": "1/2 Day Twilight",
     "boat": "Western Pride",
     "landing": "Davey's Locker",
-    "trips": 11,
-    "anglers": 491,
-    "fish": 1138,
-    "fpa": 2.32
+    "trips": 12,
+    "anglers": 536,
+    "fish": 1150,
+    "fpa": 2.15
   },
   {
     "rank": 1,
@@ -1116,10 +1116,10 @@
     "trip_type": "3/4 Day",
     "boat": "Sum Fun",
     "landing": "Dana Wharf Sportfishing",
-    "trips": 29,
-    "anglers": 983,
-    "fish": 3062,
-    "fpa": 3.11
+    "trips": 30,
+    "anglers": 1011,
+    "fish": 3195,
+    "fpa": 3.16
   },
   {
     "rank": 5,
@@ -1215,10 +1215,10 @@
     "trip_type": "Full Day",
     "boat": "New San Mateo",
     "landing": "Dana Wharf Sportfishing",
-    "trips": 20,
-    "anglers": 226,
-    "fish": 654,
-    "fpa": 2.89
+    "trips": 21,
+    "anglers": 240,
+    "fish": 729,
+    "fpa": 3.04
   },
   {
     "rank": 6,
@@ -1402,10 +1402,10 @@
     "trip_type": "1/2 Day PM",
     "boat": "Premier",
     "landing": "H&M Landing",
-    "trips": 20,
-    "anglers": 564,
-    "fish": 2488,
-    "fpa": 4.41
+    "trips": 21,
+    "anglers": 610,
+    "fish": 2544,
+    "fpa": 4.17
   },
   {
     "rank": 2,
@@ -1545,10 +1545,10 @@
     "trip_type": "2.5 Day",
     "boat": "Top Gun 80",
     "landing": "H&M Landing",
-    "trips": 6,
-    "anglers": 104,
-    "fish": 2898,
-    "fpa": 27.87
+    "trips": 7,
+    "anglers": 123,
+    "fish": 3666,
+    "fpa": 29.8
   },
   {
     "rank": 2,
@@ -1818,6 +1818,17 @@
     "rank": 3,
     "region": "San Diego County",
     "trip_type": "Overnight",
+    "boat": "Tradition",
+    "landing": "Fisherman's Landing",
+    "trips": 5,
+    "anglers": 126,
+    "fish": 323,
+    "fpa": 2.56
+  },
+  {
+    "rank": 4,
+    "region": "San Diego County",
+    "trip_type": "Overnight",
     "boat": "Producer",
     "landing": "H&M Landing",
     "trips": 24,
@@ -1826,7 +1837,7 @@
     "fpa": 2.04
   },
   {
-    "rank": 4,
+    "rank": 5,
     "region": "San Diego County",
     "trip_type": "Overnight",
     "boat": "Old Glory",
@@ -1837,7 +1848,7 @@
     "fpa": 2
   },
   {
-    "rank": 5,
+    "rank": 6,
     "region": "San Diego County",
     "trip_type": "Overnight",
     "boat": "Liberty",
@@ -1848,7 +1859,7 @@
     "fpa": 1.98
   },
   {
-    "rank": 6,
+    "rank": 7,
     "region": "San Diego County",
     "trip_type": "Overnight",
     "boat": "Daiwa Pacific",
@@ -1859,7 +1870,7 @@
     "fpa": 0.89
   },
   {
-    "rank": 7,
+    "rank": 8,
     "region": "San Diego County",
     "trip_type": "Overnight",
     "boat": "Nautilus",
