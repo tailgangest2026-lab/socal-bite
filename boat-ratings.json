@@ -489,10 +489,10 @@
     "trip_type": "3/4 Day",
     "boat": "Native Sun",
     "landing": "22nd Street Landing",
-    "trips": 49,
-    "anglers": 1898,
-    "fish": 7906,
-    "fpa": 4.17
+    "trips": 50,
+    "anglers": 1940,
+    "fish": 8068,
+    "fpa": 4.16
   },
   {
     "rank": 5,
@@ -1435,9 +1435,9 @@
     "trip_type": "1/2 Day PM",
     "boat": "Daily Double",
     "landing": "Point Loma Sportfishing",
-    "trips": 18,
-    "anglers": 480,
-    "fish": 668,
+    "trips": 19,
+    "anglers": 507,
+    "fish": 707,
     "fpa": 1.39
   },
   {
@@ -1477,6 +1477,17 @@
     "rank": 2,
     "region": "San Diego County",
     "trip_type": "2 Day",
+    "boat": "Highliner",
+    "landing": "Seaforth Sportfishing",
+    "trips": 5,
+    "anglers": 120,
+    "fish": 698,
+    "fpa": 5.82
+  },
+  {
+    "rank": 3,
+    "region": "San Diego County",
+    "trip_type": "2 Day",
     "boat": "Pegasus",
     "landing": "Fisherman's Landing",
     "trips": 6,
@@ -1485,7 +1496,7 @@
     "fpa": 3.61
   },
   {
-    "rank": 3,
+    "rank": 4,
     "region": "San Diego County",
     "trip_type": "2 Day",
     "boat": "Legend",
@@ -1496,7 +1507,7 @@
     "fpa": 3.6
   },
   {
-    "rank": 4,
+    "rank": 5,
     "region": "San Diego County",
     "trip_type": "2 Day",
     "boat": "Liberty",
@@ -1507,7 +1518,7 @@
     "fpa": 2.46
   },
   {
-    "rank": 5,
+    "rank": 6,
     "region": "San Diego County",
     "trip_type": "2 Day",
     "boat": "Aztec",
@@ -1518,7 +1529,7 @@
     "fpa": 1.92
   },
   {
-    "rank": 6,
+    "rank": 7,
     "region": "San Diego County",
     "trip_type": "2 Day",
     "boat": "Constitution",
@@ -1529,7 +1540,7 @@
     "fpa": 1.87
   },
   {
-    "rank": 7,
+    "rank": 8,
     "region": "San Diego County",
     "trip_type": "2 Day",
     "boat": "Tomahawk",
