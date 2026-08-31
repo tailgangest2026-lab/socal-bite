@@ -267,10 +267,10 @@
     "boat": "Eldorado",
     "landing": "Long Beach Sportfishing",
     "region": "Los Angeles County",
-    "trips": 40,
-    "anglers": 1001,
-    "fish": 10793,
-    "fpa": 10.78,
+    "trips": 41,
+    "anglers": 1023,
+    "fish": 10921,
+    "fpa": 10.68,
     "top_species_1": "Whitefish",
     "top_species_2": "Rockfish",
     "top_species_3": "Calico Bass"
@@ -507,10 +507,10 @@
     "boat": "Apollo",
     "landing": "22nd Street Landing",
     "region": "Los Angeles County",
-    "trips": 28,
-    "anglers": 509,
-    "fish": 1647,
-    "fpa": 3.24,
+    "trips": 29,
+    "anglers": 527,
+    "fish": 1767,
+    "fpa": 3.35,
     "top_species_1": "Yellowtail",
     "top_species_2": "Bluefin Tuna",
     "top_species_3": "Yellowfin Tuna"
@@ -687,10 +687,10 @@
     "boat": "Queen of Hearts",
     "landing": "Half Moon Bay Sportfishing",
     "region": "NorCal",
-    "trips": 110,
-    "anglers": 1840,
-    "fish": 14542,
-    "fpa": 7.9,
+    "trips": 111,
+    "anglers": 1849,
+    "fish": 14634,
+    "fpa": 7.91,
     "top_species_1": "Rockfish",
     "top_species_2": "Lingcod",
     "top_species_3": "Bonito"
@@ -1368,6 +1368,18 @@
     "top_species_3": "Calico Bass"
   },
   {
+    "boat": "Little G",
+    "landing": "H&M Landing",
+    "region": "San Diego County",
+    "trips": 9,
+    "anglers": 46,
+    "fish": 225,
+    "fpa": 4.89,
+    "top_species_1": "Bluefin Tuna",
+    "top_species_2": "Whitefish",
+    "top_species_3": "Calico Bass Released"
+  },
+  {
     "boat": "Sea Watch",
     "landing": "Seaforth Sportfishing",
     "region": "San Diego County",
@@ -1416,18 +1428,6 @@
     "top_species_3": "Yellowtail"
   },
   {
-    "boat": "Little G",
-    "landing": "H&M Landing",
-    "region": "San Diego County",
-    "trips": 8,
-    "anglers": 41,
-    "fish": 174,
-    "fpa": 4.24,
-    "top_species_1": "Bluefin Tuna",
-    "top_species_2": "Whitefish",
-    "top_species_3": "Yellowtail"
-  },
-  {
     "boat": "Cortez",
     "landing": "Seaforth Sportfishing",
     "region": "San Diego County",
@@ -1455,10 +1455,10 @@
     "boat": "Premier",
     "landing": "H&M Landing",
     "region": "San Diego County",
-    "trips": 157,
-    "anglers": 5207,
-    "fish": 20660,
-    "fpa": 3.97,
+    "trips": 158,
+    "anglers": 5227,
+    "fish": 20716,
+    "fpa": 3.96,
     "top_species_1": "Calico Bass Released",
     "top_species_2": "Calico Bass",
     "top_species_3": "Rockfish"
@@ -1608,28 +1608,28 @@
     "top_species_3": "Yellowtail"
   },
   {
-    "boat": "New Seaforth",
-    "landing": "Seaforth Sportfishing",
-    "region": "San Diego County",
-    "trips": 262,
-    "anglers": 11077,
-    "fish": 31776,
-    "fpa": 2.87,
-    "top_species_1": "Calico Bass Released",
-    "top_species_2": "Calico Bass",
-    "top_species_3": "Barracuda"
-  },
-  {
     "boat": "Tribute",
     "landing": "Seaforth Sportfishing",
     "region": "San Diego County",
-    "trips": 34,
-    "anglers": 892,
-    "fish": 2523,
-    "fpa": 2.83,
+    "trips": 35,
+    "anglers": 913,
+    "fish": 2647,
+    "fpa": 2.9,
     "top_species_1": "Rockfish",
     "top_species_2": "Yellowtail",
     "top_species_3": "Bluefin Tuna"
+  },
+  {
+    "boat": "New Seaforth",
+    "landing": "Seaforth Sportfishing",
+    "region": "San Diego County",
+    "trips": 263,
+    "anglers": 11130,
+    "fish": 31868,
+    "fpa": 2.86,
+    "top_species_1": "Calico Bass Released",
+    "top_species_2": "Calico Bass",
+    "top_species_3": "Barracuda"
   },
   {
     "boat": "Mission Belle",
@@ -2136,18 +2136,6 @@
     "top_species_3": "Sheephead"
   },
   {
-    "boat": "Ranger 85",
-    "landing": "Channel Islands Sportfishing",
-    "region": "Ventura County",
-    "trips": 29,
-    "anglers": 718,
-    "fish": 10081,
-    "fpa": 14.04,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Whitefish",
-    "top_species_3": "Lingcod"
-  },
-  {
     "boat": "New Hustler",
     "landing": "Hooks Landing",
     "region": "Ventura County",
@@ -2158,6 +2146,18 @@
     "top_species_1": "Rockfish",
     "top_species_2": "Whitefish",
     "top_species_3": "Sheephead"
+  },
+  {
+    "boat": "Ranger 85",
+    "landing": "Channel Islands Sportfishing",
+    "region": "Ventura County",
+    "trips": 30,
+    "anglers": 745,
+    "fish": 10168,
+    "fpa": 13.65,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Whitefish",
+    "top_species_3": "Lingcod"
   },
   {
     "boat": "Coroloma",
