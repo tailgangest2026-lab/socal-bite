@@ -91,23 +91,23 @@
     "rank": 4,
     "region": "Alameda County",
     "trip_type": "Full Day",
-    "boat": "Pacific Pearl",
-    "landing": "Fish Emeryville",
-    "trips": 21,
-    "anglers": 271,
-    "fish": 454,
-    "fpa": 1.68
-  },
-  {
-    "rank": 5,
-    "region": "Alameda County",
-    "trip_type": "Full Day",
     "boat": "Here We Go",
     "landing": "Fish Emeryville",
     "trips": 15,
     "anglers": 62,
     "fish": 102,
     "fpa": 1.65
+  },
+  {
+    "rank": 5,
+    "region": "Alameda County",
+    "trip_type": "Full Day",
+    "boat": "Pacific Pearl",
+    "landing": "Fish Emeryville",
+    "trips": 22,
+    "anglers": 286,
+    "fish": 454,
+    "fpa": 1.59
   },
   {
     "rank": 6,
@@ -148,9 +148,9 @@
     "trip_type": "Full Day",
     "boat": "C Gull II",
     "landing": "Fish Emeryville",
-    "trips": 32,
-    "anglers": 445,
-    "fish": 174,
+    "trips": 33,
+    "anglers": 456,
+    "fish": 176,
     "fpa": 0.39
   },
   {
@@ -1347,10 +1347,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Southern Cal",
     "landing": "Oceanside Sea Center",
-    "trips": 29,
-    "anglers": 927,
-    "fish": 1815,
-    "fpa": 1.96
+    "trips": 30,
+    "anglers": 936,
+    "fish": 1915,
+    "fpa": 2.05
   },
   {
     "rank": 5,
@@ -1732,10 +1732,10 @@
     "trip_type": "Overnight",
     "boat": "Producer",
     "landing": "H&M Landing",
-    "trips": 23,
-    "anglers": 609,
-    "fish": 1122,
-    "fpa": 1.84
+    "trips": 24,
+    "anglers": 629,
+    "fish": 1179,
+    "fpa": 1.87
   },
   {
     "rank": 4,
@@ -1743,13 +1743,24 @@
     "trip_type": "Overnight",
     "boat": "Old Glory",
     "landing": "H&M Landing",
-    "trips": 26,
-    "anglers": 732,
-    "fish": 1325,
-    "fpa": 1.81
+    "trips": 27,
+    "anglers": 744,
+    "fish": 1385,
+    "fpa": 1.86
   },
   {
     "rank": 5,
+    "region": "San Diego County",
+    "trip_type": "Overnight",
+    "boat": "Tribute",
+    "landing": "Seaforth Sportfishing",
+    "trips": 5,
+    "anglers": 127,
+    "fish": 157,
+    "fpa": 1.24
+  },
+  {
+    "rank": 6,
     "region": "San Diego County",
     "trip_type": "Overnight",
     "boat": "Daiwa Pacific",
@@ -1760,7 +1771,7 @@
     "fpa": 0.94
   },
   {
-    "rank": 6,
+    "rank": 7,
     "region": "San Diego County",
     "trip_type": "Overnight",
     "boat": "Nautilus",
