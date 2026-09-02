@@ -1,5 +1,98 @@
-{
-  "error": "File not found",
-  "file": "regions.json",
-  "message": "Error: File not found: regions.json"
-}
+[
+  {
+    "rank": 1,
+    "region": "Los Angeles County",
+    "trips": 662,
+    "anglers": 25597,
+    "fish": 91825,
+    "fpa": 3.59
+  },
+  {
+    "rank": 2,
+    "region": "Ventura County",
+    "trips": 430,
+    "anglers": 9115,
+    "fish": 85148,
+    "fpa": 9.34
+  },
+  {
+    "rank": 3,
+    "region": "Orange County",
+    "trips": 731,
+    "anglers": 21697,
+    "fish": 73137,
+    "fpa": 3.37
+  },
+  {
+    "rank": 4,
+    "region": "San Diego County",
+    "trips": 874,
+    "anglers": 22041,
+    "fish": 65101,
+    "fpa": 2.95
+  },
+  {
+    "rank": 5,
+    "region": "Santa Barbara County",
+    "trips": 106,
+    "anglers": 2526,
+    "fish": 29106,
+    "fpa": 11.52
+  },
+  {
+    "rank": 6,
+    "region": "Alameda County",
+    "trips": 330,
+    "anglers": 4047,
+    "fish": 22447,
+    "fpa": 5.55
+  },
+  {
+    "rank": 7,
+    "region": "NorCal",
+    "trips": 335,
+    "anglers": 4184,
+    "fish": 21072,
+    "fpa": 5.04
+  },
+  {
+    "rank": 8,
+    "region": "Central California",
+    "trips": 205,
+    "anglers": 3815,
+    "fish": 19307,
+    "fpa": 5.06
+  },
+  {
+    "rank": 9,
+    "region": "SoCal",
+    "trips": 63,
+    "anglers": 1584,
+    "fish": 15728,
+    "fpa": 9.93
+  },
+  {
+    "rank": 10,
+    "region": "San Francisco Bay",
+    "trips": 205,
+    "anglers": 3047,
+    "fish": 11912,
+    "fpa": 3.91
+  },
+  {
+    "rank": 11,
+    "region": "Monterey County",
+    "trips": 52,
+    "anglers": 727,
+    "fish": 7037,
+    "fpa": 9.68
+  },
+  {
+    "rank": 12,
+    "region": "San Mateo County",
+    "trips": 21,
+    "anglers": 191,
+    "fish": 1046,
+    "fpa": 5.48
+  }
+]
