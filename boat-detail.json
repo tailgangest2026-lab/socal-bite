@@ -51,10 +51,10 @@
     "boat": "KingFish",
     "landing": "Fish Emeryville",
     "region": "Alameda County",
-    "trips": 57,
-    "anglers": 814,
-    "fish": 1884,
-    "fpa": 2.31,
+    "trips": 58,
+    "anglers": 820,
+    "fish": 1886,
+    "fpa": 2.3,
     "top_species_1": "Rockfish",
     "top_species_2": "Lingcod",
     "top_species_3": "Halibut"
@@ -519,10 +519,10 @@
     "boat": "Redondo Special",
     "landing": "Redondo Beach Sportfishing",
     "region": "Los Angeles County",
-    "trips": 183,
-    "anglers": 7172,
-    "fish": 22480,
-    "fpa": 3.13,
+    "trips": 184,
+    "anglers": 7196,
+    "fish": 22571,
+    "fpa": 3.14,
     "top_species_1": "Rockfish",
     "top_species_2": "Whitefish",
     "top_species_3": "Calico Bass"
@@ -1308,6 +1308,18 @@
     "top_species_3": "Yellowtail"
   },
   {
+    "boat": "Lucky B Sportfishing",
+    "landing": "Fisherman's Landing",
+    "region": "San Diego County",
+    "trips": 17,
+    "anglers": 55,
+    "fish": 339,
+    "fpa": 6.16,
+    "top_species_1": "Yellowtail",
+    "top_species_2": "Bonito",
+    "top_species_3": "Yellowfin Tuna"
+  },
+  {
     "boat": "Pacific Voyager",
     "landing": "Seaforth Sportfishing",
     "region": "San Diego County",
@@ -1341,18 +1353,6 @@
     "fpa": 5.84,
     "top_species_1": "Rockfish",
     "top_species_2": "Calico Bass Released",
-    "top_species_3": "Bonito"
-  },
-  {
-    "boat": "Lucky B Sportfishing",
-    "landing": "Fisherman's Landing",
-    "region": "San Diego County",
-    "trips": 16,
-    "anglers": 51,
-    "fish": 296,
-    "fpa": 5.8,
-    "top_species_1": "Yellowtail",
-    "top_species_2": "Yellowfin Tuna",
     "top_species_3": "Bonito"
   },
   {
@@ -1464,18 +1464,6 @@
     "top_species_3": "Rockfish"
   },
   {
-    "boat": "Dolphin",
-    "landing": "Fisherman's Landing",
-    "region": "San Diego County",
-    "trips": 189,
-    "anglers": 6592,
-    "fish": 24522,
-    "fpa": 3.72,
-    "top_species_1": "Calico Bass Released",
-    "top_species_2": "Rockfish",
-    "top_species_3": "Calico Bass"
-  },
-  {
     "boat": "Sea Adventure 80",
     "landing": "H&M Landing",
     "region": "San Diego County",
@@ -1486,6 +1474,18 @@
     "top_species_1": "Rockfish",
     "top_species_2": "Yellowfin Tuna",
     "top_species_3": "Red Rockfish"
+  },
+  {
+    "boat": "Dolphin",
+    "landing": "Fisherman's Landing",
+    "region": "San Diego County",
+    "trips": 190,
+    "anglers": 6617,
+    "fish": 24566,
+    "fpa": 3.71,
+    "top_species_1": "Calico Bass Released",
+    "top_species_2": "Rockfish",
+    "top_species_3": "Calico Bass"
   },
   {
     "boat": "Pegasus",
@@ -1647,10 +1647,10 @@
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
     "region": "San Diego County",
-    "trips": 267,
-    "anglers": 11286,
-    "fish": 31948,
-    "fpa": 2.83,
+    "trips": 268,
+    "anglers": 11321,
+    "fish": 31978,
+    "fpa": 2.82,
     "top_species_1": "Calico Bass Released",
     "top_species_2": "Calico Bass",
     "top_species_3": "Barracuda"
@@ -1788,6 +1788,18 @@
     "top_species_3": ""
   },
   {
+    "boat": "El Gato Dos",
+    "landing": "Seaforth Sportfishing",
+    "region": "San Diego County",
+    "trips": 44,
+    "anglers": 221,
+    "fish": 466,
+    "fpa": 2.11,
+    "top_species_1": "Yellowtail",
+    "top_species_2": "Bonito",
+    "top_species_3": "Yellowfin Tuna"
+  },
+  {
     "boat": "Effishency",
     "landing": "Oceanside Sea Center",
     "region": "San Diego County",
@@ -1798,18 +1810,6 @@
     "top_species_1": "Yellowtail",
     "top_species_2": "Calico Bass",
     "top_species_3": "Calico Bass Released"
-  },
-  {
-    "boat": "El Gato Dos",
-    "landing": "Seaforth Sportfishing",
-    "region": "San Diego County",
-    "trips": 43,
-    "anglers": 217,
-    "fish": 449,
-    "fpa": 2.07,
-    "top_species_1": "Yellowtail",
-    "top_species_2": "Yellowfin Tuna",
-    "top_species_3": "Rockfish"
   },
   {
     "boat": "Pacifica",
