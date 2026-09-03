@@ -25,17 +25,6 @@
     "rank": 3,
     "region": "Alameda County",
     "trip_type": "1/2 Day AM",
-    "boat": "Playn Hooky",
-    "landing": "Fish Emeryville",
-    "trips": 10,
-    "anglers": 58,
-    "fish": 480,
-    "fpa": 8.28
-  },
-  {
-    "rank": 4,
-    "region": "Alameda County",
-    "trip_type": "1/2 Day AM",
     "boat": "Lady K",
     "landing": "Fish Emeryville",
     "trips": 8,
@@ -44,15 +33,26 @@
     "fpa": 7.78
   },
   {
+    "rank": 4,
+    "region": "Alameda County",
+    "trip_type": "1/2 Day AM",
+    "boat": "Playn Hooky",
+    "landing": "Fish Emeryville",
+    "trips": 11,
+    "anglers": 64,
+    "fish": 480,
+    "fpa": 7.5
+  },
+  {
     "rank": 1,
     "region": "Alameda County",
     "trip_type": "Full Day",
     "boat": "Sea Wolf",
     "landing": "Fish Emeryville",
-    "trips": 33,
-    "anglers": 688,
-    "fish": 8034,
-    "fpa": 11.68
+    "trips": 34,
+    "anglers": 710,
+    "fish": 8298,
+    "fpa": 11.69
   },
   {
     "rank": 2,
@@ -104,10 +104,10 @@
     "trip_type": "Full Day",
     "boat": "KingFish",
     "landing": "Fish Emeryville",
-    "trips": 17,
-    "anglers": 204,
+    "trips": 18,
+    "anglers": 209,
     "fish": 234,
-    "fpa": 1.15
+    "fpa": 1.12
   },
   {
     "rank": 7,
@@ -126,10 +126,10 @@
     "trip_type": "Full Day",
     "boat": "Lady K",
     "landing": "Fish Emeryville",
-    "trips": 32,
-    "anglers": 285,
+    "trips": 33,
+    "anglers": 294,
     "fish": 240,
-    "fpa": 0.84
+    "fpa": 0.82
   },
   {
     "rank": 9,
@@ -1281,9 +1281,9 @@
     "trip_type": "1/2 Day AM",
     "boat": "Premier",
     "landing": "H&M Landing",
-    "trips": 22,
-    "anglers": 696,
-    "fish": 2265,
+    "trips": 23,
+    "anglers": 718,
+    "fish": 2337,
     "fpa": 3.25
   },
   {
@@ -1325,10 +1325,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
-    "trips": 29,
-    "anglers": 1203,
-    "fish": 1978,
-    "fpa": 1.64
+    "trips": 30,
+    "anglers": 1225,
+    "fish": 2064,
+    "fpa": 1.68
   },
   {
     "rank": 1,
@@ -1380,10 +1380,10 @@
     "trip_type": "1/2 Day Twilight",
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
-    "trips": 28,
-    "anglers": 997,
-    "fish": 2153,
-    "fpa": 2.16
+    "trips": 29,
+    "anglers": 1010,
+    "fish": 2188,
+    "fpa": 2.17
   },
   {
     "rank": 1,
