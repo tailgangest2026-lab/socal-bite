@@ -500,10 +500,10 @@
     "trip_type": "3/4 Day",
     "boat": "Betty-O",
     "landing": "Marina Del Rey Sportfishing",
-    "trips": 42,
-    "anglers": 964,
-    "fish": 4070,
-    "fpa": 4.22
+    "trips": 43,
+    "anglers": 979,
+    "fish": 4231,
+    "fpa": 4.32
   },
   {
     "rank": 5,
@@ -949,6 +949,17 @@
     "rank": 1,
     "region": "Orange County",
     "trip_type": "1/2 Day PM",
+    "boat": "Aggressor",
+    "landing": "Newport Landing",
+    "trips": 5,
+    "anglers": 59,
+    "fish": 488,
+    "fpa": 8.27
+  },
+  {
+    "rank": 2,
+    "region": "Orange County",
+    "trip_type": "1/2 Day PM",
     "boat": "Helena",
     "landing": "Dana Wharf Sportfishing",
     "trips": 14,
@@ -957,7 +968,7 @@
     "fpa": 4.72
   },
   {
-    "rank": 2,
+    "rank": 3,
     "region": "Orange County",
     "trip_type": "1/2 Day PM",
     "boat": "Clemente",
@@ -968,7 +979,7 @@
     "fpa": 4.11
   },
   {
-    "rank": 3,
+    "rank": 4,
     "region": "Orange County",
     "trip_type": "1/2 Day PM",
     "boat": "Reel Fun",
@@ -979,7 +990,7 @@
     "fpa": 3.78
   },
   {
-    "rank": 4,
+    "rank": 5,
     "region": "Orange County",
     "trip_type": "1/2 Day PM",
     "boat": "Western Pride",
@@ -990,7 +1001,7 @@
     "fpa": 2.15
   },
   {
-    "rank": 5,
+    "rank": 6,
     "region": "Orange County",
     "trip_type": "1/2 Day PM",
     "boat": "Sum Fun",
@@ -1105,10 +1116,10 @@
     "trip_type": "3/4 Day",
     "boat": "Patriot (Newport)",
     "landing": "Newport Landing",
-    "trips": 32,
-    "anglers": 1152,
-    "fish": 2860,
-    "fpa": 2.48
+    "trips": 33,
+    "anglers": 1174,
+    "fish": 2986,
+    "fpa": 2.54
   },
   {
     "rank": 7,
@@ -1842,10 +1853,10 @@
     "trip_type": "Full Day",
     "boat": "Reel Addiction 1",
     "landing": "Reel Addiction Sportfishing",
-    "trips": 11,
-    "anglers": 66,
+    "trips": 12,
+    "anglers": 72,
     "fish": 186,
-    "fpa": 2.82
+    "fpa": 2.58
   },
   {
     "rank": 5,
@@ -1864,10 +1875,10 @@
     "trip_type": "Full Day",
     "boat": "Reel Addiction 2",
     "landing": "Reel Addiction Sportfishing",
-    "trips": 14,
-    "anglers": 73,
+    "trips": 15,
+    "anglers": 80,
     "fish": 114,
-    "fpa": 1.56
+    "fpa": 1.43
   },
   {
     "rank": 7,
@@ -1897,10 +1908,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Stardust",
     "landing": "Santa Barbara Landing",
-    "trips": 10,
-    "anglers": 250,
-    "fish": 1066,
-    "fpa": 4.26
+    "trips": 11,
+    "anglers": 284,
+    "fish": 1072,
+    "fpa": 3.77
   },
   {
     "rank": 1,
@@ -2038,15 +2049,26 @@
     "rank": 1,
     "region": "Ventura County",
     "trip_type": "Full Day",
-    "boat": "Island Fox",
+    "boat": "Indicator",
     "landing": "Channel Islands Sportfishing",
-    "trips": 17,
-    "anglers": 285,
-    "fish": 2300,
-    "fpa": 8.07
+    "trips": 5,
+    "anglers": 90,
+    "fish": 754,
+    "fpa": 8.38
   },
   {
     "rank": 2,
+    "region": "Ventura County",
+    "trip_type": "Full Day",
+    "boat": "Island Fox",
+    "landing": "Channel Islands Sportfishing",
+    "trips": 18,
+    "anglers": 304,
+    "fish": 2437,
+    "fpa": 8.02
+  },
+  {
+    "rank": 3,
     "region": "Ventura County",
     "trip_type": "Full Day",
     "boat": "Cobra",
@@ -2057,18 +2079,18 @@
     "fpa": 7.76
   },
   {
-    "rank": 3,
+    "rank": 4,
     "region": "Ventura County",
     "trip_type": "Full Day",
     "boat": "Aloha Spirit",
     "landing": "Channel Islands Sportfishing",
-    "trips": 50,
-    "anglers": 1159,
-    "fish": 6454,
-    "fpa": 5.57
+    "trips": 51,
+    "anglers": 1181,
+    "fish": 6620,
+    "fpa": 5.61
   },
   {
-    "rank": 4,
+    "rank": 5,
     "region": "Ventura County",
     "trip_type": "Full Day",
     "boat": "Island Tak",
@@ -2079,7 +2101,7 @@
     "fpa": 5.52
   },
   {
-    "rank": 5,
+    "rank": 6,
     "region": "Ventura County",
     "trip_type": "Full Day",
     "boat": "Graylight",
