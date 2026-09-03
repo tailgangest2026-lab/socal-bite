@@ -137,10 +137,10 @@
     "trip_type": "Full Day",
     "boat": "Lady K",
     "landing": "Fish Emeryville",
-    "trips": 32,
-    "anglers": 288,
+    "trips": 33,
+    "anglers": 297,
     "fish": 240,
-    "fpa": 0.83
+    "fpa": 0.81
   },
   {
     "rank": 9,
@@ -225,10 +225,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Sunny Day",
     "landing": "Patriot Sportfishing",
-    "trips": 11,
-    "anglers": 38,
-    "fish": 8,
-    "fpa": 0.21
+    "trips": 12,
+    "anglers": 42,
+    "fish": 13,
+    "fpa": 0.31
   },
   {
     "rank": 5,
@@ -291,9 +291,9 @@
     "trip_type": "3/4 Day",
     "boat": "Sunny Day",
     "landing": "Patriot Sportfishing",
-    "trips": 9,
-    "anglers": 32,
-    "fish": 18,
+    "trips": 10,
+    "anglers": 36,
+    "fish": 20,
     "fpa": 0.56
   },
   {
@@ -357,10 +357,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Monte Carlo",
     "landing": "22nd Street Landing",
-    "trips": 54,
-    "anglers": 2776,
-    "fish": 7153,
-    "fpa": 2.58
+    "trips": 55,
+    "anglers": 2801,
+    "fish": 7249,
+    "fpa": 2.59
   },
   {
     "rank": 2,
@@ -927,23 +927,23 @@
     "rank": 6,
     "region": "Orange County",
     "trip_type": "1/2 Day AM",
+    "boat": "Western Pride",
+    "landing": "Davey's Locker",
+    "trips": 66,
+    "anglers": 2850,
+    "fish": 6506,
+    "fpa": 2.28
+  },
+  {
+    "rank": 7,
+    "region": "Orange County",
+    "trip_type": "1/2 Day AM",
     "boat": "Sum Fun",
     "landing": "Dana Wharf Sportfishing",
     "trips": 8,
     "anglers": 250,
     "fish": 568,
     "fpa": 2.27
-  },
-  {
-    "rank": 7,
-    "region": "Orange County",
-    "trip_type": "1/2 Day AM",
-    "boat": "Western Pride",
-    "landing": "Davey's Locker",
-    "trips": 65,
-    "anglers": 2814,
-    "fish": 6338,
-    "fpa": 2.25
   },
   {
     "rank": 1,
@@ -984,9 +984,9 @@
     "trip_type": "1/2 Day PM",
     "boat": "Western Pride",
     "landing": "Davey's Locker",
-    "trips": 59,
-    "anglers": 2378,
-    "fish": 5103,
+    "trips": 60,
+    "anglers": 2405,
+    "fish": 5180,
     "fpa": 2.15
   },
   {
@@ -1083,10 +1083,10 @@
     "trip_type": "3/4 Day",
     "boat": "Freelance",
     "landing": "Davey's Locker",
-    "trips": 46,
-    "anglers": 2238,
-    "fish": 6608,
-    "fpa": 2.95
+    "trips": 47,
+    "anglers": 2270,
+    "fish": 6779,
+    "fpa": 2.99
   },
   {
     "rank": 5,
@@ -1160,9 +1160,9 @@
     "trip_type": "Full Day",
     "boat": "Blackfish",
     "landing": "Davey's Locker",
-    "trips": 34,
-    "anglers": 190,
-    "fish": 870,
+    "trips": 35,
+    "anglers": 196,
+    "fish": 898,
     "fpa": 4.58
   },
   {
@@ -1620,6 +1620,17 @@
     "rank": 1,
     "region": "San Diego County",
     "trip_type": "Full Day Coronado Islands",
+    "boat": "San Diego",
+    "landing": "Seaforth Sportfishing",
+    "trips": 15,
+    "anglers": 465,
+    "fish": 1563,
+    "fpa": 3.36
+  },
+  {
+    "rank": 2,
+    "region": "San Diego County",
+    "trip_type": "Full Day Coronado Islands",
     "boat": "Point Loma",
     "landing": "Point Loma Sportfishing",
     "trips": 11,
@@ -1628,26 +1639,15 @@
     "fpa": 3.28
   },
   {
-    "rank": 2,
-    "region": "San Diego County",
-    "trip_type": "Full Day Coronado Islands",
-    "boat": "San Diego",
-    "landing": "Seaforth Sportfishing",
-    "trips": 14,
-    "anglers": 430,
-    "fish": 1342,
-    "fpa": 3.12
-  },
-  {
     "rank": 3,
     "region": "San Diego County",
     "trip_type": "Full Day Coronado Islands",
     "boat": "Mission Belle",
     "landing": "Point Loma Sportfishing",
-    "trips": 25,
-    "anglers": 652,
-    "fish": 2022,
-    "fpa": 3.1
+    "trips": 26,
+    "anglers": 683,
+    "fish": 2138,
+    "fpa": 3.13
   },
   {
     "rank": 1,
