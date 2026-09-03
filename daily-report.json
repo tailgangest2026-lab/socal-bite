@@ -231,6 +231,16 @@
   },
   {
     "trip_date": "2026-09-02",
+    "region": "Central California",
+    "landing": "Patriot Sportfishing",
+    "boat": "Sunny Day",
+    "trip_type": "1/2 Day AM",
+    "anglers": 4,
+    "fish_counts": "5 Lingcod",
+    "total_fish": 5
+  },
+  {
+    "trip_date": "2026-09-02",
     "region": "Los Angeles County",
     "landing": "22nd Street Landing",
     "boat": "Amigo",
@@ -443,11 +453,31 @@
     "trip_date": "2026-09-02",
     "region": "Orange County",
     "landing": "Davey's Locker",
+    "boat": "Blackfish",
+    "trip_type": "Full Day",
+    "anglers": 6,
+    "fish_counts": "2 Bonito, 13 Calico Bass, 13 Yellowtail",
+    "total_fish": 28
+  },
+  {
+    "trip_date": "2026-09-02",
+    "region": "Orange County",
+    "landing": "Davey's Locker",
     "boat": "Freelance",
     "trip_type": "3/4 Day",
     "anglers": 48,
     "fish_counts": "38 Barracuda, 219 Bonito, 8 Calico Bass, 3 Sculpin, 1 Sheephead, 2 Whitefish, 1 Yellowtail",
     "total_fish": 272
+  },
+  {
+    "trip_date": "2026-09-02",
+    "region": "Orange County",
+    "landing": "Davey's Locker",
+    "boat": "Freelance",
+    "trip_type": "3/4 Day",
+    "anglers": 32,
+    "fish_counts": "160 Bonito, 2 Sand Bass, 2 Sheephead, 7 Yellowtail",
+    "total_fish": 171
   },
   {
     "trip_date": "2026-09-02",
@@ -508,6 +538,16 @@
     "anglers": 26,
     "fish_counts": "52 Bonito, 1 Calico Bass, 1 Halibut, 10 Sand Bass, 7 Yellowtail",
     "total_fish": 71
+  },
+  {
+    "trip_date": "2026-09-02",
+    "region": "San Diego County",
+    "landing": "Fisherman's Landing",
+    "boat": "Lucky B Sportfishing",
+    "trip_type": "Full Day",
+    "anglers": 4,
+    "fish_counts": "20 Bonito, 20 Yellowtail",
+    "total_fish": 40
   },
   {
     "trip_date": "2026-09-02",
@@ -1688,6 +1728,16 @@
     "anglers": 22,
     "fish_counts": "",
     "total_fish": 0
+  },
+  {
+    "trip_date": "2026-08-31",
+    "region": "Central California",
+    "landing": "Patriot Sportfishing",
+    "boat": "Sunny Day",
+    "trip_type": "3/4 Day",
+    "anglers": 4,
+    "fish_counts": "2 Lingcod",
+    "total_fish": 2
   },
   {
     "trip_date": "2026-08-31",
