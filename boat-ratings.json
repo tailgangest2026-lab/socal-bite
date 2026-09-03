@@ -509,6 +509,17 @@
     "rank": 7,
     "region": "Los Angeles County",
     "trip_type": "3/4 Day",
+    "boat": "Triton",
+    "landing": "LA Waterfront Cruises and Sportfishing",
+    "trips": 5,
+    "anglers": 114,
+    "fish": 360,
+    "fpa": 3.16
+  },
+  {
+    "rank": 8,
+    "region": "Los Angeles County",
+    "trip_type": "3/4 Day",
     "boat": "New Del Mar",
     "landing": "Marina Del Rey Sportfishing",
     "trips": 41,
@@ -517,7 +528,7 @@
     "fpa": 2.98
   },
   {
-    "rank": 8,
+    "rank": 9,
     "region": "Los Angeles County",
     "trip_type": "3/4 Day",
     "boat": "Spitfire",
@@ -1732,10 +1743,10 @@
     "trip_type": "Overnight",
     "boat": "Producer",
     "landing": "H&M Landing",
-    "trips": 24,
-    "anglers": 629,
-    "fish": 1179,
-    "fpa": 1.87
+    "trips": 25,
+    "anglers": 658,
+    "fish": 1220,
+    "fpa": 1.85
   },
   {
     "rank": 5,
