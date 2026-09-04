@@ -83,6 +83,16 @@
     "trip_date": "2026-09-03",
     "region": "Alameda County",
     "landing": "Fish Emeryville",
+    "boat": "Oakland Anglers II",
+    "trip_type": "Full Day",
+    "anglers": 16,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-09-03",
+    "region": "Alameda County",
+    "landing": "Fish Emeryville",
     "boat": "Pacific Pearl",
     "trip_type": "Full Day",
     "anglers": 15,
@@ -643,11 +653,31 @@
     "trip_date": "2026-09-03",
     "region": "San Diego County",
     "landing": "Seaforth Sportfishing",
+    "boat": "New Seaforth",
+    "trip_type": "1/2 Day PM",
+    "anglers": 30,
+    "fish_counts": "10 Barracuda, 65 Bonito, 49 Calico Bass, 1 Sand Bass, 1 Sheephead, 8 Yellowtail",
+    "total_fish": 134
+  },
+  {
+    "trip_date": "2026-09-03",
+    "region": "San Diego County",
+    "landing": "Seaforth Sportfishing",
     "boat": "Pacifica",
     "trip_type": "3 Day",
     "anglers": 20,
     "fish_counts": "111 Bluefin Tuna, 35 Yellowtail",
     "total_fish": 146
+  },
+  {
+    "trip_date": "2026-09-03",
+    "region": "San Diego County",
+    "landing": "Seaforth Sportfishing",
+    "boat": "San Diego",
+    "trip_type": "Full Day",
+    "anglers": 27,
+    "fish_counts": "7 Barracuda, 58 Bonito, 30 Sand Bass, 21 Yellowtail",
+    "total_fish": 116
   },
   {
     "trip_date": "2026-09-03",
