@@ -49,9 +49,9 @@
     "trip_type": "Full Day",
     "boat": "Sea Wolf",
     "landing": "Fish Emeryville",
-    "trips": 34,
-    "anglers": 714,
-    "fish": 8562,
+    "trips": 35,
+    "anglers": 738,
+    "fish": 8850,
     "fpa": 11.99
   },
   {
@@ -93,10 +93,10 @@
     "trip_type": "Full Day",
     "boat": "Here We Go",
     "landing": "Fish Emeryville",
-    "trips": 17,
-    "anglers": 70,
+    "trips": 18,
+    "anglers": 75,
     "fish": 101,
-    "fpa": 1.44
+    "fpa": 1.35
   },
   {
     "rank": 6,
@@ -236,9 +236,9 @@
     "trip_type": "1/2 Day AM",
     "boat": "Flying Fish",
     "landing": "Patriot Sportfishing",
-    "trips": 45,
-    "anglers": 740,
-    "fish": 20,
+    "trips": 46,
+    "anglers": 760,
+    "fish": 23,
     "fpa": 0.03
   },
   {
@@ -324,10 +324,10 @@
     "trip_type": "1.5 Day",
     "boat": "Amigo",
     "landing": "22nd Street Landing",
-    "trips": 11,
-    "anglers": 165,
-    "fish": 656,
-    "fpa": 3.98
+    "trips": 12,
+    "anglers": 179,
+    "fish": 672,
+    "fpa": 3.75
   },
   {
     "rank": 1,
@@ -696,23 +696,23 @@
     "rank": 5,
     "region": "NorCal",
     "trip_type": "Full Day",
-    "boat": "Queen of Hearts",
-    "landing": "Half Moon Bay Sportfishing",
-    "trips": 35,
-    "anglers": 559,
-    "fish": 5028,
-    "fpa": 8.99
-  },
-  {
-    "rank": 6,
-    "region": "NorCal",
-    "trip_type": "Full Day",
     "boat": "Happy Hooker",
     "landing": "Happy Hooker Sportfishing",
     "trips": 26,
     "anglers": 354,
     "fish": 3160,
     "fpa": 8.93
+  },
+  {
+    "rank": 6,
+    "region": "NorCal",
+    "trip_type": "Full Day",
+    "boat": "Queen of Hearts",
+    "landing": "Half Moon Bay Sportfishing",
+    "trips": 36,
+    "anglers": 570,
+    "fish": 5028,
+    "fpa": 8.82
   },
   {
     "rank": 7,
@@ -1259,10 +1259,10 @@
     "trip_type": "1.5 Day",
     "boat": "Highliner",
     "landing": "Seaforth Sportfishing",
-    "trips": 7,
-    "anglers": 140,
-    "fish": 864,
-    "fpa": 6.17
+    "trips": 8,
+    "anglers": 158,
+    "fish": 890,
+    "fpa": 5.63
   },
   {
     "rank": 2,
@@ -1270,10 +1270,10 @@
     "trip_type": "1.5 Day",
     "boat": "Tribute",
     "landing": "Seaforth Sportfishing",
-    "trips": 7,
-    "anglers": 190,
-    "fish": 850,
-    "fpa": 4.47
+    "trips": 8,
+    "anglers": 220,
+    "fish": 933,
+    "fpa": 4.24
   },
   {
     "rank": 3,
@@ -1303,10 +1303,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Premier",
     "landing": "H&M Landing",
-    "trips": 22,
-    "anglers": 700,
-    "fish": 2268,
-    "fpa": 3.24
+    "trips": 23,
+    "anglers": 739,
+    "fish": 2433,
+    "fpa": 3.29
   },
   {
     "rank": 2,
@@ -1325,10 +1325,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Daily Double",
     "landing": "Point Loma Sportfishing",
-    "trips": 22,
-    "anglers": 560,
-    "fish": 1335,
-    "fpa": 2.38
+    "trips": 23,
+    "anglers": 576,
+    "fish": 1422,
+    "fpa": 2.47
   },
   {
     "rank": 4,
@@ -1347,10 +1347,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
-    "trips": 30,
-    "anglers": 1225,
-    "fish": 2073,
-    "fpa": 1.69
+    "trips": 31,
+    "anglers": 1281,
+    "fish": 2247,
+    "fpa": 1.75
   },
   {
     "rank": 1,
@@ -1402,10 +1402,10 @@
     "trip_type": "1/2 Day Twilight",
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
-    "trips": 28,
-    "anglers": 954,
-    "fish": 2145,
-    "fpa": 2.25
+    "trips": 29,
+    "anglers": 971,
+    "fish": 2339,
+    "fpa": 2.41
   },
   {
     "rank": 1,
@@ -1494,6 +1494,17 @@
     "anglers": 123,
     "fish": 3666,
     "fpa": 29.8
+  },
+  {
+    "rank": 2,
+    "region": "San Diego County",
+    "trip_type": "2.5 Day",
+    "boat": "Little G",
+    "landing": "H&M Landing",
+    "trips": 5,
+    "anglers": 26,
+    "fish": 160,
+    "fpa": 6.15
   },
   {
     "rank": 1,
