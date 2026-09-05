@@ -732,6 +732,16 @@
   {
     "trip_date": "2026-09-04",
     "region": "San Diego County",
+    "landing": "Fisherman's Landing",
+    "boat": "Tomahawk",
+    "trip_type": "2 Day",
+    "anglers": 28,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-09-04",
+    "region": "San Diego County",
     "landing": "H&M Landing",
     "boat": "Grande",
     "trip_type": "Full Day",
@@ -798,6 +808,16 @@
     "anglers": 39,
     "fish_counts": "133 Bonito, 16 Calico Bass, 11 Rockfish, 3 Sand Bass, 1 Sheephead, 1 Yellowtail",
     "total_fish": 165
+  },
+  {
+    "trip_date": "2026-09-04",
+    "region": "San Diego County",
+    "landing": "H&M Landing",
+    "boat": "Premier",
+    "trip_type": "1/2 Day PM",
+    "anglers": 14,
+    "fish_counts": "5 Bonito, 1 Calico Bass, 3 Rockfish, 2 Sand Bass, 3 Yellowtail",
+    "total_fish": 14
   },
   {
     "trip_date": "2026-09-04",
@@ -1036,6 +1056,16 @@
     "boat": "Lovely Martha",
     "trip_type": "Full Day",
     "anglers": 22,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-09-04",
+    "region": "San Francisco Bay",
+    "landing": "Lovely Martha Sportfishing",
+    "boat": "Lovely Martha",
+    "trip_type": "Full Day",
+    "anglers": 20,
     "fish_counts": "",
     "total_fish": 0
   },
