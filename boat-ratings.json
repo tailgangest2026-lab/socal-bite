@@ -80,17 +80,6 @@
     "rank": 3,
     "region": "Alameda County",
     "trip_type": "Full Day",
-    "boat": "Here We Go",
-    "landing": "Fish Emeryville",
-    "trips": 16,
-    "anglers": 67,
-    "fish": 100,
-    "fpa": 1.49
-  },
-  {
-    "rank": 4,
-    "region": "Alameda County",
-    "trip_type": "Full Day",
     "boat": "Pacific Pearl",
     "landing": "Fish Emeryville",
     "trips": 24,
@@ -99,18 +88,18 @@
     "fpa": 1.42
   },
   {
-    "rank": 5,
+    "rank": 4,
     "region": "Alameda County",
     "trip_type": "Full Day",
-    "boat": "KingFish",
+    "boat": "Here We Go",
     "landing": "Fish Emeryville",
-    "trips": 18,
-    "anglers": 205,
-    "fish": 234,
-    "fpa": 1.14
+    "trips": 17,
+    "anglers": 71,
+    "fish": 100,
+    "fpa": 1.41
   },
   {
-    "rank": 6,
+    "rank": 5,
     "region": "Alameda County",
     "trip_type": "Full Day",
     "boat": "Diamond",
@@ -119,6 +108,17 @@
     "anglers": 114,
     "fish": 126,
     "fpa": 1.11
+  },
+  {
+    "rank": 6,
+    "region": "Alameda County",
+    "trip_type": "Full Day",
+    "boat": "KingFish",
+    "landing": "Fish Emeryville",
+    "trips": 19,
+    "anglers": 224,
+    "fish": 234,
+    "fpa": 1.04
   },
   {
     "rank": 7,
@@ -181,8 +181,8 @@
     "trip_type": "Full Day",
     "boat": "Playn Hooky",
     "landing": "Fish Emeryville",
-    "trips": 8,
-    "anglers": 48,
+    "trips": 9,
+    "anglers": 53,
     "fish": 0,
     "fpa": 0
   },
@@ -1347,10 +1347,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
-    "trips": 30,
-    "anglers": 1237,
-    "fish": 2112,
-    "fpa": 1.71
+    "trips": 31,
+    "anglers": 1282,
+    "fish": 2241,
+    "fpa": 1.75
   },
   {
     "rank": 1,
@@ -1402,10 +1402,10 @@
     "trip_type": "1/2 Day Twilight",
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
-    "trips": 28,
-    "anglers": 927,
-    "fish": 2304,
-    "fpa": 2.49
+    "trips": 29,
+    "anglers": 980,
+    "fish": 2498,
+    "fpa": 2.55
   },
   {
     "rank": 1,
