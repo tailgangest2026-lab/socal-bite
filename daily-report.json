@@ -223,6 +223,16 @@
     "trip_date": "2026-09-04",
     "region": "Los Angeles County",
     "landing": "22nd Street Landing",
+    "boat": "Native Sun",
+    "trip_type": "3/4 Day",
+    "anglers": 20,
+    "fish_counts": "2 Barracuda, 33 Bonito, 100 Calico Bass, 21 Yellowtail",
+    "total_fish": 156
+  },
+  {
+    "trip_date": "2026-09-04",
+    "region": "Los Angeles County",
+    "landing": "22nd Street Landing",
     "boat": "Pursuit",
     "trip_type": "Full Day",
     "anglers": 38,
@@ -446,6 +456,16 @@
     "boat": "Salty Lady",
     "trip_type": "Full Day",
     "anglers": 22,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-09-04",
+    "region": "NorCal",
+    "landing": "Salty Lady Sportfishing",
+    "boat": "Salty Lady",
+    "trip_type": "Full Day",
+    "anglers": 18,
     "fish_counts": "",
     "total_fish": 0
   },
@@ -683,11 +703,31 @@
     "trip_date": "2026-09-04",
     "region": "Orange County",
     "landing": "Newport Landing",
+    "boat": "Patriot (Newport)",
+    "trip_type": "3/4 Day",
+    "anglers": 27,
+    "fish_counts": "1 Barracuda, 135 Bonito, 15 Calico Bass, 5 Sand Bass, 8 Yellowtail",
+    "total_fish": 164
+  },
+  {
+    "trip_date": "2026-09-04",
+    "region": "Orange County",
+    "landing": "Newport Landing",
     "boat": "Thunderbird",
     "trip_type": "2.5 Day",
     "anglers": 24,
     "fish_counts": "86 Bluefin Tuna, 7 Yellowtail",
     "total_fish": 93
+  },
+  {
+    "trip_date": "2026-09-04",
+    "region": "Orange County",
+    "landing": "Newport Landing",
+    "boat": "Thunderbird",
+    "trip_type": "Overnight",
+    "anglers": 30,
+    "fish_counts": "8 Sheephead, 236 Whitefish, 2 Yellowfin Tuna, 15 Yellowtail",
+    "total_fish": 261
   },
   {
     "trip_date": "2026-09-04",
