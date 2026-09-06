@@ -91,15 +91,26 @@
     "rank": 4,
     "region": "Alameda County",
     "trip_type": "Full Day",
-    "boat": "Pacific Pearl",
+    "boat": "Oakland Anglers II",
     "landing": "Fish Emeryville",
-    "trips": 25,
-    "anglers": 341,
-    "fish": 454,
-    "fpa": 1.33
+    "trips": 27,
+    "anglers": 416,
+    "fish": 582,
+    "fpa": 1.4
   },
   {
     "rank": 5,
+    "region": "Alameda County",
+    "trip_type": "Full Day",
+    "boat": "Pacific Pearl",
+    "landing": "Fish Emeryville",
+    "trips": 26,
+    "anglers": 356,
+    "fish": 454,
+    "fpa": 1.28
+  },
+  {
+    "rank": 6,
     "region": "Alameda County",
     "trip_type": "Full Day",
     "boat": "Diamond",
@@ -110,7 +121,7 @@
     "fpa": 1.05
   },
   {
-    "rank": 6,
+    "rank": 7,
     "region": "Alameda County",
     "trip_type": "Full Day",
     "boat": "KingFish",
@@ -121,26 +132,15 @@
     "fpa": 0.96
   },
   {
-    "rank": 7,
-    "region": "Alameda County",
-    "trip_type": "Full Day",
-    "boat": "Oakland Anglers II",
-    "landing": "Fish Emeryville",
-    "trips": 26,
-    "anglers": 394,
-    "fish": 350,
-    "fpa": 0.89
-  },
-  {
     "rank": 8,
     "region": "Alameda County",
     "trip_type": "Full Day",
     "boat": "Lady K",
     "landing": "Fish Emeryville",
-    "trips": 35,
-    "anglers": 311,
+    "trips": 36,
+    "anglers": 319,
     "fish": 240,
-    "fpa": 0.77
+    "fpa": 0.75
   },
   {
     "rank": 9,
@@ -621,10 +621,10 @@
     "trip_type": "Overnight",
     "boat": "Amigo",
     "landing": "22nd Street Landing",
-    "trips": 14,
-    "anglers": 218,
-    "fish": 960,
-    "fpa": 4.4
+    "trips": 15,
+    "anglers": 233,
+    "fish": 1108,
+    "fpa": 4.76
   },
   {
     "rank": 1,
@@ -1380,10 +1380,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Southern Cal",
     "landing": "Oceanside Sea Center",
-    "trips": 29,
-    "anglers": 919,
-    "fish": 2088,
-    "fpa": 2.27
+    "trips": 30,
+    "anglers": 959,
+    "fish": 2292,
+    "fpa": 2.39
   },
   {
     "rank": 5,
