@@ -193,6 +193,16 @@
     "trip_date": "2026-09-05",
     "region": "Los Angeles County",
     "landing": "22nd Street Landing",
+    "boat": "Apollo",
+    "trip_type": "3 Day",
+    "anglers": 22,
+    "fish_counts": "109 Bluefin Tuna, 4 Yellowfin Tuna",
+    "total_fish": 113
+  },
+  {
+    "trip_date": "2026-09-05",
+    "region": "Los Angeles County",
+    "landing": "22nd Street Landing",
     "boat": "Monte Carlo",
     "trip_type": "1/2 Day AM",
     "anglers": 30,
@@ -656,6 +666,16 @@
     "boat": "Lovely Martha",
     "trip_type": "Full Day",
     "anglers": 20,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-09-05",
+    "region": "San Francisco Bay",
+    "landing": "Lovely Martha Sportfishing",
+    "boat": "Lovely Martha",
+    "trip_type": "Full Day",
+    "anglers": 23,
     "fish_counts": "",
     "total_fish": 0
   },
