@@ -562,6 +562,16 @@
   {
     "trip_date": "2026-09-05",
     "region": "NorCal",
+    "landing": "Argo Sportfishing",
+    "boat": "Argo",
+    "trip_type": "Full Day",
+    "anglers": 6,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-09-05",
+    "region": "NorCal",
     "landing": "Bass Tub Sportfishing",
     "boat": "Bass-Tub",
     "trip_type": "Full Day",
@@ -576,6 +586,16 @@
     "boat": "Outer Limits (Sausalito, CA)",
     "trip_type": "Full Day",
     "anglers": 18,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-09-05",
+    "region": "NorCal",
+    "landing": "Big Cs Charters",
+    "boat": "Outer Limits (Sausalito, CA)",
+    "trip_type": "Full Day",
+    "anglers": 15,
     "fish_counts": "",
     "total_fish": 0
   },
@@ -646,6 +666,16 @@
     "boat": "Hog Heaven",
     "trip_type": "Full Day",
     "anglers": 7,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-09-05",
+    "region": "NorCal",
+    "landing": "Hog Heaven Sportfishing",
+    "boat": "Hog Heaven",
+    "trip_type": "Full Day",
+    "anglers": 12,
     "fish_counts": "",
     "total_fish": 0
   },
@@ -963,11 +993,31 @@
     "trip_date": "2026-09-05",
     "region": "Orange County",
     "landing": "Newport Landing",
+    "boat": "Aggressor",
+    "trip_type": "3/4 Day",
+    "anglers": 10,
+    "fish_counts": "50 Bonito, 20 Calico Bass, 11 Sand Bass",
+    "total_fish": 81
+  },
+  {
+    "trip_date": "2026-09-05",
+    "region": "Orange County",
+    "landing": "Newport Landing",
     "boat": "Patriot (Newport)",
     "trip_type": "3/4 Day",
     "anglers": 27,
     "fish_counts": "1 Barracuda, 135 Bonito, 15 Calico Bass, 5 Sand Bass, 8 Yellowtail",
     "total_fish": 164
+  },
+  {
+    "trip_date": "2026-09-05",
+    "region": "Orange County",
+    "landing": "Newport Landing",
+    "boat": "Patriot (Newport)",
+    "trip_type": "3/4 Day",
+    "anglers": 40,
+    "fish_counts": "200 Bonito, 8 Calico Bass, 1 Sand Bass, 1 Yellowtail",
+    "total_fish": 210
   },
   {
     "trip_date": "2026-09-05",
@@ -1233,11 +1283,31 @@
     "trip_date": "2026-09-05",
     "region": "San Francisco Bay",
     "landing": "California Dawn Sportfishing",
+    "boat": "California Dawn II",
+    "trip_type": "Full Day",
+    "anglers": 20,
+    "fish_counts": "200 Rockfish",
+    "total_fish": 200
+  },
+  {
+    "trip_date": "2026-09-05",
+    "region": "San Francisco Bay",
+    "landing": "California Dawn Sportfishing",
     "boat": "New California Dawn",
     "trip_type": "Full Day",
     "anglers": 20,
     "fish_counts": "",
     "total_fish": 0
+  },
+  {
+    "trip_date": "2026-09-05",
+    "region": "San Francisco Bay",
+    "landing": "California Dawn Sportfishing",
+    "boat": "New California Dawn",
+    "trip_type": "Full Day",
+    "anglers": 19,
+    "fish_counts": "38 Lingcod, 128 Rockfish",
+    "total_fish": 166
   },
   {
     "trip_date": "2026-09-05",
