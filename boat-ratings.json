@@ -159,8 +159,8 @@
     "trip_type": "Full Day",
     "boat": "Scallywag",
     "landing": "Fish Emeryville",
-    "trips": 33,
-    "anglers": 198,
+    "trips": 34,
+    "anglers": 204,
     "fish": 46,
     "fpa": 0.23
   },
@@ -498,23 +498,23 @@
     "rank": 4,
     "region": "Los Angeles County",
     "trip_type": "3/4 Day",
-    "boat": "Sport King",
-    "landing": "LA Waterfront Cruises and Sportfishing",
-    "trips": 14,
-    "anglers": 354,
-    "fish": 1242,
-    "fpa": 3.51
-  },
-  {
-    "rank": 5,
-    "region": "Los Angeles County",
-    "trip_type": "3/4 Day",
     "boat": "Native Sun",
     "landing": "22nd Street Landing",
     "trips": 46,
     "anglers": 1760,
     "fish": 5950,
     "fpa": 3.38
+  },
+  {
+    "rank": 5,
+    "region": "Los Angeles County",
+    "trip_type": "3/4 Day",
+    "boat": "Sport King",
+    "landing": "LA Waterfront Cruises and Sportfishing",
+    "trips": 15,
+    "anglers": 389,
+    "fish": 1278,
+    "fpa": 3.29
   },
   {
     "rank": 6,
@@ -1785,6 +1785,17 @@
     "rank": 3,
     "region": "San Diego County",
     "trip_type": "Overnight",
+    "boat": "Tradition",
+    "landing": "Fisherman's Landing",
+    "trips": 5,
+    "anglers": 127,
+    "fish": 260,
+    "fpa": 2.05
+  },
+  {
+    "rank": 4,
+    "region": "San Diego County",
+    "trip_type": "Overnight",
     "boat": "Old Glory",
     "landing": "H&M Landing",
     "trips": 22,
@@ -1793,7 +1804,7 @@
     "fpa": 2.04
   },
   {
-    "rank": 4,
+    "rank": 5,
     "region": "San Diego County",
     "trip_type": "Overnight",
     "boat": "Liberty",
@@ -1804,7 +1815,7 @@
     "fpa": 1.98
   },
   {
-    "rank": 5,
+    "rank": 6,
     "region": "San Diego County",
     "trip_type": "Overnight",
     "boat": "Daiwa Pacific",
@@ -1815,7 +1826,7 @@
     "fpa": 0.94
   },
   {
-    "rank": 6,
+    "rank": 7,
     "region": "San Diego County",
     "trip_type": "Overnight",
     "boat": "Nautilus",
