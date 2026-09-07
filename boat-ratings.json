@@ -597,6 +597,17 @@
     "rank": 1,
     "region": "Los Angeles County",
     "trip_type": "Overnight",
+    "boat": "Eldorado",
+    "landing": "Long Beach Sportfishing",
+    "trips": 6,
+    "anglers": 172,
+    "fish": 1900,
+    "fpa": 11.05
+  },
+  {
+    "rank": 2,
+    "region": "Los Angeles County",
+    "trip_type": "Overnight",
     "boat": "Pride",
     "landing": "22nd Street Landing",
     "trips": 6,
@@ -605,7 +616,7 @@
     "fpa": 7.18
   },
   {
-    "rank": 2,
+    "rank": 3,
     "region": "Los Angeles County",
     "trip_type": "Overnight",
     "boat": "Toronado",
@@ -616,7 +627,7 @@
     "fpa": 5.65
   },
   {
-    "rank": 3,
+    "rank": 4,
     "region": "Los Angeles County",
     "trip_type": "Overnight",
     "boat": "Freedom",
@@ -627,7 +638,7 @@
     "fpa": 5.23
   },
   {
-    "rank": 4,
+    "rank": 5,
     "region": "Los Angeles County",
     "trip_type": "Overnight",
     "boat": "Amigo",
