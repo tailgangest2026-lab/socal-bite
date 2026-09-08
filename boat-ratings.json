@@ -137,10 +137,10 @@
     "trip_type": "Full Day",
     "boat": "Lady K",
     "landing": "Fish Emeryville",
-    "trips": 36,
-    "anglers": 317,
+    "trips": 37,
+    "anglers": 322,
     "fish": 240,
-    "fpa": 0.76
+    "fpa": 0.75
   },
   {
     "rank": 9,
@@ -170,8 +170,8 @@
     "trip_type": "Full Day",
     "boat": "TigerFish",
     "landing": "Fish Emeryville",
-    "trips": 17,
-    "anglers": 198,
+    "trips": 18,
+    "anglers": 205,
     "fish": 0,
     "fpa": 0
   },
@@ -775,10 +775,10 @@
     "trip_type": "Full Day",
     "boat": "Queen of Hearts",
     "landing": "Half Moon Bay Sportfishing",
-    "trips": 37,
-    "anglers": 591,
-    "fish": 4240,
-    "fpa": 7.17
+    "trips": 38,
+    "anglers": 602,
+    "fish": 4241,
+    "fpa": 7.04
   },
   {
     "rank": 7,
@@ -1378,23 +1378,23 @@
     "rank": 1,
     "region": "San Diego County",
     "trip_type": "1/2 Day AM",
+    "boat": "Premier",
+    "landing": "H&M Landing",
+    "trips": 23,
+    "anglers": 742,
+    "fish": 2616,
+    "fpa": 3.53
+  },
+  {
+    "rank": 2,
+    "region": "San Diego County",
+    "trip_type": "1/2 Day AM",
     "boat": "Dolphin",
     "landing": "Fisherman's Landing",
     "trips": 24,
     "anglers": 846,
     "fish": 2981,
     "fpa": 3.52
-  },
-  {
-    "rank": 2,
-    "region": "San Diego County",
-    "trip_type": "1/2 Day AM",
-    "boat": "Premier",
-    "landing": "H&M Landing",
-    "trips": 22,
-    "anglers": 727,
-    "fish": 2539,
-    "fpa": 3.49
   },
   {
     "rank": 3,
@@ -1765,10 +1765,10 @@
     "trip_type": "Overnight",
     "boat": "Producer",
     "landing": "H&M Landing",
-    "trips": 23,
-    "anglers": 595,
-    "fish": 1327,
-    "fpa": 2.23
+    "trips": 24,
+    "anglers": 614,
+    "fish": 1422,
+    "fpa": 2.32
   },
   {
     "rank": 3,
