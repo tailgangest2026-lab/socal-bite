@@ -1,5 +1,119 @@
-{
-  "error": "File not found",
-  "file": "gear.json",
-  "message": "Error: File not found: gear.json"
-}
+[
+  {
+    "category": "Reel",
+    "setup_name": "30lb - 50 lb Surface Iron Yellowtail Setup",
+    "brand": "Shimano",
+    "model": "Tranx 400HG",
+    "description": "Low-profile baitcaster",
+    "target_species": "Yellowtail, bonito, barracuda, calico bass",
+    "line_class": "30-50 lb",
+    "retail_price": 369.99,
+    "affiliate_link": "https://amzn.to/4fMOvcO",
+    "affilate_network": "Amazon",
+    "image_url": "https://m.media-amazon.com/images/I/61wYbGFp5jL._AC_SX679_.jpg"
+  },
+  {
+    "category": "Rod",
+    "setup_name": "30lb - 50 lb Surface Iron Yellowtail Setup",
+    "brand": "Phenix",
+    "model": "Abyss 809",
+    "description": "8' jig stick",
+    "target_species": "Yellowtail, bonito, barracuda, calico bass",
+    "line_class": "30-50 lb",
+    "retail_price": 349.99,
+    "affiliate_link": "",
+    "affilate_network": "TackleDirect",
+    "image_url": ""
+  },
+  {
+    "category": "Line",
+    "setup_name": "",
+    "brand": "Sufix",
+    "model": "Sufix 832",
+    "description": "Advanced Superline Braid -300 yards",
+    "target_species": "",
+    "line_class": "65lb",
+    "retail_price": 29.58,
+    "affiliate_link": "https://amzn.to/4ouCTxf",
+    "affilate_network": "Amazon",
+    "image_url": "https://m.media-amazon.com/images/I/71XLICxMfRL._AC_SL1500_.jpg"
+  },
+  {
+    "category": "Line",
+    "setup_name": "",
+    "brand": "Yo-Zuri",
+    "model": "SUPERFLUORO ",
+    "description": "SUPERFLUORO Leader",
+    "target_species": "",
+    "line_class": "40lb",
+    "retail_price": 16.99,
+    "affiliate_link": "https://amzn.to/4fRL8l3",
+    "affilate_network": "Amazon",
+    "image_url": "https://m.media-amazon.com/images/I/71f8whWLWSL._AC_SL1500_.jpg"
+  },
+  {
+    "category": "Accessiories",
+    "setup_name": "",
+    "brand": "KastKing",
+    "model": "Daypack Backpack",
+    "description": "KastKing BlowBak Tactical Sling Tackle Bag-Lightweight Fishing Backpack Storge Fishing Gear and Equipment",
+    "target_species": "",
+    "line_class": "",
+    "retail_price": 22.94,
+    "affiliate_link": "https://amzn.to/3S8CV24",
+    "affilate_network": "Amazon",
+    "image_url": "https://m.media-amazon.com/images/I/715lY4b7hVL._AC_SL1500_.jpg"
+  },
+  {
+    "category": "Hooks",
+    "setup_name": "",
+    "brand": "Owner",
+    "model": "Owner 5106",
+    "description": "Owner 5106 Flyliner Live Bait Cutting Point Hooks 1/0 - 4/0",
+    "target_species": "",
+    "line_class": "",
+    "retail_price": 12.11,
+    "affiliate_link": "https://amzn.to/4xvoUvo",
+    "affilate_network": "Amazon",
+    "image_url": "https://m.media-amazon.com/images/I/71HJ1bVzA2L._AC_SL1500_.jpg"
+  },
+  {
+    "category": "Weights",
+    "setup_name": "",
+    "brand": "AMYSPORTS",
+    "model": "Egg Ledd Weights",
+    "description": "Egg Lead Fishing Weights Kit Drop Bass Weights Sinker Tackle Saltwater Casting Fishing Sinkers Set Oval Freshwater",
+    "target_species": "",
+    "line_class": "",
+    "retail_price": 10.49,
+    "affiliate_link": "https://amzn.to/3QLQwMd",
+    "affilate_network": "Amazon",
+    "image_url": "https://m.media-amazon.com/images/I/61v3cY8Qi-L._AC_SL1500_.jpg"
+  },
+  {
+    "category": "Reel",
+    "setup_name": "30lb - 50 lb Flyline set up",
+    "brand": "Shimano",
+    "model": "Torium 20HG",
+    "description": "Shimano TORIUM Conventional 20HG",
+    "target_species": "Yellowtail, bonito, barracuda, calico bass",
+    "line_class": "30-50 lb",
+    "retail_price": 299.99,
+    "affiliate_link": "https://amzn.to/4aBZPFd",
+    "affilate_network": "Amazon",
+    "image_url": "https://m.media-amazon.com/images/I/710m-7AqefL._AC_SL1500_.jpg"
+  },
+  {
+    "category": "Rod",
+    "setup_name": "30lb - 50 lb Flyline set up",
+    "brand": "Phenix",
+    "model": "Abyss 808",
+    "description": "8' jig stick",
+    "target_species": "Yellowtail, bonito, barracuda, calico bass",
+    "line_class": "30-50 lb",
+    "retail_price": 349.99,
+    "affiliate_link": "",
+    "affilate_network": "TackleDirect",
+    "image_url": ""
+  }
+]
