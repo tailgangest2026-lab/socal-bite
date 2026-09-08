@@ -63,10 +63,10 @@
     "boat": "Pacific Pearl",
     "landing": "Fish Emeryville",
     "region": "Alameda County",
-    "trips": 122,
-    "anglers": 1636,
+    "trips": 123,
+    "anglers": 1646,
     "fish": 3177,
-    "fpa": 1.94,
+    "fpa": 1.93,
     "top_species_1": "Rockfish",
     "top_species_2": "Lingcod",
     "top_species_3": "Halibut"
@@ -1335,10 +1335,10 @@
     "boat": "Polaris Supreme",
     "landing": "Seaforth Sportfishing",
     "region": "San Diego County",
-    "trips": 19,
-    "anglers": 425,
-    "fish": 2450,
-    "fpa": 5.76,
+    "trips": 20,
+    "anglers": 448,
+    "fish": 2516,
+    "fpa": 5.62,
     "top_species_1": "Bluefin Tuna",
     "top_species_2": "Yellowtail",
     "top_species_3": "Yellowfin Tuna"
@@ -1404,6 +1404,18 @@
     "top_species_3": "Calico Bass"
   },
   {
+    "boat": "Cortez",
+    "landing": "Seaforth Sportfishing",
+    "region": "San Diego County",
+    "trips": 9,
+    "anglers": 136,
+    "fish": 591,
+    "fpa": 4.35,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Bluefin Tuna",
+    "top_species_3": "Calico Bass"
+  },
+  {
     "boat": "Highliner",
     "landing": "Seaforth Sportfishing",
     "region": "San Diego County",
@@ -1412,18 +1424,6 @@
     "fish": 3049,
     "fpa": 4.28,
     "top_species_1": "Yellowfin Tuna",
-    "top_species_2": "Bluefin Tuna",
-    "top_species_3": "Yellowtail"
-  },
-  {
-    "boat": "Cortez",
-    "landing": "Seaforth Sportfishing",
-    "region": "San Diego County",
-    "trips": 8,
-    "anglers": 121,
-    "fish": 501,
-    "fpa": 4.14,
-    "top_species_1": "Rockfish",
     "top_species_2": "Bluefin Tuna",
     "top_species_3": "Yellowtail"
   },
