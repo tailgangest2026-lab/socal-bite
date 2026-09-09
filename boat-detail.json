@@ -495,10 +495,10 @@
     "boat": "Apollo",
     "landing": "22nd Street Landing",
     "region": "Los Angeles County",
-    "trips": 31,
-    "anglers": 568,
-    "fish": 1938,
-    "fpa": 3.41,
+    "trips": 32,
+    "anglers": 582,
+    "fish": 1992,
+    "fpa": 3.42,
     "top_species_1": "Bluefin Tuna",
     "top_species_2": "Yellowtail",
     "top_species_3": "Yellowfin Tuna"
@@ -1296,6 +1296,18 @@
     "top_species_3": "Yellowfin Tuna"
   },
   {
+    "boat": "Pacific Voyager",
+    "landing": "Seaforth Sportfishing",
+    "region": "San Diego County",
+    "trips": 35,
+    "anglers": 573,
+    "fish": 3410,
+    "fpa": 5.95,
+    "top_species_1": "Yellowtail",
+    "top_species_2": "Bluefin Tuna",
+    "top_species_3": "Rockfish"
+  },
+  {
     "boat": "Chubasco II",
     "landing": "Oceanside Sea Center",
     "region": "San Diego County",
@@ -1306,18 +1318,6 @@
     "top_species_1": "Calico Bass Released",
     "top_species_2": "Rockfish",
     "top_species_3": "Bonito"
-  },
-  {
-    "boat": "Pacific Voyager",
-    "landing": "Seaforth Sportfishing",
-    "region": "San Diego County",
-    "trips": 34,
-    "anglers": 560,
-    "fish": 3285,
-    "fpa": 5.87,
-    "top_species_1": "Yellowtail",
-    "top_species_2": "Bluefin Tuna",
-    "top_species_3": "Rockfish"
   },
   {
     "boat": "Spirit of Adventure",
@@ -1572,6 +1572,18 @@
     "top_species_3": "Yellowfin Tuna"
   },
   {
+    "boat": "Point Loma",
+    "landing": "Point Loma Sportfishing",
+    "region": "San Diego County",
+    "trips": 49,
+    "anglers": 838,
+    "fish": 2438,
+    "fpa": 2.91,
+    "top_species_1": "Yellowtail",
+    "top_species_2": "Calico Bass",
+    "top_species_3": "Bonito"
+  },
+  {
     "boat": "Tribute",
     "landing": "Seaforth Sportfishing",
     "region": "San Diego County",
@@ -1592,18 +1604,6 @@
     "fish": 33072,
     "fpa": 2.88,
     "top_species_1": "Calico Bass Released",
-    "top_species_2": "Calico Bass",
-    "top_species_3": "Bonito"
-  },
-  {
-    "boat": "Point Loma",
-    "landing": "Point Loma Sportfishing",
-    "region": "San Diego County",
-    "trips": 48,
-    "anglers": 821,
-    "fish": 2349,
-    "fpa": 2.86,
-    "top_species_1": "Yellowtail",
     "top_species_2": "Calico Bass",
     "top_species_3": "Bonito"
   },
@@ -2235,10 +2235,10 @@
     "boat": "Aloha Spirit",
     "landing": "Channel Islands Sportfishing",
     "region": "Ventura County",
-    "trips": 165,
-    "anglers": 4434,
-    "fish": 28732,
-    "fpa": 6.48,
+    "trips": 166,
+    "anglers": 4458,
+    "fish": 28834,
+    "fpa": 6.47,
     "top_species_1": "Calico Bass",
     "top_species_2": "Rockfish",
     "top_species_3": "Whitefish"
