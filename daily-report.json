@@ -93,6 +93,16 @@
     "trip_date": "2026-09-08",
     "region": "Alameda County",
     "landing": "Fish Emeryville",
+    "boat": "Scallywag",
+    "trip_type": "Full Day",
+    "anglers": 5,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-09-08",
+    "region": "Alameda County",
+    "landing": "Fish Emeryville",
     "boat": "Sea Wolf",
     "trip_type": "Full Day",
     "anglers": 24,
@@ -363,6 +373,16 @@
     "trip_date": "2026-09-08",
     "region": "Orange County",
     "landing": "Dana Wharf Sportfishing",
+    "boat": "Clemente",
+    "trip_type": "1/2 Day AM",
+    "anglers": 43,
+    "fish_counts": "210 Bonito, 1 Yellowtail",
+    "total_fish": 211
+  },
+  {
+    "trip_date": "2026-09-08",
+    "region": "Orange County",
+    "landing": "Dana Wharf Sportfishing",
     "boat": "Current",
     "trip_type": "1/2 Day AM",
     "anglers": 6,
@@ -432,12 +452,32 @@
   {
     "trip_date": "2026-09-08",
     "region": "Orange County",
+    "landing": "Dana Wharf Sportfishing",
+    "boat": "Sum Fun",
+    "trip_type": "3/4 Day",
+    "anglers": 43,
+    "fish_counts": "30 Bonito, 3 Yellowfin Tuna, 2 Yellowtail",
+    "total_fish": 35
+  },
+  {
+    "trip_date": "2026-09-08",
+    "region": "Orange County",
     "landing": "Davey's Locker",
     "boat": "Freelance",
     "trip_type": "3/4 Day",
     "anglers": 53,
     "fish_counts": "263 Bonito, 3 Yellowfin Tuna, 1 Yellowtail",
     "total_fish": 267
+  },
+  {
+    "trip_date": "2026-09-08",
+    "region": "Orange County",
+    "landing": "Davey's Locker",
+    "boat": "Freelance",
+    "trip_type": "3/4 Day",
+    "anglers": 54,
+    "fish_counts": "1 Barracuda, 163 Bonito, 5 Calico Bass, 11 Sand Bass, 6 Yellowtail",
+    "total_fish": 186
   },
   {
     "trip_date": "2026-09-08",
@@ -488,6 +528,16 @@
     "anglers": 24,
     "fish_counts": "",
     "total_fish": 0
+  },
+  {
+    "trip_date": "2026-09-08",
+    "region": "San Diego County",
+    "landing": "H&M Landing",
+    "boat": "Grande",
+    "trip_type": "Full Day Offshore",
+    "anglers": 23,
+    "fish_counts": "55 Yellowfin Tuna",
+    "total_fish": 55
   },
   {
     "trip_date": "2026-09-08",
@@ -678,6 +728,16 @@
     "anglers": 20,
     "fish_counts": "21 Rockfish, 2 Sheephead, 200 Whitefish",
     "total_fish": 223
+  },
+  {
+    "trip_date": "2026-09-08",
+    "region": "Ventura County",
+    "landing": "Channel Islands Sportfishing",
+    "boat": "Island Fox",
+    "trip_type": "3/4 Day",
+    "anglers": 10,
+    "fish_counts": "3 Bonito, 43 Calico Bass, 5 Sheephead, 47 Whitefish, 3 Yellowtail",
+    "total_fish": 101
   },
   {
     "trip_date": "2026-09-08",
