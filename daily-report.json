@@ -1,5 +1,335 @@
 [
   {
+    "trip_date": "2026-09-10",
+    "region": "Alameda County",
+    "landing": "Fish Emeryville",
+    "boat": "Diamond",
+    "trip_type": "Full Day",
+    "anglers": 5,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-09-10",
+    "region": "Alameda County",
+    "landing": "Fish Emeryville",
+    "boat": "Here We Go",
+    "trip_type": "1/2 Day AM",
+    "anglers": 6,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-09-10",
+    "region": "Alameda County",
+    "landing": "Fish Emeryville",
+    "boat": "New Huck Finn",
+    "trip_type": "Full Day",
+    "anglers": 9,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-09-10",
+    "region": "Alameda County",
+    "landing": "Fish Emeryville",
+    "boat": "Oakland Anglers II",
+    "trip_type": "Full Day",
+    "anglers": 12,
+    "fish_counts": "20 Lingcod, 120 Rockfish",
+    "total_fish": 140
+  },
+  {
+    "trip_date": "2026-09-10",
+    "region": "Alameda County",
+    "landing": "Fish Emeryville",
+    "boat": "Scallywag",
+    "trip_type": "Full Day",
+    "anglers": 6,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-09-10",
+    "region": "Alameda County",
+    "landing": "Fish Emeryville",
+    "boat": "TigerFish",
+    "trip_type": "Full Day",
+    "anglers": 7,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-09-10",
+    "region": "Central California",
+    "landing": "Morro Bay Landing",
+    "boat": "Avenger",
+    "trip_type": "3/4 Day",
+    "anglers": 17,
+    "fish_counts": "29 Bonito, 11 Lingcod, 16 Red Rockfish, 137 Rockfish",
+    "total_fish": 193
+  },
+  {
+    "trip_date": "2026-09-10",
+    "region": "Los Angeles County",
+    "landing": "22nd Street Landing",
+    "boat": "Native Sun",
+    "trip_type": "3/4 Day",
+    "anglers": 25,
+    "fish_counts": "77 Bonito, 71 Calico Bass, 12 Sand Bass, 8 Yellowtail",
+    "total_fish": 168
+  },
+  {
+    "trip_date": "2026-09-10",
+    "region": "Los Angeles County",
+    "landing": "Long Beach Sportfishing",
+    "boat": "El Patron",
+    "trip_type": "Full Day",
+    "anglers": 20,
+    "fish_counts": "100 Bonito, 9 Calico Bass, 21 Yellowtail",
+    "total_fish": 130
+  },
+  {
+    "trip_date": "2026-09-10",
+    "region": "Los Angeles County",
+    "landing": "Long Beach Sportfishing",
+    "boat": "Eldorado",
+    "trip_type": "2 Day",
+    "anglers": 25,
+    "fish_counts": "25 Bonito, 177 Rockfish, 6 Sculpin, 18 Sheephead, 185 Whitefish, 18 Yellowtail",
+    "total_fish": 429
+  },
+  {
+    "trip_date": "2026-09-10",
+    "region": "Los Angeles County",
+    "landing": "Marina Del Rey Sportfishing",
+    "boat": "Betty-O",
+    "trip_type": "3/4 Day",
+    "anglers": 51,
+    "fish_counts": "1 Barracuda, 15 Bonito, 4 Calico Bass, 9 Sculpin, 1 Sheephead, 30 Whitefish",
+    "total_fish": 60
+  },
+  {
+    "trip_date": "2026-09-10",
+    "region": "Los Angeles County",
+    "landing": "Marina Del Rey Sportfishing",
+    "boat": "Spitfire",
+    "trip_type": "3/4 Day",
+    "anglers": 43,
+    "fish_counts": "3 Barracuda, 110 Bonito, 45 Calico Bass, 30 Sand Bass",
+    "total_fish": 188
+  },
+  {
+    "trip_date": "2026-09-10",
+    "region": "Marin County",
+    "landing": "New Rayann Sportfishing",
+    "boat": "New Rayann",
+    "trip_type": "Full Day",
+    "anglers": 12,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-09-10",
+    "region": "Monterey County",
+    "landing": "J&M Sportfishing",
+    "boat": "New Horizon",
+    "trip_type": "1/2 Day AM",
+    "anglers": 21,
+    "fish_counts": "1 Bluefin Tuna, 6 Lingcod, 210 Rockfish",
+    "total_fish": 217
+  },
+  {
+    "trip_date": "2026-09-10",
+    "region": "NorCal",
+    "landing": "Big Cs Charters",
+    "boat": "Outer Limits (Sausalito, CA)",
+    "trip_type": "Full Day",
+    "anglers": 11,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-09-10",
+    "region": "NorCal",
+    "landing": "Chris' Fishing Trips",
+    "boat": "Check Mate",
+    "trip_type": "Full Day",
+    "anglers": 12,
+    "fish_counts": "16 Lingcod, 120 Rockfish",
+    "total_fish": 136
+  },
+  {
+    "trip_date": "2026-09-10",
+    "region": "NorCal",
+    "landing": "Half Moon Bay Sportfishing",
+    "boat": "Queen of Hearts",
+    "trip_type": "1/2 Day AM",
+    "anglers": 16,
+    "fish_counts": "4 Lingcod, 160 Rockfish",
+    "total_fish": 164
+  },
+  {
+    "trip_date": "2026-09-10",
+    "region": "NorCal",
+    "landing": "Reel Obsession Sportfishing",
+    "boat": "Dragonfly",
+    "trip_type": "Full Day",
+    "anglers": 6,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-09-10",
+    "region": "Orange County",
+    "landing": "Dana Wharf Sportfishing",
+    "boat": "Clemente",
+    "trip_type": "3/4 Day",
+    "anglers": 19,
+    "fish_counts": "10 Bonito, 10 Yellowfin Tuna, 4 Yellowtail",
+    "total_fish": 24
+  },
+  {
+    "trip_date": "2026-09-10",
+    "region": "Orange County",
+    "landing": "Dana Wharf Sportfishing",
+    "boat": "Fury",
+    "trip_type": "Overnight",
+    "anglers": 26,
+    "fish_counts": "41 Bonito, 18 Calico Bass, 50 Calico Bass Released, 1 Rockfish, 7 Sculpin, 19 Sheephead, 42 Whitefish, 42 Yellowtail",
+    "total_fish": 220
+  },
+  {
+    "trip_date": "2026-09-10",
+    "region": "Orange County",
+    "landing": "Dana Wharf Sportfishing",
+    "boat": "Fury",
+    "trip_type": "Overnight",
+    "anglers": 26,
+    "fish_counts": "41 Bonito, 18 Calico Bass, 50 Calico Bass Released, 1 Rockfish, 7 Sculpin, 19 Sheephead, 41 Whitefish, 46 Yellowtail",
+    "total_fish": 223
+  },
+  {
+    "trip_date": "2026-09-10",
+    "region": "Orange County",
+    "landing": "Dana Wharf Sportfishing",
+    "boat": "Reel Fun",
+    "trip_type": "1/2 Day AM",
+    "anglers": 28,
+    "fish_counts": "8 Calico Bass, 75 Calico Bass Released, 3 Sand Bass, 2 Sheephead",
+    "total_fish": 88
+  },
+  {
+    "trip_date": "2026-09-10",
+    "region": "Orange County",
+    "landing": "Dana Wharf Sportfishing",
+    "boat": "Sum Fun",
+    "trip_type": "3/4 Day",
+    "anglers": 40,
+    "fish_counts": "35 Bonito, 5 Yellowfin Tuna, 12 Yellowtail",
+    "total_fish": 52
+  },
+  {
+    "trip_date": "2026-09-10",
+    "region": "Orange County",
+    "landing": "Davey's Locker",
+    "boat": "Western Pride",
+    "trip_type": "1/2 Day PM",
+    "anglers": 35,
+    "fish_counts": "175 Bonito, 8 Calico Bass, 2 Sand Bass, 4 Yellowtail",
+    "total_fish": 189
+  },
+  {
+    "trip_date": "2026-09-10",
+    "region": "San Francisco Bay",
+    "landing": "Berkeley Charter Boats",
+    "boat": "New Easy Rider",
+    "trip_type": "Full Day",
+    "anglers": 19,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-09-10",
+    "region": "San Francisco Bay",
+    "landing": "California Dawn Sportfishing",
+    "boat": "California Dawn II",
+    "trip_type": "Full Day",
+    "anglers": 20,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-09-10",
+    "region": "San Francisco Bay",
+    "landing": "Reel Addiction Sportfishing",
+    "boat": "Reel Addiction 2",
+    "trip_type": "Full Day",
+    "anglers": 6,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-09-10",
+    "region": "San Francisco Bay",
+    "landing": "Right Hook Sportfishing",
+    "boat": "Right Hook",
+    "trip_type": "3/4 Day",
+    "anglers": 6,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-09-10",
+    "region": "Ventura County",
+    "landing": "Channel Islands Sportfishing",
+    "boat": "Aloha Spirit",
+    "trip_type": "Full Day",
+    "anglers": 29,
+    "fish_counts": "18 Bonito, 54 Calico Bass, 1 Lingcod, 52 Rockfish, 3 Sheephead, 8 Yellowtail",
+    "total_fish": 136
+  },
+  {
+    "trip_date": "2026-09-10",
+    "region": "Ventura County",
+    "landing": "Channel Islands Sportfishing",
+    "boat": "Cobra",
+    "trip_type": "Full Day",
+    "anglers": 11,
+    "fish_counts": "4 Bonito, 2 Lingcod, 20 Rockfish, 2 Sheephead, 12 Whitefish, 2 Yellowtail",
+    "total_fish": 42
+  },
+  {
+    "trip_date": "2026-09-10",
+    "region": "Ventura County",
+    "landing": "Channel Islands Sportfishing",
+    "boat": "Gentleman",
+    "trip_type": "3/4 Day",
+    "anglers": 18,
+    "fish_counts": "60 Calico Bass, 30 Sand Bass, 26 Yellowtail",
+    "total_fish": 116
+  },
+  {
+    "trip_date": "2026-09-10",
+    "region": "Ventura County",
+    "landing": "Channel Islands Sportfishing",
+    "boat": "Graylight",
+    "trip_type": "Full Day",
+    "anglers": 6,
+    "fish_counts": "20 Calico Bass, 3 Yellowfin Tuna, 12 Yellowtail",
+    "total_fish": 35
+  },
+  {
+    "trip_date": "2026-09-10",
+    "region": "Ventura County",
+    "landing": "Channel Islands Sportfishing",
+    "boat": "Island Tak",
+    "trip_type": "Full Day",
+    "anglers": 9,
+    "fish_counts": "45 Calico Bass, 17 Yellowtail",
+    "total_fish": 62
+  },
+  {
     "trip_date": "2026-09-09",
     "region": "Alameda County",
     "landing": "Fish Emeryville",
