@@ -115,10 +115,10 @@
     "trip_type": "Full Day",
     "boat": "Lady K",
     "landing": "Fish Emeryville",
-    "trips": 32,
-    "anglers": 273,
+    "trips": 33,
+    "anglers": 283,
     "fish": 236,
-    "fpa": 0.86
+    "fpa": 0.83
   },
   {
     "rank": 8,
@@ -126,10 +126,10 @@
     "trip_type": "Full Day",
     "boat": "Diamond",
     "landing": "Fish Emeryville",
-    "trips": 26,
-    "anglers": 146,
+    "trips": 27,
+    "anglers": 152,
     "fish": 126,
-    "fpa": 0.86
+    "fpa": 0.83
   },
   {
     "rank": 9,
@@ -478,10 +478,10 @@
     "trip_type": "3/4 Day",
     "boat": "Native Sun",
     "landing": "22nd Street Landing",
-    "trips": 48,
-    "anglers": 1740,
-    "fish": 5543,
-    "fpa": 3.19
+    "trips": 49,
+    "anglers": 1768,
+    "fish": 5558,
+    "fpa": 3.14
   },
   {
     "rank": 8,
@@ -874,10 +874,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Western Pride",
     "landing": "Davey's Locker",
-    "trips": 53,
-    "anglers": 2302,
-    "fish": 7402,
-    "fpa": 3.22
+    "trips": 54,
+    "anglers": 2333,
+    "fish": 7640,
+    "fpa": 3.27
   },
   {
     "rank": 8,
@@ -1050,10 +1050,10 @@
     "trip_type": "3/4 Day",
     "boat": "Freelance",
     "landing": "Davey's Locker",
-    "trips": 45,
-    "anglers": 2189,
-    "fish": 7148,
-    "fpa": 3.27
+    "trips": 46,
+    "anglers": 2245,
+    "fish": 7518,
+    "fpa": 3.35
   },
   {
     "rank": 5,
@@ -1094,10 +1094,10 @@
     "trip_type": "Full Day",
     "boat": "Blackfish",
     "landing": "Davey's Locker",
-    "trips": 25,
-    "anglers": 142,
-    "fish": 890,
-    "fpa": 6.27
+    "trips": 26,
+    "anglers": 146,
+    "fish": 930,
+    "fpa": 6.37
   },
   {
     "rank": 2,
@@ -1270,10 +1270,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Southern Cal",
     "landing": "Oceanside Sea Center",
-    "trips": 27,
-    "anglers": 800,
-    "fish": 2817,
-    "fpa": 3.52
+    "trips": 28,
+    "anglers": 818,
+    "fish": 2852,
+    "fpa": 3.49
   },
   {
     "rank": 3,
@@ -1565,6 +1565,17 @@
     "rank": 2,
     "region": "San Diego County",
     "trip_type": "Full Day",
+    "boat": "Pronto",
+    "landing": "Oceanside Sea Center",
+    "trips": 5,
+    "anglers": 60,
+    "fish": 418,
+    "fpa": 6.97
+  },
+  {
+    "rank": 3,
+    "region": "San Diego County",
+    "trip_type": "Full Day",
     "boat": "Dolphin",
     "landing": "Fisherman's Landing",
     "trips": 7,
@@ -1573,7 +1584,7 @@
     "fpa": 3.89
   },
   {
-    "rank": 3,
+    "rank": 4,
     "region": "San Diego County",
     "trip_type": "Full Day",
     "boat": "Malihini",
@@ -1584,18 +1595,18 @@
     "fpa": 3.52
   },
   {
-    "rank": 4,
+    "rank": 5,
     "region": "San Diego County",
     "trip_type": "Full Day",
     "boat": "San Diego",
     "landing": "Seaforth Sportfishing",
-    "trips": 7,
-    "anglers": 183,
-    "fish": 623,
-    "fpa": 3.4
+    "trips": 8,
+    "anglers": 218,
+    "fish": 758,
+    "fpa": 3.48
   },
   {
-    "rank": 5,
+    "rank": 6,
     "region": "San Diego County",
     "trip_type": "Full Day",
     "boat": "Point Loma",
@@ -1606,29 +1617,29 @@
     "fpa": 3.11
   },
   {
-    "rank": 6,
+    "rank": 7,
     "region": "San Diego County",
     "trip_type": "Full Day",
     "boat": "Sea Watch",
     "landing": "Seaforth Sportfishing",
-    "trips": 5,
-    "anglers": 107,
-    "fish": 298,
-    "fpa": 2.79
+    "trips": 6,
+    "anglers": 120,
+    "fish": 329,
+    "fpa": 2.74
   },
   {
-    "rank": 7,
+    "rank": 8,
     "region": "San Diego County",
     "trip_type": "Full Day",
     "boat": "Mission Belle",
     "landing": "Point Loma Sportfishing",
-    "trips": 7,
-    "anglers": 190,
-    "fish": 450,
-    "fpa": 2.37
+    "trips": 8,
+    "anglers": 216,
+    "fish": 492,
+    "fpa": 2.28
   },
   {
-    "rank": 8,
+    "rank": 9,
     "region": "San Diego County",
     "trip_type": "Full Day",
     "boat": "Blue Horizon",
@@ -1677,13 +1688,24 @@
     "trip_type": "Full Day Offshore",
     "boat": "El Gato Dos",
     "landing": "Seaforth Sportfishing",
-    "trips": 12,
-    "anglers": 64,
-    "fish": 179,
-    "fpa": 2.8
+    "trips": 13,
+    "anglers": 69,
+    "fish": 201,
+    "fpa": 2.91
   },
   {
     "rank": 2,
+    "region": "San Diego County",
+    "trip_type": "Full Day Offshore",
+    "boat": "Grande",
+    "landing": "H&M Landing",
+    "trips": 22,
+    "anglers": 823,
+    "fish": 1400,
+    "fpa": 1.7
+  },
+  {
+    "rank": 3,
     "region": "San Diego County",
     "trip_type": "Full Day Offshore",
     "boat": "San Diego",
@@ -1692,17 +1714,6 @@
     "anglers": 348,
     "fish": 590,
     "fpa": 1.7
-  },
-  {
-    "rank": 3,
-    "region": "San Diego County",
-    "trip_type": "Full Day Offshore",
-    "boat": "Grande",
-    "landing": "H&M Landing",
-    "trips": 21,
-    "anglers": 790,
-    "fish": 1260,
-    "fpa": 1.59
   },
   {
     "rank": 1,
@@ -1732,10 +1743,10 @@
     "trip_type": "Overnight",
     "boat": "Producer",
     "landing": "H&M Landing",
-    "trips": 19,
-    "anglers": 486,
-    "fish": 1239,
-    "fpa": 2.55
+    "trips": 21,
+    "anglers": 518,
+    "fish": 1379,
+    "fpa": 2.66
   },
   {
     "rank": 4,
@@ -1743,10 +1754,10 @@
     "trip_type": "Overnight",
     "boat": "Old Glory",
     "landing": "H&M Landing",
-    "trips": 24,
-    "anglers": 622,
-    "fish": 1278,
-    "fpa": 2.05
+    "trips": 25,
+    "anglers": 638,
+    "fish": 1358,
+    "fpa": 2.13
   },
   {
     "rank": 5,
@@ -2084,10 +2095,10 @@
     "trip_type": "Full Day",
     "boat": "Aloha Spirit",
     "landing": "Channel Islands Sportfishing",
-    "trips": 50,
-    "anglers": 1258,
-    "fish": 6075,
-    "fpa": 4.83
+    "trips": 51,
+    "anglers": 1288,
+    "fish": 6166,
+    "fpa": 4.79
   },
   {
     "rank": 1,
