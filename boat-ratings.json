@@ -49,10 +49,10 @@
     "trip_type": "Full Day",
     "boat": "Sea Wolf",
     "landing": "Fish Emeryville",
-    "trips": 38,
-    "anglers": 791,
-    "fish": 9346,
-    "fpa": 11.82
+    "trips": 39,
+    "anglers": 813,
+    "fish": 9583,
+    "fpa": 11.79
   },
   {
     "rank": 2,
@@ -60,10 +60,10 @@
     "trip_type": "Full Day",
     "boat": "New Huck Finn",
     "landing": "Fish Emeryville",
-    "trips": 30,
-    "anglers": 546,
-    "fish": 4830,
-    "fpa": 8.85
+    "trips": 31,
+    "anglers": 564,
+    "fish": 4846,
+    "fpa": 8.59
   },
   {
     "rank": 3,
@@ -80,15 +80,26 @@
     "rank": 4,
     "region": "Alameda County",
     "trip_type": "Full Day",
-    "boat": "Pacific Pearl",
+    "boat": "KingFish",
     "landing": "Fish Emeryville",
-    "trips": 28,
-    "anglers": 379,
-    "fish": 426,
-    "fpa": 1.12
+    "trips": 24,
+    "anglers": 267,
+    "fish": 427,
+    "fpa": 1.6
   },
   {
     "rank": 5,
+    "region": "Alameda County",
+    "trip_type": "Full Day",
+    "boat": "Pacific Pearl",
+    "landing": "Fish Emeryville",
+    "trips": 29,
+    "anglers": 397,
+    "fish": 606,
+    "fpa": 1.53
+  },
+  {
+    "rank": 6,
     "region": "Alameda County",
     "trip_type": "Full Day",
     "boat": "Here We Go",
@@ -99,29 +110,29 @@
     "fpa": 1.05
   },
   {
-    "rank": 6,
+    "rank": 7,
+    "region": "Alameda County",
+    "trip_type": "Full Day",
+    "boat": "C Gull II",
+    "landing": "Fish Emeryville",
+    "trips": 23,
+    "anglers": 330,
+    "fish": 329,
+    "fpa": 1
+  },
+  {
+    "rank": 8,
     "region": "Alameda County",
     "trip_type": "Full Day",
     "boat": "Lady K",
     "landing": "Fish Emeryville",
-    "trips": 32,
-    "anglers": 276,
-    "fish": 264,
+    "trips": 33,
+    "anglers": 282,
+    "fish": 270,
     "fpa": 0.96
   },
   {
-    "rank": 7,
-    "region": "Alameda County",
-    "trip_type": "Full Day",
-    "boat": "KingFish",
-    "landing": "Fish Emeryville",
-    "trips": 23,
-    "anglers": 248,
-    "fish": 236,
-    "fpa": 0.95
-  },
-  {
-    "rank": 8,
+    "rank": 9,
     "region": "Alameda County",
     "trip_type": "Full Day",
     "boat": "Diamond",
@@ -130,17 +141,6 @@
     "anglers": 182,
     "fish": 142,
     "fpa": 0.78
-  },
-  {
-    "rank": 9,
-    "region": "Alameda County",
-    "trip_type": "Full Day",
-    "boat": "C Gull II",
-    "landing": "Fish Emeryville",
-    "trips": 22,
-    "anglers": 317,
-    "fish": 199,
-    "fpa": 0.63
   },
   {
     "rank": 10,
@@ -291,10 +291,10 @@
     "trip_type": "1.5 Day",
     "boat": "Pride",
     "landing": "22nd Street Landing",
-    "trips": 6,
-    "anglers": 80,
-    "fish": 812,
-    "fpa": 10.15
+    "trips": 7,
+    "anglers": 92,
+    "fish": 865,
+    "fpa": 9.4
   },
   {
     "rank": 2,
@@ -1831,10 +1831,10 @@
     "trip_type": "Full Day",
     "boat": "Riptide",
     "landing": "Riptide Sportfishing",
-    "trips": 16,
-    "anglers": 160,
-    "fish": 240,
-    "fpa": 1.5
+    "trips": 17,
+    "anglers": 171,
+    "fish": 432,
+    "fpa": 2.53
   },
   {
     "rank": 1,
