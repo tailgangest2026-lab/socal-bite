@@ -23904,30 +23904,30 @@
     "week": 39,
     "region": "Los Angeles County",
     "species": "Bonito",
-    "trips": 8,
-    "anglers": 414,
-    "fish": 147,
-    "fpa": 0.36
+    "trips": 9,
+    "anglers": 444,
+    "fish": 174,
+    "fpa": 0.39
   },
   {
     "year": 2026,
     "week": 39,
     "region": "Los Angeles County",
     "species": "Calico Bass",
-    "trips": 5,
-    "anglers": 319,
-    "fish": 76,
-    "fpa": 0.24
+    "trips": 6,
+    "anglers": 349,
+    "fish": 86,
+    "fpa": 0.25
   },
   {
     "year": 2026,
     "week": 39,
     "region": "Los Angeles County",
     "species": "Rockfish",
-    "trips": 5,
-    "anglers": 295,
-    "fish": 477,
-    "fpa": 1.62
+    "trips": 6,
+    "anglers": 325,
+    "fish": 551,
+    "fpa": 1.7
   },
   {
     "year": 2026,
@@ -23944,30 +23944,30 @@
     "week": 39,
     "region": "Los Angeles County",
     "species": "Sculpin",
-    "trips": 3,
-    "anglers": 214,
-    "fish": 55,
-    "fpa": 0.26
+    "trips": 4,
+    "anglers": 244,
+    "fish": 56,
+    "fpa": 0.23
   },
   {
     "year": 2026,
     "week": 39,
     "region": "Los Angeles County",
     "species": "Sheephead",
-    "trips": 5,
-    "anglers": 302,
-    "fish": 37,
-    "fpa": 0.12
+    "trips": 6,
+    "anglers": 332,
+    "fish": 44,
+    "fpa": 0.13
   },
   {
     "year": 2026,
     "week": 39,
     "region": "Los Angeles County",
     "species": "Whitefish",
-    "trips": 5,
-    "anglers": 199,
-    "fish": 304,
-    "fpa": 1.53
+    "trips": 6,
+    "anglers": 229,
+    "fish": 314,
+    "fpa": 1.37
   },
   {
     "year": 2026,
@@ -23984,10 +23984,10 @@
     "week": 39,
     "region": "Los Angeles County",
     "species": "Yellowtail",
-    "trips": 8,
-    "anglers": 379,
-    "fish": 92,
-    "fpa": 0.24
+    "trips": 9,
+    "anglers": 409,
+    "fish": 94,
+    "fpa": 0.23
   },
   {
     "year": 2026,
@@ -24013,10 +24013,20 @@
     "year": 2026,
     "week": 39,
     "region": "NorCal",
+    "species": "Bonito",
+    "trips": 1,
+    "anglers": 19,
+    "fish": 15,
+    "fpa": 0.79
+  },
+  {
+    "year": 2026,
+    "week": 39,
+    "region": "NorCal",
     "species": "Lingcod",
-    "trips": 3,
-    "anglers": 39,
-    "fish": 11,
+    "trips": 4,
+    "anglers": 58,
+    "fish": 16,
     "fpa": 0.28
   },
   {
@@ -24024,9 +24034,9 @@
     "week": 39,
     "region": "NorCal",
     "species": "Rockfish",
-    "trips": 3,
-    "anglers": 39,
-    "fish": 390,
+    "trips": 4,
+    "anglers": 58,
+    "fish": 580,
     "fpa": 10
   },
   {
@@ -24138,6 +24148,106 @@
     "anglers": 213,
     "fish": 35,
     "fpa": 0.16
+  },
+  {
+    "year": 2026,
+    "week": 39,
+    "region": "San Diego County",
+    "species": "Barracuda",
+    "trips": 1,
+    "anglers": 28,
+    "fish": 11,
+    "fpa": 0.39
+  },
+  {
+    "year": 2026,
+    "week": 39,
+    "region": "San Diego County",
+    "species": "Bonito",
+    "trips": 2,
+    "anglers": 79,
+    "fish": 108,
+    "fpa": 1.37
+  },
+  {
+    "year": 2026,
+    "week": 39,
+    "region": "San Diego County",
+    "species": "Calico Bass",
+    "trips": 1,
+    "anglers": 51,
+    "fish": 33,
+    "fpa": 0.65
+  },
+  {
+    "year": 2026,
+    "week": 39,
+    "region": "San Diego County",
+    "species": "Calico Bass Released",
+    "trips": 1,
+    "anglers": 51,
+    "fish": 100,
+    "fpa": 1.96
+  },
+  {
+    "year": 2026,
+    "week": 39,
+    "region": "San Diego County",
+    "species": "Rockfish",
+    "trips": 1,
+    "anglers": 51,
+    "fish": 3,
+    "fpa": 0.06
+  },
+  {
+    "year": 2026,
+    "week": 39,
+    "region": "San Diego County",
+    "species": "Sand Bass",
+    "trips": 2,
+    "anglers": 79,
+    "fish": 26,
+    "fpa": 0.33
+  },
+  {
+    "year": 2026,
+    "week": 39,
+    "region": "San Diego County",
+    "species": "Sculpin",
+    "trips": 1,
+    "anglers": 51,
+    "fish": 4,
+    "fpa": 0.08
+  },
+  {
+    "year": 2026,
+    "week": 39,
+    "region": "San Diego County",
+    "species": "Sheephead",
+    "trips": 1,
+    "anglers": 51,
+    "fish": 5,
+    "fpa": 0.1
+  },
+  {
+    "year": 2026,
+    "week": 39,
+    "region": "San Diego County",
+    "species": "Yellowfin Tuna",
+    "trips": 4,
+    "anglers": 104,
+    "fish": 549,
+    "fpa": 5.28
+  },
+  {
+    "year": 2026,
+    "week": 39,
+    "region": "San Diego County",
+    "species": "Yellowtail",
+    "trips": 7,
+    "anglers": 180,
+    "fish": 76,
+    "fpa": 0.42
   },
   {
     "year": 2026,
