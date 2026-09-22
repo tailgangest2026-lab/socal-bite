@@ -1367,15 +1367,26 @@
     "rank": 2,
     "region": "San Diego County",
     "trip_type": "2 Day",
-    "boat": "Liberty",
+    "boat": "Tomahawk",
     "landing": "Fisherman's Landing",
-    "trips": 8,
-    "anglers": 159,
-    "fish": 326,
-    "fpa": 2.05
+    "trips": 5,
+    "anglers": 135,
+    "fish": 272,
+    "fpa": 2.01
   },
   {
     "rank": 3,
+    "region": "San Diego County",
+    "trip_type": "2 Day",
+    "boat": "Liberty",
+    "landing": "Fisherman's Landing",
+    "trips": 9,
+    "anglers": 172,
+    "fish": 326,
+    "fpa": 1.9
+  },
+  {
+    "rank": 4,
     "region": "San Diego County",
     "trip_type": "2 Day",
     "boat": "Constitution",
@@ -1386,7 +1397,7 @@
     "fpa": 1.6
   },
   {
-    "rank": 4,
+    "rank": 5,
     "region": "San Diego County",
     "trip_type": "2 Day",
     "boat": "New Lo-An",
