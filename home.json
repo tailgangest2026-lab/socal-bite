@@ -1,5 +1,132 @@
-{
-  "error": "File not found",
-  "file": "home.json",
-  "message": "Error: File not found: home.json"
-}
+[
+  {
+    "region": "Alameda County",
+    "total_trips_today": 3,
+    "total_anglers_today": 29,
+    "total_fish_today": 205,
+    "top_boat_today": "Sea Wolf",
+    "top_landing_today": "Fish Emeryville",
+    "top_species_today": "Rockfish",
+    "best_boat_last_30_days": "Sea Wolf",
+    "best_boat_last_90_days": "Sea Wolf",
+    "most_caught_species_last_30_days": "Rockfish",
+    "most_caught_species_last_90_days": "Rockfish"
+  },
+  {
+    "region": "Central California",
+    "total_trips_today": 4,
+    "total_anglers_today": 51,
+    "total_fish_today": 352,
+    "top_boat_today": "Avenger",
+    "top_landing_today": "Morro Bay Landing",
+    "top_species_today": "Rockfish",
+    "best_boat_last_30_days": "Avenger",
+    "best_boat_last_90_days": "Avenger",
+    "most_caught_species_last_30_days": "Rockfish",
+    "most_caught_species_last_90_days": "Rockfish"
+  },
+  {
+    "region": "Los Angeles County",
+    "total_trips_today": 10,
+    "total_anglers_today": 455,
+    "total_fish_today": 1850,
+    "top_boat_today": "New Del Mar",
+    "top_landing_today": "Marina Del Rey Sportfishing",
+    "top_species_today": "Bonito",
+    "best_boat_last_30_days": "Eldorado",
+    "best_boat_last_90_days": "Eldorado",
+    "most_caught_species_last_30_days": "Bonito",
+    "most_caught_species_last_90_days": "Calico Bass"
+  },
+  {
+    "region": "Marin County",
+    "total_trips_today": 1,
+    "total_anglers_today": 20,
+    "total_fish_today": 0,
+    "top_boat_today": "New Rayann",
+    "top_landing_today": "New Rayann Sportfishing",
+    "top_species_today": "",
+    "best_boat_last_30_days": "New Rayann",
+    "best_boat_last_90_days": "New Rayann",
+    "most_caught_species_last_30_days": "",
+    "most_caught_species_last_90_days": ""
+  },
+  {
+    "region": "NorCal",
+    "total_trips_today": 4,
+    "total_anglers_today": 51,
+    "total_fish_today": 414,
+    "top_boat_today": "Queen of Hearts",
+    "top_landing_today": "Half Moon Bay Sportfishing",
+    "top_species_today": "Rockfish",
+    "best_boat_last_30_days": "Caroline",
+    "best_boat_last_90_days": "Salmon Streaker",
+    "most_caught_species_last_30_days": "Rockfish",
+    "most_caught_species_last_90_days": "Rockfish"
+  },
+  {
+    "region": "Orange County",
+    "total_trips_today": 18,
+    "total_anglers_today": 541,
+    "total_fish_today": 1600,
+    "top_boat_today": "Western Pride",
+    "top_landing_today": "Davey's Locker",
+    "top_species_today": "Bonito",
+    "best_boat_last_30_days": "Fury",
+    "best_boat_last_90_days": "Fury",
+    "most_caught_species_last_30_days": "Bonito",
+    "most_caught_species_last_90_days": "Bonito"
+  },
+  {
+    "region": "San Diego County",
+    "total_trips_today": 23,
+    "total_anglers_today": 506,
+    "total_fish_today": 2232,
+    "top_boat_today": "New Seaforth",
+    "top_landing_today": "H&M Landing",
+    "top_species_today": "Yellowfin Tuna",
+    "best_boat_last_30_days": "Top Gun 80",
+    "best_boat_last_90_days": "Top Gun 80",
+    "most_caught_species_last_30_days": "Bonito",
+    "most_caught_species_last_90_days": "Bonito"
+  },
+  {
+    "region": "San Francisco Bay",
+    "total_trips_today": 3,
+    "total_anglers_today": 39,
+    "total_fish_today": 0,
+    "top_boat_today": "New Easy Rider",
+    "top_landing_today": "Berkeley Charter Boats",
+    "top_species_today": "",
+    "best_boat_last_30_days": "California Dawn II",
+    "best_boat_last_90_days": "New California Dawn",
+    "most_caught_species_last_30_days": "Rockfish",
+    "most_caught_species_last_90_days": "Rockfish"
+  },
+  {
+    "region": "Santa Barbara County",
+    "total_trips_today": 3,
+    "total_anglers_today": 64,
+    "total_fish_today": 268,
+    "top_boat_today": "Stardust",
+    "top_landing_today": "Santa Barbara Landing",
+    "top_species_today": "Bonito",
+    "best_boat_last_30_days": "Coral Sea",
+    "best_boat_last_90_days": "Coral Sea",
+    "most_caught_species_last_30_days": "Rockfish",
+    "most_caught_species_last_90_days": "Rockfish"
+  },
+  {
+    "region": "Ventura County",
+    "total_trips_today": 9,
+    "total_anglers_today": 219,
+    "total_fish_today": 894,
+    "top_boat_today": "Speed Twin",
+    "top_landing_today": "Channel Islands Sportfishing",
+    "top_species_today": "Calico Bass",
+    "best_boat_last_30_days": "New Hustler",
+    "best_boat_last_90_days": "Orion",
+    "most_caught_species_last_30_days": "Rockfish",
+    "most_caught_species_last_90_days": "Whitefish"
+  }
+]
