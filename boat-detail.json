@@ -1431,13 +1431,13 @@
     "boat": "Islander",
     "landing": "Fisherman's Landing",
     "region": "San Diego County",
-    "trips": 17,
-    "anglers": 398,
-    "fish": 1526,
-    "fpa": 3.83,
+    "trips": 18,
+    "anglers": 422,
+    "fish": 1581,
+    "fpa": 3.75,
     "top_species_1": "Bluefin Tuna",
     "top_species_2": "Yellowtail",
-    "top_species_3": "Calico Bass"
+    "top_species_3": "Yellowfin Tuna"
   },
   {
     "boat": "Nautilus",
@@ -1632,6 +1632,18 @@
     "top_species_3": "Bonito"
   },
   {
+    "boat": "Fortune",
+    "landing": "Fisherman's Landing",
+    "region": "San Diego County",
+    "trips": 30,
+    "anglers": 451,
+    "fish": 1121,
+    "fpa": 2.49,
+    "top_species_1": "Yellowfin Tuna",
+    "top_species_2": "Bluefin Tuna",
+    "top_species_3": "Yellowtail"
+  },
+  {
     "boat": "Tomahawk",
     "landing": "Fisherman's Landing",
     "region": "San Diego County",
@@ -1654,18 +1666,6 @@
     "top_species_1": "Yellowfin Tuna",
     "top_species_2": "Yellowtail",
     "top_species_3": "Bluefin Tuna"
-  },
-  {
-    "boat": "Fortune",
-    "landing": "Fisherman's Landing",
-    "region": "San Diego County",
-    "trips": 29,
-    "anglers": 430,
-    "fish": 1016,
-    "fpa": 2.36,
-    "top_species_1": "Bluefin Tuna",
-    "top_species_2": "Yellowfin Tuna",
-    "top_species_3": "Yellowtail"
   },
   {
     "boat": "Grande",
@@ -2007,10 +2007,10 @@
     "boat": "Coral Sea",
     "landing": "Santa Barbara Landing",
     "region": "Santa Barbara County",
-    "trips": 140,
-    "anglers": 3146,
-    "fish": 41356,
-    "fpa": 13.15,
+    "trips": 142,
+    "anglers": 3194,
+    "fish": 41506,
+    "fpa": 12.99,
     "top_species_1": "Rockfish",
     "top_species_2": "Whitefish",
     "top_species_3": "Bonito"
