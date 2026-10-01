@@ -13,6 +13,26 @@
     "trip_date": "2026-10-01",
     "region": "Alameda County",
     "landing": "Fish Emeryville",
+    "boat": "New Huck Finn",
+    "trip_type": "Full Day",
+    "anglers": 12,
+    "fish_counts": "1 Bonito, 24 Lingcod, 120 Rockfish",
+    "total_fish": 145
+  },
+  {
+    "trip_date": "2026-10-01",
+    "region": "Alameda County",
+    "landing": "Fish Emeryville",
+    "boat": "Pacific Pearl",
+    "trip_type": "Full Day",
+    "anglers": 11,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-10-01",
+    "region": "Alameda County",
+    "landing": "Fish Emeryville",
     "boat": "Scallywag",
     "trip_type": "Full Day",
     "anglers": 6,
@@ -192,12 +212,62 @@
   {
     "trip_date": "2026-10-01",
     "region": "Orange County",
+    "landing": "Davey's Locker",
+    "boat": "Western Pride",
+    "trip_type": "1/2 Day AM",
+    "anglers": 19,
+    "fish_counts": "90 Bonito, 33 Rockfish, 12 Sand Bass",
+    "total_fish": 135
+  },
+  {
+    "trip_date": "2026-10-01",
+    "region": "Orange County",
     "landing": "Newport Landing",
     "boat": "Patriot (Newport)",
     "trip_type": "3/4 Day",
     "anglers": 37,
     "fish_counts": "32 Yellowfin Tuna",
     "total_fish": 32
+  },
+  {
+    "trip_date": "2026-10-01",
+    "region": "San Diego County",
+    "landing": "Oceanside Sea Center",
+    "boat": "Southern Cal",
+    "trip_type": "1/2 Day AM",
+    "anglers": 22,
+    "fish_counts": "86 Bonito, 20 Calico Bass, 90 Calico Bass Released, 2 Sand Bass, 6 Whitefish",
+    "total_fish": 204
+  },
+  {
+    "trip_date": "2026-10-01",
+    "region": "San Diego County",
+    "landing": "Seaforth Sportfishing",
+    "boat": "New Seaforth",
+    "trip_type": "1/2 Day AM",
+    "anglers": 22,
+    "fish_counts": "20 Barracuda, 50 Bonito, 6 Calico Bass, 1 Halibut, 5 Sand Bass, 1 Sheephead, 2 Whitefish, 5 Yellowtail",
+    "total_fish": 90
+  },
+  {
+    "trip_date": "2026-10-01",
+    "region": "San Diego County",
+    "landing": "Seaforth Sportfishing",
+    "boat": "Pacifica",
+    "trip_type": "1.5 Day",
+    "anglers": 19,
+    "fish_counts": "74 Yellowfin Tuna",
+    "total_fish": 74
+  },
+  {
+    "trip_date": "2026-10-01",
+    "region": "San Francisco Bay",
+    "landing": "Berkeley Charter Boats",
+    "boat": "New Easy Rider",
+    "trip_type": "Full Day",
+    "anglers": 14,
+    "fish_counts": "",
+    "total_fish": 0
   },
   {
     "trip_date": "2026-10-01",
@@ -228,6 +298,16 @@
     "anglers": 6,
     "fish_counts": "58 Bonito, 68 Rockfish",
     "total_fish": 126
+  },
+  {
+    "trip_date": "2026-10-01",
+    "region": "San Mateo County",
+    "landing": "Riptide Sportfishing",
+    "boat": "Riptide",
+    "trip_type": "Full Day",
+    "anglers": 4,
+    "fish_counts": "",
+    "total_fish": 0
   },
   {
     "trip_date": "2026-10-01",
