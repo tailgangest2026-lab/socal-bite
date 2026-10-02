@@ -24734,20 +24734,20 @@
     "week": 40,
     "region": "Alameda County",
     "species": "Lingcod",
-    "trips": 8,
-    "anglers": 125,
-    "fish": 134,
-    "fpa": 1.07
+    "trips": 10,
+    "anglers": 159,
+    "fish": 176,
+    "fpa": 1.11
   },
   {
     "year": 2026,
     "week": 40,
     "region": "Alameda County",
     "species": "Rockfish",
-    "trips": 9,
-    "anglers": 138,
-    "fish": 1251,
-    "fpa": 9.07
+    "trips": 12,
+    "anglers": 177,
+    "fish": 1621,
+    "fpa": 9.16
   },
   {
     "year": 2026,
@@ -24764,9 +24764,9 @@
     "week": 40,
     "region": "Central California",
     "species": "Bonito",
-    "trips": 5,
-    "anglers": 75,
-    "fish": 26,
+    "trips": 7,
+    "anglers": 114,
+    "fish": 40,
     "fpa": 0.35
   },
   {
@@ -24774,10 +24774,10 @@
     "week": 40,
     "region": "Central California",
     "species": "Lingcod",
-    "trips": 4,
-    "anglers": 32,
-    "fish": 16,
-    "fpa": 0.5
+    "trips": 6,
+    "anglers": 71,
+    "fish": 20,
+    "fpa": 0.28
   },
   {
     "year": 2026,
@@ -24814,10 +24814,10 @@
     "week": 40,
     "region": "Los Angeles County",
     "species": "Barracuda",
-    "trips": 17,
-    "anglers": 866,
-    "fish": 479,
-    "fpa": 0.55
+    "trips": 18,
+    "anglers": 890,
+    "fish": 480,
+    "fpa": 0.54
   },
   {
     "year": 2026,
@@ -24834,20 +24834,20 @@
     "week": 40,
     "region": "Los Angeles County",
     "species": "Bonito",
-    "trips": 38,
-    "anglers": 1514,
-    "fish": 1463,
-    "fpa": 0.97
+    "trips": 39,
+    "anglers": 1538,
+    "fish": 1502,
+    "fpa": 0.98
   },
   {
     "year": 2026,
     "week": 40,
     "region": "Los Angeles County",
     "species": "Calico Bass",
-    "trips": 31,
-    "anglers": 1015,
-    "fish": 915,
-    "fpa": 0.9
+    "trips": 32,
+    "anglers": 1039,
+    "fish": 925,
+    "fpa": 0.89
   },
   {
     "year": 2026,
@@ -24914,10 +24914,10 @@
     "week": 40,
     "region": "Los Angeles County",
     "species": "Whitefish",
-    "trips": 24,
-    "anglers": 1524,
-    "fish": 1331,
-    "fpa": 0.87
+    "trips": 25,
+    "anglers": 1548,
+    "fish": 1391,
+    "fpa": 0.9
   },
   {
     "year": 2026,
@@ -24934,9 +24934,9 @@
     "week": 40,
     "region": "Los Angeles County",
     "species": "Yellowtail",
-    "trips": 54,
-    "anglers": 2209,
-    "fish": 959,
+    "trips": 55,
+    "anglers": 2233,
+    "fish": 962,
     "fpa": 0.43
   },
   {
@@ -24963,21 +24963,31 @@
     "year": 2026,
     "week": 40,
     "region": "NorCal",
+    "species": "Bonito",
+    "trips": 1,
+    "anglers": 15,
+    "fish": 91,
+    "fpa": 6.07
+  },
+  {
+    "year": 2026,
+    "week": 40,
+    "region": "NorCal",
     "species": "Lingcod",
-    "trips": 12,
-    "anglers": 159,
-    "fish": 125,
-    "fpa": 0.79
+    "trips": 15,
+    "anglers": 210,
+    "fish": 128,
+    "fpa": 0.61
   },
   {
     "year": 2026,
     "week": 40,
     "region": "NorCal",
     "species": "Rockfish",
-    "trips": 15,
-    "anglers": 405,
-    "fish": 2068,
-    "fpa": 5.11
+    "trips": 18,
+    "anglers": 456,
+    "fish": 2578,
+    "fpa": 5.65
   },
   {
     "year": 2026,
@@ -25134,20 +25144,20 @@
     "week": 40,
     "region": "San Diego County",
     "species": "Calico Bass",
-    "trips": 25,
-    "anglers": 757,
-    "fish": 685,
-    "fpa": 0.9
+    "trips": 26,
+    "anglers": 759,
+    "fish": 688,
+    "fpa": 0.91
   },
   {
     "year": 2026,
     "week": 40,
     "region": "San Diego County",
     "species": "Calico Bass Released",
-    "trips": 5,
-    "anglers": 109,
-    "fish": 441,
-    "fpa": 4.05
+    "trips": 6,
+    "anglers": 111,
+    "fish": 466,
+    "fpa": 4.2
   },
   {
     "year": 2026,
@@ -25214,20 +25224,20 @@
     "week": 40,
     "region": "San Diego County",
     "species": "Yellowfin Tuna",
-    "trips": 44,
-    "anglers": 1009,
-    "fish": 3245,
-    "fpa": 3.22
+    "trips": 49,
+    "anglers": 1122,
+    "fish": 3740,
+    "fpa": 3.33
   },
   {
     "year": 2026,
     "week": 40,
     "region": "San Diego County",
     "species": "Yellowtail",
-    "trips": 40,
-    "anglers": 1058,
-    "fish": 651,
-    "fpa": 0.62
+    "trips": 47,
+    "anglers": 1186,
+    "fish": 772,
+    "fpa": 0.65
   },
   {
     "year": 2026,
