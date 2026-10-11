@@ -1,6 +1,46 @@
 [
   {
     "trip_date": "2026-10-11",
+    "region": "Alameda County",
+    "landing": "Fish Emeryville",
+    "boat": "New Huck Finn",
+    "trip_type": "Full Day",
+    "anglers": 21,
+    "fish_counts": "16 Lingcod, 210 Rockfish",
+    "total_fish": 226
+  },
+  {
+    "trip_date": "2026-10-11",
+    "region": "Alameda County",
+    "landing": "Fish Emeryville",
+    "boat": "Oakland Anglers II",
+    "trip_type": "Full Day",
+    "anglers": 17,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-10-11",
+    "region": "Alameda County",
+    "landing": "Fish Emeryville",
+    "boat": "Scallywag",
+    "trip_type": "Full Day",
+    "anglers": 6,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-10-11",
+    "region": "Alameda County",
+    "landing": "Fish Emeryville",
+    "boat": "Sea Wolf",
+    "trip_type": "Full Day",
+    "anglers": 22,
+    "fish_counts": "6 Lingcod, 220 Rockfish",
+    "total_fish": 226
+  },
+  {
+    "trip_date": "2026-10-11",
     "region": "Central California",
     "landing": "Morro Bay Landing",
     "boat": "Avenger",
@@ -161,6 +201,16 @@
   },
   {
     "trip_date": "2026-10-11",
+    "region": "Marin County",
+    "landing": "New Rayann Sportfishing",
+    "boat": "New Rayann",
+    "trip_type": "Full Day",
+    "anglers": 13,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-10-11",
     "region": "NorCal",
     "landing": "Chris' Fishing Trips",
     "boat": "Caroline",
@@ -258,6 +308,26 @@
     "anglers": 44,
     "fish_counts": "3 Calico Bass, 1 Sand Bass, 78 Yellowfin Tuna",
     "total_fish": 82
+  },
+  {
+    "trip_date": "2026-10-11",
+    "region": "San Diego County",
+    "landing": "H&M Landing",
+    "boat": "Legend",
+    "trip_type": "3 Day",
+    "anglers": 25,
+    "fish_counts": "1 Bluefin Tuna, 180 Rockfish, 4 Sheephead, 45 Whitefish, 14 Yellowfin Tuna",
+    "total_fish": 244
+  },
+  {
+    "trip_date": "2026-10-11",
+    "region": "San Diego County",
+    "landing": "H&M Landing",
+    "boat": "Ocean Odyssey",
+    "trip_type": "2.5 Day",
+    "anglers": 23,
+    "fish_counts": "3 Yellowtail",
+    "total_fish": 3
   },
   {
     "trip_date": "2026-10-11",
