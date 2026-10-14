@@ -115,10 +115,10 @@
     "trip_type": "Full Day",
     "boat": "Scallywag",
     "landing": "Fish Emeryville",
-    "trips": 22,
-    "anglers": 120,
+    "trips": 23,
+    "anglers": 126,
     "fish": 18,
-    "fpa": 0.15
+    "fpa": 0.14
   },
   {
     "rank": 11,
@@ -544,9 +544,9 @@
     "trip_type": "Full Day",
     "boat": "Queen of Hearts",
     "landing": "Half Moon Bay Sportfishing",
-    "trips": 28,
-    "anglers": 387,
-    "fish": 4146,
+    "trips": 29,
+    "anglers": 401,
+    "fish": 4293,
     "fpa": 10.71
   },
   {
@@ -1015,6 +1015,17 @@
     "rank": 1,
     "region": "San Diego County",
     "trip_type": "1.5 Day",
+    "boat": "Nautilus",
+    "landing": "H&M Landing",
+    "trips": 5,
+    "anglers": 21,
+    "fish": 79,
+    "fpa": 3.76
+  },
+  {
+    "rank": 2,
+    "region": "San Diego County",
+    "trip_type": "1.5 Day",
     "boat": "Tribute",
     "landing": "Seaforth Sportfishing",
     "trips": 6,
@@ -1039,10 +1050,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
-    "trips": 28,
-    "anglers": 1284,
-    "fish": 4057,
-    "fpa": 3.16
+    "trips": 29,
+    "anglers": 1309,
+    "fish": 4124,
+    "fpa": 3.15
   },
   {
     "rank": 3,
@@ -1061,10 +1072,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Premier",
     "landing": "H&M Landing",
-    "trips": 21,
-    "anglers": 688,
-    "fish": 1918,
-    "fpa": 2.79
+    "trips": 22,
+    "anglers": 707,
+    "fish": 2058,
+    "fpa": 2.91
   },
   {
     "rank": 5,
