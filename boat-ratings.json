@@ -1259,10 +1259,10 @@
     "trip_type": "3/4 Day",
     "boat": "Dolphin",
     "landing": "Fisherman's Landing",
-    "trips": 16,
-    "anglers": 487,
-    "fish": 3612,
-    "fpa": 7.42
+    "trips": 17,
+    "anglers": 511,
+    "fish": 3740,
+    "fpa": 7.32
   },
   {
     "rank": 2,
@@ -1334,17 +1334,6 @@
     "rank": 3,
     "region": "San Diego County",
     "trip_type": "Full Day",
-    "boat": "San Diego",
-    "landing": "Seaforth Sportfishing",
-    "trips": 6,
-    "anglers": 177,
-    "fish": 658,
-    "fpa": 3.72
-  },
-  {
-    "rank": 4,
-    "region": "San Diego County",
-    "trip_type": "Full Day",
     "boat": "Blue Horizon",
     "landing": "Oceanside Sea Center",
     "trips": 14,
@@ -1353,15 +1342,26 @@
     "fpa": 3.58
   },
   {
+    "rank": 4,
+    "region": "San Diego County",
+    "trip_type": "Full Day",
+    "boat": "San Diego",
+    "landing": "Seaforth Sportfishing",
+    "trips": 7,
+    "anglers": 212,
+    "fish": 675,
+    "fpa": 3.18
+  },
+  {
     "rank": 5,
     "region": "San Diego County",
     "trip_type": "Full Day",
     "boat": "Mission Belle",
     "landing": "Point Loma Sportfishing",
-    "trips": 23,
-    "anglers": 556,
-    "fish": 1719,
-    "fpa": 3.09
+    "trips": 24,
+    "anglers": 574,
+    "fish": 1769,
+    "fpa": 3.08
   },
   {
     "rank": 1,
