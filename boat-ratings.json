@@ -335,10 +335,10 @@
     "trip_type": "2 Day",
     "boat": "Apollo",
     "landing": "22nd Street Landing",
-    "trips": 5,
-    "anglers": 82,
-    "fish": 398,
-    "fpa": 4.85
+    "trips": 6,
+    "anglers": 99,
+    "fish": 457,
+    "fpa": 4.62
   },
   {
     "rank": 1,
@@ -885,10 +885,10 @@
     "trip_type": "3/4 Day",
     "boat": "Freelance",
     "landing": "Davey's Locker",
-    "trips": 47,
-    "anglers": 2365,
-    "fish": 8589,
-    "fpa": 3.63
+    "trips": 48,
+    "anglers": 2415,
+    "fish": 8861,
+    "fpa": 3.67
   },
   {
     "rank": 8,
@@ -940,10 +940,10 @@
     "trip_type": "Full Day",
     "boat": "Blackfish",
     "landing": "Davey's Locker",
-    "trips": 33,
-    "anglers": 179,
-    "fish": 1338,
-    "fpa": 7.47
+    "trips": 34,
+    "anglers": 184,
+    "fish": 1388,
+    "fpa": 7.54
   },
   {
     "rank": 2,
@@ -1039,10 +1039,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Southern Cal",
     "landing": "Oceanside Sea Center",
-    "trips": 24,
-    "anglers": 656,
-    "fish": 3267,
-    "fpa": 4.98
+    "trips": 25,
+    "anglers": 673,
+    "fish": 3303,
+    "fpa": 4.91
   },
   {
     "rank": 2,
@@ -1061,10 +1061,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Dolphin",
     "landing": "Fisherman's Landing",
-    "trips": 13,
-    "anglers": 603,
-    "fish": 1807,
-    "fpa": 3
+    "trips": 14,
+    "anglers": 621,
+    "fish": 1931,
+    "fpa": 3.11
   },
   {
     "rank": 4,
@@ -1103,23 +1103,23 @@
     "rank": 2,
     "region": "San Diego County",
     "trip_type": "1/2 Day PM",
+    "boat": "Dolphin",
+    "landing": "Fisherman's Landing",
+    "trips": 12,
+    "anglers": 508,
+    "fish": 1420,
+    "fpa": 2.8
+  },
+  {
+    "rank": 3,
+    "region": "San Diego County",
+    "trip_type": "1/2 Day PM",
     "boat": "Premier",
     "landing": "H&M Landing",
     "trips": 18,
     "anglers": 556,
     "fish": 1547,
     "fpa": 2.78
-  },
-  {
-    "rank": 3,
-    "region": "San Diego County",
-    "trip_type": "1/2 Day PM",
-    "boat": "Dolphin",
-    "landing": "Fisherman's Landing",
-    "trips": 11,
-    "anglers": 496,
-    "fish": 1363,
-    "fpa": 2.75
   },
   {
     "rank": 4,
@@ -1314,10 +1314,10 @@
     "trip_type": "Full Day",
     "boat": "San Diego",
     "landing": "Seaforth Sportfishing",
-    "trips": 7,
-    "anglers": 212,
-    "fish": 675,
-    "fpa": 3.18
+    "trips": 8,
+    "anglers": 248,
+    "fish": 827,
+    "fpa": 3.33
   },
   {
     "rank": 5,
@@ -1336,10 +1336,10 @@
     "trip_type": "Full Day Offshore",
     "boat": "El Gato Dos",
     "landing": "Seaforth Sportfishing",
-    "trips": 17,
-    "anglers": 86,
+    "trips": 18,
+    "anglers": 91,
     "fish": 347,
-    "fpa": 4.03
+    "fpa": 3.81
   },
   {
     "rank": 2,
@@ -1369,10 +1369,10 @@
     "trip_type": "Full Day Offshore",
     "boat": "Grande",
     "landing": "H&M Landing",
-    "trips": 23,
-    "anglers": 889,
-    "fish": 1952,
-    "fpa": 2.2
+    "trips": 24,
+    "anglers": 924,
+    "fish": 1954,
+    "fpa": 2.11
   },
   {
     "rank": 1,
@@ -1395,6 +1395,17 @@
     "anglers": 368,
     "fish": 1399,
     "fpa": 3.8
+  },
+  {
+    "rank": 3,
+    "region": "San Diego County",
+    "trip_type": "Overnight",
+    "boat": "Pacifica",
+    "landing": "Seaforth Sportfishing",
+    "trips": 5,
+    "anglers": 107,
+    "fish": 327,
+    "fpa": 3.06
   },
   {
     "rank": 1,
@@ -1589,10 +1600,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Speed Twin",
     "landing": "Channel Islands Sportfishing",
-    "trips": 48,
-    "anglers": 2032,
-    "fish": 8428,
-    "fpa": 4.15
+    "trips": 49,
+    "anglers": 2061,
+    "fish": 8644,
+    "fpa": 4.19
   },
   {
     "rank": 1,
@@ -1622,9 +1633,9 @@
     "trip_type": "3/4 Day",
     "boat": "Island Fox",
     "landing": "Channel Islands Sportfishing",
-    "trips": 38,
-    "anglers": 720,
-    "fish": 3639,
+    "trips": 39,
+    "anglers": 740,
+    "fish": 3738,
     "fpa": 5.05
   },
   {
@@ -1644,10 +1655,10 @@
     "trip_type": "Full Day",
     "boat": "Island Tak",
     "landing": "Channel Islands Sportfishing",
-    "trips": 27,
-    "anglers": 246,
-    "fish": 1389,
-    "fpa": 5.65
+    "trips": 28,
+    "anglers": 254,
+    "fish": 1424,
+    "fpa": 5.61
   },
   {
     "rank": 3,
