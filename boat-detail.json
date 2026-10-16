@@ -3,10 +3,10 @@
     "boat": "Sea Wolf",
     "landing": "Fish Emeryville",
     "region": "Alameda County",
-    "trips": 98,
-    "anglers": 1926,
-    "fish": 20888,
-    "fpa": 10.85,
+    "trips": 99,
+    "anglers": 1951,
+    "fish": 21188,
+    "fpa": 10.86,
     "top_species_1": "Rockfish",
     "top_species_2": "Lingcod",
     "top_species_3": "Bonito"
@@ -84,6 +84,18 @@
     "top_species_3": "Bonito"
   },
   {
+    "boat": "Lady K",
+    "landing": "Fish Emeryville",
+    "region": "Alameda County",
+    "trips": 98,
+    "anglers": 863,
+    "fish": 2119,
+    "fpa": 2.46,
+    "top_species_1": "Rockfish",
+    "top_species_2": "Lingcod",
+    "top_species_3": "Bluefin Tuna"
+  },
+  {
     "boat": "C Gull II",
     "landing": "Fish Emeryville",
     "region": "Alameda County",
@@ -94,18 +106,6 @@
     "top_species_1": "Rockfish",
     "top_species_2": "Lingcod",
     "top_species_3": "Bonito"
-  },
-  {
-    "boat": "Lady K",
-    "landing": "Fish Emeryville",
-    "region": "Alameda County",
-    "trips": 97,
-    "anglers": 853,
-    "fish": 1998,
-    "fpa": 2.34,
-    "top_species_1": "Rockfish",
-    "top_species_2": "Lingcod",
-    "top_species_3": "Bluefin Tuna"
   },
   {
     "boat": "Diamond",
@@ -135,10 +135,10 @@
     "boat": "Scallywag",
     "landing": "Fish Emeryville",
     "region": "Alameda County",
-    "trips": 96,
-    "anglers": 556,
+    "trips": 97,
+    "anglers": 562,
     "fish": 176,
-    "fpa": 0.32,
+    "fpa": 0.31,
     "top_species_1": "Rockfish",
     "top_species_2": "Bluefin Tuna",
     "top_species_3": "Lingcod"
@@ -1167,10 +1167,10 @@
     "boat": "Top Gun 80",
     "landing": "H&M Landing",
     "region": "San Diego County",
-    "trips": 19,
-    "anglers": 385,
-    "fish": 4314,
-    "fpa": 11.21,
+    "trips": 20,
+    "anglers": 402,
+    "fish": 4315,
+    "fpa": 10.73,
     "top_species_1": "Yellowfin Tuna",
     "top_species_2": "Bluefin Tuna",
     "top_species_3": "Yellowtail"
@@ -1275,10 +1275,10 @@
     "boat": "Highliner",
     "landing": "Seaforth Sportfishing",
     "region": "San Diego County",
-    "trips": 30,
-    "anglers": 635,
-    "fish": 3457,
-    "fpa": 5.44,
+    "trips": 31,
+    "anglers": 661,
+    "fish": 3535,
+    "fpa": 5.35,
     "top_species_1": "Yellowfin Tuna",
     "top_species_2": "Bluefin Tuna",
     "top_species_3": "Yellowtail"
@@ -1359,10 +1359,10 @@
     "boat": "Legend",
     "landing": "H&M Landing",
     "region": "San Diego County",
-    "trips": 26,
-    "anglers": 674,
-    "fish": 2766,
-    "fpa": 4.1,
+    "trips": 27,
+    "anglers": 699,
+    "fish": 2840,
+    "fpa": 4.06,
     "top_species_1": "Yellowfin Tuna",
     "top_species_2": "Bluefin Tuna",
     "top_species_3": "Yellowtail"
@@ -1599,10 +1599,10 @@
     "boat": "Producer",
     "landing": "H&M Landing",
     "region": "San Diego County",
-    "trips": 69,
-    "anglers": 1753,
-    "fish": 4933,
-    "fpa": 2.81,
+    "trips": 70,
+    "anglers": 1782,
+    "fish": 5101,
+    "fpa": 2.86,
     "top_species_1": "Yellowfin Tuna",
     "top_species_2": "Yellowtail",
     "top_species_3": "Bluefin Tuna"
@@ -1632,6 +1632,18 @@
     "top_species_3": "Yellowtail"
   },
   {
+    "boat": "New Seaforth",
+    "landing": "Seaforth Sportfishing",
+    "region": "San Diego County",
+    "trips": 240,
+    "anglers": 10105,
+    "fish": 26037,
+    "fpa": 2.58,
+    "top_species_1": "Bonito",
+    "top_species_2": "Calico Bass Released",
+    "top_species_3": "Calico Bass"
+  },
+  {
     "boat": "Fortune",
     "landing": "Fisherman's Landing",
     "region": "San Diego County",
@@ -1642,18 +1654,6 @@
     "top_species_1": "Yellowfin Tuna",
     "top_species_2": "Bluefin Tuna",
     "top_species_3": "Yellowtail"
-  },
-  {
-    "boat": "New Seaforth",
-    "landing": "Seaforth Sportfishing",
-    "region": "San Diego County",
-    "trips": 239,
-    "anglers": 10057,
-    "fish": 25892,
-    "fpa": 2.57,
-    "top_species_1": "Bonito",
-    "top_species_2": "Calico Bass Released",
-    "top_species_3": "Calico Bass"
   },
   {
     "boat": "Pacifica",
@@ -1752,18 +1752,6 @@
     "top_species_3": "Bonito"
   },
   {
-    "boat": "Ocean Odyssey",
-    "landing": "H&M Landing",
-    "region": "San Diego County",
-    "trips": 27,
-    "anglers": 649,
-    "fish": 1380,
-    "fpa": 2.13,
-    "top_species_1": "Yellowfin Tuna",
-    "top_species_2": "Bluefin Tuna",
-    "top_species_3": "Yellowtail"
-  },
-  {
     "boat": "Tradition",
     "landing": "Fisherman's Landing",
     "region": "San Diego County",
@@ -1774,6 +1762,18 @@
     "top_species_1": "Yellowfin Tuna",
     "top_species_2": "Yellowtail",
     "top_species_3": "Rockfish"
+  },
+  {
+    "boat": "Ocean Odyssey",
+    "landing": "H&M Landing",
+    "region": "San Diego County",
+    "trips": 28,
+    "anglers": 677,
+    "fish": 1380,
+    "fpa": 2.04,
+    "top_species_1": "Yellowfin Tuna",
+    "top_species_2": "Bluefin Tuna",
+    "top_species_3": "Yellowtail"
   },
   {
     "boat": "Grande",
