@@ -27,10 +27,10 @@
     "trip_type": "Full Day",
     "boat": "New Huck Finn",
     "landing": "Fish Emeryville",
-    "trips": 33,
-    "anglers": 583,
-    "fish": 5486,
-    "fpa": 9.41
+    "trips": 34,
+    "anglers": 598,
+    "fish": 5670,
+    "fpa": 9.48
   },
   {
     "rank": 3,
@@ -47,23 +47,23 @@
     "rank": 4,
     "region": "Alameda County",
     "trip_type": "Full Day",
-    "boat": "Oakland Anglers II",
-    "landing": "Fish Emeryville",
-    "trips": 15,
-    "anglers": 212,
-    "fish": 362,
-    "fpa": 1.71
-  },
-  {
-    "rank": 5,
-    "region": "Alameda County",
-    "trip_type": "Full Day",
     "boat": "Pacific Pearl",
     "landing": "Fish Emeryville",
     "trips": 18,
     "anglers": 230,
     "fish": 368,
     "fpa": 1.6
+  },
+  {
+    "rank": 5,
+    "region": "Alameda County",
+    "trip_type": "Full Day",
+    "boat": "Oakland Anglers II",
+    "landing": "Fish Emeryville",
+    "trips": 16,
+    "anglers": 229,
+    "fish": 362,
+    "fpa": 1.58
   },
   {
     "rank": 6,
@@ -181,10 +181,10 @@
     "trip_type": "3/4 Day",
     "boat": "Endeavor (MB)",
     "landing": "Morro Bay Landing",
-    "trips": 6,
-    "anglers": 84,
-    "fish": 362,
-    "fpa": 4.31
+    "trips": 7,
+    "anglers": 107,
+    "fish": 535,
+    "fpa": 5
   },
   {
     "rank": 4,
@@ -210,6 +210,17 @@
   },
   {
     "rank": 1,
+    "region": "Central California",
+    "trip_type": "Full Day",
+    "boat": "Avenger",
+    "landing": "Morro Bay Landing",
+    "trips": 5,
+    "anglers": 109,
+    "fish": 1010,
+    "fpa": 9.27
+  },
+  {
+    "rank": 2,
     "region": "Central California",
     "trip_type": "Full Day",
     "boat": "Endeavor (MB)",
@@ -269,10 +280,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Monte Carlo",
     "landing": "22nd Street Landing",
-    "trips": 34,
-    "anglers": 1098,
-    "fish": 3192,
-    "fpa": 2.91
+    "trips": 35,
+    "anglers": 1112,
+    "fish": 3250,
+    "fpa": 2.92
   },
   {
     "rank": 3,
@@ -720,10 +731,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Clemente",
     "landing": "Dana Wharf Sportfishing",
-    "trips": 30,
-    "anglers": 1060,
-    "fish": 4406,
-    "fpa": 4.16
+    "trips": 31,
+    "anglers": 1068,
+    "fish": 4460,
+    "fpa": 4.18
   },
   {
     "rank": 1,
@@ -885,10 +896,10 @@
     "trip_type": "3/4 Day",
     "boat": "Dana Pride",
     "landing": "Dana Wharf Sportfishing",
-    "trips": 16,
-    "anglers": 708,
-    "fish": 1138,
-    "fpa": 1.61
+    "trips": 17,
+    "anglers": 773,
+    "fish": 1141,
+    "fpa": 1.48
   },
   {
     "rank": 10,
@@ -995,10 +1006,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Southern Cal",
     "landing": "Oceanside Sea Center",
-    "trips": 24,
-    "anglers": 640,
-    "fish": 3179,
-    "fpa": 4.97
+    "trips": 25,
+    "anglers": 657,
+    "fish": 3207,
+    "fpa": 4.88
   },
   {
     "rank": 2,
@@ -1204,10 +1215,10 @@
     "trip_type": "3/4 Day",
     "boat": "Chubasco II",
     "landing": "Oceanside Sea Center",
-    "trips": 14,
-    "anglers": 394,
-    "fish": 2493,
-    "fpa": 6.33
+    "trips": 15,
+    "anglers": 412,
+    "fish": 2536,
+    "fpa": 6.16
   },
   {
     "rank": 4,
@@ -1292,10 +1303,10 @@
     "trip_type": "Full Day Offshore",
     "boat": "San Diego",
     "landing": "Seaforth Sportfishing",
-    "trips": 22,
-    "anglers": 734,
-    "fish": 2737,
-    "fpa": 3.73
+    "trips": 23,
+    "anglers": 769,
+    "fish": 2899,
+    "fpa": 3.77
   },
   {
     "rank": 3,
@@ -1347,10 +1358,10 @@
     "trip_type": "Overnight",
     "boat": "Pacifica",
     "landing": "Seaforth Sportfishing",
-    "trips": 6,
-    "anglers": 120,
-    "fish": 329,
-    "fpa": 2.74
+    "trips": 7,
+    "anglers": 144,
+    "fish": 331,
+    "fpa": 2.3
   },
   {
     "rank": 1,
@@ -1424,8 +1435,8 @@
     "trip_type": "Full Day",
     "boat": "Lovely Martha",
     "landing": "Lovely Martha Sportfishing",
-    "trips": 16,
-    "anglers": 250,
+    "trips": 17,
+    "anglers": 266,
     "fish": 0,
     "fpa": 0
   },
