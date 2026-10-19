@@ -71,10 +71,10 @@
     "trip_type": "Full Day",
     "boat": "Oakland Anglers II",
     "landing": "Fish Emeryville",
-    "trips": 18,
-    "anglers": 269,
-    "fish": 726,
-    "fpa": 2.7
+    "trips": 19,
+    "anglers": 289,
+    "fish": 876,
+    "fpa": 3.03
   },
   {
     "rank": 7,
@@ -82,10 +82,10 @@
     "trip_type": "Full Day",
     "boat": "Pacific Pearl",
     "landing": "Fish Emeryville",
-    "trips": 20,
-    "anglers": 254,
+    "trips": 21,
+    "anglers": 266,
     "fish": 368,
-    "fpa": 1.45
+    "fpa": 1.38
   },
   {
     "rank": 8,
@@ -137,10 +137,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Avenger",
     "landing": "Morro Bay Landing",
-    "trips": 14,
-    "anglers": 350,
-    "fish": 2820,
-    "fpa": 8.06
+    "trips": 15,
+    "anglers": 368,
+    "fish": 3068,
+    "fpa": 8.34
   },
   {
     "rank": 3,
@@ -335,10 +335,10 @@
     "trip_type": "3/4 Day",
     "boat": "Victory",
     "landing": "Long Beach Sportfishing",
-    "trips": 23,
-    "anglers": 916,
-    "fish": 4920,
-    "fpa": 5.37
+    "trips": 24,
+    "anglers": 941,
+    "fish": 5275,
+    "fpa": 5.61
   },
   {
     "rank": 2,
@@ -968,6 +968,17 @@
     "fpa": 2.31
   },
   {
+    "rank": 2,
+    "region": "San Diego County",
+    "trip_type": "1.5 Day",
+    "boat": "Pacifica",
+    "landing": "Seaforth Sportfishing",
+    "trips": 5,
+    "anglers": 101,
+    "fish": 204,
+    "fpa": 2.02
+  },
+  {
     "rank": 1,
     "region": "San Diego County",
     "trip_type": "1/2 Day AM",
@@ -1017,10 +1028,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Daily Double",
     "landing": "Point Loma Sportfishing",
-    "trips": 18,
-    "anglers": 511,
-    "fish": 1221,
-    "fpa": 2.39
+    "trips": 19,
+    "anglers": 531,
+    "fish": 1249,
+    "fpa": 2.35
   },
   {
     "rank": 1,
@@ -1158,23 +1169,23 @@
     "rank": 1,
     "region": "San Diego County",
     "trip_type": "3/4 Day",
+    "boat": "Malihini",
+    "landing": "H&M Landing",
+    "trips": 7,
+    "anglers": 204,
+    "fish": 1485,
+    "fpa": 7.28
+  },
+  {
+    "rank": 2,
+    "region": "San Diego County",
+    "trip_type": "3/4 Day",
     "boat": "Dolphin",
     "landing": "Fisherman's Landing",
     "trips": 16,
     "anglers": 424,
     "fish": 3043,
     "fpa": 7.18
-  },
-  {
-    "rank": 2,
-    "region": "San Diego County",
-    "trip_type": "3/4 Day",
-    "boat": "Malihini",
-    "landing": "H&M Landing",
-    "trips": 6,
-    "anglers": 187,
-    "fish": 1254,
-    "fpa": 6.71
   },
   {
     "rank": 3,
@@ -1193,10 +1204,10 @@
     "trip_type": "3/4 Day",
     "boat": "Chubasco II",
     "landing": "Oceanside Sea Center",
-    "trips": 14,
-    "anglers": 379,
-    "fish": 2422,
-    "fpa": 6.39
+    "trips": 15,
+    "anglers": 412,
+    "fish": 2528,
+    "fpa": 6.14
   },
   {
     "rank": 5,
@@ -1281,10 +1292,10 @@
     "trip_type": "Full Day Offshore",
     "boat": "San Diego",
     "landing": "Seaforth Sportfishing",
-    "trips": 23,
-    "anglers": 769,
-    "fish": 2899,
-    "fpa": 3.77
+    "trips": 24,
+    "anglers": 805,
+    "fish": 3080,
+    "fpa": 3.83
   },
   {
     "rank": 3,
@@ -1332,6 +1343,17 @@
   },
   {
     "rank": 3,
+    "region": "San Diego County",
+    "trip_type": "Overnight",
+    "boat": "Sea Adventure 80",
+    "landing": "H&M Landing",
+    "trips": 5,
+    "anglers": 143,
+    "fish": 413,
+    "fpa": 2.89
+  },
+  {
+    "rank": 4,
     "region": "San Diego County",
     "trip_type": "Overnight",
     "boat": "Pacifica",
@@ -1556,10 +1578,10 @@
     "trip_type": "3/4 Day",
     "boat": "Gentleman",
     "landing": "Channel Islands Sportfishing",
-    "trips": 36,
-    "anglers": 1134,
-    "fish": 6336,
-    "fpa": 5.59
+    "trips": 37,
+    "anglers": 1183,
+    "fish": 6563,
+    "fpa": 5.55
   },
   {
     "rank": 3,
@@ -1633,10 +1655,10 @@
     "trip_type": "Overnight",
     "boat": "New Hustler",
     "landing": "Channel Islands Sportfishing",
-    "trips": 13,
-    "anglers": 283,
-    "fish": 4772,
-    "fpa": 16.86
+    "trips": 14,
+    "anglers": 300,
+    "fish": 5082,
+    "fpa": 16.94
   },
   {
     "rank": 2,
