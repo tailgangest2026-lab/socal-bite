@@ -93,8 +93,8 @@
     "trip_type": "Full Day",
     "boat": "Pacific Pearl",
     "landing": "Fish Emeryville",
-    "trips": 17,
-    "anglers": 212,
+    "trips": 18,
+    "anglers": 221,
     "fish": 0,
     "fpa": 0
   },
@@ -531,15 +531,26 @@
     "rank": 1,
     "region": "NorCal",
     "trip_type": "Full Day",
-    "boat": "Queen of Hearts",
-    "landing": "Half Moon Bay Sportfishing",
-    "trips": 35,
-    "anglers": 462,
-    "fish": 5261,
-    "fpa": 11.39
+    "boat": "Dragonfly",
+    "landing": "Reel Obsession Sportfishing",
+    "trips": 5,
+    "anglers": 25,
+    "fish": 300,
+    "fpa": 12
   },
   {
     "rank": 2,
+    "region": "NorCal",
+    "trip_type": "Full Day",
+    "boat": "Queen of Hearts",
+    "landing": "Half Moon Bay Sportfishing",
+    "trips": 36,
+    "anglers": 475,
+    "fish": 5352,
+    "fpa": 11.27
+  },
+  {
+    "rank": 3,
     "region": "NorCal",
     "trip_type": "Full Day",
     "boat": "Check Mate",
@@ -550,18 +561,18 @@
     "fpa": 10.12
   },
   {
-    "rank": 3,
+    "rank": 4,
     "region": "NorCal",
     "trip_type": "Full Day",
     "boat": "Surf Scooter",
     "landing": "Bodega Bay Sportfishing Center",
-    "trips": 15,
-    "anglers": 230,
-    "fish": 2260,
-    "fpa": 9.83
+    "trips": 16,
+    "anglers": 248,
+    "fish": 2440,
+    "fpa": 9.84
   },
   {
-    "rank": 4,
+    "rank": 5,
     "region": "NorCal",
     "trip_type": "Full Day",
     "boat": "Caroline",
@@ -572,7 +583,7 @@
     "fpa": 5.97
   },
   {
-    "rank": 5,
+    "rank": 6,
     "region": "NorCal",
     "trip_type": "Full Day",
     "boat": "Bass-Tub",
@@ -583,7 +594,7 @@
     "fpa": 4.72
   },
   {
-    "rank": 6,
+    "rank": 7,
     "region": "NorCal",
     "trip_type": "Full Day",
     "boat": "Sorta Salty",
@@ -594,7 +605,7 @@
     "fpa": 0.71
   },
   {
-    "rank": 7,
+    "rank": 8,
     "region": "NorCal",
     "trip_type": "Full Day",
     "boat": "Hog Heaven",
@@ -605,7 +616,7 @@
     "fpa": 0
   },
   {
-    "rank": 8,
+    "rank": 9,
     "region": "NorCal",
     "trip_type": "Full Day",
     "boat": "Argo",
@@ -616,7 +627,7 @@
     "fpa": 0
   },
   {
-    "rank": 9,
+    "rank": 10,
     "region": "NorCal",
     "trip_type": "Full Day",
     "boat": "Outer Limits (Sausalito, CA)",
@@ -627,7 +638,7 @@
     "fpa": 0
   },
   {
-    "rank": 10,
+    "rank": 11,
     "region": "NorCal",
     "trip_type": "Full Day",
     "boat": "Salty Lady",
@@ -946,6 +957,17 @@
     "fpa": 2.61
   },
   {
+    "rank": 6,
+    "region": "Orange County",
+    "trip_type": "Full Day",
+    "boat": "Freelance",
+    "landing": "Davey's Locker",
+    "trips": 5,
+    "anglers": 245,
+    "fish": 569,
+    "fpa": 2.32
+  },
+  {
     "rank": 1,
     "region": "Orange County",
     "trip_type": "Overnight",
@@ -1039,10 +1061,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
-    "trips": 29,
-    "anglers": 1223,
-    "fish": 3400,
-    "fpa": 2.78
+    "trips": 30,
+    "anglers": 1240,
+    "fish": 3429,
+    "fpa": 2.77
   },
   {
     "rank": 1,
@@ -1094,8 +1116,8 @@
     "trip_type": "1/2 Day Twilight",
     "boat": "Tradition",
     "landing": "Fisherman's Landing",
-    "trips": 5,
-    "anglers": 46,
+    "trips": 6,
+    "anglers": 56,
     "fish": 0,
     "fpa": 0
   },
