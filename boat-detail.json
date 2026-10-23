@@ -387,10 +387,10 @@
     "boat": "Freedom",
     "landing": "22nd Street Landing",
     "region": "Los Angeles County",
-    "trips": 73,
-    "anglers": 2354,
-    "fish": 12967,
-    "fpa": 5.51,
+    "trips": 74,
+    "anglers": 2370,
+    "fish": 13117,
+    "fpa": 5.53,
     "top_species_1": "Calico Bass",
     "top_species_2": "Whitefish",
     "top_species_3": "Yellowfin Tuna"
@@ -687,10 +687,10 @@
     "boat": "Queen of Hearts",
     "landing": "Half Moon Bay Sportfishing",
     "region": "NorCal",
-    "trips": 129,
-    "anglers": 1908,
-    "fish": 17295,
-    "fpa": 9.06,
+    "trips": 130,
+    "anglers": 1918,
+    "fish": 17397,
+    "fpa": 9.07,
     "top_species_1": "Rockfish",
     "top_species_2": "Bonito",
     "top_species_3": "Lingcod"
@@ -1119,9 +1119,9 @@
     "boat": "Freelance",
     "landing": "Davey's Locker",
     "region": "Orange County",
-    "trips": 193,
-    "anglers": 9286,
-    "fish": 31783,
+    "trips": 194,
+    "anglers": 9320,
+    "fish": 31912,
     "fpa": 3.42,
     "top_species_1": "Bonito",
     "top_species_2": "Sculpin",
@@ -1131,9 +1131,9 @@
     "boat": "Western Pride",
     "landing": "Davey's Locker",
     "region": "Orange County",
-    "trips": 326,
-    "anglers": 13439,
-    "fish": 41384,
+    "trips": 327,
+    "anglers": 13457,
+    "fish": 41427,
     "fpa": 3.08,
     "top_species_1": "Bonito",
     "top_species_2": "Calico Bass",
@@ -1416,18 +1416,6 @@
     "top_species_3": "Bluefin Tuna"
   },
   {
-    "boat": "Pacific Queen",
-    "landing": "Fisherman's Landing",
-    "region": "San Diego County",
-    "trips": 21,
-    "anglers": 475,
-    "fish": 1763,
-    "fpa": 3.71,
-    "top_species_1": "Bluefin Tuna",
-    "top_species_2": "Yellowtail",
-    "top_species_3": "Yellowfin Tuna"
-  },
-  {
     "boat": "Sea Adventure 80",
     "landing": "H&M Landing",
     "region": "San Diego County",
@@ -1450,6 +1438,18 @@
     "top_species_1": "Yellowfin Tuna",
     "top_species_2": "Bluefin Tuna",
     "top_species_3": "Yellowtail"
+  },
+  {
+    "boat": "Pacific Queen",
+    "landing": "Fisherman's Landing",
+    "region": "San Diego County",
+    "trips": 22,
+    "anglers": 500,
+    "fish": 1763,
+    "fpa": 3.53,
+    "top_species_1": "Bluefin Tuna",
+    "top_species_2": "Yellowtail",
+    "top_species_3": "Yellowfin Tuna"
   },
   {
     "boat": "Sea Watch",
@@ -1572,18 +1572,6 @@
     "top_species_3": "Bluefin Tuna"
   },
   {
-    "boat": "New Lo-An",
-    "landing": "Point Loma Sportfishing",
-    "region": "San Diego County",
-    "trips": 16,
-    "anglers": 321,
-    "fish": 975,
-    "fpa": 3.04,
-    "top_species_1": "Bluefin Tuna",
-    "top_species_2": "Yellowtail",
-    "top_species_3": "Yellowfin Tuna"
-  },
-  {
     "boat": "Old Glory",
     "landing": "H&M Landing",
     "region": "San Diego County",
@@ -1606,6 +1594,18 @@
     "top_species_1": "Yellowfin Tuna",
     "top_species_2": "Yellowtail",
     "top_species_3": "Bonito"
+  },
+  {
+    "boat": "New Lo-An",
+    "landing": "Point Loma Sportfishing",
+    "region": "San Diego County",
+    "trips": 17,
+    "anglers": 338,
+    "fish": 977,
+    "fpa": 2.89,
+    "top_species_1": "Bluefin Tuna",
+    "top_species_2": "Yellowtail",
+    "top_species_3": "Yellowfin Tuna"
   },
   {
     "boat": "Mission Belle",
@@ -1752,28 +1752,28 @@
     "top_species_3": "Sculpin"
   },
   {
-    "boat": "Tradition",
-    "landing": "Fisherman's Landing",
-    "region": "San Diego County",
-    "trips": 32,
-    "anglers": 706,
-    "fish": 1511,
-    "fpa": 2.14,
-    "top_species_1": "Yellowfin Tuna",
-    "top_species_2": "Yellowtail",
-    "top_species_3": "Rockfish"
-  },
-  {
     "boat": "Ocean Odyssey",
     "landing": "H&M Landing",
     "region": "San Diego County",
-    "trips": 27,
-    "anglers": 647,
-    "fish": 1331,
-    "fpa": 2.06,
+    "trips": 28,
+    "anglers": 665,
+    "fish": 1455,
+    "fpa": 2.19,
     "top_species_1": "Yellowfin Tuna",
     "top_species_2": "Bluefin Tuna",
     "top_species_3": "Yellowtail"
+  },
+  {
+    "boat": "Tradition",
+    "landing": "Fisherman's Landing",
+    "region": "San Diego County",
+    "trips": 33,
+    "anglers": 716,
+    "fish": 1511,
+    "fpa": 2.11,
+    "top_species_1": "Yellowfin Tuna",
+    "top_species_2": "Yellowtail",
+    "top_species_3": "Rockfish"
   },
   {
     "boat": "Grande",
