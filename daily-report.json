@@ -142,12 +142,42 @@
   {
     "trip_date": "2026-10-27",
     "region": "San Diego County",
+    "landing": "Fisherman's Landing",
+    "boat": "Dolphin",
+    "trip_type": "3/4 Day",
+    "anglers": 18,
+    "fish_counts": "36 Calico Bass, 48 Sand Bass, 31 Sculpin, 12 Sheephead, 2 Yellowtail",
+    "total_fish": 129
+  },
+  {
+    "trip_date": "2026-10-27",
+    "region": "San Diego County",
+    "landing": "H&M Landing",
+    "boat": "Grande",
+    "trip_type": "Full Day Offshore",
+    "anglers": 28,
+    "fish_counts": "5 Yellowfin Tuna",
+    "total_fish": 5
+  },
+  {
+    "trip_date": "2026-10-27",
+    "region": "San Diego County",
     "landing": "H&M Landing",
     "boat": "Legend",
     "trip_type": "2 Day",
     "anglers": 27,
     "fish_counts": "25 Bonito, 63 Yellowfin Tuna",
     "total_fish": 88
+  },
+  {
+    "trip_date": "2026-10-27",
+    "region": "San Diego County",
+    "landing": "Oceanside Sea Center",
+    "boat": "Southern Cal",
+    "trip_type": "1/2 Day AM",
+    "anglers": 23,
+    "fish_counts": "25 Calico Bass, 50 Calico Bass Released, 6 Sand Bass",
+    "total_fish": 81
   },
   {
     "trip_date": "2026-10-27",
@@ -168,6 +198,36 @@
     "anglers": 56,
     "fish_counts": "1 Barracuda, 3 Calico Bass, 1 Yellowfin Tuna",
     "total_fish": 5
+  },
+  {
+    "trip_date": "2026-10-27",
+    "region": "San Diego County",
+    "landing": "Seaforth Sportfishing",
+    "boat": "New Seaforth",
+    "trip_type": "1/2 Day PM",
+    "anglers": 40,
+    "fish_counts": "16 Calico Bass, 75 Calico Bass Released, 6 Sand Bass, 5 Sculpin, 1 Sheephead, 1 Yellowtail",
+    "total_fish": 104
+  },
+  {
+    "trip_date": "2026-10-27",
+    "region": "San Diego County",
+    "landing": "Seaforth Sportfishing",
+    "boat": "San Diego",
+    "trip_type": "Full Day Offshore",
+    "anglers": 24,
+    "fish_counts": "128 Yellowfin Tuna",
+    "total_fish": 128
+  },
+  {
+    "trip_date": "2026-10-27",
+    "region": "San Diego County",
+    "landing": "Seaforth Sportfishing",
+    "boat": "Sea Watch",
+    "trip_type": "Full Day Offshore",
+    "anglers": 30,
+    "fish_counts": "24 Yellowfin Tuna",
+    "total_fish": 24
   },
   {
     "trip_date": "2026-10-27",
@@ -338,6 +398,16 @@
     "anglers": 11,
     "fish_counts": "12 Bonito",
     "total_fish": 12
+  },
+  {
+    "trip_date": "2026-10-26",
+    "region": "Central California",
+    "landing": "Patriot Sportfishing",
+    "boat": "Patriot (Avila Beach)",
+    "trip_type": "1/2 Day AM",
+    "anglers": 20,
+    "fish_counts": "",
+    "total_fish": 0
   },
   {
     "trip_date": "2026-10-26",
