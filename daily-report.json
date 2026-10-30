@@ -1,6 +1,46 @@
 [
   {
     "trip_date": "2026-10-30",
+    "region": "Alameda County",
+    "landing": "Fish Emeryville",
+    "boat": "KingFish",
+    "trip_type": "Full Day",
+    "anglers": 14,
+    "fish_counts": "4 Lingcod, 139 Rockfish",
+    "total_fish": 143
+  },
+  {
+    "trip_date": "2026-10-30",
+    "region": "Alameda County",
+    "landing": "Fish Emeryville",
+    "boat": "New Huck Finn",
+    "trip_type": "Full Day",
+    "anglers": 10,
+    "fish_counts": "20 Lingcod, 100 Rockfish",
+    "total_fish": 120
+  },
+  {
+    "trip_date": "2026-10-30",
+    "region": "Alameda County",
+    "landing": "Fish Emeryville",
+    "boat": "Oakland Anglers II",
+    "trip_type": "Full Day",
+    "anglers": 15,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-10-30",
+    "region": "Alameda County",
+    "landing": "Fish Emeryville",
+    "boat": "TigerFish",
+    "trip_type": "Full Day",
+    "anglers": 21,
+    "fish_counts": "6 Lingcod, 210 Rockfish",
+    "total_fish": 216
+  },
+  {
+    "trip_date": "2026-10-30",
     "region": "Central California",
     "landing": "Patriot Sportfishing",
     "boat": "Patriot (Avila Beach)",
@@ -61,6 +101,16 @@
   },
   {
     "trip_date": "2026-10-30",
+    "region": "Los Angeles County",
+    "landing": "Redondo Beach Sportfishing",
+    "boat": "Navegante",
+    "trip_type": "2 Day",
+    "anglers": 14,
+    "fish_counts": "55 Rockfish, 3 Sculpin, 6 Sheephead, 30 Whitefish, 63 Yellowtail",
+    "total_fish": 157
+  },
+  {
+    "trip_date": "2026-10-30",
     "region": "NorCal",
     "landing": "Chris' Fishing Trips",
     "boat": "Check Mate",
@@ -113,6 +163,16 @@
     "trip_date": "2026-10-30",
     "region": "Orange County",
     "landing": "Davey's Locker",
+    "boat": "Blackfish",
+    "trip_type": "Full Day",
+    "anglers": 6,
+    "fish_counts": "60 Yellowfin Tuna",
+    "total_fish": 60
+  },
+  {
+    "trip_date": "2026-10-30",
+    "region": "Orange County",
+    "landing": "Davey's Locker",
     "boat": "Freelance",
     "trip_type": "3/4 Day",
     "anglers": 36,
@@ -151,6 +211,56 @@
   },
   {
     "trip_date": "2026-10-30",
+    "region": "San Diego County",
+    "landing": "Fisherman's Landing",
+    "boat": "Tradition",
+    "trip_type": "1/2 Day Twilight",
+    "anglers": 9,
+    "fish_counts": "",
+    "total_fish": 0
+  },
+  {
+    "trip_date": "2026-10-30",
+    "region": "San Diego County",
+    "landing": "H&M Landing",
+    "boat": "Ocean Odyssey",
+    "trip_type": "1.5 Day",
+    "anglers": 29,
+    "fish_counts": "16 Yellowfin Tuna, 13 Yellowtail",
+    "total_fish": 29
+  },
+  {
+    "trip_date": "2026-10-30",
+    "region": "San Diego County",
+    "landing": "H&M Landing",
+    "boat": "Premier",
+    "trip_type": "1/2 Day AM",
+    "anglers": 22,
+    "fish_counts": "62 Barracuda, 28 Bonito, 1 Halibut, 7 Rockfish, 11 Sand Bass, 5 Yellowtail",
+    "total_fish": 114
+  },
+  {
+    "trip_date": "2026-10-30",
+    "region": "San Diego County",
+    "landing": "Seaforth Sportfishing",
+    "boat": "New Seaforth",
+    "trip_type": "1/2 Day AM",
+    "anglers": 52,
+    "fish_counts": "2 Bonito, 4 Yellowfin Tuna",
+    "total_fish": 6
+  },
+  {
+    "trip_date": "2026-10-30",
+    "region": "San Diego County",
+    "landing": "Seaforth Sportfishing",
+    "boat": "Tribute",
+    "trip_type": "1.5 Day",
+    "anglers": 15,
+    "fish_counts": "10 Bonito, 22 Yellowfin Tuna",
+    "total_fish": 32
+  },
+  {
+    "trip_date": "2026-10-30",
     "region": "San Mateo County",
     "landing": "Riptide Sportfishing",
     "boat": "Riptide",
@@ -161,6 +271,16 @@
   },
   {
     "trip_date": "2026-10-30",
+    "region": "San Mateo County",
+    "landing": "Riptide Sportfishing",
+    "boat": "Riptide",
+    "trip_type": "Full Day",
+    "anglers": 14,
+    "fish_counts": "170 Rockfish",
+    "total_fish": 170
+  },
+  {
+    "trip_date": "2026-10-30",
     "region": "Santa Barbara County",
     "landing": "Santa Barbara Landing",
     "boat": "Coral Sea",
@@ -168,6 +288,16 @@
     "anglers": 22,
     "fish_counts": "14 Lingcod, 69 Rockfish, 220 Whitefish",
     "total_fish": 303
+  },
+  {
+    "trip_date": "2026-10-30",
+    "region": "Santa Barbara County",
+    "landing": "Santa Barbara Landing",
+    "boat": "Stardust",
+    "trip_type": "3/4 Day",
+    "anglers": 24,
+    "fish_counts": "12 Lingcod, 74 Rockfish, 2 Sheephead, 240 Whitefish, 2 Yellowtail",
+    "total_fish": 330
   },
   {
     "trip_date": "2026-10-30",
@@ -328,6 +458,16 @@
     "anglers": 34,
     "fish_counts": "15 Calico Bass, 4 Lingcod, 110 Rockfish, 17 Sand Bass, 14 Sculpin",
     "total_fish": 160
+  },
+  {
+    "trip_date": "2026-10-29",
+    "region": "Los Angeles County",
+    "landing": "Redondo Beach Sportfishing",
+    "boat": "Navegante",
+    "trip_type": "2 Day",
+    "anglers": 14,
+    "fish_counts": "55 Rockfish, 3 Sculpin, 6 Sheephead, 30 Whitefish, 63 Yellowtail",
+    "total_fish": 157
   },
   {
     "trip_date": "2026-10-29",
