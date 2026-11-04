@@ -973,10 +973,10 @@
     "trip_type": "1/2 Day PM",
     "boat": "Daily Double",
     "landing": "Point Loma Sportfishing",
-    "trips": 9,
-    "anglers": 185,
-    "fish": 244,
-    "fpa": 1.32
+    "trips": 10,
+    "anglers": 196,
+    "fish": 247,
+    "fpa": 1.26
   },
   {
     "rank": 1,
@@ -984,8 +984,8 @@
     "trip_type": "1/2 Day Twilight",
     "boat": "Tradition",
     "landing": "Fisherman's Landing",
-    "trips": 11,
-    "anglers": 107,
+    "trips": 12,
+    "anglers": 117,
     "fish": 0,
     "fpa": 0
   },
@@ -999,6 +999,17 @@
     "anglers": 103,
     "fish": 323,
     "fpa": 3.14
+  },
+  {
+    "rank": 2,
+    "region": "San Diego County",
+    "trip_type": "2 Day",
+    "boat": "New Lo-An",
+    "landing": "Point Loma Sportfishing",
+    "trips": 5,
+    "anglers": 123,
+    "fish": 242,
+    "fpa": 1.97
   },
   {
     "rank": 1,
