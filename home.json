@@ -1,5 +1,93 @@
-{
-  "error": "File not found",
-  "file": "home.json",
-  "message": "Error: File not found: home.json"
-}
+[
+  {
+    "region": "Central California",
+    "total_trips_today": 1,
+    "total_anglers_today": 23,
+    "total_fish_today": 2,
+    "top_boat_today": "Patriot (Avila Beach)",
+    "top_landing_today": "Patriot Sportfishing",
+    "top_species_today": "Whitefish",
+    "best_boat_last_30_days": "Starfire",
+    "best_boat_last_90_days": "Avenger",
+    "most_caught_species_last_30_days": "Rockfish",
+    "most_caught_species_last_90_days": "Rockfish"
+  },
+  {
+    "region": "Los Angeles County",
+    "total_trips_today": 8,
+    "total_anglers_today": 204,
+    "total_fish_today": 618,
+    "top_boat_today": "New Del Mar",
+    "top_landing_today": "Marina Del Rey Sportfishing",
+    "top_species_today": "Sculpin",
+    "best_boat_last_30_days": "Eldorado",
+    "best_boat_last_90_days": "Eldorado",
+    "most_caught_species_last_30_days": "Whitefish",
+    "most_caught_species_last_90_days": "Whitefish"
+  },
+  {
+    "region": "Monterey County",
+    "total_trips_today": 1,
+    "total_anglers_today": 4,
+    "total_fish_today": 4,
+    "top_boat_today": "Kahuna",
+    "top_landing_today": "J&M Sportfishing",
+    "top_species_today": "Bluefin Tuna",
+    "best_boat_last_30_days": "Chubasco",
+    "best_boat_last_90_days": "New Horizon",
+    "most_caught_species_last_30_days": "Rockfish",
+    "most_caught_species_last_90_days": "Rockfish"
+  },
+  {
+    "region": "NorCal",
+    "total_trips_today": 2,
+    "total_anglers_today": 24,
+    "total_fish_today": 205,
+    "top_boat_today": "Caroline",
+    "top_landing_today": "Chris' Fishing Trips",
+    "top_species_today": "Rockfish",
+    "best_boat_last_30_days": "Dragonfly",
+    "best_boat_last_90_days": "Salmon Streaker",
+    "most_caught_species_last_30_days": "Rockfish",
+    "most_caught_species_last_90_days": "Rockfish"
+  },
+  {
+    "region": "Orange County",
+    "total_trips_today": 11,
+    "total_anglers_today": 329,
+    "total_fish_today": 859,
+    "top_boat_today": "Clemente",
+    "top_landing_today": "Dana Wharf Sportfishing",
+    "top_species_today": "Calico Bass Released",
+    "best_boat_last_30_days": "Second Chance",
+    "best_boat_last_90_days": "Fury",
+    "most_caught_species_last_30_days": "Yellowfin Tuna",
+    "most_caught_species_last_90_days": "Bonito"
+  },
+  {
+    "region": "San Diego County",
+    "total_trips_today": 11,
+    "total_anglers_today": 370,
+    "total_fish_today": 342,
+    "top_boat_today": "New Seaforth",
+    "top_landing_today": "Seaforth Sportfishing",
+    "top_species_today": "Yellowfin Tuna",
+    "best_boat_last_30_days": "Pacific Voyager",
+    "best_boat_last_90_days": "Little G",
+    "most_caught_species_last_30_days": "Yellowfin Tuna",
+    "most_caught_species_last_90_days": "Yellowfin Tuna"
+  },
+  {
+    "region": "Santa Barbara County",
+    "total_trips_today": 2,
+    "total_anglers_today": 29,
+    "total_fish_today": 285,
+    "top_boat_today": "Coral Sea",
+    "top_landing_today": "Santa Barbara Landing",
+    "top_species_today": "Rockfish",
+    "best_boat_last_30_days": "Coral Sea",
+    "best_boat_last_90_days": "Coral Sea",
+    "most_caught_species_last_30_days": "Whitefish",
+    "most_caught_species_last_90_days": "Rockfish"
+  }
+]
