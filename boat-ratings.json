@@ -16,10 +16,10 @@
     "trip_type": "Full Day",
     "boat": "Sea Wolf",
     "landing": "Fish Emeryville",
-    "trips": 19,
-    "anglers": 380,
-    "fish": 4372,
-    "fpa": 11.51
+    "trips": 20,
+    "anglers": 400,
+    "fish": 4572,
+    "fpa": 11.43
   },
   {
     "rank": 2,
@@ -27,10 +27,10 @@
     "trip_type": "Full Day",
     "boat": "New Huck Finn",
     "landing": "Fish Emeryville",
-    "trips": 20,
-    "anglers": 326,
-    "fish": 3542,
-    "fpa": 10.87
+    "trips": 21,
+    "anglers": 352,
+    "fish": 3802,
+    "fpa": 10.8
   },
   {
     "rank": 3,
@@ -49,10 +49,10 @@
     "trip_type": "Full Day",
     "boat": "Lady K",
     "landing": "Fish Emeryville",
-    "trips": 10,
-    "anglers": 74,
-    "fish": 542,
-    "fpa": 7.32
+    "trips": 11,
+    "anglers": 85,
+    "fish": 652,
+    "fpa": 7.67
   },
   {
     "rank": 5,
@@ -60,13 +60,24 @@
     "trip_type": "Full Day",
     "boat": "Oakland Anglers II",
     "landing": "Fish Emeryville",
-    "trips": 18,
-    "anglers": 292,
-    "fish": 1074,
-    "fpa": 3.68
+    "trips": 19,
+    "anglers": 312,
+    "fish": 1256,
+    "fpa": 4.03
   },
   {
     "rank": 6,
+    "region": "Alameda County",
+    "trip_type": "Full Day",
+    "boat": "Pacific Pearl",
+    "landing": "Fish Emeryville",
+    "trips": 7,
+    "anglers": 84,
+    "fish": 182,
+    "fpa": 2.17
+  },
+  {
+    "rank": 7,
     "region": "Alameda County",
     "trip_type": "Full Day",
     "boat": "Scallywag",
@@ -77,7 +88,7 @@
     "fpa": 1.45
   },
   {
-    "rank": 7,
+    "rank": 8,
     "region": "Alameda County",
     "trip_type": "Full Day",
     "boat": "Here We Go",
@@ -88,24 +99,13 @@
     "fpa": 0.2
   },
   {
-    "rank": 8,
+    "rank": 9,
     "region": "Alameda County",
     "trip_type": "Full Day",
     "boat": "Diamond",
     "landing": "Fish Emeryville",
     "trips": 6,
     "anglers": 36,
-    "fish": 0,
-    "fpa": 0
-  },
-  {
-    "rank": 9,
-    "region": "Alameda County",
-    "trip_type": "Full Day",
-    "boat": "Pacific Pearl",
-    "landing": "Fish Emeryville",
-    "trips": 6,
-    "anglers": 66,
     "fish": 0,
     "fpa": 0
   },
@@ -135,23 +135,23 @@
     "rank": 3,
     "region": "Central California",
     "trip_type": "1/2 Day AM",
-    "boat": "Flying Fish",
+    "boat": "Patriot (Avila Beach)",
     "landing": "Patriot Sportfishing",
-    "trips": 17,
-    "anglers": 276,
-    "fish": 64,
-    "fpa": 0.23
+    "trips": 20,
+    "anglers": 415,
+    "fish": 88,
+    "fpa": 0.21
   },
   {
     "rank": 4,
     "region": "Central California",
     "trip_type": "1/2 Day AM",
-    "boat": "Patriot (Avila Beach)",
+    "boat": "Flying Fish",
     "landing": "Patriot Sportfishing",
     "trips": 19,
-    "anglers": 386,
-    "fish": 88,
-    "fpa": 0.23
+    "anglers": 320,
+    "fish": 66,
+    "fpa": 0.21
   },
   {
     "rank": 1,
@@ -247,10 +247,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Monte Carlo",
     "landing": "22nd Street Landing",
-    "trips": 34,
-    "anglers": 938,
-    "fish": 2990,
-    "fpa": 3.19
+    "trips": 35,
+    "anglers": 1006,
+    "fish": 3173,
+    "fpa": 3.15
   },
   {
     "rank": 2,
@@ -918,10 +918,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "Premier",
     "landing": "H&M Landing",
-    "trips": 18,
-    "anglers": 524,
-    "fish": 1341,
-    "fpa": 2.56
+    "trips": 19,
+    "anglers": 576,
+    "fish": 1358,
+    "fpa": 2.36
   },
   {
     "rank": 5,
@@ -929,10 +929,10 @@
     "trip_type": "1/2 Day AM",
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
-    "trips": 30,
-    "anglers": 1341,
-    "fish": 1845,
-    "fpa": 1.38
+    "trips": 31,
+    "anglers": 1387,
+    "fish": 1976,
+    "fpa": 1.42
   },
   {
     "rank": 1,
@@ -1028,10 +1028,10 @@
     "trip_type": "3/4 Day",
     "boat": "Chubasco II",
     "landing": "Oceanside Sea Center",
-    "trips": 14,
-    "anglers": 316,
-    "fish": 1737,
-    "fpa": 5.5
+    "trips": 15,
+    "anglers": 323,
+    "fish": 1748,
+    "fpa": 5.41
   },
   {
     "rank": 4,
@@ -1358,10 +1358,10 @@
     "trip_type": "Overnight",
     "boat": "Mirage",
     "landing": "Channel Islands Sportfishing",
-    "trips": 8,
-    "anglers": 156,
-    "fish": 2936,
-    "fpa": 18.82
+    "trips": 9,
+    "anglers": 177,
+    "fish": 3356,
+    "fpa": 18.96
   },
   {
     "rank": 2,
