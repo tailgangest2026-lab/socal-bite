@@ -2,77 +2,85 @@
   {
     "rank": 1,
     "region": "Los Angeles County",
-    "trips": 374,
-    "anglers": 11339,
-    "fish": 47288,
-    "fpa": 4.17
+    "trips": 376,
+    "anglers": 11520,
+    "fish": 50289,
+    "fpa": 4.37
   },
   {
     "rank": 2,
     "region": "Ventura County",
-    "trips": 209,
-    "anglers": 4494,
-    "fish": 38149,
-    "fpa": 8.49
+    "trips": 204,
+    "anglers": 4403,
+    "fish": 38882,
+    "fpa": 8.83
   },
   {
     "rank": 3,
     "region": "Orange County",
-    "trips": 379,
-    "anglers": 10938,
-    "fish": 36211,
+    "trips": 378,
+    "anglers": 11063,
+    "fish": 36577,
     "fpa": 3.31
   },
   {
     "rank": 4,
     "region": "San Diego County",
-    "trips": 483,
-    "anglers": 12126,
-    "fish": 30423,
-    "fpa": 2.51
+    "trips": 464,
+    "anglers": 11673,
+    "fish": 28698,
+    "fpa": 2.46
   },
   {
     "rank": 5,
     "region": "NorCal",
-    "trips": 198,
-    "anglers": 2419,
-    "fish": 21783,
-    "fpa": 9
+    "trips": 196,
+    "anglers": 2415,
+    "fish": 22402,
+    "fpa": 9.28
   },
   {
     "rank": 6,
     "region": "Alameda County",
-    "trips": 151,
-    "anglers": 2125,
-    "fish": 16473,
-    "fpa": 7.75
+    "trips": 147,
+    "anglers": 2083,
+    "fish": 16081,
+    "fpa": 7.72
   },
   {
     "rank": 7,
-    "region": "Central California",
-    "trips": 142,
-    "anglers": 2446,
-    "fish": 12176,
-    "fpa": 4.98
+    "region": "Santa Barbara County",
+    "trips": 48,
+    "anglers": 963,
+    "fish": 12651,
+    "fpa": 13.14
   },
   {
     "rank": 8,
-    "region": "Santa Barbara County",
-    "trips": 47,
-    "anglers": 923,
-    "fish": 12109,
-    "fpa": 13.12
+    "region": "Central California",
+    "trips": 142,
+    "anglers": 2486,
+    "fish": 12487,
+    "fpa": 5.02
   },
   {
     "rank": 9,
     "region": "San Francisco Bay",
-    "trips": 78,
-    "anglers": 1207,
-    "fish": 5755,
-    "fpa": 4.77
+    "trips": 75,
+    "anglers": 1238,
+    "fish": 6396,
+    "fpa": 5.17
   },
   {
     "rank": 10,
+    "region": "SoCal",
+    "trips": 29,
+    "anglers": 665,
+    "fish": 4979,
+    "fpa": 7.49
+  },
+  {
+    "rank": 11,
     "region": "Monterey County",
     "trips": 42,
     "anglers": 572,
@@ -80,27 +88,19 @@
     "fpa": 8.42
   },
   {
-    "rank": 11,
-    "region": "SoCal",
-    "trips": 25,
-    "anglers": 535,
-    "fish": 4188,
-    "fpa": 7.83
-  },
-  {
     "rank": 12,
-    "region": "Marin County",
-    "trips": 15,
-    "anglers": 223,
-    "fish": 1827,
-    "fpa": 8.19
-  },
-  {
-    "rank": 13,
     "region": "San Mateo County",
     "trips": 16,
     "anglers": 176,
     "fish": 1720,
     "fpa": 9.77
+  },
+  {
+    "rank": 13,
+    "region": "Marin County",
+    "trips": 14,
+    "anglers": 210,
+    "fish": 1679,
+    "fpa": 8
   }
 ]
