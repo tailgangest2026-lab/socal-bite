@@ -30813,11 +30813,51 @@
     "year": 2026,
     "week": 47,
     "region": "Alameda County",
+    "species": "Lingcod",
+    "trips": 1,
+    "anglers": 18,
+    "fish": 2,
+    "fpa": 0.11
+  },
+  {
+    "year": 2026,
+    "week": 47,
+    "region": "Alameda County",
     "species": "Rockfish",
-    "trips": 4,
-    "anglers": 86,
-    "fish": 860,
-    "fpa": 10
+    "trips": 12,
+    "anglers": 216,
+    "fish": 1673,
+    "fpa": 7.75
+  },
+  {
+    "year": 2026,
+    "week": 47,
+    "region": "Central California",
+    "species": "Lingcod",
+    "trips": 1,
+    "anglers": 10,
+    "fish": 2,
+    "fpa": 0.2
+  },
+  {
+    "year": 2026,
+    "week": 47,
+    "region": "Central California",
+    "species": "Red Rockfish",
+    "trips": 1,
+    "anglers": 10,
+    "fish": 11,
+    "fpa": 1.1
+  },
+  {
+    "year": 2026,
+    "week": 47,
+    "region": "Central California",
+    "species": "Rockfish",
+    "trips": 1,
+    "anglers": 10,
+    "fish": 43,
+    "fpa": 4.3
   },
   {
     "year": 2026,
@@ -30854,10 +30894,10 @@
     "week": 47,
     "region": "Orange County",
     "species": "Calico Bass",
-    "trips": 2,
-    "anglers": 84,
-    "fish": 94,
-    "fpa": 1.12
+    "trips": 3,
+    "anglers": 130,
+    "fish": 139,
+    "fpa": 1.07
   },
   {
     "year": 2026,
@@ -30914,29 +30954,29 @@
     "week": 47,
     "region": "San Diego County",
     "species": "Barracuda",
-    "trips": 11,
-    "anglers": 320,
-    "fish": 155,
-    "fpa": 0.48
+    "trips": 15,
+    "anglers": 402,
+    "fish": 238,
+    "fpa": 0.59
   },
   {
     "year": 2026,
     "week": 47,
     "region": "San Diego County",
     "species": "Bonito",
-    "trips": 9,
-    "anglers": 272,
-    "fish": 208,
-    "fpa": 0.76
+    "trips": 15,
+    "anglers": 390,
+    "fish": 343,
+    "fpa": 0.88
   },
   {
     "year": 2026,
     "week": 47,
     "region": "San Diego County",
     "species": "Calico Bass",
-    "trips": 6,
-    "anglers": 187,
-    "fish": 169,
+    "trips": 8,
+    "anglers": 227,
+    "fish": 205,
     "fpa": 0.9
   },
   {
@@ -30954,9 +30994,19 @@
     "week": 47,
     "region": "San Diego County",
     "species": "Halibut",
-    "trips": 2,
-    "anglers": 57,
-    "fish": 2,
+    "trips": 3,
+    "anglers": 79,
+    "fish": 3,
+    "fpa": 0.04
+  },
+  {
+    "year": 2026,
+    "week": 47,
+    "region": "San Diego County",
+    "species": "Lingcod",
+    "trips": 1,
+    "anglers": 24,
+    "fish": 1,
     "fpa": 0.04
   },
   {
@@ -30974,20 +31024,20 @@
     "week": 47,
     "region": "San Diego County",
     "species": "Rockfish",
-    "trips": 3,
-    "anglers": 90,
-    "fish": 29,
-    "fpa": 0.32
+    "trips": 5,
+    "anglers": 132,
+    "fish": 36,
+    "fpa": 0.27
   },
   {
     "year": 2026,
     "week": 47,
     "region": "San Diego County",
     "species": "Sand Bass",
-    "trips": 10,
-    "anglers": 303,
-    "fish": 65,
-    "fpa": 0.21
+    "trips": 15,
+    "anglers": 403,
+    "fish": 109,
+    "fpa": 0.27
   },
   {
     "year": 2026,
@@ -31004,50 +31054,50 @@
     "week": 47,
     "region": "San Diego County",
     "species": "Sheephead",
-    "trips": 1,
-    "anglers": 26,
-    "fish": 1,
-    "fpa": 0.04
+    "trips": 3,
+    "anglers": 66,
+    "fish": 3,
+    "fpa": 0.05
   },
   {
     "year": 2026,
     "week": 47,
     "region": "San Diego County",
     "species": "Whitefish",
-    "trips": 4,
-    "anglers": 101,
-    "fish": 6,
-    "fpa": 0.06
+    "trips": 6,
+    "anglers": 141,
+    "fish": 30,
+    "fpa": 0.21
   },
   {
     "year": 2026,
     "week": 47,
     "region": "San Diego County",
     "species": "Yellowfin Tuna",
-    "trips": 10,
-    "anglers": 262,
-    "fish": 320,
-    "fpa": 1.22
+    "trips": 14,
+    "anglers": 340,
+    "fish": 461,
+    "fpa": 1.36
   },
   {
     "year": 2026,
     "week": 47,
     "region": "San Diego County",
     "species": "Yellowtail",
-    "trips": 13,
-    "anglers": 372,
-    "fish": 94,
-    "fpa": 0.25
+    "trips": 17,
+    "anglers": 448,
+    "fish": 109,
+    "fpa": 0.24
   },
   {
     "year": 2026,
     "week": 47,
     "region": "San Francisco Bay",
     "species": "Rockfish",
-    "trips": 4,
-    "anglers": 90,
-    "fish": 720,
-    "fpa": 8
+    "trips": 5,
+    "anglers": 110,
+    "fish": 882,
+    "fpa": 8.02
   },
   {
     "year": 2025,
