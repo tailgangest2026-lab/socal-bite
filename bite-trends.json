@@ -30814,9 +30814,9 @@
     "week": 47,
     "region": "Alameda County",
     "species": "Lingcod",
-    "trips": 1,
-    "anglers": 18,
-    "fish": 2,
+    "trips": 2,
+    "anglers": 36,
+    "fish": 4,
     "fpa": 0.11
   },
   {
@@ -30824,19 +30824,19 @@
     "week": 47,
     "region": "Alameda County",
     "species": "Rockfish",
-    "trips": 12,
-    "anglers": 216,
-    "fish": 1673,
-    "fpa": 7.75
+    "trips": 20,
+    "anglers": 346,
+    "fish": 2486,
+    "fpa": 7.18
   },
   {
     "year": 2026,
     "week": 47,
     "region": "Central California",
     "species": "Lingcod",
-    "trips": 1,
-    "anglers": 10,
-    "fish": 2,
+    "trips": 2,
+    "anglers": 20,
+    "fish": 4,
     "fpa": 0.2
   },
   {
@@ -30844,9 +30844,9 @@
     "week": 47,
     "region": "Central California",
     "species": "Red Rockfish",
-    "trips": 1,
-    "anglers": 10,
-    "fish": 11,
+    "trips": 2,
+    "anglers": 20,
+    "fish": 22,
     "fpa": 1.1
   },
   {
@@ -30854,10 +30854,50 @@
     "week": 47,
     "region": "Central California",
     "species": "Rockfish",
-    "trips": 1,
-    "anglers": 10,
-    "fish": 43,
+    "trips": 2,
+    "anglers": 20,
+    "fish": 86,
     "fpa": 4.3
+  },
+  {
+    "year": 2026,
+    "week": 47,
+    "region": "Los Angeles County",
+    "species": "Bonito",
+    "trips": 2,
+    "anglers": 52,
+    "fish": 136,
+    "fpa": 2.62
+  },
+  {
+    "year": 2026,
+    "week": 47,
+    "region": "Los Angeles County",
+    "species": "Sand Bass",
+    "trips": 2,
+    "anglers": 52,
+    "fish": 2,
+    "fpa": 0.04
+  },
+  {
+    "year": 2026,
+    "week": 47,
+    "region": "Los Angeles County",
+    "species": "Sculpin",
+    "trips": 2,
+    "anglers": 52,
+    "fish": 10,
+    "fpa": 0.19
+  },
+  {
+    "year": 2026,
+    "week": 47,
+    "region": "Los Angeles County",
+    "species": "Yellowtail",
+    "trips": 2,
+    "anglers": 52,
+    "fish": 6,
+    "fpa": 0.12
   },
   {
     "year": 2026,
@@ -30874,10 +30914,10 @@
     "week": 47,
     "region": "NorCal",
     "species": "Rockfish",
-    "trips": 6,
-    "anglers": 48,
-    "fish": 466,
-    "fpa": 9.71
+    "trips": 10,
+    "anglers": 112,
+    "fish": 1106,
+    "fpa": 9.88
   },
   {
     "year": 2026,
@@ -30894,10 +30934,10 @@
     "week": 47,
     "region": "Orange County",
     "species": "Calico Bass",
-    "trips": 3,
-    "anglers": 130,
-    "fish": 139,
-    "fpa": 1.07
+    "trips": 4,
+    "anglers": 176,
+    "fish": 184,
+    "fpa": 1.05
   },
   {
     "year": 2026,
@@ -31093,11 +31133,31 @@
     "year": 2026,
     "week": 47,
     "region": "San Francisco Bay",
+    "species": "Bonito",
+    "trips": 2,
+    "anglers": 16,
+    "fish": 2,
+    "fpa": 0.13
+  },
+  {
+    "year": 2026,
+    "week": 47,
+    "region": "San Francisco Bay",
+    "species": "Lingcod",
+    "trips": 2,
+    "anglers": 16,
+    "fish": 2,
+    "fpa": 0.13
+  },
+  {
+    "year": 2026,
+    "week": 47,
+    "region": "San Francisco Bay",
     "species": "Rockfish",
-    "trips": 5,
-    "anglers": 110,
-    "fish": 882,
-    "fpa": 8.02
+    "trips": 12,
+    "anglers": 236,
+    "fish": 1834,
+    "fpa": 7.77
   },
   {
     "year": 2025,
