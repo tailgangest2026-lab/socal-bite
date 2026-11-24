@@ -38,10 +38,10 @@
     "trip_type": "Full Day",
     "boat": "C Gull II",
     "landing": "Fish Emeryville",
-    "trips": 12,
-    "anglers": 214,
-    "fish": 2024,
-    "fpa": 9.46
+    "trips": 14,
+    "anglers": 246,
+    "fish": 2314,
+    "fpa": 9.41
   },
   {
     "rank": 5,
@@ -456,10 +456,10 @@
     "trip_type": "Full Day",
     "boat": "Happy Hooker",
     "landing": "Happy Hooker Sportfishing",
-    "trips": 15,
-    "anglers": 313,
-    "fish": 3088,
-    "fpa": 9.87
+    "trips": 17,
+    "anglers": 353,
+    "fish": 3488,
+    "fpa": 9.88
   },
   {
     "rank": 6,
@@ -707,6 +707,17 @@
     "rank": 3,
     "region": "San Diego County",
     "trip_type": "1/2 Day AM",
+    "boat": "Sea Watch",
+    "landing": "Seaforth Sportfishing",
+    "trips": 5,
+    "anglers": 128,
+    "fish": 307,
+    "fpa": 2.4
+  },
+  {
+    "rank": 4,
+    "region": "San Diego County",
+    "trip_type": "1/2 Day AM",
     "boat": "Premier",
     "landing": "H&M Landing",
     "trips": 22,
@@ -715,7 +726,7 @@
     "fpa": 2.17
   },
   {
-    "rank": 4,
+    "rank": 5,
     "region": "San Diego County",
     "trip_type": "1/2 Day AM",
     "boat": "Daily Double",
@@ -726,15 +737,15 @@
     "fpa": 1.71
   },
   {
-    "rank": 5,
+    "rank": 6,
     "region": "San Diego County",
     "trip_type": "1/2 Day AM",
     "boat": "New Seaforth",
     "landing": "Seaforth Sportfishing",
-    "trips": 22,
-    "anglers": 1095,
-    "fish": 1102,
-    "fpa": 1.01
+    "trips": 23,
+    "anglers": 1149,
+    "fish": 1198,
+    "fpa": 1.04
   },
   {
     "rank": 1,
@@ -775,8 +786,8 @@
     "trip_type": "1/2 Day Twilight",
     "boat": "Tradition",
     "landing": "Fisherman's Landing",
-    "trips": 20,
-    "anglers": 186,
+    "trips": 21,
+    "anglers": 195,
     "fish": 0,
     "fpa": 0
   },
